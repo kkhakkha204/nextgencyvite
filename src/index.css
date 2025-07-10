@@ -1,3 +1,6 @@
+/* Import Google Font - Hubot Sans */
+@import url('https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,4 +12,427 @@
   --deep-purple: #5a37c0;
   --white: #ffffff;
   --black: #000000;
+}
+
+/* Font Family Setup */
+@layer base {
+  * {
+    font-family: 'Hubot Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Animation Classes */
+@layer components {
+  /* Fade Animations */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .fade-out {
+    animation: fadeOut 0.8s ease-out forwards;
+  }
+
+  .fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .fade-down {
+    animation: fadeDown 0.8s ease-out forwards;
+  }
+
+  .fade-left {
+    animation: fadeLeft 0.8s ease-out forwards;
+  }
+
+  .fade-right {
+    animation: fadeRight 0.8s ease-out forwards;
+  }
+
+  /* Slide Animations */
+  .slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .slide-down {
+    animation: slideDown 0.8s ease-out forwards;
+  }
+
+  /* Scale Animations */
+  .scale-in {
+    animation: scaleIn 0.8s ease-out forwards;
+  }
+
+  .scale-out {
+    animation: scaleOut 0.8s ease-out forwards;
+  }
+
+  /* Rotate Animation */
+  .rotate-in {
+    animation: rotateIn 0.8s ease-out forwards;
+  }
+
+  /* Duration Variations */
+  .anim-fast {
+    animation-duration: 0.3s;
+  }
+
+  .anim-normal {
+    animation-duration: 0.8s;
+  }
+
+  .anim-slow {
+    animation-duration: 1.2s;
+  }
+
+  .anim-slower {
+    animation-duration: 1.8s;
+  }
+
+  /* Delay Variations */
+  .anim-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .anim-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .anim-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .anim-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .anim-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  .anim-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .anim-delay-700 {
+    animation-delay: 0.7s;
+  }
+
+  .anim-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  .anim-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .anim-delay-1500 {
+    animation-delay: 1.5s;
+  }
+
+  /* Hidden state for scroll-triggered animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Neumorphism Components */
+  .neu-card {
+    background: #f0f0f0;
+    border-radius: 20px;
+    box-shadow:
+            20px 20px 40px #d1d1d1,
+            -20px -20px 40px #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .neu-card:hover {
+    box-shadow:
+            25px 25px 50px #d1d1d1,
+            -25px -25px 50px #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .neu-card-inset {
+    background: #f0f0f0;
+    border-radius: 20px;
+    box-shadow:
+            inset 20px 20px 40px #d1d1d1,
+            inset -20px -20px 40px #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .neu-button {
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    border-radius: 15px;
+    box-shadow:
+            15px 15px 30px #d1d1d1,
+            -15px -15px 30px #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .neu-button:hover {
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:
+            10px 10px 20px #d1d1d1,
+            -10px -10px 20px #ffffff;
+    transform: translateY(-1px);
+  }
+
+  .neu-button:active {
+    box-shadow:
+            inset 10px 10px 20px #d1d1d1,
+            inset -10px -10px 20px #ffffff;
+    transform: translateY(0);
+  }
+
+  .neu-input {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 12px;
+    box-shadow:
+            inset 8px 8px 16px #d1d1d1,
+            inset -8px -8px 16px #ffffff;
+    padding: 12px 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .neu-input:focus {
+    box-shadow:
+            inset 10px 10px 20px #d1d1d1,
+            inset -10px -10px 20px #ffffff;
+  }
+
+  .neu-container {
+    background: #f0f0f0;
+    border-radius: 25px;
+    box-shadow:
+            25px 25px 50px #d1d1d1,
+            -25px -25px 50px #ffffff;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+
+  .neu-icon {
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    border-radius: 50%;
+    box-shadow:
+            10px 10px 20px #d1d1d1,
+            -10px -10px 20px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .neu-icon:hover {
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:
+            15px 15px 30px #d1d1d1,
+            -15px -15px 30px #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .neu-panel {
+    background: #f0f0f0;
+    border-radius: 20px;
+    box-shadow:
+            20px 20px 40px #d1d1d1,
+            -20px -20px 40px #ffffff;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+  }
+
+  .neu-toggle {
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    border-radius: 25px;
+    box-shadow:
+            inset 5px 5px 10px #d1d1d1,
+            inset -5px -5px 10px #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .neu-toggle.active {
+    background: linear-gradient(145deg, var(--cyan), var(--purple));
+    box-shadow:
+            5px 5px 10px #d1d1d1,
+            -5px -5px 10px #ffffff;
+  }
+
+  /* Dark theme neumorphism */
+  .neu-dark-card {
+    background: #2d2d2d;
+    border-radius: 20px;
+    box-shadow:
+            20px 20px 40px #1a1a1a,
+            -20px -20px 40px #404040;
+    transition: all 0.3s ease;
+  }
+
+  .neu-dark-button {
+    background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+    border-radius: 15px;
+    box-shadow:
+            15px 15px 30px #1a1a1a,
+            -15px -15px 30px #404040;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .neu-dark-button:hover {
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    box-shadow:
+            10px 10px 20px #1a1a1a,
+            -10px -10px 20px #404040;
+    transform: translateY(-1px);
+  }
+
+  /* Utility classes for scroll animations */
+  .scroll-trigger {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-trigger.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger animation delays for multiple elements */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
 }

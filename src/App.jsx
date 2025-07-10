@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Header from './components/Header';
 import Home from './pages/Home';
+import useScrollAnimation from './hooks/useScrollAnimation';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -17,6 +18,8 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+    // Initialize scroll animation hook
+    useScrollAnimation(0.1);
     return (
         <QueryClientProvider client={queryClient}>
             <Router>
