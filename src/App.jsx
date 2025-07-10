@@ -4,7 +4,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Header from './components/Header';
 import Home from './pages/Home';
-import useScrollAnimation from './hooks/useScrollAnimation';
+import Footer from "./components/Footer.jsx";
+import WebsiteLandingPage from "./pages/services/WebsiteLandingPage.jsx";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -18,19 +19,21 @@ const queryClient = new QueryClient({
 });
 
 function App() {
-    // Initialize scroll animation hook
-    useScrollAnimation(0.1);
     return (
         <QueryClientProvider client={queryClient}>
             <Router>
                 <div className="App">
                     <Header />
-                    <main className="min-h-screen">
+                    <main className="pt-[70px] lg:pt-[85px]">
                         <Routes>
                             {/* Trang chủ */}
                             <Route path="/" element={<Home />} />
+
+                            {/* Các trang dịch vụ */}
+                            <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
                         </Routes>
                     </main>
+                    <Footer />
                 </div>
             </Router>
             <ReactQueryDevtools initialIsOpen={false} />
