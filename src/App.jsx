@@ -24,7 +24,7 @@ function App() {
             <Router>
                 <div className="App">
                     <Header />
-                    <main className="pt-[70px] lg:pt-[85px]">
+                    <main className="page-content pt-[70px] lg:pt-[85px]">
                         <Routes>
                             {/* Trang chủ */}
                             <Route path="/" element={<Home />} />
