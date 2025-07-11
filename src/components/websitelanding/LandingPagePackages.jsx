@@ -79,7 +79,7 @@ const LandingPagePackages = () => {
                         <div className="flex items-center justify-center pt-2 space-x-4">
                             <Link
                                 to="/contact"
-                                className="relative flex items-center space-x-3 px-24 py-4 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+                                className="relative flex items-center space-x-3 px-16 lg:px-24 py-4 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                             >
         <span className="">
@@ -126,7 +126,7 @@ const LandingPagePackages = () => {
                         <div className="flex items-center justify-center pt-2 space-x-4">
                             <Link
                                 to="/contact"
-                                className="relative flex items-center space-x-3 px-24 py-4 bg-white text-[15px] sm:text-[16px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+                                className="relative flex items-center space-x-3 px-16 lg:px-24 py-4 bg-white text-[15px] sm:text-[16px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                             >
         <span className="">

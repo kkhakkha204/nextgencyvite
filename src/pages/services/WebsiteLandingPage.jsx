@@ -8,6 +8,7 @@ import LandingPagePackages from "../../components/websitelanding/LandingPagePack
 import WebsitePackages from "../../components/websitelanding/WebsitePackages.jsx";
 import OffersSection from "../../components/websitelanding/OffersSection.jsx";
 import ClientsPartnersSection from "../../components/websitelanding/ClientsPartnersSection.jsx";
+import PortfolioShowcase from "../../components/websitelanding/PortfolioShowcase.jsx";
 
 const WebsiteLandingPage = () => {
 
@@ -23,6 +24,7 @@ const WebsiteLandingPage = () => {
             <WebsitePackages/>
             <OffersSection/>
             <ClientsPartnersSection/>
+            <PortfolioShowcase/>
         </div>
     );
 };

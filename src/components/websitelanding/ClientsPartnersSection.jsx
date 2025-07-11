@@ -22,67 +22,104 @@ const ClientsPartnersSection = () => {
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
                     {/* Cột 1 */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 1"
-                                className="max-w-full max-h-full object-contain"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 2"
-                                className="max-w-full max-h-full object-contain"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
 
                     {/* Cột 2 */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
-                                className="max-w-full max-h-full object-contain"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
-                            <img src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 4"
-                                className="max-w-full max-h-full object-contain"
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                            <img
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
 
                     {/* Cột 3 */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
-                            <img src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 5"
-                                className="max-w-full max-h-full object-contain"
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                            <img
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
-                            <img src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 6"
-                                className="max-w-full max-h-full object-contain"
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                            <img
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
 
                     {/* Cột 4 */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
-                            <img src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 7"
-                                className="max-w-full max-h-full object-contain"
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                            <img
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
-                            <img src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 8"
-                                className="max-w-full max-h-full object-contain"
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                            <img
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
@@ -92,46 +129,64 @@ const ClientsPartnersSection = () => {
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
                     {/* Cột A - 2 logo */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
-                            <img src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 9"
-                                className="max-w-full max-h-full object-contain"
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                            <img
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 10"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
 
                     {/* Cột B - 2 logo */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 11"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 12"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
 
                     {/* Cột C & D merge - Mô tả */}
-                    <div className="col-span-2 flex justify-center bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4">
+                    <div className="col-span-2 flex justify-center neu-shadow-xs bg-gradient-to-r from-black to-[#5534bb]
+                                  rounded-lg p-3 transition-all duration-500 ease-in-out cursor-pointer">
                         <div className="">
-                            <p className="text- text-gray-800 leading-relaxed">
+                            <p className="text-[14px] lg:text-[15px] text-white leading-relaxed mb-2">
                                 Trong suốt hành trình phát triển, Nextgency tự hào được đồng hành cùng hơn 100+ doanh nghiệp và tổ chức trong nhiều lĩnh vực khác nhau: từ làm đẹp, giáo dục, y tế, công nghệ đến dịch vụ công và sản xuất.
                             </p>
-                            <p className="text-gray-800 leading-relaxed">
+                            <p className="text-[14px] lg:text-[15px] text-white leading-relaxed">
                                 Chúng tôi không chỉ triển khai các dự án công nghệ, mà còn đóng vai trò là đối tác tư vấn chiến lược – cùng khách hàng phân tích dữ liệu, thiết kế giải pháp và tối ưu hiệu quả kinh doanh theo từng giai đoạn.
                             </p>
                         </div>
@@ -139,12 +194,14 @@ const ClientsPartnersSection = () => {
                 </div>
 
                 {/* Thẻ chứa D - 4 cột (cột A có text, cột B,C,D có logo) */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    {/* Cột A - Text */}
-                    <div className="flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 text-white rounded-lg p-4">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    {/* Cột A - Text với gradient animation */}
+                    <div className="flex items-center justify-center neu-shadow-xs bg-gradient-to-r from-[#5534bb] to-[#2faeec]
+                                  text-white rounded-lg p-4 animate-gradient-shift
+                                  hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
                         <div className="text-center">
-                            <div className="text-3xl font-bold mb-2">100+</div>
-                            <div className="text-sm uppercase tracking-wide">
+                            <div className="text-[40px] font-black">100+</div>
+                            <div className="text-[14px] lg:text-[15px]">
                                 Đối tác chiến lược
                             </div>
                         </div>
@@ -152,54 +209,78 @@ const ClientsPartnersSection = () => {
 
                     {/* Cột B - 2 logo */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 13"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 14"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
 
                     {/* Cột C - 2 logo */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 15"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 16"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
 
                     {/* Cột D - 2 logo */}
                     <div className="flex flex-col space-y-6">
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 17"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center h-20">
+                        <div className="bg-white rounded-lg p-6 flex items-center justify-center h-20
+                                      hover:shadow-lg hover:scale-105
+                                      transition-all duration-300 ease-in-out cursor-pointer
+                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
                             <img
-                                 src="/assets/images/header/navbarlogoblack.png"
-                                alt="Partner Logo 18"
-                                className="max-w-full max-h-full object-contain"
+                                src="/assets/images/header/navbarlogoblack.png"
+                                alt="Partner Logo 3"
+                                className="max-w-full max-h-full object-contain
+                                         group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
                     </div>
