@@ -4,6 +4,8 @@ import ServicesDivider from "../../components/websitelanding/ServicesDivider.jsx
 import PainPointsSection from "../../components/websitelanding/PainPointsSection.jsx";
 import WhyChooseUs from "../../components/websitelanding/WhyChooseUs.jsx";
 import VideoSection from "../../components/websitelanding/VideoSection.jsx";
+import LandingPagePackages from "../../components/websitelanding/LandingPagePackages.jsx";
+import WebsitePackages from "../../components/websitelanding/WebsitePackages.jsx";
 
 const WebsiteLandingPage = () => {
 
@@ -15,6 +17,8 @@ const WebsiteLandingPage = () => {
             <PainPointsSection/>
             <WhyChooseUs/>
             <VideoSection/>
+            <LandingPagePackages/>
+            <WebsitePackages/>
         </div>
     );
 };

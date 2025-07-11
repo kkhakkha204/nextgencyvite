@@ -1,11 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {Play, ArrowRight, ArrowUpRight} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const VideoSection = () => {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const videoRef = useRef(null);
+
+    // Detect mobile device
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 1024 || 'ontouchstart' in window);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const handlePlayVideo = () => {
         if (videoRef.current) {
@@ -18,6 +31,29 @@ const VideoSection = () => {
         setIsVideoPlaying(false);
     };
 
+    const handleMouseEnter = () => {
+        if (!isMobile) {
+            setIsHovered(true);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (!isMobile) {
+            setIsHovered(false);
+        }
+    };
+
+    const handleVideoClick = () => {
+        if (isMobile) {
+            // On mobile, show hover effect immediately and play video
+            setIsHovered(true);
+            handlePlayVideo();
+        } else {
+            // On desktop, normal behavior
+            handlePlayVideo();
+        }
+    };
+
     return (
         <section className="pt-[60px] lg:pt-[90px] bg-white">
             <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
@@ -28,15 +64,15 @@ const VideoSection = () => {
                             <div
                                 className="video-container relative w-full rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl"
                                 style={{ aspectRatio: '6/5' }}
-                                onClick={handlePlayVideo}
-                                onMouseEnter={() => setIsHovered(true)}
-                                onMouseLeave={() => setIsHovered(false)}
+                                onClick={handleVideoClick}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
                             >
                                 {/* Custom Thumbnail */}
                                 {!isVideoPlaying && (
                                     <div
                                         className="w-full h-full object-cover absolute inset-0"
-                                        onClick={handlePlayVideo}
+                                        onClick={handleVideoClick}
                                     >
                                         <img
                                             src="/assets/images/website&landingpage/video.png"
@@ -50,20 +86,20 @@ const VideoSection = () => {
                                 {!isVideoPlaying && (
                                     <div
                                         className={`play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 border-2 ${
-                                            isHovered
+                                            isHovered || isMobile
                                                 ? 'bg-purple-400/95 border-purple-400/30 scale-110 shadow-lg shadow-purple-400/40'
                                                 : 'bg-white/95 border-white/30'
                                         }`}
-                                        onClick={handlePlayVideo}
+                                        onClick={handleVideoClick}
                                     >
-                                        <Play className={`text-lg transition-colors duration-300 ml-1 ${isHovered ? 'text-white' : 'text-gray-800'}`} size={20} />
+                                        <Play className={`text-lg transition-colors duration-300 ml-1 ${isHovered || isMobile ? 'text-white' : 'text-gray-800'}`} size={20} />
                                     </div>
                                 )}
 
                                 {/* Video Overlay */}
                                 <div
-                                    className={`video-overlay absolute inset-0 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
-                                    onClick={handlePlayVideo}
+                                    className={`video-overlay absolute inset-0 transition-opacity duration-300 ${isHovered || isMobile ? 'opacity-100' : 'opacity-0'}`}
+                                    onClick={handleVideoClick}
                                 ></div>
 
                                 {/* Actual Video */}
