@@ -54,7 +54,7 @@ const WebsitePackages = () => {
               Website & Landing page
             </span>
                     </div>
-                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Gói xây dựng Website
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-2xl mx-auto leading-relaxed">

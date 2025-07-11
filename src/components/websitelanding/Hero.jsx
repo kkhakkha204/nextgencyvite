@@ -47,7 +47,7 @@ const Hero = () => {
                         <div className="space-y-2 sm:space-y-6">
                             {/* Dòng chữ "Xây dựng" với SVG */}
                             <div className="flex flex-row items-center lg:items-end gap-4 lg:gap-6">
-                                <h1 className="text-[24px] md:text-[36px] lg:text-7xl xl:text-[60px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
+                                <h1 className="text-[24px] md:text-[36px] lg:text-7xl xl:text-[40px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
                                     Xây dựng
                                 </h1>
                                 {/* SVG Circles */}
@@ -97,7 +97,7 @@ const Hero = () => {
                             </div>
 
                             {/* Dòng chữ "Website & Landing page" */}
-                            <h2 className="text-[24px] md:text-[36px] lg:text-7xl xl:text-[60px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
+                            <h2 className="text-[24px] md:text-[36px] lg:text-7xl xl:text-[40px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
                                 Website & Landing Page
                             </h2>
                         </div>

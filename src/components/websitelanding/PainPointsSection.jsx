@@ -44,7 +44,7 @@ const PainPointsSection = () => {
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Nỗi đau của doanh nghiệp
                     </h2>
 

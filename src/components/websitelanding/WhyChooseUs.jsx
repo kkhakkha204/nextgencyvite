@@ -8,7 +8,7 @@ const WhyChooseNextgency = () => {
                 <div className="text-center mb-6 lg:mb-10">
                     <h2 className="text-[24px] md:text-[28px] font-archivo font-semibold mb-1 leading-tight">
                         Vì sao bạn nên chọn<br />
-                        <span className="bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent font-archivo text-[40px] sm:text-[60px]">
+                        <span className="bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent font-archivo text-[40px] sm:text-[56px]">
               Nextgency?
             </span>
                     </h2>
