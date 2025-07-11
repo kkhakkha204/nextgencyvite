@@ -37,14 +37,14 @@ const PainPointsSection = () => {
                 {/* Header */}
                 <div className="text-center mb-6 lg:mb-10">
                     {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2 lg:mb-4">
+                    <div className="inline-flex items-center justify-center mb-2">
             <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
               Website & Landing page
             </span>
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-2 lg:mb-4">
+                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-1">
                         Nỗi đau của doanh nghiệp
                     </h2>
 

@@ -31,11 +31,17 @@ const LandingPagePackages = () => {
     ];
 
     return (
-        <section className="bg-white pt-[60px] lg:py-[90px]">
+        <section className="bg-white pt-[60px] lg:pt-[90px]">
             <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-6 lg:mb-10">
-                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-4">
+                    {/* Badge */}
+                    <div className="inline-flex items-center justify-center mb-2">
+            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
+              Website & Landing page
+            </span>
+                    </div>
+                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-1">
                         Gói xây dựng Landing Page
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto leading-relaxed">
@@ -51,7 +57,7 @@ const LandingPagePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-black">
                                 <h3 className="text-[20px] lg:text-[30px] font-archivo font-medium text-black">
-                                    Gói 1: Gói Cơ Bản
+                                    Gói Landing Page Cơ Bản
                                 </h3>
                             </div>
 
@@ -77,7 +83,7 @@ const LandingPagePackages = () => {
 
                             >
         <span className="">
-            Hợp tác ngay
+            Nhận tư vấn
         </span>
 
                             </Link>
@@ -91,14 +97,14 @@ const LandingPagePackages = () => {
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <div className="bg-gradient-to-r from-[#5534bb] via-black to-[#5534bb] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
-                                <span>Advanced</span>
+                                <span>Phổ Biến</span>
                             </div>
                         </div>
 
                         <div>
-                            <div className="mb-6 pb-2 border-b border-white">
-                                <h3 className="text-[20px] lg:text-[30px] font-archivo font-medium text-white">
-                                    <span>Gói 2: Gói Nâng Cao</span>
+                            <div className="mb-6 pb-2 border-b-2 border-white">
+                                <h3 className="text-[20px] lg:text-[30px] font-medium text-white">
+                                    <span className="font-archivo">Gói Landing Page Nâng Cao</span>
                                 </h3>
                             </div>
 
@@ -124,7 +130,7 @@ const LandingPagePackages = () => {
 
                             >
         <span className="">
-            Hợp tác ngay
+            Nhận tư vấn
         </span>
 
                             </Link>

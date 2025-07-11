@@ -6,6 +6,8 @@ import WhyChooseUs from "../../components/websitelanding/WhyChooseUs.jsx";
 import VideoSection from "../../components/websitelanding/VideoSection.jsx";
 import LandingPagePackages from "../../components/websitelanding/LandingPagePackages.jsx";
 import WebsitePackages from "../../components/websitelanding/WebsitePackages.jsx";
+import OffersSection from "../../components/websitelanding/OffersSection.jsx";
+import ClientsPartnersSection from "../../components/websitelanding/ClientsPartnersSection.jsx";
 
 const WebsiteLandingPage = () => {
 
@@ -19,6 +21,8 @@ const WebsiteLandingPage = () => {
             <VideoSection/>
             <LandingPagePackages/>
             <WebsitePackages/>
+            <OffersSection/>
+            <ClientsPartnersSection/>
         </div>
     );
 };

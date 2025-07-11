@@ -6,7 +6,7 @@ const WhyChooseNextgency = () => {
             <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-6 lg:mb-10">
-                    <h2 className="text-[24px] md:text-[28px] font-archivo font-semibold mb-4 leading-tight">
+                    <h2 className="text-[24px] md:text-[28px] font-archivo font-semibold mb-1 leading-tight">
                         Vì sao bạn nên chọn<br />
                         <span className="bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent font-archivo text-[40px] sm:text-[60px]">
               Nextgency?

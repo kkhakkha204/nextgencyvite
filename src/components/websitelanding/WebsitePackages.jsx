@@ -3,56 +3,58 @@ import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
     const basicFeatures = [
-        "Thiết kế tùy biến theo yêu cầu",
-        "Bàn giao đầy đủ source code",
-        "Thời gian hoàn thành: 7–14 ngày làm việc",
-        "Chỉnh sửa tối đa 3 lần",
-        "Giao diện responsive trên mọi thiết bị",
-        "Tối ưu tốc độ tải trang",
-        "Tối ưu SEO cơ bản",
-        "Tích hợp Google Analytics",
-        "Hỗ trợ tài liệu sử dụng",
-        "Nền tảng: WordPress hoặc Static HTML"
+        "Giao diện web cơ bản, dựng trong 2–3 ngày",
+        "Miễn phí tên miền .com",
+        "Tặng Hosting SSD",
+        "Thiết kế chuẩn SEO, tối ưu tốc độ tải trang",
+        "Responsive – tương thích mọi thiết bị",
+        "Tích hợp live chat, Messenger, Zalo",
+        "Cài sẵn plugin cơ bản và SSL",
+        "Hỗ trợ xử lý sự cố (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)",
+        "Tư vấn quảng cáo đa nền tảng (Meta, Google, TikTok)"
     ];
 
     const standardFeatures = [
-        "Thiết kế tùy biến theo yêu cầu chuyên nghiệp",
-        "Bàn giao đầy đủ source code",
-        "Thời gian hoàn thành: 10–21 ngày làm việc",
-        "Chỉnh sửa tối đa 5 lần",
-        "Giao diện responsive cao cấp",
-        "Tối ưu tốc độ tải trang nâng cao",
-        "Tối ưu SEO toàn diện",
-        "Tích hợp CMS quản lý nội dung",
-        "Tích hợp Google Analytics, Facebook Pixel",
-        "Hệ thống liên hệ và form đăng ký",
-        "Tặng kèm 2GB hosting trong 1 năm",
-        "Nền tảng: WordPress hoặc React"
+        "Thiết kế giao diện trung bình hoặc theo yêu cầu",
+        "Tặng tên miền .com hoặc .net",
+        "Hosting SSD lưu trữ tốc độ cao",
+        "Dựng website trong 3–7 ngày",
+        "Thiết kế chuẩn SEO, UX/UI, tối ưu tốc độ tải trang",
+        "Tương thích mọi thiết bị",
+        "Tặng 5–10 bài viết nội dung cơ bản (chuẩn SEO)",
+        "Tích hợp live chat, Messenger, Zalo",
+        "Tư vấn chiến dịch quảng cáo Meta, Google, TikTok",
+        "Tặng plugin, chứng chỉ SSL",
+        "Hỗ trợ kỹ thuật (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)"
     ];
 
     const advancedFeatures = [
-        "Thiết kế tùy biến cao cấp, đảm bảo nhận diện thương hiệu",
-        "Bàn giao đầy đủ source code và tài liệu kỹ thuật",
-        "Thời gian hoàn thành: 14–30 ngày làm việc",
-        "Chỉnh sửa không giới hạn trong 30 ngày",
-        "Giao diện responsive premium với hiệu ứng cao cấp",
-        "Tối ưu tốc độ tải trang tối đa",
-        "Tối ưu SEO chuyên sâu và kỹ thuật",
-        "Hệ thống CMS quản lý nội dung nâng cao",
-        "Tích hợp đầy đủ công cụ marketing",
-        "Hệ thống email marketing tự động",
-        "Tích hợp thanh toán trực tuyến",
-        "Tặng kèm 5GB hosting cao cấp trong 1 năm",
-        "Bảo trì miễn phí 3 tháng đầu",
-        "Nền tảng: WordPress, React hoặc Next.js"
+        "Thiết kế giao diện website cao cấp",
+        "Tặng tên miền .com, .net",
+        "Hosting SSD lưu trữ tốc độ cao",
+        "Dựng website 7–10 ngày",
+        "Tặng 20 bài viết chuẩn SEO",
+        "Cấu hình đầy đủ: tracking đa kênh, chuyển đổi động, đồng bộ danh mục sản phẩm",
+        "Tối ưu tốc độ – chuẩn mobile",
+        "Tư vấn và đồng hành chạy Ads đa nền tảng",
+        "Cấp tài khoản TikTok Ads miễn phí",
+        "Miễn phí thông báo website với Bộ Công Thương",
+        "Tặng full plugin, chứng chỉ SSL",
+        "Hỗ trợ kỹ thuật miễn phí trọn gói"
     ];
 
     return (
-        <section className="bg-gray-50 pt-[60px] lg:py-[90px]">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <section className="pt-[60px] lg:pt-[90px]">
+                <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-6 lg:mb-10">
-                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-4">
+                    {/* Badge */}
+                    <div className="inline-flex items-center justify-center mb-2">
+            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
+              Website & Landing page
+            </span>
+                    </div>
+                    <h2 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black mb-1">
                         Gói xây dựng Website
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-2xl mx-auto leading-relaxed">
@@ -64,11 +66,11 @@ const WebsitePackages = () => {
                 {/* Packages */}
                 <div className="grid lg:grid-cols-3 gap-8 lg:gap-8">
                     {/* Gói Cơ Bản */}
-                    <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
+                    <div className="bg-white border-2 border-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
                         <div>
-                            <div className="mb-6 pb-2 border-b-2 border-gray-200">
+                            <div className="mb-6 pb-2 border-b-2 border-black">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Cơ Bản
+                                    Gói Website Cơ Bản
                                 </h3>
                             </div>
 
@@ -88,8 +90,8 @@ const WebsitePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2">
-                            <button className="relative flex items-center space-x-3 px-8 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Hợp tác ngay</span>
+                            <button className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
+                                <span>Nhận tư vấn</span>
                             </button>
                         </div>
                     </div>
@@ -100,14 +102,14 @@ const WebsitePackages = () => {
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <div className="bg-gradient-to-r from-[#2faeec] to-[#1e90ff] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
-                                <span>Phổ biến</span>
+                                <span>Phổ Biến</span>
                             </div>
                         </div>
 
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-[#2faeec]">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Tiêu Chuẩn
+                                    Gói Website Tiêu Chuẩn
                                 </h3>
                             </div>
 
@@ -127,8 +129,8 @@ const WebsitePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2">
-                            <button className="relative flex items-center space-x-3 px-8 py-4 bg-[#2faeec] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-300 hover:scale-105 group">
-                                <span>Hợp tác ngay</span>
+                            <button className="relative flex items-center space-x-3 px-16 py-4 bg-[#2faeec] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-300 hover:scale-105 group">
+                                <span>Nhận tư vấn</span>
                             </button>
                         </div>
                     </div>
@@ -137,16 +139,16 @@ const WebsitePackages = () => {
                     <div className="bg-black border-2 border-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 relative flex flex-col justify-between">
                         {/* Premium Badge */}
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <div className="bg-gradient-to-r from-[#5534bb] via-[#8b5cf6] to-[#5534bb] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                            <div className="bg-gradient-to-r from-[#5534bb] via-black to-[#5534bb] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Crown className="w-4 h-4 fill-current" />
                                 <span>Premium</span>
                             </div>
                         </div>
 
                         <div>
-                            <div className="mb-6 pb-2 border-b border-white">
+                            <div className="mb-6 pb-2 border-b-2 border-white">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-white">
-                                    Gói Nâng Cao
+                                    Gói Website Nâng Cao
                                 </h3>
                             </div>
 
@@ -166,8 +168,8 @@ const WebsitePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2">
-                            <button className="relative flex items-center space-x-3 px-8 py-4 bg-white text-[15px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Hợp tác ngay</span>
+                            <button className="relative flex items-center space-x-3 px-16 py-4 bg-white text-[15px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
+                                <span>Nhận tư vấn</span>
                             </button>
                         </div>
                     </div>
