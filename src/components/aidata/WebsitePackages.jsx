@@ -3,15 +3,12 @@ import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
     const basicFeatures = [
-        "Giao diện web cơ bản, dựng trong 2–3 ngày",
-        "Miễn phí tên miền .com",
-        "Tặng Hosting SSD",
-        "Thiết kế chuẩn SEO, tối ưu tốc độ tải trang",
-        "Responsive – tương thích mọi thiết bị",
-        "Tích hợp live chat, Messenger, Zalo",
-        "Cài sẵn plugin cơ bản và SSL",
-        "Hỗ trợ xử lý sự cố (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)",
-        "Tư vấn quảng cáo đa nền tảng (Meta, Google, TikTok)"
+        "Thiết lập quy trình auto chốt đơn từ Fanpage & Zalo OA",
+        "Cài đặt chatbot phản hồi inbox cơ bản (FAQ, xác nhận đơn)",
+        "Tích hợp livechat website + đồng bộ với Fanpage",
+        "Gửi tin nhắn cảm ơn sau đơn hàng",
+        "Gửi nhắc lại cho khách chưa hoàn tất đơn",
+        "Giao diện quản trị đơn giản, dễ dùng"
     ];
 
     const standardFeatures = [
@@ -51,15 +48,14 @@ const WebsitePackages = () => {
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
             <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
+              AI & Data
             </span>
                     </div>
                     <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
-                        Gói xây dựng Website
+                        Các gói dịch vụ
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-2xl mx-auto leading-relaxed">
-                        Chọn gói dịch vụ phù hợp để xây dựng website chuyên nghiệp,
-                        tối ưu hóa hiệu suất và phù hợp với mọi nhu cầu kinh doanh
+                        3 gói chính: Cơ bản, Tiêu chuẩn & Nâng cao
                     </p>
                 </div>
 
@@ -70,7 +66,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-black">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Website Cơ Bản
+                                    Gói Dịch Vụ Cơ Bản
                                 </h3>
                             </div>
 
@@ -109,7 +105,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-[#2faeec]">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Website Tiêu Chuẩn
+                                    Gói Dịch Vụ Tiêu Chuẩn
                                 </h3>
                             </div>
 
@@ -148,7 +144,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-white">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-white">
-                                    Gói Website Nâng Cao
+                                    Gói Dịch Vụ Nâng Cao
                                 </h3>
                             </div>
 

@@ -6,10 +6,12 @@ import ClientsPartnersSection from "../../components/googleads/ClientsPartnersSe
 import CommitmentSection from "../../components/googleads/CommitmentSection.jsx";
 import WebsitePackages from "../../components/googleads/WebsitePackages.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
+import Hero from "../../components/googleads/Hero.jsx";
 
 const GoogleAds = () => {
     return (
         <div>
+            <Hero/>
             <ServicesDivider/>
             <PainPointsSection/>
             <WhyChooseUs/>

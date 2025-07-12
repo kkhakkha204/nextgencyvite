@@ -83,11 +83,11 @@ const Header = () => {
         <>
             {/* Header */}
             <header
-                className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-500 ${
+                className={`fixed top-0 left-0 right-0 z-50 bg-white border-b-2 border-black transition-all duration-500 ${
                     isVisible ? 'translate-y-0' : '-translate-y-full'
                 } `}
             >
-                <div className="max-w-[1380px] mx-auto px-6 sm:px-6 lg:px-8">
+                <div className="max-w-[1380px] mx-auto px-6 sm:px-6 lg:px-8 ">
                     <div className="flex items-center justify-between h-[70px] lg:h-[85px]">
 
                         {/* Logo */}

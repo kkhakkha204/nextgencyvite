@@ -20,9 +20,9 @@ const WhyChooseNextgency = () => {
                 {/* Main Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-3">
                     {/* Cột A (40%) */}
-                    <div className="lg:col-span-2 bg-black rounded-xl px-6 pt-6 text-white lg:h-[600px]">
+                    <div className="lg:col-span-2 bg-black rounded-xl px-6 pt-6 text-white lg:h-[500px]">
                         {/* Row A (45%) */}
-                        <div className="mb-6 lg:mb-8 lg:h-[30%] flex flex-col justify-center">
+                        <div className="mb-6 lg:mb-8 lg:h-[20%] flex flex-col justify-center">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 {/* Cột mô tả */}
                                 <div className="flex flex-col justify-center">
@@ -47,7 +47,7 @@ const WhyChooseNextgency = () => {
                         </div>
 
                         {/* Row B (55%) - Ảnh nhân sự */}
-                        <div className="lg:h-[70%] flex lg:pb-8">
+                        <div className="lg:h-[80%] flex lg:pb-8">
                             <div className="w-full h-52 lg:h-full pb-6 overflow-hidden">
                                 <img
                                     src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
@@ -59,9 +59,9 @@ const WhyChooseNextgency = () => {
                     </div>
 
                     {/* Cột B (60%) */}
-                    <div className="lg:col-span-3 space-y-3 lg:h-[600px]">
+                    <div className="lg:col-span-3 space-y-3 lg:h-[500px]">
                         {/* Row A (50%) */}
-                        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 lg:h-[295px]">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 lg:h-[245px]">
                             {/* Cột 60% */}
                             <div className="md:col-span-3 rounded-xl p-6 relative overflow-hidden h-full">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium mb-4 text-black">
@@ -90,7 +90,7 @@ const WhyChooseNextgency = () => {
                         </div>
 
                         {/* Row B (50%) */}
-                        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 lg:h-[295px]">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 lg:h-[245px]">
                             {/* Cột 40% */}
                             <div className="md:col-span-2 border-2 border-black rounded-xl p-6 flex flex-col h-full">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium mb-4 text-[#1c1c1c]">
