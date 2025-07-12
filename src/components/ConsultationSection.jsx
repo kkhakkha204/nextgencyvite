@@ -1,5 +1,4 @@
 import React from 'react';
-import { Send } from 'lucide-react';
 
 export default function ConsultationSection() {
     return (
@@ -13,12 +12,12 @@ export default function ConsultationSection() {
                         Nhận tư vấn
                     </h2>
                     <p className="text-[15px] sm:text-[18px] text-white max-w-2xl mx-auto leading-relaxed">
-                        Để lại thông tin của bạn, chúng tôi sẽ liên hệ và tư vấn giải pháp phù hợp nhất
+                        Nextgency chân thành cảm ơn bạn đã dành thời gian điền bảng khảo sát này. Đội ngũ của chúng tôi sẽ xem xét kỹ thông tin và liên hệ trong vòng 24h làm việc để tư vấn giải pháp phù hợp nhất.
                     </p>
                 </div>
 
                 {/* Glassmorphism Form */}
-                <div className="backdrop-blur-3xl bg-white/10 rounded-3xl border-2 border-white shadow-2xl p-4 sm:p-6 lg:p-6">
+                <div className="backdrop-blur-3xl bg-white/10 rounded-lg border-2 border-white/80 shadow-2xl p-4 sm:p-6 lg:p-6">
                     <form className="space-y-6">
                         <div className="space-y-6">
                             {/* Tên khách hàng */}
@@ -28,7 +27,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2.5 bg-white/10 border-2 border-white/20 rounded-xl text-white text-[12px] lg:text-[14px] placeholder-gray-300 focus:outline-none  focus:border-white/80 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Nhập tên của bạn"
                                     required
                                 />
@@ -41,7 +40,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="tel"
-                                    className="w-full px-4 py-2.5 bg-white/10 border-2 border-white/20 rounded-xl text-white text-[12px] lg:text-[14px] placeholder-gray-300 focus:outline-none  focus:border-white/80 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Nhập số điện thoại"
                                     required
                                 />
@@ -54,7 +53,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="email"
-                                    className="w-full px-4 py-2.5 bg-white/10 border-2 border-white/20 rounded-xl text-white text-[12px] lg:text-[14px] placeholder-gray-300 focus:outline-none  focus:border-white/80 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="example@gmail.com"
                                     required
                                 />
@@ -67,7 +66,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2.5 bg-white/10 border-2 border-white/20 rounded-xl text-white text-[12px] lg:text-[14px] placeholder-gray-300 focus:outline-none  focus:border-white/80 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Ví dụ: Thương mại điện tử, F&B..."
                                     required
                                 />
@@ -80,7 +79,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2.5 bg-white/10 border-2 border-white/20 rounded-xl text-white text-[12px] lg:text-[14px] placeholder-gray-300 focus:outline-none  focus:border-white/80 transition-all duration-300 backdrop-blur-sm"
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Nhập tên thương hiệu (nếu có)"
                                 />
                             </div>
@@ -91,8 +90,8 @@ export default function ConsultationSection() {
                                     Yêu cầu tư vấn
                                 </label>
                                 <textarea
-                                    rows="6"
-                                    className="w-full px-4 py-2.5 bg-white/10 border-2 border-white/20 rounded-xl text-white text-[12px] lg:text-[14px] placeholder-gray-300 focus:outline-none  focus:border-white/80 transition-all duration-300 backdrop-blur-sm resize-none"
+                                    rows="5"
+                                    className="w-full px-4 py-2.5 border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Mô tả chi tiết yêu cầu tư vấn của bạn..."
                                     required
                                 ></textarea>
@@ -105,10 +104,9 @@ export default function ConsultationSection() {
                 <div className="text-center pt-8">
                     <button
                         type="button"
-                        className="group relative px-12 py-4 bg-gradient-to-r from-white/20 to-white/10 backdrop-blur-sm border border-white/30 rounded-xl text-white font-semibold text-lg hover:from-white/30 hover:to-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50"
+                        className="group relative px-12 py-4 bg-black backdrop-blur-sm border border-white/30 rounded-lg text-white font-medium text-lg hover:from-white/30 hover:to-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50"
                     >
-                        <span className="flex items-center gap-3">
-                            <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span className="flex items-center text-[15px] lg:text-[16px]">
                             Gửi thông tin
                         </span>
                     </button>

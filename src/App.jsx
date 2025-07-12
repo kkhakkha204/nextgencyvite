@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from "./components/Footer.jsx";
 import WebsiteLandingPage from "./pages/services/WebsiteLandingPage.jsx";
+import AiData from "./pages/services/AiData.jsx";
+import GoogleAds from "./pages/services/GoogleAds.jsx";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -31,6 +33,8 @@ function App() {
 
                             {/* Các trang dịch vụ */}
                             <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
+                            <Route path="/services/ai-data" element={<AiData />} />
+                            <Route path="/services/google-ads" element={<GoogleAds />} />
                         </Routes>
                     </main>
                     <Footer />

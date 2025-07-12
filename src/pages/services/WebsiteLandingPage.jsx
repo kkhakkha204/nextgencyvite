@@ -10,7 +10,8 @@ import OffersSection from "../../components/websitelanding/OffersSection.jsx";
 import ClientsPartnersSection from "../../components/websitelanding/ClientsPartnersSection.jsx";
 import PortfolioShowcase from "../../components/websitelanding/PortfolioShowcase.jsx";
 import CommitmentSection from "../../components/websitelanding/CommitmentSection.jsx";
-import ConsultationSection from "../../components/websitelanding/ConsultationSection.jsx";
+import ConsultationSection from "../../components/ConsultationSection.jsx";
+import ServicesSection from "../../components/ServicesSection.jsx";
 
 const WebsiteLandingPage = () => {
 
@@ -29,6 +30,7 @@ const WebsiteLandingPage = () => {
             <PortfolioShowcase/>
             <CommitmentSection/>
             <ConsultationSection/>
+                <ServicesSection/>
         </div>
     );
 };

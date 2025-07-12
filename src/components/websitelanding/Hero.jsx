@@ -4,9 +4,9 @@ const Hero = () => {
     return (
         <section className="bg-white flex items-center pt-[60px] sm:pt-[90px]">
             <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
-                <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 w-full">
+                <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full">
                     {/* Cột 1: Circular Text với Logo (20%) */}
-                    <div className="w-full lg:w-1/5 flex justify-center lg:justify-start">
+                    <div className="w-full md:w-1/5 flex justify-center md:justify-start">
                         <div className="relative">
                             {/* Circular Text Background */}
                             <div className="w-[145px] h-[145px] bg-black rounded-full flex items-center justify-center relative overflow-hidden">
@@ -43,11 +43,11 @@ const Hero = () => {
                     </div>
 
                     {/* Cột 2: Main Content (80%) */}
-                    <div className="w-full lg:w-4/5 text-left">
-                        <div className="space-y-2 sm:space-y-6">
+                    <div className="w-full md:w-4/5 text-left">
+                        <div className="space-y-2 md:space-y-6">
                             {/* Dòng chữ "Xây dựng" với SVG */}
-                            <div className="flex flex-row items-center lg:items-end gap-4 lg:gap-6">
-                                <h1 className="text-[24px] md:text-[36px] lg:text-7xl xl:text-[40px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
+                            <div className="flex flex-row items-center md:items-end gap-4 lg:gap-6">
+                                <h1 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
                                     Xây dựng
                                 </h1>
                                 {/* SVG Circles */}
@@ -97,7 +97,7 @@ const Hero = () => {
                             </div>
 
                             {/* Dòng chữ "Website & Landing page" */}
-                            <h2 className="text-[24px] md:text-[36px] lg:text-7xl xl:text-[40px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
+                            <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
                                 Website & Landing Page
                             </h2>
                         </div>
