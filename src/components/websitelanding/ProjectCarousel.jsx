@@ -11,22 +11,22 @@ const ProjectCarousel = () => {
     const portfolioItems = [
         {
             id: 1,
-            image: '/assets/images/website&landingpage/beauty.svg',
+            image: '/assets/images/website&landingpage/beautysummit.webp',
             gradient: 'from-[#A4FCFF]/20 to-[#C8A4FE]/20'
         },
         {
             id: 2,
-            image: '/assets/images/website&landingpage/beauty.svg',
+            image: '/assets/images/website&landingpage/katskin.webp',
             gradient: 'from-[#C8A4FE]/20 to-[#5a37c0]/20'
         },
         {
             id: 3,
-            image: '/assets/images/website&landingpage/beauty.svg',
+            image: '/assets/images/website&landingpage/woodplus.webp',
             gradient: 'from-[#A4FCFF]/20 to-[#5a37c0]/20'
         },
         {
             id: 4,
-            image: '/assets/images/website&landingpage/beauty.svg',
+            image: '/assets/images/website&landingpage/femme.webp',
             gradient: 'from-[#C8A4FE]/20 to-[#A4FCFF]/20'
         }
     ];
