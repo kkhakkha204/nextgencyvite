@@ -7,12 +7,14 @@ import CommitmentSection from "../../components/aidata/CommitmentSection.jsx";
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import Hero from "../../components/aidata/Hero.jsx";
+import PainPointsSection from "../../components/aidata/PainPointsSection.jsx";
 
 const AiData = () => {
     return (
         <div>
             <Hero/>
             <ServicesDivider/>
+            <PainPointsSection/>
             <WhyChooseUs/>
             <WebsitePackages/>
             <ClientsPartnersSection/>

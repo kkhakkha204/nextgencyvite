@@ -27,7 +27,7 @@ const WhyChooseNextgency = () => {
                                 {/* Cột mô tả */}
                                 <div className="flex flex-col justify-center">
                                     <p className="text-gray-100 text-[14px] lg:text-[16px] leading-relaxed">
-                                        Môi trường làm việc trẻ trung, sáng tạo và chúng tôi tin rằng một đội ngũ giỏi – trong môi trường mở và không ngừng học hỏi – sẽ tạo nên những sản phẩm thực sự hiệu quả cho khách hàng.
+                                        Biến quy trình thủ công thành tự động – giải phóng 80% thời gian cho đội Sale
                                     </p>
                                 </div>
 
@@ -68,7 +68,7 @@ const WhyChooseNextgency = () => {
                                     Kinh nghiệm 3+ năm
                                 </h3>
                                 <p className="text-[14px] lg:text-[16px] text-gray-800 leading-relaxed">
-                                    Với hơn 3 năm hoạt động trong lĩnh vực thiết kế web, chúng tôi đã tích lũy được kinh nghiệm quý báu và hiểu sâu về nhu cầu của khách hàng.
+                                    Cá nhân hoá nội dung theo hành vi từng khách hàng – tăng mạnh tỷ lệ chuyển đổi.
                                 </p>
                                 <div className="absolute bottom-2 right-2 lg:bottom-6 lg:right-6">
                                     <svg className="w-11+ h-11 lg:w-20 lg:h-20 text-black opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ const WhyChooseNextgency = () => {
                                     Tối ưu SEO
                                 </h3>
                                 <p className="text-[14px] lg:text-[16px] text-gray-100 leading-relaxed">
-                                    Mỗi website được tối ưu hóa SEO từ ban đầu, giúp tăng khả năng hiển thị trên các công cụ tìm kiếm.
+                                    Kết nối đa nền tảng: Zalo – Facebook – Website – CRM vào 1 hệ thống duy nhất
                                 </p>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ const WhyChooseNextgency = () => {
                                     Hỗ trợ 24/7
                                 </h3>
                                 <p className="text-[14px] lg:text-[16px] text-gray-800 leading-relaxed">
-                                    Đội ngũ hỗ trợ chuyên nghiệp luôn sẵn sàng giải đáp thắc mắc và hỗ trợ khách hàng mọi lúc.
+                                    Kích hoạt AI trả lời thông minh – chatbot tư vấn sản phẩm tự động
                                 </p>
                             </div>
 

@@ -66,7 +66,7 @@ const Hero = () => {
                         </div>
 
                         {/* Divider Line */}
-                        <div className="w-72 h-0.5 bg-gray-900"></div>
+                        <div className="w-72 h-0.5 bg-black"></div>
 
                         {/* Description */}
                         <div className="space-y-4">
@@ -101,7 +101,7 @@ const Hero = () => {
                         <div className="relative">
                             <div className="aspect-[1/1] overflow-hidden rounded-2xl bg-gray-100">
                                 <img
-                                    src="/assets/images/website&landingpage/hero3.png"
+                                    src="/assets/images/dataai/hero.webp"
                                     alt="AI & Automation Technology"
                                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                                 />
