@@ -16,14 +16,14 @@ const PortfolioShowcase = () => {
             id: 2,
             name: "Corporate Website",
             type: "image",
-            src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Corporate Website"
         },
         {
             id: 3,
             name: "Mobile App Landing",
             type: "image",
-            src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Mobile App Landing"
         },
         {
@@ -38,28 +38,28 @@ const PortfolioShowcase = () => {
             id: 5,
             name: "Finance Dashboard",
             type: "image",
-            src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Finance Dashboard"
         },
         {
             id: 6,
             name: "Healthcare System",
             type: "image",
-            src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=cro",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Healthcare System"
         },
         {
             id: 7,
             name: "Education Platform",
             type: "image",
-            src: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Education Platform"
         },
         {
             id: 8,
             name: "Real Estate Portal",
             type: "image",
-            src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Real Estate Portal"
         },
         // Column 3
@@ -67,7 +67,7 @@ const PortfolioShowcase = () => {
             id: 9,
             name: "Travel Agency",
             type: "image",
-            src: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Travel Agency"
         },
         {
@@ -81,14 +81,14 @@ const PortfolioShowcase = () => {
             id: 11,
             name: "Tech Startup",
             type: "image",
-            src: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Tech Startup Demo"
         },
         {
             id: 12,
             name: "Portfolio Website",
             type: "image",
-            src: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+            src: "/assets/images/website&landingpage/hero1.png",
             alt: "Portfolio Website"
         }
     ];

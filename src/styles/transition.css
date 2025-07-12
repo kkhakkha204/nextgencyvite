@@ -1,0 +1,114 @@
+/* Page Transition Styles */
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page-transition.entering {
+    transform: translateX(0);
+}
+
+.page-transition.exiting {
+    transform: translateX(-100%);
+}
+
+/* Content Overlay */
+.content-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.content-overlay.visible {
+    opacity: 1;
+}
+
+/* Logo Animation */
+.transition-logo {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+    opacity: 0.9;
+    animation: pulse 2s infinite;
+}
+
+@media (min-width: 768px) {
+    .transition-logo {
+        width: 8rem;
+        height: 8rem;
+    }
+}
+
+/* Smooth pulse animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.02);
+    }
+}
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent scroll during transition */
+body.transition-active {
+    overflow: hidden;
+}
+
+/* Hardware acceleration for smooth transitions */
+.page-transition,
+.content-overlay {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .page-transition {
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .transition-logo {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .page-transition {
+        transition: none;
+    }
+
+    .transition-logo {
+        animation: none;
+    }
+
+    .content-overlay {
+        transition: none;
+    }
+}
