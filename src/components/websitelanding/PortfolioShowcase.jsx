@@ -16,14 +16,14 @@ const PortfolioShowcase = () => {
             id: 2,
             name: "Corporate Website",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Corporate Website"
         },
         {
             id: 3,
             name: "Mobile App Landing",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Mobile App Landing"
         },
         {
@@ -38,28 +38,28 @@ const PortfolioShowcase = () => {
             id: 5,
             name: "Finance Dashboard",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Finance Dashboard"
         },
         {
             id: 6,
             name: "Healthcare System",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Healthcare System"
         },
         {
             id: 7,
             name: "Education Platform",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Education Platform"
         },
         {
             id: 8,
             name: "Real Estate Portal",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Real Estate Portal"
         },
         // Column 3
@@ -67,7 +67,7 @@ const PortfolioShowcase = () => {
             id: 9,
             name: "Travel Agency",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Travel Agency"
         },
         {
@@ -81,14 +81,14 @@ const PortfolioShowcase = () => {
             id: 11,
             name: "Tech Startup",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Tech Startup Demo"
         },
         {
             id: 12,
             name: "Portfolio Website",
             type: "image",
-            src: "/assets/images/website&landingpage/hero1.png",
+            src: "/assets/images/website&landingpage/beauty.svg",
             alt: "Portfolio Website"
         }
     ];
