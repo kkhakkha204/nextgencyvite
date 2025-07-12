@@ -22,20 +22,12 @@ const queryClient = new QueryClient({
     },
 });
 
-// Content Overlay Component
-const ContentOverlay = ({ isVisible }) => {
-    if (!isVisible) return null;
-
-    return (
-        <div className="fixed inset-0 z-[9998] bg-white/80 backdrop-blur-sm transition-opacity duration-200" />
-    );
-};
+// Content Overlay Component - Removed as requested
 
 // Router Content Component
 const RouterContent = () => {
     const {
         isTransitioning,
-        showOverlay,
         handleTransitionComplete
     } = usePageTransition();
 
@@ -54,9 +46,6 @@ const RouterContent = () => {
                 </Routes>
             </main>
             <Footer />
-
-            {/* Overlay để che nội dung trong quá trình transition */}
-            <ContentOverlay isVisible={showOverlay} />
 
             {/* Page Transition */}
             <PageTransition

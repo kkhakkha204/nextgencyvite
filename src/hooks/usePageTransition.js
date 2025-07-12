@@ -5,14 +5,12 @@ export const usePageTransition = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [isTransitioning, setIsTransitioning] = useState(false);
-    const [showOverlay, setShowOverlay] = useState(false);
     const [currentPath, setCurrentPath] = useState(location.pathname);
 
     // Custom navigation function với transition
     const navigateWithTransition = useCallback((path) => {
         if (path === currentPath || isTransitioning) return;
 
-        setShowOverlay(true);
         setIsTransitioning(true);
 
         // Navigate after transition starts
@@ -24,7 +22,6 @@ export const usePageTransition = () => {
     // Handle transition completion
     const handleTransitionComplete = useCallback(() => {
         setIsTransitioning(false);
-        setShowOverlay(false);
 
         // Scroll to top after transition
         setTimeout(() => {
@@ -75,7 +72,6 @@ export const usePageTransition = () => {
 
     return {
         isTransitioning,
-        showOverlay,
         currentPath,
         navigateWithTransition,
         handleTransitionComplete

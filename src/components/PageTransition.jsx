@@ -19,10 +19,10 @@ const PageTransition = ({ isTransitioning, onTransitionComplete, logoSrc = '/ass
                     setPhase('hidden');
                     document.body.classList.remove('transition-active');
                     onTransitionComplete();
-                }, 800);
+                }, 1000);
 
                 return () => clearTimeout(exitTimer);
-            }, 800);
+            }, 1000);
 
             return () => clearTimeout(enterTimer);
         }
