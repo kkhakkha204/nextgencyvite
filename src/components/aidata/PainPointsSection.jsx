@@ -46,12 +46,18 @@ const PainPointSection = () => {
 
     return (
         <section className=" pt-[60px] lg:pt-[90px]">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                <div className="text-center mb-4 lg:mb-8">
+                    {/* Badge */}
+                    <div className="inline-flex items-center justify-center mb-2">
+            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[13px] lg:text-[15px] font-medium">
+              Automation - Data
+            </span>
+                    </div>
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black">
                         Nỗi đau của doanh nghiệp
-                        <span className="block text-[24px] lg:text-[40px] font-archivo font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#5534bb]">
+                        <span className="block text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#5534bb]">
               & Giải pháp cung cấp
             </span>
                     </h2>
@@ -67,7 +73,7 @@ const PainPointSection = () => {
                                     <div className="bg-black p-5 md:p-7">
                                         <div className="flex items-start">
                                             <div className="flex-1">
-                                                <h4 className="text-white font-medium text-[16px] lg:text-[20px] mb-1">
+                                                <h4 className="text-white font-medium font-archivo text-[16px] lg:text-[20px] mb-1">
                                                     {pain.title}
                                                 </h4>
                                                 <p className="text-gray-100 text-[14px] lg:text-[16px] leading-relaxed">
@@ -81,14 +87,14 @@ const PainPointSection = () => {
                                     <div className="bg-white p-5 md:p-7">
                                         <div className="flex items-start">
                                             <div className="flex-1">
-                                                <h4 className="text-black font-medium text-[16px] lg:text-[20px] mb-1">
+                                                <h4 className="text-black font-medium font-archivo text-[16px] lg:text-[20px] mb-1">
                                                     {solutions[index].title}
                                                 </h4>
                                                 <p className="text-gray-800 text-[14px] lg:text-[16px] leading-relaxed mb-3">
                                                     {solutions[index].description}
                                                 </p>
 
-                                                <span className="px-3 py-1.5 bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white text-[13px] lg:text-[15px] font-medium rounded-full">
+                                                <span className="px-3 py-1.5 bg-purple-50 text-[#5534bb] text-[13px] lg:text-[15px] font-medium rounded-full">
                             {solutions[index].highlight}
                           </span>
                                             </div>

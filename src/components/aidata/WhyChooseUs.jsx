@@ -1,18 +1,18 @@
 import React from 'react';
 
-const WhyChooseNextgency = () => {
+const WhyChooseUs = () => {
     return (
         <section className="pt-[60px] lg:pt-[90px] bg-white">
-            <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    <h2 className="text-[24px] md:text-[28px] font-archivo font-semibold mb-1 leading-tight">
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] font-archivo font-semibold leading-tight">
                         Vì sao bạn nên chọn<br />
-                        <span className="bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent font-archivo text-[40px] sm:text-[56px]">
+                        <span className="bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent font-archivo text-[40px] md:text-[50px] lg:text-[60px] uppercase">
               Nextgency?
             </span>
                     </h2>
-                    <p className="hidden lg:block text-black text-[15px] lg:text-[18px] max-w-4xl mx-auto leading-relaxed">
+                    <p className="hidden lg:block text-black text-[15px] lg:text-[18px] max-w-2xl mx-auto leading-relaxed">
                         Nextgency là đơn vị thiết kế web và landing page uy tín với 3 năm kinh nghiệm, chuyên tạo giao diện đẹp, tối ưu chuyển đổi và dễ quản lý – đồng hành cùng hàng trăm doanh nghiệp nâng tầm thương hiệu số.
                     </p>
                 </div>
@@ -20,7 +20,7 @@ const WhyChooseNextgency = () => {
                 {/* Main Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-3">
                     {/* Cột A (40%) */}
-                    <div className="lg:col-span-2 bg-black rounded-xl px-6 pt-6 text-white lg:h-[500px]">
+                    <div className="lg:col-span-2 bg-black rounded-2xl px-6 pt-6 text-white lg:h-[500px]">
                         {/* Row A (45%) */}
                         <div className="mb-6 lg:mb-8 lg:h-[20%] flex flex-col justify-center">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -47,12 +47,12 @@ const WhyChooseNextgency = () => {
                         </div>
 
                         {/* Row B (55%) - Ảnh nhân sự */}
-                        <div className="lg:h-[80%] flex lg:pb-8">
-                            <div className="w-full h-52 lg:h-full pb-6 overflow-hidden">
+                        <div className="h-[80%] flex lg:pb-8">
+                            <div className="w-full h-56 md:h-full pb-6 overflow-hidden">
                                 <img
-                                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    src="/assets/images/whychooseus.webp"
                                     alt="Đội ngũ chuyên gia Nextgency"
-                                    className="w-full h-full rounded-2xl object-cover"
+                                    className="w-full h-full rounded-xl object-cover"
                                 />
                             </div>
                         </div>
@@ -106,7 +106,7 @@ const WhyChooseNextgency = () => {
                                 <p className="text-gray-100 text-[14px] lg:text-[16px] ">
                                     Được tin tưởng bởi
                                 </p>
-                                <div className="text-[40px] lg:text-[56px] font-semibold bg-gradient-to-r from-[#2faeec] via-[#ae80fd] to-[#2faeec] bg-clip-text text-transparent">
+                                <div className="text-[40px] lg:text-[56px] font-semibold bg-[#ae80fd] bg-clip-text text-transparent">
                                     100+
                                 </div>
                                 <p className="text-gray-100 text-[14px] lg:text-[16px]">
@@ -121,4 +121,4 @@ const WhyChooseNextgency = () => {
     );
 };
 
-export default WhyChooseNextgency;
+export default WhyChooseUs;

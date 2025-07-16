@@ -5,17 +5,17 @@ import {ArrowUpRight} from "lucide-react";
 const Hero = () => {
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-5 items-center">
+            <div className="md:max-w-[650px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-5 items-center">
                     {/* Content Column - 60% */}
-                    <div className="lg:col-span-3 space-y-6 mb-4 lg:mb-0">
+                    <div className="md:col-span-3 space-y-4 mb-4 lg:mb-0">
                         {/* Title Section */}
                         <div className="space-y-2">
-                            <h1 className="text-[24px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
+                            <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
                                 AUTOMATION
                             </h1>
                             <div className="flex items-center gap-4">
-                                <h1 className="text-[24px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
+                                <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
                                     AI & DATA
                                 </h1>
                                 {/* SVG Circles */}
@@ -66,7 +66,7 @@ const Hero = () => {
                         </div>
 
                         {/* Divider Line */}
-                        <div className="w-72 h-0.5 bg-black"></div>
+                        <div className="hidden lg:block w-72 h-0.5 bg-black"></div>
 
                         {/* Description */}
                         <div className="space-y-4">
@@ -83,7 +83,7 @@ const Hero = () => {
 
                             >
         <span className="">
-            Hợp tác ngay
+            Nhận tư vấn
         </span>
                                 <div
                                     className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
@@ -97,13 +97,13 @@ const Hero = () => {
                     </div>
 
                     {/* Image Column - 40% */}
-                    <div className="lg:col-span-2">
+                    <div className="md:col-span-2">
                         <div className="relative">
-                            <div className="aspect-[1/1] overflow-hidden rounded-2xl bg-gray-100">
+                            <div className="aspect-[1/1] overflow-hidden rounded-xl bg-gray-100">
                                 <img
                                     src="/assets/images/dataai/hero.webp"
                                     alt="AI & Automation Technology"
-                                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                    className=" w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
                         </div>
