@@ -69,19 +69,19 @@ const AdvertisingFormsSection = () => {
 
     return (
         <section className="bg-white pt-[60px] lg:pt-[90px]">
-            <div className="max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         9 Hình thức quảng cáo
                     </h2>
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
                         Mỗi gói sẽ được triển khai 9 hình thức quảng cáo của Google theo yêu cầu từ doanh nghiệp
                     </p>
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-3">
                     {advertisingForms.map((form) => (
                         <div
                             key={form.id}

@@ -78,8 +78,8 @@ const ServicesSection = () => {
                             key={index}
                             className="flex-shrink-0 w-72 md:w-80 mx-2"
                         >
-                            <div className="bg-white rounded-xl p-2 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-300 group cursor-pointer">
-                                <div className="aspect-video mb-4 overflow-hidden rounded-lg">
+                            <div className="bg-white rounded-2xl p-2 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-300 group cursor-pointer">
+                                <div className="aspect-video mb-4 overflow-hidden rounded-2xl">
                                     <img
                                         src={service.image}
                                         alt={service.name}

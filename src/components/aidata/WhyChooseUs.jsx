@@ -18,7 +18,7 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-3">
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
                     {/* Cột A (40%) */}
                     <div className="lg:col-span-2 bg-black rounded-2xl px-6 pt-6 text-white lg:h-[500px]">
                         {/* Row A (45%) */}
@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
                                 <img
                                     src="/assets/images/whychooseus.webp"
                                     alt="Đội ngũ chuyên gia Nextgency"
-                                    className="w-full h-full rounded-xl object-cover"
+                                    className="w-full h-full rounded-2xl object-cover"
                                 />
                             </div>
                         </div>
@@ -61,9 +61,9 @@ const WhyChooseUs = () => {
                     {/* Cột B (60%) */}
                     <div className="lg:col-span-3 space-y-3 lg:h-[500px]">
                         {/* Row A (50%) */}
-                        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 lg:h-[245px]">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:h-[245px]">
                             {/* Cột 60% */}
-                            <div className="md:col-span-3 rounded-xl p-6 relative overflow-hidden h-full">
+                            <div className="md:col-span-3 rounded-2xl p-6 relative overflow-hidden h-full">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium mb-4 text-black">
                                     Kinh nghiệm 3+ năm
                                 </h3>
@@ -79,7 +79,7 @@ const WhyChooseUs = () => {
                             </div>
 
                             {/* Cột 40% */}
-                            <div className="md:col-span-2 bg-gradient-to-br from-[#5534bb] to-black rounded-xl p-6 flex flex-col h-full">
+                            <div className="md:col-span-2 bg-gradient-to-br from-[#5534bb] to-black rounded-2xl p-6 flex flex-col h-full">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium mb-4 text-white">
                                     Tối ưu SEO
                                 </h3>
@@ -90,9 +90,9 @@ const WhyChooseUs = () => {
                         </div>
 
                         {/* Row B (50%) */}
-                        <div className="grid grid-cols-1 md:grid-cols-5 gap-3 lg:h-[245px]">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:h-[245px]">
                             {/* Cột 40% */}
-                            <div className="md:col-span-2 border-2 border-black rounded-xl p-6 flex flex-col h-full">
+                            <div className="md:col-span-2 border-2 border-black rounded-2xl p-6 flex flex-col h-full">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium mb-4 text-[#1c1c1c]">
                                     Hỗ trợ 24/7
                                 </h3>
@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
                             </div>
 
                             {/* Cột 60% */}
-                            <div className="md:col-span-3 bg-black rounded-xl p-6 flex flex-col justify-center items-center text-center text-white h-full">
+                            <div className="md:col-span-3 bg-black rounded-2xl p-6 flex flex-col justify-center items-center text-center text-white h-full">
                                 <p className="text-gray-100 text-[14px] lg:text-[16px] ">
                                     Được tin tưởng bởi
                                 </p>

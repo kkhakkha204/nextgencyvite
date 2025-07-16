@@ -27,9 +27,9 @@ const ServicesDivider = () => {
 
     return (
         <section className="bg-black py-[60px] md:py-[90px]">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className=" md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                     {services.map((service) => (
                         <div
                             key={service.id}
@@ -41,7 +41,7 @@ const ServicesDivider = () => {
                                     <img
                                         src={service.image}
                                         alt={service.title}
-                                        className="w-full h-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-110"
+                                        className="w-full h-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -49,7 +49,7 @@ const ServicesDivider = () => {
 
                                 {/* Content */}
                                 <div className="p-1 sm:p-2 text-center">
-                                    <h3 className="text-[15px] lg:text-[18px] text-white group-hover:text-blue-400 transition-colors duration-300">
+                                    <h3 className="text-[12px] lg:text-[18px] text-white group-hover:text-blue-400 transition-colors duration-300">
                                         {service.title}
                                     </h3>
                                 </div>

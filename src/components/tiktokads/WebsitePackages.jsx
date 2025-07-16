@@ -3,74 +3,57 @@ import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
     const basicFeatures = [
-        "Giao diện web cơ bản, dựng trong 2–3 ngày",
-        "Miễn phí tên miền .com",
-        "Tặng Hosting SSD",
-        "Thiết kế chuẩn SEO, tối ưu tốc độ tải trang",
-        "Responsive – tương thích mọi thiết bị",
-        "Tích hợp live chat, Messenger, Zalo",
-        "Cài sẵn plugin cơ bản và SSL",
-        "Hỗ trợ xử lý sự cố (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)",
-        "Tư vấn quảng cáo đa nền tảng (Meta, Google, TikTok)"
+        "Phân tích sản phẩm, ngành hàng và mục tiêu kinh doanh",
+        "Lựa chọn định dạng TikTok Ads phù hợp (Traffic, Lead Form, Conversion)",
+        "Thiết lập tài khoản & tracking",
+        "Lên cấu trúc chiến dịch theo mô hình phễu",
+        "Cài đặt nhóm quảng cáo, đối tượng, ngân sách, lịch trình",
+        "Lựa chọn content có sẵn hoặc đề xuất nội dung mới",
+        "Theo dõi chỉ số & tối ưu hiệu suất",
+        "Báo cáo và đề xuất phương án cải tiến chiến dịch"
     ];
 
     const standardFeatures = [
-        "Thiết kế giao diện trung bình hoặc theo yêu cầu",
-        "Tặng tên miền .com hoặc .net",
-        "Hosting SSD lưu trữ tốc độ cao",
-        "Dựng website trong 3–7 ngày",
-        "Thiết kế chuẩn SEO, UX/UI, tối ưu tốc độ tải trang",
-        "Tương thích mọi thiết bị",
-        "Tặng 5–10 bài viết nội dung cơ bản (chuẩn SEO)",
-        "Tích hợp live chat, Messenger, Zalo",
-        "Tư vấn chiến dịch quảng cáo Meta, Google, TikTok",
-        "Tặng plugin, chứng chỉ SSL",
-        "Hỗ trợ kỹ thuật (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)"
+        "Rà soát ngành hàng, danh mục sản phẩm nổi bật",
+        "Xác định thời gian vàng và hành vi mua hàng của khách trên TikTok",
+        "Kết nối TikTok Shop với hệ thống quảng cáo",
+        "Gắn liên kết sản phẩm trong video/ads",
+        "Lên chiến dịch Add to Cart / Product View / Shop Follow",
+        "Tối ưu hóa tuyến nội dung kênh",
+        "Theo dõi chỉ số & tối ưu hiệu suất",
+        "Báo cáo và đề xuất phương án cải tiến chiến dịch"
     ];
 
     const advancedFeatures = [
-        "Thiết kế giao diện website cao cấp",
-        "Tặng tên miền .com, .net",
-        "Hosting SSD lưu trữ tốc độ cao",
-        "Dựng website 7–10 ngày",
-        "Tặng 20 bài viết chuẩn SEO",
-        "Cấu hình đầy đủ: tracking đa kênh, chuyển đổi động, đồng bộ danh mục sản phẩm",
-        "Tối ưu tốc độ – chuẩn mobile",
-        "Tư vấn và đồng hành chạy Ads đa nền tảng",
-        "Cấp tài khoản TikTok Ads miễn phí",
-        "Miễn phí thông báo website với Bộ Công Thương",
-        "Tặng full plugin, chứng chỉ SSL",
-        "Hỗ trợ kỹ thuật miễn phí trọn gói"
+        "Đăng ký chiến dịch quảng cáo dạng Live với TikTok",
+        "Đảm bảo duyệt nội dung, tránh vi phạm chính sách",
+        "Tư vấn kịch bản livestream thu hút (minigame, giới thiệu sản phẩm, feedback...)",
+        "Tối ưu không gian, lời thoại, call-to-action",
+        "Thiết lập quảng cáo dẫn về livestream theo thời gian thực",
+        "Target tệp khách theo độ tuổi, hành vi, ngành hàng",
+        "Cập nhật real-time số lượt xem, thời gian xem trung bình",
+        "Điều chỉnh nhóm quảng cáo hoặc content giữa phiên (nếu cần)",
+        "Tổng kết hiệu quả sau phiên livestream"
     ];
 
     return (
         <section className="pt-[60px] lg:pt-[90px]">
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
-            </span>
-                    </div>
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
-                        Gói xây dựng Website
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                        Các gói dịch vụ
                     </h2>
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-2xl mx-auto leading-relaxed">
-                        Chọn gói dịch vụ phù hợp để xây dựng website chuyên nghiệp,
-                        tối ưu hóa hiệu suất và phù hợp với mọi nhu cầu kinh doanh
-                    </p>
                 </div>
 
                 {/* Packages */}
-                <div className="grid lg:grid-cols-3 gap-8 lg:gap-8">
+                <div className="grid lg:grid-cols-3 gap-6">
                     {/* Gói Cơ Bản */}
                     <div className="bg-white border-2 border-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-black">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Website Cơ Bản
+                                    Gói quảng cáo chuyển đổi Website/ Landing page
                                 </h3>
                             </div>
 
@@ -109,9 +92,11 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-[#2faeec]">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Website Tiêu Chuẩn
+                                    Gói quảng cáo Tiktok (Chuyển đổi video)
                                 </h3>
                             </div>
+
+
 
                             <div className="space-y-4 mb-8">
                                 {standardFeatures.map((feature, index) => (
@@ -148,9 +133,10 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-white">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-white">
-                                    Gói Website Nâng Cao
+                                    Gói quảng cáo Livestream Tiktok
                                 </h3>
                             </div>
+
 
                             <div className="space-y-4 mb-8">
                                 {advancedFeatures.map((feature, index) => (

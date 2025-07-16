@@ -1,30 +1,30 @@
 const PainPointsSection = () => {
     const painPoints = [
         {
-            title: "Tải chậm, trải nghiệm tệ",
-            description: "Website nhìn đẹp mắt, nhưng load chậm – không tối ưu trải nghiệm người dùng (UX/UI).",
-            impact: "Khách hàng rời đi sau 3 giây",
+            title: "Landing page không tối ưu",
+            description: "Quảng cáo hiện top nhưng vẫn không ra đơn vì landing page không được tối ưu cho chuyển đổi.",
+            impact: "Tiền ads bị đốt cháy vô ích",
             isDark: false,
             rotation: "lg:-rotate-1"
         },
         {
-            title: "Không responsive mobile",
-            description: "Giao diện không tối ưu trên mobile – trong khi 80% khách hàng đang lướt bằng điện thoại.",
-            impact: "Mất 80% khách hàng tiềm năng",
+            title: "Không biết từ khóa hiệu quả",
+            description: "Mỗi ngày tiêu tiền trên Google nhưng không biết từ khóa nào thực sự hiệu quả.",
+            impact: "Ngân sách marketing lãng phí",
             isDark: false,
             rotation: "lg:rotate-1"
         },
         {
-            title: "Không theo dõi được dữ liệu",
-            description: "Không tích hợp chatbot, pixel hay công cụ đo lường – không biết khách từ đâu đến, ở lại bao lâu, có mua hay không.",
-            impact: "Không tối ưu được marketing",
+            title: "Thiếu hệ thống tracking",
+            description: "Không có hệ thống tracking hành vi rõ ràng – không đo được hiệu suất theo từng chiến dịch.",
+            impact: "Không tối ưu marketing",
             isDark: false,
             rotation: "lg:rotate-1"
         },
         {
-            title: "CTA không rõ ràng",
-            description: "Landing page không rõ ràng Call To Action – khách hàng truy cập, lướt web qua lại sau đó… rời đi luôn.",
-            impact: "Tỷ lệ chuyển đổi thấp",
+            title: "Quảng cáo không thu hút",
+            description: "Mẫu quảng cáo nhàm chán, không thu hút – tệp khách tiềm năng bị đối thủ cướp mất.",
+            impact: "Mất khách hàng",
             isDark: true,
             rotation: "lg:-rotate-1"
         }
@@ -33,23 +33,23 @@ const PainPointsSection = () => {
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">
 
-            <div className="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
+                <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
             <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
+              Google Ads
             </span>
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Nỗi đau của doanh nghiệp
                     </h2>
 
                     {/* Description */}
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
                         Những vấn đề phổ biến mà doanh nghiệp gặp phải<br/>tạo nên một website không hiệu quả
                     </p>
                 </div>
@@ -60,9 +60,9 @@ const PainPointsSection = () => {
                         <div
                             key={index}
                             className={`
-                ${point.isDark ? 'bg-black' : 'bg-white/80 lg:bg-white/60 lg:backdrop-blur-sm'}
+                ${point.isDark ? 'bg-black' : 'bg-white/80'}
                 ${point.rotation}
-                border-2 border-black rounded-3xl p-6 lg:p-8
+                border-2 border-black rounded-2xl p-6 lg:p-8
                 shadow-md transform-gpu
                 lg:hover:shadow-lg lg:hover:scale-105 lg:hover:rotate-0
                 transition-all duration-300 ease-out
@@ -73,7 +73,7 @@ const PainPointsSection = () => {
 
                                 {/* Title */}
                                 <h3 className={`
-                  text-[16px] lg:text-[20px] font-medium
+                  text-[16px] lg:text-[20px] font-archivo font-medium
                   ${point.isDark ? 'text-white' : 'text-black'}
                 `}>
                                     {point.title}

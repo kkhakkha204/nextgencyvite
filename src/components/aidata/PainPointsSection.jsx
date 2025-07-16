@@ -67,7 +67,7 @@ const PainPointSection = () => {
                 <div className="space-y-6">
                     {painPoints.map((pain, index) => (
                         <div key={index} className="group relative">
-                            <div className="bg-black border-2 border-black rounded-3xl overflow-hidden transition-all duration-300">
+                            <div className="bg-black border-2 border-black rounded-2xl overflow-hidden transition-all duration-300">
                                 <div className="grid md:grid-cols-2">
                                     {/* Pain Point - Left Side (Black) */}
                                     <div className="bg-black p-5 md:p-7">

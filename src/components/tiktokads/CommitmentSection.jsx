@@ -6,27 +6,27 @@ const CommitmentSection = () => {
         {
             id: 1,
             title: "Thiết kế tùy biến theo yêu cầu",
-            description: "Cam kết giao diện được thiết kế tùy biến theo yêu cầu, đồng thời tuân thủ nguyên tắc thiết kế chuẩn UX/UI"
+                description: "Branding (Brand Takeover, Top View, In-feed Reach & Frequency): Quảng cáo tăng nhận diện thương hiệu xuất hiện đầu app hoặc trong luồng"
         },
         {
             id: 2,
             title: "Tối ưu tốc độ tải < 2 giây",
-            description: "Cam kết Website/Landing Page được tối ưu tốc độ tải < 2 giây (khi chạy thực tế), đáp ứng tiêu chuẩn Google PageSpeed"
+            description: "Lead & Chuyển đổi (Lead Gen Ads, Traffic Ads, Conversion Ads): Quảng cáo thu data, kéo về web hoặc landing page"
         },
         {
             id: 3,
             title: "Hỗ trợ kỹ thuật chuyên nghiệp",
-            description: "Cam kết hỗ trợ kỹ thuật & chỉnh sửa theo thoả thuận của từng gói dịch vụ"
+            description: "TikTok Shop (In-feed Add-to-Cart, Shop Now): Quảng cáo video bán hàng, tăng view, click, chốt đơn"
         },
         {
             id: 4,
             title: "Bàn giao đầy đủ quyền sở hữu",
-            description: "Cam kết mọi dữ liệu, source code và quyền truy cập được bàn giao đầy đủ cho khách hàng"
+            description: "Livestream (Live Ads, Top View to Live): Đẩy người xem về livestream, tăng tương tác thực"
         },
         {
             id: 5,
             title: "Bảo mật thông tin tuyệt đối",
-            description: "Cam kết không sử dụng hoặc chia sẻ dữ liệu khách hàng với bất kỳ bên thứ ba nào"
+            description: "Engagement & Personal Brand (Engagement Ads): Tăng lượt theo dõi, view kênh, phù hợp với creator, chuyên gia, KOLs"
         },
         {
             id: 6,
@@ -42,26 +42,26 @@ const CommitmentSection = () => {
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="max-w-screen-xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
+                <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
+            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[13px] lg:text-[15px] font-medium">
+              Google Ads
             </span>
                     </div>
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Cam kết của chúng tôi
                     </h2>
                 </div>
                 {/* Commitments List */}
-                <div className="max-w-4xl mx-auto">
+                <div className=" mx-auto">
                     <div className="space-y-6 sm:space-y-6">
                         {commitments.map((commitment) => (
                             <div
                                 key={commitment.id}
-                                className={`group relative rounded-lg p-2 neu-shadow-xs hover:shadow-lg transition-all duration-300 ${
+                                className={`group relative rounded-2xl p-2 neu-shadow-xs hover:shadow-lg transition-all duration-300 ${
                                     commitment.id === 6
                                         ? 'bg-black border-2 border-black'
                                         : 'bg-white border-2 border-black'

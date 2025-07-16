@@ -57,13 +57,13 @@ const ServicesDivider = () => {
                         <div key={service.id} className="flex flex-col items-center text-center group">
                             <div className="relative mb-6">
                                 {/* Ellipse Container */}
-                                <div className={`relative w-64 h-24 sm:w-72 sm:h-36 md:w-64 md:h-32 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
+                                <div className={`relative w-64 h-24 md:w-52 md:h-28 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
                                     {/* Ellipse Border */}
                                     <div className="absolute inset-0 rounded-full border-2 border-white/80 group-hover:border-white transition-colors duration-300"></div>
 
                                     {/* Content Inside Ellipse */}
-                                    <div className="px-6 py-4 text-white">
-                                        <p className="text-[10px] sm:text-base md:text-[16px] lg:text-[16px] leading-relaxed font-medium whitespace-pre-line">
+                                    <div className="px-4 py-4 text-white">
+                                        <p className="text-[10px] lg:text-[16px] leading-relaxed font-medium whitespace-pre-line">
                                             {service.description}
                                         </p>
                                     </div>

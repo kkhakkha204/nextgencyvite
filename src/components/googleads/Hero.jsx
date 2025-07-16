@@ -5,19 +5,19 @@ import {ArrowUpRight} from "lucide-react";
 const Hero = () => {
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header Content */}
-                <div className="text-center mb-6 lg:mb-10">
-                    <h1 className="text-[24px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black via-[#5534bb] to-[#5534bb] uppercase bg-clip-text text-transparent leading-tight mb-1">
+                <div className="text-center mb-4 lg:mb-8">
+                    <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black via-[#5534bb] to-[#5534bb] uppercase bg-clip-text text-transparent leading-tight mb-1">
                         Dịch vụ google ads
                     </h1>
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto leading-relaxed">
                         Chúng tôi tạo ra những giải pháp công nghệ đột phá, mang đến trải nghiệm số hoàn hảo cho doanh nghiệp của bạn.
                     </p>
                 </div>
 
                 {/* Image Gallery Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-6 sm:mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-4 sm:mb-8">
                     {/* Column 1 - Single tall image */}
                     <div className="hidden lg:flex items-center justify-center">
                         <div className="w-full aspect-[4/4] bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl shadow-lg overflow-hidden">
@@ -40,7 +40,7 @@ const Hero = () => {
 
                     {/* Column 3 - Main large image */}
                     <div className="flex items-center justify-center">
-                        <div className="w-full max-h-[360px] aspect-[4/5] bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl shadow-xl overflow-hidden">
+                        <div className="w-full max-h-[340px] aspect-[4/5] bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl shadow-xl overflow-hidden">
                             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                             </div>
                         </div>

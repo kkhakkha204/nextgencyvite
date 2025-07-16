@@ -6,30 +6,35 @@ const CommitmentSection = () => {
         {
             id: 1,
             title: "Thiết kế tùy biến theo yêu cầu",
-            description: "Cam kết giao diện được thiết kế tùy biến theo yêu cầu, đồng thời tuân thủ nguyên tắc thiết kế chuẩn UX/UI"
+            description: "Cam kết hiệu suất và chỉ số đo lường rõ ràng"
         },
         {
             id: 2,
             title: "Tối ưu tốc độ tải < 2 giây",
-            description: "Cam kết Website/Landing Page được tối ưu tốc độ tải < 2 giây (khi chạy thực tế), đáp ứng tiêu chuẩn Google PageSpeed"
+            description: "Cam kết tài khoản quảng cáo ổn định"
         },
         {
             id: 3,
             title: "Hỗ trợ kỹ thuật chuyên nghiệp",
-            description: "Cam kết hỗ trợ kỹ thuật & chỉnh sửa theo thoả thuận của từng gói dịch vụ"
+            description: "Cam kết tối ưu ngân sách"
         },
         {
             id: 4,
             title: "Bàn giao đầy đủ quyền sở hữu",
-            description: "Cam kết mọi dữ liệu, source code và quyền truy cập được bàn giao đầy đủ cho khách hàng"
+            description: "Cam kết đồng hành và phản hồi nhanh chóng (muộn nhất 2 tiếng)"
         },
         {
             id: 5,
             title: "Bảo mật thông tin tuyệt đối",
-            description: "Cam kết không sử dụng hoặc chia sẻ dữ liệu khách hàng với bất kỳ bên thứ ba nào"
+            description: "Cam kết minh bạch trong chi phí và quy trình"
         },
         {
             id: 6,
+            title: "Bảo mật thông tin tuyệt đối",
+            description: "Cam kết bảo mật thông tin và dữ liệu"
+        },
+        {
+            id: 7,
             title: "Xử lý khiếu nại chuyên nghiệp",
             description: "Trong mọi tình huống khiếu nại, Nextgency cam kết:",
             subCommitments: [
@@ -42,27 +47,27 @@ const CommitmentSection = () => {
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="max-w-screen-xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
+                <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
+            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[13px] lg:text-[15px] font-medium">
+              Facebook Ads
             </span>
                     </div>
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Cam kết của chúng tôi
                     </h2>
                 </div>
                 {/* Commitments List */}
-                <div className="max-w-4xl mx-auto">
+                <div className=" mx-auto">
                     <div className="space-y-6 sm:space-y-6">
                         {commitments.map((commitment) => (
                             <div
                                 key={commitment.id}
-                                className={`group relative rounded-lg p-2 neu-shadow-xs hover:shadow-lg transition-all duration-300 ${
-                                    commitment.id === 6
+                                className={`group relative rounded-2xl p-2 neu-shadow-xs hover:shadow-lg transition-all duration-300 ${
+                                    commitment.id === 7
                                         ? 'bg-black border-2 border-black'
                                         : 'bg-white border-2 border-black'
                                 }`}
@@ -72,11 +77,11 @@ const CommitmentSection = () => {
                                     <div className="flex-shrink-0">
                                         <div className="relative">
                                             <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center transition-all duration-300 ${
-                                                commitment.id === 6
+                                                commitment.id === 7
                                                     ? 'bg-[#5534bb]'
                                                     : 'bg-black'
                                             }`}>
-                                                {commitment.id === 6 ? (
+                                                {commitment.id === 7 ? (
                                                     <AlertTriangle className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                                                 ) : (
                                                     <span className="text-lg sm:text-xl font-semibold text-white transition-colors duration-300">
@@ -91,7 +96,7 @@ const CommitmentSection = () => {
                                     <div className="flex-1 min-w-0">
                                         <div className="w-full">
                                             <p className={`text-[14px] lg:text-[16px] font-medium leading-relaxed ${
-                                                commitment.id === 6 ? 'text-white' : 'text-black'
+                                                commitment.id === 7 ? 'text-white' : 'text-black'
                                             }`}>
                                                 {commitment.description}
                                             </p>

@@ -27,10 +27,10 @@ const Hero = () => {
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="relative z-10 w-full md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 <div className="text-left space-y-6 py-20">
                     {/* Main Title */}
-                    <h1 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black leading-tight uppercase">
+                    <h1 className="text-[24px] md:text-[32px] lg:text-[60px] font-archivo font-semibold text-black leading-tight uppercase">
                         <span className="block">Facebook<br/>Dataset & CRM</span>
                     </h1>
 

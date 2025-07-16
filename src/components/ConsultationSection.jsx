@@ -7,8 +7,8 @@ export default function ConsultationSection() {
         >
             <div className="max-w-[700px] mx-auto">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-white mb-1">
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-white mb-1">
                         Nhận tư vấn
                     </h2>
                     <p className="text-[15px] sm:text-[18px] text-white max-w-2xl mx-auto leading-relaxed">
@@ -17,7 +17,7 @@ export default function ConsultationSection() {
                 </div>
 
                 {/* Glassmorphism Form */}
-                <div className="backdrop-blur-3xl bg-white/10 rounded-lg border-2 border-white/80 shadow-2xl p-4 sm:p-6 lg:p-6">
+                <div className="backdrop-blur-3xl bg-white/10 rounded-2xl border-2 border-white/80 shadow-2xl p-4 sm:p-6 lg:p-6">
                     <form className="space-y-6">
                         <div className="space-y-6">
                             {/* Tên khách hàng */}
@@ -27,7 +27,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-2xl text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Nhập tên của bạn"
                                     required
                                 />
@@ -40,7 +40,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="tel"
-                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-2xl text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Nhập số điện thoại"
                                     required
                                 />
@@ -53,7 +53,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="email"
-                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-2xl text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="example@gmail.com"
                                     required
                                 />
@@ -66,7 +66,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-2xl text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Ví dụ: Thương mại điện tử, F&B..."
                                     required
                                 />
@@ -79,7 +79,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
+                                    className="w-full px-4 py-2.5  border-2 border-white/20 rounded-2xl text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Nhập tên thương hiệu (nếu có)"
                                 />
                             </div>
@@ -91,7 +91,7 @@ export default function ConsultationSection() {
                                 </label>
                                 <textarea
                                     rows="5"
-                                    className="w-full px-4 py-2.5 border-2 border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
+                                    className="w-full px-4 py-2.5 border-2 border-white/20 rounded-2xl text-black text-[12px] lg:text-[14px] placeholder-gray-700 transition-all duration-300 "
                                     placeholder="Mô tả chi tiết yêu cầu tư vấn của bạn..."
                                     required
                                 ></textarea>
@@ -104,7 +104,7 @@ export default function ConsultationSection() {
                 <div className="text-center pt-8">
                     <button
                         type="button"
-                        className="group relative px-12 py-4 bg-black backdrop-blur-sm border border-white/30 rounded-lg text-white font-medium text-lg hover:from-white/30 hover:to-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50"
+                        className="group relative px-12 py-4 bg-black backdrop-blur-sm border border-white/30 rounded-full text-white font-medium text-lg hover:from-white/30 hover:to-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50"
                     >
                         <span className="flex items-center text-[15px] lg:text-[16px]">
                             Gửi thông tin

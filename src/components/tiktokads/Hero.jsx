@@ -5,11 +5,11 @@ import {Link} from "react-router-dom";
 const Hero = () => {
     return (
         <section className="py-[60px] lg:py-[90px]">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
 
                 {/* Row A - Hidden on mobile */}
-                <div className="hidden md:block">
-                    <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="hidden lg:block">
+                    <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <img
                             src="/assets/images/tiktokads/hero.webp"
                             alt="Team collaboration"
@@ -21,17 +21,17 @@ const Hero = () => {
 
                 {/* Row B - Main content */}
                 <div className="py-4 lg:py-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-6 items-center">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-6 items-center">
 
                         {/* Column A - Content (40%) */}
-                        <div className="lg:col-span-2 space-y-6">
+                        <div className="md:col-span-2 space-y-6">
                             <div className="space-y-6">
-                                <h1 className="text-[24px] lg:text-[60px] font-archivo font-semibold text-black uppercase leading-tight">
+                                <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold text-black uppercase leading-tight">
                                     Tiktok Ads
                                 </h1>
 
                                 <p className="text-[15px] lg:text-[18px] text-black leading-relaxed max-w-xl">
-                                    We transform innovative ideas into digital realities. Our team of experts delivers cutting-edge solutions that drive growth and create lasting impact for businesses worldwide.
+                                    Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên nền tảng Tiktok để mang về doanh thu và độ nhận diện phủ khắp. Giải pháp từ dịch vụ Tiktok Ads của Nextgency:
                                 </p>
                             </div>
 
@@ -57,11 +57,11 @@ const Hero = () => {
                         </div>
 
                         {/* Column B - Images (60%) */}
-                        <div className="lg:col-span-3 grid grid-cols-10 gap-4 h-60 lg:h-[450px]">
+                        <div className="md:col-span-3 grid grid-cols-10 gap-4 h-60 lg:h-[450px]">
 
                             {/* B1 - 60% column */}
                             <div className="col-span-6 relative">
-                                <div className="h-full rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                                <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
                                     <img
                                         src="/assets/images/tiktokads/hero2.webp"
                                         alt="Modern workspace"
@@ -73,7 +73,7 @@ const Hero = () => {
 
                             {/* B2 - 40% column */}
                             <div className="col-span-4 relative">
-                                <div className="h-full rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                                <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
                                     <img
                                         src="/assets/images/tiktokads/hero2.webp"
                                         alt="Innovation"

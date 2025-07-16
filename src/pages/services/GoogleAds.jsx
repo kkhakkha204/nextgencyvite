@@ -16,9 +16,9 @@ const GoogleAds = () => {
             <ServicesDivider/>
             <PainPointsSection/>
             <WhyChooseUs/>
-            <ClientsPartnersSection/>
             <WebsitePackages/>
             <AdvertisingFormsSection/>
+            <ClientsPartnersSection/>
             <CommitmentSection/>
             <ServicesSection/>
         </div>
