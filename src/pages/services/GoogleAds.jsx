@@ -7,6 +7,7 @@ import CommitmentSection from "../../components/googleads/CommitmentSection.jsx"
 import WebsitePackages from "../../components/googleads/WebsitePackages.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import Hero from "../../components/googleads/Hero.jsx";
+import AdvertisingFormsSection from "../../components/googleads/AdvertisingFormsSection.jsx";
 
 const GoogleAds = () => {
     return (
@@ -17,6 +18,7 @@ const GoogleAds = () => {
             <WhyChooseUs/>
             <ClientsPartnersSection/>
             <WebsitePackages/>
+            <AdvertisingFormsSection/>
             <CommitmentSection/>
             <ServicesSection/>
         </div>

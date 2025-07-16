@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Thiết kế web theo UI/UX hiện đại,\nđa nền tảng (PC – Mobile – Tablet).",
+            description: "Triển khai Google Search Ads, Display, YouTube và Performance Max",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"
@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Tích hợp pixel, chatbot, CRM,\nthanh toán hoặc automation theo yêu cầu.",
+            description: "Tracking theo từ khóa – chiến dịch – nguồn đơn.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Hosting và bảo trì\nđi kèm dịch vụ trọn gói.",
+            description: "Tối ưu chuyển đổi theo landing page và hành vi người dùng",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"
@@ -51,7 +51,7 @@ const ServicesDivider = () => {
 
     return (
         <section className="bg-black pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px]">
-            <div className="w-full max-w-[1380px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {services.map((service) => (
                         <div key={service.id} className="flex flex-col items-center text-center group">
