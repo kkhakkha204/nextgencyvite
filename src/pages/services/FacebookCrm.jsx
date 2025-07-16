@@ -1,3 +1,30 @@
-export default class FacebookCrm {
+import React from 'react';
+import Hero from "../../components/datasetcrm/Hero.jsx";
+import ServicesDivider from "../../components/datasetcrm/ServicesDivider.jsx";
+import PainPointsSection from "../../components/datasetcrm/PainPointsSection.jsx";
+import WhyChooseUs from "../../components/datasetcrm/WhyChooseUs.jsx";
+import VideoSection from "../../components/datasetcrm/VideoSection.jsx";
+import ClientsPartnersSection from "../../components/datasetcrm/ClientsPartnersSection.jsx";
+import CommitmentSection from "../../components/datasetcrm/CommitmentSection.jsx";
+import ConsultationSection from "../../components/ConsultationSection.jsx";
+import WebsitePackages from "../../components/datasetcrm/WebsitePackages.jsx";
+import ServicesSection from "../../components/ServicesSection.jsx";
 
-}
+const FacebookCrm = () => {
+    return (
+        <div>
+            <Hero/>
+            <ServicesDivider/>
+            <PainPointsSection/>
+            <WhyChooseUs/>
+            <VideoSection/>
+            <WebsitePackages/>
+            <ClientsPartnersSection/>
+            <CommitmentSection/>
+            <ConsultationSection/>
+            <ServicesSection/>
+        </div>
+    );
+};
+
+export default FacebookCrm;

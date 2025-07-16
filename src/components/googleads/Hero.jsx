@@ -17,7 +17,7 @@ const Hero = () => {
                 </div>
 
                 {/* Image Gallery Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-12 sm:mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 mb-6 sm:mb-10">
                     {/* Column 1 - Single tall image */}
                     <div className="hidden lg:flex items-center justify-center">
                         <div className="w-full aspect-[4/4] bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl shadow-lg overflow-hidden">

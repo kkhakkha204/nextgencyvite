@@ -10,6 +10,9 @@ import AiData from "./pages/services/AiData.jsx";
 import GoogleAds from "./pages/services/GoogleAds.jsx";
 import PageTransition from './components/PageTransition';
 import { usePageTransition } from './hooks/usePageTransition';
+import FacebookAds from "./pages/services/FacebookAds.jsx";
+import TiktokAds from "./pages/services/TiktokAds.jsx";
+import FacebookCrm from "./pages/services/FacebookCrm.jsx";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -43,6 +46,9 @@ const RouterContent = () => {
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
                     <Route path="/services/ai-data" element={<AiData />} />
                     <Route path="/services/google-ads" element={<GoogleAds />} />
+                    <Route path="/services/facebook-ads" element={<FacebookAds />} />
+                    <Route path="/services/tiktok-ads" element={<TiktokAds />} />
+                    <Route path="/services/facebook-crm" element={<FacebookCrm />} />
                 </Routes>
             </main>
             <Footer />
