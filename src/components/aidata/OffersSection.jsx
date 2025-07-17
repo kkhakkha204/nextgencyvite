@@ -1,5 +1,6 @@
 import React from 'react';
-import { Clock, TrendingUp, Package, Gift, Percent, CreditCard, ChevronRight } from 'lucide-react';
+import {Clock, TrendingUp, Package, Gift, Percent, CreditCard, ChevronRight, ArrowUpRight} from 'lucide-react';
+import {Link} from "react-router-dom";
 
 const OffersSection = () => {
     const commitmentOffers = [
@@ -60,28 +61,28 @@ const OffersSection = () => {
                 </div>
 
                 {/* Offers Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-2 bg-gray-950 rounded-2xl">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-2 bg-black rounded-2xl">
                     {/* Gói cam kết */}
                     <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
                         <div className="text-center mb-6">
                             <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c59efe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
                                 <Clock className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
                             </div>
-                            <h3 className="text-[16px] font-medium text-white mb-2 transition-colors duration-300 group-hover:text-[#c59efe]">Gói cam kết</h3>
-                            <p className="text-gray-400 text-sm transition-colors duration-300 group-hover:text-gray-300">Cam kết thời gian sử dụng</p>
+                            <h3 className="text-[18px] lg:text-[24px] font-medium text-white mb-1 transition-colors duration-300 group-hover:text-[#c59efe]">Gói cam kết</h3>
+                            <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-100">Cam kết thời gian sử dụng</p>
                         </div>
 
                         <div className="space-y-4">
                             {commitmentOffers.map((offer, index) => (
                                 <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 offer-item">
                                     <div className="flex items-center justify-between mb-2">
-                                        <span className="text-white font-semibold transition-colors duration-300">{offer.duration}</span>
-                                        <span className="text-[#c59efe] font-bold text-lg transition-all duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
+                                        <span className="text-white text-[13px] lg:text-[15px] font-medium transition-colors duration-300">{offer.duration}</span>
+                                        <span className="text-[#c59efe] text-[13px] lg:text-[15px] font-medium transition-all duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
                                     </div>
                                     {offer.bonus && (
                                         <div className="flex items-start gap-2 mt-3 pt-3 border-t border-white/10 transition-colors duration-300">
                                             <Gift className="w-4 h-4 text-[#c59efe] mt-0.5 flex-shrink-0 transition-colors duration-300 group-hover:text-[#d4b5ff]" />
-                                            <p className="text-sm text-gray-300 transition-colors duration-300 group-hover:text-gray-200">{offer.bonus}</p>
+                                            <p className="text-[13px] lg:text-[14px] text-gray-200 transition-colors duration-300 group-hover:text-gray-100">{offer.bonus}</p>
                                         </div>
                                     )}
                                 </div>
@@ -90,32 +91,31 @@ const OffersSection = () => {
                     </div>
 
                     {/* Gói tăng trưởng */}
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
-                        <div className="text-center mb-8">
-                            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#1a4498] to-[#c59efe] rounded-xl mb-4 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#1e4fb8] group-hover:to-[#d4b5ff] group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
+                    <div className="bg-[#c59efe] rounded-xl p-8 border-2 border-white transition-all duration-500 group hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                        <div className="text-center mb-6">
+                            <div className="inline-flex items-center justify-center w-14 h-14 bg-black rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
                                 <TrendingUp className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#c59efe]">Gói tăng trưởng</h3>
-                            <p className="text-gray-400 text-sm transition-colors duration-300 group-hover:text-gray-300">Dựa trên ngân sách đầu tư</p>
+                            <h3 className="text-[18px] lg:text-[24px] font-medium text-black mb-1 transition-colors duration-300">Gói tăng trưởng</h3>
+                            <p className="text-gray-800 text-sm transition-colors duration-300">Dựa trên ngân sách đầu tư</p>
                         </div>
 
                         <div className="space-y-4">
-                            <div className="grid grid-cols-3 gap-2 text-xs font-semibold text-gray-400 mb-2 transition-colors duration-300 group-hover:text-gray-300">
-                                <span>Ngân sách</span>
-                                <span>Cashback</span>
-                                <span>Hình thức</span>
+                            <div className="grid grid-cols-3 gap-2 text-[13px] lg:text-[15px] font-medium text-black  mb-1 transition-colors duration-300">
+                                <span className="text-center">Ngân sách</span>
+                                <span className="">Cashback</span>
+                                <span className="">Hình thức</span>
                             </div>
                             {growthOffers.map((offer, index) => (
-                                <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20">
+                                <div key={index} className="bg-white rounded-xl p-3 border border-white/10 transition-all duration-300">
                                     <div className="grid grid-cols-3 gap-2 items-center">
-                                        <div className="flex items-center gap-1">
-                                            <ChevronRight className="w-4 h-4 text-[#c59efe] transition-colors duration-300 group-hover:text-[#d4b5ff]" />
-                                            <span className="text-white font-semibold text-sm transition-colors duration-300">{offer.budget}</span>
+                                        <div className="flex items-center ">
+                                            <ChevronRight className="w-5 h-5 text-[#1a4498] transition-colors duration-300" />
+                                            <span className="text-[#1a4498] font-medium text-[14px] lg:text-[16px] transition-colors duration-300">{offer.budget}</span>
                                         </div>
-                                        <span className="text-[#c59efe] font-bold text-lg transition-colors duration-300 group-hover:text-[#d4b5ff]">{offer.cashback}</span>
-                                        <div className="flex items-center gap-1">
-                                            <CreditCard className="w-3 h-3 text-gray-400 transition-colors duration-300 group-hover:text-gray-300" />
-                                            <span className="text-xs text-gray-300 transition-colors duration-300 group-hover:text-gray-200">{offer.method}</span>
+                                        <span className="text-[#1a4498] font-semibold text-[14px] lg:text-[16px] text-center transition-colors duration-300">{offer.cashback}</span>
+                                        <div className="flex items-center">
+                                            <span className="text-[11px] lg:text-[13px] text-black transition-colors duration-300">{offer.method}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -124,33 +124,33 @@ const OffersSection = () => {
                     </div>
 
                     {/* Gói combo đa kênh */}
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
                         <div className="text-center mb-8">
-                            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#1a4498] to-[#c59efe] rounded-xl mb-4 transition-all duration-500 group-hover:bg-gradient-to-r group-hover:from-[#1e4fb8] group-hover:to-[#d4b5ff] group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
+                            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c59efe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
                                 <Package className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-2 transition-colors duration-300 group-hover:text-[#c59efe]">Gói combo đa kênh</h3>
-                            <p className="text-gray-400 text-sm transition-colors duration-300 group-hover:text-gray-300">Kết hợp nhiều dịch vụ</p>
+                            <h3 className="text-[18px] lg:text-[24px] font-medium text-white mb-1 transition-colors duration-300 group-hover:text-[#c59efe]">Gói combo đa kênh</h3>
+                            <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-100">Kết hợp nhiều dịch vụ</p>
                         </div>
 
                         <div className="space-y-4">
-                            <div className="grid grid-cols-2 gap-4 text-xs font-semibold text-gray-400 mb-2 transition-colors duration-300 group-hover:text-gray-300">
+                            <div className="grid grid-cols-2 gap-2 text-[14px] lg:text-[16px] font-medium text-white mb-2 transition-colors duration-300 group-hover:text-gray-300">
                                 <span>Số dịch vụ</span>
-                                <span>Ưu đãi áp dụng</span>
+                                <span className="text-center">Ưu đãi áp dụng</span>
                             </div>
                             {comboOffers.map((offer, index) => (
                                 <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20">
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-1">
                                             {index === 1 && <ChevronRight className="w-4 h-4 text-[#c59efe] transition-colors duration-300 group-hover:text-[#d4b5ff]" />}
-                                            <span className="text-white font-semibold transition-colors duration-300">{offer.services}</span>
+                                            <span className="text-white text-[14px] lg:text-[16px] transition-colors duration-300">{offer.services}</span>
                                         </div>
                                         <div className="flex items-center gap-1">
                                             <Percent className="w-4 h-4 text-[#c59efe] transition-colors duration-300 group-hover:text-[#d4b5ff]" />
-                                            <span className="text-[#c59efe] font-bold text-lg transition-colors duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
+                                            <span className="text-[#c59efe] font-semibold text-[14px] lg:text-[16px] transition-colors duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
                                         </div>
                                     </div>
-                                    <p className="text-xs text-gray-400 mt-2 transition-colors duration-300 group-hover:text-gray-300">tổng chi phí</p>
+                                    <p className="text-[11px] lg:text-[13px] text-gray-200 text-right transition-colors duration-300 group-hover:text-gray-100">tổng chi phí</p>
                                 </div>
                             ))}
                         </div>
@@ -158,13 +158,28 @@ const OffersSection = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="text-center mt-16">
-                    <p className="text-gray-300 mb-8 text-lg transition-colors duration-300">
+                <div className="text-center mt-8">
+                    <p className="text-gray-100 mb-6 text-[15px] lg:text-[18px] transition-colors duration-300">
                         Liên hệ ngay để được tư vấn gói ưu đãi phù hợp nhất
                     </p>
-                    <button className="bg-gradient-to-r from-[#1a4498] to-[#c59efe] text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-[#1e4fb8] hover:to-[#d4b5ff] hover:shadow-xl hover:shadow-[#c59efe]/25 hover:scale-105 active:scale-95">
-                        Tư vấn ngay
-                    </button>
+                    {/* Desktop CTA Button */}
+                    <div className="flex justify-center items-center space-x-4">
+                        <Link
+                            to="/contact"
+                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c59efe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                            style={{
+                                backgroundSize: '200% 200%'
+                            }}
+                        >
+        <span className="">
+            Hợp tác ngay
+        </span>
+                            <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
+                            </div>
+                        </Link>
+
+                    </div>
                 </div>
             </div>
         </section>

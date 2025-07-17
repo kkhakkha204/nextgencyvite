@@ -80,31 +80,31 @@ const Footer = () => {
                         </h3>
                         <ul className="space-y-3">
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Dịch vụ Facebook Ads</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Dịch vụ Google Ads</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Dịch vụ Tiktok Ads</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Phòng Marketing thuê ngoài</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Xây dựng Website & Landing page</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Automation - AI - Data</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Facebook Dataset & CRM</a>
                             </li>
                         </ul>
@@ -117,23 +117,23 @@ const Footer = () => {
                         </h3>
                         <ul className="space-y-3">
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Chính sách & quy định chung</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Chính sách bảo hành</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Chính sách bảo mật thông tin</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Chính sách bàn giao </a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
-                                <ChevronRight className="w-4 h-4 mr-2 text-[#60c9f7]" />
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Quy định về thanh toán</a>
                             </li>
                         </ul>
@@ -151,7 +151,7 @@ const Footer = () => {
                             <input
                                 type="email"
                                 placeholder="Nhập email của bạn"
-                                className="w-full px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-3xl text-white placeholder-gray-400 focus:outline-none focus:border-[#60c9f7] focus:ring-1 focus:ring-[#60c9f7] transition-colors"
+                                className="w-full px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-3xl text-white placeholder-gray-400 focus:outline-none focus:border-[#c59efe] focus:ring-1 focus:ring-[#c59efe] transition-colors"
                             />
                             <button className="w-full px-3 py-2.5 bg-white text-black font-medium rounded-3xl hover:bg-purple-400 transition-all transform hover:scale-105">
                                 Đăng ký

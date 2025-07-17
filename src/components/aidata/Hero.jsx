@@ -78,19 +78,19 @@ const Hero = () => {
                             <div className="space-y-1 ml-2">
                                 <div className="flex items-start space-x-3">
                                     <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
-                                    <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
+                                    <p className="text-[14px] lg:text-[17px] text-black font-light leading-relaxed">
                                         Tự động hóa quy trình nghiệp vụ
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
-                                    <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
+                                    <p className="text-[14px] lg:text-[17px] text-black font-light leading-relaxed">
                                         Phân tích dữ liệu thông minh
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-3">
                                     <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
-                                    <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
+                                    <p className="text-[14px] lg:text-[17px] text-black font-light leading-relaxed">
                                         Tích hợp AI vào doanh nghiệp
                                     </p>
                                 </div>
