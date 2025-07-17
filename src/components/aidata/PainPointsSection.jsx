@@ -46,12 +46,6 @@ const PainPointSection = () => {
 
     return (
         <section className="pt-[60px] lg:pt-[90px] relative">
-            {/* Background decorative elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-[#5534bb]/5 to-[#2faeec]/5 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-40 right-20 w-48 h-48 bg-gradient-to-r from-[#2faeec]/5 to-[#5534bb]/5 rounded-full blur-3xl"></div>
-            </div>
-
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8 relative">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
@@ -61,9 +55,9 @@ const PainPointSection = () => {
                             Automation - Data
                         </span>
                     </div>
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black">
+                    <h2 className="text-[24px] md:text-[32px] font-archivo font-semibold text-black">
                         Nỗi đau của doanh nghiệp
-                        <span className="block text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#5534bb]">
+                        <span className="block text-[24px] md:text-[36px] lg:text-[44px] font-archivo font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#5534bb]">
                             & Giải pháp cung cấp
                         </span>
                     </h2>
@@ -84,14 +78,10 @@ const PainPointSection = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-white border-2 border-black rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
+                                <div className="bg-white border-2 border-black rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
                                     <div className="grid md:grid-cols-2 p-2 gap-2">
                                         {/* Pain Point - Left Side */}
-                                        <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 md:p-7 relative overflow-hidden">
-                                            {/* Decorative elements */}
-                                            <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[#5534bb]/40 to-transparent rounded-full blur-xl"></div>
-                                            <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-[#2faeec]/40 to-transparent rounded-full blur-xl"></div>
-
+                                        <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 md:p-7 relative">
                                             <div className="relative z-10">
                                                 <div className="flex justify-center mb-4">
                                                 </div>
@@ -107,10 +97,9 @@ const PainPointSection = () => {
                                         </div>
 
                                         {/* Solution - Right Side */}
-                                        <div className="bg-gradient-to-br from-white to-gray-50 neu-shadow-inset-xs rounded-xl p-5 md:p-7 relative overflow-hidden">
+                                        <div className="bg-gradient-to-br from-white to-gray-50 neu-shadow-inset-xs rounded-xl p-5 md:p-7 relative">
                                             {/* Decorative elements */}
-                                            <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#2faeec]/5 to-transparent rounded-full blur-xl"></div>
-                                            <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-[#5534bb]/5 to-transparent rounded-full blur-xl"></div>
+                                            <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#2faeec]/25 to-transparent rounded-full blur-xl"></div>
 
                                             <div className="relative z-10">
                                                 <div className="flex justify-center mb-4">
