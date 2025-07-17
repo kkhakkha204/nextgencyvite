@@ -45,16 +45,10 @@ const WebsitePackages = () => {
 
     return (
         <section className="pt-[60px] lg:pt-[90px]">
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+                <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
-            </span>
-                    </div>
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Gói xây dựng Website
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-2xl mx-auto leading-relaxed">

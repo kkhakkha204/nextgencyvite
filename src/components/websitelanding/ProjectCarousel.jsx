@@ -35,7 +35,7 @@ const ProjectCarousel = () => {
     const getItemsPerView = () => {
         if (typeof window !== 'undefined') {
             if (window.innerWidth >= 1024) return 2; // Desktop
-            if (window.innerWidth >= 768) return 1; // Tablet
+            if (window.innerWidth >= 768) return 2; // Tablet
             return 1; // Mobile
         }
         return 2;

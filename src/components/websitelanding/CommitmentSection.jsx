@@ -42,26 +42,26 @@ const CommitmentSection = () => {
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="max-w-screen-xl mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
+                <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
             <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
               Website & Landing page
             </span>
                     </div>
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Cam kết của chúng tôi
                     </h2>
                 </div>
                 {/* Commitments List */}
-                <div className="max-w-4xl mx-auto">
+                <div className=" mx-auto">
                     <div className="space-y-6 sm:space-y-6">
                         {commitments.map((commitment) => (
                             <div
                                 key={commitment.id}
-                                className={`group relative rounded-lg p-2 neu-shadow-xs hover:shadow-lg transition-all duration-300 ${
+                                className={`group relative rounded-2xl p-2 neu-shadow-xs hover:shadow-lg transition-all duration-300 ${
                                     commitment.id === 6
                                         ? 'bg-black border-2 border-black'
                                         : 'bg-white border-2 border-black'

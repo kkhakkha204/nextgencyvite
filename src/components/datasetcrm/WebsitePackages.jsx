@@ -3,74 +3,52 @@ import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
     const basicFeatures = [
-        "Giao diện web cơ bản, dựng trong 2–3 ngày",
-        "Miễn phí tên miền .com",
-        "Tặng Hosting SSD",
-        "Thiết kế chuẩn SEO, tối ưu tốc độ tải trang",
-        "Responsive – tương thích mọi thiết bị",
-        "Tích hợp live chat, Messenger, Zalo",
-        "Cài sẵn plugin cơ bản và SSL",
-        "Hỗ trợ xử lý sự cố (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)",
-        "Tư vấn quảng cáo đa nền tảng (Meta, Google, TikTok)"
+        "Thiết lập quy trình auto chốt đơn từ Fanpage & Zalo OA",
+        "Cài đặt chatbot phản hồi inbox cơ bản (FAQ, xác nhận đơn)",
+        "Tích hợp livechat website + đồng bộ với Fanpage",
+        "Gửi tin nhắn cảm ơn sau đơn hàng",
+        "Gửi nhắc lại cho khách chưa hoàn tất đơn",
+        "Giao diện quản trị đơn giản, dễ dùng"
     ];
 
     const standardFeatures = [
-        "Thiết kế giao diện trung bình hoặc theo yêu cầu",
-        "Tặng tên miền .com hoặc .net",
-        "Hosting SSD lưu trữ tốc độ cao",
-        "Dựng website trong 3–7 ngày",
-        "Thiết kế chuẩn SEO, UX/UI, tối ưu tốc độ tải trang",
-        "Tương thích mọi thiết bị",
-        "Tặng 5–10 bài viết nội dung cơ bản (chuẩn SEO)",
-        "Tích hợp live chat, Messenger, Zalo",
-        "Tư vấn chiến dịch quảng cáo Meta, Google, TikTok",
-        "Tặng plugin, chứng chỉ SSL",
-        "Hỗ trợ kỹ thuật (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)"
+        "Kết nối & đồng bộ khách hàng từ: Zalo – Facebook – Website – Form – CRM",
+        "Thiết kế phễu tự động nuôi dưỡng khách hàng theo hành vi",
+        "Cài đặt & cá nhân hoá kịch bản remarketing",
+        "Tự động gửi tin/sms/email theo trigger (khách xem sản phẩm A → nhận ưu đãi A)",
+        "Tích hợp các công cụ đo lường: Google Analytics, Facebook Pixel...",
     ];
 
     const advancedFeatures = [
-        "Thiết kế giao diện website cao cấp",
-        "Tặng tên miền .com, .net",
-        "Hosting SSD lưu trữ tốc độ cao",
-        "Dựng website 7–10 ngày",
-        "Tặng 20 bài viết chuẩn SEO",
-        "Cấu hình đầy đủ: tracking đa kênh, chuyển đổi động, đồng bộ danh mục sản phẩm",
-        "Tối ưu tốc độ – chuẩn mobile",
-        "Tư vấn và đồng hành chạy Ads đa nền tảng",
-        "Cấp tài khoản TikTok Ads miễn phí",
-        "Miễn phí thông báo website với Bộ Công Thương",
-        "Tặng full plugin, chứng chỉ SSL",
-        "Hỗ trợ kỹ thuật miễn phí trọn gói"
+        "Thiết lập AI chatbot trả lời tự nhiên theo ngữ cảnh & sản phẩm",
+        "AI gợi ý sản phẩm cá nhân hoá theo hành vi khách hàng",
+        "Phân loại tệp khách hàng tự động (theo hành vi, mức độ quan tâm, lịch sử mua)",
+        "Tạo báo cáo thông minh: điểm rơi chốt đơn, hiệu quả nội dung, thời điểm vàng",
+        "Hệ thống lưu trữ & phân tích dữ liệu tập trung (Data Hub)",
+        "Hỗ trợ tích hợp với hệ thống POS, CRM, email automation",
     ];
 
     return (
         <section className="pt-[60px] lg:pt-[90px]">
-                <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
-            </span>
-                    </div>
-                    <h2 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
-                        Gói xây dựng Website
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                        Các gói dịch vụ
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-2xl mx-auto leading-relaxed">
-                        Chọn gói dịch vụ phù hợp để xây dựng website chuyên nghiệp,
-                        tối ưu hóa hiệu suất và phù hợp với mọi nhu cầu kinh doanh
+                        3 gói chính: Cơ bản, Tiêu chuẩn & Nâng cao
                     </p>
                 </div>
 
                 {/* Packages */}
-                <div className="grid lg:grid-cols-3 gap-8 lg:gap-8">
+                <div className="grid lg:grid-cols-3 gap-6">
                     {/* Gói Cơ Bản */}
                     <div className="bg-white border-2 border-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-black">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Website Cơ Bản
+                                    Gói Dịch Vụ Cơ Bản
                                 </h3>
                             </div>
 
@@ -109,7 +87,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b-2 border-[#2faeec]">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Website Tiêu Chuẩn
+                                    Gói Dịch Vụ Tiêu Chuẩn
                                 </h3>
                             </div>
 
@@ -146,10 +124,17 @@ const WebsitePackages = () => {
                         </div>
 
                         <div>
-                            <div className="mb-6 pb-2 border-b-2 border-white">
+                            <div className="mb-4 pb-2 border-b-2 border-white">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-white">
-                                    Gói Website Nâng Cao
+                                    Gói Dịch Vụ Nâng Cao
                                 </h3>
+                            </div>
+
+                            {/* Subtitle */}
+                            <div className="mb-6">
+                                <p className="text-white text-[16px] lg:text-[18px] font-archivo font-medium text-justify">
+                                    Bao gồm tất cả trong gói tiêu chuẩn, cộng thêm:
+                                </p>
                             </div>
 
                             <div className="space-y-4 mb-8">

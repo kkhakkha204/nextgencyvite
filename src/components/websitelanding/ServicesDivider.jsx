@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Thiết kế web theo UI/UX hiện đại,\nđa nền tảng (PC – Mobile – Tablet).",
+            description: "Xây dựng tệp dataset chất lượng cho quảng cáo Facebook",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"
@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Tích hợp pixel, chatbot, CRM,\nthanh toán hoặc automation theo yêu cầu.",
+            description: "Tạo đối tượng lookalike & remarketing từ dữ liệu CRM, đơn hàng, hành vi người dùng.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Hosting và bảo trì\nđi kèm dịch vụ trọn gói.",
+            description: "Kết nối dữ liệu từ form, website, Zalo, chatbot… đẩy ngược về Facebook CAPI.",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"
@@ -57,13 +57,13 @@ const ServicesDivider = () => {
                         <div key={service.id} className="flex flex-col items-center text-center group">
                             <div className="relative mb-6">
                                 {/* Ellipse Container */}
-                                <div className={`relative w-64 h-24 sm:w-72 sm:h-36 md:w-64 md:h-32 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
+                                <div className={`relative w-64 h-24 md:w-52 md:h-28 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
                                     {/* Ellipse Border */}
                                     <div className="absolute inset-0 rounded-full border-2 border-white/80 group-hover:border-white transition-colors duration-300"></div>
 
                                     {/* Content Inside Ellipse */}
-                                    <div className="px-6 py-4 text-white">
-                                        <p className="text-[10px] sm:text-base md:text-[16px] lg:text-[16px] leading-relaxed font-medium whitespace-pre-line">
+                                    <div className="px-4 py-4 text-white">
+                                        <p className="text-[10px] lg:text-[16px] leading-relaxed font-medium whitespace-pre-line">
                                             {service.description}
                                         </p>
                                     </div>
