@@ -34,9 +34,9 @@ const WorkflowSection = () => {
                         <IconComponent size={24} />
                     </div>
                     <div className="flex-1">
-                        <h4 className="font-semibold text-gray-800 mb-1">{title}</h4>
+                        <h4 className="text-[14px] lg:text-[16px] font-medium text-black mb-1">{title}</h4>
                         {description && (
-                            <p className="text-sm text-gray-600">{description}</p>
+                            <p className="text-[13px] lg:text-[14px] text-gray-800">{description}</p>
                         )}
                     </div>
                 </div>
@@ -62,22 +62,22 @@ const WorkflowSection = () => {
     };
 
     return (
-        <section className="bg-white py-16 md:py-24">
-            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+        <section className="bg-white pt-[60px] md:pt-[90px]">
+            <div className=" md:max-w-[700px] lg:max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
                         Quy Trình Làm Việc
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
                         Quy trình hợp tác chuyên nghiệp và hiệu quả giữa Nextgency và khách hàng
                     </p>
                 </div>
 
                 {/* Workflow Container */}
-                <div className="relative">
+                <div className="relative p-2 bg-gray-50 rounded-2xl">
                     {/* Starting Point */}
-                    <div className="mb-12">
+                    <div className="mb-8">
                         <WorkflowCard
                             icon={Send}
                             title="Gửi yêu cầu & tư vấn sơ bộ"
