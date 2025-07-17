@@ -19,10 +19,10 @@ const ClientsPartnersSection = () => {
                 </div>
 
                 {/* Thẻ chứa B - 4 cột với 2 logo mỗi cột */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4 p-2 bg-gray-200 rounded-2xl">
                     {/* Cột 1 */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center  h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -33,7 +33,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -47,8 +47,8 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột 2 */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -59,7 +59,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -73,8 +73,8 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột 3 */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -85,7 +85,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -99,8 +99,8 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột 4 */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -111,7 +111,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -126,10 +126,10 @@ const ClientsPartnersSection = () => {
                 </div>
 
                 {/* Thẻ chứa C - 4 cột (cột C và D merge chứa mô tả) */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4 p-2 bg-gray-200 rounded-2xl">
                     {/* Cột A - 2 logo */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -140,7 +140,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -154,8 +154,8 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột B - 2 logo */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -166,7 +166,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -181,7 +181,7 @@ const ClientsPartnersSection = () => {
 
                     {/* Cột C & D merge - Mô tả */}
                     <div className="col-span-2 flex justify-center neu-shadow-xs bg-gradient-to-r from-black to-[#5534bb]
-                                  rounded-2xl p-3 transition-all duration-500 ease-in-out cursor-pointer">
+                                  rounded-xl p-3 transition-all duration-500 ease-in-out cursor-pointer">
                         <div className="">
                             <p className="text-[14px] lg:text-[15px] text-white leading-relaxed mb-2">
                                 Trong suốt hành trình phát triển, Nextgency tự hào được đồng hành cùng hơn 100+ doanh nghiệp và tổ chức trong nhiều lĩnh vực khác nhau: từ làm đẹp, giáo dục, y tế, công nghệ đến dịch vụ công và sản xuất.
@@ -194,10 +194,10 @@ const ClientsPartnersSection = () => {
                 </div>
 
                 {/* Thẻ chứa D - 4 cột (cột A có text, cột B,C,D có logo) */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-2 bg-gray-200 rounded-2xl">
                     {/* Cột A - Text với gradient animation */}
                     <div className="flex items-center justify-center neu-shadow-xs bg-gradient-to-r from-[#5534bb] to-[#2faeec]
-                                  text-white rounded-2xl p-4 animate-gradient-shift
+                                  text-white rounded-xl p-4 animate-gradient-shift
                                   hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
                         <div className="text-center">
                             <div className="text-[40px] font-black">100+</div>
@@ -208,8 +208,8 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột B - 2 logo */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -220,7 +220,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -234,8 +234,8 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột C - 2 logo */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -246,7 +246,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -260,8 +260,8 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột D - 2 logo */}
-                    <div className="flex flex-col space-y-6">
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                    <div className="flex flex-col space-y-4">
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">
@@ -272,7 +272,7 @@ const ClientsPartnersSection = () => {
                                          group-hover:opacity-80 transition-opacity duration-300"
                             />
                         </div>
-                        <div className="bg-white rounded-2xl p-6 flex items-center justify-center h-20
+                        <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#d1d9ef] hover:border-[#d1d9ef]">

@@ -42,13 +42,15 @@ const WebsitePackages = () => {
                 </div>
 
                 {/* Packages */}
-                <div className="grid lg:grid-cols-3 gap-6">
+                <div className="grid lg:grid-cols-3 gap-6 bg-gray-200 p-2 rounded-2xl">
                     {/* Gói Cơ Bản */}
-                    <div className="bg-white border-2 border-black rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
+                    <div className="bg-white border-2 border-white rounded-2xl p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
+                        {/* Decorative elements */}
+                        <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#2faeec]/25 to-transparent rounded-full blur-xl"></div>
                         <div>
-                            <div className="mb-6 pb-2 border-b-2 border-black">
+                            <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Dịch Vụ Cơ Bản
+                                    Gói dịch vụ Cơ Bản
                                 </h3>
                             </div>
 
@@ -76,6 +78,8 @@ const WebsitePackages = () => {
 
                     {/* Gói Tiêu Chuẩn */}
                     <div className="bg-white border-2 border-[#2faeec] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
+                        {/* Decorative elements */}
+                        <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-[#2faeec]/25 to-transparent rounded-full blur-xl"></div>
                         {/* Popular Badge */}
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <div className="bg-gradient-to-r from-[#2faeec] to-[#1e90ff] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
@@ -85,16 +89,16 @@ const WebsitePackages = () => {
                         </div>
 
                         <div>
-                            <div className="mb-4 pb-2 border-b-2 border-[#2faeec]">
+                            <div className="mb-4 pb-2 border-b border-[#2faeec]">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói Dịch Vụ Tiêu Chuẩn
+                                    Gói dịch vụ Tiêu Chuẩn
                                 </h3>
                             </div>
 
                             {/* Subtitle */}
                             <div className="mb-6">
                                 <p className="text-black text-[16px] lg:text-[18px] font-archivo font-medium text-justify">
-                                    Bao gồm tất cả trong gói Cơ bản, cộng thêm:
+                                    Bao gồm tất cả trong gói cơ bản, cộng thêm:
                                 </p>
                             </div>
 
@@ -131,9 +135,9 @@ const WebsitePackages = () => {
                         </div>
 
                         <div>
-                            <div className="mb-4 pb-2 border-b-2 border-white">
+                            <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-white">
-                                    Gói Dịch Vụ Nâng Cao
+                                    Gói dịch vụ Nâng Cao
                                 </h3>
                             </div>
 
