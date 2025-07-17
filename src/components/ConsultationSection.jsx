@@ -3,12 +3,12 @@ import React from 'react';
 export default function ConsultationSection() {
     return (
         <section
-            className="bg-gradient-to-br from-black to-[#5534bb] py-[60px] lg:py-[90px] px-6 sm:px-6 lg:px-8 relative"
+            className="bg-gradient-to-br from-black via-black to-[#1a4498] py-[60px] lg:py-[90px] px-6 sm:px-6 lg:px-8 relative"
         >
             <div className="max-w-[700px] mx-auto">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-white mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold leading-tight text-white mb-1">
                         Nhận tư vấn
                     </h2>
                     <p className="text-[15px] sm:text-[18px] text-white max-w-2xl mx-auto leading-relaxed">
@@ -104,7 +104,7 @@ export default function ConsultationSection() {
                 <div className="text-center pt-8">
                     <button
                         type="button"
-                        className="group relative px-12 py-4 bg-black backdrop-blur-sm border border-white/30 rounded-full text-white font-medium text-lg hover:from-white/30 hover:to-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50"
+                        className="group relative px-12 py-4 bg-white backdrop-blur-sm border border-white/30 rounded-full text-black font-medium text-lg hover:from-white/30 hover:to-white/20 hover:border-white/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white/50"
                     >
                         <span className="flex items-center text-[15px] lg:text-[16px]">
                             Gửi thông tin

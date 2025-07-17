@@ -109,7 +109,7 @@ const Header = () => {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden xl:flex items-center space-x-1 border rounded-full border-[#d1d9ef]">
+                        <nav className="hidden xl:flex items-center space-x-1 border rounded-full border-[#e9d5ff]">
                             <div className=" rounded-full p-1  flex items-center space-x-2">
                                 {navigationItems.map((item) => (
                                     <div key={item.name} className="relative group">
@@ -119,7 +119,7 @@ const Header = () => {
                                                     className={`px-6 py-2.5 rounded-full text-[16px] font-medium transition-all duration-200 flex items-center space-x-1 ${
                                                         isActiveRoute(item.path)
                                                             ? 'bg-black text-white'
-                                                            : 'text-black hover:bg-[#60c9f7]'
+                                                            : 'text-black hover:bg-[#e9d5ff]'
                                                     }`}
                                                 >
                                                     <span>{item.name}</span>
@@ -133,7 +133,7 @@ const Header = () => {
                                                             <Link
                                                                 to="/services/ai-data"
                                                                 className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/ai-data') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#60c9f7]'
+                                                                    isActiveRoute('/services/ai-data') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
                                                                 <Bot className="w-4 h-4" />
@@ -142,7 +142,7 @@ const Header = () => {
                                                             <Link
                                                                 to="/services/google-ads"
                                                                 className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/google-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#60c9f7]'
+                                                                    isActiveRoute('/services/google-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
                                                                 <Target className="w-4 h-4" />
@@ -155,7 +155,7 @@ const Header = () => {
                                                             <Link
                                                                 to="/services/facebook-ads"
                                                                 className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/facebook-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#60c9f7]'
+                                                                    isActiveRoute('/services/facebook-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
                                                                 <Smartphone className="w-4 h-4" />
@@ -164,7 +164,7 @@ const Header = () => {
                                                             <Link
                                                                 to="/services/tiktok-ads"
                                                                 className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/tiktok-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#60c9f7]'
+                                                                    isActiveRoute('/services/tiktok-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
                                                                 <Music className="w-4 h-4" />
@@ -176,7 +176,7 @@ const Header = () => {
                                                         <Link
                                                             to="/services/website-landing-page"
                                                             className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                isActiveRoute('/services/website-landing-page') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#60c9f7]'
+                                                                isActiveRoute('/services/website-landing-page') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                             }`}
                                                         >
                                                             <Globe className="w-4 h-4" />
@@ -186,7 +186,7 @@ const Header = () => {
                                                         <Link
                                                             to="/services/facebook-crm"
                                                             className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                isActiveRoute('/services/facebook-crm') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#60c9f7]'
+                                                                isActiveRoute('/services/facebook-crm') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                             }`}
                                                         >
                                                             <Users className="w-4 h-4" />
@@ -196,7 +196,7 @@ const Header = () => {
                                                         <Link
                                                             to="/services/marketing-outsource"
                                                             className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                isActiveRoute('/services/marketing-outsource') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#60c9f7]'
+                                                                isActiveRoute('/services/marketing-outsource') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                             }`}
                                                         >
                                                             <BarChart3 className="w-4 h-4" />
@@ -211,7 +211,7 @@ const Header = () => {
                                                 className={`px-6 py-2.5 rounded-full text-[16px] font-medium transition-all duration-200 flex items-center ${
                                                     isActiveRoute(item.path)
                                                         ? 'bg-black text-white'
-                                                        : 'text-black hover:bg-[#60c9f7]'
+                                                        : 'text-black hover:bg-[#e9d5ff]'
                                                 }`}
                                             >
                                                 {item.name}
@@ -226,7 +226,7 @@ const Header = () => {
                         <div className="hidden xl:flex items-center space-x-4">
                             <Link
                                 to="/contact"
-                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c59efe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                                 style={{
                                     backgroundSize: '200% 200%'
                                 }}
@@ -439,7 +439,7 @@ const Header = () => {
                             }}>
                                 <Link
                                     to="/contact"
-                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg animate-gradient-shift"
+                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c59efe] to-[#1a4498] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg animate-gradient-shift"
                                     style={{
                                         backgroundSize: '200% 100%'
                                     }}

@@ -7,7 +7,7 @@ const ClientsPartnersSection = () => {
                 {/* Thẻ chứa A - Tiêu đề và mô tả */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 sm:mb-10">
                     <div className="lg:w-1/2 text-center lg:text-left">
-                        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold leading-tight text-black mb-1">
                             Khách hàng &<br/>Đối tác chiến lược
                         </h2>
                     </div>
@@ -19,7 +19,7 @@ const ClientsPartnersSection = () => {
                 </div>
 
                 {/* Thẻ chứa B - 4 cột với 2 logo mỗi cột */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4 p-2 bg-gray-200 rounded-2xl">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4 ">
                     {/* Cột 1 */}
                     <div className="flex flex-col space-y-4">
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center  h-16 md:h-20
@@ -126,7 +126,7 @@ const ClientsPartnersSection = () => {
                 </div>
 
                 {/* Thẻ chứa C - 4 cột (cột C và D merge chứa mô tả) */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4 p-2 bg-gray-200 rounded-2xl">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                     {/* Cột A - 2 logo */}
                     <div className="flex flex-col space-y-4">
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
@@ -180,7 +180,7 @@ const ClientsPartnersSection = () => {
                     </div>
 
                     {/* Cột C & D merge - Mô tả */}
-                    <div className="col-span-2 flex justify-center neu-shadow-xs bg-gradient-to-r from-black to-[#5534bb]
+                    <div className="col-span-2 flex justify-center neu-shadow-xs bg-black
                                   rounded-xl p-3 transition-all duration-500 ease-in-out cursor-pointer">
                         <div className="">
                             <p className="text-[14px] lg:text-[15px] text-white leading-relaxed mb-2">
@@ -194,9 +194,9 @@ const ClientsPartnersSection = () => {
                 </div>
 
                 {/* Thẻ chứa D - 4 cột (cột A có text, cột B,C,D có logo) */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-2 bg-gray-200 rounded-2xl">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 ">
                     {/* Cột A - Text với gradient animation */}
-                    <div className="flex items-center justify-center neu-shadow-xs bg-gradient-to-r from-[#5534bb] to-[#2faeec]
+                    <div className="flex items-center justify-center neu-shadow-xs bg-black
                                   text-white rounded-xl p-4 animate-gradient-shift
                                   hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
                         <div className="text-center">

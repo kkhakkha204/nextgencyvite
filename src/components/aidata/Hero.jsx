@@ -11,11 +11,11 @@ const Hero = () => {
                     <div className="lg:col-span-3 space-y-4 mb-4 lg:mb-0">
                         {/* Title Section */}
                         <div className="space-y-2">
-                            <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
+                            <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-black  bg-clip-text text-transparent leading-none">
                                 AUTOMATION
                             </h1>
                             <div className="flex items-center gap-4">
-                                <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
+                                <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#c59efe] bg-clip-text text-transparent leading-none">
                                     AI & DATA
                                 </h1>
                                 {/* SVG Circles */}
@@ -32,7 +32,7 @@ const Hero = () => {
                                             cx="25.4404"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#E2DDFB"
+                                            fill="#f3e8ff"
                                             className="animate-pulse"
                                             style={{ animationDelay: '0s', animationDuration: '2s' }}
                                         />
@@ -40,7 +40,7 @@ const Hero = () => {
                                             cx="40.1005"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#C1B3F4"
+                                            fill="#e9d5ff"
                                             className="animate-pulse"
                                             style={{ animationDelay: '0.5s', animationDuration: '2s' }}
                                         />
@@ -48,7 +48,7 @@ const Hero = () => {
                                             cx="53.8994"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#9C84EA"
+                                            fill="#d8b4fe"
                                             className="animate-pulse"
                                             style={{ animationDelay: '1s', animationDuration: '2s' }}
                                         />
@@ -56,7 +56,7 @@ const Hero = () => {
                                             cx="68.5596"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#7A5BDC"
+                                            fill="#c59efe"
                                             className="animate-pulse"
                                             style={{ animationDelay: '1.5s', animationDuration: '2s' }}
                                         />
@@ -77,19 +77,19 @@ const Hero = () => {
                             {/* Bullet Points */}
                             <div className="space-y-1 ml-2">
                                 <div className="flex items-start space-x-3">
-                                    <div className="w-1.5 h-1.5 bg-[#5534bb] rounded-full mt-2.5 flex-shrink-0"></div>
+                                    <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
                                     <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
                                         Tự động hóa quy trình nghiệp vụ
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-3">
-                                    <div className="w-1.5 h-1.5 bg-[#5534bb] rounded-full mt-2.5 flex-shrink-0"></div>
+                                    <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
                                     <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
                                         Phân tích dữ liệu thông minh
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-3">
-                                    <div className="w-1.5 h-1.5 bg-[#5534bb] rounded-full mt-2.5 flex-shrink-0"></div>
+                                    <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
                                     <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
                                         Tích hợp AI vào doanh nghiệp
                                     </p>
@@ -121,7 +121,7 @@ const Hero = () => {
                     {/* Image Column - 40% */}
                     <div className="lg:col-span-2">
                         <div className="relative">
-                            <div className="aspect-[1/1] p-2 overflow-hidden rounded-2xl bg-gradient-to-br from-black to-[#5534bb]/80">
+                            <div className="aspect-[1/1] p-2 overflow-hidden rounded-2xl bg-gradient-to-br from-black to-[#1a4498]">
                                 <img
                                     src="/assets/images/dataai/hero.webp"
                                     alt="AI & Automation Technology"

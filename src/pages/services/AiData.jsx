@@ -8,6 +8,7 @@ import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import Hero from "../../components/aidata/Hero.jsx";
 import PainPointsSection from "../../components/aidata/PainPointsSection.jsx";
+import OffersSection from "../../components/aidata/OffersSection.jsx";
 
 const AiData = () => {
     return (
@@ -16,6 +17,7 @@ const AiData = () => {
             <ServicesDivider/>
             <PainPointsSection/>
             <WebsitePackages/>
+            <OffersSection/>
             <ClientsPartnersSection/>
             <CommitmentSection/>
             <ConsultationSection/>
