@@ -15,7 +15,6 @@ const AiData = () => {
             <Hero/>
             <ServicesDivider/>
             <PainPointsSection/>
-            <WhyChooseUs/>
             <WebsitePackages/>
             <ClientsPartnersSection/>
             <CommitmentSection/>

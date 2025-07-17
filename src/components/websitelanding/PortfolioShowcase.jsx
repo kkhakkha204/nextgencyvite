@@ -29,8 +29,8 @@ const PortfolioShowcase = () => {
         {
             id: 4,
             name: "Restaurant Portal",
-            type: "video",
-            src: "/assets/images/website&landingpage/show.mp4",
+            type: "image",
+            src: "/assets/images/website&landingpage/beautysummit.webp",
             alt: "Restaurant Portal"
         },
         // Column 2
@@ -44,8 +44,8 @@ const PortfolioShowcase = () => {
         {
             id: 6,
             name: "Healthcare System",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
+            type: "video",
+            src: "/assets/images/website&landingpage/show.mp4",
             alt: "Healthcare System"
         },
         {
@@ -58,8 +58,8 @@ const PortfolioShowcase = () => {
         {
             id: 8,
             name: "Real Estate Portal",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
+            type: "video",
+            src: "/assets/images/website&landingpage/show.mp4",
             alt: "Real Estate Portal"
         },
         // Column 3
@@ -70,32 +70,11 @@ const PortfolioShowcase = () => {
             src: "/assets/images/website&landingpage/beautysummit.webp",
             alt: "Travel Agency"
         },
-        {
-            id: 10,
-            name: "Fashion E-store",
-            type: "video",
-            src: "/assets/images/website&landingpage/show.mp4",
-            alt: "Fashion E-store"
-        },
-        {
-            id: 11,
-            name: "Tech Startup",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Tech Startup Demo"
-        },
-        {
-            id: 12,
-            name: "Portfolio Website",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Portfolio Website"
-        }
     ];
 
     // Organize projects into 3 columns
     const getColumnProjects = (columnIndex) => {
-        const projectsPerColumn = 4;
+        const projectsPerColumn = 3;
         const startIndex = columnIndex * projectsPerColumn;
         return projects.slice(startIndex, startIndex + projectsPerColumn);
     };

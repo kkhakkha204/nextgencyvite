@@ -12,9 +12,6 @@ const WhyChooseUs = () => {
               Nextgency?
             </span>
                     </h2>
-                    <p className="hidden lg:block text-black text-[15px] lg:text-[18px] max-w-2xl mx-auto leading-relaxed">
-                        Nextgency là đơn vị thiết kế web và landing page uy tín với 3 năm kinh nghiệm, chuyên tạo giao diện đẹp, tối ưu chuyển đổi và dễ quản lý – đồng hành cùng hàng trăm doanh nghiệp nâng tầm thương hiệu số.
-                    </p>
                 </div>
 
                 {/* Main Content */}

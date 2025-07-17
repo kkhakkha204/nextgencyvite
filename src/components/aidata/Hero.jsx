@@ -70,9 +70,31 @@ const Hero = () => {
 
                         {/* Description */}
                         <div className="space-y-4">
-                            <p className="text-[15px] lg:text-[18px] text-black leading-relaxed max-w-2xl">
-                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp.
+                            <p className="text-[15px] lg:text-[18px] text-black text-justify leading-relaxed max-w-2xl">
+                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
                             </p>
+
+                            {/* Bullet Points */}
+                            <div className="space-y-1 ml-2">
+                                <div className="flex items-start space-x-3">
+                                    <div className="w-1.5 h-1.5 bg-[#5534bb] rounded-full mt-2.5 flex-shrink-0"></div>
+                                    <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
+                                        Tự động hóa quy trình nghiệp vụ
+                                    </p>
+                                </div>
+                                <div className="flex items-start space-x-3">
+                                    <div className="w-1.5 h-1.5 bg-[#5534bb] rounded-full mt-2.5 flex-shrink-0"></div>
+                                    <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
+                                        Phân tích dữ liệu thông minh
+                                    </p>
+                                </div>
+                                <div className="flex items-start space-x-3">
+                                    <div className="w-1.5 h-1.5 bg-[#5534bb] rounded-full mt-2.5 flex-shrink-0"></div>
+                                    <p className="text-[15px] lg:text-[18px] text-black font-light leading-relaxed">
+                                        Tích hợp AI vào doanh nghiệp
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         {/* CTA Button */}
@@ -83,7 +105,7 @@ const Hero = () => {
 
                             >
         <span className="">
-            Nhận tư vấn
+            Tư vấn ngay
         </span>
                                 <div
                                     className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

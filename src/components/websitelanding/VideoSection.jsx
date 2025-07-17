@@ -75,7 +75,7 @@ const VideoSection = () => {
                                         onClick={handleVideoClick}
                                     >
                                         <img
-                                            src="/assets/images/website&landingpage/video.png"
+                                            src="/assets/images/video.webp"
                                             alt="Video thumbnail"
                                             className="w-full h-full object-cover"
                                         />
