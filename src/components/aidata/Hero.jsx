@@ -6,9 +6,9 @@ const Hero = () => {
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-5 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-5 items-center">
                     {/* Content Column - 60% */}
-                    <div className="md:col-span-3 space-y-4 mb-4 lg:mb-0">
+                    <div className="lg:col-span-3 space-y-4 mb-4 lg:mb-0">
                         {/* Title Section */}
                         <div className="space-y-2">
                             <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
@@ -70,7 +70,7 @@ const Hero = () => {
 
                         {/* Description */}
                         <div className="space-y-4">
-                            <p className="text-[15px] lg:text-[18px] text-black text-justify leading-relaxed max-w-2xl">
+                            <p className="text-[15px] lg:text-[18px] text-black text-justify leading-relaxed max-w-xl">
                                 Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
                             </p>
 
@@ -119,15 +119,32 @@ const Hero = () => {
                     </div>
 
                     {/* Image Column - 40% */}
-                    <div className="md:col-span-2">
+                    <div className="lg:col-span-2">
                         <div className="relative">
-                            <div className="aspect-[1/1] overflow-hidden rounded-2xl bg-gray-100">
+                            <div className="aspect-[1/1] p-2 overflow-hidden rounded-2xl bg-gradient-to-br from-black to-[#5534bb]/80">
                                 <img
                                     src="/assets/images/dataai/hero.webp"
                                     alt="AI & Automation Technology"
-                                    className=" w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                    className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
+
+                            {/* Top Right Floating Card */}
+                            <div className="absolute -top-3 -right-3 bg-white rounded-2xl p-2 shadow-xl border-2 border-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                                <div className="flex items-center space-x-3">
+                                    <div className=" rounded-full flex items-center justify-center">
+                                        <svg className="w-6 h-6 text-black" fill="#111111" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div className="text-[12px] font-medium text-black">AI Powered</div>
+                                        <div className="text-[10px] text-gray-800">Smart Solutions</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
