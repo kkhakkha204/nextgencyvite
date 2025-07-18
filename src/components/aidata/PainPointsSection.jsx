@@ -55,16 +55,16 @@ const PainPointSection = () => {
                             Automation - Data
                         </span>
                     </div>
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black leading-tight">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight">
                         Nỗi đau của doanh nghiệp
-                        <span className="block text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c59efe]">
+                        <span className="block text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c59efe]">
                             & Giải pháp cung cấp
                         </span>
                     </h2>
                 </div>
 
                 {/* Pain & Solution Cards */}
-                <div className="space-y-6 p-2 bg-gray-50 rounded-2xl">
+                <div className="relative space-y-6 p-2 bg-gray-50 rounded-2xl ">
                     {painPoints.map((pain, index) => {
                         const PainIcon = pain.icon;
                         const SolutionIcon = solutions[index].icon;
@@ -78,7 +78,7 @@ const PainPointSection = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
+                                <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] z-20">
                                     <div className="grid md:grid-cols-2 p-2 gap-2">
                                         {/* Pain Point - Left Side */}
                                         <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 md:p-7 relative">
@@ -86,10 +86,10 @@ const PainPointSection = () => {
                                                 <div className="flex justify-center mb-2">
                                                 </div>
                                                 <div className="text-center">
-                                                    <h4 className="text-white font-medium font-archivo text-[16px] lg:text-[20px] mb-1">
+                                                    <h4 className="text-white font-medium font-archivo text-[16px] lg:text-[20px]">
                                                         {pain.title}
                                                     </h4>
-                                                    <p className="text-gray-100 text-[14px] lg:text-[16px] leading-relaxed max-w-sm mx-auto">
+                                                    <p className="text-gray-100 text-[14px] lg:text-[16px]  max-w-sm mx-auto">
                                                         {pain.description}
                                                     </p>
                                                 </div>
@@ -105,10 +105,10 @@ const PainPointSection = () => {
                                                 <div className="flex justify-center mb-2">
                                                 </div>
                                                 <div className="text-center">
-                                                    <h4 className="text-black font-medium font-archivo text-[16px] lg:text-[20px] mb-1">
+                                                    <h4 className="text-black font-medium font-archivo text-[16px] lg:text-[20px]">
                                                         {solutions[index].title}
                                                     </h4>
-                                                    <p className="text-gray-800 text-[14px] lg:text-[16px] leading-relaxed max-w-sm mx-auto mb-3">
+                                                    <p className="text-gray-800 text-[14px] lg:text-[16px]  max-w-sm mx-auto mb-3">
                                                         {solutions[index].description}
                                                     </p>
 

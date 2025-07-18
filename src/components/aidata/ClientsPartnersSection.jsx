@@ -25,7 +25,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center  h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -36,7 +36,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -51,7 +51,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -62,7 +62,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -77,7 +77,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -88,7 +88,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -103,7 +103,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -114,7 +114,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -132,7 +132,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -143,7 +143,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -158,7 +158,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -169,7 +169,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -196,7 +196,7 @@ const ClientsPartnersSection = () => {
                 {/* Thẻ chứa D - 4 cột (cột A có text, cột B,C,D có logo) */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 ">
                     {/* Cột A - Text với gradient animation */}
-                    <div className="flex items-center justify-center neu-shadow-xs bg-black
+                    <div className="flex items-center justify-center neu-shadow-xs bg-[#c59efe]
                                   text-white rounded-xl p-4 animate-gradient-shift
                                   hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
                         <div className="text-center">
@@ -212,7 +212,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -223,7 +223,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -238,7 +238,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -249,7 +249,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -264,7 +264,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"
@@ -275,7 +275,7 @@ const ClientsPartnersSection = () => {
                         <div className="bg-white rounded-xl p-6 flex items-center justify-center h-16 md:h-20
                                       hover:shadow-lg hover:scale-105
                                       transition-all duration-300 ease-in-out cursor-pointer
-                                      group border border-[#d1d9ef] hover:border-[#d1d9ef]">
+                                      group border border-[#e9d5ff]">
                             <img
                                 src="/assets/images/header/navbarlogoblack.png"
                                 alt="Partner Logo 3"

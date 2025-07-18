@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Triển khai Google Search Ads, Display, YouTube và Performance Max",
+            description: "Tự động hoá quy trình nội bộ &\nmarketing bằng n8n",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"
@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Tracking theo từ khóa – chiến dịch – nguồn đơn.",
+            description: "Xây dựng AI Agent:\nChatbot thông minh,\ntư vấn DISC, tạo nội dung.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Tối ưu chuyển đổi theo landing page và hành vi người dùng",
+            description: "Kết nối các nền tảng:\nFacebook, Zalo, Website, Email, CRM.",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"
@@ -50,7 +50,7 @@ const ServicesDivider = () => {
     );
 
     return (
-        <section className="bg-black pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px]">
+        <section className="relative bg-gradient-to-br from-black via-black to-[#1a4498] pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px] z-10">
             <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {services.map((service) => (
@@ -63,15 +63,15 @@ const ServicesDivider = () => {
 
                                     {/* Content Inside Ellipse */}
                                     <div className="px-4 py-4 text-white">
-                                        <p className="text-[10px] lg:text-[16px] leading-relaxed font-medium whitespace-pre-line">
+                                        <p className="text-[10px] lg:text-[16px] whitespace-pre-line">
                                             {service.description}
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Circular Badge */}
-                                <div className="absolute -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-black border-2 border-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <CheckMarkIcon className={`transition-transform duration-300 ${service.badgeRotation}`} />
+                                <div className="absolute  -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-black border-2 border-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <CheckMarkIcon className={`transition-transform duration-300  ${service.badgeRotation}`}/>
                                 </div>
                             </div>
                         </div>

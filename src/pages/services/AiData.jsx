@@ -13,18 +13,18 @@ import WorkflowMindmap from "../../components/aidata/WorkflowMindmap.jsx";
 
 const AiData = () => {
     return (
-        <div>
-            <Hero/>
-            <ServicesDivider/>
-            <PainPointsSection/>
-            <WebsitePackages/>
-            <OffersSection/>
-            <WorkflowMindmap/>
-            <ClientsPartnersSection/>
-            <CommitmentSection/>
-            <ConsultationSection/>
-            <ServicesSection/>
-        </div>
+            <div>
+                <Hero/>
+                <ServicesDivider/>
+                <PainPointsSection/>
+                <WebsitePackages/>
+                <OffersSection/>
+                <WorkflowMindmap/>
+                <ClientsPartnersSection/>
+                <CommitmentSection/>
+                <ConsultationSection/>
+                <ServicesSection/>
+            </div>
     );
 };
 

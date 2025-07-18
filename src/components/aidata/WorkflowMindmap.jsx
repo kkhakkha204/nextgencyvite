@@ -44,7 +44,7 @@ const WorkflowSection = () => {
                     <div className="grid md:grid-cols-2 gap-6 mb-8">
                         {/* Left Branch - Customer */}
                         <div className="relative">
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-0.5 bg-gradient-to-b from-black via-[#c59efe] to-black"></div>
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-1 bg-gradient-to-b from-[#1a4498] via-[#1a4498] to-black"></div>
                             <div
                                 className={`relative p-5 rounded-xl border-2 border-white transition-all duration-300 transform bg-black z-10
                   ${hoveredCard === 'customer' ? 'scale-105 shadow-lg' : 'shadow-md hover:shadow-lg'}`}
@@ -65,7 +65,7 @@ const WorkflowSection = () => {
 
                         {/* Right Branch - Analysis */}
                         <div className="relative">
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-0.5 bg-gradient-to-b from-black via-[#c59efe] to-black"></div>
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-1 bg-gradient-to-b from-[#1a4498] via-[#1a4498] to-black"></div>
                             <div
                                 className={`relative p-5 rounded-xl border-2 border-white transition-all duration-300 transform bg-black z-10
                   ${hoveredCard === 'analysis' ? 'scale-105 shadow-lg' : 'shadow-md hover:shadow-lg'}`}
@@ -87,7 +87,7 @@ const WorkflowSection = () => {
 
                     {/* Level 2 - Solutions */}
                     <div className="relative mb-8">
-                        <div className="bg-white rounded-xl p-2 shadow-md relative z-10">
+                        <div className="bg-white rounded-xl p-2 shadow-md border-2 border-black relative z-10">
                             <div className="grid md:grid-cols-3 gap-6 mb-6">
                                 {/* Level 1 */}
                                 <div
@@ -151,7 +151,7 @@ const WorkflowSection = () => {
 
                     {/* Deployment Process */}
                     <div className="relative">
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-0.5 bg-gradient-to-b from-black via-[#c59efe] to-black"></div>
+                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-1 bg-gradient-to-b from-[#1a4498] via-[#1a4498] to-black"></div>
 
                         <div className="bg-gradient-to-br from-black via-[#c59efe] to-black rounded-xl p-2 relative z-10">
                             <div className="bg-gray-50 rounded-lg p-2 m-1 neu-shadow-inset-xs">
