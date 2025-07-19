@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Users, Target, Cpu, Link2, Brain, FileSignature, Settings, TestTube, GraduationCap, Wrench } from 'lucide-react';
+import { Send, Users, Target, Cpu, Link2, Brain, FileSignature, Settings, TestTube, GraduationCap, Wrench, ChevronDown } from 'lucide-react';
 
 const WorkflowSection = () => {
     const [hoveredCard, setHoveredCard] = useState(null);
@@ -9,10 +9,10 @@ const WorkflowSection = () => {
             <div className=" md:max-w-[700px] lg:max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black leading-tight mb-1">
+                        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight mb-1">
                         Quy trình làm việc
                     </h2>
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
+                    <p className="text-[15px] lg:text-[18px] text-black">
                         Quy trình hợp tác chuyên nghiệp và hiệu quả giữa Nextgency và khách hàng
                     </p>
                 </div>
@@ -20,7 +20,7 @@ const WorkflowSection = () => {
                 {/* Workflow Container */}
                 <div className="relative p-2 bg-gray-50 rounded-2xl">
                     {/* Starting Point */}
-                    <div className="mb-8">
+                    <div className="mb-4">
                         <div
                             className={`relative p-5 rounded-xl border-2 transition-all duration-300 transform
                 border-white bg-gradient-to-br from-black via-black to-[#1a4498] z-10
@@ -41,10 +41,9 @@ const WorkflowSection = () => {
                     </div>
 
                     {/* Level 1 Branches */}
-                    <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="grid md:grid-cols-2 gap-6 mb-4">
                         {/* Left Branch - Customer */}
                         <div className="relative">
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-1 bg-gradient-to-b from-[#1a4498] via-[#1a4498] to-black"></div>
                             <div
                                 className={`relative p-5 rounded-xl border-2 border-white transition-all duration-300 transform bg-black z-10
                   ${hoveredCard === 'customer' ? 'scale-105 shadow-lg' : 'shadow-md hover:shadow-lg'}`}
@@ -65,7 +64,6 @@ const WorkflowSection = () => {
 
                         {/* Right Branch - Analysis */}
                         <div className="relative">
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-1 bg-gradient-to-b from-[#1a4498] via-[#1a4498] to-black"></div>
                             <div
                                 className={`relative p-5 rounded-xl border-2 border-white transition-all duration-300 transform bg-black z-10
                   ${hoveredCard === 'analysis' ? 'scale-105 shadow-lg' : 'shadow-md hover:shadow-lg'}`}
@@ -85,8 +83,13 @@ const WorkflowSection = () => {
                         </div>
                     </div>
 
+                    {/* Connector */}
+                    <div className="flex justify-center mb-4">
+                        <ChevronDown size={32} className="text-[#1a4498]" />
+                    </div>
+
                     {/* Level 2 - Solutions */}
-                    <div className="relative mb-8">
+                    <div className="relative mb-4">
                         <div className="bg-white rounded-xl p-2 shadow-md border-2 border-black relative z-10">
                             <div className="grid md:grid-cols-3 gap-6 mb-6">
                                 {/* Level 1 */}
@@ -149,10 +152,13 @@ const WorkflowSection = () => {
                         </div>
                     </div>
 
+                    {/* Connector */}
+                    <div className="flex justify-center mb-4">
+                        <ChevronDown size={32} className="text-[#1a4498]" />
+                    </div>
+
                     {/* Deployment Process */}
                     <div className="relative">
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 h-12 w-1 bg-gradient-to-b from-[#1a4498] via-[#1a4498] to-black"></div>
-
                         <div className="bg-gradient-to-br from-black via-[#c59efe] to-black rounded-xl p-2 relative z-10">
                             <div className="bg-gray-50 rounded-lg p-2 m-1 neu-shadow-inset-xs">
                                 <div className="grid md:grid-cols-2 gap-6">

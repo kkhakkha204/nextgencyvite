@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Xây dựng AI Agent:\nChatbot thông minh,\ntư vấn DISC, tạo nội dung.",
+            description: "Xây dựng AI Agent:\nChatbot thông minh, tư vấn DISC, tạo nội dung.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Kết nối các nền tảng:\nFacebook, Zalo, Website, Email, CRM.",
+            description: "Kết nối các nền tảng: Facebook, Zalo, Website, Email, CRM.",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"

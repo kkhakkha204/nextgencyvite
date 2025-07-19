@@ -15,7 +15,7 @@ const Hero = () => {
                                 AUTOMATION
                             </h1>
                             <div className="flex items-center gap-4">
-                                <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c59efe] bg-clip-text text-transparent leading-none">
+                                <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
                                     AI & DATA
                                 </h1>
                                 {/* SVG Circles */}
@@ -71,27 +71,27 @@ const Hero = () => {
                         {/* Description */}
                         <div className="space-y-4">
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
+                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở <span className="text-[#c08dfe]">Automation và AI.</span> Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
                             </p>
 
                             {/* Bullet Points */}
                             <div className="">
                                 <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-black">
-                                        Tự động hóa quy trình nghiệp vụ.
+                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                        Tự động hoá quy trình nội bộ & marketing bằng n8n
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-black">
-                                        Phân tích dữ liệu thông minh.
+                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                        Xây dựng AI Agent: Chatbot thông minh, tư vấn DISC, tạo nội dung.
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c59efe] rounded-full mt-2.5 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-black">
-                                        Tích hợp AI vào doanh nghiệp.
+                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                        Kết nối các nền tảng: Facebook, Zalo, Website, Email, CRM.
                                     </p>
                                 </div>
                             </div>

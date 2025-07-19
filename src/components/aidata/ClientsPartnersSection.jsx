@@ -5,7 +5,7 @@ const ClientsPartnersSection = () => {
         <section className="bg-white pt-[60px] lg:pt-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Thẻ chứa A - Tiêu đề và mô tả */}
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 sm:mb-10">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold leading-tight text-black mb-1">
                             Khách hàng &<br/>Đối tác chiến lược

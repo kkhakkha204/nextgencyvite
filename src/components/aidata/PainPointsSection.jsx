@@ -57,7 +57,7 @@ const PainPointSection = () => {
                     </div>
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight">
                         Nỗi đau của doanh nghiệp
-                        <span className="block text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c59efe]">
+                        <span className="block text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c59efe] leading-tight">
                             & Giải pháp cung cấp
                         </span>
                     </h2>
@@ -66,30 +66,27 @@ const PainPointSection = () => {
                 {/* Pain & Solution Cards */}
                 <div className="relative space-y-6 p-2 bg-gray-50 rounded-2xl ">
                     {painPoints.map((pain, index) => {
-                        const PainIcon = pain.icon;
-                        const SolutionIcon = solutions[index].icon;
-
                         return (
                             <div key={index} className="group relative">
                                 {/* Connection line */}
-                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden md:block">
+                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 hidden md:block">
                                     <div className="w-12 h-12 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center neu-shadow-xs shadow-lg group-hover:border-[#c59efe] transition-all duration-300">
                                         <ChevronRight className="w-5 h-5 text-[#c59efe] transition-transform duration-300" />
                                     </div>
                                 </div>
 
-                                <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] z-20">
+                                <div className="relative bg-gradient-to-br from-black via-[#c59efe] to-black rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] z-20">
                                     <div className="grid md:grid-cols-2 p-2 gap-2">
                                         {/* Pain Point - Left Side */}
-                                        <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-5 md:p-7 relative">
+                                        <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl px-6 py-5 md:px-16 md:py-7 relative">
                                             <div className="relative z-10">
                                                 <div className="flex justify-center mb-2">
                                                 </div>
                                                 <div className="text-center">
-                                                    <h4 className="text-white font-medium font-archivo text-[16px] lg:text-[20px]">
+                                                    <h4 className="text-white font-medium text-[15px] lg:text-[18px] mb-1">
                                                         {pain.title}
                                                     </h4>
-                                                    <p className="text-gray-100 text-[14px] lg:text-[16px]  max-w-sm mx-auto">
+                                                    <p className="text-gray-300 text-[13px] lg:text-[15px]">
                                                         {pain.description}
                                                     </p>
                                                 </div>
@@ -97,7 +94,7 @@ const PainPointSection = () => {
                                         </div>
 
                                         {/* Solution - Right Side */}
-                                        <div className="bg-gradient-to-br from-white to-gray-50 neu-shadow-inset-xs rounded-xl p-5 md:p-7 relative">
+                                        <div className="bg-gradient-to-br from-white to-gray-50 neu-shadow-inset-xs rounded-xl px-6 py-5 md:px-16 md:py-7 relative">
                                             {/* Decorative elements */}
                                             <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c59efe]/35 to-transparent rounded-full blur-xl"></div>
 
@@ -105,10 +102,10 @@ const PainPointSection = () => {
                                                 <div className="flex justify-center mb-2">
                                                 </div>
                                                 <div className="text-center">
-                                                    <h4 className="text-black font-medium font-archivo text-[16px] lg:text-[20px]">
+                                                    <h4 className="text-black font-medium text-[15px] lg:text-[18px] mb-1">
                                                         {solutions[index].title}
                                                     </h4>
-                                                    <p className="text-gray-800 text-[14px] lg:text-[16px]  max-w-sm mx-auto mb-3">
+                                                    <p className="text-gray-700 text-[13px] lg:text-[15px] mb-2">
                                                         {solutions[index].description}
                                                     </p>
 

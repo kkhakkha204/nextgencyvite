@@ -226,7 +226,7 @@ const Header = () => {
                         <div className="hidden xl:flex items-center space-x-4">
                             <Link
                                 to="/contact"
-                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c59efe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                                 style={{
                                     backgroundSize: '200% 200%'
                                 }}
@@ -439,7 +439,7 @@ const Header = () => {
                             }}>
                                 <Link
                                     to="/contact"
-                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c59efe] to-[#1a4498] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg animate-gradient-shift"
+                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg animate-gradient-shift"
                                     style={{
                                         backgroundSize: '200% 100%'
                                     }}

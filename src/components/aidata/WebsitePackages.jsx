@@ -33,10 +33,10 @@ const WebsitePackages = () => {
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight mb-1">
                         Các gói dịch vụ
                     </h2>
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-2xl leading-relaxed">
+                    <p className="text-[15px] lg:text-[18px] text-black">
                         3 gói chính: Cơ bản, Tiêu chuẩn & Nâng cao
                     </p>
                 </div>
@@ -49,8 +49,8 @@ const WebsitePackages = () => {
                         <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c59efe]/35 to-transparent rounded-full blur-xl"></div>
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
-                                <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
-                                    Gói dịch vụ Cơ Bản
+                                <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
+                                    Gói dịch vụ cơ bản
                                 </h3>
                             </div>
 
@@ -60,7 +60,7 @@ const WebsitePackages = () => {
                                         <div className="flex-shrink-0 w-5 h-5 bg-[#c59efe] rounded-full flex items-center justify-center mt-0.5">
                                             <Check className="w-3 h-3 text-white" />
                                         </div>
-                                        <span className="text-gray-800 text-[13px] lg:text-[14px] leading-relaxed">
+                                        <span className="text-gray-700 text-[13px] lg:text-[14px] text-justify">
                                             {feature}
                                         </span>
                                     </div>
@@ -90,14 +90,14 @@ const WebsitePackages = () => {
 
                         <div>
                             <div className="mb-4 pb-2 border-b border-[#1a4498]">
-                                <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-black">
+                                <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
                                     Gói dịch vụ Tiêu Chuẩn
                                 </h3>
                             </div>
 
                             {/* Subtitle */}
                             <div className="mb-6">
-                                <p className="text-black text-[16px] lg:text-[18px] font-archivo font-medium text-justify">
+                                <p className="text-black text-[14px] lg:text-[16px] font-medium text-justify">
                                     Bao gồm tất cả trong gói cơ bản, cộng thêm:
                                 </p>
                             </div>
@@ -108,7 +108,7 @@ const WebsitePackages = () => {
                                         <div className="flex-shrink-0 w-5 h-5 bg-[#1a4498] rounded-full flex items-center justify-center mt-0.5">
                                             <Check className="w-3 h-3 text-white" />
                                         </div>
-                                        <span className="text-gray-800 text-[13px] lg:text-[14px] leading-relaxed">
+                                        <span className="text-gray-700 text-[13px] lg:text-[14px] text-justify">
                                             {feature}
                                         </span>
                                     </div>
@@ -136,14 +136,14 @@ const WebsitePackages = () => {
 
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
-                                <h3 className="text-[18px] lg:text-[24px] font-archivo font-medium text-white">
+                                <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
                                     Gói dịch vụ Nâng Cao
                                 </h3>
                             </div>
 
                             {/* Subtitle */}
                             <div className="mb-6">
-                                <p className="text-white text-[16px] lg:text-[18px] font-archivo font-medium text-justify">
+                                <p className="text-white text-[14px] lg:text-[16px] font-medium text-justify">
                                     Bao gồm tất cả trong gói tiêu chuẩn, cộng thêm:
                                 </p>
                             </div>
@@ -154,7 +154,7 @@ const WebsitePackages = () => {
                                         <div className="flex-shrink-0 w-5 h-5 bg-[#9d6efc] rounded-full flex items-center justify-center mt-0.5">
                                             <Check className="w-3 h-3 text-white" />
                                         </div>
-                                        <span className="text-gray-100 text-[13px] lg:text-[14px] leading-relaxed">
+                                        <span className="text-gray-300 text-[13px] lg:text-[14px] text-justify">
                                             {feature}
                                         </span>
                                     </div>
