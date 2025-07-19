@@ -55,20 +55,20 @@ const OffersSection = () => {
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white leading-tight">
-                        Ưu đãi đặc biệt
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white leading-tight">
+                        Các gói ưu đãi đặc biệt
                     </h2>
                 </div>
 
                 {/* Offers Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-2 bg-black rounded-2xl">
                     {/* Gói cam kết */}
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
                         <div className="text-center mb-6">
-                            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c59efe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
+                            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c08dfe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c08dfe]/30">
                                 <Clock className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
                             </div>
-                            <h3 className="text-[18px] lg:text-[24px] font-medium text-white transition-colors duration-300 group-hover:text-[#c59efe]">Gói cam kết</h3>
+                            <h3 className="text-[18px] lg:text-[24px] font-medium text-white transition-colors duration-300 group-hover:text-[#c08dfe]">Gói cam kết</h3>
                             <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-300">Cam kết thời gian sử dụng</p>
                         </div>
 
@@ -77,11 +77,11 @@ const OffersSection = () => {
                                 <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 offer-item">
                                     <div className="flex items-center justify-between mb-2">
                                         <span className="text-white text-[13px] lg:text-[15px] font-medium transition-colors duration-300">{offer.duration}</span>
-                                        <span className="text-[#c59efe] text-[13px] lg:text-[15px] font-medium transition-all duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
+                                        <span className="text-[#c08dfe] text-[13px] lg:text-[15px] font-medium transition-all duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
                                     </div>
                                     {offer.bonus && (
                                         <div className="flex items-start gap-2 mt-3 pt-3 border-t border-white/10 transition-colors duration-300">
-                                            <Gift className="w-4 h-4 text-[#c59efe] mt-0.5 flex-shrink-0 transition-colors duration-300 group-hover:text-[#d4b5ff]" />
+                                            <Gift className="w-4 h-4 text-[#c08dfe] mt-0.5 flex-shrink-0 transition-colors duration-300 group-hover:text-[#d4b5ff]" />
                                             <p className="text-[13px] lg:text-[14px] text-gray-200 transition-colors duration-300 group-hover:text-gray-100">{offer.bonus}</p>
                                         </div>
                                     )}
@@ -91,9 +91,9 @@ const OffersSection = () => {
                     </div>
 
                     {/* Gói tăng trưởng */}
-                    <div className="bg-[#c59efe] rounded-xl p-8 border-2 border-white transition-all duration-500 group hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                    <div className="bg-[#c08dfe] rounded-lg p-8 border-2 border-white transition-all duration-500 group hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
                         <div className="text-center mb-6">
-                            <div className="inline-flex items-center justify-center w-14 h-14 bg-black rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
+                            <div className="inline-flex items-center justify-center w-14 h-14 bg-black rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c08dfe]/30">
                                 <TrendingUp className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
                             </div>
                             <h3 className="text-[18px] lg:text-[24px] font-medium text-black transition-colors duration-300">Gói tăng trưởng</h3>
@@ -124,12 +124,12 @@ const OffersSection = () => {
                     </div>
 
                     {/* Gói combo đa kênh */}
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-xl p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
                         <div className="text-center mb-8">
-                            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c59efe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c59efe]/30">
+                            <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c08dfe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c08dfe]/30">
                                 <Package className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
                             </div>
-                            <h3 className="text-[18px] lg:text-[24px] font-medium text-white transition-colors duration-300 group-hover:text-[#c59efe]">Gói combo đa kênh</h3>
+                            <h3 className="text-[18px] lg:text-[24px] font-medium text-white transition-colors duration-300 group-hover:text-[#c08dfe]">Gói combo đa kênh</h3>
                             <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-300">Kết hợp nhiều dịch vụ</p>
                         </div>
 
@@ -142,12 +142,12 @@ const OffersSection = () => {
                                 <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20">
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-1">
-                                            {index === 1 && <ChevronRight className="w-4 h-4 text-[#c59efe] transition-colors duration-300 group-hover:text-[#d4b5ff]" />}
+                                            {index === 1 && <ChevronRight className="w-4 h-4 text-[#c08dfe] transition-colors duration-300 group-hover:text-[#d4b5ff]" />}
                                             <span className="text-white text-[14px] lg:text-[16px] transition-colors duration-300">{offer.services}</span>
                                         </div>
                                         <div className="flex items-center gap-1">
-                                            <Percent className="w-4 h-4 text-[#c59efe] transition-colors duration-300 group-hover:text-[#d4b5ff]" />
-                                            <span className="text-[#c59efe] font-semibold text-[14px] lg:text-[16px] transition-colors duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
+                                            <Percent className="w-4 h-4 text-[#c08dfe] transition-colors duration-300 group-hover:text-[#d4b5ff]" />
+                                            <span className="text-[#c08dfe] font-semibold text-[14px] lg:text-[16px] transition-colors duration-300 group-hover:text-[#d4b5ff]">Giảm {offer.discount}</span>
                                         </div>
                                     </div>
                                     <p className="text-[11px] lg:text-[13px] text-gray-200 text-right transition-colors duration-300 group-hover:text-gray-100">tổng chi phí</p>
@@ -159,14 +159,14 @@ const OffersSection = () => {
 
                 {/* CTA */}
                 <div className="text-center mt-8">
-                    <p className="text-gray-100 mb-6 text-[15px] lg:text-[18px] transition-colors duration-300">
+                    <p className="text-gray-100 mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
                         Liên hệ ngay để được tư vấn gói ưu đãi phù hợp nhất
                     </p>
                     {/* Desktop CTA Button */}
                     <div className="flex justify-center items-center space-x-4">
                         <Link
                             to="/contact"
-                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c59efe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                             style={{
                                 backgroundSize: '200% 200%'
                             }}

@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Tự động hoá quy trình nội bộ &\nmarketing bằng n8n",
+            description: "Tự động hoá quy trình nội bộ &\nmarketing bằng n8n.",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"

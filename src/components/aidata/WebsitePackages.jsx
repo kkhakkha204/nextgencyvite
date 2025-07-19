@@ -33,7 +33,7 @@ const WebsitePackages = () => {
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight mb-1">
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight mb-1">
                         Các gói dịch vụ
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
@@ -44,9 +44,9 @@ const WebsitePackages = () => {
                 {/* Packages */}
                 <div className="grid lg:grid-cols-3 gap-6 bg-gray-50 p-2 rounded-2xl">
                     {/* Gói Cơ Bản */}
-                    <div className="bg-white border-2 border-white rounded-2xl p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
+                    <div className="bg-white border-2 border-white rounded-lg p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
                         {/* Decorative elements */}
-                        <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c59efe]/35 to-transparent rounded-full blur-xl"></div>
+                        <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c08dfe]/35 to-transparent rounded-full blur-xl"></div>
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
@@ -57,7 +57,7 @@ const WebsitePackages = () => {
                             <div className="space-y-4 mb-8">
                                 {basicFeatures.map((feature, index) => (
                                     <div key={index} className="flex items-start space-x-3">
-                                        <div className="flex-shrink-0 w-5 h-5 bg-[#c59efe] rounded-full flex items-center justify-center mt-0.5">
+                                        <div className="flex-shrink-0 w-5 h-5 bg-[#c08dfe] rounded-full flex items-center justify-center mt-0.5">
                                             <Check className="w-3 h-3 text-white" />
                                         </div>
                                         <span className="text-gray-700 text-[13px] lg:text-[14px] text-justify">
@@ -77,7 +77,7 @@ const WebsitePackages = () => {
                     </div>
 
                     {/* Gói Tiêu Chuẩn */}
-                    <div className="bg-white border-2 border-[#1a4498] rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
+                    <div className="bg-white border-2 border-[#1a4498] rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
                         {/* Decorative elements */}
                         <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-[#1a4498]/35 to-transparent rounded-full blur-xl"></div>
                         {/* Popular Badge */}
@@ -125,10 +125,10 @@ const WebsitePackages = () => {
                     </div>
 
                     {/* Gói Nâng Cao */}
-                    <div className="bg-black border-2 border-black rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 relative flex flex-col justify-between">
+                    <div className="bg-black border-2 border-black rounded-lg p-8 shadow-xl hover:shadow-2xl transition-all duration-300 relative flex flex-col justify-between">
                         {/* Premium Badge */}
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <div className="bg-gradient-to-r from-[#9d6efc] via-black to-[#9d6efc] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                            <div className="bg-gradient-to-r from-[#c08dfe] via-black to-[#c08dfe] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Crown className="w-4 h-4 fill-current" />
                                 <span>Premium</span>
                             </div>
@@ -151,7 +151,7 @@ const WebsitePackages = () => {
                             <div className="space-y-4 mb-8">
                                 {advancedFeatures.map((feature, index) => (
                                     <div key={index} className="flex items-start space-x-3">
-                                        <div className="flex-shrink-0 w-5 h-5 bg-[#9d6efc] rounded-full flex items-center justify-center mt-0.5">
+                                        <div className="flex-shrink-0 w-5 h-5 bg-[#c08dfe] rounded-full flex items-center justify-center mt-0.5">
                                             <Check className="w-3 h-3 text-white" />
                                         </div>
                                         <span className="text-gray-300 text-[13px] lg:text-[14px] text-justify">

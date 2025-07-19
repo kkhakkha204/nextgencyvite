@@ -1,5 +1,6 @@
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
+import {ArrowUpRight, ChevronRight} from 'lucide-react';
+import {Link} from "react-router-dom";
 
 const PainPointSection = () => {
     const painPoints = [
@@ -25,22 +26,18 @@ const PainPointSection = () => {
         {
             title: "Tự động hóa quy trình",
             description: "Biến quy trình thủ công thành tự động – giải phóng 80% thời gian cho đội Sale.",
-            highlight: "Tiết kiệm 80% thời gian",
         },
         {
             title: "Cá nhân hóa thông minh",
             description: "Cá nhân hoá nội dung theo hành vi từng khách hàng – tăng mạnh tỷ lệ chuyển đổi.",
-            highlight: "Tăng tỷ lệ chuyển đổi",
         },
         {
             title: "Kết nối đa nền tảng",
             description: "Kết nối đa nền tảng: Zalo – Facebook – Website – CRM vào 1 hệ thống duy nhất.",
-            highlight: "Quản lý 1 hệ thống",
         },
         {
             title: "AI tư vấn thông minh",
             description: "Kích hoạt AI trả lời thông minh – chatbot tư vấn sản phẩm tự động.",
-            highlight: "Áp dụng AI",
         }
     ];
 
@@ -51,15 +48,12 @@ const PainPointSection = () => {
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-                        <span className="bg-gradient-to-r from-[#1a4498] to-[#c59efe]  text-white px-4 py-2 rounded-full text-[13px] lg:text-[15px] font-medium shadow-lg shadow-[#5534bb]/25">
+                        <span className="bg-black  text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium shadow-lg shadow-[#5534bb]/25">
                             Automation - Data
                         </span>
                     </div>
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight">
-                        Nỗi đau của doanh nghiệp
-                        <span className="block text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c59efe] leading-tight">
-                            & Giải pháp cung cấp
-                        </span>
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight">
+                        Nỗi đau & giải pháp cho doanh nghiệp
                     </h2>
                 </div>
 
@@ -70,15 +64,15 @@ const PainPointSection = () => {
                             <div key={index} className="group relative">
                                 {/* Connection line */}
                                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 hidden md:block">
-                                    <div className="w-12 h-12 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center neu-shadow-xs shadow-lg group-hover:border-[#c59efe] transition-all duration-300">
-                                        <ChevronRight className="w-5 h-5 text-[#c59efe] transition-transform duration-300" />
+                                    <div className="w-12 h-12 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center neu-shadow-xs shadow-lg group-hover:border-[#c08dfe] transition-all duration-300">
+                                        <ChevronRight className="w-5 h-5 text-[#c08dfe] transition-transform duration-300" />
                                     </div>
                                 </div>
 
-                                <div className="relative bg-gradient-to-br from-black via-[#c59efe] to-black rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] z-20">
+                                <div className="relative bg-gradient-to-br from-black via-[#c08dfe] to-black rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] z-20">
                                     <div className="grid md:grid-cols-2 p-2 gap-2">
                                         {/* Pain Point - Left Side */}
-                                        <div className="bg-gradient-to-br from-gray-900 to-black rounded-xl px-6 py-5 md:px-16 md:py-7 relative">
+                                        <div className="bg-gradient-to-br from-gray-900 to-black rounded-lg px-6 py-5 md:px-16 md:py-7 relative">
                                             <div className="relative z-10">
                                                 <div className="flex justify-center mb-2">
                                                 </div>
@@ -94,9 +88,9 @@ const PainPointSection = () => {
                                         </div>
 
                                         {/* Solution - Right Side */}
-                                        <div className="bg-gradient-to-br from-white to-gray-50 neu-shadow-inset-xs rounded-xl px-6 py-5 md:px-16 md:py-7 relative">
+                                        <div className="bg-gradient-to-br from-white to-gray-50 neu-shadow-inset-xs rounded-lg px-6 py-5 md:px-16 md:py-7 relative">
                                             {/* Decorative elements */}
-                                            <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c59efe]/35 to-transparent rounded-full blur-xl"></div>
+                                            <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c08dfe]/35 to-transparent rounded-full blur-xl"></div>
 
                                             <div className="relative z-10">
                                                 <div className="flex justify-center mb-2">
@@ -108,10 +102,6 @@ const PainPointSection = () => {
                                                     <p className="text-gray-700 text-[13px] lg:text-[15px] mb-2">
                                                         {solutions[index].description}
                                                     </p>
-
-                                                    <span className="inline-flex items-center px-3 py-1.5 bg-[#c59efe]/10 text-[#9d6efc] text-[13px] lg:text-[15px] font-medium rounded-full transition-all duration-300">
-                                                        {solutions[index].highlight}
-                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,6 +110,31 @@ const PainPointSection = () => {
                             </div>
                         );
                     })}
+                </div>
+                {/* CTA */}
+                <div className="text-center mt-8">
+                    <p className="text-black mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
+                        Liên hệ ngay để nhận tư vấn và báo giá.
+                    </p>
+                    {/* CTA Button */}
+                    <div className="flex items-center justify-center space-x-4">
+                        <Link
+                            to="/contact"
+                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+
+                        >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                            <div
+                                className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                <ArrowUpRight
+                                    className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
+                                    strokeWidth={2.5}/>
+                            </div>
+                        </Link>
+
+                    </div>
                 </div>
             </div>
         </section>

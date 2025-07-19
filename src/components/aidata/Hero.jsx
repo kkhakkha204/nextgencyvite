@@ -11,11 +11,11 @@ const Hero = () => {
                     <div className="lg:col-span-3 space-y-4 mb-4 lg:mb-0">
                         {/* Title Section */}
                         <div className="space-y-2">
-                            <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-none">
+                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-none">
                                 AUTOMATION
                             </h1>
                             <div className="flex items-center gap-4">
-                                <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
                                     AI & DATA
                                 </h1>
                                 {/* SVG Circles */}
@@ -79,7 +79,7 @@ const Hero = () => {
                                 <div className="flex items-start space-x-2">
                                     <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                     <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Tự động hoá quy trình nội bộ & marketing bằng n8n
+                                        Tự động hoá quy trình nội bộ & marketing bằng n8n.
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-2">
