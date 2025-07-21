@@ -8,6 +8,9 @@ import WebsitePackages from "../../components/googleads/WebsitePackages.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import Hero from "../../components/googleads/Hero.jsx";
 import AdvertisingFormsSection from "../../components/googleads/AdvertisingFormsSection.jsx";
+import OffersSection from "../../components/googleads/OffersSection.jsx";
+import ConsultationSection from "../../components/ConsultationSection.jsx";
+import GoogleAdsProcess from "../../components/googleads/GoogleAdsProcess.jsx";
 
 const GoogleAds = () => {
     return (
@@ -18,8 +21,11 @@ const GoogleAds = () => {
             <WhyChooseUs/>
             <WebsitePackages/>
             <AdvertisingFormsSection/>
+            <OffersSection/>
+            <GoogleAdsProcess/>
             <ClientsPartnersSection/>
             <CommitmentSection/>
+            <ConsultationSection/>
             <ServicesSection/>
         </div>
     );

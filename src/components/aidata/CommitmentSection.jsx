@@ -42,7 +42,7 @@ const CommitmentSection = () => {
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1000px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}

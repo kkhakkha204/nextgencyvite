@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Tự động hoá quy trình nội bộ &\nmarketing bằng n8n.",
+            description: "Triển khai Google Search Ads, Display, YouTube và Performance Max.",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"
@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Xây dựng AI Agent:\nChatbot thông minh, tư vấn DISC, tạo nội dung.",
+            description: "Tracking theo từ khóa – chiến dịch – nguồn đơn.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Kết nối các nền tảng: Facebook, Zalo, Website, Email, CRM.",
+            description: "Tối ưu chuyển đổi theo landing page và hành vi người dùng.",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"
