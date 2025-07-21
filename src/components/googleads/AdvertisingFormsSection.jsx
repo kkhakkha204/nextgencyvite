@@ -71,7 +71,7 @@ const AdvertisingFormsSection = () => {
 
     return (
         <section className="bg-white pt-[60px] lg:pt-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black mb-1">
@@ -83,7 +83,7 @@ const AdvertisingFormsSection = () => {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="grid grid-cols-1 md:grid-cols-3 px-8 md:p-0">
                     {advertisingForms.map((form) => (
                         <div
                             key={form.id}

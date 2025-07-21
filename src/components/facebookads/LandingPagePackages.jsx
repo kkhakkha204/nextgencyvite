@@ -94,48 +94,41 @@ const LandingPagePackages = () => {
 
     return (
         <section className="bg-white pt-[60px] lg:pt-[90px]">
-            <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-6 lg:mb-10">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Website & Landing page
-            </span>
-                    </div>
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
-                        Gói xây dựng Landing Page
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight mb-1">
+                        Gói dịch vụ Facebook Ads
                     </h2>
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto leading-relaxed">
-                        Chọn gói dịch vụ phù hợp để tạo ra landing page chuyên nghiệp,
-                        tối ưu hóa chuyển đổi và phù hợp với mọi thiết bị
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
+                        2 gói chính: Chạy quảng cáo chuyển đổi/ Cho thuê tài khoản Invoice
                     </p>
                 </div>
 
                 {/* Packages */}
-                <div className="grid lg:grid-cols-2 gap-6">
+                <div className="grid lg:grid-cols-2 gap-6 p-2 bg-gray-50 rounded-2xl">
                     {/* Gói Cơ Bản */}
-                    <div className="bg-white border-2 border-black rounded-2xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between">
+                    <div className="bg-white border-2 border-white rounded-lg p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
                         <div>
-                            <div className="mb-6 pb-2 border-b-2 border-black">
-                                <h3 className="text-[20px] lg:text-[30px] font-archivo font-medium text-black">
-                                    Gói Landing Page Cơ Bản
+                            <div className="mb-6 pb-2 border-b border-black">
+                                <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
+                                    Gói 1: Chạy quảng cáo chuyển đổi:
                                 </h3>
                             </div>
 
-                            <div className="space-y-6 mb-8">
+                            <div className="space-y-4 mb-8">
                                 {basicPackage.map((section, sectionIndex) => (
                                     <div key={sectionIndex} className="space-y-3">
-                                        <h4 className="text-[14px] lg:text-[16px] font-semibold text-black">
+                                        <h4 className="text-[14px] lg:text-[16px] font-medium text-black">
                                             {section.subtitle}
                                         </h4>
                                         <div className="space-y-2 ml-4">
                                             {section.features.map((feature, index) => (
                                                 <div key={index} className="flex items-start space-x-3">
-                                                    <div className="flex-shrink-0 w-4 h-4 bg-[#2faeec] rounded-full flex items-center justify-center mt-1">
+                                                    <div className="flex-shrink-0 w-4 h-4 bg-[#c08dfe] rounded-full flex items-center justify-center mt-1">
                                                         <Check className="w-2.5 h-2.5 text-white" />
                                                     </div>
-                                                    <span className="text-gray-800 text-[13px] lg:text-[15px] leading-relaxed">
+                                                    <span className="text-gray-700 text-[13px] lg:text-[14px] leading-relaxed">
                                                         {feature}
                                                     </span>
                                                 </div>
@@ -160,36 +153,36 @@ const LandingPagePackages = () => {
                     </div>
 
                     {/* Gói Nâng Cao */}
-                    <div className="bg-black border-2 border-black rounded-2xl p-8 sm:p-10 shadow-xl hover:shadow-2xl transition-all duration-300 relative flex flex-col justify-between">
+                    <div className="bg-black border-2 border-black rounded-lg p-8 shadow-xl hover:shadow-2xl transition-all duration-300 relative flex flex-col justify-between">
                         {/* Popular Badge */}
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <div className="bg-gradient-to-r from-[#5534bb] via-black to-[#5534bb] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                            <div className="bg-gradient-to-r from-[#c08dfe] via-black to-[#c08dfe] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
                                 <span>Phổ Biến</span>
                             </div>
                         </div>
 
                         <div>
-                            <div className="mb-6 pb-2 border-b-2 border-white">
-                                <h3 className="text-[20px] lg:text-[30px] font-medium text-white">
-                                    <span className="font-archivo">Gói Landing Page Nâng Cao</span>
+                            <div className="mb-6 pb-2 border-b border-white">
+                                <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
+                                    <span className="">Gói 2: Cho thuê tài khoản quảng cáo (Invoice)</span>
                                 </h3>
                             </div>
 
-                            <div className="space-y-6 mb-8">
+                            <div className="space-y-4 mb-8">
                                 {advancedPackage.map((section, sectionIndex) => (
                                     <div key={sectionIndex} className="space-y-3">
-                                        <h4 className="text-[14px] lg:text-[16px] font-semibold text-white">
+                                        <h4 className="text-[14px] lg:text-[16px] font-medium text-white">
                                             {section.subtitle}
                                         </h4>
                                         {section.features.length > 0 && (
                                             <div className="space-y-2 ml-4">
                                                 {section.features.map((feature, index) => (
                                                     <div key={index} className="flex items-start space-x-3">
-                                                        <div className="flex-shrink-0 w-4 h-4 bg-[#5534bb] rounded-full flex items-center justify-center mt-1">
+                                                        <div className="flex-shrink-0 w-4 h-4 bg-[#c08dfe] rounded-full flex items-center justify-center mt-1">
                                                             <Check className="w-2.5 h-2.5 text-white" />
                                                         </div>
-                                                        <span className="text-gray-100 text-[13px] lg:text-[15px] leading-relaxed">
+                                                        <span className="text-gray-300 text-[13px] lg:text-[14px] leading-relaxed">
                                                             {feature}
                                                         </span>
                                                     </div>

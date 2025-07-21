@@ -5,7 +5,7 @@ import {ArrowUpRight} from "lucide-react";
 const Hero = () => {
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="relative md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8 z-10">
+            <div className="relative md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-5 items-center">
                     {/* Content Column - 60% */}
                     <div className="lg:col-span-3 space-y-4 mb-4 lg:mb-0">

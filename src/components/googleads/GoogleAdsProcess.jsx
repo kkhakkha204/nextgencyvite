@@ -119,8 +119,6 @@ const GoogleAdsProcess = () => {
                                             {stepText}
                                         </p>
                                     </div>
-
-
                                 </div>
                             );
                         })}
@@ -132,7 +130,7 @@ const GoogleAdsProcess = () => {
                                     <img src="/assets/images/tiktokads/hero.webp"
                                          alt=""
                                          className="rounded-lg max-h-[80px] w-full object-cover"
-                                        />
+                                    />
                                 </div>
                             </>
                         )}
@@ -144,7 +142,7 @@ const GoogleAdsProcess = () => {
 
     return (
         <section className="bg-white pt-[60px] lg:pt-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
@@ -160,23 +158,33 @@ const GoogleAdsProcess = () => {
                 </div>
 
                 {/* Process Grid */}
-                <div className="grid lg:grid-cols-3 gap-4 lg:gap-6 p-2 bg-gray-50 rounded-2xl">
-                    {/* Column 1 */}
-                    <div className="space-y-4 lg:space-y-6 flex flex-col">
-                        <Card step={processSteps[0]} />
-                        <Card step={processSteps[3]} />
+                <div className="p-2 bg-gray-50 rounded-2xl">
+                    {/* Mobile Layout - Single Column in Order */}
+                    <div className="lg:hidden space-y-4">
+                        {processSteps.map((step) => (
+                            <Card key={step.id} step={step} />
+                        ))}
                     </div>
 
-                    {/* Column 2 */}
-                    <div className="space-y-4 lg:space-y-6 flex flex-col">
-                        <Card step={processSteps[1]} />
-                        <Card step={processSteps[4]} />
-                    </div>
+                    {/* Desktop Layout - 3 Columns */}
+                    <div className="hidden lg:grid lg:grid-cols-3 gap-6">
+                        {/* Column 1 */}
+                        <div className="space-y-6 flex flex-col">
+                            <Card step={processSteps[0]} />
+                            <Card step={processSteps[3]} />
+                        </div>
 
-                    {/* Column 3 */}
-                    <div className="space-y-4 lg:space-y-6 flex flex-col">
-                        <Card step={processSteps[2]} />
-                        <Card step={processSteps[5]} />
+                        {/* Column 2 */}
+                        <div className="space-y-6 flex flex-col">
+                            <Card step={processSteps[1]} />
+                            <Card step={processSteps[4]} />
+                        </div>
+
+                        {/* Column 3 */}
+                        <div className="space-y-6 flex flex-col">
+                            <Card step={processSteps[2]} />
+                            <Card step={processSteps[5]} />
+                        </div>
                     </div>
                 </div>
             </div>

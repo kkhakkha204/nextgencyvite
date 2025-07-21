@@ -39,60 +39,62 @@ const PainPointsSection = () => {
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
-              Facebook Ads
+            <span className="bg-black text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium">
+              Google Ads
             </span>
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black mb-1">
                         Nỗi đau của doanh nghiệp
                     </h2>
 
                     {/* Description */}
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
-                        Những vấn đề phổ biến mà doanh nghiệp gặp phải<br/>tạo nên một website không hiệu quả
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-md mx-auto">
+                        Chi phí cao, chuyển đổi thấp, đối thủ lấn lướt? Đừng lo, chúng tôi giúp bạn tối ưu Google Ads.
                     </p>
                 </div>
 
                 {/* Pain Points Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
                     {painPoints.map((point, index) => (
                         <div
                             key={index}
                             className={`
-                ${point.isDark ? 'bg-black' : 'bg-white/80'}
-                ${point.rotation}
-                border-2 border-black rounded-2xl p-6 lg:p-8
-                shadow-md transform-gpu
-                lg:hover:shadow-lg lg:hover:scale-105 lg:hover:rotate-0
-                transition-all duration-300 ease-out
-              `}
+        ${point.isDark ? 'bg-black' : 'bg-white'}
+        ${point.rotation}
+        border-2 border-black rounded-xl p-4 lg:p-6
+        shadow-md transform-gpu
+        lg:hover:shadow-lg lg:hover:scale-105 lg:hover:rotate-0
+        transition-all duration-300 ease-out
+      `}
                         >
                             {/* Card Content */}
-                            <div className="space-y-4">
+                            <div className="flex flex-col justify-between h-full">
+                                {/* Title & Description Container */}
+                                <div>
+                                    {/* Title */}
+                                    <h3 className={`
+              text-[14px] lg:text-[16px] font-medium
+              ${point.isDark ? 'text-white' : 'text-black'}
+            `}>
+                                        {point.title}
+                                    </h3>
 
-                                {/* Title */}
-                                <h3 className={`
-                  text-[16px] lg:text-[20px] font-archivo font-medium
-                  ${point.isDark ? 'text-white' : 'text-black'}
-                `}>
-                                    {point.title}
-                                </h3>
-
-                                {/* Description */}
-                                <p className={`
-                  text-[14px] lg:text-[16px] leading-relaxed
-                  ${point.isDark ? 'text-gray-100' : 'text-gray-700'}
-                `}>
-                                    {point.description}
-                                </p>
+                                    {/* Description */}
+                                    <p className={`
+              text-[13px] lg:text-[15px] max-w-sm
+              ${point.isDark ? 'text-gray-300' : 'text-gray-700'}
+            `}>
+                                        {point.description}
+                                    </p>
+                                </div>
 
                                 {/* Impact */}
                                 <div className={`
-                  inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium
-                  ${point.isDark ? 'bg-[#60c9f7]/20 text-[#60c9f7]' : 'bg-purple-50 text-[#5534bb]'}
-                `}>
+          inline-flex items-center gap-2 px-3 py-1 rounded-full text-[13px] lg:text-[15px] font-medium mt-4 self-start
+          ${point.isDark ? 'bg-[#c08dfe]/20 text-[#c08dfe]' : 'bg-[#1a4498]/10 text-[#1a4498]'}
+        `}>
                                     <span className="w-2 h-2 bg-current rounded-full"></span>
                                     {point.impact}
                                 </div>

@@ -3,7 +3,7 @@ import React from 'react';
 const ClientsPartnersSection = () => {
     return (
         <section className="bg-white pt-[60px] lg:pt-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Thẻ chứa A - Tiêu đề và mô tả */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">

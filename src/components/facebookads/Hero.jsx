@@ -5,14 +5,14 @@ import {ArrowUpRight} from "lucide-react";
 const Hero = () => {
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-5 items-center">
                     {/* Content Column - 60% */}
-                    <div className="md:col-span-3 space-y-6 mb-4 md:mb-0">
+                    <div className="md:col-span-3 space-y-4 mb-4 md:mb-0">
                         {/* Title Section */}
                         <div className="space-y-2">
                             <div className="flex items-center gap-4">
-                            <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
+                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
                                 DỊCH VỤ
                             </h1>
                             {/* SVG Circles */}
@@ -29,7 +29,7 @@ const Hero = () => {
                                         cx="25.4404"
                                         cy="25.4404"
                                         r="25.4404"
-                                        fill="#E2DDFB"
+                                        fill="#f3e8ff"
                                         className="animate-pulse"
                                         style={{ animationDelay: '0s', animationDuration: '2s' }}
                                     />
@@ -37,7 +37,7 @@ const Hero = () => {
                                         cx="40.1005"
                                         cy="25.4404"
                                         r="25.4404"
-                                        fill="#C1B3F4"
+                                        fill="#e9d5ff"
                                         className="animate-pulse"
                                         style={{ animationDelay: '0.5s', animationDuration: '2s' }}
                                     />
@@ -45,7 +45,7 @@ const Hero = () => {
                                         cx="53.8994"
                                         cy="25.4404"
                                         r="25.4404"
-                                        fill="#9C84EA"
+                                        fill="#d8b4fe"
                                         className="animate-pulse"
                                         style={{ animationDelay: '1s', animationDuration: '2s' }}
                                     />
@@ -53,7 +53,7 @@ const Hero = () => {
                                         cx="68.5596"
                                         cy="25.4404"
                                         r="25.4404"
-                                        fill="#7A5BDC"
+                                        fill="#c59efe"
                                         className="animate-pulse"
                                         style={{ animationDelay: '1.5s', animationDuration: '2s' }}
                                     />
@@ -61,7 +61,7 @@ const Hero = () => {
                             </div>
                             </div>
                             <div className="">
-                                <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#5534bb] bg-clip-text text-transparent leading-tight">
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
                                     FACEBOOK ADS
                                 </h1>
                             </div>
@@ -72,9 +72,37 @@ const Hero = () => {
 
                         {/* Description */}
                         <div className="space-y-4">
-                            <p className="text-[15px] lg:text-[18px] text-black leading-relaxed max-w-2xl">
-                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp.
+                            <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
+                                Dịch vụ <span className="text-[#c08dfe]">Facebook Ads</span> từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất tiềm ẩn đầy cơ hội trên nền tảng lâu đời này bằng giải pháp:
                             </p>
+
+                            {/* Bullet Points */}
+                            <div className="">
+                                <div className="flex items-start space-x-2">
+                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                        Cho thuê tài khoản quảng cáo.
+                                    </p>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                        Xây dựng chiến dịch chuyển đổi, remarketing và thu phễu đa tầng (TOFU – MOFU – BOFU).
+                                    </p>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                        Tối ưu theo sự kiện CAPI (Facebook Conversion API).
+                                    </p>
+                                </div>
+                                <div className="flex items-start space-x-2">
+                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                        Tracking chuẩn từ phễu đầu đến đơn hàng, hỗ trợ tích hợp với website và chatbot.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         {/* CTA Button */}

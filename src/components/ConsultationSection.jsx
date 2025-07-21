@@ -4,7 +4,7 @@ import { Star, CheckCircle, Target, ArrowRight } from 'lucide-react';
 export default function ConsultationSection() {
     return (
         <section
-            className="bg-gradient-to-br from-black via-black to-[#1a4498] py-[60px] lg:py-[90px] px-6 sm:px-6 lg:px-8 relative overflow-hidden"
+            className="bg-gradient-to-br from-black via-black to-[#1a4498] py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         >
             <div className="max-w-[1080px] mx-auto">
                 {/* Header */}

@@ -12,7 +12,7 @@
     const WorkflowSection = () => {
         return (
             <section className="pt-[60px] lg:pt-[90px] bg-white">
-                <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-6 sm:px-6 lg:px-8">
+                <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Tiêu đề chính */}
                     <div className="text-center mb-4 lg:mb-8">
                         <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight">
