@@ -7,12 +7,12 @@ const ClientsPartnersSection = () => {
                 {/* Thẻ chứa A - Tiêu đề và mô tả */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
-                        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold leading-tight text-black mb-1">
+                        <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black mb-1">
                             Khách hàng &<br/>Đối tác chiến lược
                         </h2>
                     </div>
                     <div className="lg:w-1/2 text-center lg:text-right">
-                        <p className="text-[15px] lg:text-[18px] text-black leading-relaxed">
+                        <p className="text-[15px] lg:text-[18px] text-black">
                             Những người bạn đồng hành cùng Nextgency trên hành trình kiến tạo chuyển đổi số bền vững
                         </p>
                     </div>
@@ -196,7 +196,7 @@ const ClientsPartnersSection = () => {
                 {/* Thẻ chứa D - 4 cột (cột A có text, cột B,C,D có logo) */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 ">
                     {/* Cột A - Text với gradient animation */}
-                    <div className="flex items-center justify-center neu-shadow-xs bg-[#c59efe]
+                    <div className="flex items-center justify-center neu-shadow-xs bg-black
                                   text-white rounded-xl p-4 animate-gradient-shift
                                   hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
                         <div className="text-center">

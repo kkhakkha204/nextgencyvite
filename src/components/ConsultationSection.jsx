@@ -9,10 +9,10 @@ export default function ConsultationSection() {
             <div className="max-w-[1280px] mx-auto">
                 {/* Header */}
                 <div className="text-left mb-8 lg:mb-12">
-                    <h2 className="text-[28px] md:text-[40px] lg:text-[48px] font-archivo font-bold leading-tight text-white mb-4">
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-white">
                         Nhận tư vấn
                     </h2>
-                    <p className="text-[16px] sm:text-[20px] text-gray-100 leading-relaxed">
+                    <p className="text-[15px] sm:text-[18px] text-white">
                         Nextgency chân thành cảm ơn bạn đã dành thời gian điền bảng khảo sát này. Đội ngũ của chúng tôi sẽ xem xét kỹ thông tin và liên hệ trong vòng 24h làm việc để tư vấn giải pháp phù hợp nhất.
                     </p>
                 </div>
@@ -20,7 +20,7 @@ export default function ConsultationSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Right Side - Form */}
                     <div className="relative">
-                        <div className="backdrop-blur-3xl  rounded-2xl border-2 border-white shadow-2xl p-4 lg:p-6">
+                        <div className="backdrop-blur-3xl  rounded-xl border-2 border-white shadow-2xl p-4 lg:p-6">
                             <div className="space-y-4">
                                 <div className="space-y-4">
                                     {/* Tên khách hàng */}
@@ -126,33 +126,33 @@ export default function ConsultationSection() {
                         {/* Main Visual Card */}
                         <div className="relative ">
                             <div className="space-y-4 ">
-                                <div className="flex items-center space-x-4 bg-white/10 p-2 rounded-2xl shadow-lg backdrop-blur-3xl">
+                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
                                     <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
                                         <Star className="w-8 h-8 text-white" fill="currentColor" />
                                     </div>
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[16px] font-medium">Tư vấn miễn phí</h3>
-                                        <p className="text-gray-200 text-[13px] lg:text-[15px]">Chuyên gia hàng đầu</p>
+                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Tư vấn miễn phí</h3>
+                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Chuyên gia hàng đầu</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-4 bg-white/10 p-2 rounded-2xl shadow-lg backdrop-blur-3xl">
+                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
                                     <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
                                         <CheckCircle className="w-8 h-8 text-white"  />
                                     </div>
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[16px] font-medium">Phản hồi nhanh</h3>
-                                        <p className="text-gray-200 text-[13px] lg:text-[15px]">Trong vòng 24h</p>
+                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Phản hồi nhanh</h3>
+                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Trong vòng 24h</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-4 bg-white/10 p-2 rounded-2xl shadow-lg backdrop-blur-3xl">
+                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
                                     <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
                                         <Target className="w-8 h-8 text-white"  />
                                     </div>
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[16px] font-medium">Giải pháp tối ưu</h3>
-                                        <p className="text-gray-200 text-[13px] lg:text-[15px]">Phù hợp từng doanh nghiệp</p>
+                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Giải pháp tối ưu</h3>
+                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Phù hợp từng doanh nghiệp</p>
                                     </div>
                                 </div>
                             </div>

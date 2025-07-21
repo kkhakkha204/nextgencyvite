@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Tự động hoá quy trình nội bộ &\nmarketing bằng n8n",
+            description: "Tự động hoá quy trình nội bộ &\nmarketing bằng n8n.",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"
@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Xây dựng AI Agent:\nChatbot thông minh,\ntư vấn DISC, tạo nội dung.",
+            description: "Xây dựng AI Agent:\nChatbot thông minh, tư vấn DISC, tạo nội dung.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Kết nối các nền tảng:\nFacebook, Zalo, Website, Email, CRM.",
+            description: "Kết nối các nền tảng: Facebook, Zalo, Website, Email, CRM.",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"
@@ -59,7 +59,7 @@ const ServicesDivider = () => {
                                 {/* Ellipse Container */}
                                 <div className={`relative w-64 h-24 md:w-52 md:h-28 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
                                     {/* Ellipse Border */}
-                                    <div className="absolute inset-0 rounded-full border-2 border-white/80 group-hover:border-white transition-colors duration-300"></div>
+                                    <div className="absolute inset-0 rounded-full border-2 border-white transition-colors duration-300"></div>
 
                                     {/* Content Inside Ellipse */}
                                     <div className="px-4 py-4 text-white">

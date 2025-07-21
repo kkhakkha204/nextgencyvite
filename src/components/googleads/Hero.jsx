@@ -12,7 +12,7 @@ const Hero = () => {
                         Dịch vụ google ads
                     </h1>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
-                        Chúng tôi tạo ra những giải pháp công nghệ đột phá, mang đến trải nghiệm số hoàn hảo cho doanh nghiệp của bạn.
+                        Nextgency triển khai Google Ads với đa dạng chiến dịch để đưa doanh nghiệp lên top 1 trong tâm trí người dùng khi nhắc tới lĩnh vực của bạn.
                     </p>
                 </div>
 
@@ -40,7 +40,7 @@ const Hero = () => {
 
                     {/* Column 3 - Main large image */}
                     <div className="flex items-center justify-center">
-                        <div className="w-full max-h-[340px] aspect-[4/5] bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl shadow-xl overflow-hidden">
+                        <div className="w-full max-h-[320px] lg:max-h-[340px] aspect-[4/5] bg-gradient-to-br from-orange-100 to-red-100 rounded-2xl shadow-xl overflow-hidden">
                             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                             </div>
                         </div>
@@ -79,24 +79,29 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* CTA Button */}
-                <div className="flex items-center justify-center space-x-4">
-                    <Link
-                        to="/contact"
-                        className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+                <div className="text-center mt-8">
+                    <p className="text-black mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
+                        Liên hệ ngay để nhận tư vấn và báo giá.
+                    </p>
+                    {/* CTA Button */}
+                    <div className="flex items-center justify-center space-x-4">
+                        <Link
+                            to="/contact"
+                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
-                    >
+                        >
         <span className="">
-            Hợp tác ngay
+            Tư vấn ngay
         </span>
-                        <div
-                            className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
-                            <ArrowUpRight
-                                className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
-                                strokeWidth={2.5}/>
-                        </div>
-                    </Link>
+                            <div
+                                className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                <ArrowUpRight
+                                    className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
+                                    strokeWidth={2.5}/>
+                            </div>
+                        </Link>
 
+                    </div>
                 </div>
             </div>
         </section>

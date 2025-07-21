@@ -38,19 +38,19 @@ const PainPointsSection = () => {
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-gradient-to-r from-[#5534bb] via-[#2faeec] to-[#5534bb] text-white px-4 py-2 rounded-full text-[14px] lg:text-[16px] font-medium">
+            <span className="bg-black text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium">
               Google Ads
             </span>
                     </div>
 
                     {/* Title */}
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold text-black mb-1">
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black mb-1">
                         Nỗi đau của doanh nghiệp
                     </h2>
 
                     {/* Description */}
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
-                        Những vấn đề phổ biến mà doanh nghiệp gặp phải<br/>tạo nên một website không hiệu quả
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-lg mx-auto">
+                        Những vấn đề phổ biến mà doanh nghiệp gặp phải tạo nên một website không hiệu quả
                     </p>
                 </div>
 

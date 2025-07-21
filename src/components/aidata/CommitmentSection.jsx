@@ -47,11 +47,11 @@ const CommitmentSection = () => {
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-                        <span className="bg-gradient-to-r from-[#1a4498] to-[#c59efe]  text-white px-4 py-2 rounded-full text-[13px] lg:text-[15px] font-medium shadow-lg shadow-[#5534bb]/25">
+                        <span className="bg-gradient-to-r from-[#1a4498] to-[#c59efe] text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium shadow-lg shadow-[#5534bb]/25">
                             Automation - Data
                         </span>
                     </div>
-                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-semibold leading-tight text-black mb-1">
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black">
                         Cam kết của chúng tôi
                     </h2>
                 </div>
@@ -61,13 +61,13 @@ const CommitmentSection = () => {
                         {commitments.map((commitment) => (
                             <div
                                 key={commitment.id}
-                                className={`group relative rounded-2xl p-2 shadow-md hover:shadow-lg transition-all duration-300 ${
+                                className={`group relative rounded-lg p-2 shadow-md hover:shadow-lg transition-all duration-300 ${
                                     commitment.id === 6
                                         ? 'bg-black border-2 border-black'
                                         : 'bg-white border-2 border-black'
                                 }`}
                             >
-                                <div className="flex items-center space-x-4 min-h-[60px] sm:min-h-[70px]">
+                                <div className="flex items-center space-x-4 ">
                                     {/* Number/Icon */}
                                     <div className="flex-shrink-0">
                                         <div className="relative">
@@ -79,7 +79,7 @@ const CommitmentSection = () => {
                                                 {commitment.id === 6 ? (
                                                     <AlertTriangle className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                                                 ) : (
-                                                    <span className="text-lg sm:text-xl font-semibold text-white transition-colors duration-300">
+                                                    <span className="text-[14px] sm:text-[16px] font-semibold text-white transition-colors duration-300">
                                                         {commitment.id}
                                                     </span>
                                                 )}
@@ -90,7 +90,7 @@ const CommitmentSection = () => {
                                     {/* Content */}
                                     <div className="flex-1 min-w-0">
                                         <div className="w-full">
-                                            <p className={`text-[14px] lg:text-[16px] font-medium leading-relaxed ${
+                                            <p className={`text-[13px] lg:text-[15px] font-medium ${
                                                 commitment.id === 6 ? 'text-white' : 'text-black'
                                             }`}>
                                                 {commitment.description}
@@ -106,7 +106,7 @@ const CommitmentSection = () => {
                                                                     {index + 1}
                                                                 </span>
                                                             </div>
-                                                            <p className="text-gray-100 text-[13px] sm:text-[15px] italic leading-relaxed">
+                                                            <p className="text-gray-100 text-[12px] sm:text-[14px] italic mt-1">
                                                                 {subCommitment}
                                                             </p>
                                                         </div>

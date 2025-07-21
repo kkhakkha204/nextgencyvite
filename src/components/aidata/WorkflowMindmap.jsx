@@ -2,12 +2,6 @@
     import {
         ChevronDown,
         Dot,
-        Send,
-        MessageSquare,
-        Target,
-        Zap,
-        Link2,
-        Brain,
         FileSignature,
         Settings,
         TestTube,
@@ -17,7 +11,7 @@
 
     const WorkflowSection = () => {
         return (
-            <section className="py-[60px] lg:py-[90px] bg-white">
+            <section className="pt-[60px] lg:pt-[90px] bg-white">
                 <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-6 sm:px-6 lg:px-8">
                     {/* Tiêu đề chính */}
                     <div className="text-center mb-4 lg:mb-8">
@@ -33,10 +27,7 @@
                             <div className="flex flex-col justify-center">
                                 {/* Card 1 */}
                                 <div className="p-4 rounded-lg bg-black border-2 border-white transition-all duration-300 shadow-md">
-                                    <div className="flex items-start gap-2">
-                                        <div className="p-2 md:p-3 rounded-lg bg-white">
-                                            <Send className="w-5 h-5 text-black" strokeWidth={2} />
-                                        </div>
+                                    <div className="flex items-start">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-white">
                                                 Gửi yêu cầu & tư vấn sơ bộ
@@ -56,10 +47,7 @@
 
                                 {/* Card 2 */}
                                 <div className="p-4 rounded-lg bg-black border-2 border-white transition-all duration-300 shadow-md">
-                                    <div className="flex items-start gap-2">
-                                        <div className="p-2 md:p-3 rounded-lg bg-white">
-                                            <MessageSquare className="w-5 h-5 text-black" strokeWidth={2} />
-                                        </div>
+                                    <div className="flex items-start ">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-white">
                                                 Khách hàng mô tả bài toán
@@ -79,10 +67,7 @@
 
                                 {/* Card 3 */}
                                 <div className="p-4 rounded-lg bg-gradient-to-br from-black via-black to-[#1a4498] border-2 border-white transition-all duration-300 shadow-md">
-                                    <div className="flex items-start gap-2">
-                                        <div className="p-2 md:p-3 rounded-lg bg-white">
-                                            <Target className="w-5 h-5 text-black" strokeWidth={2} />
-                                        </div>
+                                    <div className="flex items-start ">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-white">
                                                 Phân tích mục tiêu, kênh vận hành
