@@ -4,7 +4,28 @@ import {ArrowUpRight} from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="bg-white py-[60px] lg:py-[90px]">
+        <section className="bg-white py-[60px] lg:py-[90px] relative overflow-hidden">
+            {/* Top Left Mesh Gradient Circle */}
+            <div className="absolute -top-20 -left-20 sm:-top-32 sm:-left-32 lg:-top-40 lg:-left-40 w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 opacity-30 lg:opacity-20">
+                <div className="w-full h-full rounded-full bg-gradient-radial from-[#1a4498] via-[#7c5fb8] to-[#c08dfe] blur-xl animate-pulse"
+                     style={{
+                         background: 'radial-gradient(circle, #1a4498 0%, #7c5fb8 40%, #c08dfe 70%, transparent 100%)',
+                         animationDuration: '4s'
+                     }}>
+                </div>
+            </div>
+
+            {/* Bottom Right Mesh Gradient Circle */}
+            <div className="absolute -bottom-20 -right-20 sm:-bottom-32 sm:-right-32 lg:-bottom-40 lg:-right-40 w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 opacity-25 lg:opacity-15">
+                <div className="w-full h-full rounded-full bg-gradient-radial from-[#c08dfe] via-[#7c5fb8] to-[#1a4498] blur-2xl animate-pulse"
+                     style={{
+                         background: 'radial-gradient(circle, #c08dfe 0%, #7c5fb8 40%, #1a4498 70%, transparent 100%)',
+                         animationDelay: '2s',
+                         animationDuration: '4s'
+                     }}>
+                </div>
+            </div>
+
             <div className="relative md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-5 items-center">
                     {/* Content Column - 60% */}

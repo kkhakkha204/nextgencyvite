@@ -5,34 +5,58 @@ import {Link} from "react-router-dom";
 const Hero = () => {
     return (
         <section className="py-[60px] lg:py-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Row A - Hidden on mobile */}
                 <div className="hidden lg:block">
-                    <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                         <img
                             src="/assets/images/tiktokads/hero.webp"
                             alt="Team collaboration"
                             className="w-full h-48 lg:h-96 object-cover hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>
                 </div>
 
                 {/* Row B - Main content */}
-                <div className="py-4 lg:py-6">
+                <div className="py-4">
                     <div className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:gap-6 items-center">
 
                         {/* Column A - Content (40%) */}
                         <div className="md:col-span-2 space-y-6">
-                            <div className="space-y-6">
-                                <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold text-black uppercase leading-tight">
+                            <div className="space-y-2">
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold text-black uppercase leading-none">
                                     Tiktok Ads
                                 </h1>
 
-                                <p className="text-[15px] lg:text-[18px] text-black leading-relaxed max-w-xl">
-                                    Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên nền tảng Tiktok để mang về doanh thu và độ nhận diện phủ khắp. Giải pháp từ dịch vụ Tiktok Ads của Nextgency:
-                                </p>
+                                {/* Description */}
+                                <div className="space-y-4">
+                                    <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
+                                        Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên <span className="text-[#c08dfe]">nền tảng Tiktok</span> để mang về doanh thu và độ nhận diện phủ khắp. Giải pháp từ dịch vụ Tiktok Ads của Nextgency:
+                                    </p>
+
+                                    {/* Bullet Points */}
+                                    <div className="">
+                                        <div className="flex items-start space-x-2">
+                                            <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                            <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                                Tối ưu quảng cáo viral ngắn hạn cho ngành hàng tiêu dùng, thời trang, làm đẹp.
+                                            </p>
+                                        </div>
+                                        <div className="flex items-start space-x-2">
+                                            <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                            <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                                Thiết kế nội dung video + tracking pixel chuẩn TikTok.
+                                            </p>
+                                        </div>
+                                        <div className="flex items-start space-x-2">
+                                            <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                            <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                                Retargeting khách đã xem video, đã tương tác.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* CTA Button */}
@@ -61,25 +85,25 @@ const Hero = () => {
 
                             {/* B1 - 60% column */}
                             <div className="col-span-6 relative">
-                                <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                                <div className="h-full rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
                                     <img
                                         src="/assets/images/tiktokads/hero2.webp"
                                         alt="Modern workspace"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t rounded-lg from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t rounded-xl from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                             </div>
 
                             {/* B2 - 40% column */}
                             <div className="col-span-4 relative">
-                                <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                                <div className="h-full rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
                                     <img
                                         src="/assets/images/tiktokads/hero2.webp"
                                         alt="Innovation"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t rounded-lg  from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t rounded-xl from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                             </div>
                         </div>
