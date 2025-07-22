@@ -6,7 +6,7 @@ const Hero = () => {
     return (
         <section className="bg-white py-[60px] lg:py-[90px] relative overflow-hidden">
             {/* Top Left Mesh Gradient Circle */}
-            <div className="absolute -top-20 -left-20 sm:-top-32 sm:-left-32 lg:-top-40 lg:-left-40 w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 opacity-30 lg:opacity-20">
+            <div className="absolute -top-20 -left-20 sm:-top-32 sm:-left-32 lg:-top-40 lg:-left-40 w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 ">
                 <div className="w-full h-full rounded-full bg-gradient-radial from-[#1a4498] via-[#7c5fb8] to-[#c08dfe] blur-xl animate-pulse"
                      style={{
                          background: 'radial-gradient(circle, #1a4498 0%, #7c5fb8 40%, #c08dfe 70%, transparent 100%)',
