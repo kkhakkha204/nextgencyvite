@@ -4,27 +4,7 @@ import {ArrowUpRight} from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="bg-white py-[60px] lg:py-[90px] relative">
-            {/* Top Left Mesh Gradient Circle */}
-            <div className="absolute -top-24 -left-24 sm:-top-40 sm:-left-40 lg:-top-48 lg:-left-48 w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 opacity-40 lg:opacity-20">
-                <div className="w-full h-full rounded-full bg-[#c08dfe] blur-2xl "
-                     style={{
-                         background: '#c08dfe',
-
-                     }}>
-                </div>
-            </div>
-
-            {/* Bottom Right Mesh Gradient Circle */}
-            <div className="absolute -bottom-24 -right-24 sm:-bottom-40 sm:-right-40 lg:-bottom-48 lg:-right-48 w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 opacity-40 lg:opacity-20">
-                <div className="w-full h-full rounded-full bg-[#1a4498] blur-2xl"
-                     style={{
-                         background: '#1a4498',
-
-                     }}>
-                </div>
-            </div>
-
+        <section className="bg-white py-[60px] lg:py-[90px]">
             <div className="relative md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-5 items-center">
                     {/* Content Column - 60% */}
