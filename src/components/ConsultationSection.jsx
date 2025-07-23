@@ -6,7 +6,7 @@ export default function ConsultationSection() {
         <section
             className="bg-gradient-to-b from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         >
-            <div className="max-w-[1080px] mx-auto">
+            <div className="max-w-[1280px] mx-auto">
                 {/* Header */}
                 <div className="text-left mb-8 lg:mb-12">
                     <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-white">

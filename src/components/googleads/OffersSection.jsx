@@ -51,7 +51,7 @@ const OffersSection = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-br from-black via-black to-[#1a4498] py-[60px] lg:py-[90px] mt-[60px] lg:mt-[90px]">
+        <section className="bg-gradient-to-b from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
@@ -63,7 +63,7 @@ const OffersSection = () => {
                 {/* Offers Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-2 bg-black rounded-2xl">
                     {/* Gói cam kết */}
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg p-8 border-2 border-white/10 transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
                         <div className="text-center mb-6">
                             <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c08dfe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c08dfe]/30">
                                 <Clock className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
@@ -72,7 +72,7 @@ const OffersSection = () => {
                             <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-300">Cam kết thời gian sử dụng</p>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="space-y-2">
                             {commitmentOffers.map((offer, index) => (
                                 <div key={index} className="bg-white/5 rounded-xl p-4 border border-white/10 transition-all duration-300 hover:bg-white/10 hover:border-white/20 offer-item">
                                     <div className="flex items-center justify-between mb-2">
@@ -91,7 +91,7 @@ const OffersSection = () => {
                     </div>
 
                     {/* Gói tăng trưởng */}
-                    <div className="bg-[#c08dfe] rounded-lg p-8 border-2 border-white transition-all duration-500 group hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                    <div className="bg-[#c08dfe] rounded-lg p-8 border-2 border-white/70 transition-all duration-500 group hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
                         <div className="text-center mb-6">
                             <div className="inline-flex items-center justify-center w-14 h-14 bg-black rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c08dfe]/30">
                                 <TrendingUp className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
@@ -99,33 +99,34 @@ const OffersSection = () => {
                             <h3 className="text-[18px] lg:text-[24px] font-medium text-black transition-colors duration-300">Gói tăng trưởng</h3>
                             <p className="text-gray-700 text-sm transition-colors duration-300">Dựa trên ngân sách đầu tư</p>
                         </div>
-
-                        <div className="space-y-4">
-                            <div className="grid grid-cols-3 gap-2 text-[13px] lg:text-[15px] font-medium text-black transition-colors duration-300">
-                                <span className="text-center">Ngân sách</span>
-                                <span className="">Cashback</span>
-                                <span className="">Hình thức</span>
-                            </div>
-                            {growthOffers.map((offer, index) => (
-                                <div key={index} className="bg-white rounded-xl p-3 border border-white/10 transition-all duration-300">
-                                    <div className="grid grid-cols-3 gap-2 items-center">
-                                        <div className="flex items-center ">
-                                            <ChevronRight className="w-4 h-4 text-black transition-colors duration-300" />
-                                            <span className="text-black font-medium text-[13px] lg:text-[15px] transition-colors duration-300">{offer.budget}</span>
-                                        </div>
-                                        <span className="text-black font-semibold text-[15px] lg:text-[18px] text-center transition-colors duration-300">{offer.cashback}</span>
-                                        <div className="flex items-center">
-                                            <span className="text-[11px] lg:text-[13px] text-black transition-colors duration-300">{offer.method}</span>
+                        <div className="p-2 bg-white/35 backdrop-blur-2xl rounded-xl">
+                            <div className="space-y-2">
+                                <div className="grid grid-cols-3 gap-2 text-[14px] lg:text-[15px] font-medium text-black transition-colors duration-300">
+                                    <span className="text-center">Ngân sách</span>
+                                    <span className="">Cashback</span>
+                                    <span className="">Hình thức</span>
+                                </div>
+                                {growthOffers.map((offer, index) => (
+                                    <div key={index} className="bg-[#1f1f1f] rounded-xl p-3 border border-[#363636] transition-all duration-300">
+                                        <div className="grid grid-cols-3 gap-2 items-center">
+                                            <div className="flex items-center ">
+                                                <ChevronRight className="w-4 h-4 text-white transition-colors duration-300" />
+                                                <span className="text-white font-medium text-[13px] lg:text-[15px] transition-colors duration-300">{offer.budget}</span>
+                                            </div>
+                                            <span className="text-white font-semibold text-[15px] lg:text-[18px] text-center transition-colors duration-300">{offer.cashback}</span>
+                                            <div className="flex items-center">
+                                                <span className="text-[11px] lg:text-[13px] text-white transition-colors duration-300">{offer.method}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
 
                     {/* Gói combo đa kênh */}
-                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg p-8 border-2 border-white transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
-                        <div className="text-center mb-8">
+                    <div className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-lg p-8 border-2 border-white/10 transition-all duration-500 group hover:bg-gradient-to-br hover:from-white/8 hover:to-white/15 hover:shadow-2xl hover:shadow-white/5 hover:-translate-y-1">
+                        <div className="text-center mb-6">
                             <div className="inline-flex items-center justify-center w-14 h-14 bg-[#c08dfe] rounded-xl mb-4 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-[#c08dfe]/30">
                                 <Package className="w-8 h-8 text-white transition-transform duration-500 group-hover:scale-110" />
                             </div>
@@ -133,7 +134,7 @@ const OffersSection = () => {
                             <p className="text-gray-300 text-sm transition-colors duration-300 group-hover:text-gray-300">Kết hợp nhiều dịch vụ</p>
                         </div>
 
-                        <div className="space-y-4">
+                        <div className="space-y-2">
                             <div className="grid grid-cols-2 gap-2 text-[13px] lg:text-[15px] font-medium text-white  transition-colors duration-300 group-hover:text-gray-300">
                                 <span>Số dịch vụ</span>
                                 <span className="text-right">Ưu đãi áp dụng</span>

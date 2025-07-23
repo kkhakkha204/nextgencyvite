@@ -50,7 +50,7 @@ const ServicesDivider = () => {
     );
 
     return (
-        <section className="relative bg-gradient-to-br from-black via-black to-[#1a4498] pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px] z-10">
+        <section className="relative bg-black pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px] z-10">
             <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {services.map((service) => (

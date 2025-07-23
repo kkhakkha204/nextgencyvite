@@ -46,7 +46,8 @@ const WebsitePackages = () => {
                 </div>
 
                 {/* Packages */}
-                <div className="grid lg:grid-cols-3 gap-6 bg-gray-50 p-2 rounded-2xl">
+                <div className="  bg-gray-50 p-2 rounded-2xl">
+                    <div className="grid lg:grid-cols-3 gap-6 bg-white p-2 rounded-xl shadow-md">
                     {/* Gói Cơ Bản */}
                     <div className="bg-white border-2 border-white rounded-lg p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
                         {/* Decorative elements */}
@@ -150,6 +151,7 @@ const WebsitePackages = () => {
                                 <span>Nhận tư vấn</span>
                             </button>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

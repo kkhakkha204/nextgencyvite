@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header Content */}
                 <div className="text-center mb-4 lg:mb-8">
-                    <h1 className="text-[28px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c59efe] uppercase bg-clip-text text-transparent leading-light mb-1">
+                    <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c59efe] uppercase bg-clip-text text-transparent leading-none tracking-tight mb-1">
                         Dịch vụ google ads
                     </h1>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
