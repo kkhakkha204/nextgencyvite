@@ -27,20 +27,40 @@ const Hero = () => {
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
-                <div className="text-left space-y-6 py-20">
+            <div className="relative z-10 w-full md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-left space-y-4 py-20">
                     {/* Main Title */}
-                    <h1 className="text-[24px] md:text-[32px] lg:text-[60px] font-archivo font-semibold text-black leading-tight uppercase">
-                        <span className="block">Facebook<br/>Dataset & CRM</span>
+                    <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-bold text-black leading-none uppercase">
+                        <span className="block font-archivo">Facebook<br/>Dataset & CRM</span>
                     </h1>
 
                     {/* Description */}
-                    <div className="max-w-3xl">
-                        <p className="text-[15px] lg:text-[18px] text-black leading-relaxed">
-                            Trong thời đại dữ liệu là{' '}
-                            <span className="text-black">"mỏ kim cương"</span>,
-                            Nextgency giúp doanh nghiệp biến từng hành vi, từng tương tác thành đòn bẩy quảng cáo hiệu quả qua dịch vụ Facebook Dataset & CRM:
+                    <div className="space-y-4">
+                        <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
+                            Trong thời đại dữ liệu là "mỏ kim cương", Nextgency giúp doanh nghiệp biến từng hành vi, từng tương tác thành đòn bẩy quảng cáo hiệu quả qua dịch vụ Facebook Dataset & CRM:
                         </p>
+
+                        {/* Bullet Points */}
+                        <div className="">
+                            <div className="flex items-start space-x-2">
+                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                    Xây dựng tệp dataset chất lượng cho quảng cáo Facebook.
+                                </p>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                    Tạo đối tượng lookalike & remarketing từ dữ liệu CRM, đơn hàng, hành vi người dùng.
+                                </p>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                    Kết nối dữ liệu từ form, website, Zalo, chatbot… đẩy ngược về Facebook CAPI.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* CTA Button */}
