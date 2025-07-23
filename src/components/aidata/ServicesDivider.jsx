@@ -58,15 +58,6 @@ const ServicesDivider = () => {
                             <div className="relative mb-6">
                                 {/* Ellipse Container */}
                                 <div className={`relative w-64 h-24 md:w-52 md:h-28 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
-                                    {/* Bottom Right Mesh Gradient Circle */}
-                                    <div className="absolute bottom-0 right-0 w-20 h-20 opacity-60">
-                                        <div className="w-full h-full rounded-full bg-[#1a4498] blur-2xl"
-                                             style={{
-                                                 background: '#1a4498',
-
-                                             }}>
-                                        </div>
-                                    </div>
                                     {/* Ellipse Border */}
                                     <div className="absolute inset-0 rounded-full border-2 border-white transition-colors duration-300"></div>
                                     {/* Content Inside Ellipse */}
