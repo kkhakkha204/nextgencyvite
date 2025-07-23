@@ -4,7 +4,7 @@ import {ArrowUpRight} from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="bg-white py-[60px] lg:py-[90px] relative overflow-hidden">
+        <section className="bg-white py-[60px] lg:py-[90px] relative">
             {/* Top Left Mesh Gradient Circle */}
             <div className="absolute -top-24 -left-24 sm:-top-40 sm:-left-40 lg:-top-48 lg:-left-48 w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 opacity-40 lg:opacity-20">
                 <div className="w-full h-full rounded-full bg-[#c08dfe] blur-2xl "
@@ -141,7 +141,7 @@ const Hero = () => {
                     {/* Image Column - 40% */}
                     <div className="lg:col-span-2">
                         <div className="relative">
-                            <div className="aspect-[1/1] p-2 overflow-hidden rounded-2xl bg-gray-50">
+                            <div className="aspect-[1/1] p-2 rounded-2xl bg-gray-50">
                                 <img
                                     src="/assets/images/dataai/hero.webp"
                                     alt="AI & Automation Technology"
