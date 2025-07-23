@@ -90,6 +90,16 @@ const PainPointSection = () => {
                                         {/* Solution - Right Side */}
                                         <div className="bg-gradient-to-br from-white to-gray-50 neu-shadow-inset-xs rounded-lg px-6 py-5 md:px-16 md:py-7 relative">
                                             {/* Decorative elements */}
+                                            <div className="absolute sm:hidden -bottom-24">
+                                                <div className="w-56 h-56 rounded-full bg-gradient-to-tl from-[#c08dfe]/25 via-[#1a4498]/15 to-transparent blur-2xl opacity-70">
+                                                </div>
+                                                <div className="absolute -top-4 -left-4 w-48 h-48  rounded-full bg-gradient-to-tl from-[#1a4498]/20 via-[#c08dfe]/12 to-transparent blur-xl opacity-50">
+                                                </div>
+                                                <div className="absolute -top-8 -left-8 w-40 h-40  rounded-full bg-gradient-to-tr from-[#c08dfe]/18 via-[#1a4498]/8 to-transparent blur-lg opacity-60">
+                                                </div>
+                                            </div>
+
+                                            {/* Decorative elements */}
                                             <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c08dfe]/35 to-transparent rounded-full blur-xl"></div>
 
                                             <div className="relative z-10">
