@@ -53,7 +53,7 @@ const RouterContent = () => {
                 </Routes>
             </main>
             <Footer />
-            <CustomCursor className="hidden lg:block"/>
+            <CustomCursor/>
             {/* Page Transition */}
             <PageTransition
                 isTransitioning={isTransitioning}

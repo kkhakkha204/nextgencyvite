@@ -5,8 +5,29 @@ const CustomCursor = () => {
     const [followerPosition, setFollowerPosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
     const [isClicking, setIsClicking] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Hook để detect mobile device
+    useEffect(() => {
+        const checkMobile = () => {
+            const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+                || window.innerWidth <= 768
+                || ('ontouchstart' in window);
+            setIsMobile(isMobileDevice);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+        };
+    }, []);
 
     useEffect(() => {
+        // Không setup event listeners nếu là mobile
+        if (isMobile) return;
+
         const updateMousePosition = (e) => {
             setMousePosition({ x: e.clientX, y: e.clientY });
         };
@@ -38,10 +59,12 @@ const CustomCursor = () => {
                 el.removeEventListener('mouseleave', handleMouseLeave);
             });
         };
-    }, []);
+    }, [isMobile]);
 
     // Smooth follower animation with slower delay
     useEffect(() => {
+        if (isMobile) return;
+
         const updateFollower = () => {
             setFollowerPosition(prev => ({
                 x: prev.x + (mousePosition.x - prev.x) * 0.12, // Slower follow speed
@@ -51,7 +74,10 @@ const CustomCursor = () => {
 
         const animationId = requestAnimationFrame(updateFollower);
         return () => cancelAnimationFrame(animationId);
-    }, [mousePosition, followerPosition]);
+    }, [mousePosition, followerPosition, isMobile]);
+
+    // Không render gì nếu là mobile
+    if (isMobile) return null;
 
     return (
         <>
