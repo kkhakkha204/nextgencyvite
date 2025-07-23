@@ -144,8 +144,8 @@ const ProjectCarousel = () => {
     };
 
     return (
-        <section className="bg-white pb-[60px] pb-[90px] lg:pt-[30px]">
-            <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+        <section className="bg-white pb-[60px] lg:pb-[90px] lg:pt-[30px]">
+            <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-0 lg:gap-12 w-full">
                     {/* Cột 1: Description & CTA (20%) */}
                     <div className="w-full lg:w-1/5 flex flex-col space-y-6">

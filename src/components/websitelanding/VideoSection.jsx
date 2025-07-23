@@ -56,7 +56,7 @@ const VideoSection = () => {
 
     return (
         <section className="pt-[60px] lg:pt-[90px] bg-white">
-            <div className="max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
                         {/* Video Column (60%) */}

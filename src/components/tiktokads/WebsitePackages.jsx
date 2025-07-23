@@ -45,7 +45,7 @@ const WebsitePackages = () => {
                         Các gói dịch vụ
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        3 gói chính: Cơ bản, Tiêu chuẩn & Nâng cao
+                        Chạy ads chuyển đổi Website/ Landing page; Chạy ads Tiktok Shop; Chạy ads Livestream Tiktok
                     </p>
                 </div>
 
@@ -58,7 +58,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói dịch vụ cơ bản
+                                    Gói quảng cáo chuyển đổi Website/ Landing page
                                 </h3>
                             </div>
 
@@ -99,15 +99,8 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-[#1a4498]">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói dịch vụ Tiêu Chuẩn
+                                    Gói quảng cáo Tiktok (Chuyển đổi video)
                                 </h3>
-                            </div>
-
-                            {/* Subtitle */}
-                            <div className="mb-6">
-                                <p className="text-black text-[14px] lg:text-[16px] font-medium text-justify">
-                                    Bao gồm tất cả trong gói cơ bản, cộng thêm:
-                                </p>
                             </div>
 
                             <div className="space-y-4 mb-8">
@@ -145,15 +138,8 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Gói dịch vụ Nâng Cao
+                                    Gói quảng cáo Livestream Tiktok
                                 </h3>
-                            </div>
-
-                            {/* Subtitle */}
-                            <div className="mb-6">
-                                <p className="text-white text-[14px] lg:text-[16px] font-medium text-justify">
-                                    Bao gồm tất cả trong gói tiêu chuẩn, cộng thêm:
-                                </p>
                             </div>
 
                             <div className="space-y-4 mb-8">

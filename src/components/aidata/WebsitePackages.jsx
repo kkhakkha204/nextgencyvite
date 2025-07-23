@@ -29,7 +29,7 @@ const WebsitePackages = () => {
     ];
 
     return (
-        <section className="pt-[60px] lg:pt-[90px]">
+        <section className="py-[60px] lg:py-[90px] relative">
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">

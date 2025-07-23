@@ -39,7 +39,7 @@ const PainPointsSection = () => {
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
             <span className="bg-black text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium">
-              Google Ads
+              Tiktok Ads
             </span>
                     </div>
 

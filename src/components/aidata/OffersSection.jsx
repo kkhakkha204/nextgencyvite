@@ -51,7 +51,7 @@ const OffersSection = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-br from-black via-black to-[#1a4498] py-[60px] lg:py-[90px] mt-[60px] lg:mt-[90px]">
+        <section className="bg-gradient-to-br from-black via-black to-[#1a4498] py-[60px] lg:py-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">

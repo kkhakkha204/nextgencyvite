@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = () => {
     return (
         <section className="bg-white flex items-center pt-[60px] sm:pt-[90px]">
-            <div className="w-full md:max-w-[700px] lg:max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="w-full md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full">
                     {/* Cột 1: Circular Text với Logo (20%) */}
                     <div className="w-full md:w-1/5 flex justify-center md:justify-start">
@@ -44,10 +44,10 @@ const Hero = () => {
 
                     {/* Cột 2: Main Content (80%) */}
                     <div className="w-full md:w-4/5 text-left">
-                        <div className="space-y-2 md:space-y-6">
+                        <div className=" md:space-y-2">
                             {/* Dòng chữ "Xây dựng" với SVG */}
                             <div className="flex flex-row items-center md:items-end gap-4 lg:gap-6">
-                                <h1 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold leading-none uppercase text-black">
                                     Xây dựng
                                 </h1>
                                 {/* SVG Circles */}
@@ -64,7 +64,7 @@ const Hero = () => {
                                             cx="25.4404"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#E2DDFB"
+                                            fill="#f3e8ff"
                                             className="animate-pulse"
                                             style={{ animationDelay: '0s', animationDuration: '2s' }}
                                         />
@@ -72,7 +72,7 @@ const Hero = () => {
                                             cx="40.1005"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#C1B3F4"
+                                            fill="#e9d5ff"
                                             className="animate-pulse"
                                             style={{ animationDelay: '0.5s', animationDuration: '2s' }}
                                         />
@@ -80,7 +80,7 @@ const Hero = () => {
                                             cx="53.8994"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#9C84EA"
+                                            fill="#d8b4fe"
                                             className="animate-pulse"
                                             style={{ animationDelay: '1s', animationDuration: '2s' }}
                                         />
@@ -88,7 +88,7 @@ const Hero = () => {
                                             cx="68.5596"
                                             cy="25.4404"
                                             r="25.4404"
-                                            fill="#7A5BDC"
+                                            fill="#c59efe"
                                             className="animate-pulse"
                                             style={{ animationDelay: '1.5s', animationDuration: '2s' }}
                                         />
@@ -97,7 +97,7 @@ const Hero = () => {
                             </div>
 
                             {/* Dòng chữ "Website & Landing page" */}
-                            <h2 className="text-[24px] md:text-[40px] lg:text-[60px] font-archivo font-semibold leading-tight uppercase text-[#1c1c1c]">
+                            <h2 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold leading-none uppercase text-black">
                                 Website & Landing Page
                             </h2>
                         </div>

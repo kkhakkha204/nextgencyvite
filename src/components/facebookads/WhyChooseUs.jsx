@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
                                 {/* Cột mô tả */}
                                 <div className="flex flex-col justify-center">
                                     <p className="text-white text-[13px] lg:text-[15px]">
-                                        Chiến lược quảng cáo Google đa kênh, nắm rõ hành trình khách hàng trong chiến dịch
+                                        Cung cấp tài khoản quảng cáo chính thống, ổn định cao
                                     </p>
                                 </div>
 
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
                                     Kinh nghiệm 3+ năm
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">
-                                    Tối ưu theo từ khóa – hành vi – nguồn đơn, không chỉ dừng ở lượt hiển thị
+                                    Đội ngũ có kinh nghiệm thực chiến đa ngành, bao gồm cả các ngành đặc thù khó quảng cáo
                                 </p>
                                 <div className="absolute bottom-2 right-2 lg:bottom-6 lg:right-6">
                                     <svg className="w-11+ h-11 lg:w-20 lg:h-20 text-black opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,10 +83,10 @@ const WhyChooseUs = () => {
                             {/* Cột 40% */}
                             <div className="md:col-span-2 bg-white rounded-lg p-5 flex flex-col h-full">
                                 <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-black">
-                                    Tối ưu landing page
+                                    Dịch vụ toàn diện
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700 ">
-                                    Tối ưu landing page – cá nhân hóa trải nghiệm người dùng (UX/UI).
+                                    Từ thiết lập đến vận hành: xây dựng & chăm sóc fanpage, cài chatbot, tích hợp AI,....
                                 </p>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ const WhyChooseUs = () => {
                                     Hỗ trợ 24/7
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">
-                                    Đồng hành toàn diện – báo cáo rõ ràng – điều chỉnh chiến dịch theo mục tiêu kinh doanh.
+                                    Báo cáo rõ ràng, đo lường hiệu quả từng giai đoạn phễu – hỗ trợ liên tục như một phòng marketing nội bộ
                                 </p>
                             </div>
 

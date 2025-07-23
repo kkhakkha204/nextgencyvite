@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Xây dựng tệp dataset chất lượng cho quảng cáo Facebook",
+            description: "Thiết kế web theo UI/UX hiện đại, đa nền tảng (PC – Mobile – Tablet).",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"
@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Tạo đối tượng lookalike & remarketing từ dữ liệu CRM, đơn hàng, hành vi người dùng.",
+            description: "Tích hợp pixel, chatbot, CRM, thanh toán hoặc automation theo yêu cầu.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Kết nối dữ liệu từ form, website, Zalo, chatbot… đẩy ngược về Facebook CAPI.",
+            description: "Hosting và bảo trì đi kèm dịch vụ trọn gói.",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"
@@ -50,8 +50,8 @@ const ServicesDivider = () => {
     );
 
     return (
-        <section className="bg-black pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px]">
-            <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-6 lg:px-8">
+        <section className="relative bg-gradient-to-br from-black via-black to-[#1a4498] pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px] z-10">
+            <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {services.map((service) => (
                         <div key={service.id} className="flex flex-col items-center text-center group">
@@ -59,19 +59,19 @@ const ServicesDivider = () => {
                                 {/* Ellipse Container */}
                                 <div className={`relative w-64 h-24 md:w-52 md:h-28 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
                                     {/* Ellipse Border */}
-                                    <div className="absolute inset-0 rounded-full border-2 border-white/80 group-hover:border-white transition-colors duration-300"></div>
+                                    <div className="absolute inset-0 rounded-full border-2 border-white transition-colors duration-300"></div>
 
                                     {/* Content Inside Ellipse */}
                                     <div className="px-4 py-4 text-white">
-                                        <p className="text-[10px] lg:text-[16px] leading-relaxed font-medium whitespace-pre-line">
+                                        <p className="text-[10px] lg:text-[16px] whitespace-pre-line">
                                             {service.description}
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Circular Badge */}
-                                <div className="absolute -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-black border-2 border-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <CheckMarkIcon className={`transition-transform duration-300 ${service.badgeRotation}`} />
+                                <div className="absolute  -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-black border-2 border-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <CheckMarkIcon className={`transition-transform duration-300  ${service.badgeRotation}`}/>
                                 </div>
                             </div>
                         </div>
