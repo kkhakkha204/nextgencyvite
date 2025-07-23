@@ -82,7 +82,7 @@ const WebsitePackages = () => {
                         <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-br from-[#1a4498]/35 to-transparent rounded-full blur-xl"></div>
                         {/* Popular Badge */}
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <div className="bg-[#1a4498] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                            <div className="bg-gradient-to-r from-[#1a4498] to-black text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
                                 <span>Phổ Biến</span>
                             </div>
@@ -118,7 +118,7 @@ const WebsitePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2">
-                            <button className="relative flex items-center space-x-3 px-16 py-4 bg-[#1a4498] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#0b2f8a]/40 hover:scale-105 group">
+                            <button className="relative flex items-center space-x-3 px-16 py-4 bg-gradient-to-r from-[#1a4498] to-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#0b2f8a]/40 hover:scale-105 group">
                                 <span>Nhận tư vấn</span>
                             </button>
                         </div>

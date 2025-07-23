@@ -7,7 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Color Variables */
 :root {
   --cyan: #A4FCFF;
@@ -21,8 +20,28 @@
 @layer base {
   * {
     font-family: 'Hubot Sans', system-ui, -apple-system, sans-serif;
+      cursor: none !important;
+
   }
 }
+
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
 /* Base Neumorphism Effects - Không có background và border-radius */
 .neu-shadow-xs {
   box-shadow:

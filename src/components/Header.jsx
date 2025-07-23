@@ -109,7 +109,7 @@ const Header = () => {
                         </div>
 
                         {/* Desktop Navigation */}
-                        <nav className="hidden xl:flex items-center space-x-1 border rounded-full border-[#e9d5ff]">
+                        <nav className="hidden xl:flex items-center space-x-1 rounded-full">
                             <div className=" rounded-full p-1  flex items-center space-x-2">
                                 {navigationItems.map((item) => (
                                     <div key={item.name} className="relative group">

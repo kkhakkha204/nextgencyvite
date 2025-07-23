@@ -13,6 +13,7 @@ import { usePageTransition } from './hooks/usePageTransition';
 import FacebookAds from "./pages/services/FacebookAds.jsx";
 import TiktokAds from "./pages/services/TiktokAds.jsx";
 import FacebookCrm from "./pages/services/FacebookCrm.jsx";
+import CustomCursor from "./components/CustomCursor.jsx";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -52,7 +53,7 @@ const RouterContent = () => {
                 </Routes>
             </main>
             <Footer />
-
+            <CustomCursor />
             {/* Page Transition */}
             <PageTransition
                 isTransitioning={isTransitioning}

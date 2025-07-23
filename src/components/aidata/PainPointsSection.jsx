@@ -69,7 +69,7 @@ const PainPointSection = () => {
                                     </div>
                                 </div>
 
-                                <div className="relative bg-gradient-to-br from-black via-[#c08dfe] to-black rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] z-20">
+                                <div className="relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] z-20">
                                     <div className="grid md:grid-cols-2 p-2 gap-2">
                                         {/* Pain Point - Left Side */}
                                         <div className="bg-gradient-to-br from-gray-900 to-black rounded-lg px-6 py-5 md:px-16 md:py-7 relative">

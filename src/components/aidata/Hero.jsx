@@ -6,20 +6,20 @@ const Hero = () => {
     return (
         <section className="bg-white py-[60px] lg:py-[90px] relative overflow-hidden">
             {/* Top Left Mesh Gradient Circle */}
-            <div className="absolute -top-24 -left-24 sm:-top-40 sm:-left-40 lg:-top-48 lg:-left-48 w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 opacity-40 lg:opacity-30">
-                <div className="w-full h-full rounded-full bg-gradient-radial from-[#1a4498] via-[#7c5fb8] to-[#c08dfe] blur-2xl "
+            <div className="absolute -top-24 -left-24 sm:-top-40 sm:-left-40 lg:-top-48 lg:-left-48 w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 opacity-40 lg:opacity-20">
+                <div className="w-full h-full rounded-full bg-[#c08dfe] blur-2xl "
                      style={{
-                         background: 'radial-gradient(circle, #1a4498 0%, #7c5fb8 35%, #c08dfe 65%, transparent 100%)',
+                         background: '#c08dfe',
 
                      }}>
                 </div>
             </div>
 
             {/* Bottom Right Mesh Gradient Circle */}
-            <div className="absolute -bottom-24 -right-24 sm:-bottom-40 sm:-right-40 lg:-bottom-48 lg:-right-48 w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 opacity-40 lg:opacity-30">
-                <div className="w-full h-full rounded-full bg-gradient-radial from-[#c08dfe] via-[#7c5fb8] to-[#c08dfe] blur-2xl"
+            <div className="absolute -bottom-24 -right-24 sm:-bottom-40 sm:-right-40 lg:-bottom-48 lg:-right-48 w-48 h-48 sm:w-80 sm:h-80 lg:w-96 lg:h-96 opacity-40 lg:opacity-20">
+                <div className="w-full h-full rounded-full bg-[#1a4498] blur-2xl"
                      style={{
-                         background: 'radial-gradient(circle, #c08dfe 0%, #7c5fb8 35%, #c08dfe 65%, transparent 100%)',
+                         background: '#1a4498',
 
                      }}>
                 </div>
@@ -31,11 +31,11 @@ const Hero = () => {
                     <div className="lg:col-span-3 space-y-4 mb-4 lg:mb-0">
                         {/* Title Section */}
                         <div className="space-y-2">
-                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-none">
+                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-none tracking-tight">
                                 AUTOMATION
                             </h1>
                             <div className="flex items-center gap-4">
-                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none tracking-tight">
                                     AI & DATA
                                 </h1>
                                 {/* SVG Circles */}
@@ -91,7 +91,7 @@ const Hero = () => {
                         {/* Description */}
                         <div className="space-y-4">
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở <span className="text-[#c08dfe]">Automation và AI.</span> Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
+                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở <strong>Automation và AI.</strong> Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
                             </p>
 
                             {/* Bullet Points */}
@@ -121,7 +121,7 @@ const Hero = () => {
                         <div className="flex items-center space-x-4">
                             <Link
                                 to="/contact"
-                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                             >
         <span className="">
@@ -148,23 +148,6 @@ const Hero = () => {
                                     className="w-full h-full object-cover rounded-xl hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
-
-                            {/* Top Right Floating Card */}
-                            <div className="absolute -top-3 -right-3 bg-white rounded-xl p-2 shadow-xl border-2 border-white hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                                <div className="flex items-center space-x-3">
-                                    <div className=" rounded-full flex items-center justify-center">
-                                        <svg className="w-6 h-6 text-black" fill="#111111" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <div className="text-[12px] font-medium text-black">AI Powered</div>
-                                        <div className="text-[10px] text-gray-800">Smart Solutions</div>
-                                    </div>
-                                </div>
-                            </div>
-
-
                         </div>
                     </div>
                 </div>
