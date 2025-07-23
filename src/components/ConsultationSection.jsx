@@ -4,7 +4,7 @@ import { Star, CheckCircle, Target, ArrowRight } from 'lucide-react';
 export default function ConsultationSection() {
     return (
         <section
-            className="bg-black py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+            className="bg-gradient-to-b from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         >
             <div className="max-w-[1080px] mx-auto">
                 {/* Header */}
@@ -20,7 +20,7 @@ export default function ConsultationSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Right Side - Form */}
                     <div className="relative">
-                        <div className="backdrop-blur-3xl  rounded-xl border-2 border-white shadow-2xl p-4 lg:p-6">
+                        <div className="backdrop-blur-3xl bg-white/5 rounded-xl border-2 border-white/10 shadow-2xl p-4 lg:p-6">
                             <div className="space-y-4">
                                 <div className="space-y-4">
                                     {/* Tên khách hàng */}

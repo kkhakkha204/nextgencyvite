@@ -4,7 +4,26 @@ import {ArrowUpRight} from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="bg-white py-[60px] lg:py-[90px]">
+        <section className="bg-white py-[60px] lg:py-[90px] relative overflow-hidden">
+            {/* Top Left Semicircle Mesh Gradient */}
+            <div className="absolute -top-32 -left-32 sm:-top-40 sm:-left-40 lg:-top-48 lg:-left-48">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-[#1a4498]/25 via-[#c08dfe]/15 to-transparent blur-2xl opacity-70">
+                </div>
+                <div className="absolute top-4 left-4 w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-tr from-[#c08dfe]/20 via-[#1a4498]/12 to-transparent blur-xl opacity-50">
+                </div>
+                <div className="absolute top-8 left-8 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-bl from-[#1a4498]/18 via-[#c08dfe]/8 to-transparent blur-lg opacity-60">
+                </div>
+            </div>
+
+            {/* Bottom Right Semicircle Mesh Gradient */}
+            <div className="absolute -bottom-32 -right-32 sm:-bottom-40 sm:-right-40 lg:-bottom-48 lg:-right-48">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-tl from-[#c08dfe]/25 via-[#1a4498]/15 to-transparent blur-2xl opacity-70">
+                </div>
+                <div className="absolute -top-4 -left-4 w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-tl from-[#1a4498]/20 via-[#c08dfe]/12 to-transparent blur-xl opacity-50">
+                </div>
+                <div className="absolute -top-8 -left-8 w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full bg-gradient-to-tr from-[#c08dfe]/18 via-[#1a4498]/8 to-transparent blur-lg opacity-60">
+                </div>
+            </div>
             <div className="relative md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-5 items-center">
                     {/* Content Column - 60% */}

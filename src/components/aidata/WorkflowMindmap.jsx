@@ -22,7 +22,7 @@
 
                     {/* GIAI ĐOẠN 1 */}
                     <div className="mb-4 lg:mb-4 p-2 bg-gray-50 rounded-2xl">
-                        <div className=" p-2 bg-gradient-to-br from-[#c08dfe] via-black to-[#c08dfe] rounded-xl">
+                        <div className=" p-2 bg-white rounded-xl">
                         <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 p-2 bg-gray-50 neu-shadow-inset-xs rounded-xl">
                             {/* Cột trái - Nội dung */}
                             <div className="flex flex-col justify-center">
