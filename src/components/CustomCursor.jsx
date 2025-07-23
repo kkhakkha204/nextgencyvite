@@ -119,7 +119,7 @@ const CustomCursor = () => {
                     <div
                         className="w-40 h-40 rounded-full blur-xl"
                         style={{
-                            background: `radial-gradient(circle, #c08dfe25 0%, #c08dfe15 40%, transparent 70%)`,
+                            background: `radial-gradient(circle, #c08dfe30 0%, #c08dfe20 40%, transparent 70%)`,
                         }}
                     />
                 </div>
