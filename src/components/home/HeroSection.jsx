@@ -45,41 +45,6 @@ const HeroSection = () => {
 
     return (
         <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-white">
-            {/* Subtle Background Gradient */}
-            <div
-                className="absolute inset-0 opacity-5"
-                style={{
-                    transform: `translateY(${scrollY * 0.3}px)`,
-                    background: 'radial-gradient(ellipse at top left, #c08dfe 0%, transparent 40%), radial-gradient(ellipse at bottom right, #1a4498 0%, transparent 40%)'
-                }}
-            />
-
-            {/* Abstract Shapes Layer - More subtle */}
-            <div className="absolute inset-0 pointer-events-none">
-                {/* Large Circle */}
-                <div
-                    className="absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-[#c08dfe] to-transparent opacity-10"
-                    style={{
-                        transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 20 + scrollY * 0.2}px)`
-                    }}
-                />
-
-                {/* Blue Circle */}
-                <div
-                    className="absolute -left-20 bottom-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-[#1a4498] to-transparent opacity-10"
-                    style={{
-                        transform: `translate(${mousePosition.x * -15}px, ${mousePosition.y * -15 + scrollY * 0.15}px)`
-                    }}
-                />
-
-                {/* Small Accent Circle */}
-                <div
-                    className="absolute right-[30%] top-[50%] h-48 w-48 rounded-full bg-[#c08dfe] opacity-5"
-                    style={{
-                        transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30 + scrollY * 0.25}px)`
-                    }}
-                />
-            </div>
 
             {/* Geometric Pattern */}
             <div className="absolute inset-0">
