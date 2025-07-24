@@ -25,18 +25,18 @@ const Hero = () => {
                         {/* Column A - Content (40%) */}
                         <div className="md:col-span-2 space-y-6">
                             <div className="space-y-2">
-                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold text-black uppercase leading-none">
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold text-black uppercase leading-none tracking-tight">
                                     Tiktok Ads
                                 </h1>
 
                                 {/* Description */}
                                 <div className="space-y-4">
                                     <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                        Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên <span className="text-[#c08dfe]">nền tảng Tiktok</span> để mang về doanh thu và độ nhận diện phủ khắp. Giải pháp từ dịch vụ Tiktok Ads của Nextgency:
+                                        Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên <strong>nền tảng Tiktok</strong> để mang về doanh thu và độ nhận diện phủ khắp. Giải pháp từ dịch vụ Tiktok Ads của Nextgency:
                                     </p>
 
                                     {/* Bullet Points */}
-                                    <div className="">
+                                    <div className="space-y-4">
                                         <div className="flex items-start space-x-2">
                                             <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                             <p className="text-[13px] lg:text-[16px] text-gray-700">

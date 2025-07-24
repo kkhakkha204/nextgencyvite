@@ -9,6 +9,7 @@ import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import ServicesDivider from "../../components/facebookads/ServicesDivider.jsx";
 import OffersSection from "../../components/facebookads/OffersSection.jsx";
+import GoogleAdsProcess from "../../components/facebookads/GoogleAdsProcess.jsx";
 
 const FacebookAds = () => {
     return (
@@ -19,6 +20,7 @@ const FacebookAds = () => {
             <WhyChooseUs/>
             <LandingPagePackages/>
             <OffersSection/>
+            <GoogleAdsProcess/>
             <ClientsPartnersSection/>
             <CommitmentSection/>
             <ConsultationSection/>

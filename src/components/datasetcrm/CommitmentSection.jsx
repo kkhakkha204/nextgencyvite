@@ -6,27 +6,27 @@ const CommitmentSection = () => {
         {
             id: 1,
             title: "Thiết kế tùy biến theo yêu cầu",
-            description: "Cam kết giao diện được thiết kế tùy biến theo yêu cầu, đồng thời tuân thủ nguyên tắc thiết kế chuẩn UX/UI"
+            description: "Cam kết hệ thống đồng bộ dữ liệu hoạt động ổn định: form – website – chatbot – CRM – Facebook."
         },
         {
             id: 2,
             title: "Tối ưu tốc độ tải < 2 giây",
-            description: "Cam kết Website/Landing Page được tối ưu tốc độ tải < 2 giây (khi chạy thực tế), đáp ứng tiêu chuẩn Google PageSpeed"
+            description: "Kết nối chuẩn Facebook Pixel và CAPI, đảm bảo dữ liệu không bị mất hoặc sai lệch trong quá trình tracking."
         },
         {
             id: 3,
             title: "Hỗ trợ kỹ thuật chuyên nghiệp",
-            description: "Cam kết hỗ trợ kỹ thuật & chỉnh sửa theo thoả thuận của từng gói dịch vụ"
+            description: "Nextgency cam kết triển khai đúng theo timeline đã thống nhất, bàn giao đầy đủ các hạng mục kỹ thuật, tài liệu hướng dẫn, và kết quả đầu ra"
         },
         {
             id: 4,
             title: "Bàn giao đầy đủ quyền sở hữu",
-            description: "Cam kết mọi dữ liệu, source code và quyền truy cập được bàn giao đầy đủ cho khách hàng"
+            description: "Tất cả dữ liệu thu thập từ hệ thống của khách hàng (inbox, đơn hàng, comment, chatbot, form,...) được xử lý nội bộ và bàn giao đầy đủ sau triển khai"
         },
         {
             id: 5,
             title: "Bảo mật thông tin tuyệt đối",
-            description: "Cam kết không sử dụng hoặc chia sẻ dữ liệu khách hàng với bất kỳ bên thứ ba nào"
+            description: "Cam kết không sử dụng lại, chia sẻ, khai thác dữ liệu khách hàng cho bên thứ ba dưới mọi hình thức"
         },
         {
             id: 6,
@@ -42,7 +42,7 @@ const CommitmentSection = () => {
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
@@ -90,7 +90,7 @@ const CommitmentSection = () => {
                                     {/* Content */}
                                     <div className="flex-1 min-w-0">
                                         <div className="w-full">
-                                            <p className={`text-[13px] lg:text-[15px] font-medium ${
+                                            <p className={`text-[13px] lg:text-[15px] ${
                                                 commitment.id === 6 ? 'text-white' : 'text-black'
                                             }`}>
                                                 {commitment.description}

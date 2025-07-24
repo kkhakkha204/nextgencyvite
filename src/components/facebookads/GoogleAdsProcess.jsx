@@ -1,67 +1,51 @@
-import { Dot, ChevronDown, Target } from 'lucide-react';
+
 import React from "react";
 
 const GoogleAdsProcess = () => {
     const processSteps = [
         {
             id: 1,
-            title: "Tiếp nhận & Tư vấn mục tiêu",
+            title: "Tiếp nhận & Phần tích",
             steps: [
-                "Thu thập thông tin ngành hàng, sản phẩm, đối tượng",
-                "Xác định ngân sách và KPI kỳ vọng"
+                "Tiếp nhận yêu cầu từ khách hàng",
+                "Phân tích ngành hàng & mục tiêu",
+                "Đề xuất chiến lược phễu TOFU - MOFU - BOFU"
             ],
             hasImage: true
         },
         {
             id: 2,
-            title: "Phân tích & Đề xuất chiến lược",
+            title: "Thiết lập & Chuẩn bị",
             steps: [
-                "Nghiên cứu thị trường và đối thủ",
-                "Đề xuất loại hình Google Ads phù hợp",
-                "Xây dựng phễu từ Search - Display - Remarketing"
+                "Thiết lập tài khoản quảng cáo",
+                "Cài đặt Pixel & CAPI",
+                "Chuẩn bị nội dung & hình ảnh",
+                "Cấu trúc chiến dịch và nhóm quảng cáo"
             ]
         },
         {
             id: 3,
-            title: "Thiết lập hệ thống quảng cáo",
+            title: "Vận hành và tối ưu",
             steps: [
-                "Tạo/cấu trúc lại tài khoản Google Ads",
-                "Cài đặt chuyển đổi, GA4, GTM",
-                "Chuẩn bị nội dung, banner, landing page"
+                "Chạy quảng cáo & theo dõi",
+                "Tối ưu ngân sách và tệp đối tượng",
+                "Báo cáo định kỳ & cảnh báo"
             ]
         },
         {
             id: 4,
             title: "Triển khai & Theo dõi chiến dịch",
             steps: [
-                "Khởi chạy chiến dịch theo giai đoạn",
-                "Theo dõi chỉ số(CPC, CTR, Conversion...)",
-                "Tối ưu ngân sách và tệp quảng cáo"
+                "Họp đánh giá hiệu suất",
+                "Điều chỉnh chiến lược",
+                "Gia hạn hợp đồng hoặc mở rộng ngân sách"
             ]
         },
-        {
-            id: 5,
-            title: "Báo cáo & Tối ưu hiệu suất",
-            steps: [
-                "Báo cáo tuần/tháng minh bạch",
-                "Đánh giá hiệu quả theo KPI",
-                "Điều chỉnh theo hành vi người dùng"
-            ]
-        },
-        {
-            id: 6,
-            title: "Đánh giá và gia hạn hợp tác",
-            steps: [
-                "Họp tổng kết hiệu quả",
-                "Đề xuất nâng cấp hoặc mở rộng ngân sách",
-                "Ký lại hợp đồng nếu tiếp tục triển khai"
-            ]
-        }
     ];
 
     const Card = ({ step }) => {
-        const maxSteps = 3;
-        const isLastCard = step.id === 6;
+        const maxSteps = 4;
+        const isLastCard = step.id === 4;
 
         return (
             <div className={`border-2 rounded-lg p-5 transition-all shadow-md duration-300 flex flex-col h-full ${
@@ -143,7 +127,7 @@ const GoogleAdsProcess = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black mb-1">
-                            Quy trình triển khai<br/>Google ads
+                            Quy trình triển khai<br/>Facebook ads
                         </h2>
                     </div>
                     <div className="lg:w-1/2 text-center lg:text-right max-w-md">
@@ -163,23 +147,17 @@ const GoogleAdsProcess = () => {
                     </div>
 
                     {/* Desktop Layout - 3 Columns */}
-                    <div className="hidden lg:grid lg:grid-cols-3 gap-6">
+                    <div className="hidden lg:grid lg:grid-cols-2 gap-6">
                         {/* Column 1 */}
                         <div className="space-y-6 flex flex-col">
                             <Card step={processSteps[0]} />
-                            <Card step={processSteps[3]} />
+                            <Card step={processSteps[2]} />
                         </div>
 
                         {/* Column 2 */}
                         <div className="space-y-6 flex flex-col">
                             <Card step={processSteps[1]} />
-                            <Card step={processSteps[4]} />
-                        </div>
-
-                        {/* Column 3 */}
-                        <div className="space-y-6 flex flex-col">
-                            <Card step={processSteps[2]} />
-                            <Card step={processSteps[5]} />
+                            <Card step={processSteps[3]} />
                         </div>
                     </div>
                 </div>

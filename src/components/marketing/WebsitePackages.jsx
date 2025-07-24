@@ -3,41 +3,37 @@ import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
     const basicFeatures = [
-        "Phân tích sản phẩm, ngành hàng và mục tiêu kinh doanh",
-        "Lựa chọn định dạng TikTok Ads phù hợp (Traffic, Lead Form, Conversion)",
-        "Thiết lập tài khoản & tracking",
-        "Lên cấu trúc chiến dịch theo mô hình phễu",
-        "Cài đặt nhóm quảng cáo, đối tượng, ngân sách, lịch trình",
-        "Lựa chọn content có sẵn hoặc đề xuất nội dung mới",
-        "Theo dõi chỉ số & tối ưu hiệu suất",
-        "Báo cáo và đề xuất phương án cải tiến chiến dịch"
+        "Tư vấn định hướng chiến lược thương hiệu ban đầu",
+        "Thiết lập & chăm sóc Fanpage + Zalo OA",
+        "12 bài viết/tháng (gồm nội dung + thiết kế ảnh)",
+        "1 landing page cơ bản hoặc tối ưu website hiện có",
+        "Setup & theo dõi quảng cáo Facebook Ads ngân sách nhỏ",
+        "Báo cáo kết quả theo từng giai đoạn & đề xuất các phương án tiếp theo "
     ];
 
     const standardFeatures = [
-        "Rà soát ngành hàng, danh mục sản phẩm nổi bật",
-        "Xác định thời gian vàng và hành vi mua hàng của khách trên TikTok",
-        "Kết nối TikTok Shop với hệ thống quảng cáo",
-        "Gắn liên kết sản phẩm trong video/ads",
-        "Lên chiến dịch Add to Cart / Product View / Shop Follow",
-        "Tối ưu hóa tuyến nội dung kênh",
-        "Theo dõi chỉ số & tối ưu hiệu suất",
-        "Báo cáo và đề xuất phương án cải tiến chiến dịch"
+        "Tư vấn mô hình truyền thông & phễu marketing phù hợp",
+        "Quản lý Fanpage, Website, Zalo OA, TikTok",
+        "20–25 nội dung/tháng (bài viết + thiết kế + clip ngắn)",
+        "Thiết kế & triển khai 1–2 landing page phục vụ chuyển đổi",
+        "Triển khai quảng cáo Facebook + Google (hoặc TikTok)",
+        "Cài đặt tracking & đo lường (Pixel, GA4, GTM)",
+        "Báo cáo kết quả theo từng giai đoạn & đề xuất các phương án tiếp theo"
     ];
 
     const advancedFeatures = [
-        "Đăng ký chiến dịch quảng cáo dạng Live với TikTok",
-        "Đảm bảo duyệt nội dung, tránh vi phạm chính sách",
-        "Tư vấn kịch bản livestream thu hút (minigame, giới thiệu sản phẩm, feedback...)",
-        "Tối ưu không gian, lời thoại, call-to-action",
-        "Thiết lập quảng cáo dẫn về livestream theo thời gian thực",
-        "Target tệp khách theo độ tuổi, hành vi, ngành hàng",
-        "Cập nhật real-time số lượt xem, thời gian xem trung bình",
-        "Điều chỉnh nhóm quảng cáo hoặc content giữa phiên (nếu cần)",
-        "Tổng kết hiệu quả sau phiên livestream"
+        "Tư vấn chiến lược truyền thông toàn diện theo mục tiêu kinh doanh",
+        "Xây dựng bộ nhận diện thương hiệu đa kênh",
+        "Quản trị toàn bộ hệ sinh thái: Fanpage, Website, TikTok, Zalo, YouTube",
+        "30+ nội dung/tháng: bài viết, ảnh, video, clip ngắn chuyên sâu",
+        "Thiết lập và tối ưu hệ thống automation + CRM (nếu có)",
+        "Triển khai chiến dịch Ads đa nền tảng: Facebook – Google – TikTok – Zalo",
+        "Báo cáo theo tuần, đánh giá hiệu quả từng kênh, đề xuất mở rộng chiến dịch",
+        "Đội ngũ cố vấn đồng hành riêng, họp 1–1 cùng ban lãnh đạo"
     ];
 
     return (
-        <section className="pt-[60px] lg:pt-[90px]">
+        <section className="py-[60px] lg:py-[90px] relative">
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
@@ -45,12 +41,12 @@ const WebsitePackages = () => {
                         Các gói dịch vụ
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        Chạy ads chuyển đổi Website và Landing page/ Chạy ads Tiktok Shop/ Chạy ads Livestream Tiktok
+                        3 gói chính: Cơ bản, Tiêu chuẩn & Nâng cao
                     </p>
                 </div>
 
                 {/* Packages */}
-                <div className="bg-gray-50 p-2 rounded-2xl">
+                <div className=" bg-gray-50 p-2 rounded-2xl">
                     <div className="grid lg:grid-cols-3 gap-6 bg-white p-2 rounded-xl shadow-md">
                     {/* Gói Cơ Bản */}
                     <div className="bg-white border-2 border-white rounded-lg p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
@@ -59,7 +55,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói quảng cáo chuyển đổi Website/ Landing page
+                                    Gói dịch vụ cơ bản
                                 </h3>
                             </div>
 
@@ -100,7 +96,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-[#1a4498]">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói quảng cáo Tiktok (Chuyển đổi video)
+                                    Gói dịch vụ Tiêu Chuẩn
                                 </h3>
                             </div>
 
@@ -139,8 +135,15 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Gói quảng cáo Livestream Tiktok
+                                    Gói dịch vụ Nâng Cao
                                 </h3>
+                            </div>
+
+                            {/* Subtitle */}
+                            <div className="mb-6">
+                                <p className="text-white text-[14px] lg:text-[16px] font-medium text-justify">
+                                    Bao gồm tất cả trong gói cơ bản và tiêu chuẩn, cộng thêm:
+                                </p>
                             </div>
 
                             <div className="space-y-4 mb-8">

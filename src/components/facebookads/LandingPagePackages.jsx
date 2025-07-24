@@ -78,22 +78,24 @@ const LandingPagePackages = () => {
         },
         {
             subtitle: "4. Hỗ trợ vận hành và xử lý sự cố",
-            features: []
+            features: [
+                "Hỗ trợ xử lý khi quảng cáo không được duyệt, tài khoản bị hạn chế.",
+                "Hướng dẫn kỹ thuật sử dụng tài khoản, đảm bảo chạy đúng quy trình Facebook.",
+                "Hỗ trợ kỹ thuật cơ bản nếu khách hàng có đội chạy riêng."
+            ]
         },
         {
             subtitle: "5. Ưu đãi cho khách hàng lớn",
             features: [
                 "Chính sách chiết khấu theo mức ngân sách tháng.",
                 "Hỗ trợ tài khoản riêng biệt nếu chi tiêu lớn (>500 triệu/tháng).",
-                "Hỗ trợ xử lý khi quảng cáo không được duyệt, tài khoản bị hạn chế.",
-                "Hướng dẫn kỹ thuật sử dụng tài khoản, đảm bảo chạy đúng quy trình Facebook.",
-                "Hỗ trợ kỹ thuật cơ bản nếu khách hàng có đội chạy riêng."
+
             ]
         }
     ];
 
     return (
-        <section className="bg-white pt-[60px] lg:pt-[90px]">
+        <section className="bg-white py-[60px] lg:py-[90px]">
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
@@ -106,7 +108,8 @@ const LandingPagePackages = () => {
                 </div>
 
                 {/* Packages */}
-                <div className="grid lg:grid-cols-2 gap-6 p-2 bg-gray-50 rounded-2xl">
+                <div className=" p-2 bg-gray-50 rounded-2xl">
+                    <div className="grid lg:grid-cols-2 gap-6 p-2 bg-white rounded-xl shadow-md">
                     {/* Gói Cơ Bản */}
                     <div className="bg-white border-2 border-white rounded-lg p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
                         <div>
@@ -205,6 +208,7 @@ const LandingPagePackages = () => {
                                 </span>
                             </a>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

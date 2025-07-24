@@ -8,6 +8,8 @@ import ClientsPartnersSection from "../../components/tiktokads/ClientsPartnersSe
 import CommitmentSection from "../../components/tiktokads/CommitmentSection.jsx";
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
+import TikTokAdsSection from "../../components/tiktokads/TikTokAdsSection.jsx";
+import OffersSection from "../../components/tiktokads/OffersSection.jsx";
 
 const TiktokAds = () => {
     return (
@@ -17,6 +19,8 @@ const TiktokAds = () => {
             <PainPointsSection/>
             <WhyChooseUs/>
             <WebsitePackages/>
+            <TikTokAdsSection/>
+            <OffersSection/>
             <ClientsPartnersSection/>
             <CommitmentSection/>
             <ConsultationSection/>

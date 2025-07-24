@@ -47,7 +47,7 @@ const CommitmentSection = () => {
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
@@ -95,7 +95,7 @@ const CommitmentSection = () => {
                                     {/* Content */}
                                     <div className="flex-1 min-w-0">
                                         <div className="w-full">
-                                            <p className={`text-[13px] lg:text-[15px] font-medium ${
+                                            <p className={`text-[13px] lg:text-[15px] ${
                                                 commitment.id === 7 ? 'text-white' : 'text-black'
                                             }`}>
                                                 {commitment.description}

@@ -6,27 +6,27 @@ const CommitmentSection = () => {
         {
             id: 1,
             title: "Thiết kế tùy biến theo yêu cầu",
-            description: "Cam kết tài khoản quảng cáo được thiết lập chuẩn cấu trúc Google"
+            description: "Cam kết hiệu quả theo KPI đầu ra"
         },
         {
             id: 2,
             title: "Tối ưu tốc độ tải < 2 giây",
-            description: "Cam kết tối ưu ngân sách liên tục dựa trên dữ liệu thực tế và hành vi truy cập"
+            description: "Khách hàng được đồng hành cùng đội ngũ chuyên sâu gồm Planner – Ads – Content – Designer – Automation như một phòng Marketing nội bộ thực thụ"
         },
         {
             id: 3,
             title: "Hỗ trợ kỹ thuật chuyên nghiệp",
-            description: "Khách hàng được toàn quyền truy cập tài khoản quảng cáo và hệ thống báo cáo."
+            description: "Cam kết phân tích kỹ doanh nghiệp để xây dựng chiến lược truyền thông, nội dung và quảng cáo phù hợp đặc thù từng ngành hàng"
         },
         {
             id: 4,
             title: "Bàn giao đầy đủ quyền sở hữu",
-            description: "Cam kết không phát sinh chi phí ngoài hợp đồng trừ khi có sự đồng ý bằng văn bản của khách hàng."
+            description: "Cam kết tối ưu ngân sách và minh bạch chi phí"
         },
         {
             id: 5,
             title: "Bảo mật thông tin tuyệt đối",
-            description: "Mọi thông tin về tài khoản, dữ liệu chiến dịch và khách hàng được bảo mật tuyệt đối."
+            description: "Cam kết dịch vụ được module hóa, giúp khách hàng dễ dàng tăng/giảm hạng mục triển khai hoặc nâng cấp gói dịch vụ theo từng giai đoạn phát triển"
         },
         {
             id: 6,
@@ -42,13 +42,13 @@ const CommitmentSection = () => {
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
-            <div className="md:max-w-[700px] lg:max-w-[1080px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
                         <span className="bg-gradient-to-r from-[#1a4498] to-[#c59efe] text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium shadow-lg shadow-[#5534bb]/25">
-                            Google Ads
+                            Automation - Data
                         </span>
                     </div>
                     <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black">
@@ -90,7 +90,7 @@ const CommitmentSection = () => {
                                     {/* Content */}
                                     <div className="flex-1 min-w-0">
                                         <div className="w-full">
-                                            <p className={`text-[13px] lg:text-[15px]  ${
+                                            <p className={`text-[13px] lg:text-[15px] ${
                                                 commitment.id === 6 ? 'text-white' : 'text-black'
                                             }`}>
                                                 {commitment.description}

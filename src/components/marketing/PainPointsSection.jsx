@@ -1,35 +1,35 @@
 const PainPointsSection = () => {
-
     const painPoints = [
         {
-            title: "Tài khoản ads bị hạn chế",
-            description: "Tài khoản quảng cáo liên tục bị hạn chế, khiến chiến dịch đứt gãy và không thể scale.",
-            impact: "Chiến dịch đứt gãy",
+            title: "Thiếu đội marketing nội bộ",
+            description: "Không đủ ngân sách để tuyển full bộ phận marketing nội bộ.",
+            impact: "Tiền ads bị đốt cháy vô ích",
             isDark: false,
             rotation: "lg:-rotate-1"
         },
         {
-            title: "Tích hợp hệ thống kém",
-            description: "Không thể tích hợp hệ thống quảng cáo với chatbot, website hay CRM để khai thác dữ liệu hiệu quả.",
-            impact: "Ads bị đốt cháy",
+            title: "Thiếu sự liên kết chiến dịch",
+            description: "Thuê rời rạc nhiều bên (ads – content – thiết kế – automation) khiến chiến dịch thiếu liên kết và hiệu quả.",
+            impact: "Ngân sách marketing lãng phí",
             isDark: false,
             rotation: "lg:rotate-1"
         },
         {
-            title: "Thiếu hệ thống tracking",
-            description: "Chi tiền đều đặn nhưng không biết đơn hàng đến từ đâu – thiếu tracking và báo cáo rõ ràng",
-            impact: "Không đo lường ROI",
+            title: "Không có KPI & đo lường rõ ràng",
+            description: "Không được cam kết kết quả, không có KPI cụ thể để đo lường.",
+            impact: "Không tối ưu marketing",
             isDark: false,
             rotation: "lg:rotate-1"
         },
         {
-            title: "Phễu bán hàng thiếu bài bản",
-            description: "Khó khăn trong việc xây dựng phễu TOFU – MOFU – BOFU bài bản để tạo chuyển đổi bền vững",
-            impact: "Conversion thấp",
+            title: "Thiếu người đồng hành thực sự",
+            description: "Thiếu người “đồng hành thật sự” – chỉ làm theo brief, không hiểu mô hình kinh doanh của doanh nghiệp.",
+            impact: "Mất khách hàng",
             isDark: true,
             rotation: "lg:-rotate-1"
         }
     ];
+
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">

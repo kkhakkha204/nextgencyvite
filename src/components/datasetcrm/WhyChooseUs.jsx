@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
                                 {/* Cột mô tả */}
                                 <div className="flex flex-col justify-center">
                                     <p className="text-white text-[13px] lg:text-[15px]">
-                                        Chiến lược quảng cáo Google đa kênh, nắm rõ hành trình khách hàng trong chiến dịch
+                                        Môi trường làm việc trẻ trung, sáng tạo và chúng tôi tin rằng một đội ngũ giỏi – trong môi trường mở và không ngừng học hỏi – sẽ tạo nên những sản phẩm thực sự hiệu quả cho khách hàng.
                                     </p>
                                 </div>
 
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
                                     Kinh nghiệm 3+ năm
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">
-                                    Tối ưu theo từ khóa – hành vi – nguồn đơn, không chỉ dừng ở lượt hiển thị
+                                    Biến dữ liệu cũ thành mỏ vàng – Không bỏ sót khách hàng từng tương tác
                                 </p>
                                 <div className="absolute bottom-2 right-2 lg:bottom-6 lg:right-6">
                                     <svg className="w-11+ h-11 lg:w-20 lg:h-20 text-black opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,10 +83,10 @@ const WhyChooseUs = () => {
                             {/* Cột 40% */}
                             <div className="md:col-span-2 bg-white rounded-lg p-5 flex flex-col h-full">
                                 <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-black">
-                                    Tối ưu landing page
+                                    Quản lý tập trung
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700 ">
-                                    Tối ưu landing page – cá nhân hóa trải nghiệm người dùng (UX/UI).
+                                    Đồng bộ form – website – chatbot – Zalo – CRM – Facebook vào một hệ thống duy nhất
                                 </p>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ const WhyChooseUs = () => {
                                     Hỗ trợ 24/7
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">
-                                    Đồng hành toàn diện – báo cáo rõ ràng – điều chỉnh chiến dịch theo mục tiêu kinh doanh.
+                                    Tạo tệp đối tượng chuẩn, quảng cáo tiếp cận đúng người từng tương tác – tăng tỷ lệ chuyển đổi, giảm chi phí mỗi đơn
                                 </p>
                             </div>
 

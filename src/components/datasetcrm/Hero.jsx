@@ -41,7 +41,7 @@ const Hero = () => {
                         </p>
 
                         {/* Bullet Points */}
-                        <div className="">
+                        <div className="space-y-4">
                             <div className="flex items-start space-x-2">
                                 <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                 <p className="text-[13px] lg:text-[16px] text-gray-700">

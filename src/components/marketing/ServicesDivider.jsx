@@ -6,7 +6,7 @@ const ServicesDivider = () => {
         {
             id: 1,
             title: "UI/UX Design",
-            description: "Xây dựng tệp dataset chất lượng cho quảng cáo Facebook",
+            description: "Gói dịch vụ thuê ngoài toàn bộ team Marketing: Ads – Content – Design – Automation.",
             ellipseRotation: "rotate-3",
             hoverRotation: "group-hover:rotate-6",
             badgeRotation: "group-hover:rotate-12"
@@ -14,7 +14,7 @@ const ServicesDivider = () => {
         {
             id: 2,
             title: "Integration",
-            description: "Tạo đối tượng lookalike & remarketing từ dữ liệu CRM, đơn hàng, hành vi người dùng.",
+            description: "Đồng hành theo tháng/quý với mục tiêu: Tăng trưởng đơn hàng, giữ chân khách hàng.",
             ellipseRotation: "-rotate-2",
             hoverRotation: "group-hover:-rotate-4",
             badgeRotation: "group-hover:-rotate-12"
@@ -22,7 +22,7 @@ const ServicesDivider = () => {
         {
             id: 3,
             title: "Hosting & Maintenance",
-            description: "Kết nối dữ liệu từ form, website, Zalo, chatbot… đẩy ngược về Facebook CAPI.",
+            description: "Báo cáo hiệu quả định kỳ theo KPI cam kết.",
             ellipseRotation: "rotate-1",
             hoverRotation: "group-hover:rotate-3",
             badgeRotation: "group-hover:rotate-6"
@@ -62,7 +62,7 @@ const ServicesDivider = () => {
                                     <div className="absolute inset-0 rounded-full border-2 border-white transition-colors duration-300"></div>
                                     {/* Content Inside Ellipse */}
                                     <div className="px-4 py-4 text-white">
-                                        <p className="text-[10px] lg:text-[16px] whitespace-pre-line">
+                                            <p className="text-[10px] lg:text-[16px] whitespace-pre-line">
                                             {service.description}
                                         </p>
                                     </div>

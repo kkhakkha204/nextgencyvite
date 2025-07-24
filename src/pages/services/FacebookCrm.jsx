@@ -9,6 +9,7 @@ import CommitmentSection from "../../components/datasetcrm/CommitmentSection.jsx
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import WebsitePackages from "../../components/datasetcrm/WebsitePackages.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
+import OffersSection from "../../components/datasetcrm/OffersSection.jsx";
 
 const FacebookCrm = () => {
     return (
@@ -19,6 +20,7 @@ const FacebookCrm = () => {
             <WhyChooseUs/>
             <VideoSection/>
             <WebsitePackages/>
+            <OffersSection/>
             <ClientsPartnersSection/>
             <CommitmentSection/>
             <ConsultationSection/>

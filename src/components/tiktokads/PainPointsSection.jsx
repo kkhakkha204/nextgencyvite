@@ -47,11 +47,6 @@ const PainPointsSection = () => {
                     <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black mb-1">
                         Nỗi đau của doanh nghiệp
                     </h2>
-
-                    {/* Description */}
-                    <p className="text-[15px] lg:text-[18px] text-black max-w-md mx-auto">
-                        Chi phí cao, chuyển đổi thấp, đối thủ lấn lướt? Đừng lo, chúng tôi giúp bạn tối ưu Google Ads.
-                    </p>
                 </div>
 
                 {/* Pain Points Grid */}

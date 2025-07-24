@@ -12,7 +12,7 @@ const Hero = () => {
                         {/* Title Section */}
                         <div className="space-y-2">
                             <div className="flex items-center gap-4">
-                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
+                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold text-black leading-none tracking-tight">
                                 DỊCH VỤ
                             </h1>
                             {/* SVG Circles */}
@@ -61,7 +61,7 @@ const Hero = () => {
                             </div>
                             </div>
                             <div className="">
-                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-semibold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none">
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none tracking-tight">
                                     FACEBOOK ADS
                                 </h1>
                             </div>
@@ -73,11 +73,11 @@ const Hero = () => {
                         {/* Description */}
                         <div className="space-y-4">
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Dịch vụ <span className="text-[#c08dfe]">Facebook Ads</span> từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất tiềm ẩn đầy cơ hội trên nền tảng lâu đời này bằng giải pháp:
+                                Dịch vụ <strong>Facebook Ads</strong> từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất tiềm ẩn đầy cơ hội trên nền tảng lâu đời này bằng giải pháp:
                             </p>
 
                             {/* Bullet Points */}
-                            <div className="">
+                            <div className="space-y-4">
                                 <div className="flex items-start space-x-2">
                                     <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                     <p className="text-[13px] lg:text-[16px] text-gray-700">
@@ -127,9 +127,9 @@ const Hero = () => {
                     </div>
 
                     {/* Image Column - 40% */}
-                    <div className="md:col-span-2">
+                    <div className="md:col-span-2 p-2 bg-gray-50 rounded-2xl">
                         <div className="relative">
-                            <div className="aspect-[1/1] overflow-hidden rounded-2xl bg-gray-100">
+                            <div className="aspect-[1/1] overflow-hidden rounded-xl bg-gray-100">
                                 <img
                                     src="/assets/images/facebookads/hero.webp"
                                     alt="AI & Automation Technology"

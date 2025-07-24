@@ -50,7 +50,7 @@ const ServicesDivider = () => {
     );
 
     return (
-        <section className="relative bg-gradient-to-br from-black via-black to-[#1a4498] pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px] z-10">
+        <section className="relative bg-black pt-[90px] pb-[60px] lg:pt-[120px] lg:pb-[90px] z-10">
             <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     {services.map((service) => (
@@ -60,7 +60,6 @@ const ServicesDivider = () => {
                                 <div className={`relative w-64 h-24 md:w-52 md:h-28 lg:w-80 lg:h-40 flex items-center justify-center transform ${service.ellipseRotation} ${service.hoverRotation} transition-transform duration-500`}>
                                     {/* Ellipse Border */}
                                     <div className="absolute inset-0 rounded-full border-2 border-white transition-colors duration-300"></div>
-
                                     {/* Content Inside Ellipse */}
                                     <div className="px-4 py-4 text-white">
                                         <p className="text-[10px] lg:text-[16px] whitespace-pre-line">

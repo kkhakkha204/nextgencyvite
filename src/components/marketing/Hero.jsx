@@ -12,11 +12,11 @@ const Hero = () => {
                         {/* Title Section */}
                         <div className="space-y-2">
                             <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-none tracking-tight">
-                                AUTOMATION
+                                PHÒNG MARKETING
                             </h1>
                             <div className="flex items-center gap-4">
                                 <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none tracking-tight">
-                                    AI & DATA
+                                    THUÊ NGOÀI
                                 </h1>
                                 {/* SVG Circles */}
                                 <div className="flex-shrink-0">
@@ -71,7 +71,7 @@ const Hero = () => {
                         {/* Description */}
                         <div className="space-y-4">
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở <strong>Automation và AI.</strong> Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
+                                Đem chất xám từ đội ngũ của chúng tôi để rót vào những dự án đầy tiềm năng của các doanh nghiệp chính là phương chấm cống hiến của Nextgency khi cung cấp dịch vụ <strong>Phòng Marketing thuê ngoài:</strong>
                             </p>
 
                             {/* Bullet Points */}
@@ -79,19 +79,19 @@ const Hero = () => {
                                 <div className="flex items-start space-x-2">
                                     <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                     <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Tự động hoá quy trình nội bộ & marketing bằng n8n.
+                                        Gói dịch vụ thuê ngoài toàn bộ team Marketing: Ads – Content – Design – Automation.
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                     <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                     <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Xây dựng AI Agent: Chatbot thông minh, tư vấn DISC, tạo nội dung.
+                                        Đồng hành theo tháng/quý với mục tiêu: Tăng trưởng đơn hàng, giữ chân khách hàng.
                                     </p>
                                 </div>
                                 <div className="flex items-start space-x-2">
                                     <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                     <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Kết nối các nền tảng: Facebook, Zalo, Website, Email, CRM.
+                                        Báo cáo hiệu quả định kỳ theo KPI cam kết.
                                     </p>
                                 </div>
                             </div>

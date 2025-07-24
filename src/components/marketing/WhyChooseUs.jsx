@@ -29,7 +29,7 @@ const WhyChooseUs = () => {
                                 {/* Cột mô tả */}
                                 <div className="flex flex-col justify-center">
                                     <p className="text-white text-[13px] lg:text-[15px]">
-                                        Thiết kế chuẩn tốc độ, sử dụng hosting tối ưu, đảm bảo website luôn mượt trên mọi nền tảng
+                                        Tư vấn mô hình & chiến lược phù hợp với từng thương hiệu
                                     </p>
                                 </div>
 
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
                                     Kinh nghiệm 3+ năm
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">
-                                    Xây dựng giao diện mobile-first: tối ưu hiển thị, thao tác lướt và trải nghiệm người dùng trên mọi thiết bị di động
+                                    Xây dựng hình ảnh thương hiệu theo một chuẩn mực thương hiệu thống nhất trên mọi nền tảng
                                 </p>
                                 <div className="absolute bottom-2 right-2 lg:bottom-6 lg:right-6">
                                     <svg className="w-11+ h-11 lg:w-20 lg:h-20 text-black opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,10 +83,10 @@ const WhyChooseUs = () => {
                             {/* Cột 40% */}
                             <div className="md:col-span-2 bg-white rounded-lg p-5 flex flex-col h-full">
                                 <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-black">
-                                    Tối ưu landing page
+                                    Tối ưu hiệu suất
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700 ">
-                                    Tích hợp đầy đủ Facebook Pixel, Google Tag Manager, chatbot AI,... giúp doanh nghiệp nắm bắt toàn bộ hành trình khách hàng
+                                    Quản lý, chăm sóc và tối ưu hiệu suất cho các kênh như Fanpage, Website, Zalo OA, Tiktok,…
                                 </p>
                             </div>
                         </div>
@@ -94,22 +94,25 @@ const WhyChooseUs = () => {
                         {/* Row B (50%) */}
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:h-[236px]">
                             {/* Cột 40% */}
-                            <div className="md:col-span-2 border-2 bg-white border-black rounded-lg p-5 flex flex-col h-full">
+                            <div className="md:col-span-2 border-2 bg-white border-black rounded-lg p-6 flex flex-col h-full">
                                 <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-black">
                                     Hỗ trợ 24/7
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">
-                                    Đảm bảo cấu trúc chuẩn SEO, UX/UI, đem lại trải nghiệm người dùng tốt nhất
+                                    Một đội marketing thực chiến, làm đủ vai trò từ chiến lược đến thực thi: content, design, media, tracking, báo cáo...
                                 </p>
                             </div>
 
                             {/* Cột 60% */}
-                            <div className="md:col-span-3 bg-black rounded-lg p-5 flex flex-col text-white h-full">
-                                <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-white">
-                                    Hơn 100+ Khách hàng tin tưởng
-                                </h3>
-                                <p className="text-[13px] lg:text-[15px] text-gray-300">
-                                    Mỗi Landing Page được thiết kế như một sales funnel, tâm lý học hành vi được áp dụng để dẫn dắt – giữ chân – chốt đơn
+                            <div className="md:col-span-3 bg-black rounded-lg p-5 flex flex-col justify-center items-center text-center text-white h-full">
+                                <p className="text-gray-100 text-[13px] lg:text-[15px] -mb-1">
+                                    Được tin tưởng bởi
+                                </p>
+                                <div className="text-[44px] lg:text-[54px] font-bold text-white">
+                                    100+
+                                </div>
+                                <p className="text-gray-100 text-[13px] lg:text-[15px] -mt-1">
+                                    Doanh nghiệp
                                 </p>
                             </div>
                         </div>

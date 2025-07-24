@@ -14,6 +14,7 @@ import FacebookAds from "./pages/services/FacebookAds.jsx";
 import TiktokAds from "./pages/services/TiktokAds.jsx";
 import FacebookCrm from "./pages/services/FacebookCrm.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
+import MarketingOutsource from "./pages/services/MarketingOutsource.jsx";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -50,6 +51,7 @@ const RouterContent = () => {
                     <Route path="/services/facebook-ads" element={<FacebookAds />} />
                     <Route path="/services/tiktok-ads" element={<TiktokAds />} />
                     <Route path="/services/facebook-crm" element={<FacebookCrm />} />
+                    <Route path="/services/marketing-outsource" element={<MarketingOutsource />} />
                 </Routes>
             </main>
             <Footer />

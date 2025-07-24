@@ -45,7 +45,8 @@ const LandingPagePackages = () => {
                 </div>
 
                 {/* Packages */}
-                <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 p-2 bg-gray-50 rounded-2xl">
+                <div className=" p-2 bg-gray-50 rounded-2xl">
+                    <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 p-2 bg-white rounded-xl shadow-md">
                     {/* Gói Cơ Bản */}
                     <div className="bg-white border-2 border-white  rounded-lg p-8 neu-shadow-inset-xs transition-all duration-300 relative flex flex-col justify-between">
                         <div>
@@ -130,6 +131,7 @@ const LandingPagePackages = () => {
                             </Link>
 
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
