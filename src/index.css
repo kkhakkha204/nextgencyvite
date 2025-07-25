@@ -7,6 +7,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Optimize parallax performance */
+.parallax-element {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
 /* Color Variables */
 :root {
   --cyan: #A4FCFF;
