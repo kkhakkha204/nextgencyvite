@@ -1,258 +1,245 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDown, Sparkles, ArrowUpRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 
 const HeroSection = () => {
     const [scrollY, setScrollY] = useState(0);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const heroRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrollY(window.scrollY);
+            requestAnimationFrame(() => {
+                setScrollY(window.scrollY);
+            });
         };
 
         const handleMouseMove = (e) => {
-            if (heroRef.current) {
-                const rect = heroRef.current.getBoundingClientRect();
-                setMousePosition({
-                    x: (e.clientX - rect.left - rect.width / 2) / rect.width,
-                    y: (e.clientY - rect.top - rect.height / 2) / rect.height
-                });
-            }
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            setMousePosition({ x, y });
         };
 
-        const handleTouchMove = (e) => {
-            if (heroRef.current && e.touches[0]) {
-                const rect = heroRef.current.getBoundingClientRect();
-                const touch = e.touches[0];
-                setMousePosition({
-                    x: (touch.clientX - rect.left - rect.width / 2) / rect.width,
-                    y: (touch.clientY - rect.top - rect.height / 2) / rect.height
-                });
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('touchmove', handleTouchMove);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('touchmove', handleTouchMove);
         };
     }, []);
 
     return (
-        <section ref={heroRef} className="relative min-h-screen overflow-hidden bg-white">
-
-            {/* Geometric Pattern */}
-            <div className="absolute inset-0">
-                {/* Line Pattern */}
-                <svg className="absolute left-0 top-0 h-full w-full opacity-10" style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
-                    <defs>
-                        <pattern id="lines" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                            <line x1="0" y1="0" x2="100" y2="100" stroke="#1a4498" strokeWidth="0.25" />
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#lines)" />
-                </svg>
+        <section className="relative min-h-screen overflow-hidden bg-white">
+            {/* Background Elements */}
+            <div className="absolute inset-0 pointer-events-none">
+                {/* Gradient Orbs */}
+                <div
+                    className="absolute w-96 h-96 rounded-full opacity-20"
+                    style={{
+                        background: 'radial-gradient(circle, #c08dfe 0%, transparent 70%)',
+                        top: '-10%',
+                        right: '10%',
+                        transform: `translate3d(${mousePosition.x * 20}px, ${scrollY * 0.1}px, 0)`,
+                        filter: 'blur(40px)',
+                    }}
+                />
+                <div
+                    className="absolute w-64 h-64 rounded-full opacity-30"
+                    style={{
+                        background: 'radial-gradient(circle, #1a4498 0%, transparent 70%)',
+                        bottom: '20%',
+                        left: '5%',
+                        transform: `translate3d(${mousePosition.x * -15}px, ${scrollY * 0.15}px, 0)`,
+                        filter: 'blur(30px)',
+                    }}
+                />
             </div>
 
-            {/* Main Content */}
-            <div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-20 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-7xl">
-                    <div className="grid items-center gap-16 lg:grid-cols-2">
-                        {/* Left Content */}
-                        <div>
-                            {/* Badge */}
-                            <div
-                                className="mb-10 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#1a4498] to-[#c08dfe] px-3 py-2.5 shadow-sm"
-                                style={{ transform: `translateY(${scrollY * -0.1}px)` }}
-                            >
-                                <Sparkles className="h-5 w-5 text-white" />
-                                <span className="text-[11px] lg:text-[13px] font-medium text-white">Digital services Nextgency</span>
-                            </div>
-
-                            {/* Main Heading */}
-                            <h1
-                                className="mb-8 "
-                                style={{ transform: `translateY(${scrollY * -0.15}px)` }}
-                            >
-                <span className="block text-[32px] text-black md:text-[50px] lg:text-[60px] font-archivo font-bold leading-tight">
-                  Bứt phá cùng
-                </span>
-                                <span className="mt-4 block text-[52px] md:text-[60px] lg:text-[86px] leading-none">
-                  <span className="bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent font-archivo uppercase tracking-tight">Nextgency</span>
-                </span>
-                            </h1>
-
-                            {/* Subtitle */}
-                            <p
-                                className="mb-10 max-w-xl text-lg leading-relaxed text-gray-600 sm:text-xl"
-                                style={{ transform: `translateY(${scrollY * -0.2}px)` }}
-                            >
-                                Transforming ambitious ideas into extraordinary digital experiences through innovative design and cutting-edge technology.
-                            </p>
-
-                            {/* CTA Buttons */}
-                            <div
-                                className="flex flex-col gap-4 sm:flex-row"
-                                style={{ transform: `translateY(${scrollY * -0.15}px)` }}
-                            >
-                                <button className="group relative overflow-hidden rounded-full bg-[#1a4498] px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-                  <span className="relative z-10 flex items-center gap-2">
-                    Start Your Project <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                  </span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-[#1a4498] to-[#c08dfe] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                                </button>
-
-                                <button className="group rounded-full border-2 border-black px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-black hover:text-white">
-                                    View Portfolio
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Right Visual - Desktop */}
-                        <div
-                            className="relative hidden lg:block"
-                            style={{ transform: `translateY(${scrollY * -0.2}px)` }}
+            {/* Main Container */}
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Content Section */}
+                <div className="relative z-20 pt-20 pb-16 lg:pt-32 lg:pb-24">
+                    {/* Title Section */}
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-8">
+                        <h1
+                            className="text-6xl sm:text-7xl lg:text-8xl font-bold text-black mb-4 lg:mb-0"
+                            style={{
+                                transform: `translate3d(0, ${scrollY * 0.2}px, 0)`,
+                            }}
                         >
-                            {/* Minimalist Card Stack */}
-                            <div className="relative h-[500px] w-full">
-                                {/* Card 1 - Back */}
-                                <div
-                                    className="absolute right-0 top-0 h-72 w-80 rounded-2xl bg-black shadow-2xl"
-                                    style={{
-                                        transform: `
-                      perspective(1000px)
-                      rotateY(${mousePosition.x * 5}deg) 
-                      rotateX(${-mousePosition.y * 5}deg)
-                      translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)
-                    `
-                                    }}
-                                >
-                                    <div className="flex h-full items-center justify-center">
-                                        <span className="text-3xl font-bold text-white">Strategy</span>
-                                    </div>
-                                </div>
-
-                                {/* Card 2 - Middle */}
-                                <div
-                                    className="absolute left-10 top-16 h-72 w-80 rounded-2xl border-2 border-black bg-white shadow-2xl"
-                                    style={{
-                                        transform: `
-                      perspective(1000px)
-                      rotateY(${mousePosition.x * 8}deg) 
-                      rotateX(${-mousePosition.y * 8}deg)
-                      translate(${mousePosition.x * 15}px, ${mousePosition.y * 15}px)
-                    `
-                                    }}
-                                >
-                                    <div className="flex h-full items-center justify-center">
-                                        <span className="text-3xl font-bold text-black">Design</span>
-                                    </div>
-                                </div>
-
-                                {/* Card 3 - Front */}
-                                <div
-                                    className="absolute bottom-0 right-10 h-72 w-80 rounded-2xl bg-gradient-to-br from-[#1a4498] to-[#c08dfe] shadow-2xl"
-                                    style={{
-                                        transform: `
-                      perspective(1000px)
-                      rotateY(${mousePosition.x * 10}deg) 
-                      rotateX(${-mousePosition.y * 10}deg)
-                      translate(${mousePosition.x * 20}px, ${mousePosition.y * 20}px)
-                    `
-                                    }}
-                                >
-                                    <div className="flex h-full items-center justify-center">
-                                        <span className="text-3xl font-bold text-white">Innovation</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Mobile Visual - Only shows on mobile */}
-                        <div className="relative mt-12 block lg:hidden">
-                            {/* Animated Cards for Mobile */}
-                            <div className="relative h-[300px]">
-                                <div
-                                    className="absolute inset-x-0 top-0 mx-auto h-40 w-72 rounded-2xl bg-gradient-to-br from-[#1a4498] to-[#c08dfe] shadow-2xl"
-                                    style={{
-                                        transform: `translateY(${scrollY * -0.1}px) rotate(-6deg)`,
-                                        animation: 'float 6s ease-in-out infinite'
-                                    }}
-                                >
-                                    <div className="flex h-full items-center justify-center p-6">
-                                        <span className="text-2xl font-bold text-white">Innovation</span>
-                                    </div>
-                                </div>
-
-                                <div
-                                    className="absolute inset-x-0 top-16 mx-auto h-40 w-72 rounded-2xl border-2 border-black bg-white shadow-2xl"
-                                    style={{
-                                        transform: `translateY(${scrollY * -0.15}px) rotate(3deg)`,
-                                        animation: 'float 6s ease-in-out infinite 2s'
-                                    }}
-                                >
-                                    <div className="flex h-full items-center justify-center p-6">
-                                        <span className="text-2xl font-bold text-black">Design</span>
-                                    </div>
-                                </div>
-
-                                <div
-                                    className="absolute inset-x-0 top-32 mx-auto h-40 w-72 rounded-2xl bg-black shadow-2xl"
-                                    style={{
-                                        transform: `translateY(${scrollY * -0.2}px) rotate(-3deg)`,
-                                        animation: 'float 6s ease-in-out infinite 4s'
-                                    }}
-                                >
-                                    <div className="flex h-full items-center justify-center p-6">
-                                        <span className="text-2xl font-bold text-white">Strategy</span>
-                                    </div>
-                                </div>
-                            </div>
+                            Bứt phá
+                        </h1>
+                        <div
+                            className="text-sm lg:text-base text-gray-600 lg:text-right"
+                            style={{
+                                transform: `translate3d(0, ${scrollY * 0.15}px, 0)`,
+                            }}
+                        >
+                            <p>Based on</p>
+                            <p>Ha Noi</p>
                         </div>
                     </div>
 
-                    {/* Stats - More spacing */}
+                    {/* Subtitle Section */}
+                    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-12">
+                        <p
+                            className="text-xl lg:text-2xl text-gray-700 mb-4 lg:mb-0"
+                            style={{
+                                transform: `translate3d(0, ${scrollY * 0.25}px, 0)`,
+                            }}
+                        >
+                            Cung cấp dịch vụ chuyển đổi số
+                        </p>
+                        <h2
+                            className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-[#c08dfe] to-[#1a4498] bg-clip-text text-transparent"
+                            style={{
+                                transform: `translate3d(0, ${scrollY * 0.2}px, 0)`,
+                            }}
+                        >
+                            Nextgency
+                        </h2>
+                    </div>
+
+                    {/* CTA Buttons */}
                     <div
-                        className="mt-32 grid grid-cols-2 gap-8 sm:grid-cols-4"
-                        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+                        className="flex flex-col sm:flex-row gap-4"
+                        style={{
+                            transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
+                        }}
                     >
-                        {[
-                            { number: '250+', label: 'Projects Delivered' },
-                            { number: '98%', label: 'Client Satisfaction' },
-                            { number: '50+', label: 'Team Members' },
-                            { number: '12+', label: 'Industry Awards' }
-                        ].map((stat, index) => (
-                            <div key={index} className="text-center">
-                                <div className="text-4xl font-bold md:text-5xl">
-                  <span className="bg-gradient-to-r from-[#1a4498] to-[#c08dfe] bg-clip-text text-transparent">
-                    {stat.number}
-                  </span>
-                                </div>
-                                <div className="mt-2 text-sm text-gray-600">{stat.label}</div>
-                            </div>
-                        ))}
+                        <button className="group relative px-8 py-4 bg-[#1a4498] text-white rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl">
+                            <span className="relative z-10 font-medium">Khám phá dịch vụ</span>
+                            <div className="absolute inset-0 bg-[#c08dfe] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                        </button>
+                        <button className="px-8 py-4 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                            Liên hệ ngay
+                        </button>
                     </div>
+                </div>
+
+                {/* Visual Container */}
+                <div className="relative pb-20 lg:pb-32">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+                        {/* Left Column */}
+                        <div className="relative">
+                            {/* Floating Card */}
+                            <div
+                                className="absolute -top-10 -left-5 w-48 h-64 bg-white rounded-2xl shadow-2xl p-6 hidden lg:block"
+                                style={{
+                                    transform: `translate3d(${mousePosition.x * -10}px, ${scrollY * 0.4 + mousePosition.y * -10}px, 0) rotate(${mousePosition.x * 2}deg)`,
+                                }}
+                            >
+                                <div className="h-full bg-gradient-to-br from-[#c08dfe]/20 to-[#1a4498]/20 rounded-xl"></div>
+                            </div>
+
+                            {/* Main Image */}
+                            <div
+                                className="relative overflow-hidden rounded-2xl shadow-xl"
+                                style={{
+                                    transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
+                                }}
+                            >
+                                <div className="aspect-[3/4] bg-gradient-to-br from-gray-100 to-gray-200">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=600&fit=crop"
+                                        alt="Office space"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Center Column */}
+                        <div className="relative">
+                            {/* Geometric Shape */}
+                            <div
+                                className="absolute -top-20 right-10 w-32 h-32 hidden lg:block"
+                                style={{
+                                    transform: `translate3d(${mousePosition.x * 15}px, ${scrollY * 0.2 + mousePosition.y * 15}px, 0) rotate(${45 + scrollY * 0.1}deg)`,
+                                }}
+                            >
+                                <div className="w-full h-full border-4 border-[#c08dfe] rounded-lg"></div>
+                            </div>
+
+                            {/* Main Center Image */}
+                            <div
+                                className="relative overflow-hidden rounded-2xl shadow-2xl"
+                                style={{
+                                    transform: `translate3d(0, ${scrollY * 0.2}px, 0) scale(${1 + scrollY * 0.0001})`,
+                                }}
+                            >
+                                <div className="aspect-[4/5] bg-gradient-to-br from-[#1a4498] to-[#c08dfe]">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=800&fit=crop"
+                                        alt="Modern workspace"
+                                        className="w-full h-full object-cover mix-blend-overlay opacity-80"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Floating Stats Card */}
+                            <div
+                                className="absolute -bottom-10 -right-10 bg-white rounded-2xl shadow-2xl p-6 hidden lg:block"
+                                style={{
+                                    transform: `translate3d(${mousePosition.x * 10}px, ${scrollY * 0.5 + mousePosition.y * 10}px, 0)`,
+                                }}
+                            >
+                                <div className="text-3xl font-bold text-[#1a4498]">98%</div>
+                                <div className="text-sm text-gray-600">Khách hàng hài lòng</div>
+                            </div>
+                        </div>
+
+                        {/* Right Column */}
+                        <div className="relative">
+                            {/* Circle Element */}
+                            <div
+                                className="absolute -top-5 -right-5 w-24 h-24 rounded-full bg-[#c08dfe]/30 hidden lg:block"
+                                style={{
+                                    transform: `translate3d(${mousePosition.x * -20}px, ${scrollY * 0.3 + mousePosition.y * -20}px, 0)`,
+                                }}
+                            />
+
+                            {/* Main Image */}
+                            <div
+                                className="relative overflow-hidden rounded-2xl shadow-xl"
+                                style={{
+                                    transform: `translate3d(0, ${scrollY * 0.4}px, 0)`,
+                                }}
+                            >
+                                <div className="aspect-[3/4] bg-gradient-to-br from-gray-200 to-gray-100">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400&h=600&fit=crop"
+                                        alt="Team collaboration"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            </div>
+
+                            {/* Tech Stack Card */}
+                            <div
+                                className="absolute -bottom-5 -left-10 bg-black text-white rounded-2xl p-4 hidden lg:block"
+                                style={{
+                                    transform: `translate3d(${mousePosition.x * -15}px, ${scrollY * 0.6 + mousePosition.y * -15}px, 0) rotate(${mousePosition.x * -2}deg)`,
+                                }}
+                            >
+                                <div className="text-xs font-mono">{'<NextGen />'}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Bottom Gradient Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none"></div>
                 </div>
             </div>
 
-            {/* Scroll Indicator */}
-            <div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
-                style={{ opacity: Math.max(0, 1 - scrollY / 200) }}
-            >
-                <div className="flex flex-col items-center gap-2">
-                    <span className="text-xs font-medium text-gray-500">Discover More</span>
-                    <ChevronDown className="h-5 w-5 text-[#1a4498]" />
+            {/* Additional Decorative Elements */}
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                <div className="animate-bounce">
+                    <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
                 </div>
             </div>
         </section>
     );
 };
-
 
 export default HeroSection;
