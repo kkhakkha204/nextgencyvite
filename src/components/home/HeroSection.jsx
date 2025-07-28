@@ -19,9 +19,12 @@ const HeroSection = () => {
         const title = titleRef.current;
         const glassCard = glassCardRef.current;
 
+        // Check if device is mobile (screen width <= 768px)
+        const isMobile = window.innerWidth <= 768;
+
         // Create context for better performance
         let ctx = gsap.context(() => {
-            // Background logo parallax - moves slower
+            // Background logo parallax - moves slower (always active)
             gsap.to(bgLogo, {
                 yPercent: 75,
                 ease: "none",
@@ -34,48 +37,64 @@ const HeroSection = () => {
                 }
             });
 
-            // Main title parallax
-            gsap.to(title, {
-                yPercent: -80,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: 1,
-                    invalidateOnRefresh: true
-                }
-            });
+            // Main title parallax - only on desktop
+            if (!isMobile) {
+                gsap.to(title, {
+                    yPercent: -80,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 1,
+                        invalidateOnRefresh: true
+                    }
+                });
+            }
 
-            // Glass card parallax effect
-            gsap.to(glassCard, {
-                yPercent: 30,
-                scale: 0.95,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: 1.2,
-                    invalidateOnRefresh: true
-                }
-            });
-
-
+            // Glass card parallax effect - only on desktop
+            if (!isMobile) {
+                gsap.to(glassCard, {
+                    yPercent: 30,
+                    scale: 0.95,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: 1.2,
+                        invalidateOnRefresh: true
+                    }
+                });
+            }
 
             // Refresh ScrollTrigger on window resize for responsive behavior
             ScrollTrigger.refresh();
 
         }, section);
 
+        // Handle window resize to update parallax effects
+        const handleResize = () => {
+            const newIsMobile = window.innerWidth <= 768;
+            if (newIsMobile !== isMobile) {
+                ctx.revert();
+                ScrollTrigger.refresh();
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+
         // Cleanup
-        return () => ctx.revert();
+        return () => {
+            ctx.revert();
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     return (
         <section ref={sectionRef} className="relative min-h-screen w-full bg-white overflow-hidden py-[60px] lg:py-0">
             {/* Large centered logo background */}
-                <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
+            <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
                 <div className="w-80 h-80 md:w-[500px] md:h-[500px] lg:w-[750px] lg:h-[750px]">
                     <img
                         src="/assets/images/herologo.png"
