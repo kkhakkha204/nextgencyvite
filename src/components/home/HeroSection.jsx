@@ -12,7 +12,6 @@ const HeroSection = () => {
     const bgLogoRef = useRef(null);
     const titleRef = useRef(null);
     const glassCardRef = useRef(null);
-    const ctaRef = useRef(null);
     const floatingCardRef = useRef(null);
 
     useEffect(() => {
@@ -20,7 +19,6 @@ const HeroSection = () => {
         const bgLogo = bgLogoRef.current;
         const title = titleRef.current;
         const glassCard = glassCardRef.current;
-        const cta = ctaRef.current;
         const floatingCard = floatingCardRef.current;
 
         // Detect if mobile device
@@ -28,39 +26,29 @@ const HeroSection = () => {
 
         // Create context for better performance
         let ctx = gsap.context(() => {
-            // Configure ScrollTrigger for better mobile performance
-            ScrollTrigger.config({
-                limitCallbacks: true,
-                syncInterval: 40 // Sync less frequently on mobile
-            });
-
-            // Background logo parallax - adjusted for mobile
+            // Background logo parallax - moves slower
             gsap.to(bgLogo, {
-                yPercent: isMobile ? 30 : 65, // Less movement on mobile
+                yPercent: 65,
                 ease: "none",
                 scrollTrigger: {
                     trigger: section,
                     start: "top top",
                     end: "bottom top",
-                    scrub: isMobile ? 3 : 1.5, // Higher scrub value for smoother mobile
-                    invalidateOnRefresh: true,
-                    fastScrollEnd: true, // Prevent jumpy behavior
-                    preventOverlaps: true
+                    scrub: isMobile ? 3 : 1.5,
+                    invalidateOnRefresh: true
                 }
             });
 
-            // Main title parallax - reduced movement on mobile
+            // Main title parallax
             gsap.to(title, {
-                yPercent: isMobile ? -50 : -100, // Less movement on mobile
+                yPercent: isMobile ? -60 : -100,
                 ease: "none",
                 scrollTrigger: {
                     trigger: section,
                     start: "top top",
                     end: "bottom top",
                     scrub: isMobile ? 2.5 : 1,
-                    invalidateOnRefresh: true,
-                    fastScrollEnd: true,
-                    preventOverlaps: true
+                    invalidateOnRefresh: true
                 }
             });
 
@@ -81,60 +69,29 @@ const HeroSection = () => {
             } else {
                 // Simpler effect for mobile
                 gsap.to(glassCard, {
-                    yPercent: 15,
+                    yPercent: 25,
                     ease: "none",
                     scrollTrigger: {
                         trigger: section,
                         start: "top top",
                         end: "bottom top",
                         scrub: 3,
-                        invalidateOnRefresh: true,
-                        fastScrollEnd: true
+                        invalidateOnRefresh: true
                     }
                 });
             }
 
-            // CTA buttons parallax - minimal on mobile
-            gsap.to(cta, {
-                yPercent: isMobile ? 10 : 20,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: isMobile ? 2 : 1,
-                    invalidateOnRefresh: true,
-                    fastScrollEnd: true
-                }
+            // Additional floating animation for the card
+            gsap.to(floatingCard, {
+                y: "+=20",
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut"
             });
 
-            // Floating animation - disabled on mobile for performance
-            if (!isMobile && floatingCard) {
-                gsap.to(floatingCard, {
-                    y: "+=20",
-                    duration: 3,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "power1.inOut"
-                });
-            }
-
-            // Optimize ScrollTrigger refresh
-            let refreshTimeout;
-            const handleResize = () => {
-                clearTimeout(refreshTimeout);
-                refreshTimeout = setTimeout(() => {
-                    ScrollTrigger.refresh();
-                }, 150);
-            };
-
-            window.addEventListener('resize', handleResize);
-
-            // Cleanup resize listener
-            return () => {
-                window.removeEventListener('resize', handleResize);
-                clearTimeout(refreshTimeout);
-            };
+            // Refresh ScrollTrigger on window resize for responsive behavior
+            ScrollTrigger.refresh();
 
         }, section);
 
@@ -145,13 +102,12 @@ const HeroSection = () => {
     return (
         <section ref={sectionRef} className="relative min-h-screen w-full bg-white overflow-hidden py-[60px] lg:py-0">
             {/* Large centered logo background */}
-            <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform transform-gpu">
+                <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
                 <div className="w-80 h-80 md:w-[500px] md:h-[500px] lg:w-[750px] lg:h-[750px]">
                     <img
                         src="/assets/images/herologo.png"
                         alt="Nextgency Innovation"
                         className="w-full h-full object-contain opacity-70"
-                        loading="eager"
                     />
                 </div>
             </div>
@@ -160,12 +116,12 @@ const HeroSection = () => {
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col lg:justify-center items-center">
 
                 {/* Main title */}
-                <h1 ref={titleRef} className="text-[55px] md:text-[150px] xl:text-[240px] tracking-tighter font-bold will-change-transform transform-gpu">
+                <h1 ref={titleRef} className="text-[55px] md:text-[150px] xl:text-[240px]  tracking-tighter font-bold will-change-transform">
                     NEXTGENCY
                 </h1>
 
                 {/* Glassmorphism card */}
-                <div ref={glassCardRef} className="w-full max-w-5xl mb-4 will-change-transform transform-gpu">
+                <div ref={glassCardRef} className="w-full max-w-5xl mb-4 will-change-transform">
                     <div className="backdrop-blur-md bg-white/30 border-2 border-white rounded-2xl px-4 py-6 md:px-6">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             {/* Column A - Description */}
@@ -176,14 +132,15 @@ const HeroSection = () => {
                                 </p>
                                 <div className="">
                                     {/* Column A - CTAs */}
-                                    <div ref={ctaRef} className="flex flex-row gap-2 will-change-transform transform-gpu justify-center sm:justify-start">
+                                    <div className="flex flex-row gap-2 will-change-transform justify-center sm:justify-start">
                                         <Link
                                             to="/contact"
                                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+
                                         >
-                                            <span className="">
-                                                Tư vấn ngay
-                                            </span>
+        <span className="">
+            Tư vấn ngay
+        </span>
                                             <div
                                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                                 <ArrowUpRight
@@ -194,22 +151,22 @@ const HeroSection = () => {
                                         <Link
                                             to="/contact"
                                             className="relative flex items-center space-x-3 px-7 py-1.5 bg-white text-[15px] sm:text-[16px] text-black neu-shadow-xs rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
+
                                         >
-                                            <span className="">
-                                                Tư vấn ngay
-                                            </span>
+        <span className="">
+            Tư vấn ngay
+        </span>
                                         </Link>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Column B - Image */}
-                            <div ref={floatingCardRef} className="relative h-64 md:h-80 overflow-hidden">
+                            <div className="relative h-64 md:h-80  overflow-hidden">
                                 <img
                                     src="/assets/images/herologo.png"
                                     alt="Nextgency Innovation"
                                     className="w-full h-full object-contain"
-                                    loading="eager"
                                 />
                             </div>
                         </div>
