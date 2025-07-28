@@ -1,25 +1,110 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Sparkles, Zap } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import {ArrowRight, ArrowUpRight, Sparkles, Zap} from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import {Link} from "react-router-dom";
+
+// Register GSAP plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
-    const [isLoaded, setIsLoaded] = useState(false);
+    const sectionRef = useRef(null);
+    const bgLogoRef = useRef(null);
+    const titleRef = useRef(null);
+    const glassCardRef = useRef(null);
+    const ctaRef = useRef(null);
+    const floatingCardRef = useRef(null);
 
     useEffect(() => {
-        setIsLoaded(true);
+        const section = sectionRef.current;
+        const bgLogo = bgLogoRef.current;
+        const title = titleRef.current;
+        const glassCard = glassCardRef.current;
+        const cta = ctaRef.current;
+        const floatingCard = floatingCardRef.current;
+
+        // Create context for better performance
+        let ctx = gsap.context(() => {
+            // Background logo parallax - moves slower
+            gsap.to(bgLogo, {
+                yPercent: 65,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1.5,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // Main title parallax
+            gsap.to(title, {
+                yPercent: -100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // Glass card parallax effect
+            gsap.to(glassCard, {
+                yPercent: 25,
+                scale: 0.95,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1.2,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // CTA buttons parallax
+            gsap.to(cta, {
+                yPercent: 20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // Additional floating animation for the card
+            gsap.to(floatingCard, {
+                y: "+=20",
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut"
+            });
+
+            // Refresh ScrollTrigger on window resize for responsive behavior
+            ScrollTrigger.refresh();
+
+        }, section);
+
+        // Cleanup
+        return () => ctx.revert();
     }, []);
 
     return (
-        <section className="relative min-h-screen w-full bg-white overflow-hidden">
-            {/* Background subtle pattern */}
-            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white pointer-events-none" />
-
+        <section ref={sectionRef} className="relative min-h-screen w-full bg-white overflow-hidden py-[60px] lg:py-0">
             {/* Large centered logo background */}
-            <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] ">
+                <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
+                <div className="w-80 h-80 md:w-[500px] md:h-[500px] lg:w-[750px] lg:h-[750px]">
                     <img
                         src="/assets/images/herologo.png"
                         alt="Nextgency Innovation"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain opacity-70"
                     />
                 </div>
             </div>
@@ -28,93 +113,62 @@ const HeroSection = () => {
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
 
                 {/* Main title */}
-                <h1 className={`text-6xl md:text-[150px] font-bold bg-black bg-clip-text text-transparent mb-12 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                <h1 ref={titleRef} className="text-[55px] md:text-[150px] xl:text-[240px]  tracking-tighter font-bold will-change-transform">
                     NEXTGENCY
                 </h1>
 
                 {/* Glassmorphism card */}
-                <div className={`w-full max-w-5xl mb-12 transition-all duration-1000 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    <div className="backdrop-blur-xl bg-white/70 border border-gray-200/50 rounded-3xl p-8 md:p-12 shadow-xl">
+                <div ref={glassCardRef} className="w-full max-w-5xl mb-4 will-change-transform">
+                    <div className="backdrop-blur-md bg-white/30 border-2 border-white rounded-2xl px-4 py-6 md:px-6">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             {/* Column A - Description */}
-                            <div className="space-y-4">
-                                <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-                                    Đổi mới không ngừng
-                                </h2>
-                                <p className="text-gray-600 text-lg leading-relaxed">
+                            <div className="space-y-10">
+                                <p className="text-black text-[15px] lg:text-[18px] max-w-sm text-justify">
                                     Nextgency là đối tác công nghệ hàng đầu, chuyên cung cấp giải pháp số hóa toàn diện.
                                     Chúng tôi biến ý tưởng thành hiện thực với công nghệ tiên tiến nhất.
                                 </p>
-                                <div className="flex items-center gap-4 pt-2">
-                                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                                        <Sparkles className="w-4 h-4 text-indigo-500" />
-                                        <span>Innovation First</span>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                                        <Zap className="w-4 h-4 text-purple-500" />
-                                        <span>Future Ready</span>
+                                <div className="">
+                                    {/* Column A - CTAs */}
+                                    <div ref={ctaRef} className="flex flex-row gap-2 will-change-transform justify-center sm:justify-start">
+                                        <Link
+                                            to="/contact"
+                                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+
+                                        >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                                            <div
+                                                className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                                <ArrowUpRight
+                                                    className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
+                                                    strokeWidth={2.5}/>
+                                            </div>
+                                        </Link>
+                                        <Link
+                                            to="/contact"
+                                            className="relative flex items-center space-x-3 px-7 py-1.5 bg-white text-[15px] sm:text-[16px] text-black neu-shadow-xs rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
+
+                                        >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Column B - Image */}
-                            <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden shadow-2xl">
-                                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600">
-                                    {/* Placeholder for image - replace with actual image */}
-                                    <div className="w-full h-full flex items-center justify-center">
-                                        <svg className="w-32 h-32 text-white/20" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                        </svg>
-                                    </div>
-                                </div>
+                            <div className="relative h-64 md:h-80  overflow-hidden">
                                 <img
                                     src="/assets/images/herologo.png"
                                     alt="Nextgency Innovation"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-contain"
                                 />
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/* Bottom section with CTA and floating card */}
-                <div className={`w-full max-w-5xl transition-all duration-1000 delay-400 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                    <div className="grid md:grid-cols-2 gap-8 items-end">
-                        {/* Column A - CTAs */}
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="group px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2">
-                                Khám phá ngay
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
-                            <button className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:border-gray-300 transform hover:-translate-y-0.5 transition-all duration-200">
-                                Tư vấn miễn phí
-                            </button>
-                        </div>
-
-                        {/* Column B - Floating card */}
-                        <div className="flex justify-end">
-                            <div className="relative">
-                                {/* Floating animation */}
-                                <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur opacity-25 animate-pulse" />
-                                <div className="relative bg-white rounded-2xl p-6 shadow-xl border border-gray-100 backdrop-blur-sm transform hover:scale-105 transition-transform duration-300">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center">
-                                            <span className="text-2xl">🚀</span>
-                                        </div>
-                                        <div>
-                                            <p className="font-semibold text-gray-900">10+ năm kinh nghiệm</p>
-                                            <p className="text-sm text-gray-500">Đối tác tin cậy</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Decorative elements */}
-                <div className="absolute top-20 left-10 w-20 h-20 bg-indigo-100 rounded-full blur-2xl opacity-50 animate-pulse" />
-                <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-100 rounded-full blur-3xl opacity-40 animate-pulse delay-1000" />
             </div>
         </section>
     );
