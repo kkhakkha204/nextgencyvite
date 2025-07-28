@@ -99,7 +99,7 @@ const HeroSection = () => {
     return (
         <section ref={sectionRef} className="relative min-h-screen w-full bg-white overflow-hidden py-[60px] lg:py-0">
             {/* Large centered logo background */}
-                <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
+                <div ref={bgLogoRef} className="absolute inset-0 flex top-20 items-start lg:items-center justify-center will-change-transform">
                 <div className="w-80 h-80 md:w-[500px] md:h-[500px] lg:w-[750px] lg:h-[750px]">
                     <img
                         src="/assets/images/herologo.png"
