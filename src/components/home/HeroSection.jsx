@@ -12,6 +12,7 @@ const HeroSection = () => {
     const bgLogoRef = useRef(null);
     const titleRef = useRef(null);
     const glassCardRef = useRef(null);
+    const ctaRef = useRef(null);
     const floatingCardRef = useRef(null);
 
     useEffect(() => {
@@ -19,10 +20,8 @@ const HeroSection = () => {
         const bgLogo = bgLogoRef.current;
         const title = titleRef.current;
         const glassCard = glassCardRef.current;
+        const cta = ctaRef.current;
         const floatingCard = floatingCardRef.current;
-
-        // Detect if mobile device
-        const isMobile = window.innerWidth <= 768;
 
         // Create context for better performance
         let ctx = gsap.context(() => {
@@ -34,52 +33,50 @@ const HeroSection = () => {
                     trigger: section,
                     start: "top top",
                     end: "bottom top",
-                    scrub: isMobile ? 3 : 1.5,
+                    scrub: 1.5,
                     invalidateOnRefresh: true
                 }
             });
 
             // Main title parallax
             gsap.to(title, {
-                yPercent: isMobile ? -60 : -100,
+                yPercent: -100,
                 ease: "none",
                 scrollTrigger: {
                     trigger: section,
                     start: "top top",
                     end: "bottom top",
-                    scrub: isMobile ? 2.5 : 1,
+                    scrub: 1,
                     invalidateOnRefresh: true
                 }
             });
 
-            // Glass card parallax effect - simplified for mobile
-            if (!isMobile) {
-                gsap.to(glassCard, {
-                    yPercent: 25,
-                    scale: 0.95,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: 1.2,
-                        invalidateOnRefresh: true
-                    }
-                });
-            } else {
-                // Simpler effect for mobile
-                gsap.to(glassCard, {
-                    yPercent: 25,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: 3,
-                        invalidateOnRefresh: true
-                    }
-                });
-            }
+            // Glass card parallax effect
+            gsap.to(glassCard, {
+                yPercent: 25,
+                scale: 0.95,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1.2,
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // CTA buttons parallax
+            gsap.to(cta, {
+                yPercent: 20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            });
 
             // Additional floating animation for the card
             gsap.to(floatingCard, {
@@ -113,7 +110,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main container */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col lg:justify-center items-center">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
 
                 {/* Main title */}
                 <h1 ref={titleRef} className="text-[55px] md:text-[150px] xl:text-[240px]  tracking-tighter font-bold will-change-transform">
@@ -132,7 +129,7 @@ const HeroSection = () => {
                                 </p>
                                 <div className="">
                                     {/* Column A - CTAs */}
-                                    <div className="flex flex-row gap-2 will-change-transform justify-center sm:justify-start">
+                                    <div ref={ctaRef} className="flex flex-row gap-2 will-change-transform justify-center sm:justify-start">
                                         <Link
                                             to="/contact"
                                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
