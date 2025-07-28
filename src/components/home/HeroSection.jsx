@@ -106,7 +106,7 @@ const HeroSection = () => {
     return (
         <section ref={sectionRef} className="relative min-h-[80vh] max-h-[1080px] w-full bg-white overflow-hidden pt-[60px] lg:pt-0">
             {/* Large centered logo background */}
-            <div ref={bgLogoRef} className="absolute inset-0 flex top-20 md:items-center justify-center will-change-transform">
+            <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
                 <div className="w-80 h-80 md:w-[600px] md:h-[600px] lg:w-[750px] lg:h-[750px]">
                     <img
                         src="/assets/images/herologo.png"
@@ -117,7 +117,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main container */}
-            <div className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col items-center">
+            <div className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center md:justify-start items-center">
 
                 {/* Main title */}
                 <h1 ref={titleRef} className="text-[55px] md:text-[115px] lg:text-[150px] xl:text-[190px] 2xl:text-[210px] tracking-tighter font-bold will-change-transform">
