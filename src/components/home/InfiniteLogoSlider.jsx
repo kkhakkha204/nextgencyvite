@@ -17,14 +17,14 @@ const InfiniteLogoSlider = () => {
     return (
         <div className="relative w-full overflow-hidden bg-black py-4 md:py-6">
             {/* Overlay gradient bên trái */}
-            <div className="absolute left-0 top-0 z-10 h-full w-24 md:w-32 bg-gradient-to-r from-black to-transparent pointer-events-none" />
+            <div className="absolute left-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-r from-black via-transparent to-transparent pointer-events-none" />
 
             {/* Overlay gradient bên phải */}
-            <div className="absolute right-0 top-0 z-10 h-full w-24 md:w-32 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-l from-black via-transparent to-transparent pointer-events-none" />
 
             {/* Container cho slider */}
             <div className="mx-auto">
-                <div className="flex animate-scroll">
+                <div className="flex animate-scroll-logo">
                     {duplicatedLogos.map((logo, index) => (
                         <div
                             key={`${logo.id}-${index}`}
@@ -34,7 +34,7 @@ const InfiniteLogoSlider = () => {
                                 <img
                                     src={logo.src}
                                     alt={logo.alt}
-                                    className="w-full h-full object-contain opacity-80 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+                                    className="w-full h-full object-contain grayscale opacity-100 transition-all duration-300 hover:grayscale-0 hover:scale-110"
                                 />
                             </div>
                         </div>
@@ -43,7 +43,7 @@ const InfiniteLogoSlider = () => {
             </div>
 
             <style jsx>{`
-                @keyframes scroll {
+                @keyframes scrollLogo {
                     0% {
                         transform: translateX(0);
                     }
@@ -52,20 +52,15 @@ const InfiniteLogoSlider = () => {
                     }
                 }
 
-                .animate-scroll {
-                    animation: scroll 25s linear infinite;
+                .animate-scroll-logo {
+                    animation: scrollLogo 15s linear infinite;
                 }
 
                 /* Tối ưu cho mobile */
                 @media (max-width: 768px) {
-                    .animate-scroll {
+                    .animate-scroll-logo {
                         animation-duration: 6s;
                     }
-                }
-
-                /* Pause animation on hover */
-                .animate-scroll:hover {
-                    animation-play-state: paused;
                 }
             `}</style>
         </div>

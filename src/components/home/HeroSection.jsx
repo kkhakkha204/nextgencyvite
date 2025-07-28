@@ -105,15 +105,15 @@ const HeroSection = () => {
             </div>
 
             {/* Main container */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
+            <div className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
 
                 {/* Main title */}
-                <h1 ref={titleRef} className="text-[55px] md:text-[115px] lg:text-[150px] xl:text-[190px] 2xl:text-[240px]  tracking-tighter font-bold will-change-transform">
+                <h1 ref={titleRef} className="text-[55px] md:text-[115px] lg:text-[150px] xl:text-[190px] 2xl:text-[210px]  tracking-tighter font-bold will-change-transform">
                     NEXTGENCY
                 </h1>
 
                 {/* Glassmorphism card */}
-                <div ref={glassCardRef} className="w-full max-w-5xl mb-4 will-change-transform">
+                <div ref={glassCardRef} className="w-full max-w-[1380px] mb-4 will-change-transform">
                     <div className="backdrop-blur-md bg-white/30 border-2 border-white rounded-2xl px-4 py-6 md:px-6">
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             {/* Column A - Description */}
@@ -156,7 +156,7 @@ const HeroSection = () => {
                             {/* Column B - Image */}
                             <div className="relative h-64 md:h-80 overflow-hidden p-2 bg-gray-100 rounded-2xl">
                                 <img
-                                    src="/assets/images/vecteezy_abstract-purple-wave-design-with-curved-lines_66167417.jpg"
+                                    src="/assets/images/test.webp"
                                     alt="Nextgency Innovation"
                                     className="w-full h-full object-cover rounded-xl"
                                 />
