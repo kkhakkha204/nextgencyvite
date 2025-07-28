@@ -91,23 +91,11 @@ const HeroSection = () => {
         };
     }, []);
 
-    const logos = [
-        { id: 1, src: '/assets/images/footer/footerlogo.png', alt: 'Partner 1' },
-        { id: 2, src: '/assets/images/footer/footerlogo.png', alt: 'Partner 2' },
-        { id: 3, src: '/assets/images/footer/footerlogo.png', alt: 'Partner 3' },
-        { id: 4, src: '/assets/images/footer/footerlogo.png', alt: 'Partner 4' },
-        { id: 5, src: '/assets/images/footer/footerlogo.png', alt: 'Partner 5' },
-        { id: 6, src: '/assets/images/footer/footerlogo.png', alt: 'Partner 6' },
-    ];
-
-// Duplicate logos để tạo hiệu ứng liền mạch
-    const duplicatedLogos = [...logos, ...logos,...logos,...logos];
-
     return (
-        <section ref={sectionRef} className="relative min-h-[80vh] max-h-[1080px] w-full bg-white overflow-hidden pt-[60px] lg:pt-0">
+        <section ref={sectionRef} className="relative min-h-[80vh] md:max-h-[750px] lg:max-h-[900px] 2xl:max-h-[900px] w-full bg-white overflow-hidden pt-[60px] lg:pt-0">
             {/* Large centered logo background */}
             <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
-                <div className="w-80 h-80 md:w-[600px] md:h-[600px] lg:w-[750px] lg:h-[750px]">
+                <div className="w-80 h-80 md:w-[600px] md:h-[600px] xl:w-[750px] xl:h-[750px]">
                     <img
                         src="/assets/images/herologo.png"
                         alt="Nextgency Innovation"
@@ -120,7 +108,7 @@ const HeroSection = () => {
             <div className="relative max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center md:justify-start items-center">
 
                 {/* Main title */}
-                <h1 ref={titleRef} className="text-[55px] md:text-[115px] lg:text-[150px] xl:text-[190px] 2xl:text-[210px] tracking-tighter font-bold will-change-transform">
+                <h1 ref={titleRef} className="text-[55px] md:text-[115px] lg:text-[120px] xl:text-[190px] 2xl:text-[210px] tracking-tighter font-bold will-change-transform">
                     NEXTGENCY
                 </h1>
 
@@ -176,56 +164,6 @@ const HeroSection = () => {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="relative w-full overflow-hidden bg-black py-4 md:py-6">
-                {/* Overlay gradient bên trái */}
-                <div className="absolute left-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-r from-black via-transparent to-transparent pointer-events-none" />
-
-                {/* Overlay gradient bên phải */}
-                <div className="absolute right-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-l from-black via-transparent to-transparent pointer-events-none" />
-
-                {/* Container cho slider */}
-                <div className="mx-auto">
-                    <div className="flex animate-scroll-logo">
-                        {duplicatedLogos.map((logo, index) => (
-                            <div
-                                key={`${logo.id}-${index}`}
-                                className="flex-shrink-0 px-8 md:px-14"
-                            >
-                                <div className="flex items-center justify-center w-32 h-16 md:w-40 md:h-20">
-                                    <img
-                                        src={logo.src}
-                                        alt={logo.alt}
-                                        className="w-full h-full object-contain grayscale opacity-100 transition-all duration-300 hover:grayscale-0 hover:scale-110"
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <style jsx>{`
-                @keyframes scrollLogo {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-
-                .animate-scroll-logo {
-                    animation: scrollLogo 15s linear infinite;
-                }
-
-                /* Tối ưu cho mobile */
-                @media (max-width: 768px) {
-                    .animate-scroll-logo {
-                        animation-duration: 6s;
-                    }
-                }
-            `}</style>
             </div>
         </section>
     );
