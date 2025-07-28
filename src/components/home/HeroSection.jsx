@@ -12,22 +12,18 @@ const HeroSection = () => {
     const bgLogoRef = useRef(null);
     const titleRef = useRef(null);
     const glassCardRef = useRef(null);
-    const ctaRef = useRef(null);
-    const floatingCardRef = useRef(null);
 
     useEffect(() => {
         const section = sectionRef.current;
         const bgLogo = bgLogoRef.current;
         const title = titleRef.current;
         const glassCard = glassCardRef.current;
-        const cta = ctaRef.current;
-        const floatingCard = floatingCardRef.current;
 
         // Create context for better performance
         let ctx = gsap.context(() => {
             // Background logo parallax - moves slower
             gsap.to(bgLogo, {
-                yPercent: 65,
+                yPercent: 75,
                 ease: "none",
                 scrollTrigger: {
                     trigger: section,
@@ -40,7 +36,7 @@ const HeroSection = () => {
 
             // Main title parallax
             gsap.to(title, {
-                yPercent: -100,
+                yPercent: -80,
                 ease: "none",
                 scrollTrigger: {
                     trigger: section,
@@ -53,7 +49,7 @@ const HeroSection = () => {
 
             // Glass card parallax effect
             gsap.to(glassCard, {
-                yPercent: 25,
+                yPercent: 30,
                 scale: 0.95,
                 ease: "none",
                 scrollTrigger: {
@@ -65,27 +61,7 @@ const HeroSection = () => {
                 }
             });
 
-            // CTA buttons parallax
-            gsap.to(cta, {
-                yPercent: 20,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: 1,
-                    invalidateOnRefresh: true
-                }
-            });
 
-            // Additional floating animation for the card
-            gsap.to(floatingCard, {
-                y: "+=20",
-                duration: 3,
-                repeat: -1,
-                yoyo: true,
-                ease: "power1.inOut"
-            });
 
             // Refresh ScrollTrigger on window resize for responsive behavior
             ScrollTrigger.refresh();
@@ -129,7 +105,7 @@ const HeroSection = () => {
                                 </p>
                                 <div className="">
                                     {/* Column A - CTAs */}
-                                    <div ref={ctaRef} className="flex flex-row gap-2 will-change-transform justify-center sm:justify-start">
+                                    <div className="flex flex-row gap-2 will-change-transform justify-center sm:justify-start">
                                         <Link
                                             to="/contact"
                                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
