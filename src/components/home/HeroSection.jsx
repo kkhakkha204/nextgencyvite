@@ -94,8 +94,8 @@ const HeroSection = () => {
     return (
         <section ref={sectionRef} className="relative min-h-screen w-full bg-white overflow-hidden py-[60px] lg:py-0">
             {/* Large centered logo background */}
-            <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
-                <div className="w-80 h-80 md:w-[500px] md:h-[500px] lg:w-[750px] lg:h-[750px]">
+            <div ref={bgLogoRef} className="absolute inset-0 flex top-20 md:items-center justify-center will-change-transform">
+                <div className="w-80 h-80 md:w-[600px] md:h-[600px] lg:w-[750px] lg:h-[750px]">
                     <img
                         src="/assets/images/herologo.png"
                         alt="Nextgency Innovation"
@@ -108,7 +108,7 @@ const HeroSection = () => {
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col justify-center items-center">
 
                 {/* Main title */}
-                <h1 ref={titleRef} className="text-[55px] md:text-[150px] xl:text-[240px]  tracking-tighter font-bold will-change-transform">
+                <h1 ref={titleRef} className="text-[55px] md:text-[115px] lg:text-[150px] xl:text-[190px] 2xl:text-[240px]  tracking-tighter font-bold will-change-transform">
                     NEXTGENCY
                 </h1>
 
@@ -154,11 +154,11 @@ const HeroSection = () => {
                             </div>
 
                             {/* Column B - Image */}
-                            <div className="relative h-64 md:h-80  overflow-hidden">
+                            <div className="relative h-64 md:h-80 overflow-hidden p-2 bg-gray-100 rounded-2xl">
                                 <img
-                                    src="/assets/images/herologo.png"
+                                    src="/assets/images/vecteezy_abstract-purple-wave-design-with-curved-lines_66167417.jpg"
                                     alt="Nextgency Innovation"
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-cover rounded-xl"
                                 />
                             </div>
                         </div>
