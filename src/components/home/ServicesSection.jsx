@@ -136,13 +136,13 @@ const ServicesSection = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-b from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
+        <section className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
             <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="mb-4 sm:mb-8">
-                    <div className="inline-flex items-center justify-center mb-2">
-                        <span className="bg-white text-black px-3 py-1 rounded-full text-[11px] lg:text-[13px] font-semibold shadow-lg shadow-[#5534bb]/25">
-                            Dịch vụ
+                    <div className="inline-flex items-center justify-center">
+                        <span className=" text-white rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            Services
                         </span>
                     </div>
                     <h2 className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-white mb-1 uppercase">
@@ -160,9 +160,9 @@ const ServicesSection = () => {
                             <button
                                 key={service.id}
                                 onClick={() => setActiveTab(index)}
-                                className={`flex items-center gap-1 px-4 py-2.5 rounded-lg transition-all duration-300 text-[12px] lg:text-[15px] ${
+                                className={`flex items-center gap-1 px-4 py-2.5 rounded-full transition-all duration-300 text-[12px] lg:text-[15px] ${
                                     activeTab === index
-                                        ? 'bg-white text-black'
+                                        ? 'bg-white text-black neu-shadow-xs'
                                         : 'bg-white/5 text-gray-100 hover:bg-white/10 border border-white/25'
                                 }`}
                             >
@@ -187,44 +187,44 @@ const ServicesSection = () => {
                             {activeTab === index && (
                                 <div className="">
                                     {/* Row 1: Title */}
-                                    <h3 className="text-[18px] md:text-[24px] lg:text-[32px] font-medium text-white mb-4 sm:mb-8">
+                                    <h3 className="text-[18px] md:text-[24px] lg:text-[32px] font-medium text-white mb-4 sm:mb-8 border-b border-gray-100 pb-4">
                                         {service.title}
                                     </h3>
 
                                     {/* Row 2: Two columns */}
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                                         {/* Column 1: Description & Image */}
-                                        <div className="space-y-12">
+                                        <div className="space-y-12 p-4">
                                             <div>
-                                                <h4 className="text-[16px] sm:text-[18px] font-medium text-[#c08dfe] mb-4 uppercase ">Mô tả</h4>
+                                                <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Mô tả</h4>
                                                 <p className="text-white text-[14px] sm:text-[16px] text-justify">
                                                     {service.description}
                                                 </p>
                                             </div>
 
-                                            <div className="relative h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
+                                            <div className="relative h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden p-2 bg-white/10 backdrop-blur-2xl">
                                                 <img
                                                     src={service.image}
                                                     alt={service.name}
-                                                    className="w-full h-full object-cover"
+                                                    className="w-full h-full object-cover rounded-lg"
                                                 />
                                             </div>
                                         </div>
 
                                         {/* Column 2: Technologies, Date, Note */}
                                         <div className="">
-                                            <div className="space-y-12 p-4 bg-black rounded-lg">
+                                            <div className="space-y-12 p-4">
                                                 {/* Technologies */}
-                                                <div>
-                                                    <h4 className="text-[16px] sm:text-[18px] font-medium text-[#c08dfe] mb-4 uppercase ">Công nghệ sử dụng</h4>
+                                                <div className="">
+                                                    <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Công nghệ sử dụng</h4>
                                                     <div className="flex flex-wrap gap-3">
                                                         {service.technologies.map((tech, idx) => (
                                                             <div
                                                                 key={idx}
-                                                                className="flex items-center gap-2 px-4 text-white transition-colors"
+                                                                className="flex items-center gap-2 pr-4 text-white transition-colors"
                                                             >
                                                                 {tech.icon}
-                                                                <span className="text-sm text-white">{tech.name}</span>
+                                                                <span className="text-sm text-[14px] lg:text-[16px]">{tech.name}</span>
                                                             </div>
                                                         ))}
                                                     </div>
@@ -232,16 +232,16 @@ const ServicesSection = () => {
 
                                                 {/* Completed Date */}
                                                 <div>
-                                                    <h4 className="text-[16px] sm:text-[18px] font-medium text-[#c08dfe] mb-4 uppercase ">Ngày hoàn thành</h4>
-                                                    <p className="text-white px-4 inline-block">
+                                                    <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Ngày hoàn thành</h4>
+                                                    <p className="text-[14px] lg:text-[16px] text-white inline-block">
                                                         {service.completedDate}
                                                     </p>
                                                 </div>
 
                                                 {/* Note */}
                                                 <div>
-                                                    <h4 className="text-[16px] sm:text-[18px] font-medium text-[#c08dfe] mb-4 uppercase">Lưu ý</h4>
-                                                    <p className="text-white px-4 italic">
+                                                    <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Lưu ý</h4>
+                                                    <p className="text-[14px] lg:text-[16px] text-white">
                                                         {service.note}
                                                     </p>
                                                 </div>
