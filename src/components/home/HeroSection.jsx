@@ -118,6 +118,11 @@ const HeroSection = () => {
                         <div className="grid md:grid-cols-2 gap-8 items-center">
                             {/* Column A - Description */}
                             <div className="space-y-10">
+                                <div className="inline-flex items-center justify-center">
+                        <span className=" text-[#c08dfe] rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            Digital Services Provided
+                        </span>
+                                </div>
                                 <p className="text-black text-[15px] lg:text-[18px] max-w-sm text-justify">
                                     Nextgency là đối tác công nghệ hàng đầu, chuyên cung cấp giải pháp số hóa toàn diện.
                                     Chúng tôi biến ý tưởng thành hiện thực với công nghệ tiên tiến nhất.
