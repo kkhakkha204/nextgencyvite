@@ -138,16 +138,20 @@ const AboutHeroSection = () => {
                     {/* Column B - Stacked Square Cards */}
                     <div ref={cardsRef}>
                         {/* Mobile Layout - Vertical Stack with 3D Effect */}
-                        <div className="lg:hidden relative h-[500px] mx-auto ">
+
+                        {/* Mobile Layout - Vertical Stack with 3D Effect */}
+                        <div className="lg:hidden relative h-[500px] mx-auto"
+                             style={{ perspective: '1000px' }}> {/* Thêm perspective */}
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
                                     className={`absolute ${card.mobilePosition} left-0 right-0 mx-auto
-                    w-[220px] h-[180px] rounded-lg p-4
-                    flex flex-col justify-between ${card.style}`}
+                w-[220px] h-[180px] rounded-lg p-4
+                flex flex-col justify-between ${card.style}`}
                                     style={{
-                                        transform: `translateZ(${index * -20}px)`,
-                                        zIndex: 3 + index
+                                        transform: `translateZ(${index * -30}px) translateY(${index * 10}px)`, // Tăng khoảng cách Z và thêm Y offset
+                                        zIndex: 10 - index, // Đảo ngược z-index để card đầu tiên ở trên
+                                        transformStyle: 'preserve-3d' // Bảo toàn 3D transform
                                     }}
                                 >
                                     <div className="space-y-2">
@@ -165,11 +169,11 @@ const AboutHeroSection = () => {
 
                                     <div className="flex items-center gap-2">
                                         <div className={`w-2 h-2 rounded-full
-                      ${card.style.includes('bg-white') ? 'bg-green-500' : 'bg-green-500'}`}></div>
+                    ${card.style.includes('bg-white') ? 'bg-green-500' : 'bg-green-500'}`}></div>
                                         <span className={`text-xs 
-                      ${card.style.includes('bg-white') ? 'text-black' : 'text-white'}`}>
-                      Active
-                    </span>
+                    ${card.style.includes('bg-white') ? 'text-black' : 'text-white'}`}>
+                    Active
+                </span>
                                     </div>
                                 </div>
                             ))}
