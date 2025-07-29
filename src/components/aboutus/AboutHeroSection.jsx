@@ -150,7 +150,7 @@ const AboutHeroSection = () => {
                 flex flex-col justify-between ${card.style}`}
                                     style={{
                                         transform: `translateZ(${index * -30}px) translateY(${index * 10}px)`, // Tăng khoảng cách Z và thêm Y offset
-                                        zIndex: 10 - index, // Đảo ngược z-index để card đầu tiên ở trên
+                                        zIndex: 10 + index, // Đảo ngược z-index để card đầu tiên ở trên
                                         transformStyle: 'preserve-3d' // Bảo toàn 3D transform
                                     }}
                                 >
