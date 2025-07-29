@@ -15,6 +15,7 @@ import TiktokAds from "./pages/services/TiktokAds.jsx";
 import FacebookCrm from "./pages/services/FacebookCrm.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
 import MarketingOutsource from "./pages/services/MarketingOutsource.jsx";
+import About from "./pages/About.jsx";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -43,6 +44,7 @@ const RouterContent = () => {
                 <Routes>
                     {/* Trang chủ */}
                     <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
 
                     {/* Các trang dịch vụ */}
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
