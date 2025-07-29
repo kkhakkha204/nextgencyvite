@@ -147,10 +147,9 @@ const AboutHeroSection = () => {
                 flex flex-col justify-between ${card.style}
                 shadow-lg`} // Thêm shadow để tạo độ sâu
                                     style={{
-                                        top: `${index * 20}px`, // Offset theo chiều dọc thay vì translateZ
-                                        left: `${index * 5}px`, // Offset nhẹ theo chiều ngang
+                                        top: `${index * 85}px`, // Offset theo chiều dọc thay vì translateZ
+                                        left: `${index * 25}px`, // Offset nhẹ theo chiều ngang
                                         zIndex: 3 + index, // Giữ nguyên thứ tự như code gốc
-                                        transform: `scale(${1 - index * 0.02})` // Giảm dần kích thước để tạo hiệu ứng depth
                                     }}
                                 >
                                     <div className="space-y-2">
