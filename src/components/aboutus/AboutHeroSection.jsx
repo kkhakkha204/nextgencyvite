@@ -137,18 +137,20 @@ const AboutHeroSection = () => {
 
                     {/* Column B - Stacked Square Cards */}
                     <div ref={cardsRef}>
-                        <div className="lg:hidden relative h-[500px] mx-auto"
-                             style={{ perspective: '1000px' }}> {/* Thêm perspective */}
+                        {/* Mobile Layout - Compatible Stack without 3D */}
+                        <div className="lg:hidden relative h-[500px] mx-auto">
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
                                     className={`absolute ${card.mobilePosition} left-0 right-0 mx-auto
                 w-[220px] h-[180px] rounded-lg p-4
-                flex flex-col justify-between ${card.style}`}
+                flex flex-col justify-between ${card.style}
+                shadow-lg`} // Thêm shadow để tạo độ sâu
                                     style={{
-                                        transform: `translateZ(${index * -30}px) translateY(${index * 10}px)`, // Tăng khoảng cách Z và thêm Y offset
+                                        top: `${index * 20}px`, // Offset theo chiều dọc thay vì translateZ
+                                        left: `${index * 5}px`, // Offset nhẹ theo chiều ngang
                                         zIndex: 3 + index, // Giữ nguyên thứ tự như code gốc
-                                        transformStyle: 'preserve-3d' // Bảo toàn 3D transform
+                                        transform: `scale(${1 - index * 0.02})` // Giảm dần kích thước để tạo hiệu ứng depth
                                     }}
                                 >
                                     <div className="space-y-2">
