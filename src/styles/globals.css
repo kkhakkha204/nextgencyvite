@@ -81,7 +81,6 @@ body.transition-active {
 
 /* Ensure no layout shifts during transitions */
 .page-content {
-    min-height: 100vh;
     position: relative;
 }
 

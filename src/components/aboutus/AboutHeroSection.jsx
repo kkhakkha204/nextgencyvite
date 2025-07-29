@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ArrowRight } from 'lucide-react';
+import {ArrowRight, ArrowUpRight} from 'lucide-react';
+import {Link} from "react-router-dom";
 
 const AboutHeroSection = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -46,6 +47,7 @@ const AboutHeroSection = () => {
         return () => {
             if (containerRef.current) {
                 containerRef.current.removeEventListener('mousemove', handleMouseMove);
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 containerRef.current.removeEventListener('mouseleave', handleMouseLeave);
             }
         };
@@ -56,91 +58,106 @@ const AboutHeroSection = () => {
             title: "Innovation",
             subtitle: "Digital First",
             description: "Pioneering solutions that transform businesses",
-            style: "bg-gray-900 text-white",
+            style: "bg-black text-white",
             position: "right-0 top-0",
-            mobilePosition: "top-0"
+            mobilePosition: "top-0 right-32"
         },
         {
             title: "Strategy",
             subtitle: "Result Driven",
             description: "Data-driven approaches for measurable outcomes",
-            style: "bg-white text-gray-900 border-2 border-gray-900",
+            style: "bg-white text-black neu-shadow-xs",
             position: "left-10 top-20",
-            mobilePosition: "top-20"
+            mobilePosition: "top-20 left-32"
         },
         {
             title: "Partnership",
             subtitle: "Client Focus",
             description: "Building lasting relationships through trust",
-            style: "bg-gradient-to-br from-blue-500 to-purple-600 text-white",
+            style: "bg-gradient-to-b from-black via-black to-[#c08dfe] text-white border-t-2 border-white",
             position: "right-10 bottom-0",
-            mobilePosition: "top-40"
+            mobilePosition: "top-[168px] right-24"
         }
     ];
 
     return (
-        <section className="bg-white py-20 lg:py-32 overflow-hidden" ref={containerRef}>
-            <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-white py-[60px] lg:py-0 lg:min-h-screen lg:flex lg:items-center " ref={containerRef}>
+            <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Column A - Content */}
-                    <div className="space-y-8">
-                        <div className="space-y-4">
-                            <p className="text-sm font-medium text-gray-500 tracking-wider uppercase">
-                                About Nextgency
-                            </p>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                                We craft digital
-                                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                  experiences that matter
+                    <div className="space-y-6">
+                        <div className="space-y-2">
+                            <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            About Nexgency
+                        </span>
+                            <h1 className="text-[38px] md:text-[32px] lg:text-[64px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
+                                Đối tác
+                                <span className="font-archivo block text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c08dfe] ">
+                  chuyển đổi số đa năng
                 </span>
                             </h1>
                         </div>
 
-                        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-                            At Nextgency, we believe in the power of technology to transform ideas into reality.
-                            Our passionate team of innovators, designers, and developers work together to create
-                            solutions that drive your business forward.
+                        <p className="text-[15px] lg:text-[18px] text-black">
+                            Nextgency là đối tác chiến lược của bạn trong kỷ nguyên số. Chúng tôi cung cấp giải pháp <strong>chuyển đổi số</strong>, giúp doanh nghiệp bạn tăng tốc phát triển.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="group px-8 py-4 bg-gray-900 text-white rounded-full font-medium
-                hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2">
-                                Get to know us
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
+                        <div className=" mt-2">
+                            {/* CTA Button */}
+                            <div className="flex items-center space-x-2 ">
+                                <Link
+                                    to="/contact"
+                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
-                            <button className="px-8 py-4 border-2 border-gray-200 text-gray-900 rounded-full
-                font-medium hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
-                                View our work
-                            </button>
+                                >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                                    <div
+                                        className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                        <ArrowUpRight
+                                            className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
+                                            strokeWidth={2.5}/>
+                                    </div>
+                                </Link>
+                                <Link
+                                    to="/contact"
+                                    className="relative flex items-center space-x-3 px-6 py-3.5 bg-white text-[15px] sm:text-[16px] text-black neu-shadow-xs rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
+
+                                >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                                </Link>
+
+                            </div>
                         </div>
                     </div>
 
                     {/* Column B - Stacked Square Cards */}
                     <div ref={cardsRef}>
                         {/* Mobile Layout - Vertical Stack with 3D Effect */}
-                        <div className="lg:hidden relative h-[400px] mx-auto max-w-[320px]">
+                        <div className="lg:hidden relative h-[500px] mx-auto ">
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
                                     className={`absolute ${card.mobilePosition} left-0 right-0 mx-auto
-                    w-[260px] h-[260px] rounded-2xl shadow-xl p-6 
+                    w-[220px] h-[180px] rounded-lg p-4
                     flex flex-col justify-between ${card.style}`}
                                     style={{
                                         transform: `translateZ(${index * -20}px)`,
-                                        zIndex: 3 - index
+                                        zIndex: 3 + index
                                     }}
                                 >
-                                    <div className="space-y-3">
+                                    <div className="space-y-2">
                                         <div>
-                                            <p className={`text-xs font-medium mb-1 
-                        ${card.style.includes('bg-white') ? 'text-gray-500' : 'text-white/80'}`}>
+                                            <p className={`text-[11px] font-medium text-[#c08dfe] uppercase tracking-widest mb-1 
+                        ${card.style.includes('bg-white') ? '' : ''}`}>
                                                 {card.subtitle}
                                             </p>
-                                            <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
-                                            <p className={`text-xs leading-relaxed 
-                        ${card.style.includes('bg-white') ? 'text-gray-600' : 'text-white/90'}`}>
+                                            <p className={`text-[14px] leading-relaxed 
+                        ${card.style.includes('bg-white') ? 'text-gray-800' : 'text-gray-200'}`}>
                                                 {card.description}
                                             </p>
                                         </div>
@@ -148,9 +165,9 @@ const AboutHeroSection = () => {
 
                                     <div className="flex items-center gap-2">
                                         <div className={`w-2 h-2 rounded-full
-                      ${card.style.includes('bg-white') ? 'bg-green-500' : 'bg-white'}`}></div>
+                      ${card.style.includes('bg-white') ? 'bg-green-500' : 'bg-green-500'}`}></div>
                                         <span className={`text-xs 
-                      ${card.style.includes('bg-white') ? 'text-gray-500' : 'text-white/80'}`}>
+                      ${card.style.includes('bg-white') ? 'text-black' : 'text-white'}`}>
                       Active
                     </span>
                                     </div>
@@ -175,15 +192,14 @@ const AboutHeroSection = () => {
                     `
                                     }}
                                 >
-                                    <div className="space-y-4">
+                                    <div className="space-y-2">
                                         <div>
-                                            <p className={`text-sm font-medium mb-1 
-                        ${card.style.includes('bg-white') ? 'text-gray-500' : 'text-white/80'}`}>
+                                            <p className={`text-[13px] font-medium text-[#c08dfe] uppercase tracking-widest mb-1 
+                        ${card.style.includes('bg-white') ? '' : ''}`}>
                                                 {card.subtitle}
                                             </p>
-                                            <h3 className="text-3xl font-bold mb-3">{card.title}</h3>
-                                            <p className={`text-sm leading-relaxed 
-                        ${card.style.includes('bg-white') ? 'text-gray-600' : 'text-white/90'}`}>
+                                            <p className={`text-[16px]
+                        ${card.style.includes('bg-white') ? 'text-gray-800' : 'text-gray-200'}`}>
                                                 {card.description}
                                             </p>
                                         </div>
@@ -192,16 +208,16 @@ const AboutHeroSection = () => {
                                     <div className="flex items-center justify-between">
                                         <div className="flex items-center gap-2">
                                             <div className={`w-2 h-2 rounded-full
-                        ${card.style.includes('bg-white') ? 'bg-green-500' : 'bg-white'}`}></div>
+                        ${card.style.includes('bg-white') ? 'bg-green-500' : 'bg-green-500'}`}></div>
                                             <span className={`text-xs 
-                        ${card.style.includes('bg-white') ? 'text-gray-500' : 'text-white/80'}`}>
+                        ${card.style.includes('bg-white') ? 'text-black' : 'text-white'}`}>
                         Active
                       </span>
                                         </div>
                                         <div className="flex -space-x-2">
                                             {[...Array(3)].map((_, i) => (
                                                 <div key={i} className={`w-6 h-6 rounded-full border-2 
-                          ${card.style.includes('bg-white') ? 'bg-gray-200 border-white' : 'bg-white/20 border-white/40'}`}>
+                          ${card.style.includes('bg-white') ? 'bg-gray-200 border-white' : 'bg-white/80 border-white/80'}`}>
                                                 </div>
                                             ))}
                                         </div>
