@@ -138,7 +138,7 @@ const AboutHeroSection = () => {
                     {/* Column B - Stacked Square Cards */}
                     <div ref={cardsRef}>
                         {/* Mobile Layout - Compatible Stack without 3D */}
-                        <div className="lg:hidden relative h-[500px] mx-auto">
+                        <div className="lg:hidden relative h-[360px] mx-auto">
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
