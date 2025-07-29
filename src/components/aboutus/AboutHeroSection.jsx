@@ -137,9 +137,6 @@ const AboutHeroSection = () => {
 
                     {/* Column B - Stacked Square Cards */}
                     <div ref={cardsRef}>
-                        {/* Mobile Layout - Vertical Stack with 3D Effect */}
-
-                        {/* Mobile Layout - Vertical Stack with 3D Effect */}
                         <div className="lg:hidden relative h-[500px] mx-auto"
                              style={{ perspective: '1000px' }}> {/* Thêm perspective */}
                             {cards.map((card, index) => (
@@ -150,7 +147,7 @@ const AboutHeroSection = () => {
                 flex flex-col justify-between ${card.style}`}
                                     style={{
                                         transform: `translateZ(${index * -30}px) translateY(${index * 10}px)`, // Tăng khoảng cách Z và thêm Y offset
-                                        zIndex: 10 + index, // Đảo ngược z-index để card đầu tiên ở trên
+                                        zIndex: 3 + index, // Giữ nguyên thứ tự như code gốc
                                         transformStyle: 'preserve-3d' // Bảo toàn 3D transform
                                     }}
                                 >
