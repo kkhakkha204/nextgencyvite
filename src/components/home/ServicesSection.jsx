@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Code, Globe, Smartphone, ShoppingCart, Database, Cloud, Shield, Cpu } from 'lucide-react';
+import {Code, Globe, Smartphone, ShoppingCart, Database, Cloud, Shield, Cpu, ArrowUpRight} from 'lucide-react';
+import {Link} from "react-router-dom";
 
 const ServicesSection = () => {
     const [activeTab, setActiveTab] = useState(0);
@@ -244,6 +245,37 @@ const ServicesSection = () => {
                                                     <p className="text-[14px] lg:text-[16px] text-white">
                                                         {service.note}
                                                     </p>
+                                                </div>
+
+                                            </div>
+                                            <div className=" mt-8">
+                                                {/* CTA Button */}
+                                                <div className="flex items-center space-x-2 ">
+                                                    <Link
+                                                        to="/contact"
+                                                        className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] sm:text-[16px] text-white border-2 border-transparent rounded-full transition-all duration-300  hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+
+                                                    >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                                                        <div
+                                                            className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                                            <ArrowUpRight
+                                                                className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
+                                                                strokeWidth={2.5}/>
+                                                        </div>
+                                                    </Link>
+                                                    <Link
+                                                        to="/contact"
+                                                        className="relative flex items-center space-x-3 px-6 py-3.5 text-[15px] sm:text-[16px] text-white border-2 border-white rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
+
+                                                    >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                                                    </Link>
+
                                                 </div>
                                             </div>
                                         </div>
