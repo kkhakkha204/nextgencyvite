@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 const Footer = () => {
     return (
         <footer className="bg-black text-white py-[60px] lg:py-[120px]">
-            <div className="max-w-[1380px] mx-auto px-6 sm:px-6 lg:px-8">
+            <div className="max-w-[1440px] mx-auto px-6 sm:px-6 lg:px-8">
                 {/* Container A - Logo */}
                 <div className="mb-12">
                     <img

@@ -15,6 +15,7 @@ import {
     BarChart3,
     CheckCircle
 } from 'lucide-react';
+import {ConsultationPopup} from "./ConsultationPopup.jsx";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,7 +94,7 @@ const Header = () => {
     const toggleServiceDropdown = () => {
         setIsServiceDropdownOpen(!isServiceDropdownOpen);
     };
-
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     return (
         <>
             {/* Header */}
@@ -251,20 +252,16 @@ const Header = () => {
 
                         {/* Desktop CTA Button */}
                         <div className="hidden xl:flex items-center space-x-4">
-                            <Link
-                                to="/contact"
+                            <button
+                                onClick={() => setIsPopupOpen(true)}
                                 className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
-                                style={{
-                                    backgroundSize: '200% 200%'
-                                }}
+                                style={{ backgroundSize: '200% 200%' }}
                             >
-        <span className="">
-            Hợp tác ngay
-        </span>
+                                <span>Hợp tác ngay</span>
                                 <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                     <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
                                 </div>
-                            </Link>
+                            </button>
 
                         </div>
 
@@ -576,6 +573,8 @@ const Header = () => {
                     animation: shimmer 2s ease-in-out infinite;
                 }
             `}</style>
+            {/* Popup */}
+            <ConsultationPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
         </>
     );
 };

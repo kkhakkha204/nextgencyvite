@@ -1,11 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Star, CheckCircle, Target } from 'lucide-react';
 
 export default function ConsultationSection() {
+    const [formData, setFormData] = useState({
+        customer_name: '',
+        phone: '',
+        email: '',
+        business_field: '',
+        brand_name: '',
+        consultation_request: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const submitToNocoDB = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            const response = await fetch('https://app.nocodb.com/api/v1/db/data/noco/p1h73flcstce9m1/mcmtabc82hqralp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'xc-token': '3ASD4G6g30fXFnlsEL1nf1NdGN2tcIoljay8d08T' // Lấy từ NocoDB dashboard
+                },
+                body: JSON.stringify({
+                    customer_name: formData.customer_name,
+                    phone: formData.phone,
+                    email: formData.email,
+                    business_field: formData.business_field,
+                    brand_name: formData.brand_name,
+                    consultation_request: formData.consultation_request,
+                    created_at: new Date().toISOString(),
+                    status: 'New'
+                })
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({
+                    customer_name: '',
+                    phone: '',
+                    email: '',
+                    business_field: '',
+                    brand_name: '',
+                    consultation_request: ''
+                });
+
+                // Auto hide success message after 5 seconds
+                setTimeout(() => setSubmitStatus(null), 5000);
+            } else {
+                throw new Error('Failed to submit');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            setSubmitStatus('error');
+            setTimeout(() => setSubmitStatus(null), 5000);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
-        <section
-            className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-        >
+        <section className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden">
             <div className="max-w-[1280px] mx-auto">
                 {/* Header */}
                 <div className="text-left mb-8 lg:mb-12">
@@ -21,111 +87,149 @@ export default function ConsultationSection() {
                     {/* Right Side - Form */}
                     <div className="relative">
                         <div className="backdrop-blur-3xl bg-white/5 rounded-xl border-2 border-white/10 shadow-2xl p-4 lg:p-6">
-                            <div className="space-y-4">
-                                <div className="space-y-4">
-                                    {/* Tên khách hàng */}
+                            {/* Success/Error Messages */}
+                            {submitStatus && (
+                                <div className={`mb-4 p-4 rounded-lg ${
+                                    submitStatus === 'success'
+                                        ? 'bg-green-500/20 border border-green-500/30 text-green-200'
+                                        : 'bg-red-500/20 border border-red-500/30 text-red-200'
+                                }`}>
+                                    {submitStatus === 'success'
+                                        ? '✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong vòng 24h.'
+                                        : '❌ Có lỗi xảy ra, vui lòng thử lại sau.'
+                                    }
+                                </div>
+                            )}
+
+                            <form onSubmit={submitToNocoDB} className="space-y-4">
+                                {/* Tên khách hàng */}
+                                <div className="space-y-2">
+                                    <label className="block text-white text-[13px] lg:text-[15px] font-medium">
+                                        Tên khách hàng *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="customer_name"
+                                        value={formData.customer_name}
+                                        onChange={handleInputChange}
+                                        className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
+                                        placeholder="Nhập tên của bạn"
+                                        required
+                                    />
+                                </div>
+
+                                {/* Row with Phone and Email */}
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    {/* Số điện thoại */}
                                     <div className="space-y-2">
                                         <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                            Tên khách hàng
+                                            Số điện thoại *
                                         </label>
                                         <input
-                                            type="text"
+                                            type="tel"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
                                             className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                            placeholder="Nhập tên của bạn"
+                                            placeholder="Nhập số điện thoại"
                                             required
                                         />
                                     </div>
 
-                                    {/* Row with Phone and Email */}
-                                    <div className="grid md:grid-cols-2 gap-4">
-                                        {/* Số điện thoại */}
-                                        <div className="space-y-2">
-                                            <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                                Số điện thoại
-                                            </label>
-                                            <input
-                                                type="tel"
-                                                className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                                placeholder="Nhập số điện thoại"
-                                                required
-                                            />
-                                        </div>
-
-                                        {/* Gmail */}
-                                        <div className="space-y-2">
-                                            <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                                Gmail
-                                            </label>
-                                            <input
-                                                type="email"
-                                                className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                                placeholder="example@gmail.com"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-
-                                    {/* Row with Business Field and Brand */}
-                                    <div className="grid md:grid-cols-2 gap-4">
-                                        {/* Lĩnh vực kinh doanh */}
-                                        <div className="space-y-2">
-                                            <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                                Lĩnh vực kinh doanh
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                                placeholder="Ví dụ: Thương mại điện tử, F&B..."
-                                                required
-                                            />
-                                        </div>
-
-                                        {/* Tên thương hiệu */}
-                                        <div className="space-y-2">
-                                            <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                                Tên thương hiệu
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                                placeholder="Nhập tên thương hiệu (nếu có)"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    {/* Yêu cầu tư vấn */}
+                                    {/* Gmail */}
                                     <div className="space-y-2">
                                         <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                            Yêu cầu tư vấn
+                                            Email *
                                         </label>
-                                        <textarea
-                                            rows="5"
-                                            className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg resize-none"
-                                            placeholder="Mô tả chi tiết yêu cầu tư vấn của bạn..."
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
+                                            placeholder="example@gmail.com"
                                             required
-                                        ></textarea>
+                                        />
                                     </div>
+                                </div>
+
+                                {/* Row with Business Field and Brand */}
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    {/* Lĩnh vực kinh doanh */}
+                                    <div className="space-y-2">
+                                        <label className="block text-white text-[13px] lg:text-[15px] font-medium">
+                                            Lĩnh vực kinh doanh *
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="business_field"
+                                            value={formData.business_field}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
+                                            placeholder="Ví dụ: Thương mại điện tử, F&B..."
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* Tên thương hiệu */}
+                                    <div className="space-y-2">
+                                        <label className="block text-white text-[13px] lg:text-[15px] font-medium">
+                                            Tên thương hiệu
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="brand_name"
+                                            value={formData.brand_name}
+                                            onChange={handleInputChange}
+                                            className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
+                                            placeholder="Nhập tên thương hiệu (nếu có)"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Yêu cầu tư vấn */}
+                                <div className="space-y-2">
+                                    <label className="block text-white text-[13px] lg:text-[15px] font-medium">
+                                        Yêu cầu tư vấn *
+                                    </label>
+                                    <textarea
+                                        rows="5"
+                                        name="consultation_request"
+                                        value={formData.consultation_request}
+                                        onChange={handleInputChange}
+                                        className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg resize-none"
+                                        placeholder="Mô tả chi tiết yêu cầu tư vấn của bạn..."
+                                        required
+                                    />
                                 </div>
 
                                 {/* Submit Button */}
                                 <div className="pt-4">
                                     <button
                                         type="submit"
-                                        className="w-full group relative px-8 py-4 bg-[#c59efe] rounded-lg text-white font-medium text-[15px] lg:text-[16px] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
+                                        disabled={isSubmitting}
+                                        className="w-full group relative px-8 py-4 bg-[#c59efe] rounded-lg text-white font-medium text-[15px] lg:text-[16px] hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                                     >
                                         <span className="flex items-center justify-center space-x-2">
-                                            <span>Gửi thông tin</span>
+                                            {isSubmitting ? (
+                                                <>
+                                                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                                                    <span>Đang gửi...</span>
+                                                </>
+                                            ) : (
+                                                <span>Gửi thông tin</span>
+                                            )}
                                         </span>
                                     </button>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
+
                     {/* Left Side - Visual Elements */}
                     <div className="relative">
-                        {/* Main Visual Card */}
-                        <div className="relative ">
-                            <div className="space-y-4 ">
+                        <div className="relative">
+                            <div className="space-y-4">
                                 <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
                                     <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
                                         <Star className="w-8 h-8 text-white" fill="currentColor" />
@@ -138,7 +242,7 @@ export default function ConsultationSection() {
 
                                 <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
                                     <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <CheckCircle className="w-8 h-8 text-white"  />
+                                        <CheckCircle className="w-8 h-8 text-white" />
                                     </div>
                                     <div>
                                         <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Phản hồi nhanh</h3>
@@ -148,7 +252,7 @@ export default function ConsultationSection() {
 
                                 <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
                                     <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <Target className="w-8 h-8 text-white"  />
+                                        <Target className="w-8 h-8 text-white" />
                                     </div>
                                     <div>
                                         <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Giải pháp tối ưu</h3>
@@ -168,8 +272,6 @@ export default function ConsultationSection() {
                     </div>
                 </div>
             </div>
-
-
         </section>
     );
 }
