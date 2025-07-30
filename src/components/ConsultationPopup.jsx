@@ -123,9 +123,8 @@ export function ConsultationPopup({ isOpen, onClose }) {
                 <div className="p-6 lg:p-8">
                     {/* Header */}
                     <div className="text-center mb-8">
-                        <div className="inline-flex items-center space-x-2 bg-[#c59efe]/20 px-4 py-2 rounded-full mb-4">
-                            <Star className="w-4 h-4 text-[#c59efe]" fill="currentColor" />
-                            <span className="text-[#c59efe] text-sm font-medium">Tư vấn miễn phí</span>
+                        <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full mb-2">
+                            <span className="text-[#c59efe] rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">Tư vấn miễn phí</span>
                         </div>
                         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3">
                             Hợp tác cùng <span className="bg-gradient-to-r from-[#c59efe] to-[#1a4498] bg-clip-text text-transparent">Nextgency</span>
@@ -331,42 +330,5 @@ export function ConsultationPopup({ isOpen, onClose }) {
                 </div>
             </div>
         </div>
-    );
-}
-
-// Updated Header Component với popup
-export default function HeaderWithPopup() {
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-    const openPopup = (e) => {
-        e.preventDefault();
-        setIsPopupOpen(true);
-    };
-
-    const closePopup = () => {
-        setIsPopupOpen(false);
-    };
-
-    return (
-        <>
-            {/* Header CTA Button */}
-            <div className="hidden xl:flex items-center space-x-4">
-                <button
-                    onClick={openPopup}
-                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
-                    style={{
-                        backgroundSize: '200% 200%'
-                    }}
-                >
-                    <span>Hợp tác ngay</span>
-                    <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
-                        <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
-                    </div>
-                </button>
-            </div>
-
-            {/* Popup Modal */}
-            <ConsultationPopup isOpen={isPopupOpen} onClose={closePopup} />
-        </>
     );
 }
