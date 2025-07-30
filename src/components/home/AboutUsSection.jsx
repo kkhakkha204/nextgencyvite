@@ -6,7 +6,7 @@ const AboutUsSection = () => {
     return (
         <section className="relative bg-white py-[60px] lg:py-[90px]">
             {/* Container */}
-            <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 ">
+            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 ">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-center py-8 border-y border-black ">
 
                     {/* Cột A - Content */}

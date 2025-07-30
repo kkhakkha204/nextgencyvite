@@ -5,6 +5,8 @@ import InfiniteProjectSlider from "../components/home/InfiniteProjectSlider.jsx"
 import InfiniteServiceSlider from "../components/home/InfiniteServiceSlider.jsx";
 import ServicesSection from "../components/home/ServicesSection.jsx";
 import AboutUsSection from "../components/home/AboutUsSection.jsx";
+import TestimonialsSection from "../components/home/TestimonialsSection.jsx";
+import ConsultationSectionPrimary from "../components/ConsultationSectionPrimary.jsx";
 
 const Home = () => {
     return (
@@ -15,6 +17,8 @@ const Home = () => {
             <InfiniteServiceSlider/>
             <AboutUsSection/>
             <ServicesSection/>
+            <TestimonialsSection/>
+            <ConsultationSectionPrimary/>
         </div>
     );
 };

@@ -1,0 +1,227 @@
+import React, { useState, useEffect, useRef } from 'react';
+import {ChevronLeft, ChevronRight, Star, Quote, ArrowUpRight} from 'lucide-react';
+import {Link} from "react-router-dom";
+
+const TestimonialsSection = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
+    const carouselRef = useRef(null);
+
+    // Sample testimonials data
+    const testimonials = [
+        {
+            id: 1,
+            content: "Nextgency đã mang đến cho chúng tôi một giải pháp tuyệt vời. Đội ngũ chuyên nghiệp, sáng tạo và luôn lắng nghe khách hàng.",
+            author: "Nguyễn Văn A",
+            company: "ABC Corporation"
+        },
+        {
+            id: 2,
+            content: "Chất lượng dịch vụ vượt trội, thời gian hoàn thành nhanh chóng. Rất hài lòng với kết quả nhận được từ Nextgency.",
+            author: "Trần Thị B",
+            company: "XYZ Company"
+        },
+        {
+            id: 3,
+            content: "Sự chuyên nghiệp và tận tâm của Nextgency thực sự ấn tượng. Họ đã giúp chúng tôi đạt được mục tiêu kinh doanh.",
+            author: "Lê Văn C",
+            company: "Tech Startup"
+        },
+        {
+            id: 4,
+            content: "Đội ngũ Nextgency rất sáng tạo và năng động. Họ luôn đưa ra những ý tưởng mới mẻ và hiệu quả cho dự án của chúng tôi.",
+            author: "Phạm Thị D",
+            company: "Digital Agency"
+        },
+        {
+            id: 5,
+            content: "Hợp tác với Nextgency là một trải nghiệm tuyệt vời. Họ thực sự hiểu nhu cầu của khách hàng và đáp ứng hoàn hảo.",
+            author: "Hoàng Văn E",
+            company: "E-commerce Platform"
+        }
+    ];
+
+    const itemsPerSlide = window.innerWidth < 768 ? 1 : 2;
+    const totalSlides = Math.ceil(testimonials.length / itemsPerSlide);
+
+    // Auto-play carousel
+    useEffect(() => {
+        if (!isAutoPlaying) return;
+
+        const interval = setInterval(() => {
+            setCurrentIndex((prev) => (prev + 1) % totalSlides);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, [isAutoPlaying, totalSlides]);
+
+    // Handle navigation
+    const goToPrevious = () => {
+        setIsAutoPlaying(false);
+        setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+        setTimeout(() => setIsAutoPlaying(true), 10000);
+    };
+
+    const goToNext = () => {
+        setIsAutoPlaying(false);
+        setCurrentIndex((prev) => (prev + 1) % totalSlides);
+        setTimeout(() => setIsAutoPlaying(true), 10000);
+    };
+
+    // Handle touch events
+    const handleTouchStart = (e) => {
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > 50;
+        const isRightSwipe = distance < -50;
+
+        if (isLeftSwipe) {
+            goToNext();
+        }
+        if (isRightSwipe) {
+            goToPrevious();
+        }
+
+        setTouchStart(0);
+        setTouchEnd(0);
+    };
+
+    return (
+        <section className="w-full bg-white py-[60px] md:py-[90px]">
+            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Header Section */}
+                <div className="mb-4 lg:mb-8">
+                    <div className="inline-flex items-center justify-center mb-4">
+                        <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            Testimonials
+                        </span>
+                    </div>
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
+                        đối tác nói gì về chúng tôi
+                    </h2>
+                </div>
+
+                {/* Main Content Container */}
+                <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-8 p-4 rounded-xl bg-gradient-to-br from-[#2B144D] via-black to-[#2B144D]">
+                    {/* Left Column - Description & CTA */}
+                    <div className="lg:col-span-1 flex flex-col justify-between">
+                        <div className="mb-6 lg:mb-0 p-4">
+                            <p className="text-[15px] lg:text-[18px] text-white text-justify">
+                                Chúng tôi tự hào về những phản hồi <strong>tích cực</strong> từ khách hàng,
+                                là động lực để Nextgency không ngừng phát triển.
+                            </p>
+                        </div>
+                        <div className=" ">
+                            {/* CTA Button */}
+                            <div className="inline-flex items-center">
+                                <Link
+                                    to="/contact"
+                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-white text-[15px] sm:text-[16px] text-black rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+
+                                >
+        <span className="">
+            Tư vấn ngay
+        </span>
+                                    <div
+                                        className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                        <ArrowUpRight
+                                            className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
+                                            strokeWidth={2.5}/>
+                                    </div>
+                                </Link>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right Column - Carousel */}
+                    <div className="lg:col-span-4">
+                        <div
+                            ref={carouselRef}
+                            className="overflow-hidden"
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                        >
+                            <div
+                                className="flex transition-transform duration-500 ease-in-out"
+                                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                            >
+                                {Array.from({ length: totalSlides }, (_, slideIndex) => (
+                                    <div key={slideIndex} className="w-full flex-shrink-0">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4">
+                                            {testimonials
+                                                .slice(slideIndex * itemsPerSlide, (slideIndex + 1) * itemsPerSlide)
+                                                .map((testimonial) => (
+                                                    <div
+                                                        key={testimonial.id}
+                                                        className="relative bg-white rounded-lg p-8 lg:p-12 shadow-md shadow-white transition-all duration-300 hover:border-[#c08dfe]/20 group flex flex-col justify-between min-h-[280px]"
+                                                    >
+                                                        {/* Top Section - Quote Icon & Content */}
+                                                        <div className="relative z-10">
+                                                            {/* Quote Icon */}
+                                                            <div className="mb-4">
+                                                                <Quote className="w-8 h-8 text-[#c08dfe] fill-[#c08dfe]"/>
+                                                            </div>
+
+                                                            {/* Content */}
+                                                            <p className="text-black text-[14px] lg:text-[16px]">
+                                                                {testimonial.content}
+                                                            </p>
+                                                        </div>
+
+                                                        {/* Bottom Section - Author Info */}
+                                                        <div className="pt-4 border-t border-gray-400 relative z-10 mt-6">
+                                                            <p className="text-black font-medium text-[14px] lg:text-[16px]">
+                                                                {testimonial.author}
+                                                            </p>
+                                                            <p className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] uppercase tracking-widest">
+                                                                {testimonial.company}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Navigation Arrows - Below Carousel */}
+                        <div className="flex justify-center items-center gap-3 mt-4">
+                            <button
+                                onClick={goToPrevious}
+                                className=" border-2 border-white rounded-full p-3 text-white transition-all duration-300 group "
+                                aria-label="Previous testimonial"
+                            >
+                                <ChevronLeft className="w-5 h-5 text-white" />
+                            </button>
+
+
+                            <button
+                                onClick={goToNext}
+                                className=" border-2 border-white rounded-full p-3 text-white transition-all duration-300 group "
+                                aria-label="Next testimonial"
+                            >
+                                <ChevronRight className="w-5 h-5 text-white" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default TestimonialsSection;

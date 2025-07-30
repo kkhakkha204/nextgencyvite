@@ -138,7 +138,7 @@ const ServicesSection = () => {
 
     return (
         <section className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
-            <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="mb-4 sm:mb-8">
                     <div className="inline-flex items-center justify-center">
