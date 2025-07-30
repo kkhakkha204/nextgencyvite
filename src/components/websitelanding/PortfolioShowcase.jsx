@@ -123,11 +123,11 @@ const PortfolioShowcase = () => {
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-            <span className="bg-black text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium">
-              Website & Landing Page
-            </span>
+                        <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            website & landingpage
+                        </span>
                     </div>
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black mb-1 uppercase leading-[1.45]">
                         Dự án của Nextgency
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">

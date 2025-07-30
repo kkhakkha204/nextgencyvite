@@ -1,104 +1,120 @@
-import React, { useEffect, useRef } from 'react';
+
+
+import React from 'react';
 
 const ServicesSection = () => {
-    const scrollRef = useRef(null);
-
-    const services = [
+    // Dữ liệu mẫu cho các dự án
+    const projects = [
         {
-            image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop&crop=center",
-            name: "Facebook Ads"
+            id: 1,
+            image: "/assets/images/test.webp",
+            title: "Digital Marketing Platform"
         },
         {
-            image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=400&h=300&fit=crop&crop=center",
-            name: "Google Ads"
+            id: 2,
+            image: "/assets/images/test.webp",
+            title: "E-commerce Solution"
         },
         {
-            image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=400&h=300&fit=crop&crop=center",
-            name: "TikTok Ads"
+            id: 3,
+            image: "/assets/images/test.webp",
+            title: "Corporate Website"
         },
         {
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&crop=center",
-            name: "Website & Landing Page"
+            id: 4,
+            image: "/assets/images/test.webp",
+            title: "Mobile Application"
         },
         {
-            image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop&crop=center",
-            name: "Automation-AI-Data"
+            id: 5,
+            image: "/assets/images/test.webp",
+            title: "Data Analytics Dashboard"
         },
         {
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center",
-            name: "Facebook Dataset & CRM"
-        },
-        {
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center",
-            name: "Phòng Marketing Thuê Ngoài"
+            id: 6,
+            image: "/assets/images/test.webp",
+            title: "Brand Identity Design"
         }
     ];
 
-    useEffect(() => {
-        const scrollContainer = scrollRef.current;
-        if (!scrollContainer) return;
-
-        let scrollAmount = 0;
-        const scrollSpeed = 1; // pixels per frame
-        const cardWidth = 320; // 280px card + 32px margin
-        const totalWidth = services.length * cardWidth;
-
-        const scroll = () => {
-            scrollAmount += scrollSpeed;
-
-            if (scrollAmount >= totalWidth) {
-                scrollAmount = 0;
-            }
-
-            scrollContainer.style.transform = `translateX(-${scrollAmount}px)`;
-            requestAnimationFrame(scroll);
-        };
-
-        const animation = requestAnimationFrame(scroll);
-
-        return () => {
-            cancelAnimationFrame(animation);
-        };
-    }, [services.length]);
-
-    // Create multiple copies for seamless loop
-    const infiniteServices = [...services, ...services, ...services, ...services];
+    // Nhân đôi array để tạo hiệu ứng infinite
+    const duplicatedProjects = [...projects, ...projects];
 
     return (
-        <section className="bg-white py-[60px] lg:py-[90px] overflow-hidden">
-            <div className="relative">
-                {/* Infinite Slider Container */}
-                <div
-                    ref={scrollRef}
-                    className="flex will-change-transform"
-                    style={{ width: 'fit-content' }}
-                >
-                    {infiniteServices.map((service, index) => (
-                        <div
-                            key={index}
-                            className="flex-shrink-0 w-72 md:w-80 mx-2"
-                        >
-                            <div className="bg-gray-50 rounded-2xl p-2 shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-300 group cursor-pointer">
-                                <div className="aspect-video mb-4 overflow-hidden rounded-lg">
-                                    <img
-                                        src={service.image}
-                                        alt={service.name}
-                                        className="w-full h-full object-cover transition-transform duration-300"
-                                    />
-                                </div>
-                                <h3 className="text-center text-[14px] lg:text-[15px] font-medium text-black">
-                                    {service.name}
-                                </h3>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        <div className="w-full bg-white overflow-hidden relative py-[60px] lg:py-[90px]">
+            {/* Overlay gradient bên trái */}
+            <div className="absolute left-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-r from-white/60 to-transparent pointer-events-none" />
 
-                {/* Gradient Overlays */}
-                <div className="absolute left-0 top-0 bottom-0 w-14 sm:w-20 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-14 sm:w-20 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+            {/* Overlay gradient bên phải */}
+            <div className="absolute right-0 top-0 z-10 h-full w-12 md:w-32 bg-gradient-to-l from-white/60 to-transparent pointer-events-none" />
+            {/* Container với chiều cao responsive */}
+            <div className="relative h-[160px] md:h-[260px] lg:h-[300px]">
+                {/* Slider container */}
+                <div className="flex h-full">
+                    {/* Track với animation */}
+                    <div className="flex animate-scroll-left">
+                        {duplicatedProjects.map((project, index) => (
+                            <div
+                                key={`${project.id}-${index}`}
+                                className="flex-shrink-0 px-2 h-full flex items-center"
+                            >
+                                {/* Project card */}
+                                <div className="relative h-[160px] md:h-[260px] lg:h-[300px] w-[200px] sm:w-[280px] md:w-[360px] lg:w-[440px] group">
+                                    {/* Image container với aspect ratio cố định */}
+                                    <div className="relative h-full w-full overflow-hidden rounded-lg">
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+
+                                        {/* Overlay gradient subtle */}
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
+
+                                        {/* Title với glassmorphism effect */}
+                                        <div className="absolute bottom-0 left-0 right-0 p-2">
+                                            <div className="backdrop-blur-sm bg-white/10 border border-white/20 rounded-lg p-2">
+                                                <h3 className="text-white text-[12px] lg:text-[14px] font-light tracking-wide">
+                                                    {project.title}
+                                                </h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
-        </section>
+
+            {/* Styles cho animation */}
+            <style jsx>{`
+                @keyframes scrollLeft {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+
+                .animate-scroll-left {
+                    animation: scrollLeft 70s linear infinite;
+                }
+
+                /* Điều chỉnh tốc độ cho mobile */
+                @media (max-width: 640px) {
+                    .animate-scroll-left {
+                        animation-duration: 70s;
+                    }
+                }
+
+                /* Smooth animation */
+                .animate-scroll-left {
+                    will-change: transform;
+                }
+            `}</style>
+        </div>
     );
 };
 

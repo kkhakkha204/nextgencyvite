@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Dot, ArrowUpRight, Bot, Target, Smartphone, Globe, Music, Users, BarChart3 } from 'lucide-react';
+import {
+    Menu,
+    X,
+    ChevronDown,
+    Dot,
+    ArrowUpRight,
+    Bot,
+    Target,
+    Smartphone,
+    Globe,
+    Music,
+    Users,
+    BarChart3,
+    CheckCircle
+} from 'lucide-react';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,6 +74,7 @@ const Header = () => {
                 { name: 'TikTok Ads', path: '/services/tiktok-ads', icon: Music },
                 { name: 'Facebook CRM', path: '/services/facebook-crm', icon: Users },
                 { name: 'Marketing Outsource', path: '/services/marketing-outsource', icon: BarChart3 },
+                { name: 'Tick xanh', path: '/services/tick-xanh-facebook', icon: CheckCircle },
             ]
         },
         { name: 'Dự án', path: '/projects' },
@@ -172,6 +187,28 @@ const Header = () => {
                                                             </Link>
                                                         </div>
 
+                                                        {/* Second row: Facebook Ads, TikTok Ads */}
+                                                        <div className="grid grid-cols-2 gap-2">
+                                                            <Link
+                                                                to="/services/facebook-crm"
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                    isActiveRoute('/services/facebook-crm') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                }`}
+                                                            >
+                                                                <Users className="w-4 h-4" />
+                                                                <span>Facebook CRM</span>
+                                                            </Link>
+                                                            <Link
+                                                                to="/services/tick-xanh-facebook"
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                    isActiveRoute('/services/tick-xanh-facebook') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                }`}
+                                                            >
+                                                                <CheckCircle className="w-4 h-4" />
+                                                                <span>Tick Xanh</span>
+                                                            </Link>
+                                                        </div>
+
                                                         {/* Other services - one per row */}
                                                         <Link
                                                             to="/services/website-landing-page"
@@ -181,16 +218,6 @@ const Header = () => {
                                                         >
                                                             <Globe className="w-4 h-4" />
                                                             <span>Website & Landing Page</span>
-                                                        </Link>
-
-                                                        <Link
-                                                            to="/services/facebook-crm"
-                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                isActiveRoute('/services/facebook-crm') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
-                                                            }`}
-                                                        >
-                                                            <Users className="w-4 h-4" />
-                                                            <span>Facebook CRM</span>
                                                         </Link>
 
                                                         <Link
@@ -373,6 +400,31 @@ const Header = () => {
                                                                     <span className="truncate">TikTok Ads</span>
                                                                 </Link>
                                                             </div>
+                                                            {/* Second row: Facebook Ads, TikTok Ads */}
+                                                            <div className="grid grid-cols-2 gap-3">
+                                                                <Link
+                                                                    to="/services/facebook-crm"
+                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                        isActiveRoute('/services/facebook-crm')
+                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
+                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                    }`}
+                                                                >
+                                                                    <Users className="w-4 h-4 flex-shrink-0" />
+                                                                    <span>Facebook CRM</span>
+                                                                </Link>
+                                                                <Link
+                                                                    to="/services/tick-xanh-facebook"
+                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                        isActiveRoute('/services/tick-xanh-facebook')
+                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
+                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                    }`}
+                                                                >
+                                                                    <CheckCircle className="w-4 h-4 flex-shrink-0" />
+                                                                    <span className="truncate">Tick Xanh</span>
+                                                                </Link>
+                                                            </div>
 
                                                             {/* Other services - single column */}
                                                             <div className="space-y-2">
@@ -386,18 +438,6 @@ const Header = () => {
                                                                 >
                                                                     <Globe className="w-4 h-4 flex-shrink-0" />
                                                                     <span>Website & Landing Page</span>
-                                                                </Link>
-
-                                                                <Link
-                                                                    to="/services/facebook-crm"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
-                                                                        isActiveRoute('/services/facebook-crm')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
-                                                                    }`}
-                                                                >
-                                                                    <Users className="w-4 h-4 flex-shrink-0" />
-                                                                    <span>Facebook CRM</span>
                                                                 </Link>
 
                                                                 <Link

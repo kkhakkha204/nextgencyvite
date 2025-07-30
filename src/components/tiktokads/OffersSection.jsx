@@ -55,8 +55,14 @@ const OffersSection = () => {
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white leading-tight">
-                        Các gói ưu đãi đặc biệt
+                    {/* Badge */}
+                    <div className="inline-flex items-center justify-center mb-2">
+                        <span className=" text-[#c08dfe] rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            tiktok ads
+                        </span>
+                    </div>
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white uppercase leading-[1.45] mb-1">
+                        Các ưu đãi đặc biệt
                     </h2>
                 </div>
 
@@ -101,7 +107,7 @@ const OffersSection = () => {
                         </div>
                         <div className="p-2 bg-white/35 backdrop-blur-2xl rounded-xl">
                             <div className="space-y-2">
-                                <div className="grid grid-cols-3 gap-2 text-[14px] lg:text-[15px] font-medium text-black transition-colors duration-300">
+                                <div className="grid grid-cols-3 gap-2 text-[13px] lg:text-[15px] font-medium text-black transition-colors duration-300">
                                     <span className="text-center">Ngân sách</span>
                                     <span className="">Cashback</span>
                                     <span className="">Hình thức</span>

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Star, CheckCircle, Target, ArrowRight } from 'lucide-react';
+import { Star, CheckCircle, Target } from 'lucide-react';
 
 export default function ConsultationSection() {
     return (
         <section
-            className="bg-gradient-to-b from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+            className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         >
             <div className="max-w-[1280px] mx-auto">
                 {/* Header */}
                 <div className="text-left mb-8 lg:mb-12">
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-white">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-white mb-1">
                         Nhận tư vấn
                     </h2>
                     <p className="text-[15px] sm:text-[18px] text-white">
@@ -158,7 +158,7 @@ export default function ConsultationSection() {
                             </div>
 
                             {/* Floating Stats */}
-                            <div className="absolute -top-4 -right-4 bg-[#c59efe] rounded-lg px-4 py-2">
+                            <div className="absolute -top-4 -right-0 bg-[#c59efe] rounded-lg px-4 py-2">
                                 <div className="text-center">
                                     <div className="text-2xl font-bold text-white">500+</div>
                                     <div className="text-xs text-white">Khách hàng</div>

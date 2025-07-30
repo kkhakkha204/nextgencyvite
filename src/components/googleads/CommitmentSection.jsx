@@ -47,11 +47,11 @@ const CommitmentSection = () => {
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Badge */}
                     <div className="inline-flex items-center justify-center mb-2">
-                        <span className="bg-gradient-to-r from-[#1a4498] to-[#c59efe] text-white px-3 py-2 rounded-full text-[11px] lg:text-[13px] font-medium shadow-lg shadow-[#5534bb]/25">
-                            Google Ads
+                        <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            google ads
                         </span>
                     </div>
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
                         Cam kết của chúng tôi
                     </h2>
                 </div>

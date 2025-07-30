@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    <h2 className="text-[26px] md:text-[32px] font-archivo font-bold leading-none">
+                    <h2 className="text-[20px] md:text-[28px] font-archivo font-bold leading-none uppercase">
                         Vì sao bạn nên chọn<br />
                         <span className="bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent font-archivo text-[36px] md:text-[50px] lg:text-[60px] uppercase">
               Nextgency?
@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:h-[236px]">
                             {/* Cột 60% */}
                             <div className="md:col-span-3 rounded-lg p-5 bg-white relative overflow-hidden h-full">
-                                <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-black">
+                                <h3 className="text-[11px] sm:text-[13px] font-medium text-black mb-1 uppercase tracking-widest">
                                     Kinh nghiệm 3+ năm
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">
@@ -82,7 +82,7 @@ const WhyChooseUs = () => {
 
                             {/* Cột 40% */}
                             <div className="md:col-span-2 bg-white rounded-lg p-5 flex flex-col h-full">
-                                <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-black">
+                                <h3 className="text-[11px] sm:text-[13px] font-medium text-black mb-1 uppercase tracking-widest">
                                     Tối ưu landing page
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700 ">
@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
                         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 lg:h-[236px]">
                             {/* Cột 40% */}
                             <div className="md:col-span-2 border-2 bg-white border-black rounded-lg p-5 flex flex-col h-full">
-                                <h3 className="text-[15px] lg:text-[18px] font-medium mb-1 text-black">
+                                <h3 className="text-[11px] sm:text-[13px] font-medium text-black mb-1 uppercase tracking-widest">
                                     Hỗ trợ 24/7
                                 </h3>
                                 <p className="text-[13px] lg:text-[15px] text-gray-700">

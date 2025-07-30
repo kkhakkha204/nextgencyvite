@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { CheckCircle, FileText, Globe, Users, TrendingUp, Shield, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const ProfileSection = () => {
-    const [expandedSections, setExpandedSections] = useState({});
+    const [expandedSections, setExpandedSections] = useState({ 0: true });
 
     const toggleSection = (index) => {
         setExpandedSections(prev => ({
@@ -13,7 +13,6 @@ const ProfileSection = () => {
 
     const requirements = [
         {
-            icon: <CheckCircle className="w-6 h-6" />,
             title: "Thông tin tài khoản chính chủ",
             items: [
                 "Tên thật / tên thương hiệu (phải trùng khớp với giấy tờ xác thực)",
@@ -23,7 +22,6 @@ const ProfileSection = () => {
             ]
         },
         {
-            icon: <FileText className="w-6 h-6" />,
             title: "Giấy tờ xác minh danh tính / pháp lý",
             subtitle: "Với cá nhân:",
             items: [
@@ -38,7 +36,6 @@ const ProfileSection = () => {
             ]
         },
         {
-            icon: <Globe className="w-6 h-6" />,
             title: "Tối thiểu 3–5 bài báo chính thống",
             items: [
                 "Bài viết từ các đầu báo điện tử uy tín",
@@ -46,7 +43,6 @@ const ProfileSection = () => {
             ]
         },
         {
-            icon: <Users className="w-6 h-6" />,
             title: "Link mạng xã hội liên quan",
             items: [
                 "Fanpage chính thức (đã xác minh)",
@@ -55,7 +51,6 @@ const ProfileSection = () => {
             ]
         },
         {
-            icon: <TrendingUp className="w-6 h-6" />,
             title: "Bằng chứng hoạt động & độ ảnh hưởng",
             items: [
                 "Số lượng người theo dõi (tối thiểu 20k followers trên Facebook)",
@@ -64,7 +59,6 @@ const ProfileSection = () => {
             ]
         },
         {
-            icon: <Shield className="w-6 h-6" />,
             title: "Hồ sơ nội dung chất lượng",
             items: [
                 "Bài viết định kỳ (thường xuyên cập nhật)",
@@ -73,7 +67,6 @@ const ProfileSection = () => {
             ]
         },
         {
-            icon: <Award className="w-6 h-6" />,
             title: "Lý do xin tick xanh",
             items: [
                 "Nêu rõ trong biểu mẫu gửi Facebook"
@@ -82,106 +75,127 @@ const ProfileSection = () => {
     ];
 
     return (
-        <section className="w-full bg-white py-16 lg:py-24">
+        <section className="w-full bg-white py-[60px] lg:py-[90px]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-16">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6">
-                        <CheckCircle className="w-8 h-8 text-blue-600" />
-                    </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="text-center mb-4 lg:mb-8">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] mb-1 uppercase">
                         Hồ sơ lên tick xanh Facebook
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
                         Danh sách đầy đủ các yêu cầu và tài liệu cần thiết để xác minh tài khoản Facebook
                     </p>
                 </div>
 
-                {/* Requirements Grid */}
-                <div className="grid gap-4 md:gap-6">
-                    {requirements.map((req, index) => (
-                        <div
-                            key={index}
-                            className="bg-gray-50 rounded-2xl p-6 md:p-8 hover:bg-gray-100 transition-all duration-300 border border-gray-200"
-                        >
+                {/* Requirements Accordion */}
+                <div className="space-y-4 p-2 bg-gray-50 rounded-2xl">
+                    {requirements.map((req, index) => {
+                        const isExpanded = expandedSections[index];
+                        return (
                             <div
-                                className="flex items-start justify-between cursor-pointer"
-                                onClick={() => toggleSection(index)}
+                                key={index}
+                                className={`group relative overflow-hidden rounded-lg border-2 border-white shadow-md transition-all duration-300 ${
+                                    isExpanded
+                                        ? 'bg-white border-[#1a4498] shadow-lg'
+                                        : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-md'
+                                }`}
                             >
-                                <div className="flex items-start space-x-4 flex-1">
-                                    <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
-                                        <div className="text-blue-600">
-                                            {req.icon}
+                                {/* Active Indicator */}
+                                {isExpanded && (
+                                    <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-black to-[#1a4498]"></div>
+                                )}
+
+                                {/* Header */}
+                                <div
+                                    className={`flex items-center justify-between cursor-pointer p-6 transition-all duration-300 ${
+                                        isExpanded ? 'pb-4' : 'hover:bg-gray-50'
+                                    }`}
+                                    onClick={() => toggleSection(index)}
+                                >
+                                    <div className="flex items-center space-x-5 flex-1">
+                                        {/* Number Badge */}
+                                        <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center font-bold text-[16px] transition-all duration-300 ${
+                                            isExpanded
+                                                ? 'bg-[#1a4498] text-white'
+                                                : 'bg-black text-white group-hover:bg-[#1a4498]'
+                                        }`}>
+                                            {String(index + 1).padStart(2,)}
                                         </div>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                                            {index + 1}. {req.title}
+
+                                        {/* Title */}
+                                        <h3 className={`text-[14px] md:text-[16px] font-medium transition-all duration-300 ${
+                                            isExpanded ? 'text-black' : 'text-gray-700 group-hover:text-black'
+                                        }`}>
+                                            {req.title}
                                         </h3>
                                     </div>
+
+                                    {/* Expand Icon */}
+                                    <button className={`ml-4 p-2 rounded-lg transition-all duration-300 ${
+                                        isExpanded
+                                            ? ' text-[#1a4498] rotate-180'
+                                            : ' text-gray-500 hover:bg-gray-200'
+                                    }`}>
+                                        <ChevronDown className="w-5 h-5" />
+                                    </button>
                                 </div>
-                                <button className="ml-4 text-gray-400 hover:text-gray-600 transition-colors">
-                                    {expandedSections[index] ? <ChevronUp /> : <ChevronDown />}
-                                </button>
+
+                                {/* Expandable Content */}
+                                <div className={`transition-all duration-300 ${
+                                    isExpanded ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                                }`} style={{
+                                    maxHeight: isExpanded ? '600px' : '0px',
+                                    overflow: 'hidden'
+                                }}>
+                                    <div className="px-6 pb-6">
+                                        <div className="ml-15 space-y-4">
+                                            {/* First set of items */}
+                                            {req.subtitle && (
+                                                <div className="border-l-2 border-[#1a4498] pl-5">
+                                                    <p className="text-[11px] lg:text-[13px] font-archivo font-semibold text-[#1a4498] mb-3 uppercase tracking-widest">{req.subtitle}</p>
+                                                    <ul className="space-y-2">
+                                                        {req.items.map((item, idx) => (
+                                                            <li key={idx} className="flex items-start group/item">
+                                                                <div className="w-1.5 h-1.5 bg-[#1a4498] rounded-full mt-2 mr-3 flex-shrink-0 transition-transform group-hover/item:scale-125"></div>
+                                                                <span className="text-gray-600 text-[13px] lg:text-[15px] group-hover/item:text-black transition-colors">{item}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            )}
+
+                                            {/* Second set of items */}
+                                            {req.subtitle2 && (
+                                                <div className="border-l-2 border-[#1a4498] pl-5 mt-4">
+                                                    <p className="text-[11px] lg:text-[13px] font-archivo font-semibold text-[#1a4498] mb-3 uppercase tracking-widest">{req.subtitle2}</p>
+                                                    <ul className="space-y-2">
+                                                        {req.items2.map((item, idx) => (
+                                                            <li key={idx} className="flex items-start group/item">
+                                                                <div className="w-1.5 h-1.5 bg-[#1a4498] rounded-full mt-2 mr-3 flex-shrink-0 transition-transform group-hover/item:scale-125"></div>
+                                                                <span className="text-gray-600 text-[13px] lg:text-[15px] group-hover/item:text-black transition-colors">{item}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            )}
+
+                                            {/* Single set of items */}
+                                            {!req.subtitle && (
+                                                <ul className="space-y-2">
+                                                    {req.items.map((item, idx) => (
+                                                        <li key={idx} className="flex items-start group/item">
+                                                            <div className="w-1.5 h-1.5 bg-[#1a4498] rounded-full mt-2 mr-3 flex-shrink-0 transition-transform group-hover/item:scale-125"></div>
+                                                            <span className="text-gray-600 text-[13px] lg:text-[15px] group-hover/item:text-black transition-colors">{item}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            {/* Expandable Content */}
-                            <div className={`mt-4 ml-16 overflow-hidden transition-all duration-300 ${expandedSections[index] ? 'max-h-96' : 'max-h-0'}`}>
-                                {req.subtitle && (
-                                    <p className="text-sm font-medium text-gray-700 mb-2">{req.subtitle}</p>
-                                )}
-                                <ul className="space-y-2">
-                                    {req.items.map((item, idx) => (
-                                        <li key={idx} className="flex items-start">
-                                            <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                            <span className="text-gray-600">{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                {req.subtitle2 && (
-                                    <>
-                                        <p className="text-sm font-medium text-gray-700 mt-4 mb-2">{req.subtitle2}</p>
-                                        <ul className="space-y-2">
-                                            {req.items2.map((item, idx) => (
-                                                <li key={idx} className="flex items-start">
-                                                    <span className="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                                    <span className="text-gray-600">{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </>
-                                )}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Call to Action */}
-                <div className="mt-16 text-center">
-                    <div className="inline-flex flex-col sm:flex-row gap-4">
-                        <button className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
-                            Bắt đầu chuẩn bị hồ sơ
-                        </button>
-                        <button className="px-8 py-4 bg-white text-gray-700 font-semibold rounded-full border-2 border-gray-300 hover:border-gray-400 transition-colors">
-                            Tư vấn miễn phí
-                        </button>
-                    </div>
-                </div>
-
-                {/* Stats */}
-                <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">98%</div>
-                        <div className="text-gray-600">Tỷ lệ thành công</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
-                        <div className="text-gray-600">Khách hàng đã hỗ trợ</div>
-                    </div>
-                    <div className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">7-14</div>
-                        <div className="text-gray-600">Ngày xử lý</div>
-                    </div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

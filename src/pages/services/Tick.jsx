@@ -5,6 +5,7 @@ import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import WebsitePackages from "../../components/tick/WebsitePackages.jsx";
 import ProfileSection from "../../components/tick/ProfileSection.jsx";
+import ProcessSection from "../../components/tick/ProcessSection.jsx";
 
 const Tick = () => {
     return (
@@ -13,6 +14,7 @@ const Tick = () => {
             <WhyChooseUs/>
             <WebsitePackages/>
             <ProfileSection/>
+            <ProcessSection/>
             <ConsultationSection/>
             <ServicesSection/>
         </div>

@@ -58,7 +58,7 @@ const TikTokAdsSection = () => {
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black mb-1 leading-tight">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black mb-1 leading-[1.45] uppercase">
                         Định dạng quảng cáo Tiktok
                     </h2>
                     <p className="text-black text-[15px] lg:text-[18px] max-w-xl mx-auto">

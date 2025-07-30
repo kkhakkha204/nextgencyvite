@@ -253,7 +253,7 @@ const ServicesSection = () => {
                                                 <div className="flex items-center space-x-2 ">
                                                     <Link
                                                         to="/contact"
-                                                        className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] sm:text-[16px] text-white border-2 border-transparent rounded-full transition-all duration-300  hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                                                        className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300  hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
 
                                                     >
         <span className="">
@@ -268,7 +268,7 @@ const ServicesSection = () => {
                                                     </Link>
                                                     <Link
                                                         to="/contact"
-                                                        className="relative flex items-center space-x-3 px-6 py-3.5 text-[15px] sm:text-[16px] text-white border-2 border-white rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
+                                                        className="relative flex items-center space-x-3 px-6 py-3.5 text-[15px] sm:text-[16px] text-white border-x border-white rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
 
                                                     >
         <span className="">

@@ -15,8 +15,13 @@
                 <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Tiêu đề chính */}
                     <div className="text-center mb-4 lg:mb-8">
-                        <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight">
-                            Quy trình làm việc Automation - AI - Data
+                        <div className="inline-flex items-center justify-center mb-2">
+                        <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            Automation-ai-data
+                        </span>
+                        </div>
+                        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
+                            Quy trình làm việc
                         </h2>
                     </div>
 

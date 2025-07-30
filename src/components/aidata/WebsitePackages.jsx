@@ -33,7 +33,7 @@ const WebsitePackages = () => {
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-tight mb-1">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
                         Các gói dịch vụ
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
@@ -92,7 +92,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-[#1a4498]">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói dịch vụ Tiêu Chuẩn
+                                    Gói dịch vụ tiêu chuẩn
                                 </h3>
                             </div>
 
@@ -138,7 +138,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Gói dịch vụ Nâng Cao
+                                    Gói dịch vụ nâng cao
                                 </h3>
                             </div>
 

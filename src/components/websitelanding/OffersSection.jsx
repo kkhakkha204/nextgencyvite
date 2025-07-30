@@ -39,7 +39,7 @@ const OffersSection = () => {
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between items-center mb-4 sm:mb-8 ">
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white leading-tight">
+                    <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white leading-[1.45] uppercase">
                         Chương trình ưu đãi<br/>khi đăng ký COMBO
                     </h2>
                     <p className="text-white text-[15px] lg:text-[18px] text-center sm:text-right">

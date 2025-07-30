@@ -7,7 +7,7 @@ const ClientsPartnersSection = () => {
                 {/* Thẻ chứa A - Tiêu đề và mô tả */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
-                        <h2 className="text-[26px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-tight text-black mb-1">
+                        <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
                             Khách hàng &<br/>Đối tác chiến lược
                         </h2>
                     </div>

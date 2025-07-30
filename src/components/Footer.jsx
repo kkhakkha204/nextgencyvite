@@ -93,6 +93,10 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
                                 <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
+                                <a href="#" className="hover:text-white">Dịch vụ Tick Xanh Facebook</a>
+                            </li>
+                            <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
+                                <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
                                 <a href="#" className="hover:text-white">Phòng Marketing thuê ngoài</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
