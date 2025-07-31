@@ -97,7 +97,7 @@ const HeroSection = () => {
             <div ref={bgLogoRef} className="absolute inset-0 flex top-20 lg:items-center justify-center will-change-transform">
                 <div className="w-80 h-80 md:w-[600px] md:h-[600px] xl:w-[750px] xl:h-[750px]">
                     <img
-                        src="/assets/images/herologo.png"
+                        src="/assets/images/main.webp"
                         alt="Nextgency Innovation"
                         className="w-full h-full object-contain opacity-70"
                     />

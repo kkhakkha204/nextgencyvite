@@ -27,11 +27,11 @@ export default function ConsultationSection() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('https://app.nocodb.com/api/v1/db/data/noco/p1h73flcstce9m1/mcmtabc82hqralp', {
+            const response = await fetch('https://data.nextgency.vn/api/v1/db/data/noco/pt23og868jycyzo/mmw1iwmnal17i0t', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'xc-token': '3ASD4G6g30fXFnlsEL1nf1NdGN2tcIoljay8d08T' // Lấy từ NocoDB dashboard
+                    'xc-token': 'dY0LCW8ChnwtfC6KiA94S17SaBax6RGRaZ4LMaHb'
                 },
                 body: JSON.stringify({
                     customer_name: formData.customer_name,
