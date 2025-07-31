@@ -474,8 +474,8 @@ const Header = () => {
                                 animationDelay: `${150 + navigationItems.length * 100 + 100}ms`,
                                 animationFillMode: 'both'
                             }}>
-                                <Link
-                                    to="/contact"
+                                <button
+                                    onClick={() => setIsPopupOpen(true)}
                                     className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg animate-gradient-shift"
                                     style={{
                                         backgroundSize: '200% 100%'
@@ -488,7 +488,7 @@ const Header = () => {
 
                                     {/* Gradient overlay for extra shimmer effect */}
                                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent rounded-full animate-shimmer opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -1,3 +1,4 @@
+// App.jsx - Updated with custom SEO solution for React 19
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -17,6 +18,9 @@ import CustomCursor from "./components/CustomCursor.jsx";
 import MarketingOutsource from "./pages/services/MarketingOutsource.jsx";
 import About from "./pages/About.jsx";
 import Tick from "./pages/services/Tick.jsx";
+import { useSEO } from './hooks/useSEO';
+import SEOManager from './components/SEO/SEOManager';
+import { localBusinessSchema } from './components/SEO/schemas';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -29,8 +33,6 @@ const queryClient = new QueryClient({
     },
 });
 
-// Content Overlay Component - Removed as requested
-
 // Router Content Component
 const RouterContent = () => {
     const {
@@ -38,8 +40,22 @@ const RouterContent = () => {
         handleTransitionComplete
     } = usePageTransition();
 
+    // Initialize SEO hooks
+    useSEO();
+
     return (
         <div className="App">
+            {/* Global SEO for all pages - this sets default values */}
+            <SEOManager
+                structuredData={localBusinessSchema}
+                additionalMetaTags={[
+                    { name: 'theme-color', content: '#000000' },
+                    { name: 'apple-mobile-web-app-capable', content: 'yes' },
+                    { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+                    { name: 'format-detection', content: 'telephone=no' }
+                ]}
+            />
+
             <Header />
             <main className="page-content pt-[70px] lg:pt-[85px]">
                 <Routes>
