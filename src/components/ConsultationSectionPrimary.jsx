@@ -75,7 +75,7 @@ export default function ConsultationSection() {
             <div className="max-w-[1440px] mx-auto">
                 {/* Header */}
                 <div className="text-left mb-4 lg:mb-8">
-                    <h2 className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-white mb-1 uppercase">
+                    <h2 className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-white mb-1 leading-[1.45] uppercase">
                         Nhận tư vấn
                     </h2>
                     <p className="text-[15px] sm:text-[18px] text-white">
@@ -86,17 +86,17 @@ export default function ConsultationSection() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Right Side - Form */}
                     <div className="relative">
-                        <div className="backdrop-blur-3xl bg-white/5 rounded-xl border-2 border-white/10 shadow-2xl p-4 lg:p-6">
+                        <div className="backdrop-blur-3xl bg-white/5 rounded-lg border-2 border-white/10 shadow-2xl p-4 lg:p-6">
                             {/* Success/Error Messages */}
                             {submitStatus && (
                                 <div className={`mb-4 p-4 rounded-lg ${
                                     submitStatus === 'success'
-                                        ? 'bg-green-500/20 border border-green-500/30 text-green-200'
+                                        ? 'bg-purple-400/60 border border-purple-400/60 text-purple-100'
                                         : 'bg-red-500/20 border border-red-500/30 text-red-200'
                                 }`}>
                                     {submitStatus === 'success'
-                                        ? '✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong vòng 24h.'
-                                        : '❌ Có lỗi xảy ra, vui lòng thử lại sau.'
+                                        ? 'Cảm ơn bạn! Chúng tôi sẽ liên hệ trong vòng 24h.'
+                                        : 'Có lỗi xảy ra, vui lòng thử lại sau.'
                                     }
                                 </div>
                             )}
@@ -230,33 +230,24 @@ export default function ConsultationSection() {
                     <div className="relative">
                         <div className="relative">
                             <div className="space-y-4">
-                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
-                                    <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <Star className="w-8 h-8 text-white" fill="currentColor" />
-                                    </div>
+                                <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Tư vấn miễn phí</h3>
-                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Chuyên gia hàng đầu</p>
+                                        <h3 className="text-[11px] sm:text-[13px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Hotline</h3>
+                                        <p className="text-white text-[13px] lg:text-[15px]">033 208 3366</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
-                                    <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <CheckCircle className="w-8 h-8 text-white" />
-                                    </div>
+                                <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Phản hồi nhanh</h3>
-                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Trong vòng 24h</p>
+                                        <h3 className="text-[11px] sm:text-[13px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Email</h3>
+                                        <p className="text-white text-[13px] lg:text-[15px]">contact@nextgency.vn</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
-                                    <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <Target className="w-8 h-8 text-white" />
-                                    </div>
+                                <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Giải pháp tối ưu</h3>
-                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Phù hợp từng doanh nghiệp</p>
+                                        <h3 className="text-[11px] sm:text-[13px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Address</h3>
+                                        <p className="text-white text-[13px] lg:text-[15px]">2/11 Vương Thừa Vũ, Thanh Xuân, Hà Nội</p>
                                     </div>
                                 </div>
                             </div>

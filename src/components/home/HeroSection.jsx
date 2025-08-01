@@ -136,7 +136,7 @@ const HeroSection = () => {
 
                                         >
         <span className="">
-            Tư vấn ngay
+            Xem dự án
         </span>
                                             <div
                                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

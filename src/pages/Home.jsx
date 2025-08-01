@@ -33,7 +33,9 @@ const Home = () => {
                 <AboutUsSection/>
                 <ServicesSection/>
                 <TestimonialsSection/>
+
                 <ConsultationSectionPrimary/>
+
             </div>
         </>
 

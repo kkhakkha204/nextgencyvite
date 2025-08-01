@@ -56,7 +56,7 @@ const AboutHeroSection = () => {
     const cards = [
         {
             title: "Innovation",
-            subtitle: "Digital First",
+            subtitle: "Nhiệt tình",
             description: "Pioneering solutions that transform businesses",
             style: "bg-black text-white",
             position: "right-0 top-0",
@@ -64,7 +64,7 @@ const AboutHeroSection = () => {
         },
         {
             title: "Strategy",
-            subtitle: "Result Driven",
+            subtitle: "Trẻ Trung",
             description: "Data-driven approaches for measurable outcomes",
             style: "bg-white text-black neu-shadow-xs",
             position: "left-10 top-20",
@@ -72,7 +72,7 @@ const AboutHeroSection = () => {
         },
         {
             title: "Partnership",
-            subtitle: "Client Focus",
+            subtitle: "Kinh nghiệm",
             description: "Building lasting relationships through trust",
             style: "bg-gradient-to-b from-black via-black to-[#c08dfe] text-white border-t-2 border-white",
             position: "right-10 bottom-0",
@@ -154,7 +154,7 @@ const AboutHeroSection = () => {
                                 >
                                     <div className="space-y-2">
                                         <div>
-                                            <p className={`text-[11px] font-medium text-[#c08dfe] uppercase tracking-widest mb-1 
+                                            <p className={`text-[11px] font-archivo font-medium text-[#c08dfe] uppercase tracking-widest mb-1 
                         ${card.style.includes('bg-white') ? '' : ''}`}>
                                                 {card.subtitle}
                                             </p>
@@ -196,7 +196,7 @@ const AboutHeroSection = () => {
                                 >
                                     <div className="space-y-2">
                                         <div>
-                                            <p className={`text-[13px] font-medium text-[#c08dfe] uppercase tracking-widest mb-1 
+                                            <p className={`text-[13px] font-archivo font-medium text-[#c08dfe] uppercase tracking-widest mb-1 
                         ${card.style.includes('bg-white') ? '' : ''}`}>
                                                 {card.subtitle}
                                             </p>

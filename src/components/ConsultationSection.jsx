@@ -230,33 +230,24 @@ export default function ConsultationSection() {
                     <div className="relative">
                         <div className="relative">
                             <div className="space-y-4">
-                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
-                                    <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <Star className="w-8 h-8 text-white" fill="currentColor" />
-                                    </div>
+                                <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Tư vấn miễn phí</h3>
-                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Chuyên gia hàng đầu</p>
+                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Hotline</h3>
+                                        <p className="text-white text-[13px] lg:text-[15px]">033 208 3366</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
-                                    <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <CheckCircle className="w-8 h-8 text-white" />
-                                    </div>
+                                <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Phản hồi nhanh</h3>
-                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Trong vòng 24h</p>
+                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Email</h3>
+                                        <p className="text-white text-[13px] lg:text-[15px]">contact@nextgency.vn</p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl shadow-lg backdrop-blur-3xl">
-                                    <div className="w-14 h-14 bg-[#c59efe] rounded-lg flex items-center justify-center">
-                                        <Target className="w-8 h-8 text-white" />
-                                    </div>
+                                <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-white text-[14px] lg:text-[15px] font-medium">Giải pháp tối ưu</h3>
-                                        <p className="text-gray-300 text-[12px] lg:text-[14px]">Phù hợp từng doanh nghiệp</p>
+                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Address</h3>
+                                        <p className="text-white text-[13px] lg:text-[15px]">2/11 Vương Thừa Vũ, Thanh Xuân, Hà Nội</p>
                                     </div>
                                 </div>
                             </div>

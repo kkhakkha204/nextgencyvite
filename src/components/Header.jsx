@@ -68,14 +68,14 @@ const Header = () => {
             name: 'Dịch vụ',
             path: '/services',
             dropdown: [
-                { name: 'AI & Data', path: '/services/ai-data', icon: Bot },
+                { name: 'Automation - AI - Data', path: '/services/ai-data', icon: Bot },
                 { name: 'Google Ads', path: '/services/google-ads', icon: Target },
                 { name: 'Facebook Ads', path: '/services/facebook-ads', icon: Smartphone },
                 { name: 'Website & Landing Page', path: '/services/website-landing-page', icon: Globe },
                 { name: 'TikTok Ads', path: '/services/tiktok-ads', icon: Music },
-                { name: 'Facebook CRM', path: '/services/facebook-crm', icon: Users },
-                { name: 'Marketing Outsource', path: '/services/marketing-outsource', icon: BarChart3 },
-                { name: 'Tick xanh', path: '/services/tick-xanh-facebook', icon: CheckCircle },
+                { name: 'Facebook Dataset & CRM', path: '/services/facebook-crm', icon: Users },
+                { name: 'Thuê Phòng Marketing', path: '/services/marketing-outsource', icon: BarChart3 },
+                { name: 'Tick Xanh Facebook', path: '/services/tick-xanh-facebook', icon: CheckCircle },
             ]
         },
         { name: 'Dự án', path: '/projects' },
@@ -142,26 +142,26 @@ const Header = () => {
                                                     <Dot className="w-6 h-6" />
                                                 </button>
                                                 {/* Dropdown Menu */}
-                                                <div className="absolute top-full left-0 mt-2 w-96 bg-white rounded-3xl border border-[#d1d9ef] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                                <div className="absolute top-full left-0 mt-2 w-[480px] bg-white rounded-3xl border border-[#d1d9ef] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                                     <div className="p-2.5 space-y-2">
                                                         {/* First row: AI & Data, Google Ads */}
                                                         <div className="grid grid-cols-2 gap-2">
                                                             <Link
                                                                 to="/services/ai-data"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                     isActiveRoute('/services/ai-data') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
-                                                                <Bot className="w-4 h-4" />
-                                                                <span>AI & Data</span>
+                                                                <Bot className="w-3.5 h-3.5" />
+                                                                <span>Automation - Data - Ai</span>
                                                             </Link>
                                                             <Link
                                                                 to="/services/google-ads"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                     isActiveRoute('/services/google-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
-                                                                <Target className="w-4 h-4" />
+                                                                <Target className="w-3.5 h-3.5" />
                                                                 <span>Google Ads</span>
                                                             </Link>
                                                         </div>
@@ -170,20 +170,20 @@ const Header = () => {
                                                         <div className="grid grid-cols-2 gap-2">
                                                             <Link
                                                                 to="/services/facebook-ads"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                     isActiveRoute('/services/facebook-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
-                                                                <Smartphone className="w-4 h-4" />
+                                                                <Smartphone className="w-3.5 h-3.5" />
                                                                 <span>Facebook Ads</span>
                                                             </Link>
                                                             <Link
                                                                 to="/services/tiktok-ads"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                     isActiveRoute('/services/tiktok-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
-                                                                <Music className="w-4 h-4" />
+                                                                <Music className="w-3.5 h-3.5" />
                                                                 <span>TikTok Ads</span>
                                                             </Link>
                                                         </div>
@@ -192,43 +192,43 @@ const Header = () => {
                                                         <div className="grid grid-cols-2 gap-2">
                                                             <Link
                                                                 to="/services/facebook-crm"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                     isActiveRoute('/services/facebook-crm') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
-                                                                <Users className="w-4 h-4" />
-                                                                <span>Facebook CRM</span>
+                                                                <Users className="w-3.5 h-3.5" />
+                                                                <span>Facebook Dataset & CRM</span>
                                                             </Link>
                                                             <Link
                                                                 to="/services/tick-xanh-facebook"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                     isActiveRoute('/services/tick-xanh-facebook') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                                 }`}
                                                             >
-                                                                <CheckCircle className="w-4 h-4" />
-                                                                <span>Tick Xanh</span>
+                                                                <CheckCircle className="w-3.5 h-3.5" />
+                                                                <span>Tick Xanh Facebook</span>
                                                             </Link>
                                                         </div>
 
                                                         {/* Other services - one per row */}
                                                         <Link
                                                             to="/services/website-landing-page"
-                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                 isActiveRoute('/services/website-landing-page') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                             }`}
                                                         >
-                                                            <Globe className="w-4 h-4" />
+                                                            <Globe className="w-3.5 h-3.5" />
                                                             <span>Website & Landing Page</span>
                                                         </Link>
 
                                                         <Link
                                                             to="/services/marketing-outsource"
-                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[15px] transition-colors duration-200 border border-[#d1d9ef] ${
+                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
                                                                 isActiveRoute('/services/marketing-outsource') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
                                                             }`}
                                                         >
-                                                            <BarChart3 className="w-4 h-4" />
-                                                            <span>Marketing Outsource</span>
+                                                            <BarChart3 className="w-3.5 h-3.5" />
+                                                            <span>Thuê Phòng Marketing</span>
                                                         </Link>
                                                     </div>
                                                 </div>
@@ -312,7 +312,7 @@ const Header = () => {
 
                         {/* Mobile Navigation */}
                         <div className="flex-1 overflow-y-auto px-6 pt-4">
-                            <nav className="space-y-3">
+                            <nav className="space-y-10">
                                 {navigationItems.map((item, index) => (
                                     <div
                                         key={item.name}
@@ -326,7 +326,7 @@ const Header = () => {
                                             <div className="space-y-0">
                                                 <button
                                                     onClick={toggleServiceDropdown}
-                                                    className={`w-full flex items-center justify-between px-3 py-3 rounded-3xl text-left text-[15px] font-medium transition-all duration-300 ${
+                                                    className={`w-full flex items-center justify-between px-2 border-l-2 border-black text-left text-[14px] font-medium transition-all duration-300 ${
                                                         isActiveRoute(item.path)
                                                             ? 'bg-black text-white shadow-lg'
                                                             : 'text-black hover:bg-gray-50'
@@ -344,30 +344,30 @@ const Header = () => {
                                                         ? 'max-h-[500px] opacity-100 mt-4 transform translate-y-0'
                                                         : 'max-h-0 opacity-0 mt-0 transform -translate-y-2'
                                                 } overflow-hidden`}>
-                                                    <div className="py-4 px-2 rounded-3xl ">
-                                                        <div className="space-y-3">
+                                                    <div className="py-3 px-2 rounded-3xl ">
+                                                        <div className="space-y-2">
                                                             {/* First row: AI & Data, Google Ads */}
-                                                            <div className="grid grid-cols-2 gap-3">
+                                                            <div className="grid grid-cols-2 gap-2">
                                                                 <Link
                                                                     to="/services/ai-data"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/ai-data')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <Bot className="w-4 h-4 flex-shrink-0" />
-                                                                    <span className="truncate">AI & Data</span>
+                                                                    <Bot className="w-3 h-3 flex-shrink-0" />
+                                                                    <span className="truncate">Automation - Ai</span>
                                                                 </Link>
                                                                 <Link
                                                                     to="/services/google-ads"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/google-ads')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <Target className="w-4 h-4 flex-shrink-0" />
+                                                                    <Target className="w-3 h-3 flex-shrink-0" />
                                                                     <span className="truncate">Google Ads</span>
                                                                 </Link>
                                                             </div>
@@ -376,24 +376,24 @@ const Header = () => {
                                                             <div className="grid grid-cols-2 gap-3">
                                                                 <Link
                                                                     to="/services/facebook-ads"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/facebook-ads')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <Smartphone className="w-4 h-4 flex-shrink-0" />
+                                                                    <Smartphone className="w-3 h-3 flex-shrink-0" />
                                                                     <span className="truncate">Facebook Ads</span>
                                                                 </Link>
                                                                 <Link
                                                                     to="/services/tiktok-ads"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/tiktok-ads')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <Music className="w-4 h-4 flex-shrink-0" />
+                                                                    <Music className="w-3 h-3 flex-shrink-0" />
                                                                     <span className="truncate">TikTok Ads</span>
                                                                 </Link>
                                                             </div>
@@ -401,25 +401,25 @@ const Header = () => {
                                                             <div className="grid grid-cols-2 gap-3">
                                                                 <Link
                                                                     to="/services/facebook-crm"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/facebook-crm')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <Users className="w-4 h-4 flex-shrink-0" />
+                                                                    <Users className="w-3 h-3 flex-shrink-0" />
                                                                     <span>Facebook CRM</span>
                                                                 </Link>
                                                                 <Link
                                                                     to="/services/tick-xanh-facebook"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/tick-xanh-facebook')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <CheckCircle className="w-4 h-4 flex-shrink-0" />
-                                                                    <span className="truncate">Tick Xanh</span>
+                                                                    <CheckCircle className="w-3 h-3 flex-shrink-0" />
+                                                                    <span className="truncate">Tick xanh FB</span>
                                                                 </Link>
                                                             </div>
 
@@ -427,26 +427,26 @@ const Header = () => {
                                                             <div className="space-y-2">
                                                                 <Link
                                                                     to="/services/website-landing-page"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/website-landing-page')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <Globe className="w-4 h-4 flex-shrink-0" />
+                                                                    <Globe className="w-3 h-3 flex-shrink-0" />
                                                                     <span>Website & Landing Page</span>
                                                                 </Link>
 
                                                                 <Link
                                                                     to="/services/marketing-outsource"
-                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
                                                                         isActiveRoute('/services/marketing-outsource')
                                                                             ? 'text-white bg-black hover:bg-black shadow-md'
                                                                             : 'text-gray-800 hover:bg-white hover:shadow-sm'
                                                                     }`}
                                                                 >
-                                                                    <BarChart3 className="w-4 h-4 flex-shrink-0" />
-                                                                    <span>Marketing Outsource</span>
+                                                                    <BarChart3 className="w-3 h-3 flex-shrink-0" />
+                                                                    <span>Thuê phòng Marketing</span>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -456,10 +456,10 @@ const Header = () => {
                                         ) : (
                                             <Link
                                                 to={item.path}
-                                                className={`block px-3 py-3 rounded-3xl text-[15px] font-medium transition-all duration-200  ${
+                                                className={`block px-2 border-l-2 border-black text-[14px] font-medium transition-all duration-200  ${
                                                     isActiveRoute(item.path)
                                                         ? 'bg-black text-white shadow-lg'
-                                                        : 'text-black hover:bg-gray-50'
+                                                        : 'text-black '
                                                 }`}
                                             >
                                                 {item.name}

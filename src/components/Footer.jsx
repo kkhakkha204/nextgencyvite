@@ -155,7 +155,7 @@ const Footer = () => {
                             <input
                                 type="email"
                                 placeholder="Nhập email của bạn"
-                                className="w-full px-3 py-2.5 bg-gray-800 border border-gray-700 rounded-3xl text-white placeholder-gray-400 focus:outline-none focus:border-[#c59efe] focus:ring-1 focus:ring-[#c59efe] transition-colors"
+                                className="w-full px-3 py-2.5 bg-gray-900 border border-gray-700 rounded-3xl text-white placeholder-gray-400 focus:outline-none focus:border-[#c59efe] focus:ring-1 focus:ring-[#c59efe] transition-colors"
                             />
                             <button className="w-full px-3 py-2.5 bg-white text-black font-medium rounded-3xl hover:bg-purple-400 transition-all transform hover:scale-105">
                                 Đăng ký

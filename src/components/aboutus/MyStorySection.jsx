@@ -53,28 +53,19 @@ const MyStorySection = () => {
                         <div className="space-y-4">
                             {/* Subtitle */}
                             <p className="text-[15px] md:text-[18px] text-[#c08dfe]">
-                                From humble beginnings to digital excellence
+                                Công nghệ – Bước ngoặt cho sự bứt phá
                             </p>
                             <div className="flex gap-4">
                                 <div className="w-2 h-2 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                 <p className="text-white text-[14px] md:text-[16px] max-w-lg">
-                                    Founded in 2020, Nextgency began as a small team of passionate developers
-                                    and designers united by a shared vision: to create digital experiences that
-                                    not only meet business needs but exceed user expectations. We believed that
-                                    technology should be beautiful, intuitive, and powerful.
+                                    Nextgency được thành lập vào năm 2025, sau khi founder chính đã có hơn 5 năm kinh nghiệm kinh doanh trong lĩnh vực thương mại điện tử. Trong hành trình đó, founder nhận ra: công nghệ chính là chìa khóa thay đổi toàn bộ mô hình kinh doanh – từ quản lý vận hành, marketing cho đến tối ưu lợi nhuận.
                                 </p>
                             </div>
-                            {/* Subtitle */}
-                            <p className="text-[15px] md:text-[18px] text-[#c08dfe]">
-                                From humble beginnings to digital excellence
-                            </p>
                             <div className="flex gap-4">
                                 <div className="w-2 h-2 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                 <p className="text-white text-[14px] md:text-[16px] max-w-lg">
-                                    Today, we've grown into a full-service digital agency, working with startups
-                                    and Fortune 500 companies alike. Our commitment remains unchanged: crafting
-                                    solutions that drive real business value while pushing the boundaries of
-                                    what's possible in the digital realm.
+                                    Nhờ ứng dụng công nghệ đúng cách, doanh nghiệp của founder đã bứt phá mạnh mẽ, vượt qua giới hạn cũ và mở ra con đường tăng trưởng mới. Thành công ấy trở thành minh chứng sống động rằng công nghệ không chỉ hỗ trợ, mà còn tái định hình tương lai doanh nghiệp.
+                                    Từ nền tảng thực tiễn này, đội ngũ core team đã cùng nhau thành lập Nextgency, với sứ mệnh đồng hành và mang giải pháp công nghệ đã được kiểm chứng đến nhiều doanh nghiệp khác, giúp họ không chỉ giải quyết vấn đề hiện tại mà còn kiến tạo lợi thế cạnh tranh dài hạn.
                                 </p>
                             </div>
                         </div>

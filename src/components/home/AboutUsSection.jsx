@@ -57,12 +57,12 @@ const AboutUsSection = () => {
                     {/* CTA Button */}
                     <div className="flex items-center space-x-2 ">
                         <Link
-                            to="/contact"
+                            to="/about"
                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                         >
         <span className="">
-            Tư vấn ngay
+            Xem thêm
         </span>
                             <div
                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
@@ -72,7 +72,7 @@ const AboutUsSection = () => {
                             </div>
                         </Link>
                         <Link
-                            to="/contact"
+                            to="/about#contact"
                             className="relative flex items-center space-x-3 px-6 py-3.5 bg-white text-[15px] sm:text-[16px] text-black neu-shadow-xs rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
 
                         >

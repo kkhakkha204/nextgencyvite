@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import {Code, Globe, Smartphone, ShoppingCart, Database, Cloud, Shield, Cpu, ArrowUpRight} from 'lucide-react';
+import {
+    Code,
+    Globe,
+    Smartphone,
+    ArrowUpRight,
+    Bot,
+    Target, Music, Users, BarChart3, CheckCircle
+} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const ServicesSection = () => {
@@ -8,10 +15,10 @@ const ServicesSection = () => {
     const services = [
         {
             id: 0,
-            name: 'Web Development',
-            icon: <Globe className="w-4 h-4" />,
-            title: 'Phát triển Website chuyên nghiệp',
-            description: 'Chúng tôi xây dựng các website hiện đại với hiệu suất cao, tối ưu SEO và trải nghiệm người dùng tuyệt vời. Từ landing page đến ứng dụng web phức tạp, chúng tôi đều có thể đáp ứng.',
+            name: 'Automation - Ai - Data',
+            icon: <Bot className="w-4 h-4" />,
+            title: 'Dịch vụ Automation - Ai - Data',
+            description: 'Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình.',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'React' },
@@ -19,15 +26,16 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'Tailwind CSS' },
                 { icon: <Code className="w-4 h-4" />, name: 'Node.js' }
             ],
-            completedDate: '2024-12-15',
-            note: 'Đảm bảo website hoạt động mượt mà trên mọi thiết bị'
+            completedDate: '99 ngày',
+            note: 'Đảm bảo website hoạt động mượt mà trên mọi thiết bị',
+            link:'/services/ai-data'
         },
         {
             id: 1,
-            name: 'Mobile App',
-            icon: <Smartphone className="w-4 h-4" />,
-            title: 'Ứng dụng di động đa nền tảng',
-            description: 'Phát triển ứng dụng mobile native và cross-platform với React Native. Tối ưu hiệu suất và trải nghiệm người dùng trên cả iOS và Android.',
+            name: 'Google Ads',
+            icon: <Target className="w-4 h-4" />,
+            title: 'Dịch vụ Google ads',
+            description: 'Nextgency triển khai Google Ads với đa dạng chiến dịch để đưa doanh nghiệp lên top 1 trong tâm trí người dùng khi nhắc tới lĩnh vực của bạn.',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'React Native' },
@@ -35,15 +43,16 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'Swift' },
                 { icon: <Code className="w-4 h-4" />, name: 'Kotlin' }
             ],
-            completedDate: '2024-11-20',
-            note: 'Hỗ trợ cập nhật và bảo trì liên tục'
+            completedDate: '99 ngày',
+            note: 'Hỗ trợ cập nhật và bảo trì liên tục',
+            link:'/services/google-ads'
         },
         {
             id: 2,
-            name: 'E-Commerce',
-            icon: <ShoppingCart className="w-4 h-4" />,
-            title: 'Giải pháp thương mại điện tử',
-            description: 'Xây dựng hệ thống e-commerce hoàn chỉnh với tính năng quản lý sản phẩm, giỏ hàng, thanh toán online và báo cáo doanh thu chi tiết.',
+            name: 'Facebook Ads',
+            icon: <Smartphone className="w-4 h-4" />,
+            title: 'Dịch vụ Facebook Ads',
+            description: 'Dịch vụ Facebook Ads từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất Facebook đầy cơ hội.',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'WooCommerce' },
@@ -51,15 +60,16 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'Magento' },
                 { icon: <Code className="w-4 h-4" />, name: 'Stripe API' }
             ],
-            completedDate: '2024-10-30',
-            note: 'Tích hợp đầy đủ cổng thanh toán trong nước và quốc tế'
+            completedDate: '99 ngày',
+            note: 'Tích hợp đầy đủ cổng thanh toán trong nước và quốc tế',
+            link:'/services/facebook-ads'
         },
         {
             id: 3,
-            name: 'CMS Development',
-            icon: <Database className="w-4 h-4" />,
-            title: 'Hệ thống quản lý nội dung',
-            description: 'Phát triển CMS tùy chỉnh hoặc tích hợp các CMS phổ biến như WordPress, Sanity, Strapi. Giúp quản lý nội dung dễ dàng và hiệu quả.',
+            name: 'Website & Landing Page',
+            icon: <Globe className="w-4 h-4" />,
+            title: 'Dịch vụ xây dựng Website & Landing Page',
+            description: 'Website & Landing Page không chỉ là nơi khách hàng “ghé chơi”, mà là đích đến giúp họ ở lại – chuyển đổi – và quay lại. Nextgency thiết kế nền tảng số hiện đại với giải pháp trọn gói.',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'WordPress' },
@@ -67,15 +77,16 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'Strapi' },
                 { icon: <Code className="w-4 h-4" />, name: 'Directus' }
             ],
-            completedDate: '2024-09-15',
-            note: 'Giao diện quản trị thân thiện, dễ sử dụng'
+            completedDate: '99 ngày',
+            note: 'Giao diện quản trị thân thiện, dễ sử dụng',
+            link:'/services/website-landing-page'
         },
         {
             id: 4,
-            name: 'Cloud Solutions',
-            icon: <Cloud className="w-4 h-4" />,
-            title: 'Giải pháp đám mây',
-            description: 'Triển khai và quản lý hạ tầng trên cloud với AWS, Google Cloud, Azure. Đảm bảo hệ thống luôn sẵn sàng và có khả năng mở rộng cao.',
+            name: 'TikTok Ads',
+            icon: <Music className="w-4 h-4" />,
+            title: 'Dịch vụ Tiktok Ads',
+            description: 'Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên nền tảng Tiktok để mang về doanh thu và độ nhận diện phủ khắp..',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'AWS' },
@@ -83,15 +94,16 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'Docker' },
                 { icon: <Code className="w-4 h-4" />, name: 'Kubernetes' }
             ],
-            completedDate: '2024-08-20',
-            note: 'Giám sát 24/7 và tự động scale khi cần thiết'
+            completedDate: '99 ngày',
+            note: 'Giám sát 24/7 và tự động scale khi cần thiết',
+            link:'/services/tiktok-ads'
         },
         {
             id: 5,
-            name: 'Security',
-            icon: <Shield className="w-4 h-4" />,
-            title: 'Bảo mật ứng dụng',
-            description: 'Đánh giá và tăng cường bảo mật cho hệ thống. Thực hiện penetration testing, audit code và triển khai các biện pháp bảo vệ hiện đại.',
+            name: 'Facebook Dataset & CRM',
+            icon: <Users className="w-4 h-4" />,
+            title: 'Dịch vụ Facebook Dataset & CRM',
+            description: 'Trong thời đại dữ liệu là "mỏ kim cương", Nextgency giúp doanh nghiệp biến từng hành vi, từng tương tác thành đòn bẩy quảng cáo hiệu quả qua dịch vụ Facebook Dataset & CRM.',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'OWASP' },
@@ -99,15 +111,16 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'WAF' },
                 { icon: <Code className="w-4 h-4" />, name: '2FA' }
             ],
-            completedDate: '2024-07-10',
-            note: 'Cập nhật thường xuyên theo các tiêu chuẩn bảo mật mới nhất'
+            completedDate: '99 ngày',
+            note: 'Cập nhật thường xuyên theo các tiêu chuẩn bảo mật mới nhất',
+            link:'/services/facebook-crm'
         },
         {
             id: 6,
-            name: 'API Development',
-            icon: <Cpu className="w-4 h-4"/>,
-            title: 'Phát triển API',
-            description: 'Xây dựng RESTful API và GraphQL với hiệu suất cao. Tích hợp với các hệ thống bên thứ ba và cung cấp documentation đầy đủ.',
+            name: 'Thuê Phòng Marketing',
+            icon: <BarChart3 className="w-4 h-4"/>,
+            title: 'Dịch vụ phòng Marketing thuê ngoài',
+            description: 'Đem chất xám từ đội ngũ của chúng tôi để rót vào những dự án đầy tiềm năng của các doanh nghiệp chính là phương chấm cống hiến của Nextgency khi cung cấp dịch vụ Phòng Marketing thuê ngoài.',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'REST API' },
@@ -115,15 +128,16 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'Swagger' },
                 { icon: <Code className="w-4 h-4" />, name: 'Postman' }
             ],
-            completedDate: '2024-06-25',
-            note: 'Documentation chi tiết và hỗ trợ integration'
+            completedDate: '99 ngày',
+            note: 'Documentation chi tiết và hỗ trợ integration',
+            link:'/services/marketing-outsource'
         },
         {
             id: 7,
-            name: 'Consulting',
-            icon: <Code className="w-4 h-4" />,
-            title: 'Tư vấn công nghệ',
-            description: 'Tư vấn chiến lược công nghệ, lựa chọn tech stack phù hợp và xây dựng roadmap phát triển. Đánh giá và tối ưu hóa hệ thống hiện tại.',
+            name: 'Tick Xanh Facebook',
+            icon: <CheckCircle className="w-4 h-4" />,
+            title: 'Dịch vụ lên Tick Xanh Facebook',
+            description: 'Nextgency cung cấp dịch vụ đăng ký tích xanh Facebook trọn gói từ A–Z, giúp khách hàng rút ngắn thời gian xét duyệt, chuẩn hóa hồ sơ và tăng tỷ lệ được phê duyệt thực tế.',
             image: '/assets/images/test.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'Tech Audit' },
@@ -131,8 +145,9 @@ const ServicesSection = () => {
                 { icon: <Code className="w-4 h-4" />, name: 'Roadmap' },
                 { icon: <Code className="w-4 h-4" />, name: 'Best Practices' }
             ],
-            completedDate: '2024-05-30',
-            note: 'Đội ngũ chuyên gia với kinh nghiệm 10+ năm'
+            completedDate: '99 ngày',
+            note: 'Đội ngũ chuyên gia với kinh nghiệm 10+ năm',
+            link:'/services/tick-xanh-facebook'
         }
     ];
 
@@ -252,12 +267,12 @@ const ServicesSection = () => {
                                                 {/* CTA Button */}
                                                 <div className="flex items-center space-x-2 ">
                                                     <Link
-                                                        to="/contact"
+                                                        to={service.link}
                                                         className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300  hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
 
                                                     >
         <span className="">
-            Tư vấn ngay
+            Xem thêm
         </span>
                                                         <div
                                                             className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

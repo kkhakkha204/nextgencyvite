@@ -169,33 +169,24 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                             <div className="grid lg:grid-cols-3 gap-8">
                                 {/* Left Side - Features (Hidden on mobile) */}
                                 <div className="hidden lg:block space-y-4">
-                                    <div className="flex items-center space-x-3 bg-white/10 p-3 rounded-xl backdrop-blur-sm">
-                                        <div className="w-12 h-12 bg-[#c59efe] rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Star className="w-6 h-6 text-white" fill="currentColor" />
-                                        </div>
+                                    <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm">
                                         <div>
-                                            <h3 className="text-white text-sm font-medium">Tư vấn miễn phí</h3>
-                                            <p className="text-gray-300 text-xs">Chuyên gia hàng đầu</p>
+                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Hotline</h3>
+                                            <p className="text-white text-[11px] lg:text-[13px]">033 208 3366</p>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center space-x-3 bg-white/10 p-3 rounded-xl backdrop-blur-sm">
-                                        <div className="w-12 h-12 bg-[#c59efe] rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <CheckCircle className="w-6 h-6 text-white" />
-                                        </div>
+                                    <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm">
                                         <div>
-                                            <h3 className="text-white text-sm font-medium">Phản hồi nhanh</h3>
-                                            <p className="text-gray-300 text-xs">Trong vòng 24h</p>
+                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Email</h3>
+                                            <p className="text-white text-[11px] lg:text-[13px]">contact@nextgency.vn</p>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center space-x-3 bg-white/10 p-3 rounded-xl backdrop-blur-sm">
-                                        <div className="w-12 h-12 bg-[#c59efe] rounded-lg flex items-center justify-center flex-shrink-0">
-                                            <Target className="w-6 h-6 text-white" />
-                                        </div>
+                                    <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm">
                                         <div>
-                                            <h3 className="text-white text-sm font-medium">Giải pháp tối ưu</h3>
-                                            <p className="text-gray-300 text-xs">Phù hợp từng doanh nghiệp</p>
+                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Address</h3>
+                                            <p className="text-white text-[11px] lg:text-[13px]">2/11 Vương Thừa Vũ, Thanh Xuân, Hà Nội</p>
                                         </div>
                                     </div>
 
