@@ -1,8 +1,6 @@
 // App.jsx - Updated with Blog routes
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from "./components/Footer.jsx";
@@ -21,17 +19,6 @@ import Tick from "./pages/services/Tick.jsx";
 import { useSEO } from './hooks/useSEO';
 import SEOManager from './components/SEO/SEOManager';
 import { localBusinessSchema } from './components/SEO/schemas';
-
-// Create a client
-const queryClient = new QueryClient({
-    defaultOptions: {
-        queries: {
-            retry: 1,
-            refetchOnWindowFocus: false,
-            staleTime: 5 * 60 * 1000, // 5 minutes
-        },
-    },
-});
 
 // Router Content Component
 const RouterContent = () => {
@@ -87,12 +74,8 @@ const RouterContent = () => {
 
 function App() {
     return (
-        <QueryClientProvider client={queryClient}>
-            <Router>
-                <RouterContent />
-            </Router>
-            <ReactQueryDevtools initialIsOpen={false} />
-        </QueryClientProvider>
+        <>
+        </>
     );
 }
 
