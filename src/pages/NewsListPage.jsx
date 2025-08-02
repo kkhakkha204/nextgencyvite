@@ -262,7 +262,7 @@ const NewsListPage = () => {
                                 {paginatedNews.map(news => (
                                     <article key={news.id} className="bg-white rounded-xl overflow-hidden neu-shadow-inset-xs border border-gray-100 hover:shadow-lg transition-shadow duration-300 group">
                                         {/* Thumbnail */}
-                                        <div className="aspect-[16/10] overflow-hidden p-2">
+                                        <div className="aspect-[16/10] overflow-hidden p-1.5">
                                             <img
                                                 src={news.thumbnail}
                                                 alt={news.title}
