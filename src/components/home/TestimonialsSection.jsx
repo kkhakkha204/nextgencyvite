@@ -166,12 +166,10 @@ const TestimonialsSection = () => {
         if (visibleCards.length > 0) {
             gsap.fromTo(visibleCards,
                 {
-                    opacity: 0,
                     y: 10,
                     scale: 0.98
                 },
                 {
-                    opacity: 1,
                     y: 0,
                     scale: 1,
                     duration: 0.4,

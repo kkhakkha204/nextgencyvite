@@ -1,12 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {ArrowRight, ArrowUpRight} from 'lucide-react';
 import {Link} from "react-router-dom";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// Đăng ký plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutHeroSection = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef(null);
     const cardsRef = useRef(null);
+
+    // Refs cho animation
+    const sectionRef = useRef(null);
+    const badgeRef = useRef(null);
+    const titleRef = useRef(null);
+    const descriptionRef = useRef(null);
+    const buttonsRef = useRef(null);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -17,6 +29,62 @@ const AboutHeroSection = () => {
         window.addEventListener('resize', checkMobile);
 
         return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Animation khi mount component
+    useEffect(() => {
+        const section = sectionRef.current;
+        const badge = badgeRef.current;
+        const title = titleRef.current;
+        const description = descriptionRef.current;
+        const buttons = buttonsRef.current;
+
+        // Set initial states
+        gsap.set([badge, title, description, buttons], {
+            opacity: 0,
+            y: 30
+        });
+
+        // Create timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: section,
+                start: "top 85%",
+                end: "bottom 15%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Animation sequence
+        tl.to(badge, {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out"
+        })
+            .to(title, {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            }, "-=0.4")
+            .to(description, {
+                opacity: 1,
+                y: 0,
+                duration: 0.7,
+                ease: "power2.out"
+            }, "-=0.5")
+            .to(buttons, {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                ease: "power2.out"
+            }, "-=0.4");
+
+        // Cleanup function
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
     }, []);
 
     useEffect(() => {
@@ -81,17 +149,17 @@ const AboutHeroSection = () => {
     ];
 
     return (
-        <section className="bg-white py-[60px] lg:py-[90px] lg:flex lg:items-center " ref={containerRef}>
+        <section ref={sectionRef} className="bg-white py-[60px] lg:py-[90px] lg:flex lg:items-center " ref={containerRef}>
             <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
                     {/* Column A - Content */}
                     <div className="space-y-6">
                         <div className="space-y-2">
-                            <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
+                            <span ref={badgeRef} className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
                             About Nexgency
                         </span>
-                            <h1 className="text-[38px] md:text-[32px] lg:text-[64px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
+                            <h1 ref={titleRef} className="text-[38px] md:text-[32px] lg:text-[64px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
                                 Đối tác
                                 <span className="font-archivo block text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c08dfe] ">
                   chuyển đổi số đa năng
@@ -99,11 +167,11 @@ const AboutHeroSection = () => {
                             </h1>
                         </div>
 
-                        <p className="text-[15px] lg:text-[18px] text-black">
+                        <p ref={descriptionRef} className="text-[15px] lg:text-[18px] text-black">
                             Nextgency là đối tác chiến lược của bạn trong kỷ nguyên số. Chúng tôi cung cấp giải pháp <strong>chuyển đổi số</strong>, giúp doanh nghiệp bạn tăng tốc phát triển.
                         </p>
 
-                        <div className=" mt-2">
+                        <div ref={buttonsRef} className=" mt-2">
                             {/* CTA Button */}
                             <div className="flex items-center space-x-2 ">
                                 <Link

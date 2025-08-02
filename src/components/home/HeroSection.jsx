@@ -24,6 +24,28 @@ const HeroSection = () => {
 
         // Create context for better performance
         let ctx = gsap.context(() => {
+            // Initial state - set elements to invisible
+            gsap.set([bgLogo, title], {
+                opacity: 0,
+                y: 40
+            });
+
+            // Fade-in animations on page load
+            const tl = gsap.timeline();
+
+            tl.to(bgLogo, {
+                opacity: 0.7,
+                y: 0,
+                duration: 1.6,
+                ease: "power3.out"
+            })
+                .to(title, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.8,
+                    ease: "power3.out"
+                }, "-=0.8")
+
             // Background logo parallax - moves slower (always active)
             gsap.to(bgLogo, {
                 yPercent: 75,
@@ -38,34 +60,31 @@ const HeroSection = () => {
             });
 
             // Main title parallax - only on desktop
-
-                gsap.to(title, {
-                    yPercent: -80,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: 1,
-                        invalidateOnRefresh: true
-                    }
-                });
-
+            gsap.to(title, {
+                yPercent: -80,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1,
+                    invalidateOnRefresh: true
+                }
+            });
 
             // Glass card parallax effect - only on desktop
-
-                gsap.to(glassCard, {
-                    yPercent: 30,
-                    scale: 0.95,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top top",
-                        end: "bottom top",
-                        scrub: 1.2,
-                        invalidateOnRefresh: true
-                    }
-                });
+            gsap.to(glassCard, {
+                yPercent: 30,
+                scale: 0.95,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: 1.2,
+                    invalidateOnRefresh: true
+                }
+            });
 
             // Refresh ScrollTrigger on window resize for responsive behavior
             ScrollTrigger.refresh();
