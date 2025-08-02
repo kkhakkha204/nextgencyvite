@@ -79,7 +79,7 @@ const Header = () => {
             ]
         },
         { name: 'Dự án', path: '/projects' },
-        { name: 'Tin tức', path: '/news' },
+        { name: 'Tin tức', path: '/blog' },
     ];
 
     const isActiveRoute = (path) => {
