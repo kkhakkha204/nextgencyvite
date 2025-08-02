@@ -38,7 +38,7 @@ const HeroSection = () => {
             });
 
             // Main title parallax - only on desktop
-            if (!isMobile) {
+
                 gsap.to(title, {
                     yPercent: -80,
                     ease: "none",
@@ -50,10 +50,10 @@ const HeroSection = () => {
                         invalidateOnRefresh: true
                     }
                 });
-            }
+
 
             // Glass card parallax effect - only on desktop
-            if (!isMobile) {
+
                 gsap.to(glassCard, {
                     yPercent: 30,
                     scale: 0.95,
@@ -66,7 +66,6 @@ const HeroSection = () => {
                         invalidateOnRefresh: true
                     }
                 });
-            }
 
             // Refresh ScrollTrigger on window resize for responsive behavior
             ScrollTrigger.refresh();
