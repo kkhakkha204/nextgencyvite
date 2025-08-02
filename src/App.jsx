@@ -19,6 +19,7 @@ import Tick from "./pages/services/Tick.jsx";
 import { useSEO } from './hooks/useSEO';
 import SEOManager from './components/SEO/SEOManager';
 import { localBusinessSchema } from './components/SEO/schemas';
+import NewsListPage from "./pages/NewsListPage.jsx";
 
 // Router Content Component
 const RouterContent = () => {
@@ -48,6 +49,7 @@ const RouterContent = () => {
                     {/* Trang chủ */}
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/news" element={<NewsListPage />} />
 
                     {/* Các trang dịch vụ */}
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
