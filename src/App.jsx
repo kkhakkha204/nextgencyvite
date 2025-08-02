@@ -1,4 +1,4 @@
-// App.jsx - Updated with custom SEO solution for React 19
+// App.jsx - Updated with Blog routes
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -21,6 +21,8 @@ import Tick from "./pages/services/Tick.jsx";
 import { useSEO } from './hooks/useSEO';
 import SEOManager from './components/SEO/SEOManager';
 import { localBusinessSchema } from './components/SEO/schemas';
+import Blog from './pages/Blog.jsx';
+import BlogDetail from './pages/BlogDetail.jsx'; // Import BlogDetail page
 
 // Create a client
 const queryClient = new QueryClient({
@@ -61,6 +63,10 @@ const RouterContent = () => {
                     {/* Trang chủ */}
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+
+                    {/* Blog routes */}
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog/:slug" element={<BlogDetail />} />
 
                     {/* Các trang dịch vụ */}
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />

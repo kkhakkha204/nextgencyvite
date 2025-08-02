@@ -202,19 +202,19 @@ const TestimonialsSection = () => {
                         <div className="flex justify-center items-center gap-3 mt-4">
                             <button
                                 onClick={goToPrevious}
-                                className=" border-2 border-white rounded-full p-3 text-white transition-all duration-300 group "
+                                className=" border-2 border-white rounded-full p-3 text-white transition-all duration-300 group hover:bg-white"
                                 aria-label="Previous testimonial"
                             >
-                                <ChevronLeft className="w-5 h-5 text-white" />
+                                <ChevronLeft className="w-5 h-5 text-white group-hover:text-black" />
                             </button>
 
 
                             <button
                                 onClick={goToNext}
-                                className=" border-2 border-white rounded-full p-3 text-white transition-all duration-300 group "
+                                className=" border-2 border-white rounded-full p-3 text-white transition-all duration-300 group hover:bg-white"
                                 aria-label="Next testimonial"
                             >
-                                <ChevronRight className="w-5 h-5 text-white" />
+                                <ChevronRight className="w-5 h-5 text-white group-hover:text-black" />
                             </button>
                         </div>
                     </div>
