@@ -74,8 +74,9 @@ const RouterContent = () => {
 
 function App() {
     return (
-        <>
-        </>
+            <Router>
+                <RouterContent />
+            </Router>
     );
 }
 
