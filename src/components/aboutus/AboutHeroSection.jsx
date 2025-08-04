@@ -59,24 +59,28 @@ const AboutHeroSection = () => {
         tl.to(badge, {
             opacity: 1,
             y: 0,
+            delay: 0.3,
             duration: 0.6,
             ease: "power2.out"
         })
             .to(title, {
                 opacity: 1,
                 y: 0,
+                delay: 0.3,
                 duration: 0.8,
                 ease: "power2.out"
             }, "-=0.4")
             .to(description, {
                 opacity: 1,
                 y: 0,
+                delay: 0.3,
                 duration: 0.7,
                 ease: "power2.out"
             }, "-=0.5")
             .to(buttons, {
                 opacity: 1,
                 y: 0,
+                delay: 0.3,
                 duration: 0.6,
                 ease: "power2.out"
             }, "-=0.4");

@@ -37,6 +37,7 @@ const HeroSection = () => {
                 opacity: 0.7,
                 y: 0,
                 duration: 1.6,
+                delay: 0.8,
                 ease: "power3.out"
             })
                 .to(title, {

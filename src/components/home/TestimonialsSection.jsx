@@ -136,8 +136,7 @@ const TestimonialsSection = () => {
             const visibleCards = cardsRef.current.filter(card => card);
             gsap.fromTo(visibleCards,
                 {
-                    opacity: 0,
-                    y: 30,
+                    y: 20,
                     scale: 0.95
                 },
                 {
