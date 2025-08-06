@@ -327,6 +327,17 @@ const ServicesSection = () => {
         };
     }, [activeTab]);
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section ref={sectionRef} className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -468,14 +479,14 @@ const ServicesSection = () => {
                                                                 />
                                                             </div>
                                                         </Link>
-                                                        <Link
-                                                            to="/contact"
+                                                        <button
+                                                            onClick={scrollToContact}
                                                             className="relative flex items-center space-x-3 px-6 py-3.5 text-[15px] sm:text-[16px] text-white border-x border-white rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
                                                         >
                                                             <span className="">
                                                                 Tư vấn ngay
                                                             </span>
-                                                        </Link>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

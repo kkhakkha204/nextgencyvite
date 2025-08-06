@@ -94,6 +94,17 @@ const LandingPagePackages = () => {
         }
     ];
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('lilcontact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,14 +155,14 @@ const LandingPagePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2 space-x-4">
-                            <a
-                                href="/contact"
+                            <button
+                                onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 lg:px-24 py-4 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
                             >
                                 <span className="">
                                     Nhận tư vấn
                                 </span>
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -199,14 +210,14 @@ const LandingPagePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2 space-x-4">
-                            <a
-                                href="/contact"
+                            <button
+                                onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 lg:px-24 py-4 bg-white text-[15px] sm:text-[16px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
                             >
                                 <span className="">
                                     Nhận tư vấn
                                 </span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     </div>

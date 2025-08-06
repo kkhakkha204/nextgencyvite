@@ -71,7 +71,7 @@ export default function ConsultationSection() {
     };
 
     return (
-        <section className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] relative overflow-hidden">
+        <section id="lilcontact" className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px] relative overflow-hidden">
             <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-left mb-4 lg:mb-8">

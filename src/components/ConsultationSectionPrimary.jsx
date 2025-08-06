@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, Target } from 'lucide-react';
 
-export default function ConsultationSection() {
+export default function ConsultationSectionPrimary() {
     const [formData, setFormData] = useState({
         customer_name: '',
         phone: '',

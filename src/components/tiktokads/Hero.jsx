@@ -3,6 +3,18 @@ import {ArrowRight, ArrowUpRight, Play} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const Hero = () => {
+
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('lilcontact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section className="py-[60px] lg:py-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,8 +73,8 @@ const Hero = () => {
 
                             {/* CTA Button */}
                             <div className="flex items-center space-x-4">
-                                <Link
-                                    to="/contact"
+                                <button
+                                    onClick={scrollToContact}
                                     className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                                 >
@@ -75,7 +87,7 @@ const Hero = () => {
                                             className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
                                             strokeWidth={2.5}/>
                                     </div>
-                                </Link>
+                                </button>
 
                             </div>
                         </div>

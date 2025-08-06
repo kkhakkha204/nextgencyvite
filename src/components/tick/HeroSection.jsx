@@ -3,6 +3,18 @@ import {CheckCircle2, Shield, TrendingUp, ArrowRight, Sparkles, Verified, ArrowU
 import {Link} from "react-router-dom";
 
 const HeroSection = () => {
+
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('lilcontact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section className="bg-white py-[60px] lg:py-[90px] relative">
             <div className="relative md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
@@ -82,8 +94,8 @@ const HeroSection = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center space-x-4">
-                            <Link
-                                to="/contact"
+                            <button
+                                onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                             >
@@ -96,7 +108,7 @@ const HeroSection = () => {
                                         className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
                                         strokeWidth={2.5}/>
                                 </div>
-                            </Link>
+                            </button>
 
                         </div>
                     </div>

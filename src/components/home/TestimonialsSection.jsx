@@ -55,6 +55,12 @@ const TestimonialsSection = () => {
             content: "Hợp tác với Nextgency là một trải nghiệm tuyệt vời. Họ thực sự hiểu nhu cầu của khách hàng và đáp ứng hoàn hảo.",
             author: "Hoàng Văn E",
             company: "E-commerce Platform"
+        },
+        {
+            id: 6,
+            content: "Hợp tác với Nextgency là một trải nghiệm tuyệt vời. Họ thực sự hiểu nhu cầu của khách hàng và đáp ứng hoàn hảo.",
+            author: "Hoàng Văn E",
+            company: "E-commerce Platform"
         }
     ];
 
@@ -308,27 +314,6 @@ const TestimonialsSection = () => {
                                 Chúng tôi tự hào về những phản hồi <strong>tích cực</strong> từ khách hàng,
                                 là động lực để Nextgency không ngừng phát triển.
                             </p>
-                        </div>
-                        <div className=" ">
-                            {/* CTA Button */}
-                            <div className="inline-flex items-center">
-                                <Link
-                                    to="/contact"
-                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-white text-[15px] sm:text-[16px] text-black rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
-
-                                >
-        <span className="">
-            Tư vấn ngay
-        </span>
-                                    <div
-                                        className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
-                                        <ArrowUpRight
-                                            className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
-                                            strokeWidth={2.5}/>
-                                    </div>
-                                </Link>
-
-                            </div>
                         </div>
                     </div>
 

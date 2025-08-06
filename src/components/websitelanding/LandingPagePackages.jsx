@@ -30,6 +30,17 @@ const LandingPagePackages = () => {
         "Tích hợp hơn 100 ứng dụng và công cụ: Countdown, Notify, Gallery, Gmail, Google Sheet, Facebook Pixel, Google Analytics, Google Ads,..."
     ];
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('lilcontact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section className="bg-white pt-[60px] lg:pt-[90px]">
             <div className="md:max-w-[500px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,8 +83,8 @@ const LandingPagePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2 space-x-4">
-                            <Link
-                                to="/contact"
+                            <button
+                                onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 lg:px-24 py-4 bg-black text-[15px] sm:text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                             >
@@ -81,7 +92,7 @@ const LandingPagePackages = () => {
             Nhận tư vấn
         </span>
 
-                            </Link>
+                            </button>
 
                         </div>
                     </div>
@@ -119,8 +130,8 @@ const LandingPagePackages = () => {
 
                         {/* CTA Button */}
                         <div className="flex items-center justify-center pt-2 space-x-4">
-                            <Link
-                                to="/contact"
+                            <button
+                                onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 lg:px-24 py-4 bg-white text-[15px] sm:text-[16px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                             >
@@ -128,7 +139,7 @@ const LandingPagePackages = () => {
             Nhận tư vấn
         </span>
 
-                            </Link>
+                            </button>
 
                         </div>
                     </div>

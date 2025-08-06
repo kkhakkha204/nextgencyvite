@@ -152,6 +152,17 @@ const AboutHeroSection = () => {
         }
     ];
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section className="bg-white py-[60px] lg:py-[90px] lg:flex lg:items-center " ref={containerRef}>
             <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -178,8 +189,8 @@ const AboutHeroSection = () => {
                         <div ref={buttonsRef} className=" mt-2">
                             {/* CTA Button */}
                             <div className="flex items-center space-x-2 ">
-                                <Link
-                                    to="/contact"
+                                <button
+                                    onClick={scrollToContact}
                                     className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
 
                                 >
@@ -192,16 +203,7 @@ const AboutHeroSection = () => {
                                             className="w-5 h-5 text-black transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
                                             strokeWidth={2.5}/>
                                     </div>
-                                </Link>
-                                <Link
-                                    to="/contact"
-                                    className="relative flex items-center space-x-3 px-6 py-3.5 bg-white text-[15px] sm:text-[16px] text-black neu-shadow-xs rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
-
-                                >
-        <span className="">
-            Tư vấn ngay
-        </span>
-                                </Link>
+                                </button>
 
                             </div>
                         </div>

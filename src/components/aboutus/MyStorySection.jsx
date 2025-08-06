@@ -87,6 +87,17 @@ const MyStorySection = () => {
         };
     }, []);
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section ref={sectionRef} className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
             <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,8 +167,8 @@ const MyStorySection = () => {
                         <div className="">
                             {/* CTA Button */}
                             <div ref={buttonRef} className="flex items-center pt-4">
-                                <Link
-                                    to="/contact"
+                                <button
+                                    onClick={scrollToContact}
                                     className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
 
                                 >
@@ -170,7 +181,7 @@ const MyStorySection = () => {
                                             className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
                                             strokeWidth={2.5}/>
                                     </div>
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>

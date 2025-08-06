@@ -50,6 +50,17 @@ const OffersSection = () => {
         }
     ];
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('lilcontact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section className="bg-gradient-to-b from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -171,8 +182,8 @@ const OffersSection = () => {
                     </p>
                     {/* Desktop CTA Button */}
                     <div className="flex justify-center items-center space-x-4">
-                        <Link
-                            to="/contact"
+                        <button
+                            onClick={scrollToContact}
                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                             style={{
                                 backgroundSize: '200% 200%'
@@ -184,7 +195,7 @@ const OffersSection = () => {
                             <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                 <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
                             </div>
-                        </Link>
+                        </button>
 
                     </div>
                 </div>

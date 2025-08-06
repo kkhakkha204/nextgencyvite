@@ -88,6 +88,18 @@ const AboutUsSection = () => {
         };
     }, []);
 
+    // Hàm xử lý smooth scroll đến contact section
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section ref={sectionRef} className="relative bg-white py-[60px] lg:py-[90px]">
             {/* Container */}
@@ -155,14 +167,14 @@ const AboutUsSection = () => {
                                 />
                             </div>
                         </Link>
-                        <Link
-                            to="/about#contact"
+                        <button
+                            onClick={scrollToContact}
                             className="relative flex items-center space-x-3 px-6 py-3.5 bg-white text-[15px] sm:text-[16px] text-black neu-shadow-xs rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
                         >
                             <span className="">
                                 Tư vấn ngay
                             </span>
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </div>
