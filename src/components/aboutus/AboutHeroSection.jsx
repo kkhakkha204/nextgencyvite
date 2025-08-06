@@ -153,7 +153,7 @@ const AboutHeroSection = () => {
     ];
 
     return (
-        <section ref={sectionRef} className="bg-white py-[60px] lg:py-[90px] lg:flex lg:items-center " ref={containerRef}>
+        <section className="bg-white py-[60px] lg:py-[90px] lg:flex lg:items-center " ref={containerRef}>
             <div className="max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 

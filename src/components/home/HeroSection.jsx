@@ -110,6 +110,18 @@ const HeroSection = () => {
         };
     }, []);
 
+    // Hàm xử lý smooth scroll đến contact section
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <section ref={sectionRef} className="relative min-h-[80vh] md:max-h-[750px] lg:max-h-[1200px] 2xl:max-h-[900px] w-full bg-white overflow-hidden pt-[60px] lg:pt-0">
             {/* Large centered logo background */}
@@ -164,15 +176,15 @@ const HeroSection = () => {
                                                     strokeWidth={2.5}/>
                                             </div>
                                         </Link>
-                                        <Link
-                                            to="/contact"
+                                        <button
+                                            onClick={scrollToContact}
                                             className="relative flex items-center space-x-3 px-6 py-1.5 bg-white text-[15px] sm:text-[16px] text-black neu-shadow-xs rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
 
                                         >
         <span className="">
             Tư vấn ngay
         </span>
-                                        </Link>
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -20,6 +20,7 @@ import { useSEO } from './hooks/useSEO';
 import SEOManager from './components/SEO/SEOManager';
 import { localBusinessSchema } from './components/SEO/schemas';
 import NewsListPage from "./pages/NewsListPage.jsx";
+import Contact from "./pages/Contact.jsx";
 
 // Router Content Component
 const RouterContent = () => {
@@ -50,6 +51,7 @@ const RouterContent = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/news" element={<NewsListPage />} />
+                    <Route path="/contact" element={<Contact />} />
 
                     {/* Các trang dịch vụ */}
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
@@ -60,6 +62,7 @@ const RouterContent = () => {
                     <Route path="/services/facebook-crm" element={<FacebookCrm />} />
                     <Route path="/services/marketing-outsource" element={<MarketingOutsource />} />
                     <Route path="/services/tick-xanh-facebook" element={<Tick />} />
+
                 </Routes>
             </main>
             <Footer />
