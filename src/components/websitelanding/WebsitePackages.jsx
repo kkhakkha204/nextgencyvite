@@ -1,5 +1,5 @@
 import React from 'react';
-import {Check, Star, Crown, ArrowRight} from 'lucide-react';
+import {Check, Star, Crown} from 'lucide-react';
 
 const WebsitePackages = () => {
     const basicFeatures = [
