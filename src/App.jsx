@@ -21,7 +21,8 @@ import SEOManager from './components/SEO/SEOManager';
 import { localBusinessSchema } from './components/SEO/schemas';
 import NewsListPage from "./pages/NewsListPage.jsx";
 import Contact from "./pages/Contact.jsx";
-
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 // Router Content Component
 const RouterContent = () => {
     const {
@@ -73,6 +74,8 @@ const RouterContent = () => {
                 onTransitionComplete={handleTransitionComplete}
                 logoSrc="/assets/images/header/navbarfavicon.png"
             />
+            <Analytics />
+            <SpeedInsights />
         </div>
     );
 };
