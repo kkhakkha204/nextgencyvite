@@ -42,7 +42,6 @@ const RouterContent = () => {
                     { name: 'format-detection', content: 'telephone=no' }
                 ]}
             />
-
             <Header />
             <main className="page-content pt-[70px] lg:pt-[85px]">
                 <Routes>

@@ -28,15 +28,6 @@ html {
     }
 }
 
-/* Color Variables */
-:root {
-  --cyan: #A4FCFF;
-  --purple: #C8A4FE;
-  --deep-purple: #5a37c0;
-  --white: #ffffff;
-  --black: #000000;
-}
-
 /* Font Family Setup */
 @layer base {
   * {

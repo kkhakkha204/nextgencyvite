@@ -328,8 +328,8 @@ const Header = () => {
                                                     onClick={toggleServiceDropdown}
                                                     className={`w-full flex items-center justify-between px-2 border-l-2 border-black text-left text-[14px] font-medium transition-all duration-300 ${
                                                         isActiveRoute(item.path)
-                                                            ? 'bg-black text-white shadow-lg'
-                                                            : 'text-black hover:bg-gray-50'
+                                                            ? ' text-[#c08dfe] border-[#c08dfe]'
+                                                            : 'text-black '
                                                     }`}
                                                 >
                                                     <span>{item.name}</span>
@@ -458,7 +458,7 @@ const Header = () => {
                                                 to={item.path}
                                                 className={`block px-2 border-l-2 border-black text-[14px] font-medium transition-all duration-200  ${
                                                     isActiveRoute(item.path)
-                                                        ? 'bg-black text-white shadow-lg'
+                                                        ? 'text-[#c08dfe] border-[#c08dfe]'
                                                         : 'text-black '
                                                 }`}
                                             >

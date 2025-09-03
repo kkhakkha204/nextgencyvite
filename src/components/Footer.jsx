@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -81,7 +82,7 @@ const Footer = () => {
                         <ul className="space-y-3">
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
                                 <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
-                                <a href="#" className="hover:text-white">Dịch vụ Facebook Ads</a>
+                                <Link to="/facebook-ads" className="hover:text-white">Dịch vụ Facebook Ads</Link>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
                                 <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
