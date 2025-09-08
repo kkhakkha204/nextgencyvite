@@ -78,7 +78,7 @@ const Header = () => {
                 { name: 'Tick Xanh Facebook', path: '/services/tick-xanh-facebook', icon: CheckCircle },
             ]
         },
-        { name: 'Case Studies', path: '/projects' },
+        { name: 'Dự án', path: '/projects' },
         { name: 'Tin tức', path: '/news' },
     ];
 
