@@ -138,7 +138,7 @@ const AboutHeroSection = () => {
             title: "Strategy",
             subtitle: "Trẻ Trung",
             description: "Data-driven approaches for measurable outcomes",
-            style: "bg-white text-black",
+            style: "bg-white text-black border border-black/20",
             position: "left-10 top-20",
             mobilePosition: "top-20 left-32"
         },
@@ -176,7 +176,7 @@ const AboutHeroSection = () => {
                         </span>
                             <h1 ref={titleRef} className="text-[38px] md:text-[32px] lg:text-[64px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
                                 Đối tác
-                                <span className="font-archivo block text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c08dfe] ">
+                                <span className="font-archivo block text-black ">
                   chuyển đổi số đa năng
                 </span>
                             </h1>

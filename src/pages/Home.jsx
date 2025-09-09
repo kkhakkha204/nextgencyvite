@@ -34,8 +34,6 @@ const Home = () => {
                 <ServicesSection/>
                 <TestimonialsSection/>
 
-                <ConsultationSectionPrimary/>
-
             </div>
         </>
 
