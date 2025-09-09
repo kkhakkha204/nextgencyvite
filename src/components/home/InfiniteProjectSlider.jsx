@@ -52,17 +52,14 @@ const InfiniteProjectSlider = () => {
                                 className="flex-shrink-0 px-2 h-full flex items-center"
                             >
                                 {/* Project card */}
-                                <div className="relative h-[160px] md:h-[260px] lg:h-[300px] w-[200px] sm:w-[280px] md:w-[360px] lg:w-[440px] group">
+                                <div className="relative h-[160px] md:h-[260px] lg:h-[300px] w-[200px] sm:w-[280px] md:w-[360px] lg:w-[440px]">
                                     {/* Image container với aspect ratio cố định */}
-                                    <div className="relative h-full w-full overflow-hidden rounded-lg">
+                                    <div className="relative h-full w-full overflow-hidden rounded-md">
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                            className="h-full w-full object-cover"
                                         />
-
-                                        {/* Overlay gradient subtle */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60"></div>
                                     </div>
                                 </div>
                             </div>

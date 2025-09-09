@@ -8,7 +8,6 @@ const About = () => {
         <div>
             <AboutHeroSection />
             <MyStorySection/>
-            <ConsultationSectionPrimary/>
         </div>
     );
 };

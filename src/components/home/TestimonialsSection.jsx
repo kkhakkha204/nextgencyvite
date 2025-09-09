@@ -137,107 +137,11 @@ const TestimonialsSection = () => {
                 ease: "power2.out"
             }, "-=0.4");
 
-        // Animation cho cards khi xuất hiện
-        const animateCards = () => {
-            const visibleCards = cardsRef.current.filter(card => card);
-            gsap.fromTo(visibleCards,
-                {
-                    y: 20,
-                    scale: 0.95
-                },
-                {
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.6,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                }
-            );
-        };
-
-        // Gọi animateCards sau khi carousel container được animate
-        mainTl.call(animateCards);
-
         // Cleanup function
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
-
-    // Animation khi chuyển slide
-    useEffect(() => {
-        const visibleCards = cardsRef.current.filter(card => card);
-        if (visibleCards.length > 0) {
-            gsap.fromTo(visibleCards,
-                {
-                    y: 10,
-                    scale: 0.98
-                },
-                {
-                    y: 0,
-                    scale: 1,
-                    duration: 0.4,
-                    stagger: 0.1,
-                    ease: "power2.out",
-                    delay: 0.1
-                }
-            );
-        }
-    }, [currentIndex]);
-
-    // Setup hover effects cho cards
-    useEffect(() => {
-        const cards = cardsRef.current.filter(card => card);
-
-        cards.forEach(card => {
-            if (!card) return;
-
-            const handleMouseEnter = () => {
-                gsap.to(card, {
-                    rotation: 2,
-                    scale: 1.02,
-                    duration: 0.2,
-                    ease: "power2.out"
-                });
-
-                // Shine effect
-                const shine = card.querySelector('.shine-effect');
-                if (shine) {
-                    gsap.fromTo(shine,
-                        {
-                            x: '-100%',
-                            opacity: 0
-                        },
-                        {
-                            x: '100%',
-                            opacity: 1,
-                            duration: 0.8,
-                            ease: "power2.inOut"
-                        }
-                    );
-                }
-            };
-
-            const handleMouseLeave = () => {
-                gsap.to(card, {
-                    rotation: 0,
-                    scale: 1,
-                    duration: 0.2,
-                    ease: "power2.out"
-                });
-            };
-
-            card.addEventListener('mouseenter', handleMouseEnter);
-            card.addEventListener('mouseleave', handleMouseLeave);
-
-            // Cleanup
-            return () => {
-                card.removeEventListener('mouseenter', handleMouseEnter);
-                card.removeEventListener('mouseleave', handleMouseLeave);
-            };
-        });
-    }, [currentIndex]);
 
     // Auto-play carousel
     useEffect(() => {
@@ -306,12 +210,12 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* Main Content Container */}
-                <div ref={mainContainerRef} className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-8 p-4 rounded-xl bg-gradient-to-br from-[#2B144D] via-black to-[#2B144D]">
+                <div ref={mainContainerRef} className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-8 p-4 rounded-md bg-gradient-to-br from-[#2B144D] via-black to-[#2B144D]">
                     {/* Left Column - Description & CTA */}
                     <div ref={leftColumnRef} className="lg:col-span-1 flex flex-col justify-between">
                         <div className="mb-6 lg:mb-0 p-4">
                             <p className="text-[15px] lg:text-[18px] text-white text-justify">
-                                Chúng tôi tự hào về những phản hồi <strong>tích cực</strong> từ khách hàng,
+                                Chúng tôi tự hào về những phản hồi tích cực từ khách hàng,
                                 là động lực để Nextgency không ngừng phát triển.
                             </p>
                         </div>
@@ -340,16 +244,16 @@ const TestimonialsSection = () => {
                                                     <div
                                                         key={testimonial.id}
                                                         ref={el => cardsRef.current[slideIndex * itemsPerSlide + cardIndex] = el}
-                                                        className="relative bg-white rounded-lg p-8 lg:p-12 shadow-md shadow-white transition-all duration-300 hover:border-[#c08dfe]/20 group flex flex-col justify-between min-h-[280px] overflow-hidden cursor-pointer"
+                                                        className="relative bg-white rounded-sm p-8 lg:p-12 transition-all  group flex flex-col justify-between min-h-[280px] overflow-hidden"
                                                     >
                                                         {/* Shine Effect */}
-                                                        <div className="shine-effect absolute inset-0 bg-gradient-to-r from-transparent via-[#2B144D]/40 to-transparent transform -translate-x-full opacity-0"></div>
+                                                        <div className=" transform -translate-x-full opacity-0"></div>
 
                                                         {/* Top Section - Quote Icon & Content */}
                                                         <div className="relative z-10">
                                                             {/* Quote Icon */}
                                                             <div className="mb-4">
-                                                                <Quote className="w-8 h-8 text-[#c08dfe] fill-[#c08dfe]"/>
+                                                                <Quote className="w-8 h-8 text-[#2B144D] fill-[#2B144D]"/>
                                                             </div>
 
                                                             {/* Content */}
@@ -359,11 +263,8 @@ const TestimonialsSection = () => {
                                                         </div>
 
                                                         {/* Bottom Section - Author Info */}
-                                                        <div className="pt-4 border-t border-gray-400 relative z-10 mt-6">
-                                                            <p className="text-black font-medium text-[14px] lg:text-[16px]">
-                                                                {testimonial.author}
-                                                            </p>
-                                                            <p className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] uppercase tracking-widest">
+                                                        <div className="pt-4 border-t border-gray-600 relative z-10 mt-6">
+                                                            <p className="text-[11px] sm:text-[13px] font-archivo font-medium text-[#2B144D] uppercase tracking-widest">
                                                                 {testimonial.company}
                                                             </p>
                                                         </div>
@@ -376,14 +277,7 @@ const TestimonialsSection = () => {
                         </div>
 
                         {/* Navigation Arrows - Below Carousel */}
-                        <div ref={navigationRef} className="flex justify-center items-center gap-3 mt-4">
-                            <button
-                                onClick={goToPrevious}
-                                className=" border-2 border-white rounded-full p-3 text-white transition-all duration-300 group hover:bg-white"
-                                aria-label="Previous testimonial"
-                            >
-                                <ChevronLeft className="w-5 h-5 text-white group-hover:text-black" />
-                            </button>
+                        <div ref={navigationRef} className="flex justify-end gap-3 mt-4 mr-4">
 
 
                             <button

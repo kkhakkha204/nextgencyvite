@@ -22,7 +22,6 @@ const ServicesSection = () => {
     const headerRef = useRef(null);
     const labelRef = useRef(null);
     const titleRef = useRef(null);
-    const descriptionRef = useRef(null);
     const tabsRef = useRef(null);
     const contentRef = useRef(null);
     const imageRef = useRef(null);
@@ -32,7 +31,7 @@ const ServicesSection = () => {
             id: 0,
             name: 'Automation - Ai - Data',
             icon: <Bot className="w-4 h-4" />,
-            title: 'Dịch vụ Automation - Ai - Data',
+            title: 'Automation - ai - data',
             description: 'Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình.',
             image: '/assets/images/test.webp',
             technologies: [
@@ -49,7 +48,7 @@ const ServicesSection = () => {
             id: 1,
             name: 'Google Ads',
             icon: <Target className="w-4 h-4" />,
-            title: 'Dịch vụ Google ads',
+            title: 'Google ads',
             description: 'Nextgency triển khai Google Ads với đa dạng chiến dịch để đưa doanh nghiệp lên top 1 trong tâm trí người dùng khi nhắc tới lĩnh vực của bạn.',
             image: '/assets/images/test.webp',
             technologies: [
@@ -66,7 +65,7 @@ const ServicesSection = () => {
             id: 2,
             name: 'Facebook Ads',
             icon: <Smartphone className="w-4 h-4" />,
-            title: 'Dịch vụ Facebook Ads',
+            title: 'Facebook ads',
             description: 'Dịch vụ Facebook Ads từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất Facebook đầy cơ hội.',
             image: '/assets/images/test.webp',
             technologies: [
@@ -83,7 +82,7 @@ const ServicesSection = () => {
             id: 3,
             name: 'Website & Landing Page',
             icon: <Globe className="w-4 h-4" />,
-            title: 'Dịch vụ xây dựng Website & Landing Page',
+            title: 'Website & landing page',
             description: 'Website & Landing Page không chỉ là nơi khách hàng "ghé chơi", mà là đích đến giúp họ ở lại – chuyển đổi – và quay lại. Nextgency thiết kế nền tảng số hiện đại với giải pháp trọn gói.',
             image: '/assets/images/test.webp',
             technologies: [
@@ -100,7 +99,7 @@ const ServicesSection = () => {
             id: 4,
             name: 'TikTok Ads',
             icon: <Music className="w-4 h-4" />,
-            title: 'Dịch vụ Tiktok Ads',
+            title: 'Tiktok ads',
             description: 'Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên nền tảng Tiktok để mang về doanh thu và độ nhận diện phủ khắp..',
             image: '/assets/images/test.webp',
             technologies: [
@@ -117,7 +116,7 @@ const ServicesSection = () => {
             id: 5,
             name: 'Facebook Dataset & CRM',
             icon: <Users className="w-4 h-4" />,
-            title: 'Dịch vụ Facebook Dataset & CRM',
+            title: 'Facebook dataset & crm',
             description: 'Trong thời đại dữ liệu là "mỏ kim cương", Nextgency giúp doanh nghiệp biến từng hành vi, từng tương tác thành đòn bẩy quảng cáo hiệu quả qua dịch vụ Facebook Dataset & CRM.',
             image: '/assets/images/test.webp',
             technologies: [
@@ -134,7 +133,7 @@ const ServicesSection = () => {
             id: 6,
             name: 'Thuê Phòng Marketing',
             icon: <BarChart3 className="w-4 h-4"/>,
-            title: 'Dịch vụ phòng Marketing thuê ngoài',
+            title: 'Phòng marketing thuê ngoài',
             description: 'Đem chất xám từ đội ngũ của chúng tôi để rót vào những dự án đầy tiềm năng của các doanh nghiệp chính là phương chấm cống hiến của Nextgency khi cung cấp dịch vụ Phòng Marketing thuê ngoài.',
             image: '/assets/images/test.webp',
             technologies: [
@@ -151,7 +150,7 @@ const ServicesSection = () => {
             id: 7,
             name: 'Tick Xanh Facebook',
             icon: <CheckCircle className="w-4 h-4" />,
-            title: 'Dịch vụ lên Tick Xanh Facebook',
+            title: 'Tick xanh facebook',
             description: 'Nextgency cung cấp dịch vụ đăng ký tích xanh Facebook trọn gói từ A–Z, giúp khách hàng rút ngắn thời gian xét duyệt, chuẩn hóa hồ sơ và tăng tỷ lệ được phê duyệt thực tế.',
             image: '/assets/images/test.webp',
             technologies: [
@@ -171,12 +170,11 @@ const ServicesSection = () => {
         const section = sectionRef.current;
         const label = labelRef.current;
         const title = titleRef.current;
-        const description = descriptionRef.current;
         const tabs = tabsRef.current;
         const content = contentRef.current;
 
         // Set initial states
-        gsap.set([label, title, description, tabs, content], {
+        gsap.set([label, title, tabs, content], {
             opacity: 0,
             y: 40
         });
@@ -205,12 +203,6 @@ const ServicesSection = () => {
                 duration: 0.8,
                 ease: "power2.out"
             }, "-=0.4")
-            .to(description, {
-                opacity: 1,
-                y: 0,
-                duration: 0.7,
-                ease: "power2.out"
-            }, "-=0.5")
             .to(tabs, {
                 opacity: 1,
                 y: 0,
@@ -327,17 +319,6 @@ const ServicesSection = () => {
         };
     }, [activeTab]);
 
-    const scrollToContact = (e) => {
-        e.preventDefault();
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    };
-
     return (
         <section ref={sectionRef} className="bg-gradient-to-t from-black via-black to-[#2B144D] py-[60px] lg:py-[90px]">
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -351,9 +332,6 @@ const ServicesSection = () => {
                     <h2 ref={titleRef} className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-white mb-1 uppercase">
                         Dịch vụ từ Nextgency
                     </h2>
-                    <p ref={descriptionRef} className="text-gray-400 text-[15px] lg:text-[18px] max-w-2xl">
-                        Cung cấp <span className="text-white">giải pháp</span> công nghệ <span className="text-white">toàn diện</span>, từ thiết kế đến triển khai.
-                    </p>
                 </div>
 
                 {/* Tabs */}
@@ -363,9 +341,9 @@ const ServicesSection = () => {
                             <button
                                 key={service.id}
                                 onClick={() => setActiveTab(index)}
-                                className={`flex items-center gap-1 px-4 py-2.5 rounded-full transition-all duration-300 text-[12px] lg:text-[15px] ${
+                                className={`flex items-center gap-1 px-4 py-2.5 rounded-sm transition-all duration-300 text-[12px] lg:text-[15px] ${
                                     activeTab === index
-                                        ? 'bg-white text-black neu-shadow-xs'
+                                        ? 'bg-white text-black'
                                         : 'bg-white/5 text-gray-100 hover:bg-white/10 border border-white/25'
                                 }`}
                             >
@@ -392,7 +370,7 @@ const ServicesSection = () => {
                                     <div ref={contentRef} className="">
                                         {/* Row 1: Title */}
                                         <h3 className="animate-content text-[18px] md:text-[24px] lg:text-[32px] font-medium text-white mb-4 sm:mb-8 border-b border-gray-100 pb-4">
-                                            {service.title}
+
                                         </h3>
 
                                         {/* Row 2: Two columns */}
@@ -406,23 +384,13 @@ const ServicesSection = () => {
                                                     </p>
                                                 </div>
 
-                                                <div ref={imageRef} className="animate-content relative h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden p-2 bg-white/10 backdrop-blur-2xl cursor-pointer group">
-                                                    {/* Overlay effect */}
-                                                    <div className="image-overlay absolute inset-2 bg-gradient-to-r from-black to-[#2B144D] rounded-lg z-10"></div>
+                                                <div ref={imageRef} className="animate-content relative h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden group">
 
                                                     <img
                                                         src={service.image}
                                                         alt={service.name}
                                                         className="w-full h-full object-cover rounded-lg transition-all duration-700"
                                                     />
-
-                                                    {/* Shine effect */}
-                                                    <div className="absolute inset-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
-                                                    </div>
-
-                                                    {/* Border glow effect */}
-                                                    <div className="absolute inset-1 rounded-xl border border-white/20 group-hover:border-[#c08dfe]/50 transition-colors duration-500"></div>
                                                 </div>
                                             </div>
 
@@ -467,7 +435,7 @@ const ServicesSection = () => {
                                                     <div className="flex items-center space-x-2 ">
                                                         <Link
                                                             to={service.link}
-                                                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300  hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                                                            className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:scale-105 group animate-gradient-shift"
                                                         >
                                                             <span className="">
                                                                 Xem thêm
@@ -479,14 +447,6 @@ const ServicesSection = () => {
                                                                 />
                                                             </div>
                                                         </Link>
-                                                        <button
-                                                            onClick={scrollToContact}
-                                                            className="relative flex items-center space-x-3 px-6 py-3.5 text-[15px] sm:text-[16px] text-white border-x border-white rounded-full transition-all duration-300 hover:shadow-gray-300 hover:scale-105 group"
-                                                        >
-                                                            <span className="">
-                                                                Tư vấn ngay
-                                                            </span>
-                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

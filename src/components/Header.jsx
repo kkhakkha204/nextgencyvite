@@ -135,21 +135,21 @@ const Header = () => {
                                                     className={`px-6 py-2.5 rounded-full text-[16px] font-medium transition-all duration-200 flex items-center space-x-1 ${
                                                         isActiveRoute(item.path)
                                                             ? 'bg-black text-white'
-                                                            : 'text-black hover:bg-[#e9d5ff]'
+                                                            : 'text-black hover:bg-black hover:text-white'
                                                     }`}
                                                 >
                                                     <span>{item.name}</span>
                                                     <Dot className="w-6 h-6" />
                                                 </button>
                                                 {/* Dropdown Menu */}
-                                                <div className="absolute top-full left-0 mt-2 w-[480px] bg-white rounded-3xl border border-[#d1d9ef] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                                <div className="absolute top-full left-0 mt-2 w-[480px] bg-white rounded-3xl  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                                                     <div className="p-2.5 space-y-2">
                                                         {/* First row: AI & Data, Google Ads */}
                                                         <div className="grid grid-cols-2 gap-2">
                                                             <Link
                                                                 to="/services/ai-data"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/ai-data') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                    isActiveRoute('/services/ai-data') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                                 }`}
                                                             >
                                                                 <Bot className="w-3.5 h-3.5" />
@@ -157,8 +157,8 @@ const Header = () => {
                                                             </Link>
                                                             <Link
                                                                 to="/services/google-ads"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/google-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                    isActiveRoute('/services/google-ads') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                                 }`}
                                                             >
                                                                 <Target className="w-3.5 h-3.5" />
@@ -170,8 +170,8 @@ const Header = () => {
                                                         <div className="grid grid-cols-2 gap-2">
                                                             <Link
                                                                 to="/services/facebook-ads"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/facebook-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                    isActiveRoute('/services/facebook-ads') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                                 }`}
                                                             >
                                                                 <Smartphone className="w-3.5 h-3.5" />
@@ -179,8 +179,8 @@ const Header = () => {
                                                             </Link>
                                                             <Link
                                                                 to="/services/tiktok-ads"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/tiktok-ads') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                    isActiveRoute('/services/tiktok-ads') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                                 }`}
                                                             >
                                                                 <Music className="w-3.5 h-3.5" />
@@ -192,8 +192,8 @@ const Header = () => {
                                                         <div className="grid grid-cols-2 gap-2">
                                                             <Link
                                                                 to="/services/facebook-crm"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/facebook-crm') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                    isActiveRoute('/services/facebook-crm') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                                 }`}
                                                             >
                                                                 <Users className="w-3.5 h-3.5" />
@@ -201,8 +201,8 @@ const Header = () => {
                                                             </Link>
                                                             <Link
                                                                 to="/services/tick-xanh-facebook"
-                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                    isActiveRoute('/services/tick-xanh-facebook') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                                className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                    isActiveRoute('/services/tick-xanh-facebook') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                                 }`}
                                                             >
                                                                 <CheckCircle className="w-3.5 h-3.5" />
@@ -213,8 +213,8 @@ const Header = () => {
                                                         {/* Other services - one per row */}
                                                         <Link
                                                             to="/services/website-landing-page"
-                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                isActiveRoute('/services/website-landing-page') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                isActiveRoute('/services/website-landing-page') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                             }`}
                                                         >
                                                             <Globe className="w-3.5 h-3.5" />
@@ -223,8 +223,8 @@ const Header = () => {
 
                                                         <Link
                                                             to="/services/marketing-outsource"
-                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border border-[#d1d9ef] ${
-                                                                isActiveRoute('/services/marketing-outsource') ? 'text-white bg-black hover:bg-black' : 'text-gray-800 hover:bg-[#e9d5ff]'
+                                                            className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                isActiveRoute('/services/marketing-outsource') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
                                                             }`}
                                                         >
                                                             <BarChart3 className="w-3.5 h-3.5" />
@@ -239,7 +239,7 @@ const Header = () => {
                                                 className={`px-6 py-2.5 rounded-full text-[16px] font-medium transition-all duration-200 flex items-center ${
                                                     isActiveRoute(item.path)
                                                         ? 'bg-black text-white'
-                                                        : 'text-black hover:bg-[#e9d5ff]'
+                                                        : 'text-black hover:bg-black hover:text-white'
                                                 }`}
                                             >
                                                 {item.name}
@@ -254,12 +254,12 @@ const Header = () => {
                         <div className="hidden xl:flex items-center space-x-4">
                             <button
                                 onClick={() => setIsPopupOpen(true)}
-                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                                className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:scale-105 group animate-gradient-shift"
                                 style={{ backgroundSize: '200% 200%' }}
                             >
                                 <span>Hợp tác ngay</span>
                                 <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
-                                    <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
+                                    <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.3}/>
                                 </div>
                             </button>
 
@@ -328,7 +328,7 @@ const Header = () => {
                                                     onClick={toggleServiceDropdown}
                                                     className={`w-full flex items-center justify-between px-2 border-l-2 border-black text-left text-[14px] font-medium transition-all duration-300 ${
                                                         isActiveRoute(item.path)
-                                                            ? ' text-[#c08dfe] border-[#c08dfe]'
+                                                            ? ' '
                                                             : 'text-black '
                                                     }`}
                                                 >
@@ -344,16 +344,16 @@ const Header = () => {
                                                         ? 'max-h-[500px] opacity-100 mt-4 transform translate-y-0'
                                                         : 'max-h-0 opacity-0 mt-0 transform -translate-y-2'
                                                 } overflow-hidden`}>
-                                                    <div className="py-3 px-2 rounded-3xl ">
+                                                    <div className="pt-6 px-2 rounded-3xl ">
                                                         <div className="space-y-2">
                                                             {/* First row: AI & Data, Google Ads */}
                                                             <div className="grid grid-cols-2 gap-2">
                                                                 <Link
                                                                     to="/services/ai-data"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/ai-data')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <Bot className="w-3 h-3 flex-shrink-0" />
@@ -361,10 +361,10 @@ const Header = () => {
                                                                 </Link>
                                                                 <Link
                                                                     to="/services/google-ads"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/google-ads')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <Target className="w-3 h-3 flex-shrink-0" />
@@ -376,10 +376,10 @@ const Header = () => {
                                                             <div className="grid grid-cols-2 gap-3">
                                                                 <Link
                                                                     to="/services/facebook-ads"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/facebook-ads')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <Smartphone className="w-3 h-3 flex-shrink-0" />
@@ -387,10 +387,10 @@ const Header = () => {
                                                                 </Link>
                                                                 <Link
                                                                     to="/services/tiktok-ads"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/tiktok-ads')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <Music className="w-3 h-3 flex-shrink-0" />
@@ -401,10 +401,10 @@ const Header = () => {
                                                             <div className="grid grid-cols-2 gap-3">
                                                                 <Link
                                                                     to="/services/facebook-crm"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/facebook-crm')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <Users className="w-3 h-3 flex-shrink-0" />
@@ -412,10 +412,10 @@ const Header = () => {
                                                                 </Link>
                                                                 <Link
                                                                     to="/services/tick-xanh-facebook"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/tick-xanh-facebook')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <CheckCircle className="w-3 h-3 flex-shrink-0" />
@@ -427,10 +427,10 @@ const Header = () => {
                                                             <div className="space-y-2">
                                                                 <Link
                                                                     to="/services/website-landing-page"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/website-landing-page')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <Globe className="w-3 h-3 flex-shrink-0" />
@@ -439,10 +439,10 @@ const Header = () => {
 
                                                                 <Link
                                                                     to="/services/marketing-outsource"
-                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#d1d9ef] transition-all duration-200 ${
+                                                                    className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                         isActiveRoute('/services/marketing-outsource')
-                                                                            ? 'text-white bg-black hover:bg-black shadow-md'
-                                                                            : 'text-gray-800 hover:bg-white hover:shadow-sm'
+                                                                            ? 'text-white bg-black hover:bg-black '
+                                                                            : 'text-black hover:bg-white '
                                                                     }`}
                                                                 >
                                                                     <BarChart3 className="w-3 h-3 flex-shrink-0" />
@@ -458,7 +458,7 @@ const Header = () => {
                                                 to={item.path}
                                                 className={`block px-2 border-l-2 border-black text-[14px] font-medium transition-all duration-200  ${
                                                     isActiveRoute(item.path)
-                                                        ? 'text-[#c08dfe] border-[#c08dfe]'
+                                                        ? ''
                                                         : 'text-black '
                                                 }`}
                                             >
@@ -476,14 +476,14 @@ const Header = () => {
                             }}>
                                 <button
                                     onClick={() => setIsPopupOpen(true)}
-                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg animate-gradient-shift"
+                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] text-[15px] text-white rounded-full font-medium transition-all duration-300 animate-gradient-shift"
                                     style={{
                                         backgroundSize: '200% 100%'
                                     }}
                                 >
                                     <span className="relative z-10">Hợp tác ngay</span>
                                     <div className="w-9 h-9 bg-black rounded-full flex items-center justify-center neu-shadow-xs relative z-10">
-                                        <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 hover:rotate-45" />
+                                        <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 hover:rotate-45" strokeWidth={2.3}/>
                                     </div>
 
                                     {/* Gradient overlay for extra shimmer effect */}

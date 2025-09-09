@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'archivo': ['Archivo', 'sans-serif'],
+        'fzpoppins': ['FzPoppins', 'sans-serif'],
       },
     },
   },

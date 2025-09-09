@@ -183,7 +183,7 @@ const AboutHeroSection = () => {
                         </div>
 
                         <p ref={descriptionRef} className="text-[15px] lg:text-[18px] text-black">
-                            Nextgency là đối tác chiến lược của bạn trong kỷ nguyên số. Chúng tôi cung cấp giải pháp <strong>chuyển đổi số</strong>, giúp doanh nghiệp bạn tăng tốc phát triển.
+                            Nextgency là đối tác chiến lược của bạn trong kỷ nguyên số. Chúng tôi cung cấp giải pháp chuyển đổi số, giúp doanh nghiệp bạn tăng tốc phát triển.
                         </p>
 
                         <div ref={buttonsRef} className=" mt-2">
@@ -217,9 +217,9 @@ const AboutHeroSection = () => {
                                 <div
                                     key={index}
                                     className={`absolute ${card.mobilePosition} left-0 right-0 mx-auto
-                w-[220px] h-[180px] rounded-lg p-4
+                w-[220px] h-[180px] rounded-sm p-4
                 flex flex-col justify-between ${card.style}
-                shadow-lg`} // Thêm shadow để tạo độ sâu
+                `} // Thêm shadow để tạo độ sâu
                                     style={{
                                         top: `${index * 85}px`, // Offset theo chiều dọc thay vì translateZ
                                         left: `${index * 25}px`, // Offset nhẹ theo chiều ngang
@@ -256,7 +256,7 @@ const AboutHeroSection = () => {
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
-                                    className={`absolute ${card.position} w-[320px] h-[320px] rounded-3xl 
+                                    className={`absolute ${card.position} w-[320px] h-[320px] rounded-sm
                     shadow-2xl p-8 flex flex-col justify-between ${card.style} 
                     transition-transform duration-300 ease-out cursor-pointer`}
                                     style={{

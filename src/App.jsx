@@ -12,7 +12,6 @@ import { usePageTransition } from './hooks/usePageTransition';
 import FacebookAds from "./pages/services/FacebookAds.jsx";
 import TiktokAds from "./pages/services/TiktokAds.jsx";
 import FacebookCrm from "./pages/services/FacebookCrm.jsx";
-import CustomCursor from "./components/CustomCursor.jsx";
 import MarketingOutsource from "./pages/services/MarketingOutsource.jsx";
 import About from "./pages/About.jsx";
 import Tick from "./pages/services/Tick.jsx";
@@ -64,7 +63,6 @@ const RouterContent = () => {
                 </Routes>
             </main>
             <Footer />
-            <CustomCursor/>
             {/* Page Transition */}
             <PageTransition
                 isTransitioning={isTransitioning}
