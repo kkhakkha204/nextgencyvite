@@ -138,7 +138,7 @@ const AboutHeroSection = () => {
             title: "Strategy",
             subtitle: "Trẻ Trung",
             description: "Data-driven approaches for measurable outcomes",
-            style: "bg-white text-black neu-shadow-xs",
+            style: "bg-white text-black",
             position: "left-10 top-20",
             mobilePosition: "top-20 left-32"
         },
@@ -191,7 +191,7 @@ const AboutHeroSection = () => {
                             <div className="flex items-center space-x-2 ">
                                 <button
                                     onClick={scrollToContact}
-                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group"
+                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:scale-105 group"
 
                                 >
         <span className="">
@@ -256,8 +256,7 @@ const AboutHeroSection = () => {
                             {cards.map((card, index) => (
                                 <div
                                     key={index}
-                                    className={`absolute ${card.position} w-[320px] h-[320px] rounded-sm
-                    shadow-2xl p-8 flex flex-col justify-between ${card.style} 
+                                    className={`absolute ${card.position} w-[320px] h-[320px] rounded-md p-8 flex flex-col justify-between ${card.style} 
                     transition-transform duration-300 ease-out cursor-pointer`}
                                     style={{
                                         transform: `
