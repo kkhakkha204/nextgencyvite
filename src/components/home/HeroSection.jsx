@@ -168,14 +168,7 @@ const HeroSection = () => {
                                 </div>
                             </div>
 
-                            {/* Column B - Image */}
-                            <div className="relative h-64 md:h-96 overflow-hidden rounded-md">
-                                <img
-                                    src="/assets/images/test.webp"
-                                    alt="Nextgency Innovation"
-                                    className="w-full h-full object-cover rounded-md"
-                                />
-                            </div>
+
                         </div>
                     </div>
                 </div>
