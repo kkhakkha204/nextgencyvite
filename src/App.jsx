@@ -20,6 +20,8 @@ import SEOManager from './components/SEO/SEOManager';
 import { localBusinessSchema } from './components/SEO/schemas';
 import NewsListPage from "./pages/NewsListPage.jsx";
 import Contact from "./pages/Contact.jsx";
+import Projects from "./pages/projects/Projects.jsx";
+import Portfolio from "./pages/projects/Portfolio.jsx";
 // Router Content Component
 const RouterContent = () => {
     const {
@@ -60,6 +62,9 @@ const RouterContent = () => {
                     <Route path="/services/marketing-outsource" element={<MarketingOutsource />} />
                     <Route path="/services/tick-xanh-facebook" element={<Tick />} />
 
+                    {/* Các trang dự án */}
+                    <Route path="/projects/all" element={<Projects />} />
+                    <Route path="/projects/portfolio" element={<Portfolio />} />
                 </Routes>
             </main>
             <Footer />
