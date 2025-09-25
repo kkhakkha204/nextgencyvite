@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search, Filter, Calendar, ChevronDown } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 const NewsListPage = () => {
     // Mock data
@@ -96,56 +96,24 @@ const NewsListPage = () => {
         }
     ];
 
-    const allCategories = [...new Set(mockNews.flatMap(news => news.categories))];
-    const allTags = [...new Set(mockNews.flatMap(news => news.tags))];
-
     // States
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedCategories, setSelectedCategories] = useState([]);
-    const [selectedTags, setSelectedTags] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const [showCategoryFilter, setShowCategoryFilter] = useState(false);
-    const [showTagFilter, setShowTagFilter] = useState(false);
     const itemsPerPage = 6;
 
-    // Filter logic
+    // Filter logic (only search)
     const filteredNews = useMemo(() => {
         return mockNews.filter(news => {
             const matchesSearch = news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 news.description.toLowerCase().includes(searchTerm.toLowerCase());
-
-            const matchesCategories = selectedCategories.length === 0 ||
-                selectedCategories.some(cat => news.categories.includes(cat));
-
-            const matchesTags = selectedTags.length === 0 ||
-                selectedTags.some(tag => news.tags.includes(tag));
-
-            return matchesSearch && matchesCategories && matchesTags;
+            return matchesSearch;
         });
-    }, [searchTerm, selectedCategories, selectedTags]);
+    }, [searchTerm]);
 
     const paginatedNews = filteredNews.slice(0, currentPage * itemsPerPage);
     const hasMore = filteredNews.length > currentPage * itemsPerPage;
 
     // Event handlers
-    const handleCategoryToggle = (category) => {
-        setSelectedCategories(prev =>
-            prev.includes(category)
-                ? prev.filter(c => c !== category)
-                : [...prev, category]
-        );
-        setCurrentPage(1);
-    };
-
-    const handleTagToggle = (tag) => {
-        setSelectedTags(prev =>
-            prev.includes(tag)
-                ? prev.filter(t => t !== tag)
-                : [...prev, tag]
-        );
-        setCurrentPage(1);
-    };
-
     const handleLoadMore = () => {
         setCurrentPage(prev => prev + 1);
     };
@@ -176,150 +144,85 @@ const NewsListPage = () => {
 
             {/* Main Content */}
             <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="lg:grid lg:grid-cols-12 lg:gap-6">
-                    {/* Sidebar - 30% */}
-                    <div className="lg:col-span-3 mb-4 lg:mb-0">
-                        <div className="sticky top-24 space-y-4 p-2 bg-gray-50 rounded-2xl">
-                            {/* Search */}
-                            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                                <div className="relative">
-                                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 w-5 h-5" />
-                                    <input
-                                        type="text"
-                                        placeholder="Tìm kiếm bài viết..."
-                                        value={searchTerm}
-                                        onChange={(e) => {
-                                            setSearchTerm(e.target.value);
-                                            setCurrentPage(1);
-                                        }}
-                                        className="w-full pl-10 pr-4 py-2 border border-gray-200 placeholder:text-gray-600 rounded-md focus:ring-2 focus:ring-purple-200 focus:border-transparent transition-colors"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Categories Filter */}
-                            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                                <button
-                                    onClick={() => setShowCategoryFilter(!showCategoryFilter)}
-                                    className="flex items-center justify-between w-full text-[14px] lg:text-[16px] font-medium text-black mb-4"
-                                >
-                                    <span>Danh mục</span>
-                                    <ChevronDown className={`w-4 h-4 transition-transform ${showCategoryFilter ? 'rotate-180' : ''}`} />
-                                </button>
-
-                                <div className={`space-y-2.5 ${showCategoryFilter ? 'block' : 'hidden'}`}>
-                                    {allCategories.map(category => (
-                                        <label key={category} className="flex items-center cursor-pointer group">
-                                            <input
-                                                type="checkbox"
-                                                checked={selectedCategories.includes(category)}
-                                                onChange={() => handleCategoryToggle(category)}
-                                                className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                                            />
-                                            <span className="ml-2 text-[13px] lg:text-[15px] text-gray-600 group-hover:text-gray-900 transition-colors">
-                        {category}
-                      </span>
-                                        </label>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Tags Filter */}
-                            <div className="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
-                                <button
-                                    onClick={() => setShowTagFilter(!showTagFilter)}
-                                    className="flex items-center justify-between w-full text-[14px] lg:text-[16px] font-medium text-black mb-4"
-                                >
-                                    <span>Tags</span>
-                                    <ChevronDown className={`w-4 h-4 transition-transform ${showTagFilter ? 'rotate-180' : ''}`} />
-                                </button>
-
-                                <div className={`flex flex-wrap gap-2 ${showTagFilter ? 'block' : 'hidden'}`}>
-                                    {allTags.map(tag => (
-                                        <button
-                                            key={tag}
-                                            onClick={() => handleTagToggle(tag)}
-                                            className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                                                selectedTags.includes(tag)
-                                                    ? 'bg-black text-white'
-                                                    : 'bg-gray-50 text-gray-600 hover:bg-gray-200 border border-gray-200'
-                                            }`}
-                                        >
-                                            {tag}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* News Grid - 70% */}
-                    <div className="lg:col-span-9">
-
-                        {/* News Grid */}
-                        {paginatedNews.length > 0 ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-6 p-2 bg-gray-50 rounded-2xl">
-                                {paginatedNews.map(news => (
-                                    <article key={news.id} className="bg-white rounded-xl overflow-hidden neu-shadow-inset-xs border border-gray-100 hover:shadow-lg transition-shadow duration-300 group">
-                                        {/* Thumbnail */}
-                                        <div className="aspect-[16/10] overflow-hidden p-1.5">
-                                            <img
-                                                src={news.thumbnail}
-                                                alt={news.title}
-                                                className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
-                                            />
-                                        </div>
-
-                                        {/* Content */}
-                                        <div className="p-4">
-                                            {/* Categories */}
-                                            <div className="flex flex-wrap gap-4 mb-1">
-                                                {news.categories.map(category => (
-                                                    <span
-                                                        key={category}
-                                                        className="text-[#c08dfe] text-[10px] lg:text-[11px] font-archivo font-medium uppercase tracking-widest"
-                                                    >
-                            {category}
-                          </span>
-                                                ))}
-                                            </div>
-
-                                            {/* Title */}
-                                            <h3 className="text-[14px] lg:text-[16px] font-archivo font-medium uppercase text-black mb-3 line-clamp-2 group-hover:text-[#c08dfe] transition-colors">
-                                                {news.title}
-                                            </h3>
-
-                                            {/* Date */}
-                                            <div className="flex items-center text-gray-600 text-sm">
-                                                {formatDate(news.date)}
-                                            </div>
-                                        </div>
-                                    </article>
-                                ))}
-                            </div>
-                        ) : (
-                            <div className="text-center py-16">
-                                <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                                    <Search className="w-8 h-8 text-gray-400" />
-                                </div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">Không tìm thấy bài viết</h3>
-                                <p className="text-gray-600">Hãy thử thay đổi từ khóa tìm kiếm hoặc bộ lọc</p>
-                            </div>
-                        )}
-
-                        {/* Load More Button */}
-                        {hasMore && (
-                            <div className="text-center mt-8">
-                                <button
-                                    onClick={handleLoadMore}
-                                    className="inline-flex items-center px-8 py-4 bg-[#c08dfe] border border-gray-200 rounded-xl text-white font-medium hover:bg-gray-50 hover:border-gray-300 transition-colors shadow-sm"
-                                >
-                                    Xem thêm bài viết
-                                </button>
-                            </div>
-                        )}
+                {/* Search Bar */}
+                <div className="max-w-md mx-auto mb-8">
+                    <div className="relative">
+                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 w-5 h-5" />
+                        <input
+                            type="text"
+                            placeholder="Tìm kiếm bài viết..."
+                            value={searchTerm}
+                            onChange={(e) => {
+                                setSearchTerm(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className="w-full pl-10 pr-4 py-3 border border-gray-200 placeholder:text-gray-600 rounded-xl focus:ring-2 focus:ring-purple-200 focus:border-transparent transition-colors shadow-sm"
+                        />
                     </div>
                 </div>
+
+                {/* News Grid */}
+                {paginatedNews.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-2 bg-gray-50 rounded-2xl">
+                        {paginatedNews.map(news => (
+                            <article key={news.id} className="bg-white rounded-xl overflow-hidden neu-shadow-inset-xs border border-gray-100 hover:shadow-lg transition-shadow duration-300 group">
+                                {/* Thumbnail */}
+                                <div className="aspect-[16/10] overflow-hidden p-1.5">
+                                    <img
+                                        src={news.thumbnail}
+                                        alt={news.title}
+                                        className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                </div>
+
+                                {/* Content */}
+                                <div className="p-4">
+                                    {/* Categories */}
+                                    <div className="flex flex-wrap gap-4 mb-1">
+                                        {news.categories.map(category => (
+                                            <span
+                                                key={category}
+                                                className="text-[#c08dfe] text-[10px] lg:text-[11px] font-archivo font-medium uppercase tracking-widest"
+                                            >
+                                {category}
+                              </span>
+                                        ))}
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 className="text-[14px] lg:text-[16px] font-archivo font-medium uppercase text-black mb-3 line-clamp-2 group-hover:text-[#c08dfe] transition-colors">
+                                        {news.title}
+                                    </h3>
+
+                                    {/* Date */}
+                                    <div className="flex items-center text-gray-600 text-sm">
+                                        {formatDate(news.date)}
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="text-center py-16">
+                        <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
+                            <Search className="w-8 h-8 text-gray-400" />
+                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Không tìm thấy bài viết</h3>
+                        <p className="text-gray-600">Hãy thử thay đổi từ khóa tìm kiếm</p>
+                    </div>
+                )}
+
+                {/* Load More Button */}
+                {hasMore && (
+                    <div className="text-center mt-8">
+                        <button
+                            onClick={handleLoadMore}
+                            className="inline-flex items-center px-8 py-4 bg-[#c08dfe] border border-gray-200 rounded-xl text-white font-medium hover:bg-gray-50 hover:border-gray-300 transition-colors shadow-sm"
+                        >
+                            Xem thêm bài viết
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
     );

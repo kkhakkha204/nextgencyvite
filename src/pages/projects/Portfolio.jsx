@@ -15,7 +15,7 @@ const Portfolio = () => {
     };
 
     return (
-        <div className="w-full space-y-2 md:space-y-4">
+        <div className="w-full max-w-[1380px] xl:py-[20px] mx-auto space-y-2 md:space-y-4">
             {portfolioImages.map((image) => (
                 <div key={image.id} className="w-full">
                     {imageErrors[image.id] ? (
