@@ -28,8 +28,6 @@ const Home = () => {
             <div className="home-page">
                 <HeroSection />
                 <InfiniteLogoSlider/>
-                <InfiniteProjectSlider/>
-                <InfiniteServiceSlider/>
                 <AboutUsSection/>
                 <ServicesSection/>
                 <TestimonialsSection/>
