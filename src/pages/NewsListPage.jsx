@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const NewsListPage = () => {
     // Mock data
@@ -11,7 +11,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
             categories: ["Design", "Technology"],
             tags: ["web design", "AI", "trends"],
-            date: "2025-01-15"
+            date: "2025-01-15",
+            slug: "xu-huong-thiet-ke-web-2025"
         },
         {
             id: 2,
@@ -20,7 +21,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
             categories: ["Technology", "Development"],
             tags: ["react", "javascript", "frontend"],
-            date: "2025-01-12"
+            date: "2025-01-12",
+            slug: "react-19-features"
         },
         {
             id: 3,
@@ -29,7 +31,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
             categories: ["Marketing", "Business"],
             tags: ["digital marketing", "strategy", "business"],
-            date: "2025-01-10"
+            date: "2025-01-10",
+            slug: "chien-luoc-digital-marketing"
         },
         {
             id: 4,
@@ -38,7 +41,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop",
             categories: ["Design", "UX/UI"],
             tags: ["UX", "UI", "design principles"],
-            date: "2025-01-08"
+            date: "2025-01-08",
+            slug: "ux-ui-best-practices"
         },
         {
             id: 5,
@@ -47,7 +51,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
             categories: ["Technology", "SEO"],
             tags: ["performance", "SEO", "web vitals"],
-            date: "2025-01-05"
+            date: "2025-01-05",
+            slug: "toi-uu-hoa-hieu-suat-website"
         },
         {
             id: 6,
@@ -56,7 +61,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop",
             categories: ["Technology", "Development"],
             tags: ["CMS", "headless", "content management"],
-            date: "2025-01-03"
+            date: "2025-01-03",
+            slug: "headless-cms-tuong-lai"
         },
         {
             id: 7,
@@ -65,7 +71,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop",
             categories: ["Design", "UX/UI"],
             tags: ["microinteractions", "animation", "UX"],
-            date: "2025-01-01"
+            date: "2025-01-01",
+            slug: "microinteractions-chi-tiet-nho"
         },
         {
             id: 8,
@@ -74,7 +81,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop",
             categories: ["Technology", "Development"],
             tags: ["JAMstack", "architecture", "performance"],
-            date: "2024-12-28"
+            date: "2024-12-28",
+            slug: "jamstack-architecture"
         },
         {
             id: 9,
@@ -83,7 +91,8 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
             categories: ["Marketing", "Content"],
             tags: ["content strategy", "marketing", "engagement"],
-            date: "2024-12-25"
+            date: "2024-12-25",
+            slug: "content-strategy"
         },
         {
             id: 10,
@@ -92,26 +101,17 @@ const NewsListPage = () => {
             thumbnail: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=250&fit=crop",
             categories: ["Design", "Mobile"],
             tags: ["mobile-first", "responsive", "design"],
-            date: "2024-12-22"
+            date: "2024-12-22",
+            slug: "mobile-first-design"
         }
     ];
 
     // States
-    const [searchTerm, setSearchTerm] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
 
-    // Filter logic (only search)
-    const filteredNews = useMemo(() => {
-        return mockNews.filter(news => {
-            const matchesSearch = news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                news.description.toLowerCase().includes(searchTerm.toLowerCase());
-            return matchesSearch;
-        });
-    }, [searchTerm]);
-
-    const paginatedNews = filteredNews.slice(0, currentPage * itemsPerPage);
-    const hasMore = filteredNews.length > currentPage * itemsPerPage;
+    const paginatedNews = mockNews.slice(0, currentPage * itemsPerPage);
+    const hasMore = mockNews.length > currentPage * itemsPerPage;
 
     // Event handlers
     const handleLoadMore = () => {
@@ -134,7 +134,7 @@ const NewsListPage = () => {
                     <div className="">
                         <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
                             Nexgency news
-                            </span>
+                        </span>
                         <h1 className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-black mb-1 uppercase leading-[1.45] tracking-tight">
                             Khám phá kiến thức &<br/> xu hướng công nghệ
                         </h1>
@@ -144,28 +144,15 @@ const NewsListPage = () => {
 
             {/* Main Content */}
             <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Search Bar */}
-                <div className="max-w-md mx-auto mb-8">
-                    <div className="relative">
-                        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-600 w-5 h-5" />
-                        <input
-                            type="text"
-                            placeholder="Tìm kiếm bài viết..."
-                            value={searchTerm}
-                            onChange={(e) => {
-                                setSearchTerm(e.target.value);
-                                setCurrentPage(1);
-                            }}
-                            className="w-full pl-10 pr-4 py-3 border border-gray-200 placeholder:text-gray-600 rounded-xl focus:ring-2 focus:ring-purple-200 focus:border-transparent transition-colors shadow-sm"
-                        />
-                    </div>
-                </div>
-
-                {/* News Grid */}
-                {paginatedNews.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 p-2 bg-gray-50 rounded-2xl">
-                        {paginatedNews.map(news => (
-                            <article key={news.id} className="bg-white rounded-xl overflow-hidden neu-shadow-inset-xs border border-gray-100 hover:shadow-lg transition-shadow duration-300 group">
+                {/* News Grid - 2 columns */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-2 bg-gray-50 rounded-2xl">
+                    {paginatedNews.map(news => (
+                        <Link
+                            key={news.id}
+                            to={`/news/${news.slug}`}
+                            className="block"
+                        >
+                            <article className="bg-white rounded-xl overflow-hidden neu-shadow-inset-xs border border-gray-100 hover:shadow-lg transition-shadow duration-300 group cursor-pointer">
                                 {/* Thumbnail */}
                                 <div className="aspect-[16/10] overflow-hidden p-1.5">
                                     <img
@@ -184,8 +171,8 @@ const NewsListPage = () => {
                                                 key={category}
                                                 className="text-[#c08dfe] text-[10px] lg:text-[11px] font-archivo font-medium uppercase tracking-widest"
                                             >
-                                {category}
-                              </span>
+                                                {category}
+                                            </span>
                                         ))}
                                     </div>
 
@@ -194,30 +181,27 @@ const NewsListPage = () => {
                                         {news.title}
                                     </h3>
 
+                                    {/* Description */}
+                                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                                        {news.description}
+                                    </p>
+
                                     {/* Date */}
                                     <div className="flex items-center text-gray-600 text-sm">
                                         {formatDate(news.date)}
                                     </div>
                                 </div>
                             </article>
-                        ))}
-                    </div>
-                ) : (
-                    <div className="text-center py-16">
-                        <div className="w-24 h-24 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
-                            <Search className="w-8 h-8 text-gray-400" />
-                        </div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Không tìm thấy bài viết</h3>
-                        <p className="text-gray-600">Hãy thử thay đổi từ khóa tìm kiếm</p>
-                    </div>
-                )}
+                        </Link>
+                    ))}
+                </div>
 
                 {/* Load More Button */}
                 {hasMore && (
                     <div className="text-center mt-8">
                         <button
                             onClick={handleLoadMore}
-                            className="inline-flex items-center px-8 py-4 bg-[#c08dfe] border border-gray-200 rounded-xl text-white font-medium hover:bg-gray-50 hover:border-gray-300 transition-colors shadow-sm"
+                            className="inline-flex items-center px-8 py-4 bg-[#c08dfe] border border-gray-200 rounded-xl text-white font-medium hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900 transition-colors shadow-sm"
                         >
                             Xem thêm bài viết
                         </button>
