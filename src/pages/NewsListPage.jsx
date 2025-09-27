@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const NewsListPage = () => {
@@ -145,52 +145,37 @@ const NewsListPage = () => {
             {/* Main Content */}
             <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* News Grid - 2 columns */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 p-2 bg-gray-50 rounded-2xl">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 rounded-lg">
                     {paginatedNews.map(news => (
                         <Link
                             key={news.id}
                             to={`/news/${news.slug}`}
                             className="block"
                         >
-                            <article className="bg-white rounded-xl overflow-hidden neu-shadow-inset-xs border border-gray-100 hover:shadow-lg transition-shadow duration-300 group cursor-pointer">
-                                {/* Thumbnail */}
-                                <div className="aspect-[16/10] overflow-hidden p-1.5">
-                                    <img
-                                        src={news.thumbnail}
-                                        alt={news.title}
-                                        className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
-                                    />
-                                </div>
-
+                            <article className="bg-black rounded-md overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300 group cursor-pointer">
                                 {/* Content */}
-                                <div className="p-4">
-                                    {/* Categories */}
-                                    <div className="flex flex-wrap gap-4 mb-1">
-                                        {news.categories.map(category => (
-                                            <span
-                                                key={category}
-                                                className="text-[#c08dfe] text-[10px] lg:text-[11px] font-archivo font-medium uppercase tracking-widest"
-                                            >
-                                                {category}
-                                            </span>
-                                        ))}
-                                    </div>
+                                <div className="p-8">
 
                                     {/* Title */}
-                                    <h3 className="text-[14px] lg:text-[16px] font-archivo font-medium uppercase text-black mb-3 line-clamp-2 group-hover:text-[#c08dfe] transition-colors">
+                                    <h3 className="text-[14px] lg:text-[24px] font-archivo font-medium uppercase text-white mb-3 line-clamp-2 group-hover:text-[#c08dfe] transition-colors">
                                         {news.title}
                                     </h3>
 
-                                    {/* Description */}
-                                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
-                                        {news.description}
-                                    </p>
-
                                     {/* Date */}
-                                    <div className="flex items-center text-gray-600 text-sm">
+                                    <div className="flex items-center text-white text-sm">
                                         {formatDate(news.date)}
                                     </div>
                                 </div>
+                                {/* Thumbnail */}
+                                <div className="aspect-[16/10] overflow-hidden">
+                                    <img
+                                        src={news.thumbnail}
+                                        alt={news.title}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
+                                </div>
+
+
                             </article>
                         </Link>
                     ))}
