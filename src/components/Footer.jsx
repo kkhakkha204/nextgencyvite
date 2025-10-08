@@ -131,7 +131,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
                                 <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />
-                                <a href="#" className="hover:text-white">Chính sách bảo mật thông tin</a>
+                                <a href="/chinh-sach-bao-mat" className="hover:text-white">Chính sách bảo mật thông tin</a>
                             </li>
                             <li className="flex items-center text-[14px] text-gray-200 hover:text-white transition-colors">
                                 <ChevronRight className="w-4 h-4 mr-2 text-[#c59efe]" />

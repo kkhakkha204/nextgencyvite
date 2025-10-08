@@ -22,6 +22,7 @@ import NewsListPage from "./pages/NewsListPage.jsx";
 import Contact from "./pages/Contact.jsx";
 import Projects from "./pages/projects/Projects.jsx";
 import Portfolio from "./pages/projects/Portfolio.jsx";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
 // Router Content Component
 const RouterContent = () => {
     const {
@@ -61,6 +62,7 @@ const RouterContent = () => {
                     <Route path="/services/facebook-crm" element={<FacebookCrm />} />
                     <Route path="/services/marketing-outsource" element={<MarketingOutsource />} />
                     <Route path="/services/tick-xanh-facebook" element={<Tick />} />
+                    <Route path="/chinh-sach-bao-mat" element={<PrivacyPolicyPage />} />
 
                     {/* Các trang dự án */}
                     <Route path="/projects/all" element={<Projects />} />
