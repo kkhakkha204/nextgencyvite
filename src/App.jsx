@@ -37,7 +37,7 @@ const RouterContent = () => {
     useSEO();
 
     // Kiểm tra xem có phải trang TiktokVerification không
-    const isVerificationPage = location.pathname === '/tiktok-verification';
+    const isVerificationPage = location.pathname === '/tiktok-verification/';
 
     return (
         <div className="App">
