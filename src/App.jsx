@@ -1,6 +1,6 @@
-// App.jsx - Updated with Blog routes
+// App.jsx - Updated with conditional Header/Footer
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from "./components/Footer.jsx";
@@ -24,8 +24,10 @@ import Projects from "./pages/projects/Projects.jsx";
 import Portfolio from "./pages/projects/Portfolio.jsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
 import TiktokVerification from "./pages/TiktokVerification.jsx";
+
 // Router Content Component
 const RouterContent = () => {
+    const location = useLocation();
     const {
         isTransitioning,
         handleTransitionComplete
@@ -33,6 +35,10 @@ const RouterContent = () => {
 
     // Initialize SEO hooks
     useSEO();
+
+    // Kiểm tra xem có phải trang TiktokVerification không
+    const isVerificationPage = location.pathname === '/tiktok-verification';
+
     return (
         <div className="App">
             {/* Global SEO for all pages - this sets default values */}
@@ -45,8 +51,11 @@ const RouterContent = () => {
                     { name: 'format-detection', content: 'telephone=no' }
                 ]}
             />
-            <Header />
-            <main className="page-content pt-[70px] lg:pt-[85px]">
+
+            {/* Chỉ hiển thị Header nếu không phải trang verification */}
+            {!isVerificationPage && <Header />}
+
+            <main className={!isVerificationPage ? "page-content pt-[70px] lg:pt-[85px]" : ""}>
                 <Routes>
                     {/* Trang chủ */}
                     <Route path="/" element={<Home />} />
@@ -71,7 +80,10 @@ const RouterContent = () => {
                     <Route path="/projects/portfolio" element={<Portfolio />} />
                 </Routes>
             </main>
-            <Footer />
+
+            {/* Chỉ hiển thị Footer nếu không phải trang verification */}
+            {!isVerificationPage && <Footer />}
+
             {/* Page Transition */}
             <PageTransition
                 isTransitioning={isTransitioning}
@@ -84,9 +96,9 @@ const RouterContent = () => {
 
 function App() {
     return (
-            <Router>
-                <RouterContent />
-            </Router>
+        <Router>
+            <RouterContent />
+        </Router>
     );
 }
 
