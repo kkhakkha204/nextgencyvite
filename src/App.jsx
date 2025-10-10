@@ -73,7 +73,7 @@ const RouterContent = () => {
                     <Route path="/services/marketing-outsource" element={<MarketingOutsource />} />
                     <Route path="/services/tick-xanh-facebook" element={<Tick />} />
                     <Route path="/chinh-sach-bao-mat" element={<PrivacyPolicyPage />} />
-                    <Route path="/tiktok-verification" element={<TiktokVerification />} />
+                    <Route path="/tiktok-verification/" element={<TiktokVerification />} />
 
                     {/* Các trang dự án */}
                     <Route path="/projects/all" element={<Projects />} />
