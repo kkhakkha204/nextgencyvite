@@ -1,14 +1,14 @@
 import React from 'react';
 
 const TiktokVerification = () => {
-    const verificationContent = "tiktok-developers-site-verification=yEW14lKVkzHE6VUNKeMRqq0jIRUzzZgw";
+    const verificationContent = "tiktok-developers-site-verification=iEpUN2SvEQ4iCx5HJeKfeVARszrGqF0z";
 
     const handleDownload = () => {
         const blob = new Blob([verificationContent], { type: 'text/plain' });
         const url = URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'tiktokyEW14lKVkzHE6VUNKeMRqq0jIRUzzZgw.txt';
+        link.download = 'tiktokyiEpUN2SvEQ4iCx5HJeKfeVARszrGqF0z.txt';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
