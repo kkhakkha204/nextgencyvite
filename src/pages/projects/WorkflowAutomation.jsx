@@ -133,12 +133,12 @@ export default function N8nTemplates() {
         <div className="min-h-screen bg-white">
             {/* Hero Section - Nền đen với Search & Filter */}
             <div className="bg-black">
-                <div className="max-w-[1440px] mx-auto px-6 sm:px-6 lg:px-8 py-20">
+                <div className="max-w-[1440px] mx-auto px-6 sm:px-6 lg:px-8 py-16 md:py-20">
                     {/* Title */}
                     <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold text-white uppercase leading-none tracking-tight mb-4 text-center">
                         n8n Templates
                     </h1>
-                    <p className="text-lg text-gray-400 font-light mb-16 text-center">
+                    <p className="text-lg text-gray-400 font-light mb-6 md:mb-16 text-center">
                         Bộ sưu tập workflow tự động hóa
                     </p>
 
@@ -160,21 +160,12 @@ export default function N8nTemplates() {
 
             {/* Featured Templates Section - Chỉ hiển thị khi KHÔNG có search query */}
             {searchQuery === '' && (
-                <div className="bg-gray-100 py-20">
+                <div className="bg-gray-100 py-16 md:py-20">
                     <div className="max-w-[1440px] mx-auto px-6 sm:px-6 lg:px-8">
-                        {/* Section Title */}
-                        <div className="mb-12">
-                            <h2 className="text-3xl md:text-4xl font-light text-black mb-3">
-                                Templates Nổi Bật
-                            </h2>
-                            <p className="text-gray-500 font-light">
-                                Những workflow được sử dụng nhiều nhất
-                            </p>
-                        </div>
 
                         {/* Featured Banner - Max Height 300px */}
-                        <div className="mb-12">
-                            <div className="relative w-full h-[300px] overflow-hidden rounded-lg">
+                        <div className="mb-6 md:mb-12">
+                            <div className="relative w-full h-[120px] md:h-[300px] overflow-hidden rounded-md">
                                 <img
                                     src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1600&h=1000&fit=crop"
                                     alt="Featured Banner"
@@ -190,10 +181,10 @@ export default function N8nTemplates() {
                             {templatesData.slice(0, 3).map((template) => (
                                 <div
                                     key={template.id}
-                                    className="group bg-white border border-gray-200 hover:border-[#2B144D] transition-all duration-300 cursor-pointer overflow-hidden"
+                                    className="group bg-white border border-gray-200 hover:border-[#2B144D] transition-all duration-300 cursor-pointer overflow-hidden rounded-md"
                                 >
                                     {/* Thumbnail */}
-                                    <div className="relative h-48 overflow-hidden bg-gray-50">
+                                    <div className="relative h-48 overflow-hidden bg-gray-50 ">
                                         <img
                                             src={template.thumbnail}
                                             alt={template.title}
@@ -273,7 +264,7 @@ export default function N8nTemplates() {
                         {filteredTemplates.map((template) => (
                             <div
                                 key={template.id}
-                                className="group bg-white border border-gray-100 hover:border-[#2B144D] transition-all duration-300 cursor-pointer overflow-hidden"
+                                className="group bg-white border border-gray-100 hover:border-[#2B144D] transition-all duration-300 cursor-pointer overflow-hidden rounded-md"
                             >
                                 {/* Thumbnail */}
                                 <div className="relative h-56 overflow-hidden bg-gray-50">
