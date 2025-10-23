@@ -165,7 +165,7 @@ export default function N8nTemplates() {
 
                         {/* Featured Banner - Max Height 300px */}
                         <div className="mb-6 md:mb-12">
-                            <div className="relative w-full h-[120px] md:h-[300px] overflow-hidden rounded-md">
+                            <div className="relative w-full h-[192px] md:h-[300px] overflow-hidden rounded-md">
                                 <img
                                     src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1600&h=1000&fit=crop"
                                     alt="Featured Banner"
