@@ -88,6 +88,7 @@ const Header = () => {
             dropdown: [
                 { name: 'Các dự án', path: '/projects/all', icon: FolderOpen },
                 { name: 'Hồ sơ năng lực', path: '/projects/portfolio', icon: FileText },
+                { name: 'Automation Workflow', path: '/projects/workflow', icon: FileText },
             ]
         },
         { name: 'Tin tức', path: '/news' },
@@ -269,6 +270,15 @@ const Header = () => {
                                                                 >
                                                                     <FileText className="w-3.5 h-3.5" />
                                                                     <span>Hồ sơ năng lực</span>
+                                                                </Link>
+                                                                <Link
+                                                                    to="/projects/workflow"
+                                                                    className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
+                                                                        isActiveRoute('/projects/workflow') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
+                                                                    }`}
+                                                                >
+                                                                    <FileText className="w-3.5 h-3.5" />
+                                                                    <span>Automation workflow</span>
                                                                 </Link>
                                                             </>
                                                         )}
@@ -517,6 +527,17 @@ const Header = () => {
                                                                         >
                                                                             <FileText className="w-3 h-3 flex-shrink-0" />
                                                                             <span>Hồ sơ năng lực</span>
+                                                                        </Link>
+                                                                        <Link
+                                                                            to="/projects/workflow"
+                                                                            className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
+                                                                                isActiveRoute('/projects/workflow')
+                                                                                    ? 'text-white bg-black hover:bg-black '
+                                                                                    : 'text-black hover:bg-white '
+                                                                            }`}
+                                                                        >
+                                                                            <FileText className="w-3 h-3 flex-shrink-0" />
+                                                                            <span>Automation workflow</span>
                                                                         </Link>
                                                                     </div>
                                                                 </>

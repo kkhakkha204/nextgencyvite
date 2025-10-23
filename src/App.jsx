@@ -24,6 +24,7 @@ import Projects from "./pages/projects/Projects.jsx";
 import Portfolio from "./pages/projects/Portfolio.jsx";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
 import TiktokVerification from "./pages/TiktokVerification.jsx";
+import WorkflowAutomation from "./pages/projects/WorkflowAutomation.jsx";
 
 // Router Content Component
 const RouterContent = () => {
@@ -78,6 +79,7 @@ const RouterContent = () => {
                     {/* Các trang dự án */}
                     <Route path="/projects/all" element={<Projects />} />
                     <Route path="/projects/portfolio" element={<Portfolio />} />
+                    <Route path="/projects/workflow" element={<WorkflowAutomation />} />
                 </Routes>
             </main>
 
