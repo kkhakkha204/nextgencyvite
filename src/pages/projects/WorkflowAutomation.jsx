@@ -5,107 +5,107 @@ import { Search } from 'lucide-react';
 const templatesData = [
     {
         id: 1,
-        title: 'Tạo Nội Dung AI với ChatGPT',
+        title: 'Tạo nội dung AI với ChatGPT',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'AI',
         nodes: ['ChatGPT', 'Google Sheets', 'Slack']
     },
     {
         id: 2,
-        title: 'Tự Động Chấm Điểm Lead',
+        title: 'Tự động chấm điểm lead',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Bán Hàng',
+        category: 'Bán hàng',
         nodes: ['HubSpot', 'Airtable', 'Email']
     },
     {
         id: 3,
-        title: 'Hệ Thống Cảnh Báo Server',
+        title: 'Hệ thống cảnh báo server',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'IT Ops',
         nodes: ['Webhook', 'Slack', 'PagerDuty']
     },
     {
         id: 4,
-        title: 'Lên Lịch Đăng Social Media',
+        title: 'Lên lịch đăng social media',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'Marketing',
         nodes: ['Twitter', 'Facebook', 'LinkedIn', 'Buffer']
     },
     {
         id: 5,
-        title: 'Tự Động Xử Lý Hóa Đơn',
+        title: 'Tự động xử lý hóa đơn',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Tài Liệu',
+        category: 'Tài liệu',
         nodes: ['Gmail', 'Google Drive', 'QuickBooks']
     },
     {
         id: 6,
-        title: 'Phân Phối Ticket Hỗ Trợ',
+        title: 'Phân phối ticket hỗ trợ',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Hỗ Trợ',
+        category: 'Hỗ trợ',
         nodes: ['Zendesk', 'Slack', 'Jira']
     },
     {
         id: 7,
-        title: 'Tạo Ảnh AI Tự Động',
+        title: 'Tạo ảnh AI tự động',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'AI',
         nodes: ['DALL-E', 'Midjourney', 'S3', 'Discord']
     },
     {
         id: 8,
-        title: 'Đồng Bộ Dữ Liệu CRM',
+        title: 'Đồng bộ dữ liệu CRM',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Bán Hàng',
+        category: 'Bán hàng',
         nodes: ['Salesforce', 'HubSpot', 'MySQL']
     },
     {
         id: 9,
-        title: 'Sao Lưu Database Định Kỳ',
+        title: 'Sao lưu database định kỳ',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'IT Ops',
         nodes: ['PostgreSQL', 'AWS S3', 'Email']
     },
     {
         id: 10,
-        title: 'Phân Tích Email Campaign',
+        title: 'Phân tích email campaign',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'Marketing',
         nodes: ['Mailchimp', 'Google Analytics', 'Sheets']
     },
     {
         id: 11,
-        title: 'Tạo Báo Cáo PDF Tự Động',
+        title: 'Tạo báo cáo PDF tự động',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Tài Liệu',
+        category: 'Tài liệu',
         nodes: ['Google Docs', 'PDF', 'Email', 'Drive']
     },
     {
         id: 12,
-        title: 'Công Cụ Kiểm Tra Dữ Liệu',
+        title: 'Công cụ kiểm tra dữ liệu',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'Khác',
         nodes: ['HTTP Request', 'Function', 'IF']
     },
     {
         id: 13,
-        title: 'Xử Lý Chatbot AI',
+        title: 'Xử lý chatbot AI',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Hỗ Trợ',
+        category: 'Hỗ trợ',
         nodes: ['ChatGPT', 'Webhook', 'Database']
     },
     {
         id: 14,
-        title: 'Phân Tích Cảm Xúc Khách Hàng',
+        title: 'Phân tích cảm xúc khách hàng',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
         category: 'AI',
         nodes: ['OpenAI', 'Twitter API', 'MongoDB']
     },
     {
         id: 15,
-        title: 'Báo Cáo Sales Pipeline',
+        title: 'Báo cáo sales pipeline',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Bán Hàng',
+        category: 'Bán hàng',
         nodes: ['Pipedrive', 'Slack', 'Google Sheets']
     }
 ];
