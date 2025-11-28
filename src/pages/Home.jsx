@@ -10,6 +10,7 @@ import ConsultationSectionPrimary from "../components/ConsultationSectionPrimary
 import {seoConfigs} from "./seo-configs.js";
 import SEOManager from "../components/SEO/SEOManager.jsx";
 import {generateBreadcrumbSchema} from "../components/SEO/schemas.js";
+import HomeClientsPartnersSection from "../components/home/HomeClientsPartnersSection.jsx";
 
 const Home = () => {
     const breadcrumbs = [
@@ -31,6 +32,7 @@ const Home = () => {
                 <AboutUsSection/>
                 <ServicesSection/>
                 <TestimonialsSection/>
+                <HomeClientsPartnersSection/>
 
             </div>
         </>
