@@ -562,7 +562,7 @@ export const projectsData = [
         ]
     },
     {
-        id: 'the-thao-farma',
+        id: 'the-thao-pharma',
         name: 'Hệ thống Lark base quản lý CV & nhân viên',
         summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
         description:
@@ -574,7 +574,7 @@ export const projectsData = [
         ],
         date: '01/2025',
         category: 'Automations & Data',
-        partner: 'Thể Thao Farma',
+        partner: 'Thế Thảo Pharma',
         technologies: ['Larkbasse', 'Automations', 'Data'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
