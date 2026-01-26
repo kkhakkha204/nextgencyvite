@@ -20,7 +20,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://www.nhadepwoodplus.com/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -51,7 +51,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://beautysummit.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -82,7 +82,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://beautysummit.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -113,7 +113,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://thanhthieunhibacninh.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -144,7 +144,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://aloha.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -175,7 +175,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://rino.com.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -206,7 +206,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://khoahoc.nghecontent.com/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -461,7 +461,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://homeenglish.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -492,7 +492,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://khoahoc.coahio.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
@@ -523,7 +523,7 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            label: 'Trải nghiệm demo',
+            label: 'Xem chi tiết',
             url: 'https://khoahoc.mewartmakeup.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
