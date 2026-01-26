@@ -28,7 +28,7 @@ const WebsiteLandingPage = () => {
                 <LandingPagePackages/>
                 <WebsitePackages/>
                 <OffersSection/>
-            <GoogleAdsProcess/>
+                <GoogleAdsProcess/>
                 <ClientsPartnersSection/>
                 <PortfolioShowcase/>
                 <CommitmentSection/>

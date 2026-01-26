@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import ConsultationSection from "../../components/ConsultationSection.jsx";
+import ServicesSection from "../../components/ServicesSection.jsx";
+import HomeClientsPartnersSection from "../../components/home/HomeClientsPartnersSection.jsx";
 
 const Portfolio = () => {
     const [imageErrors, setImageErrors] = useState({});

@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeClientsPartnersSection = () => {
     return (
-        <section className="bg-white pb-[60px] lg:pb-[90px]">
+        <section className="bg-white pb-[60px] pt-[40px] lg:pb-[90px]">
             <div className="lg:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Thẻ chứa A - Tiêu đề và mô tả */}
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
