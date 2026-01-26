@@ -229,7 +229,7 @@ export const projectsData = [
         ],
         date: '08/2025',
         category: 'Website & Landing Page',
-        partner: 'Nghề content',
+        partner: 'Beauty Summit 2025',
         technologies: ['Web PHP', 'GA4', 'Automations', 'Data'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
