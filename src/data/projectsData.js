@@ -13,7 +13,7 @@ export const projectsData = [
         date: '01/2025',
         category: 'Website & Landing Page',
         partner: 'wordplus.vn',
-        technologies: ['React', 'Tailwind', 'GA4'],
+        technologies: ['React', 'Tailwind', 'Figma', 'GA4'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -32,7 +32,7 @@ export const projectsData = [
     },
     {
         id: 'beauty-summit-2025',
-        name: 'Website Beauty Summit 2025',
+        name: 'Beauty Summit 2025',
         summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
         description:
             'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
@@ -42,9 +42,9 @@ export const projectsData = [
             'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
         ],
         date: '02/2025',
-        category: 'Website & Landing Page',
+        category: ['Website & Landing Page', 'Automations & Data', 'Facebook Ads'],
         partner: 'Hana HP Group',
-        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data'],
+        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data', 'n8n', "Email Marketing", "ZBS Zalo"],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -75,7 +75,7 @@ export const projectsData = [
         date: '06/2025',
         category: 'Website & Landing Page',
         partner: 'Thủy Kat Skin',
-        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data'],
+        technologies: ['Wordpress', 'GA4', 'Figma'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -106,7 +106,7 @@ export const projectsData = [
         date: '02/2025',
         category: 'Website & Landing Page',
         partner: 'Tỉnh Bắc Ninh',
-        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data'],
+        technologies: ['Wordpress', 'GA4', 'Figma'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -199,7 +199,7 @@ export const projectsData = [
         date: '06/2025',
         category: 'Website & Landing Page',
         partner: 'Nghề content',
-        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data'],
+        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data', 'LMS', 'Email Marketing'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -209,34 +209,6 @@ export const projectsData = [
             label: 'Xem chi tiết',
             url: 'https://khoahoc.nghecontent.com/'
         },
-        videoUrl: '/assets/images/website&landingpage/video.mp4',
-        slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
-        ]
-    },
-    {
-        id: 'beauty-awards-2025',
-        name: 'Website Bình chọn Beauty Awards 2025',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
-        description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
-        details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
-        ],
-        date: '08/2025',
-        category: 'Website & Landing Page',
-        partner: 'Beauty Summit 2025',
-        technologies: ['Web PHP', 'GA4', 'Automations', 'Data'],
-        metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
-        ],
-        cta: null,
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/website&landingpage/beautysummit.webp',
@@ -258,7 +230,7 @@ export const projectsData = [
         date: '11/2025',
         category: 'Graphic Design & Branding',
         partner: 'Talentmate',
-        technologies: ['Figma', 'Design'],
+        technologies: ['Figma'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -283,7 +255,7 @@ export const projectsData = [
             'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
             'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
         ],
-        date: '12/2025',
+        date: '10/2025',
         category: 'Facebook Ads',
         partner: 'Ăn vặt họ Chu',
         technologies: ['Dataset', 'Ladipage', 'Automations', 'Data'],
@@ -315,34 +287,6 @@ export const projectsData = [
         category: 'Facebook Ads',
         partner: 'Ăn vặt họ Chu',
         technologies: ['Dataset', 'Ladipage', 'Automations', 'Data'],
-        metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
-        ],
-        cta: null,
-        videoUrl: '/assets/images/website&landingpage/video.mp4',
-        slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
-        ]
-    },
-    {
-        id: 'payment-checkin-beauty-summit-2025',
-        name: 'Hệ thống thanh toán & check-in sự kiện Beauty Summit 2025',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
-        description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
-        details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
-        ],
-        date: '06/2025',
-        category: 'Automations & Data',
-        partner: 'Beauty Summit',
-        technologies: ['Ladipage', 'Automations', 'Data', "Email Marketing", "ZBS Zalo"],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -485,7 +429,7 @@ export const projectsData = [
         date: '10/2025',
         category: 'Website & Landing Page',
         partner: 'Coahio',
-        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data', 'E-learning'],
+        technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data', 'LMS'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -603,7 +547,7 @@ export const projectsData = [
         date: '07/2025',
         category: 'Website & Landing Page',
         partner: 'S-femme x S-men',
-        technologies: ['Ladipage', 'GA4', 'Meta Pixel', 'Automations', 'Data', 'E-learning'],
+        technologies: ['Ladipage', 'GA4', 'Figma'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
             { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
@@ -617,13 +561,89 @@ export const projectsData = [
             '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
+    {
+        id: 'qc-house',
+        name: 'Website QC House',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'QC House',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://qchouse.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
+    {
+        id: 'topmus',
+        name: 'Website Topmus',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'Topmus',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://topmus.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
 ];
 
 export const getProjectById = (projectId) =>
     projectsData.find((project) => project.id === projectId);
 
+export const getProjectCategories = (project) => {
+    if (!project) {
+        return [];
+    }
+
+    if (Array.isArray(project.category)) {
+        return project.category.filter(Boolean);
+    }
+
+    return project.category ? [project.category] : [];
+};
+
 export const getProjectFilters = () => {
-    const categories = Array.from(new Set(projectsData.map((project) => project.category)));
+    const categories = Array.from(
+        new Set(projectsData.flatMap((project) => getProjectCategories(project)))
+    );
     const technologies = Array.from(
         new Set(projectsData.flatMap((project) => project.technologies))
     );
