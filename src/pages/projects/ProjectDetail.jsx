@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getProjectById } from '../../data/projectsData';
+import { getProjectById, getProjectCategories } from '../../data/projectsData';
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import HomeClientsPartnersSection from "../../components/home/HomeClientsPartnersSection.jsx";
@@ -123,7 +123,12 @@ const ProjectDetail = () => {
                             <div className="mt-1 text-lg font-semibold text-white">{project.date}</div>
                             <div className="mt-4 text-sm text-white/60">Danh mục</div>
                             <div className="mt-1 text-base font-semibold text-white">
-                                {project.category}
+                                {(() => {
+                                    const projectCategories = getProjectCategories(project);
+                                    return projectCategories.length > 0
+                                        ? projectCategories.join(', ')
+                                        : 'Khác';
+                                })()}
                             </div>
                             <div className="mt-4 text-sm text-white/60">Đối tác / Thương hiệu</div>
                             <div className="mt-1 text-base font-semibold text-white">
