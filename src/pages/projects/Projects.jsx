@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getProjectFilters, projectsData } from '../../data/projectsData';
+import { getProjectCategories, getProjectFilters, projectsData } from '../../data/projectsData';
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import HomeClientsPartnersSection from "../../components/home/HomeClientsPartnersSection.jsx";
@@ -97,6 +97,22 @@ const Projects = () => {
     const [category, setCategory] = useState('all');
     const [technology, setTechnology] = useState('all');
 
+    const getProjectDateValue = (value) => {
+        if (!value || typeof value !== 'string') {
+            return 0;
+        }
+
+        const [monthText, yearText] = value.split('/');
+        const month = Number(monthText);
+        const year = Number(yearText);
+
+        if (!Number.isFinite(month) || !Number.isFinite(year)) {
+            return 0;
+        }
+
+        return year * 12 + month;
+    };
+
     const categoryOptions = useMemo(() => {
         return [
             { value: 'all', label: 'Tất cả danh mục' },
@@ -112,24 +128,30 @@ const Projects = () => {
     }, [technologies]);
 
     const filteredProjects = useMemo(() => {
-        return projectsData.filter((project) => {
+        return projectsData
+            .filter((project) => {
             const matchesSearch =
                 project.name.toLowerCase().includes(search.toLowerCase()) ||
                 project.summary.toLowerCase().includes(search.toLowerCase()) ||
                 project.partner.toLowerCase().includes(search.toLowerCase());
 
-            const matchesCategory = category === 'all' || project.category === category;
+            const projectCategories = getProjectCategories(project);
+            const matchesCategory =
+                category === 'all' || projectCategories.includes(category);
             const matchesTechnology =
                 technology === 'all' || project.technologies.includes(technology);
 
             return matchesSearch && matchesCategory && matchesTechnology;
-        });
+        })
+            .sort((a, b) => getProjectDateValue(b.date) - getProjectDateValue(a.date));
     }, [search, category, technology]);
 
     const categoryStats = useMemo(() => {
         return categories.map((item) => ({
             name: item,
-            count: projectsData.filter((project) => project.category === item).length
+            count: projectsData.filter((project) =>
+                getProjectCategories(project).includes(item)
+            ).length
         }));
     }, [categories]);
 
@@ -193,7 +215,14 @@ const Projects = () => {
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {filteredProjects.map((project) => (
+                    {filteredProjects.map((project) => {
+                        const projectCategories = getProjectCategories(project);
+                        const categoryLabel =
+                            projectCategories.length > 0
+                                ? projectCategories.join(', ')
+                                : 'Khác';
+
+                        return (
                         <Link
                             key={project.id}
                             to={`/projects/${project.id}`}
@@ -206,7 +235,7 @@ const Projects = () => {
                                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                                 />
                                 <span className="absolute left-4 top-4 rounded-full bg-black/70 px-3 py-1 text-xs text-white">
-                                    {project.category}
+                                    {categoryLabel}
                                 </span>
                             </div>
                             <div className="flex flex-1 flex-col gap-4 p-6">
@@ -235,7 +264,8 @@ const Projects = () => {
                                 </div>
                             </div>
                         </Link>
-                    ))}
+                        );
+                    })}
                 </div>
 
                 {filteredProjects.length === 0 && (
