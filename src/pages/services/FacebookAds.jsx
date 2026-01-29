@@ -14,13 +14,14 @@ import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
 
 const FacebookAds = () => {
+    const seoData = seoConfigs.services['facebook-ads'];
     return (
         <>
             <SEOManager
-                title={seoConfigs.services['facebook-ads'].title}
-                description={seoConfigs.services['facebook-ads'].description}
-                keywords={seoConfigs.services['facebook-ads'].keywords}
-                url="https://nextgency.vn/services/facebook-ads"
+                title={seoData.title}
+                description={seoData.description}
+                keywords={seoData.keywords}
+                ogUrl="/services/facebook-ads"
             />
             <div>
                 <Hero/>

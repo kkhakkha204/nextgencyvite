@@ -14,13 +14,14 @@ import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
 
 const AiData = () => {
+    const seoData = seoConfigs.services['ai-data'];
     return (
         <>
             <SEOManager
-                title={seoConfigs.services['ai-data'].title}
-                description={seoConfigs.services['ai-data'].description}
-                keywords={seoConfigs.services['ai-data'].keywords}
-                url="https://nextgency.vn/services/ai-data"
+                title={seoData.title}
+                description={seoData.description}
+                keywords={seoData.keywords}
+                ogUrl="/services/ai-data"
             />
             <div>
                 <Hero/>

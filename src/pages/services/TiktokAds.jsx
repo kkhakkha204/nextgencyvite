@@ -14,13 +14,14 @@ import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
 
 const TiktokAds = () => {
+    const seoData = seoConfigs.services['tiktok-ads'];
     return (
         <>
             <SEOManager
-                title={seoConfigs.services['tiktok-ads'].title}
-                description={seoConfigs.services['tiktok-ads'].description}
-                keywords={seoConfigs.services['tiktok-ads'].keywords}
-                url="https://nextgency.vn/services/tiktok-ads"
+                title={seoData.title}
+                description={seoData.description}
+                keywords={seoData.keywords}
+                ogUrl="/services/tiktok-ads"
             />
             <div>
                 <Hero/>

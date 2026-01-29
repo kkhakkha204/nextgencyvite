@@ -14,13 +14,14 @@ import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
 
 const FacebookCrm = () => {
+    const seoData = seoConfigs.services['facebook-crm'];
     return (
         <>
             <SEOManager
-                title={seoConfigs.services['facebook-crm'].title}
-                description={seoConfigs.services['facebook-crm'].description}
-                keywords={seoConfigs.services['facebook-crm'].keywords}
-                url="https://nextgency.vn/services/facebook-crm"
+                title={seoData.title}
+                description={seoData.description}
+                keywords={seoData.keywords}
+                ogUrl="/services/facebook-crm"
             />
             <div>
                 <Hero/>

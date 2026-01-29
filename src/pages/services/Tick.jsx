@@ -10,13 +10,14 @@ import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
 
 const Tick = () => {
+    const seoData = seoConfigs.services['tick-xanh-facebook'];
     return (
         <>
             <SEOManager
-                title={seoConfigs.services['tick-xanh-facebook'].title}
-                description={seoConfigs.services['tick-xanh-facebook'].description}
-                keywords={seoConfigs.services['tick-xanh-facebook'].keywords}
-                url="https://nextgency.vn/services/tick-xanh-facebook"
+                title={seoData.title}
+                description={seoData.description}
+                keywords={seoData.keywords}
+                ogUrl="/services/tick-xanh-facebook"
             />
             <div>
                 <HeroSection/>

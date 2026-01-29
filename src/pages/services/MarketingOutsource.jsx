@@ -11,13 +11,14 @@ import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
 
 const MarketingOutsource = () => {
+    const seoData = seoConfigs.services['marketing-outsource'];
     return (
         <>
             <SEOManager
-                title={seoConfigs.services['marketing-outsource'].title}
-                description={seoConfigs.services['marketing-outsource'].description}
-                keywords={seoConfigs.services['marketing-outsource'].keywords}
-                url="https://nextgency.vn/services/marketing-outsource"
+                title={seoData.title}
+                description={seoData.description}
+                keywords={seoData.keywords}
+                ogUrl="/services/marketing-outsource"
             />
             <div>
                 <Hero/>

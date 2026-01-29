@@ -5,10 +5,18 @@ import ConsultationSectionPrimary from "../components/ConsultationSectionPrimary
 import ConsultationSection from "../components/ConsultationSection.jsx";
 import ServicesSection from "../components/ServicesSection.jsx";
 import HomeClientsPartnersSection from "../components/home/HomeClientsPartnersSection.jsx";
+import SEOManager from "../components/SEO/SEOManager.jsx";
+import {seoConfigs} from "./seo-configs.js";
 
 const About = () => {
     return (
         <div>
+            <SEOManager
+                title={seoConfigs.about.title}
+                description={seoConfigs.about.description}
+                keywords={seoConfigs.about.keywords}
+                ogUrl="/about"
+            />
             <AboutHeroSection />
             <MyStorySection/>
             <HomeClientsPartnersSection/>

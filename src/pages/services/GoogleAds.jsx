@@ -15,13 +15,14 @@ import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
 
 const GoogleAds = () => {
+    const seoData = seoConfigs.services['google-ads'];
     return (
         <>
             <SEOManager
-                title={seoConfigs.services['google-ads'].title}
-                description={seoConfigs.services['google-ads'].description}
-                keywords={seoConfigs.services['google-ads'].keywords}
-                url="https://nextgency.vn/services/google-ads"
+                title={seoData.title}
+                description={seoData.description}
+                keywords={seoData.keywords}
+                ogUrl="/services/google-ads"
             />
             <div>
                 <Hero/>

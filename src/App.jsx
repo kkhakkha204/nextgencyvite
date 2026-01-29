@@ -16,8 +16,6 @@ import MarketingOutsource from "./pages/services/MarketingOutsource.jsx";
 import About from "./pages/About.jsx";
 import Tick from "./pages/services/Tick.jsx";
 import { useSEO } from './hooks/useSEO';
-import SEOManager from './components/SEO/SEOManager';
-import { localBusinessSchema } from './components/SEO/schemas';
 import NewsListPage from "./pages/NewsListPage.jsx";
 import Contact from "./pages/Contact.jsx";
 import Projects from "./pages/projects/Projects.jsx";
@@ -44,15 +42,15 @@ const RouterContent = () => {
     return (
         <div className="App">
             {/* Global SEO for all pages - this sets default values */}
-            <SEOManager
-                structuredData={localBusinessSchema}
-                additionalMetaTags={[
-                    { name: 'theme-color', content: '#000000' },
-                    { name: 'apple-mobile-web-app-capable', content: 'yes' },
-                    { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
-                    { name: 'format-detection', content: 'telephone=no' }
-                ]}
-            />
+            {/*<SEOManager*/}
+            {/*    structuredData={localBusinessSchema}*/}
+            {/*    additionalMetaTags={[*/}
+            {/*        { name: 'theme-color', content: '#000000' },*/}
+            {/*        { name: 'apple-mobile-web-app-capable', content: 'yes' },*/}
+            {/*        { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },*/}
+            {/*        { name: 'format-detection', content: 'telephone=no' }*/}
+            {/*    ]}*/}
+            {/*/>*/}
 
             {/* Chỉ hiển thị Header nếu không phải trang verification */}
             {!isVerificationPage && <Header />}
