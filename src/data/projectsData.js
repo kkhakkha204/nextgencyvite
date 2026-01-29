@@ -51,12 +51,12 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
-            '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            label: 'Xem chi tiết',
+            url: 'https://beautysummit.vn/'
+        },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
+            '/assets/images/test.webp',
             '/assets/images/website&landingpage/beautysummit.webp',
             '/assets/images/website&landingpage/katskin.webp',
             '/assets/images/website&landingpage/woodplus.webp',
@@ -83,15 +83,15 @@ export const projectsData = [
             { label: 'CPA', value: '-18%' }
         ],
         cta: {
+            label: 'Xem chi tiết',
+            url: 'https://katskin.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
             '/assets/images/test.webp',
             '/assets/images/website&landingpage/beautysummit.webp',
             '/assets/images/website&landingpage/katskin.webp',
             '/assets/images/website&landingpage/woodplus.webp',
-        videoUrl: '/assets/images/website&landingpage/video.mp4',
-        slides: [
-            '/assets/images/projects/katskin_1_result.webp',
-            '/assets/images/projects/katskin_2_result.webp',
-            '/assets/images/projects/katskin_3_result.webp',
         ]
     },
     {
