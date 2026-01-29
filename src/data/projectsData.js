@@ -605,6 +605,12 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
+            '/assets/images/test.webp',
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
     {   
         id: 'timo',
         name: 'Website giới thiệu vải may Timo',
