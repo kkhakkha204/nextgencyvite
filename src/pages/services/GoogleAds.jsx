@@ -11,23 +11,33 @@ import AdvertisingFormsSection from "../../components/googleads/AdvertisingForms
 import OffersSection from "../../components/googleads/OffersSection.jsx";
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import GoogleAdsProcess from "../../components/googleads/GoogleAdsProcess.jsx";
+import SEOManager from "../../components/SEO/SEOManager.jsx";
+import { seoConfigs } from "../seo-configs.js";
 
 const GoogleAds = () => {
     return (
-        <div>
-            <Hero/>
-            <ServicesDivider/>
-            <PainPointsSection/>
-            <WhyChooseUs/>
-            <WebsitePackages/>
-            <AdvertisingFormsSection/>
-            <OffersSection/>
-            <GoogleAdsProcess/>
-            <ClientsPartnersSection/>
-            <CommitmentSection/>
-            <ConsultationSection/>
-            <ServicesSection/>
-        </div>
+        <>
+            <SEOManager
+                title={seoConfigs.services['google-ads'].title}
+                description={seoConfigs.services['google-ads'].description}
+                keywords={seoConfigs.services['google-ads'].keywords}
+                url="https://nextgency.vn/services/google-ads"
+            />
+            <div>
+                <Hero/>
+                <ServicesDivider/>
+                <PainPointsSection/>
+                <WhyChooseUs/>
+                <WebsitePackages/>
+                <AdvertisingFormsSection/>
+                <OffersSection/>
+                <GoogleAdsProcess/>
+                <ClientsPartnersSection/>
+                <CommitmentSection/>
+                <ConsultationSection/>
+                <ServicesSection/>
+            </div>
+        </>
     );
 };
 

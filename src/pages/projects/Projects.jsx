@@ -217,10 +217,11 @@ const Projects = () => {
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                     {filteredProjects.map((project) => {
                         const projectCategories = getProjectCategories(project);
-                        const categoryLabel =
-                            projectCategories.length > 0
-                                ? projectCategories.join(', ')
-                                : 'Khác';
+                        const primaryCategory = projectCategories[0] || 'Khác';
+                        const remainingCategoryCount = Math.max(projectCategories.length - 1, 0);
+                        const categoryLabel = remainingCategoryCount > 0
+                            ? `${primaryCategory} +${remainingCategoryCount}`
+                            : primaryCategory;
 
                         return (
                         <Link

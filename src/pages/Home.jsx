@@ -33,7 +33,6 @@ const Home = () => {
                 <ServicesSection/>
                 <TestimonialsSection/>
                 <HomeClientsPartnersSection/>
-
             </div>
         </>
 

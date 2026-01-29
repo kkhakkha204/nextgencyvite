@@ -1,35 +1,28 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {ChevronLeft, ChevronRight, ArrowRight, ArrowUpRight} from 'lucide-react';
 import {Link} from "react-router-dom";
+import { getProjectCategories, projectsData } from '../../data/projectsData';
 
 const ProjectCarousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const carouselRef = useRef(null);
 
-    // Portfolio items data
-    const portfolioItems = [
-        {
-            id: 1,
-            image: '/assets/images/website&landingpage/beautysummit.webp',
-            gradient: 'from-[#A4FCFF]/20 to-[#C8A4FE]/20'
-        },
-        {
-            id: 2,
-            image: '/assets/images/website&landingpage/katskin.webp',
-            gradient: 'from-[#C8A4FE]/20 to-[#5a37c0]/20'
-        },
-        {
-            id: 3,
-            image: '/assets/images/website&landingpage/woodplus.webp',
-            gradient: 'from-[#A4FCFF]/20 to-[#5a37c0]/20'
-        },
-        {
-            id: 4,
-            image: '/assets/images/website&landingpage/femme.webp',
-            gradient: 'from-[#C8A4FE]/20 to-[#A4FCFF]/20'
-        }
+    const gradients = [
+        'from-[#A4FCFF]/20 to-[#C8A4FE]/20',
+        'from-[#C8A4FE]/20 to-[#5a37c0]/20',
+        'from-[#A4FCFF]/20 to-[#5a37c0]/20',
+        'from-[#C8A4FE]/20 to-[#A4FCFF]/20'
     ];
+
+    const portfolioItems = projectsData
+        .filter((project) => getProjectCategories(project).includes('Website & Landing Page'))
+        .map((project, index) => ({
+            id: project.id,
+            image: project.slides?.[0] || project.videoUrl || '/assets/images/website&landingpage/beautysummit.webp',
+            alt: project.name,
+            gradient: gradients[index % gradients.length]
+        }));
 
     // Determine how many items to show based on screen size
     const getItemsPerView = () => {
@@ -213,7 +206,11 @@ const ProjectCarousel = () => {
                                                 width: `${100 / itemsPerView}%`
                                             }}
                                         >
-                                            <div className="group cursor-pointer">
+                                            <Link
+                                                to={`/projects/${item.id}`}
+                                                className="group block"
+                                                aria-label={`Xem chi tiết ${item.alt || 'dự án'}`}
+                                            >
                                                 <div
                                                     className="relative aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                                                     {/* Gradient overlay */}
@@ -231,7 +228,7 @@ const ProjectCarousel = () => {
                                                         }}
                                                     />
                                                 </div>
-                                            </div>
+                                            </Link>
                                         </div>
                                     ))}
                                 </div>

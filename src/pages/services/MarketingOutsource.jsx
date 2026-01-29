@@ -7,19 +7,29 @@ import WebsitePackages from "../../components/marketing/WebsitePackages.jsx";
 import CommitmentSection from "../../components/marketing/CommitmentSection.jsx";
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
+import SEOManager from "../../components/SEO/SEOManager.jsx";
+import { seoConfigs } from "../seo-configs.js";
 
 const MarketingOutsource = () => {
     return (
-        <div>
-            <Hero/>
-            <ServicesDivider/>
-            <PainPointsSection/>
-            <WhyChooseUs/>
-            <WebsitePackages/>
-            <CommitmentSection/>
-            <ConsultationSection/>
-            <ServicesSection/>
-        </div>
+        <>
+            <SEOManager
+                title={seoConfigs.services['marketing-outsource'].title}
+                description={seoConfigs.services['marketing-outsource'].description}
+                keywords={seoConfigs.services['marketing-outsource'].keywords}
+                url="https://nextgency.vn/services/marketing-outsource"
+            />
+            <div>
+                <Hero/>
+                <ServicesDivider/>
+                <PainPointsSection/>
+                <WhyChooseUs/>
+                <WebsitePackages/>
+                <CommitmentSection/>
+                <ConsultationSection/>
+                <ServicesSection/>
+            </div>
+        </>
     );
 };
 

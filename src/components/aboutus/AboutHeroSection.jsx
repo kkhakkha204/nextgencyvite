@@ -177,8 +177,8 @@ const AboutHeroSection = () => {
                             <h1 ref={titleRef} className="text-[38px] md:text-[32px] lg:text-[64px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
                                 Đối tác
                                 <span className="font-archivo block text-black ">
-                  chuyển đổi số đa năng
-                </span>
+                                    chuyển đổi số đa năng
+                                </span>
                             </h1>
                         </div>
 
@@ -194,9 +194,9 @@ const AboutHeroSection = () => {
                                     className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:scale-105 group"
 
                                 >
-        <span className="">
-            Tư vấn ngay
-        </span>
+                                    <span className="">
+                                        Tư vấn ngay
+                                    </span>
                                     <div
                                         className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                         <ArrowUpRight

@@ -1,76 +1,19 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { getProjectCategories, projectsData } from '../../data/projectsData';
 
 const PortfolioShowcase = () => {
-    // Hard-coded project data
-    const projects = [
-        // Column 1
-        {
-            id: 1,
-            name: "E-commerce Platform",
-            type: "video",
-            src: "/assets/images/website&landingpage/show.mp4",
-            alt: "E-commerce Platform Demo"
-        },
-        {
-            id: 2,
-            name: "Corporate Website",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Corporate Website"
-        },
-        {
-            id: 3,
-            name: "Mobile App Landing",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Mobile App Landing"
-        },
-        {
-            id: 4,
-            name: "Restaurant Portal",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Restaurant Portal"
-        },
-        // Column 2
-        {
-            id: 5,
-            name: "Finance Dashboard",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Finance Dashboard"
-        },
-        {
-            id: 6,
-            name: "Healthcare System",
-            type: "video",
-            src: "/assets/images/website&landingpage/show.mp4",
-            alt: "Healthcare System"
-        },
-        {
-            id: 7,
-            name: "Education Platform",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Education Platform"
-        },
-        {
-            id: 8,
-            name: "Real Estate Portal",
-            type: "video",
-            src: "/assets/images/website&landingpage/show.mp4",
-            alt: "Real Estate Portal"
-        },
-        // Column 3
-        {
-            id: 9,
-            name: "Travel Agency",
-            type: "image",
-            src: "/assets/images/website&landingpage/beautysummit.webp",
-            alt: "Travel Agency"
-        },
-    ];
+    const projects = projectsData
+        .filter((project) => getProjectCategories(project).includes('Website & Landing Page'))
+        .slice(0, 9)
+        .map((project) => ({
+            id: project.id,
+            name: project.name,
+            type: 'image',
+            src: project.slides?.[0] || project.videoUrl || '/assets/images/website&landingpage/beautysummit.webp',
+            alt: project.name
+        }));
 
     // Organize projects into 3 columns
     const getColumnProjects = (columnIndex) => {
@@ -80,7 +23,11 @@ const PortfolioShowcase = () => {
     };
 
     const ProjectCard = ({ project }) => (
-        <div className="group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 cursor-pointer">
+        <Link
+            to={`/projects/${project.id}`}
+            className="group relative overflow-hidden rounded-2xl bg-white transition-all duration-300 mb-4 display-block"
+            aria-label={`Xem chi tiết ${project.name}`}
+        >
             <div className="aspect-[4/3] overflow-hidden">
                 {project.type === 'video' ? (
                     <video
@@ -108,12 +55,12 @@ const PortfolioShowcase = () => {
                     {project.name}
                 </h3>
                 <div className="bg-gray-100 neu-shadow-inset-xs p-3 rounded-full">
-                <ArrowUpRight
-                    className="w-4 h-4 text-black group-hover:text-gray-600 transition-all duration-200 group-hover:transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
+                    <ArrowUpRight
+                        className="w-4 h-4 text-black group-hover:text-gray-600 transition-all duration-200 group-hover:transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    />
                 </div>
             </div>
-        </div>
+        </Link>
     );
 
     return (
@@ -145,14 +92,14 @@ const PortfolioShowcase = () => {
                     </div>
 
                     {/* Column 2 */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 ">
                         {getColumnProjects(1).map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
                     </div>
 
                     {/* Column 3 */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 ">
                         {getColumnProjects(2).map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}

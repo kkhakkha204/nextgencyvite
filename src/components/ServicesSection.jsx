@@ -5,35 +5,51 @@ import React from 'react';
 const ServicesSection = () => {
     // Dữ liệu mẫu cho các dự án
     const projects = [
+        
         {
             id: 1,
-            image: "/assets/images/test.webp",
-            title: "Digital Marketing Platform"
+            image: "/assets/images/projects/Web_Ecomerce.webp",
+            title: "Wesite E-commerce"
         },
         {
             id: 2,
-            image: "/assets/images/test.webp",
-            title: "E-commerce Solution"
+            image: "/assets/images/projects/Web_elearning.webp",
+            title: "Website E-learning"
         },
         {
             id: 3,
-            image: "/assets/images/test.webp",
-            title: "Corporate Website"
+            image: "/assets/images/projects/webgioithieu.webp",
+            title: "Wesite giới thiệu doanh nghiệp"
         },
         {
             id: 4,
-            image: "/assets/images/test.webp",
-            title: "Mobile Application"
+            image: "/assets/images/projects/websukien.webp",
+            title: "Wesite sự kiện"
         },
         {
             id: 5,
-            image: "/assets/images/test.webp",
-            title: "Data Analytics Dashboard"
+            image: "/assets/images/projects/payment_checkin.webp",
+            title: "Hệ thống Thanh toán & Check-in Sự kiện"
         },
         {
             id: 6,
-            image: "/assets/images/test.webp",
-            title: "Brand Identity Design"
+            image: "/assets/images/projects/CRM_dashboard.webp",
+            title: "CRM Dashboard"
+        },
+        {
+            id: 7,
+            image: "/assets/images/projects/thiepmoi.webp",
+            title: "Web tạo thiệp mời"
+        },
+        {
+            id: 8,
+            image: "/assets/images/projects/bonhandienthuonghieu.webp",
+            title: "Thiết kế bộ nhận diện thương hiệu"
+        },
+        {
+            id: 9,
+            image: "/assets/images/projects/dataset.webp",
+            title: "Dataset Ads Funnel"
         }
     ];
 

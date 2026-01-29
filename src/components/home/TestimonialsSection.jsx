@@ -28,9 +28,9 @@ const TestimonialsSection = () => {
     const testimonials = [
         {
             id: 1,
-            content: "Nextgency đã mang đến cho chúng tôi một giải pháp tuyệt vời. Đội ngũ chuyên nghiệp, sáng tạo và luôn lắng nghe khách hàng.",
-            author: "Nguyễn Văn A",
-            company: "ABC Corporation"
+            content: "Nextgency đã mang đến cho chúng tôi một giải pháp tuyệt vời. Đội ngũ chuyên nghiệp, sáng tạo và luôn hỗ trợ nhiệt tình.",
+            author: "Võ Anh Dũng",
+            company: "EAC Group"
         },
         {
             id: 2,

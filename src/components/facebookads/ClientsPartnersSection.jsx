@@ -27,7 +27,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner1.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -38,7 +38,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner2.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -53,7 +53,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner3.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -64,7 +64,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner4.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -79,7 +79,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner5.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -90,7 +90,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner6.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -105,7 +105,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner7.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -116,7 +116,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner8.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -134,7 +134,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner9.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -145,7 +145,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner10.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -160,7 +160,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner11.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -171,7 +171,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner12.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -214,7 +214,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner13.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -225,7 +225,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner14.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -240,7 +240,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner15.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -251,7 +251,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner16.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -266,7 +266,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner25.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"
@@ -277,7 +277,7 @@ const ClientsPartnersSection = () => {
                                       transition-all duration-300 ease-in-out cursor-pointer
                                       group border border-[#e9d5ff]">
                             <img
-                                src="/assets/images/header/navbarlogoblack.png"
+                                src="/assets/images/partner/partner18.png"
                                 alt="Partner Logo 3"
                                 className="max-w-full max-h-full object-contain
                                          group-hover:opacity-80 transition-opacity duration-300"

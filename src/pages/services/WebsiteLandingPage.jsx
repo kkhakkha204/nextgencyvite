@@ -13,12 +13,20 @@ import CommitmentSection from "../../components/websitelanding/CommitmentSection
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import GoogleAdsProcess from "../../components/websitelanding/GoogleAdsProcess.jsx";
+import SEOManager from "../../components/SEO/SEOManager.jsx";
+import { seoConfigs } from "../seo-configs.js";
 
 const WebsiteLandingPage = () => {
 
     return (
-        <div className="relative">
-
+        <>
+            <SEOManager
+                title={seoConfigs.services['website-landing-page'].title}
+                description={seoConfigs.services['website-landing-page'].description}
+                keywords={seoConfigs.services['website-landing-page'].keywords}
+                url="https://nextgency.vn/services/website-landing-page"
+            />
+            <div className="relative">
                 <Hero/>
                 <ProjectCarousel/>
                 <ServicesDivider/>
@@ -34,7 +42,8 @@ const WebsiteLandingPage = () => {
                 <CommitmentSection/>
                 <ConsultationSection/>
                 <ServicesSection/>
-        </div>
+            </div>
+        </>
     );
 };
 

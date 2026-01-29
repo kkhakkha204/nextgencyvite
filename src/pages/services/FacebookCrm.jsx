@@ -10,22 +10,32 @@ import ConsultationSection from "../../components/ConsultationSection.jsx";
 import WebsitePackages from "../../components/datasetcrm/WebsitePackages.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import OffersSection from "../../components/datasetcrm/OffersSection.jsx";
+import SEOManager from "../../components/SEO/SEOManager.jsx";
+import { seoConfigs } from "../seo-configs.js";
 
 const FacebookCrm = () => {
     return (
-        <div>
-            <Hero/>
-            <ServicesDivider/>
-            <PainPointsSection/>
-            <WhyChooseUs/>
-            <VideoSection/>
-            <WebsitePackages/>
-            <OffersSection/>
-            <ClientsPartnersSection/>
-            <CommitmentSection/>
-            <ConsultationSection/>
-            <ServicesSection/>
-        </div>
+        <>
+            <SEOManager
+                title={seoConfigs.services['facebook-crm'].title}
+                description={seoConfigs.services['facebook-crm'].description}
+                keywords={seoConfigs.services['facebook-crm'].keywords}
+                url="https://nextgency.vn/services/facebook-crm"
+            />
+            <div>
+                <Hero/>
+                <ServicesDivider/>
+                <PainPointsSection/>
+                <WhyChooseUs/>
+                <VideoSection/>
+                <WebsitePackages/>
+                <OffersSection/>
+                <ClientsPartnersSection/>
+                <CommitmentSection/>
+                <ConsultationSection/>
+                <ServicesSection/>
+            </div>
+        </>
     );
 };
 
