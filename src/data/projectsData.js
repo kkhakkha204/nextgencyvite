@@ -579,38 +579,6 @@ export const projectsData = [
             '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
-    {
-        id: 'qc-house',
-        name: 'Website QC House',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
-        description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
-        details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
-        ],
-        date: '01/2026',
-        category: 'Website & Landing Page',
-        partner: 'QC House',
-        technologies: ['Wordpress', 'GA4', 'Figma'],
-        metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
-        ],
-        cta: {
-            label: 'Xem chi tiết',
-            url: 'https://qchouse.vn/'
-        },
-        videoUrl: '/assets/images/website&landingpage/video.mp4',
-        slides: [
-            '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
-        ]
-    },
     {   
         id: 'timo',
         name: 'Website giới thiệu vải may Timo',
