@@ -753,68 +753,192 @@ export const projectsData = [
             '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
-    //{
-    //     id: 'qc-house',
-    //     name: 'Website QC House',
-    //     summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
-    //     description:
-    //         'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
-    //     details: [
-    //         'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-    //         'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-    //         'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
-    //     ],
-    //     date: '01/2026',
-    //     category: 'Website & Landing Page',
-    //     partner: 'QC House',
-    //     technologies: ['Wordpress', 'GA4', 'Figma'],
-    //     metrics: [
-    //         { label: 'Tăng trưởng doanh thu', value: '+38%' },
-    //         { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-    //         { label: 'CPA', value: '-18%' }
-    //     ],
-    //     cta: {
-    //         label: 'Xem chi tiết',
-    //         url: 'https://qchouse.vn/'
-    //     },
-    //     videoUrl: '/assets/images/website&landingpage/video.mp4',
-    //     slides: [
-    //         '/assets/images/website&landingpage/beautysummit.webp',
-    //         '/assets/images/website&landingpage/katskin.webp',
-    //         '/assets/images/website&landingpage/woodplus.webp',
-    //     ]
-    // },
-    // {
-    //     id: 'topmus',
-    //     name: 'Website Topmus',
-    //     summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
-    //     description:
-    //         'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
-    //     details: [
-    //         'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-    //         'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-    //         'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
-    //     ],
-    //     date: '01/2026',
-    //     category: 'Website & Landing Page',
-    //     partner: 'Topmus',
-    //     technologies: ['Wordpress', 'GA4', 'Figma'],
-    //     metrics: [
-    //         { label: 'Tăng trưởng doanh thu', value: '+38%' },
-    //         { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-    //         { label: 'CPA', value: '-18%' }
-    //     ],
-    //     cta: {
-    //         label: 'Xem chi tiết',
-    //         url: 'https://topmus.vn/'
-    //     },
-    //     videoUrl: '/assets/images/website&landingpage/video.mp4',
-    //     slides: [
-    //         '/assets/images/website&landingpage/beautysummit.webp',
-    //         '/assets/images/website&landingpage/katskin.webp',
-    //         '/assets/images/website&landingpage/woodplus.webp',
-    //     ]
-    //},
+    {
+        id: 'qc-house',
+        name: 'Website QC House',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'QC House',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://qchouse.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
+    {
+        id: 'topmus',
+        name: 'Website Topmus',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'Topmus Entertainment',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://topmus.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
+    {
+        id: 'fptdoangnghiep',
+        name: 'Website FPT Telecom',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'Chi nhánh phân phối của FPT Telecom',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://topmus.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
+    {
+        id: 'srxvietnam',
+        name: 'Website SRX Việt Nam',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'SRX Việt Nam',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://topmus.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
+    {
+        id: 'salomon',
+        name: 'Website khóa học Phúc BANI',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'salomon',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://topmus.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
+    {
+        id: 'miniapp-beautysummit-2026',
+        name: 'Mini app Beauty Summit 2026',
+        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        description:
+            'Dự án đem đến làn gió mới cho sự kiện làm đẹp. Bằng hệ thống làm nhiệm vụ tích điểm đổi quà cho những khách mua vé tham dự, mini app không chỉ tăng tương tác mà còn thúc đẩy doanh thu từ các gói vé VIP. Hệ thống tích điểm được thiết kế đơn giản, dễ hiểu, giúp khách hàng dễ dàng tham gia và nhận quà tặng hấp dẫn.',
+        details: [
+            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
+            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
+            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+        ],
+        date: '01/2026',
+        category: 'Website & Landing Page',
+        partner: 'Beauty Summit',
+        technologies: ['Wordpress', 'GA4', 'Figma'],
+        metrics: [
+            { label: 'Tăng trưởng doanh thu', value: '+38%' },
+            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
+            { label: 'CPA', value: '-18%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://topmus.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/website&landingpage/woodplus.webp',
+        ]
+    },
 ];
 
 export const getProjectById = (projectId) =>

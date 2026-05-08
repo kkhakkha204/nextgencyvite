@@ -191,30 +191,11 @@ const Projects = () => {
 
     return (
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white">
-            <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-                <div className="mb-10 rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-md shadow-2xl shadow-black/40">
+            <div className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 lg:px-8">
+                <div className="mb-10 rounded-3xl border border-white/10 bg-white/5 px-6 py-8 backdrop-blur-md shadow-2xl shadow-black/40">
                     <p className="text-xs uppercase tracking-[0.35em] text-indigo-300 font-semibold">projects</p>
-                    <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black text-white">DỰ ÁN TIÊU BIỂU</h1>
+                    <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold text-white">DỰ ÁN TIÊU BIỂU</h1>
                     <p className="mt-2 max-w-2xl text-slate-300">Tổng hợp các dự án đã triển khai, với kết quả thực tế và quy trình chuyên nghiệp.</p>
-                </div>
-
-                <div className="mb-6 flex flex-wrap gap-3">
-                    {categoryStats.map((stat) => (
-                        <button
-                            key={stat.name}
-                            type="button"
-                            onClick={() => setCategory(stat.name)}
-                            className={`flex min-w-[180px] items-start justify-between flex-col rounded-2xl border px-4 py-3 text-left transition-all duration-300 ${
-                                category === stat.name
-                                    ? 'border-indigo-300 bg-indigo-500/15 text-white shadow-lg shadow-indigo-900/30'
-                                    : 'border-white/10 bg-white/5 text-slate-200 hover:border-indigo-400 hover:bg-white/10'
-                            }`}
-                        >
-                            <div className="text-xs uppercase tracking-[0.15em] text-indigo-200">Dự án</div>
-                            <div className="mt-1 text-xs font-semibold text-white">{stat.count} +</div>
-                            <div className="mt-2 text-sm font-semibold text-white">{stat.name}</div>
-                        </button>
-                    ))}
                 </div>
 
                 <div className="mb-10 grid gap-4 lg:grid-cols-[2fr_1fr_1fr]">
@@ -262,7 +243,7 @@ const Projects = () => {
                                     : 'opacity-0 translate-y-8'
                             } hover:border-indigo-400 hover:shadow-xl hover:shadow-indigo-900/20`}
                         >
-                            <div className="relative h-52 overflow-hidden">
+                            <div className="relative aspect-[16/9] overflow-hidden">
                                 <img
                                     src={project.slides[0]}
                                     alt={project.name}
