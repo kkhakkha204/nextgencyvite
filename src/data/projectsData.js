@@ -756,22 +756,22 @@ export const projectsData = [
     {
         id: 'qc-house',
         name: 'Website QC House',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        summary: 'Xây dựng không gian trưng bày dự án trực tuyến và tối ưu phễu khách hàng mảng thiết kế - thi công.',
         description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+            'Dự án tập trung vào việc tạo ra một trải nghiệm thị giác ấn tượng, truyền tải trọn vẹn phong cách thiết kế và năng lực thi công của QC House. Website không chỉ đóng vai trò là một profile điện tử chuyên nghiệp mà còn là một "showroom trực tuyến", nơi khách hàng có thể dễ dàng khám phá các không gian sống thực tế, tìm hiểu quy trình làm việc và đăng ký nhận tư vấn chuyên sâu.',
         details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+            'Giao diện được thiết kế theo phong cách hiện đại, ưu tiên không gian hiển thị hình ảnh (image-centric) để tôn lên vẻ đẹp của các công trình kiến trúc và nội thất. Cấu trúc danh mục dự án được phân chia thông minh theo loại hình (Căn hộ, Nhà phố, Biệt thự) và phong cách thiết kế, giúp khách hàng tiềm năng nhanh chóng tìm thấy nguồn cảm hứng phù hợp với nhu cầu.',
+            'Về mặt kỹ thuật, hệ thống thư viện ảnh (Gallery) độ phân giải cao được tối ưu hóa triệt để bằng định dạng WebP và kỹ thuật Lazy-loading. Điều này đảm bảo tốc độ tải trang cực nhanh và mượt mà trên cả thiết bị di động lẫn máy tính bàn, không làm gián đoạn cảm xúc của người xem.',
+            'Bên cạnh trải nghiệm thị giác, luồng chuyển đổi (Lead Generation) được lồng ghép khéo léo thông qua các nút Call-to-Action tinh tế, hệ thống form nhận báo giá sơ bộ và kết nối trực tiếp với Zalo OA/Hotline. Nhờ cấu trúc chuẩn SEO On-page, website đạt thứ hạng tốt cho các từ khóa ngách về thiết kế nội thất, mang lại nguồn khách hàng tự nhiên ổn định.'
         ],
-        date: '01/2026',
-        category: 'Website & Landing Page',
-        partner: 'QC House',
-        technologies: ['Wordpress', 'GA4', 'Figma'],
+        date: '02/2026',
+        category: 'Corporate Website & Portfolio',
+        partner: 'QC House Architecture & Interior',
+        technologies: ['WordPress', 'Elementor', 'GSAP Animation', 'Litespeed Cache'],
         metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
+            { label: 'Tốc độ tải trang (LCP)', value: '< 2 giây' },
+            { label: 'Thời gian trên trang', value: '> 3 phút' },
+            { label: 'Lượt yêu cầu tư vấn', value: '+35%' }
         ],
         cta: {
             label: 'Xem chi tiết',
@@ -787,22 +787,22 @@ export const projectsData = [
     {
         id: 'topmus',
         name: 'Website Topmus',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        summary: 'Xây dựng hệ thống Middleware tự động hóa đồng bộ dữ liệu ứng tuyển và tích hợp CRM.',
         description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+            'Dự án giải quyết bài toán xử lý khối lượng lớn hồ sơ bằng cách xây dựng một hệ thống kết nối trung gian mạnh mẽ. Chúng tôi tập trung vào việc tự động hóa hoàn toàn luồng dữ liệu từ lúc ứng viên điền form trên website cho đến khi thông tin xuất hiện trên hệ thống quản lý CRM nội bộ, đảm bảo tính liền mạch, bảo mật và khả năng xử lý các tệp tin đính kèm phức tạp.',
         details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+            'Thách thức chính của dự án là việc xử lý các form ứng tuyển đòi hỏi phải truyền tải dữ liệu đa phương tiện một cách chính xác. Để giải quyết vấn đề này, chúng tôi đã phát triển và tích hợp giải pháp TOPMUS Middleware V2 dưới dạng một plugin WordPress chuyên biệt.',
+            'Hệ thống tận dụng sức mạnh của Fluent Forms để thu thập thông tin trên front-end. Điểm nhấn kỹ thuật cốt lõi là khả năng bắt và xử lý các luồng Webhook, bao gồm việc tái cấu trúc dữ liệu theo chuẩn multipart/form-data để hỗ trợ tải lên các tệp hồ sơ năng lực (CV) một cách mượt mà sang server bên thứ ba.',
+            'Toàn bộ dữ liệu sau khi đi qua lớp Middleware sẽ được tự động đồng bộ về hệ thống CRM bên ngoài theo thời gian thực. Giải pháp này giúp loại bỏ hoàn toàn các thao tác nhập liệu thủ công, tối ưu hóa quy trình làm việc của bộ phận nhân sự và đảm bảo không có bất kỳ hồ sơ tiềm năng nào bị thất lạc.'
         ],
-        date: '01/2026',
-        category: 'Website & Landing Page',
-        partner: 'Topmus Entertainment',
-        technologies: ['Wordpress', 'GA4', 'Figma'],
+        date: '03/2026',
+        category: 'WordPress Plugin & CRM Integration',
+        partner: 'TOPMUS',
+        technologies: ['WordPress', 'PHP', 'Fluent Forms', 'REST API/Webhook', 'CRM'],
         metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
+            { label: 'Tự động hóa luồng dữ liệu', value: '100%' },
+            { label: 'Tốc độ đồng bộ tệp CV', value: '< 2 giây' },
+            { label: 'Tiết kiệm thời gian xử lý', value: '+40 giờ/tháng' }
         ],
         cta: {
             label: 'Xem chi tiết',
@@ -818,26 +818,26 @@ export const projectsData = [
     {
         id: 'fptdoangnghiep',
         name: 'Website FPT Telecom',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        summary: 'Tối ưu hóa kênh đăng ký dịch vụ viễn thông và hạ tầng số cho phân khúc khách hàng B2B.',
         description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+            'Dự án tập trung vào việc xây dựng một cổng thông tin chuyên biệt, giúp đơn giản hóa quá trình tiếp cận các dịch vụ phức tạp của FPT Telecom như Internet doanh nghiệp, Chữ ký số, Hóa đơn điện tử và Tổng đài ảo. Chúng tôi tập trung vào việc chuyển đổi các thông số kỹ thuật khô khan thành các gói giải pháp dễ hiểu, giúp chủ doanh nghiệp và bộ phận IT có thể đưa ra quyết định đăng ký nhanh chóng ngay trên website.',
         details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+            'Website được xây dựng trên nền tảng WordPress tối ưu hóa, sử dụng cấu trúc silo để phân loại rõ ràng các nhóm dịch vụ: Internet cáp quang, Dịch vụ số (FPT CA, iHĐ), và Giải pháp hạ tầng. Điều này giúp tối ưu hóa điểm chất lượng SEO và nâng cao trải nghiệm tìm kiếm thông tin của khách hàng doanh nghiệp.',
+            'Chúng tôi triển khai hệ thống nút kêu gọi hành động (CTA) thông minh và các Form đăng ký nhanh được tích hợp sâu vào từng bài viết dịch vụ. Hệ thống được thiết kế để tự động phân loại yêu cầu của khách hàng (nhu cầu lắp mạng hay nhu cầu mua chữ ký số) trước khi gửi về bộ phận tư vấn, giúp rút ngắn thời gian phản hồi.',
+            'Về kỹ thuật, dự án tập trung tối ưu hóa giao diện di động và tốc độ phản hồi trang để đáp ứng tiêu chuẩn Core Web Vitals của Google. Toàn bộ nội dung được trình bày dưới dạng bảng so sánh thông số và bảng giá minh bạch, giúp tăng tỷ lệ tin tưởng và chuyển đổi từ người truy cập thành khách hàng tiềm năng.'
         ],
-        date: '01/2026',
+        date: '03/2026',
         category: 'Website & Landing Page',
         partner: 'Chi nhánh phân phối của FPT Telecom',
-        technologies: ['Wordpress', 'GA4', 'Figma'],
+        technologies: ['WordPress', 'Elementor', 'RankMath SEO', 'Fluent Forms', 'Google Analytics 4'],
         metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
+            { label: 'Tỷ lệ chuyển đổi Lead', value: '+25%' },
+            { label: 'Thời gian trên trang', value: '> 2:30s' },
+            { label: 'Điểm SEO On-page', value: '95/100' }
         ],
         cta: {
             label: 'Xem chi tiết',
-            url: 'https://topmus.vn/'
+            url: 'https://fptdoanhnghep.com/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
@@ -849,57 +849,63 @@ export const projectsData = [
     {
         id: 'srxvietnam',
         name: 'Website SRX Việt Nam',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        summary: 'Xây dựng nền tảng E-commerce mỹ phẩm B2C tích hợp hệ thống Affiliate và quản trị CRM.',
         description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+            'Dự án xây dựng một nền tảng bán lẻ mỹ phẩm trực tuyến toàn diện, không chỉ tối ưu hóa trải nghiệm mua sắm (B2C) của khách hàng mà còn cung cấp công cụ quản trị mạnh mẽ cho đội ngũ vận hành. Trọng tâm của hệ thống là sự kết hợp mượt mà giữa cửa hàng trực tuyến, trang blog chia sẻ kiến thức làm đẹp chuyên sâu và mạng lưới tiếp thị liên kết (Affiliate), tạo đà tăng trưởng doanh thu đa kênh.',
         details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+            'Về mặt Front-end, giao diện được thiết kế tối ưu UI/UX dành riêng cho ngành hàng làm đẹp, làm nổi bật hình ảnh, thành phần sản phẩm và đánh giá thực tế. Luồng xem hàng và thanh toán được tinh gọn tối đa. Đồng thời, chuyên mục Blog được cấu trúc chuẩn SEO, đóng vai trò như một phễu thu hút khách hàng tiềm năng qua các nội dung hướng dẫn chăm sóc da.',
+            'Điểm nhấn kỹ thuật của dự án là việc quy hoạch và triển khai thành công hệ thống Affiliate Marketing. Cấu trúc cơ sở dữ liệu được tối ưu hóa để quản lý khối lượng lớn mã giảm giá, hệ thống banner quảng cáo cho đối tác và tài khoản cộng tác viên. Tính năng phân cấp tài khoản và cập nhật trạng thái người dùng hàng loạt giúp hệ thống tính toán hoa hồng tự động, minh bạch và chính xác.',
+            'Về khía cạnh quản trị, một Admin CRM chuyên biệt được tích hợp sâu vào hệ thống. Ban quản trị có thể dễ dàng kiểm soát tồn kho, quản lý trạng thái đơn hàng, và phân tích hiệu suất bán hàng của từng chiến dịch Affiliate theo thời gian thực, từ đó đưa ra các quyết định vận hành dựa trên dữ liệu chuẩn xác.'
         ],
-        date: '01/2026',
-        category: 'Website & Landing Page',
+        date: '04/2026',
+        category: 'E-commerce, Affiliate & CRM System',
         partner: 'SRX Việt Nam',
-        technologies: ['Wordpress', 'GA4', 'Figma'],
+        technologies: ['WordPress', 'WooCommerce', 'MySQL', 'Affiliate System', 'Custom CRM'],
         metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
+            { label: 'Cộng tác viên kích hoạt mới', value: '> 500' },
+            { label: 'Tăng trưởng doanh thu Affiliate', value: '+45%' },
+            { label: 'Tỷ lệ bỏ rơi giỏ hàng', value: '-15%' }
         ],
         cta: {
             label: 'Xem chi tiết',
-            url: 'https://topmus.vn/'
+            url: 'https://srxvietnam.com/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/projects/srx1.webp',
+            '/assets/images/projects/srx2.webp',
+            '/assets/images/projects/srx3.webp',
+            '/assets/images/projects/srx4.webp',
+            '/assets/images/projects/srx5.webp',
+            '/assets/images/projects/srx6.webp',
+            '/assets/images/projects/srx7.webp',
+            '/assets/images/projects/srx8.webp',
+            '/assets/images/projects/srx9.webp',
         ]
     },
     {
         id: 'salomon',
         name: 'Website khóa học Phúc BANI',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        summary: 'Xây dựng hệ thống đào tạo trực tuyến tự động hóa và tối ưu hành trình học tập.',
         description:
-            'Dự án tập trung tối ưu trải nghiệm mua sắm, đồng bộ dữ liệu bán hàng và tự động hóa chiến dịch remarketing để tăng trưởng doanh thu bền vững. Chúng tôi tái cấu trúc lại toàn bộ hành trình khách hàng từ nhận biết → cân nhắc → mua hàng → tái mua, đảm bảo từng điểm chạm đều đo lường được và có chiến lược cải thiện rõ ràng. Đồng thời, dự án triển khai bộ chỉ số vận hành hàng tuần để đội ngũ kinh doanh và marketing cùng theo dõi và đưa ra quyết định theo dữ liệu thực.',
+            'Dự án xây dựng một nền tảng e-learning toàn diện, không chỉ đóng vai trò là nơi lưu trữ bài giảng chất lượng cao mà còn là một phễu bán hàng tự động. Trọng tâm của hệ thống là xóa bỏ rào cản công nghệ cho học viên, tạo ra một luồng trải nghiệm liền mạch từ lúc tìm hiểu thông tin khóa học, thanh toán, cho đến khi chính thức vào lớp học.',
         details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+            'Giao diện trang đích (Landing Page) của từng khóa học được thiết kế trực quan, làm nổi bật lộ trình giảng dạy và kết quả đầu ra. Trình phát video bài giảng được cấu hình tối ưu băng thông, đảm bảo tốc độ tải mượt mà, không giật lag và đáp ứng tốt tiêu chuẩn mobile-first cho người dùng học trên điện thoại.',
+            'Nhằm tăng tỷ lệ chuyển đổi và đơn giản hóa bước tạo tài khoản, hệ thống được tích hợp tính năng xác thực đăng nhập bằng số điện thoại thông qua mã OTP. Điều này giúp học viên mới bỏ qua được các bước xác thực qua email rườm rà, truy cập thẳng vào hệ thống quản lý học tập một cách nhanh chóng và bảo mật cao.',
+            'Toàn bộ quy trình từ lúc khách hàng chuyển khoản đến khi vào học được tự động hóa 100%. Ngay khi giao dịch thanh toán thành công, hệ thống webhook sẽ lập tức được kích hoạt để mở khóa nội dung khóa học, đồng thời tự động gửi tin nhắn thông báo xác nhận và hướng dẫn học tập qua Zalo Business Solution (ZBS) trực tiếp đến tài khoản Zalo của học viên.'
         ],
-        date: '01/2026',
-        category: 'Website & Landing Page',
-        partner: 'salomon',
-        technologies: ['Wordpress', 'GA4', 'Figma'],
+        date: '03/2026',
+        category: 'E-Learning Platform & Automation',
+        partner: 'Phúc BANI (Phúc GPT)',
+        technologies: ['WordPress', 'MasterStudy LMS', 'Digits OTP', 'Zalo Business'],
         metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
+            { label: 'Tỷ lệ chốt sale (CVR)', value: '+28%' },
+            { label: 'Tốc độ cấp quyền học', value: '< 1 phút' },
+            { label: 'Tỷ lệ đăng nhập OTP', value: '95%' }
         ],
         cta: {
             label: 'Xem chi tiết',
-            url: 'https://topmus.vn/'
+            url: 'https://khoahoc.phucgpt.com/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
@@ -911,27 +917,23 @@ export const projectsData = [
     {
         id: 'miniapp-beautysummit-2026',
         name: 'Mini app Beauty Summit 2026',
-        summary: 'Tối ưu phễu chuyển đổi và tăng trưởng doanh thu đa kênh.',
+        summary: 'Giải pháp tương tác sự kiện qua Zalo Mini App với hệ thống nhiệm vụ tích điểm đổi quà.',
         description:
-            'Dự án đem đến làn gió mới cho sự kiện làm đẹp. Bằng hệ thống làm nhiệm vụ tích điểm đổi quà cho những khách mua vé tham dự, mini app không chỉ tăng tương tác mà còn thúc đẩy doanh thu từ các gói vé VIP. Hệ thống tích điểm được thiết kế đơn giản, dễ hiểu, giúp khách hàng dễ dàng tham gia và nhận quà tặng hấp dẫn.',
+            'Dự án đem đến làn gió mới cho sự kiện làm đẹp. Bằng hệ thống làm nhiệm vụ tích điểm đổi quà cho những khách mua vé tham dự, mini app không chỉ tăng tương tác mà còn thúc đẩy doanh thu từ các gói vé VIP. Hệ thống tích điểm được thiết kế trực quan, giúp khách hàng dễ dàng tham gia và nhận quà tặng hấp dẫn ngay trên nền tảng Zalo quen thuộc mà không cần tải thêm ứng dụng ngoài.',
         details: [
-            'Mục tiêu chính của dự án là tăng trưởng doanh thu trên các kênh website, social commerce và nền tảng sàn, đồng thời giảm chi phí cho mỗi đơn hàng. Đội ngũ triển khai bắt đầu bằng việc phân tích hành vi người dùng, đo lường điểm rơi đơn hàng và xây dựng lại các nhóm sản phẩm trọng tâm theo biên lợi nhuận.',
-            'Chúng tôi xây dựng hệ thống tự động hóa gồm: nuôi dưỡng khách hàng tiềm năng qua email/SMS, kịch bản remarketing động dựa trên hành vi xem sản phẩm, và re-engagement cho nhóm khách hàng ngưng mua. Toàn bộ dữ liệu được đồng bộ về kho dữ liệu trung tâm để tạo báo cáo theo thời gian thực.',
-            'Ngoài ra, dự án còn cải thiện tốc độ tải trang, tối ưu UI/UX theo nguyên tắc “less click – more clarity”, và triển khai A/B testing cho các điểm chốt đơn. Nhờ vậy, tỷ lệ chuyển đổi tăng ổn định trong 8 tuần liên tục.'
+            'Để đảm bảo trải nghiệm mượt mà tại không gian sự kiện đông người, giao diện mini app được phát triển theo hướng mobile-first. Chúng tôi đặc biệt chú trọng xây dựng hệ thống trang hướng dẫn (User Instruction) rõ ràng, kết hợp UI/UX tối ưu giúp người dùng mọi lứa tuổi dễ dàng nắm bắt luồng thao tác tham gia sự kiện.',
+            'Luồng tính năng cốt lõi xoay quanh các nhiệm vụ tương tác thực tế (Gamification): người tham dự thực hiện quét mã QR check-in tại các gian hàng và nhấn quan tâm Zalo Official Account (OA) của ban tổ chức để tích lũy điểm thưởng. Các tác vụ này giúp số hóa toàn bộ hành trình trải nghiệm, biến mỗi bước chân của khách mời thành một điểm chạm đo lường được.',
+            'Điểm số sau khi tích lũy có thể sử dụng để quy đổi thành các phần quà hiện vật hoặc ưu đãi nâng cấp hạng vé VIP. Nhờ tận dụng hệ sinh thái Zalo, giải pháp này không chỉ đẩy mạnh không khí sôi động tại hiện trường mà còn giúp ban tổ chức tự động thu thập lượng lớn data người dùng chất lượng để tiếp tục chăm sóc (Remarketing) qua kênh Zalo OA sau khi sự kiện kết thúc.'
         ],
-        date: '01/2026',
-        category: 'Website & Landing Page',
+        date: '04/2026',
+        category: 'Zalo Mini App & Gamification',
         partner: 'Beauty Summit',
-        technologies: ['Wordpress', 'GA4', 'Figma'],
+        technologies: ['Zalo Mini App', 'Tailwind CSS', 'Zalo OA API', 'QR Code System'],
         metrics: [
-            { label: 'Tăng trưởng doanh thu', value: '+38%' },
-            { label: 'Tỷ lệ chuyển đổi', value: '+21%' },
-            { label: 'CPA', value: '-18%' }
+            { label: 'Tương tác sự kiện', value: '+65%' },
+            { label: 'Lượt Follow Zalo OA', value: '+300%' },
+            { label: 'Lượt quét QR Check-in', value: '> 5,000' }
         ],
-        cta: {
-            label: 'Xem chi tiết',
-            url: 'https://topmus.vn/'
-        },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/website&landingpage/beautysummit.webp',

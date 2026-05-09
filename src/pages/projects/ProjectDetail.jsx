@@ -41,8 +41,8 @@ const ProjectDetail = () => {
     };
 
     return (
-        <section className="bg-black text-white">
-            <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <section className="overflow-x-hidden bg-black text-white">
+            <div className="mx-auto w-full max-w-[1440px] px-4 py-16 sm:px-6 lg:px-8">
                 <div className="mb-10">
                     <Link
                         to="/projects/all"
@@ -53,13 +53,13 @@ const ProjectDetail = () => {
                     <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">{project.name}</h1>
                 </div>
 
-                <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
-                    <div>
-                        <div className="relative overflow-hidden rounded-3xl border border-white/10">
+                <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+                    <div className="min-w-0">
+                        <div className="relative overflow-hidden rounded-3xl border border-white/10 aspect-[16/9]">
                             <img
                                 src={activeImage}
                                 alt={project.name}
-                                className="h-[380px] w-full object-cover"
+                                className="h-full w-full object-cover"
                             />
                             {slides.length > 1 && (
                                 <div className="absolute inset-x-4 bottom-4 flex items-center justify-between">
@@ -80,7 +80,7 @@ const ProjectDetail = () => {
                         </div>
 
                         {slides.length > 1 && (
-                            <div className="mt-4 flex gap-3 overflow-x-auto pb-2">
+                            <div className="mt-4 flex max-w-full gap-3 overflow-x-auto pb-2">
                                 {slides.map((slide, index) => (
                                     <button
                                         key={slide}
@@ -102,13 +102,13 @@ const ProjectDetail = () => {
                         )}
 
                         <div className="mb-10">
-                            <p className="mt-4 max-w-3xl text-base text-white/70">
+                            <p className="mt-4 max-w-3xl break-words text-base text-white/70">
                                 {project.description}
                             </p>
                             {project.details?.length > 0 && (
                                 <div className="mt-6 space-y-4">
                                     {project.details.map((detail) => (
-                                        <p key={detail} className="max-w-4xl text-sm text-white/70">
+                                        <p key={detail} className="max-w-4xl break-words text-sm text-white/70">
                                             {detail}
                                         </p>
                                     ))}
@@ -117,7 +117,7 @@ const ProjectDetail = () => {
                         </div>
                     </div>
 
-                    <aside className="flex flex-col gap-6">
+                    <aside className="min-w-0 flex flex-col gap-6">
                         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
                             <div className="text-sm text-white/60">Ngày thực hiện</div>
                             <div className="mt-1 text-lg font-semibold text-white">{project.date}</div>
