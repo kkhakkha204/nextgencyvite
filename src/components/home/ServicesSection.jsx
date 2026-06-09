@@ -31,136 +31,136 @@ const ServicesSection = () => {
             id: 0,
             name: 'Automation - Ai - Data',
             icon: <Bot className="w-4 h-4" />,
-            title: 'Automation - ai - data',
+            title: 'Automation - AI - Data',
             description: 'Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình.',
-            image: '/assets/images/test.webp',
+            image: '/assets/images/services/automation.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'React' },
-                { icon: <Code className="w-4 h-4" />, name: 'Next.js' },
-                { icon: <Code className="w-4 h-4" />, name: 'Tailwind CSS' },
-                { icon: <Code className="w-4 h-4" />, name: 'Node.js' }
+                { icon: <Code className="w-4 h-4" />, name: 'AI Automation' },
+                { icon: <Code className="w-4 h-4" />, name: 'n8n' },
+                { icon: <Code className="w-4 h-4" />, name: 'CRM Integration' },
+                { icon: <Code className="w-4 h-4" />, name: 'Dashboard' }
             ],
-            completedDate: '99 ngày',
-            note: 'Đảm bảo website hoạt động mượt mà trên mọi thiết bị',
+            completedDate: '14 - 30 ngày',
+            note: 'Tối ưu quy trình vận hành, tự động hóa tác vụ và khai thác dữ liệu hiệu quả',
             link:'/services/ai-data'
         },
         {
             id: 1,
             name: 'Google Ads',
             icon: <Target className="w-4 h-4" />,
-            title: 'Google ads',
+            title: 'Google Ads',
             description: 'Nextgency triển khai Google Ads với đa dạng chiến dịch để đưa doanh nghiệp lên top 1 trong tâm trí người dùng khi nhắc tới lĩnh vực của bạn.',
-            image: '/assets/images/test.webp',
+            image: '/assets/images/services/gg-ads.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'React Native' },
-                { icon: <Code className="w-4 h-4" />, name: 'Flutter' },
-                { icon: <Code className="w-4 h-4" />, name: 'Swift' },
-                { icon: <Code className="w-4 h-4" />, name: 'Kotlin' }
+                { icon: <Code className="w-4 h-4" />, name: 'Search Ads' },
+                { icon: <Code className="w-4 h-4" />, name: 'Display Ads' },
+                { icon: <Code className="w-4 h-4" />, name: 'Performance Max' },
+                { icon: <Code className="w-4 h-4" />, name: 'Conversion Tracking' }
             ],
-            completedDate: '99 ngày',
-            note: 'Hỗ trợ cập nhật và bảo trì liên tục',
+            completedDate: '3 - 7 ngày',
+            note: 'Thiết lập chiến dịch, đo lường chuyển đổi và tối ưu ngân sách quảng cáo',
             link:'/services/google-ads'
         },
         {
             id: 2,
             name: 'Facebook Ads',
             icon: <Smartphone className="w-4 h-4" />,
-            title: 'Facebook ads',
+            title: 'Facebook Ads',
             description: 'Dịch vụ Facebook Ads từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất Facebook đầy cơ hội.',
-            image: '/assets/images/test.webp',
+            image: '/assets/images/services/fb-ads.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'WooCommerce' },
-                { icon: <Code className="w-4 h-4" />, name: 'Shopify' },
-                { icon: <Code className="w-4 h-4" />, name: 'Magento' },
-                { icon: <Code className="w-4 h-4" />, name: 'Stripe API' }
+                { icon: <Code className="w-4 h-4" />, name: 'Meta Ads' },
+                { icon: <Code className="w-4 h-4" />, name: 'Pixel Tracking' },
+                { icon: <Code className="w-4 h-4" />, name: 'Custom Audience' },
+                { icon: <Code className="w-4 h-4" />, name: 'Retargeting' }
             ],
-            completedDate: '99 ngày',
-            note: 'Tích hợp đầy đủ cổng thanh toán trong nước và quốc tế',
+            completedDate: '3 - 7 ngày',
+            note: 'Xây dựng tệp khách hàng, triển khai quảng cáo và tối ưu hiệu quả chuyển đổi',
             link:'/services/facebook-ads'
         },
         {
             id: 3,
             name: 'Website & Landing Page',
             icon: <Globe className="w-4 h-4" />,
-            title: 'Website & landing page',
+            title: 'Website & Landing Page',
             description: 'Website & Landing Page không chỉ là nơi khách hàng "ghé chơi", mà là đích đến giúp họ ở lại – chuyển đổi – và quay lại. Nextgency thiết kế nền tảng số hiện đại với giải pháp trọn gói.',
-            image: '/assets/images/test.webp',
+            image: '/assets/images/services/web-ladi.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'WordPress' },
-                { icon: <Code className="w-4 h-4" />, name: 'Sanity' },
-                { icon: <Code className="w-4 h-4" />, name: 'Strapi' },
-                { icon: <Code className="w-4 h-4" />, name: 'Directus' }
+                { icon: <Code className="w-4 h-4" />, name: 'React' },
+                { icon: <Code className="w-4 h-4" />, name: 'Next.js' },
+                { icon: <Code className="w-4 h-4" />, name: 'Wordpress' },
+                { icon: <Code className="w-4 h-4" />, name: 'SEO Onpage' }
             ],
-            completedDate: '99 ngày',
-            note: 'Giao diện quản trị thân thiện, dễ sử dụng',
+            completedDate: '7 - 21 ngày',
+            note: 'Thiết kế giao diện hiện đại, tối ưu tốc độ tải trang và tăng tỷ lệ chuyển đổi',
             link:'/services/website-landing-page'
         },
         {
             id: 4,
             name: 'TikTok Ads',
             icon: <Music className="w-4 h-4" />,
-            title: 'Tiktok ads',
-            description: 'Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên nền tảng Tiktok để mang về doanh thu và độ nhận diện phủ khắp..',
-            image: '/assets/images/test.webp',
+            title: 'TikTok Ads',
+            description: 'Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên nền tảng Tiktok để mang về doanh thu và độ nhận diện phủ khắp.',
+            image: '/assets/images/services/tiktok-ads.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'AWS' },
-                { icon: <Code className="w-4 h-4" />, name: 'Google Cloud' },
-                { icon: <Code className="w-4 h-4" />, name: 'Docker' },
-                { icon: <Code className="w-4 h-4" />, name: 'Kubernetes' }
+                { icon: <Code className="w-4 h-4" />, name: 'TikTok Ads' },
+                { icon: <Code className="w-4 h-4" />, name: 'TikTok Pixel' },
+                { icon: <Code className="w-4 h-4" />, name: 'Spark Ads' },
+                { icon: <Code className="w-4 h-4" />, name: 'Creative Testing' }
             ],
-            completedDate: '99 ngày',
-            note: 'Giám sát 24/7 và tự động scale khi cần thiết',
+            completedDate: '3 - 7 ngày',
+            note: 'Triển khai quảng cáo TikTok, kiểm thử nội dung và tối ưu chi phí chuyển đổi',
             link:'/services/tiktok-ads'
         },
         {
             id: 5,
             name: 'Facebook Dataset & CRM',
             icon: <Users className="w-4 h-4" />,
-            title: 'Facebook dataset & crm',
+            title: 'Facebook Dataset & CRM',
             description: 'Trong thời đại dữ liệu là "mỏ kim cương", Nextgency giúp doanh nghiệp biến từng hành vi, từng tương tác thành đòn bẩy quảng cáo hiệu quả qua dịch vụ Facebook Dataset & CRM.',
-            image: '/assets/images/test.webp',
+            image: '/assets/images/services/dataset.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'OWASP' },
-                { icon: <Code className="w-4 h-4" />, name: 'SSL/TLS' },
-                { icon: <Code className="w-4 h-4" />, name: 'WAF' },
-                { icon: <Code className="w-4 h-4" />, name: '2FA' }
+                { icon: <Code className="w-4 h-4" />, name: 'Meta Dataset' },
+                { icon: <Code className="w-4 h-4" />, name: 'CRM Sync' },
+                { icon: <Code className="w-4 h-4" />, name: 'Lead Tracking' },
+                { icon: <Code className="w-4 h-4" />, name: 'CAPI' }
             ],
-            completedDate: '99 ngày',
-            note: 'Cập nhật thường xuyên theo các tiêu chuẩn bảo mật mới nhất',
+            completedDate: '7 - 14 ngày',
+            note: 'Kết nối dữ liệu khách hàng, đồng bộ CRM và tối ưu khả năng đo lường quảng cáo',
             link:'/services/facebook-crm'
         },
         {
             id: 6,
             name: 'Thuê Phòng Marketing',
             icon: <BarChart3 className="w-4 h-4"/>,
-            title: 'Phòng marketing thuê ngoài',
-            description: 'Đem chất xám từ đội ngũ của chúng tôi để rót vào những dự án đầy tiềm năng của các doanh nghiệp chính là phương chấm cống hiến của Nextgency khi cung cấp dịch vụ Phòng Marketing thuê ngoài.',
-            image: '/assets/images/test.webp',
+            title: 'Phòng Marketing Thuê Ngoài',
+            description: 'Đem chất xám từ đội ngũ của chúng tôi để rót vào những dự án đầy tiềm năng của các doanh nghiệp chính là phương châm cống hiến của Nextgency khi cung cấp dịch vụ Phòng Marketing thuê ngoài.',
+            image: '/assets/images/services/mkt.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'REST API' },
-                { icon: <Code className="w-4 h-4" />, name: 'GraphQL' },
-                { icon: <Code className="w-4 h-4" />, name: 'Swagger' },
-                { icon: <Code className="w-4 h-4" />, name: 'Postman' }
+                { icon: <Code className="w-4 h-4" />, name: 'Marketing Plan' },
+                { icon: <Code className="w-4 h-4" />, name: 'Content Strategy' },
+                { icon: <Code className="w-4 h-4" />, name: 'Media Planning' },
+                { icon: <Code className="w-4 h-4" />, name: 'Performance Report' }
             ],
-            completedDate: '99 ngày',
-            note: 'Documentation chi tiết và hỗ trợ integration',
+            completedDate: 'Theo tháng',
+            note: 'Đồng hành như một đội ngũ marketing nội bộ, từ chiến lược đến triển khai thực tế',
             link:'/services/marketing-outsource'
         },
         {
             id: 7,
             name: 'Tick Xanh Facebook',
             icon: <CheckCircle className="w-4 h-4" />,
-            title: 'Tick xanh facebook',
+            title: 'Tick Xanh Facebook',
             description: 'Nextgency cung cấp dịch vụ đăng ký tích xanh Facebook trọn gói từ A–Z, giúp khách hàng rút ngắn thời gian xét duyệt, chuẩn hóa hồ sơ và tăng tỷ lệ được phê duyệt thực tế.',
-            image: '/assets/images/test.webp',
+            image: '/assets/images/services/tich-xanh.webp',
             technologies: [
-                { icon: <Code className="w-4 h-4" />, name: 'Tech Audit' },
-                { icon: <Code className="w-4 h-4" />, name: 'Architecture' },
-                { icon: <Code className="w-4 h-4" />, name: 'Roadmap' },
-                { icon: <Code className="w-4 h-4" />, name: 'Best Practices' }
+                { icon: <Code className="w-4 h-4" />, name: 'Profile Audit' },
+                { icon: <Code className="w-4 h-4" />, name: 'Media Profile' },
+                { icon: <Code className="w-4 h-4" />, name: 'Document Review' },
+                { icon: <Code className="w-4 h-4" />, name: 'Meta Verification' }
             ],
-            completedDate: '99 ngày',
-            note: 'Đội ngũ chuyên gia với kinh nghiệm 10+ năm',
+            completedDate: '7 - 30 ngày',
+            note: 'Tư vấn hồ sơ, chuẩn hóa thông tin và hỗ trợ quy trình xác minh Facebook',
             link:'/services/tick-xanh-facebook'
         }
     ];
@@ -384,7 +384,7 @@ const ServicesSection = () => {
                                                     </p>
                                                 </div>
 
-                                                <div ref={imageRef} className="animate-content relative h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden group">
+                                                <div ref={imageRef} className="animate-content relative h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden group border border-gray-800">
 
                                                     <img
                                                         src={service.image}

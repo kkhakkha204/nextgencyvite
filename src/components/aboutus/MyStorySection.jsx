@@ -97,7 +97,7 @@ const MyStorySection = () => {
                         {/* Main Large Image */}
                         <div className="relative aspect-[7/8] lg:aspect-[6/7] overflow-hidden">
                             <img
-                                src="/assets/images/test.webp"
+                                src="/assets/images/about-1.webp"
                                 alt="Our story"
                                 className="w-full h-full object-cover rounded-md"
                             />

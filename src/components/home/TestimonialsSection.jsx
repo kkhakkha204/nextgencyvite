@@ -26,42 +26,42 @@ const TestimonialsSection = () => {
 
     // Sample testimonials data
     const testimonials = [
-        {
-            id: 1,
-            content: "Nextgency đã mang đến cho chúng tôi một giải pháp tuyệt vời. Đội ngũ chuyên nghiệp, sáng tạo và luôn hỗ trợ nhiệt tình.",
-            author: "Võ Anh Dũng",
-            company: "EAC Group"
-        },
-        {
-            id: 2,
-            content: "Chất lượng dịch vụ vượt trội, thời gian hoàn thành nhanh chóng. Rất hài lòng với kết quả nhận được từ Nextgency.",
-            author: "Trần Thị B",
-            company: "XYZ Company"
-        },
-        {
-            id: 3,
-            content: "Sự chuyên nghiệp và tận tâm của Nextgency thực sự ấn tượng. Họ đã giúp chúng tôi đạt được mục tiêu kinh doanh.",
-            author: "Lê Văn C",
-            company: "Tech Startup"
-        },
-        {
-            id: 4,
-            content: "Đội ngũ Nextgency rất sáng tạo và năng động. Họ luôn đưa ra những ý tưởng mới mẻ và hiệu quả cho dự án của chúng tôi.",
-            author: "Phạm Thị D",
-            company: "Digital Agency"
-        },
-        {
-            id: 5,
-            content: "Hợp tác với Nextgency là một trải nghiệm tuyệt vời. Họ thực sự hiểu nhu cầu của khách hàng và đáp ứng hoàn hảo.",
-            author: "Hoàng Văn E",
-            company: "E-commerce Platform"
-        },
-        {
-            id: 6,
-            content: "Hợp tác với Nextgency là một trải nghiệm tuyệt vời. Họ thực sự hiểu nhu cầu của khách hàng và đáp ứng hoàn hảo.",
-            author: "Hoàng Văn E",
-            company: "E-commerce Platform"
-        }
+            {
+                id: 1,
+                content: "Nextgency đã mang đến cho chúng tôi một giải pháp tuyệt vời. Đội ngũ chuyên nghiệp, sáng tạo và luôn hỗ trợ nhiệt tình.",
+                author: "Võ Anh Dũng",
+                company: "EAC Group"
+            },
+            {
+                id: 2,
+                content: "Nextgency đã mang đến cho chúng tôi những giải pháp công nghệ mới mẻ, hiệu quả và phù hợp với nhu cầu phát triển.",
+                author: "Sumi Han",
+                company: "Beauty Summit"
+            },
+            {
+                id: 3,
+                content: "Nextgency đã giúp chúng tôi tối ưu hoạt động kinh doanh bằng sự chuyên nghiệp, tận tâm và tư duy sáng tạo.",
+                author: "Nguyễn Trung Kiên",
+                company: "Tuki Group"
+            },
+            {
+                id: 4,
+                content: "Nextgency luôn mang đến những ý tưởng sáng tạo, thực tế và hiệu quả cho các dự án truyền thông của chúng tôi.",
+                author: "Trần Viết Tín",
+                company: "Topmus Entertainment"
+            },
+            {
+                id: 5,
+                content: "Nextgency thấu hiểu nhu cầu thương hiệu và mang đến cho chúng tôi những giải pháp phù hợp, chỉn chu và hiệu quả.",
+                author: "Thủy Kat",
+                company: "Kat Skin"
+            },
+            {
+                id: 6,
+                content: "Nextgency đã đồng hành cùng chúng tôi bằng sự chuyên nghiệp, sáng tạo và tinh thần hỗ trợ rất tận tâm.",
+                author: "Hoàng Hà",
+                company: "Mewart"
+            }
     ];
 
     const itemsPerSlide = window.innerWidth < 768 ? 1 : 2;

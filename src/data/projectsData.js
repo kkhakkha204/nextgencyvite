@@ -26,7 +26,7 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/website&landingpage/woodplus.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/portfolio/44.webp',
             '/assets/images/website&landingpage/katskin.webp',
         ]
     },
@@ -56,10 +56,14 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/portfolio/12.webp',
             '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/portfolio/a%20(9).webp',
+            '/assets/images/portfolio/a%20(10).webp',
+            '/assets/images/portfolio/a%20(11).webp',
+            '/assets/images/portfolio/a%20(12).webp',
+            '/assets/images/portfolio/a%20(13).webp',
+            '/assets/images/portfolio/a%20(14).webp',
         ]
     },
     {
@@ -88,9 +92,9 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/portfolio/13.webp',
+            '/assets/images/portfolio/37.webp',
+            '/assets/images/portfolio/38.webp',
             '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
@@ -152,7 +156,7 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/portfolio/18.webp',
             '/assets/images/website&landingpage/beautysummit.webp',
             '/assets/images/website&landingpage/katskin.webp',
             '/assets/images/website&landingpage/woodplus.webp',
@@ -216,10 +220,10 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/portfolio/16.webp',
+            '/assets/images/portfolio/21.webp',
+            '/assets/images/portfolio/22.webp',
+            '/assets/images/portfolio/23.webp',
         ]
     },
     {
@@ -332,10 +336,10 @@ export const projectsData = [
         cta: null,
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/portfolio/35.webp',
+            '/assets/images/portfolio/34.webp',
+            '/assets/images/portfolio/33.webp',
+            '/assets/images/portfolio/32.webp',
         ]
     },
     {
@@ -390,10 +394,9 @@ export const projectsData = [
         cta: null,
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/portfolio/29.webp',
+            '/assets/images/portfolio/28.webp',
+            '/assets/images/portfolio/30.webp',
         ]
     },
     {
@@ -454,7 +457,7 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/portfolio/39.webp',
             '/assets/images/website&landingpage/beautysummit.webp',
             '/assets/images/website&landingpage/katskin.webp',
             '/assets/images/website&landingpage/woodplus.webp',
@@ -486,8 +489,8 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/projects/Web_elearning.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/portfolio/40.webp',
+            '/assets/images/portfolio/41.webp',
             '/assets/images/website&landingpage/katskin.webp',
             '/assets/images/website&landingpage/woodplus.webp',
         ]
@@ -516,8 +519,8 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/projects/CRM_dashboard.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
+            '/assets/images/portfolio/a%20(17).webp',
+            '/assets/images/portfolio/a%20(18).webp',
             '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
@@ -602,7 +605,7 @@ export const projectsData = [
         cta: 'https://vaithethaotimo.com/',
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/portfolio/19.webp',
             '/assets/images/website&landingpage/beautysummit.webp',
             '/assets/images/website&landingpage/katskin.webp',
             '/assets/images/website&landingpage/woodplus.webp',
@@ -631,8 +634,8 @@ export const projectsData = [
         cta: 'https://usobebe.com/',
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/portfolio/14.webp',
+            '/assets/images/portfolio/45.webp',
             '/assets/images/website&landingpage/katskin.webp',
             '/assets/images/website&landingpage/woodplus.webp',
         ]
