@@ -27,7 +27,6 @@ export const projectsData = [
         slides: [
             '/assets/images/website&landingpage/woodplus.webp',
             '/assets/images/portfolio/44.webp',
-            '/assets/images/website&landingpage/katskin.webp',
         ]
     },
     {
@@ -56,8 +55,8 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/portfolio/12.webp',
             '/assets/images/website&landingpage/beautysummit.webp',
+            '/assets/images/portfolio/12.webp',
             '/assets/images/portfolio/a%20(9).webp',
             '/assets/images/portfolio/a%20(10).webp',
             '/assets/images/portfolio/a%20(11).webp',
@@ -125,9 +124,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -189,9 +185,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -250,9 +243,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -279,9 +269,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/projects/dataset.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -308,9 +295,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/projects/dataset.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -366,9 +350,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -426,9 +407,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -548,9 +526,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/projects/HRM.avif',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -577,9 +552,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {   
@@ -606,9 +578,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/portfolio/19.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {   
@@ -636,8 +605,6 @@ export const projectsData = [
         slides: [
             '/assets/images/portfolio/14.webp',
             '/assets/images/portfolio/45.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {   
@@ -664,9 +631,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {   
@@ -693,14 +657,11 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
      {   
         id: 'safiman',
-        name: 'Website E-learning Safiman',
+        name: 'Website E-commerce Safiman',
          summary: 'Thiết kế và triển khai website thương mại điện tử cho thương hiệu Safiman.',
         description:
             'Dự án tập trung xây dựng website thương mại điện tử cho Safiman nhằm giới thiệu sản phẩm, hỗ trợ bán hàng trực tuyến và tối ưu trải nghiệm mua sắm trên đa thiết bị. Website được thiết kế hiện đại, dễ sử dụng và tối ưu cho các chiến dịch quảng cáo online.',
@@ -722,9 +683,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
      {   
@@ -751,9 +709,6 @@ export const projectsData = [
         videoUrl: 'https://eventhub.vn/',
         slides: [
             '/assets/images/test.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -769,7 +724,7 @@ export const projectsData = [
         ],
         date: '02/2026',
         category: 'Corporate Website & Portfolio',
-        partner: 'QC House Architecture & Interior',
+        partner: 'QC House',
         technologies: ['WordPress', 'Elementor', 'GSAP Animation', 'Litespeed Cache'],
         metrics: [
             { label: 'Tốc độ tải trang (LCP)', value: '< 2 giây' },
@@ -782,9 +737,10 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/projects/qchoue_1.webp',
+            '/assets/images/projects/qchouse_2.webp',
+            '/assets/images/projects/qchouse_3.webp',
+            '/assets/images/projects/qchouse_4.webp',
         ]
     },
     {
@@ -813,9 +769,10 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/projects/topmus1.webp',
+            '/assets/images/projects/topmus2.webp',
+            '/assets/images/projects/topmus3.webp',
+            '/assets/images/projects/topmus4.webp',
         ]
     },
     {
@@ -871,11 +828,11 @@ export const projectsData = [
         ],
         cta: {
             label: 'Xem chi tiết',
-            url: 'https://srxvietnam.com/'
+            url: 'https://srx.vn/'
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/projects/srx1.webp',
+            '/assets/images/projects/srx_thumbnail.webp',
             '/assets/images/projects/srx2.webp',
             '/assets/images/projects/srx3.webp',
             '/assets/images/projects/srx4.webp',
@@ -939,9 +896,10 @@ export const projectsData = [
         ],
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/projects/miniapp_1.webp',
+            '/assets/images/projects/miniapp_2.webp',
+            '/assets/images/projects/miniapp_3.webp',
+            '/assets/images/projects/miniapp_4.webp',
         ]
     },
 ];
