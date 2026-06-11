@@ -12,7 +12,7 @@ export const projectsData = [
         ],
         date: '01/2025',
         category: ['Website & Landing Page', 'Graphic Design & Branding'],
-        partner: 'woodplus.vn',
+        partner: 'Woodplus',
         technologies: ['React', 'Tailwind', 'Figma', 'GA4'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
@@ -94,7 +94,6 @@ export const projectsData = [
             '/assets/images/portfolio/13.webp',
             '/assets/images/portfolio/37.webp',
             '/assets/images/portfolio/38.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -139,7 +138,7 @@ export const projectsData = [
         ],
         date: '05/2025',
         category: 'Website & Landing Page',
-        partner: 'aloha villa',
+        partner: 'Aloha Villa',
         technologies: ['Wordpress', 'GA4', 'Meta Pixel', 'Automations', 'Data'],
         metrics: [
             { label: 'Lượt truy cập website', value: '+42%' },
@@ -153,9 +152,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/portfolio/18.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -258,7 +254,7 @@ export const projectsData = [
         ],
         date: '10/2025',
         category: 'Facebook Ads',
-        partner: 'Ăn vặt họ Chu',
+        partner: 'Teahui',
         technologies: ['Dataset', 'Ladipage', 'Automations', 'Data'],
         metrics: [
             { label: 'Tăng trưởng doanh thu', value: '+38%' },
@@ -365,7 +361,7 @@ export const projectsData = [
         ],
         date: '09/2025',
         category: ['Automations & Data', 'Facebook Ads', 'CRM'],
-        partner: 'Jim Tồ',
+        partner: '1900 Hair Salon',
         technologies: ['Ladipage', 'Automations', 'Data', "CRM"],
         metrics: [
             { label: 'Tỷ lệ chốt sale tại quầy', value: '+25%' },
@@ -436,9 +432,6 @@ export const projectsData = [
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/portfolio/39.webp',
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -469,8 +462,6 @@ export const projectsData = [
         slides: [
             '/assets/images/portfolio/40.webp',
             '/assets/images/portfolio/41.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -499,7 +490,6 @@ export const projectsData = [
             '/assets/images/projects/CRM_dashboard.webp',
             '/assets/images/portfolio/a%20(17).webp',
             '/assets/images/portfolio/a%20(18).webp',
-            '/assets/images/website&landingpage/woodplus.webp',
         ]
     },
     {
@@ -567,7 +557,7 @@ export const projectsData = [
         ],
         date: '01/2025',
         category: 'Website & Landing Page',
-        partner: 'timo',
+        partner: 'Timo',
         technologies: ['Ladipage', 'GA4', 'Figma'],
         metrics: [
             { label: 'Hình ảnh thương hiệu', value: 'Chuyên nghiệp hơn' },
@@ -593,7 +583,7 @@ export const projectsData = [
         ],
         date: '02/2025',
         category: 'Website & Landing Page',
-        partner: 'usobebe',
+        partner: 'Usobebe',
         technologies: ['Ladipage', 'GA4', 'Figma'],
         metrics: [
             { label: 'Trải nghiệm mua sắm', value: 'Tối ưu' },
@@ -723,7 +713,7 @@ export const projectsData = [
             'Bên cạnh trải nghiệm thị giác, luồng chuyển đổi (Lead Generation) được lồng ghép khéo léo thông qua các nút Call-to-Action tinh tế, hệ thống form nhận báo giá sơ bộ và kết nối trực tiếp với Zalo OA/Hotline. Nhờ cấu trúc chuẩn SEO On-page, website đạt thứ hạng tốt cho các từ khóa ngách về thiết kế nội thất, mang lại nguồn khách hàng tự nhiên ổn định.'
         ],
         date: '02/2026',
-        category: 'Corporate Website & Portfolio',
+        category: 'Website & Landing Page',
         partner: 'QC House',
         technologies: ['WordPress', 'Elementor', 'GSAP Animation', 'Litespeed Cache'],
         metrics: [
@@ -755,8 +745,8 @@ export const projectsData = [
             'Toàn bộ dữ liệu sau khi đi qua lớp Middleware sẽ được tự động đồng bộ về hệ thống CRM bên ngoài theo thời gian thực. Giải pháp này giúp loại bỏ hoàn toàn các thao tác nhập liệu thủ công, tối ưu hóa quy trình làm việc của bộ phận nhân sự và đảm bảo không có bất kỳ hồ sơ tiềm năng nào bị thất lạc.'
         ],
         date: '03/2026',
-        category: 'WordPress Plugin & CRM Integration',
-        partner: 'TOPMUS',
+        category: 'Website & Landing Page',
+        partner: 'TOPMUS Entertaiment',
         technologies: ['WordPress', 'PHP', 'Fluent Forms', 'REST API/Webhook', 'CRM'],
         metrics: [
             { label: 'Tự động hóa luồng dữ liệu', value: '100%' },
@@ -801,9 +791,10 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/projects/fpt1.webp',
+            '/assets/images/projects/fp2.webp',
+            '/assets/images/projects/fpt3.webp',
+            '/assets/images/projects/fpt4.webp',
         ]
     },
     {
@@ -818,9 +809,9 @@ export const projectsData = [
             'Về khía cạnh quản trị, một Admin CRM chuyên biệt được tích hợp sâu vào hệ thống. Ban quản trị có thể dễ dàng kiểm soát tồn kho, quản lý trạng thái đơn hàng, và phân tích hiệu suất bán hàng của từng chiến dịch Affiliate theo thời gian thực, từ đó đưa ra các quyết định vận hành dựa trên dữ liệu chuẩn xác.'
         ],
         date: '04/2026',
-        category: 'E-commerce, Affiliate & CRM System',
+        category: 'Website & Landing Page',
         partner: 'SRX Việt Nam',
-        technologies: ['WordPress', 'WooCommerce', 'MySQL', 'Affiliate System', 'Custom CRM'],
+        technologies: ['Nextjs', 'Website', 'MySQL', 'Affiliate System', 'Custom CRM'],
         metrics: [
             { label: 'Cộng tác viên kích hoạt mới', value: '> 500' },
             { label: 'Tăng trưởng doanh thu Affiliate', value: '+45%' },
@@ -832,15 +823,11 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/projects/srx_thumbnail.webp',
-            '/assets/images/projects/srx2.webp',
-            '/assets/images/projects/srx3.webp',
-            '/assets/images/projects/srx4.webp',
-            '/assets/images/projects/srx5.webp',
-            '/assets/images/projects/srx6.webp',
-            '/assets/images/projects/srx7.webp',
-            '/assets/images/projects/srx8.webp',
-            '/assets/images/projects/srx9.webp',
+            '/assets/images/projects/srx-1.webp',
+            '/assets/images/projects/srx-2.webp',
+            '/assets/images/projects/srx-3.webp',
+            '/assets/images/projects/srx-4.webp',
+            '/assets/images/projects/srx-5.webp',
         ]
     },
     {
@@ -869,9 +856,10 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/website&landingpage/beautysummit.webp',
-            '/assets/images/website&landingpage/katskin.webp',
-            '/assets/images/website&landingpage/woodplus.webp',
+            '/assets/images/projects/bani0.webp',
+            '/assets/images/projects/bani3.webp',
+            '/assets/images/projects/bani2.webp',
+            '/assets/images/projects/bani2.webp',
         ]
     },
     {
