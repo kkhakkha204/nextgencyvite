@@ -859,7 +859,7 @@ export const projectsData = [
             '/assets/images/projects/bani0.webp',
             '/assets/images/projects/bani3.webp',
             '/assets/images/projects/bani2.webp',
-            '/assets/images/projects/bani2.webp',
+            '/assets/images/projects/bani1.webp',
         ]
     },
     {
@@ -879,9 +879,13 @@ export const projectsData = [
         technologies: ['Zalo Mini App', 'Tailwind CSS', 'Zalo OA API', 'QR Code System'],
         metrics: [
             { label: 'Tương tác sự kiện', value: '+65%' },
-            { label: 'Lượt Follow Zalo OA', value: '+300%' },
-            { label: 'Lượt quét QR Check-in', value: '> 5,000' }
+            { label: 'Lượt Follow Zalo OA', value: '+500%' },
+            { label: 'Lượt quét QR Check-in', value: '> 4,000' }
         ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://zalo.me/s/3374320125227368636/'
+        },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
             '/assets/images/projects/miniapp_1.webp',
