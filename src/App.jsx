@@ -1,4 +1,4 @@
-// App.jsx - Updated with conditional Header/Footer
+﻿// App.jsx - Updated with conditional Header/Footer
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -25,6 +25,7 @@ import TiktokVerification from "./pages/TiktokVerification.jsx";
 import WorkflowAutomation from "./pages/projects/WorkflowAutomation.jsx";
 import ProjectDetail from "./pages/projects/ProjectDetail.jsx";
 import NewsDetailPage from "./pages/news/NewsDetailPage.jsx";
+import MiniAppBeautyVerse from "./pages/projects/MiniAppBeautyVerse.jsx";
 
 // Router Content Component
 const RouterContent = () => {
@@ -37,7 +38,7 @@ const RouterContent = () => {
     // Initialize SEO hooks
     useSEO();
 
-    // Kiểm tra xem có phải trang TiktokVerification không
+    // Kiá»ƒm tra xem cÃ³ pháº£i trang TiktokVerification khÃ´ng
     const isVerificationPage = location.pathname === '/tiktok-verification/';
 
     return (
@@ -53,18 +54,18 @@ const RouterContent = () => {
             {/*    ]}*/}
             {/*/>*/}
 
-            {/* Chỉ hiển thị Header nếu không phải trang verification */}
+            {/* Chá»‰ hiá»ƒn thá»‹ Header náº¿u khÃ´ng pháº£i trang verification */}
             {!isVerificationPage && <Header />}
 
             <main className={!isVerificationPage ? "page-content flex-1 pt-[70px] lg:pt-[85px]" : "flex-1"}>
                 <Routes>
-                    {/* Trang chủ */}
+                    {/* Trang chá»§ */}
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/news" element={<NewsListPage />} />
                     <Route path="/contact" element={<Contact />} />
 
-                    {/* Các trang dịch vụ */}
+                    {/* CÃ¡c trang dá»‹ch vá»¥ */}
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
                     <Route path="/services/ai-data" element={<AiData />} />
                     <Route path="/services/google-ads" element={<GoogleAds />} />
@@ -76,17 +77,19 @@ const RouterContent = () => {
                     <Route path="/chinh-sach-bao-mat" element={<PrivacyPolicyPage />} />
                     <Route path="/tiktok-verification/" element={<TiktokVerification />} />
 
-                    {/* Các trang dự án */}
+                    {/* CÃ¡c trang dá»± Ã¡n */}
                     <Route path="/projects/all" element={<Projects />} />
                     <Route path="/projects/portfolio" element={<Portfolio />} />
                     <Route path="/projects/workflow" element={<WorkflowAutomation />} />
+                    <Route path="/miniapp" element={<MiniAppBeautyVerse />} />
+                    <Route path="/projects/miniapp-beautysummit-2026" element={<MiniAppBeautyVerse />} />
                     <Route path="/projects/:slug" element={<ProjectDetail />} />
-                    {/*trang chi tiết về tin tức công nghệ*/}
+                    {/*trang chi tiáº¿t vá» tin tá»©c cÃ´ng nghá»‡*/}
                     <Route path="/news/:slug" element={<NewsDetailPage />} />
                 </Routes>
             </main>
 
-            {/* Chỉ hiển thị Footer nếu không phải trang verification */}
+            {/* Chá»‰ hiá»ƒn thá»‹ Footer náº¿u khÃ´ng pháº£i trang verification */}
             {!isVerificationPage && <Footer />}
 
             {/* Page Transition */}

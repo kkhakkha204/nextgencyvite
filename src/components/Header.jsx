@@ -113,6 +113,13 @@ const Header = () => {
 
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+    useEffect(() => {
+        const openConsultationPopup = () => setIsPopupOpen(true);
+
+        window.addEventListener('nextgency:open-consultation-popup', openConsultationPopup);
+        return () => window.removeEventListener('nextgency:open-consultation-popup', openConsultationPopup);
+    }, []);
+
     return (
         <>
             {/* Header */}
