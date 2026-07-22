@@ -75,7 +75,7 @@ const generateTOC = (markdown = "") => {
     return markdown
         .split("\n")
         .map((line) => {
-            const match = line.match(/^(#{1,3})\s+(.+)/);
+            const match = line.match(/^(#{1,2})\s+(.+)/);
 
             if (!match) {
                 return null;
@@ -602,7 +602,7 @@ const NewsDetailPage = () => {
                                                 activeHeadingId === item.id
                                                     ? " text-indigo-600"
                                                     : "text-slate-600 hover:text-slate-950"
-                                            } ${item.level === 1 ? "pl-3" : item.level === 2 ? "pl-5" : "pl-8"}`}
+                                            } ${item.level === 1 ? "pl-3" : "pl-5"}`}
                                         >
                                             <span className="mr-2 font-semibold text-indigo-500">{item.number}</span>
                                             <span>{item.title}</span>

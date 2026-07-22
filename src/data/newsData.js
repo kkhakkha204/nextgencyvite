@@ -8,6 +8,11 @@ import context7 from "./doc/news7.md?raw";
 import context8 from "./doc/news8.md?raw";
 import context9 from "./doc/news9.md?raw";
 import context10 from "./doc/news10.md?raw";
+import context11 from "./doc/news11.md?raw";
+import context12 from "./doc/news12.md?raw";
+import context13 from "./doc/news13.md?raw";
+import context14 from "./doc/news14.md?raw";
+import context15 from "./doc/news15.md?raw";
 export const mockNews = [
         {
             id: 1,
@@ -118,7 +123,62 @@ export const mockNews = [
             date: "2024-12-22",
             context: context10,
             slug: "mobile-first-design"
-        }
+        },
+        {
+            id: 11,
+            title: "Chuyển đổi số cấp xã bằng Zalo Mini App 2026",
+            description: "Chuyển đổi số cấp xã là gì?",
+            thumbnail: "/assets/images/news/bai11.webp",
+            categories: ["Zalo Mini App", "Mobile", "Chuyển đổi số"],
+            tags: ["Zalo mini app", "Mobile app"],
+            date: "2026-06-01",
+            context: context11,
+            slug: "chuyen-doi-so-cap-xa-zalo-mini-app-2026"
+        },
+        {
+            id: 12,
+            title: "Ứng dụng Công dân số trên Zalo Mini App là gì? Giải pháp chuyển đổi số toàn diện cho xã, phường và đặc khu.",
+            description: "Ứng dụng Công dân số trên Zalo Mini App là gì? Giải pháp chuyển đổi số toàn diện cho xã, phường và đặc khu.",
+            thumbnail: "/assets/images/news/b12.webp",
+            categories: ["Zalo Mini App", "Mobile", "Chuyển đổi số"],
+            tags: ["Zalo mini app", "Mobile app"],
+            date: "2026-06-02",
+            context: context12,
+            slug: "ung-dung-cong-dan-so-tren-zalo-mini-app-la-gi"
+        },
+        {
+            id: 13,
+            title: "Miễn phí Zalo OA cho xã phường triển khai Zalo Mini App 2026",
+            description: "Miễn phí Zalo OA cho xã phường triển khai Zalo Mini App 2026",
+            thumbnail: "/assets/images/news/b13.webp",
+            categories: ["Zalo Mini App", "Mobile", "Chuyển đổi số"],
+            tags: ["Zalo mini app", "Mobile app"],
+            date: "2026-06-03",
+            context: context13,
+            slug: "mien-phi-zalo-oa-cho-xa-phuong-2026"
+        },
+        {
+            id: 14,
+            title: "Tra cứu dịch vụ công ở Ứng dụng công dân số trên Zalo Mini App 2026",
+            description: "Tra cứu dịch vụ công ở Ứng dụng công dân số trên Zalo Mini App 2026",
+            thumbnail: "/assets/images/news/b14.webp",
+            categories: ["Zalo Mini App", "Mobile", "Chuyển đổi số"],
+            tags: ["Zalo mini app", "Mobile app"],
+            date: "2026-06-04",
+            context: context14,
+            slug: "tra-cuu-dich-vu-cong-cong-dan-so-zalo-2026"
+        },
+        {
+            id: 15,
+            title: "Lộ trình triển khai Ứng dụng Công dân số trên nền tảng Zalo Mini App cho UBND xã, phường và đặc khu mới nhất 2026",
+            description: "Lộ trình triển khai Ứng dụng Công dân số trên nền tảng Zalo Mini App cho UBND xã, phường và đặc khu mới nhất 2026",
+            thumbnail: "/assets/images/news/b15.webp",
+            categories: ["Zalo Mini App", "Mobile", "Chuyển đổi số"],
+            tags: ["Zalo mini app", "Mobile app"],
+            date: "2026-06-05",
+            context: context15,
+            slug: "lo-trinh-trien-khai-ung-dung-cong-dan-so-zalo-mini-app"
+        },
     ];
 export const newDetail = [
 

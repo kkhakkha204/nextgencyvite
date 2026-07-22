@@ -249,7 +249,7 @@ const BeautyVerseHero = () => {
             </div>
 
             <div className="relative bg-[#05050c]">
-                <div className="mx-auto grid max-w-[1280px] gap-7 px-4 py-8 grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+                <div className="mx-auto grid max-w-[1280px] gap-7 px-4 py-8 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
                     {stats.map((stat, index) => (
                         <CountUpStat key={stat.label} stat={stat} index={index} />
                     ))}
