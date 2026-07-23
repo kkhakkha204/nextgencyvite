@@ -2,9 +2,6 @@
 
 Chuyển đổi số cấp xã bằng Zalo Mini App là giải pháp đưa các tiện ích hành chính, thông tin địa phương và kênh tương tác với người dân lên một nền tảng quen thuộc. Thay vì yêu cầu người dân cài thêm ứng dụng, chính quyền có thể cung cấp dịch vụ số trực tiếp bên trong Zalo.
 
-![Chuyển đổi số cấp xã bằng Zalo Mini App](https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80)
-
----
 
 ## Chuyển đổi số cấp xã là gì?
 
@@ -34,6 +31,8 @@ Zalo Mini App giúp tập trung các tiện ích này vào một giao diện duy
 **Zalo OA = kênh truyền thông, Zalo Mini App = nền tảng cung cấp dịch vụ**
 
 Khi kết hợp hai thành phần này, địa phương vừa có thể gửi thông báo, vừa hỗ trợ người dân tra cứu, phản ánh và sử dụng các tiện ích công.
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b11b.webp)
 
 ---
 
@@ -73,6 +72,8 @@ Một Zalo Mini App có thể tích hợp tin tức, dịch vụ công, phản �
 ---
 
 ## Các tính năng quan trọng của ứng dụng Công dân số
+
+![chuyển đổi số cấp xã 2](/assets/images/news/b11c.webp)
 
 ### Tin tức và thông báo địa phương
 
@@ -157,6 +158,8 @@ Nội dung có thể bao gồm:
 
 ## Lợi ích của chuyển đổi số cấp xã bằng Zalo Mini App
 
+![chuyển đổi số cấp xã 3](/assets/images/news/b11d.webp)
+
 ### Đối với người dân
 
 - Không phải tải thêm ứng dụng
@@ -186,6 +189,8 @@ Nội dung có thể bao gồm:
 
 ## Địa phương nào nên triển khai?
 
+![chuyển đổi số cấp xã 4](/assets/images/news/b11e.webp)
+
 Zalo Mini App Công dân số phù hợp với:
 
 - Xã, phường chưa có kênh thông tin số tập trung
@@ -199,6 +204,8 @@ Zalo Mini App Công dân số phù hợp với:
 ---
 
 ## Quy trình triển khai Zalo Mini App cấp xã
+
+![chuyển đổi số cấp xã 5](/assets/images/news/b11f.webp)
 
 ### Bước 1: Khảo sát hiện trạng
 

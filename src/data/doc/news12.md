@@ -2,10 +2,6 @@
 
 Ứng dụng Công dân số trên Zalo Mini App là giải pháp giúp chính quyền địa phương kết nối, cung cấp thông tin và tương tác với người dân ngay trong nền tảng Zalo. Người dùng không cần tải thêm ứng dụng mới mà có thể truy cập trực tiếp bằng điện thoại, phù hợp với nhu cầu chuyển đổi số tại xã, phường và đặc khu.
 
-![Ứng dụng Công dân số trên Zalo Mini App](https://v9.com.vn/wp-content/uploads/2026/05/ung-dung-cong-dan-so.jpg)
-
----
-
 ## Ứng dụng Công dân số là gì?
 
 Ứng dụng Công dân số là một nền tảng số được xây dựng để tạo ra kênh kết nối thống nhất giữa:
@@ -98,6 +94,8 @@ Zalo Mini App là một lựa chọn phù hợp vì người dân có thể sử
 
 ## Các nhóm chức năng chính
 
+![chuyển đổi số cấp xã 1](/assets/images/news/b12d.webp)
+
 ### Chính quyền số
 
 Nhóm chức năng Chính quyền số hỗ trợ địa phương công khai thông tin, điều hành và phục vụ người dân trên môi trường số.
@@ -123,6 +121,8 @@ Lợi ích chính:
 ---
 
 ### Kinh tế số địa phương
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b12e.webp)
 
 Ứng dụng Công dân số không chỉ phục vụ quản lý hành chính mà còn có thể trở thành kênh quảng bá và kết nối kinh tế tại địa phương.
 
@@ -161,6 +161,8 @@ Nền tảng giúp các giá trị địa phương được giới thiệu theo 
 
 ### Phản ánh hiện trường
 
+![chuyển đổi số cấp xã 1](/assets/images/news/b12f.webp)
+
 Phản ánh hiện trường là một trong những chức năng quan trọng của Ứng dụng Công dân số.
 
 Người dân có thể gửi phản ánh về các vấn đề như:
@@ -185,6 +187,8 @@ Chính quyền có thể tiếp nhận, phân loại, chuyển xử lý và cậ
 ---
 
 ### Tiện ích số cho người dân
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b12g.webp)
 
 Ứng dụng có thể tích hợp nhiều tiện ích trong cùng một giao diện, chẳng hạn:
 
@@ -220,6 +224,8 @@ Trợ lý số giúp giảm các câu hỏi lặp lại và hỗ trợ người 
 
 ### Thông tin cơ sở
 
+![chuyển đổi số cấp xã 1](/assets/images/news/b12h.webp)
+
 Nền tảng có thể hỗ trợ hiện đại hóa hoạt động thông tin và tuyên truyền tại địa phương thông qua:
 
 - Tích hợp hệ thống truyền thanh
@@ -234,6 +240,8 @@ Nhờ đó, thông tin của Đảng, Nhà nước và chính quyền địa ph�
 ---
 
 ## Lợi ích đối với chính quyền địa phương
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b12a.webp)
 
 Ứng dụng Công dân số giúp chính quyền:
 
@@ -253,6 +261,8 @@ Ngoài ra, hệ thống còn hỗ trợ địa phương quảng bá hình ảnh,
 
 ## Lợi ích đối với người dân
 
+![chuyển đổi số cấp xã 1](/assets/images/news/b12b.webp)
+
 Người dân có thể:
 
 - Truy cập bằng Zalo quen thuộc
@@ -269,6 +279,8 @@ Trải nghiệm được đơn giản hóa giúp cả người lớn tuổi và 
 ---
 
 ## Lợi ích đối với doanh nghiệp và hộ kinh doanh
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b12c.webp)
 
 Doanh nghiệp, hợp tác xã và hộ kinh doanh tại địa phương có thể sử dụng nền tảng để:
 

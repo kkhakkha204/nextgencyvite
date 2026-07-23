@@ -4,11 +4,11 @@
 
 Để hệ thống đi vào hoạt động hiệu quả, quá trình triển khai cần được thực hiện theo một lộ trình rõ ràng, có sự phối hợp giữa đơn vị công nghệ và các bộ phận chuyên môn của địa phương.
 
-![Lộ trình triển khai ứng dụng Công dân số](https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80)
-
 ---
 
 ## Tổng quan lộ trình triển khai
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b15c.webp)
 
 Một lộ trình triển khai cơ bản thường gồm 6 giai đoạn:
 
@@ -33,6 +33,8 @@ Thời gian thực hiện thường khoảng **2–4 tuần**, tùy thuộc vào
 ---
 
 ## Vì sao cần xây dựng lộ trình rõ ràng?
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b15a.webp)
 
 #.1 Kiểm soát phạm vi công việc
 
@@ -220,6 +222,8 @@ Kế hoạch nên chia thành các mốc:
 
 ### Ký hợp đồng
 
+![chuyển đổi số cấp xã 1](/assets/images/news/b12b.webp)
+
 Hợp đồng cần làm rõ:
 
 - Phạm vi triển khai
@@ -347,6 +351,8 @@ Sau khi hoàn thiện, ứng dụng được gửi qua quy trình xét duyệt v
 
 ## Giai đoạn 4: Đào tạo cán bộ quản trị
 
+![chuyển đổi số cấp xã 1](/assets/images/news/b12d.webp)
+
 #.1 Mục tiêu
 
 Giúp cán bộ địa phương có thể chủ động:
@@ -427,6 +433,8 @@ Có thể bao gồm:
 
 ## Giai đoạn 5: Kiểm thử, nghiệm thu và đưa vào sử dụng
 
+![chuyển đổi số cấp xã 1](/assets/images/news/b15d.webp)
+
 ### Kiểm thử nghiệp vụ
 
 Cán bộ địa phương cần kiểm tra ứng dụng theo tình huống sử dụng thực tế.
@@ -500,6 +508,8 @@ Sau nghiệm thu, địa phương có thể truyền thông qua:
 ---
 
 ## Giai đoạn 6: Hỗ trợ vận hành và tối ưu
+
+![chuyển đổi số cấp xã 1](/assets/images/news/b12e.webp)
 
 Triển khai xong không có nghĩa là dự án đã kết thúc. Hiệu quả của ứng dụng phụ thuộc nhiều vào hoạt động vận hành sau bàn giao.
 
