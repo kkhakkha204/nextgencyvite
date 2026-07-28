@@ -1,84 +1,76 @@
 // src/components/SEO/schemas.js
+// Structured data (JSON-LD). Giữ đồng bộ với src/scripts/generate-static.js -
+// script prerender sinh lại các schema tương đương cho bản HTML tĩnh.
+
+import {DEFAULT_OG_IMAGE, SITE, toAbsoluteUrl} from '../../pages/seo-configs.js';
+
+const ORGANIZATION_ID = `${SITE.baseUrl}/#organization`;
+
+export const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': ORGANIZATION_ID,
+    name: SITE.name,
+    url: SITE.baseUrl,
+    logo: toAbsoluteUrl('/assets/images/header/navbarlogoblack.png'),
+    image: toAbsoluteUrl(DEFAULT_OG_IMAGE.url),
+    description: 'Agency digital marketing: thiết kế website, quảng cáo online, AI và chuyển đổi số.',
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Hồ Chí Minh',
+        addressCountry: 'VN'
+    }
+};
+
+export const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE.baseUrl}/#website`,
+    url: SITE.baseUrl,
+    name: SITE.siteName,
+    inLanguage: SITE.lang,
+    publisher: {'@id': ORGANIZATION_ID}
+};
+
 export const generateServiceSchema = ({
                                           serviceName,
                                           serviceType,
                                           description,
-                                          provider = 'Nextgency',
                                           areaServed = 'Việt Nam',
                                           url,
-                                          image,
-                                          priceRange = '$$'
-                                      }) => {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        serviceType: serviceType,
-        name: serviceName,
-        description: description,
-        provider: {
-            '@type': 'Organization',
-            name: provider,
-            url: 'https://nextgency.vn'
-        },
-        areaServed: {
-            '@type': 'Country',
-            name: areaServed
-        },
-        url: url,
-        image: image,
-        priceRange: priceRange,
-        aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: '4.8',
-            reviewCount: '127'
-        }
-    };
-};
-
-export const generateBreadcrumbSchema = (items) => {
-    return {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: items.map((item, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            name: item.name,
-            item: item.url
-        }))
-    };
-};
-
-export const localBusinessSchema = {
+                                          image
+                                      }) => ({
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://nextgency.vn/#business',
-    name: 'Nextgency Digital Marketing Agency',
-    image: 'https://nextgency.vn/assets/images/logo.png',
-    url: 'https://nextgency.vn',
-    telephone: '+84123456789',
-    priceRange: '$$',
-    address: {
-        '@type': 'PostalAddress',
-        streetAddress: '123 Nguyễn Văn Cừ',
-        addressLocality: 'Quận 1',
-        addressRegion: 'Hồ Chí Minh',
-        postalCode: '70000',
-        addressCountry: 'VN'
-    },
-    geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 10.762622,
-        longitude: 106.660172
-    },
-    openingHoursSpecification: {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '08:00',
-        closes: '18:00'
-    },
-    sameAs: [
-        'https://www.facebook.com/nextgency',
-        'https://www.linkedin.com/company/nextgency',
-        'https://www.instagram.com/nextgency'
-    ]
-};
+    '@type': 'Service',
+    name: serviceName,
+    serviceType: serviceType || serviceName,
+    description,
+    url: toAbsoluteUrl(url),
+    image: toAbsoluteUrl(image || DEFAULT_OG_IMAGE.url),
+    areaServed: {'@type': 'Country', name: areaServed},
+    provider: {'@id': ORGANIZATION_ID}
+});
+
+export const generateBreadcrumbSchema = (items) => ({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: item.name,
+        item: toAbsoluteUrl(item.url)
+    }))
+});
+
+export const generateArticleSchema = ({title, description, image, url, publishedTime, modifiedTime}) => ({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    image: toAbsoluteUrl(image || DEFAULT_OG_IMAGE.url),
+    mainEntityOfPage: {'@type': 'WebPage', '@id': toAbsoluteUrl(url)},
+    datePublished: publishedTime,
+    dateModified: modifiedTime || publishedTime,
+    author: {'@id': ORGANIZATION_ID},
+    publisher: {'@id': ORGANIZATION_ID}
+});

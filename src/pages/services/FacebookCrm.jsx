@@ -17,12 +17,7 @@ const FacebookCrm = () => {
     const seoData = seoConfigs.services['facebook-crm'];
     return (
         <>
-            <SEOManager
-                title={seoData.title}
-                description={seoData.description}
-                keywords={seoData.keywords}
-                ogUrl="/services/facebook-crm"
-            />
+            <SEOManager seo={seoData} />
             <div>
                 <Hero/>
                 <ServicesDivider/>

@@ -13,12 +13,7 @@ const Tick = () => {
     const seoData = seoConfigs.services['tick-xanh-facebook'];
     return (
         <>
-            <SEOManager
-                title={seoData.title}
-                description={seoData.description}
-                keywords={seoData.keywords}
-                ogUrl="/services/tick-xanh-facebook"
-            />
+            <SEOManager seo={seoData} />
             <div>
                 <HeroSection/>
                 <WhyChooseUs/>

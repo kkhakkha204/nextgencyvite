@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Footer from "./components/Footer.jsx";
 import WebsiteLandingPage from "./pages/services/WebsiteLandingPage.jsx";
 import AiData from "./pages/services/AiData.jsx";
+import ToolContentAI from "./pages/services/ToolContentAI.jsx";
 import GoogleAds from "./pages/services/GoogleAds.jsx";
 import PageTransition from './components/PageTransition';
 import { usePageTransition } from './hooks/usePageTransition';
@@ -26,6 +27,7 @@ import WorkflowAutomation from "./pages/projects/WorkflowAutomation.jsx";
 import ProjectDetail from "./pages/projects/ProjectDetail.jsx";
 import NewsDetailPage from "./pages/news/NewsDetailPage.jsx";
 import MiniAppBeautyVerse from "./pages/projects/MiniAppBeautyVerse.jsx";
+import RouteSEO from "./components/SEO/RouteSEO.jsx";
 
 // Router Content Component
 const RouterContent = () => {
@@ -43,16 +45,8 @@ const RouterContent = () => {
 
     return (
         <div className="App min-h-screen flex flex-col">
-            {/* Global SEO for all pages - this sets default values */}
-            {/*<SEOManager*/}
-            {/*    structuredData={localBusinessSchema}*/}
-            {/*    additionalMetaTags={[*/}
-            {/*        { name: 'theme-color', content: '#000000' },*/}
-            {/*        { name: 'apple-mobile-web-app-capable', content: 'yes' },*/}
-            {/*        { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },*/}
-            {/*        { name: 'format-detection', content: 'telephone=no' }*/}
-            {/*    ]}*/}
-            {/*/>*/}
+            {/* Meta mặc định theo pathname - trang nào tự gắn SEOManager sẽ ghi đè */}
+            <RouteSEO />
 
             {/* Chá»‰ hiá»ƒn thá»‹ Header náº¿u khÃ´ng pháº£i trang verification */}
             {!isVerificationPage && <Header />}
@@ -68,6 +62,7 @@ const RouterContent = () => {
                     {/* CÃ¡c trang dá»‹ch vá»¥ */}
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
                     <Route path="/services/ai-data" element={<AiData />} />
+                    <Route path="/services/tool-content-ai" element={<ToolContentAI />} />
                     <Route path="/services/google-ads" element={<GoogleAds />} />
                     <Route path="/services/facebook-ads" element={<FacebookAds />} />
                     <Route path="/services/tiktok-ads" element={<TiktokAds />} />

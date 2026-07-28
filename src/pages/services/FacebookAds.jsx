@@ -17,12 +17,7 @@ const FacebookAds = () => {
     const seoData = seoConfigs.services['facebook-ads'];
     return (
         <>
-            <SEOManager
-                title={seoData.title}
-                description={seoData.description}
-                keywords={seoData.keywords}
-                ogUrl="/services/facebook-ads"
-            />
+            <SEOManager seo={seoData} />
             <div>
                 <Hero/>
                 <ServicesDivider/>

@@ -10,6 +10,8 @@ import {
     Share2,
 } from "lucide-react";
 import { mockNews } from "../../data/newsData";
+import SEOManager from "../../components/SEO/SEOManager.jsx";
+import { generateArticleSchema } from "../../components/SEO/schemas.js";
 
 const slugify = (text = "") =>
     text
@@ -484,6 +486,20 @@ const NewsDetailPage = () => {
 
     return (
         <div className="min-h-[calc(100vh-220px)] bg-gradient-to-b from-slate-50 via-white to-indigo-50 py-10 text-slate-900 lg:py-16">
+            <SEOManager
+                title={`${news.title} | Nextgency`}
+                description={news.description}
+                image={news.thumbnail}
+                ogUrl={`/news/${news.slug}-${news.id}`}
+                type="article"
+                structuredData={generateArticleSchema({
+                    title: news.title,
+                    description: news.description,
+                    image: news.thumbnail,
+                    url: `/news/${news.slug}-${news.id}`,
+                    publishedTime: news.date
+                })}
+            />
             <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
                 <nav className="mb-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
                     <Link to="/" className="transition hover:text-indigo-600">

@@ -20,12 +20,7 @@ const WebsiteLandingPage = () => {
     const seoData = seoConfigs.services['website-landing-page'];
     return (
         <>
-            <SEOManager
-                title={seoData.title}
-                description={seoData.description}
-                keywords={seoData.keywords}
-                ogUrl="/services/website-landing-page"
-            />
+            <SEOManager seo={seoData} />
             <div className="relative">
                 <Hero/>
                 <ProjectCarousel/>

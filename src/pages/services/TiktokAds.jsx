@@ -17,12 +17,7 @@ const TiktokAds = () => {
     const seoData = seoConfigs.services['tiktok-ads'];
     return (
         <>
-            <SEOManager
-                title={seoData.title}
-                description={seoData.description}
-                keywords={seoData.keywords}
-                ogUrl="/services/tiktok-ads"
-            />
+            <SEOManager seo={seoData} />
             <div>
                 <Hero/>
                 <ServicesDivider/>

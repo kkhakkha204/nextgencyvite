@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "generate-seo": "node scripts/generate-static.js",
+    "generate-seo": "node src/scripts/generate-static.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node src/scripts/generate-static.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

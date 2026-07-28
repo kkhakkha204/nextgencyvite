@@ -9,7 +9,7 @@ import TestimonialsSection from "../components/home/TestimonialsSection.jsx";
 import ConsultationSectionPrimary from "../components/ConsultationSectionPrimary.jsx";
 import {seoConfigs} from "./seo-configs.js";
 import SEOManager from "../components/SEO/SEOManager.jsx";
-import {generateBreadcrumbSchema} from "../components/SEO/schemas.js";
+import {generateBreadcrumbSchema, organizationSchema, websiteSchema} from "../components/SEO/schemas.js";
 import HomeClientsPartnersSection from "../components/home/HomeClientsPartnersSection.jsx";
 
 const Home = () => {
@@ -19,12 +19,8 @@ const Home = () => {
     return (
         <>
             <SEOManager
-            title={seoConfigs.home.title}
-            description={seoConfigs.home.description}
-            keywords={seoConfigs.home.keywords}
-            url="https://nextgency.vn"
-            image="https://nextgency.vn/assets/images/home-og-image.jpg"
-            structuredData={generateBreadcrumbSchema(breadcrumbs)}
+                seo={seoConfigs.home}
+                structuredData={[organizationSchema, websiteSchema, generateBreadcrumbSchema(breadcrumbs)]}
             />
             <div className="home-page">
                 <HeroSection />

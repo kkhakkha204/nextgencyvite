@@ -14,12 +14,7 @@ const MarketingOutsource = () => {
     const seoData = seoConfigs.services['marketing-outsource'];
     return (
         <>
-            <SEOManager
-                title={seoData.title}
-                description={seoData.description}
-                keywords={seoData.keywords}
-                ogUrl="/services/marketing-outsource"
-            />
+            <SEOManager seo={seoData} />
             <div>
                 <Hero/>
                 <ServicesDivider/>

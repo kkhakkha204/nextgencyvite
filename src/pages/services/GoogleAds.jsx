@@ -18,12 +18,7 @@ const GoogleAds = () => {
     const seoData = seoConfigs.services['google-ads'];
     return (
         <>
-            <SEOManager
-                title={seoData.title}
-                description={seoData.description}
-                keywords={seoData.keywords}
-                ogUrl="/services/google-ads"
-            />
+            <SEOManager seo={seoData} />
             <div>
                 <Hero/>
                 <ServicesDivider/>

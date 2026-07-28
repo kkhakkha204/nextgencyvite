@@ -11,12 +11,7 @@ import {seoConfigs} from "./seo-configs.js";
 const About = () => {
     return (
         <div>
-            <SEOManager
-                title={seoConfigs.about.title}
-                description={seoConfigs.about.description}
-                keywords={seoConfigs.about.keywords}
-                ogUrl="/about"
-            />
+            <SEOManager seo={seoConfigs.about} />
             <AboutHeroSection />
             <MyStorySection/>
             <HomeClientsPartnersSection/>

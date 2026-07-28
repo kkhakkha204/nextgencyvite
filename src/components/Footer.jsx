@@ -43,28 +43,28 @@ const Footer = () => {
 
                         {/* Social Media Icons */}
                         <div className="flex space-x-5 pt-4">
-                            <a href="#" className="hover:opacity-80 transition-opacity">
+                            <a href="https://zalo.me/0332083366/" target='_blank' className="hover:opacity-80 transition-opacity">
                                 <img
                                     src="/assets/images/footer/zalo.png"
                                     alt="Facebook"
                                     className="w-8 h-8 object-contain"
                                 />
                             </a>
-                            <a href="#" className="hover:opacity-80 transition-opacity">
+                            <a href="https://www.facebook.com/nextgency" target='_blank' className="hover:opacity-80 transition-opacity">
                                 <img
                                     src="/assets/images/footer/facebook.png"
                                     alt="Instagram"
                                     className="w-8 h-8 object-contain"
                                 />
                             </a>
-                            <a href="#" className="hover:opacity-80 transition-opacity">
+                            <a href="#" target='_blank' className="hover:opacity-80 transition-opacity">
                                 <img
                                     src="/assets/images/footer/mess.png"
                                     alt="LinkedIn"
                                     className="w-8 h-8 object-contain"
                                 />
                             </a>
-                            <a href="#" className="hover:opacity-80 transition-opacity">
+                            <a href="https://www.larksuite.com/invitation/page/add_contact/?token=c0cse138-9bd8-449a-a1ac-b3e820id0bta&amp;unique_id=gw0tfw_lYqsWQPKEUKwm4A==" target='_blank' className="hover:opacity-80 transition-opacity">
                                 <img
                                     src="/assets/images/footer/lark.png"
                                     alt="Twitter"
