@@ -58,15 +58,28 @@ const DevelopmentPartners = () => {
                     ))}
 
                     {/* Khung đen mô tả */}
-                    <div className="col-span-2 flex items-center neu-shadow-xs bg-black
-                                    rounded-xl p-4 lg:p-6 transition-all duration-500 ease-in-out cursor-pointer">
-                        <div>
-                            <p className="text-[14px] lg:text-[15px] text-white leading-relaxed mb-2">
-                                Automation Tool Content AI là sản phẩm được <strong>Noti.vn</strong> và <strong>Nextgency</strong> cùng
+                    <div className="group col-span-2 relative flex items-center overflow-hidden rounded-xl
+                                    border border-[#c08dfe]/25 bg-gradient-to-br from-[#151233] via-[#0d0f26] to-[#070818]
+                                    p-4 lg:p-6 shadow-[0_24px_60px_-28px_rgba(85,52,187,.85)]
+                                    transition-all duration-500 ease-in-out cursor-pointer
+                                    hover:-translate-y-1 hover:border-[#c08dfe]/50 hover:shadow-[0_30px_70px_-26px_rgba(85,52,187,1)]">
+                        {/* Lưới nền mờ */}
+                        <div className="pointer-events-none absolute inset-0 opacity-40
+                                        bg-[linear-gradient(rgba(192,141,254,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(192,141,254,.05)_1px,transparent_1px)]
+                                        bg-[size:26px_26px]" />
+                        {/* Hào quang tím - xanh */}
+                        <div className="pointer-events-none absolute -top-16 -right-10 h-48 w-48 rounded-full bg-[#c08dfe]/25 blur-3xl" />
+                        <div className="pointer-events-none absolute -bottom-20 -left-12 h-48 w-48 rounded-full bg-[#1a4498]/30 blur-3xl" />
+                        {/* Vạch nhấn bên trái */}
+                        <span className="pointer-events-none absolute inset-y-4 left-0 w-[3px] rounded-full bg-gradient-to-b from-[#c08dfe] via-[#8866ee] to-[#1a4498]" />
+
+                        <div className="relative pl-3 lg:pl-4">
+                            <p className="text-[14px] lg:text-[15px] text-gray-300 leading-relaxed mb-2">
+                                Automation Tool Content AI là sản phẩm được <strong className="font-bold text-[#d9c2ff]">Noti.vn</strong> và <strong className="font-bold text-[#d9c2ff]">Nextgency</strong> cùng
                                 nghiên cứu và phát triển – kết hợp năng lực tư vấn chuyển đổi số, dữ liệu marketing với kinh nghiệm
                                 vận hành nền tảng công nghệ quy mô lớn.
                             </p>
-                            <p className="text-[14px] lg:text-[15px] text-white leading-relaxed">
+                            <p className="text-[14px] lg:text-[15px] text-gray-300 leading-relaxed">
                                 Hai đội ngũ cùng chịu trách nhiệm từ kiến trúc hệ thống, mô hình AI cho tới trải nghiệm người dùng,
                                 đảm bảo sản phẩm được cập nhật liên tục theo thay đổi của công cụ tìm kiếm và các nền tảng AI.
                             </p>

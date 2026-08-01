@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, Target } from 'lucide-react';
+import { CONSULTATION_SERVICES } from '../data/consultationServices';
+import { submitConsultation } from '../utils/submitConsultation';
 
 export default function ConsultationSectionPrimary() {
     const [formData, setFormData] = useState({
@@ -8,6 +10,7 @@ export default function ConsultationSectionPrimary() {
         email: '',
         business_field: '',
         brand_name: '',
+        service: '',
         consultation_request: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,23 +30,7 @@ export default function ConsultationSectionPrimary() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('https://data.nextgency.vn/api/v1/db/data/noco/pt23og868jycyzo/mmw1iwmnal17i0t', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'xc-token': 'dY0LCW8ChnwtfC6KiA94S17SaBax6RGRaZ4LMaHb'
-                },
-                body: JSON.stringify({
-                    customer_name: formData.customer_name,
-                    phone: formData.phone,
-                    email: formData.email,
-                    business_field: formData.business_field,
-                    brand_name: formData.brand_name,
-                    consultation_request: formData.consultation_request,
-                    created_at: new Date().toISOString(),
-                    status: 'New'
-                })
-            });
+            const response = await submitConsultation(formData);
 
             if (response.ok) {
                 setSubmitStatus('success');
@@ -53,6 +40,7 @@ export default function ConsultationSectionPrimary() {
                     email: '',
                     business_field: '',
                     brand_name: '',
+                    service: '',
                     consultation_request: ''
                 });
 
@@ -185,6 +173,25 @@ export default function ConsultationSectionPrimary() {
                                             placeholder="Nhập tên thương hiệu (nếu có)"
                                         />
                                     </div>
+                                </div>
+
+                                {/* Dịch vụ cần tư vấn */}
+                                <div className="space-y-2">
+                                    <label className="block text-white text-[13px] lg:text-[15px] font-medium">
+                                        Dịch vụ cần tư vấn *
+                                    </label>
+                                    <select
+                                        name="service"
+                                        value={formData.service}
+                                        onChange={handleInputChange}
+                                        className="w-full px-4 py-2.5 bg-white/95 rounded-sm text-black text-[13px] lg:text-[15px] transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg cursor-pointer"
+                                        required
+                                    >
+                                        <option value="" disabled>Chọn dịch vụ bạn quan tâm</option>
+                                        {CONSULTATION_SERVICES.map((service) => (
+                                            <option key={service} value={service}>{service}</option>
+                                        ))}
+                                    </select>
                                 </div>
 
                                 {/* Yêu cầu tư vấn */}

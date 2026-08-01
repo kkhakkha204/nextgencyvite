@@ -189,9 +189,9 @@ const OffersSection = () => {
                                 backgroundSize: '200% 200%'
                             }}
                         >
-        <span className="">
-            Hợp tác ngay
-        </span>
+                            <span className="">
+                                Hợp tác ngay
+                            </span>
                             <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                 <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
                             </div>

@@ -582,13 +582,19 @@ const HeroAutomationPreview = () => {
 };
 
 const Hero = () => {
-
-    const openRegisterLink = () => {
-        window.open('https://seo.eventhub.vn/login', '_blank', 'noopener,noreferrer');
-    };
     const scrollToContact = (e) => {
         e.preventDefault();
         const contactSection = document.getElementById('features');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+    const scrollToContact2 = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('lilcontact');
         if (contactSection) {
             contactSection.scrollIntoView({
                 behavior: 'smooth',
@@ -602,14 +608,27 @@ const Hero = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-4 items-center">
                     {/* Content Column - 60% */}
                     <div className="lg:col-span-2 space-y-4 mb-4 pr-4 lg:mb-0">
+                        {/* Badge */}
+                        <div className="inline-flex rounded-full border border-black/10 bg-white p-1 neu-shadow-xs">
+                            <span className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#0d0f26] to-[#151233] pl-3.5 pr-4 py-2 shadow-[0_10px_24px_-14px_rgba(85,52,187,.9)]">
+                                <span className="relative flex h-2 w-2 shrink-0">
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#c08dfe] opacity-75" />
+                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#c08dfe]" />
+                                </span>
+                                <span className="text-[12px] lg:text-[13px] font-archivo font-bold text-white whitespace-nowrap">
+                                    Nền tảng nội dung AI · SEO · AEO · GEO
+                                </span>
+                            </span>
+                        </div>
+
                         {/* Title Section */}
-                        <div className="space-y-2">
-                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-none tracking-tight">
-                                AUTOMATION TOOL
+                        <div className="">
+                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-[1.4] tracking-tight">
+                                TỐI ƯU CONTENT
                             </h1>
                             <div className="flex items-center gap-4">
-                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none tracking-tight">
-                                    CONTENT AI
+                                <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-[1.4] tracking-tight">
+                                    AI ĐA CHIỀU
                                 </h1>
                                 {/* SVG Circles */}
                                 <div className="flex-shrink-0">
@@ -663,7 +682,7 @@ const Hero = () => {
 
                         {/* Description */}
                         <div className="space-y-4">
-                            <p className="text-[16px] lg:text-[20px] text-black text-justify max-w-xl">
+                            <p className="text-[18px] lg:text-[20px] text-black text-justify max-w-xl">
                                 Một nền tảng AI: phân tích, lên kế hoạch và viết nội dung được <strong>AI trích dẫn.</strong>
                             </p>
 
@@ -676,16 +695,16 @@ const Hero = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <div className="flex items-center mt-4 space-x-4">
+                        <div className="flex items-start items-center gap-2 sm:gap-4 mt-4">
                             <button
-                                onClick={openRegisterLink}
+                                onClick={scrollToContact2}
                                 className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                                 style={{
                                     backgroundSize: '200% 200%'
                                 }}
                             >
                                 <span className="">
-                                    Trải nghiệm ngay
+                                    Tư vấn ngay
                                 </span>
                                 <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                     <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>

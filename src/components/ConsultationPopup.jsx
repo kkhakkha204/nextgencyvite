@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Star, CheckCircle, Target } from 'lucide-react';
+import { CONSULTATION_SERVICES } from '../data/consultationServices';
+import { submitConsultation } from '../utils/submitConsultation';
 
 export const ConsultationPopup = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
@@ -8,6 +10,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
         email: '',
         business_field: '',
         brand_name: '',
+        service: '',
         consultation_request: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,6 +54,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                 email: '',
                 business_field: '',
                 brand_name: '',
+                service: '',
                 consultation_request: ''
             });
             setSubmitStatus(null);
@@ -77,24 +81,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('https://data.nextgency.vn/api/v1/db/data/noco/pt23og868jycyzo/mmw1iwmnal17i0t', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'xc-token': 'dY0LCW8ChnwtfC6KiA94S17SaBax6RGRaZ4LMaHb'
-                },
-
-                body: JSON.stringify({
-                    customer_name: formData.customer_name,
-                    phone: formData.phone,
-                    email: formData.email,
-                    business_field: formData.business_field,
-                    brand_name: formData.brand_name,
-                    consultation_request: formData.consultation_request,
-                    created_at: new Date().toISOString(),
-                    status: 'New'
-                })
-            });
+            const response = await submitConsultation(formData);
 
             if (response.ok) {
                 setSubmitStatus('success');
@@ -104,6 +91,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                     email: '',
                     business_field: '',
                     brand_name: '',
+                    service: '',
                     consultation_request: ''
                 });
 
@@ -294,6 +282,25 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                         placeholder="Nhập tên thương hiệu (nếu có)"
                                                     />
                                                 </div>
+                                            </div>
+
+                                            {/* Dịch vụ cần tư vấn */}
+                                            <div className="space-y-1">
+                                                <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
+                                                    Dịch vụ cần tư vấn *
+                                                </label>
+                                                <select
+                                                    name="service"
+                                                    value={formData.service}
+                                                    onChange={handleInputChange}
+                                                    className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg focus:outline-none cursor-pointer"
+                                                    required
+                                                >
+                                                    <option value="" disabled>Chọn dịch vụ bạn quan tâm</option>
+                                                    {CONSULTATION_SERVICES.map((service) => (
+                                                        <option key={service} value={service}>{service}</option>
+                                                    ))}
+                                                </select>
                                             </div>
 
                                             {/* Yêu cầu tư vấn */}

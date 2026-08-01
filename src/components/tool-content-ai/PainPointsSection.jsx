@@ -33,8 +33,15 @@ const PainPointSection = () => {
         }
     ];
 
-    const openRegisterLink = () => {
-        window.open('https://seo.eventhub.vn/login', '_blank', 'noopener,noreferrer');
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('lilcontact');
+        if (contactSection) {
+            contactSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     };
 
     return (
@@ -119,14 +126,14 @@ const PainPointSection = () => {
                     {/* CTA Button */}
                     <div className="flex items-center justify-center space-x-4">
                         <button
-                            onClick={openRegisterLink}
+                            onClick={scrollToContact}
                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                             style={{
                                 backgroundSize: '200% 200%'
                             }}
                         >
                             <span className="">
-                                Trải nghiệm ngay
+                                Tư vấn ngay
                             </span>
                             <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                 <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>

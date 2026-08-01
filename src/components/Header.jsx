@@ -254,7 +254,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <Bot className="w-3.5 h-3.5" />
-                                                                        <span>Tool Content AI</span>
+                                                                        <span>Automation content AI</span>
                                                                     </Link>
                                                                 </div>
 
@@ -496,6 +496,17 @@ const Header = () => {
 
                                                                     <div className="space-y-2">
                                                                         <Link
+                                                                            to="/services/tool-content-ai"
+                                                                            className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
+                                                                                isActiveRoute('/services/tool-content-ai')
+                                                                                    ? 'text-white bg-black hover:bg-black '
+                                                                                    : 'text-black hover:bg-white '
+                                                                            }`}
+                                                                        >
+                                                                            <Bot className="w-3 h-3 flex-shrink-0" />
+                                                                            <span>Automation content AI</span>
+                                                                        </Link>
+                                                                        <Link
                                                                             to="/services/website-landing-page"
                                                                             className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
                                                                                 isActiveRoute('/services/website-landing-page')
@@ -506,7 +517,6 @@ const Header = () => {
                                                                             <Globe className="w-3 h-3 flex-shrink-0" />
                                                                             <span>Website & Landing Page</span>
                                                                         </Link>
-
                                                                         <Link
                                                                             to="/services/marketing-outsource"
                                                                             className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
