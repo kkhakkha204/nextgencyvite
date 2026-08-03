@@ -614,7 +614,7 @@ const Hero = () => {
     };
     const OpenNewSite = (e) => {
         e.preventDefault();
-        window.open('https://app.nextgency.vn/', '_blank');
+        window.open('https://app.nextgency.vn/login', '_blank');
     };
     return (
         <section className="bg-white py-[60px] lg:py-[90px] relative">

@@ -4,7 +4,7 @@ import { ArrowUpRight } from 'lucide-react';
 const FinalCtaSection = () => {
     const OpenNewSite = (e) => {
         e.preventDefault();
-        window.open('https://app.nextgency.vn/', '_blank');
+        window.open('https://app.nextgency.vn/login', '_blank');
     };
 
     return (
