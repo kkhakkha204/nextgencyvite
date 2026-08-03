@@ -12,6 +12,7 @@ import OffersSection from "../../components/aidata/OffersSection.jsx";
 import WorkflowMindmap from "../../components/aidata/WorkflowMindmap.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const AiData = () => {
     const seoData = seoConfigs.services['ai-data'];
@@ -27,7 +28,7 @@ const AiData = () => {
                 <WorkflowMindmap/>
                 <ClientsPartnersSection/>
                 <CommitmentSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

@@ -12,6 +12,7 @@ import ServicesSection from "../../components/ServicesSection.jsx";
 import OffersSection from "../../components/datasetcrm/OffersSection.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const FacebookCrm = () => {
     const seoData = seoConfigs.services['facebook-crm'];
@@ -28,7 +29,7 @@ const FacebookCrm = () => {
                 <OffersSection/>
                 <ClientsPartnersSection/>
                 <CommitmentSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

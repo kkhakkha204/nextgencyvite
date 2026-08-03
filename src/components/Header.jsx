@@ -82,6 +82,7 @@ const Header = () => {
                 { name: 'Tick Xanh Facebook', path: '/services/tick-xanh-facebook', icon: CheckCircle },
             ]
         },
+        { name: 'AI', path: '/ai' },
         {
             name: 'Dự án',
             path: '/projects',
@@ -237,8 +238,7 @@ const Header = () => {
                                                                     </Link>
                                                                 </div>
 
-                                                                <div className="grid grid-cols-2 gap-2">
-                                                                    <Link
+                                                                <Link
                                                                         to="/services/website-landing-page"
                                                                         className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
                                                                             isActiveRoute('/services/website-landing-page') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
@@ -247,16 +247,6 @@ const Header = () => {
                                                                         <Globe className="w-3.5 h-3.5" />
                                                                         <span>Website & Landing Page</span>
                                                                     </Link>
-                                                                    <Link
-                                                                        to="/services/tool-content-ai"
-                                                                        className={`flex items-center space-x-2 px-3 py-2.5 rounded-3xl text-[14px] transition-colors duration-200 border-[1.5px] border-[#111111] ${
-                                                                            isActiveRoute('/services/tick-xanh-facebook') ? 'text-white bg-black hover:bg-black' : 'text-black hover:text-white hover:bg-[#111111]'
-                                                                        }`}
-                                                                    >
-                                                                        <Bot className="w-3.5 h-3.5" />
-                                                                        <span>Automation content AI</span>
-                                                                    </Link>
-                                                                </div>
 
                                                                 <Link
                                                                     to="/services/marketing-outsource"
@@ -495,17 +485,6 @@ const Header = () => {
                                                                     </div>
 
                                                                     <div className="space-y-2">
-                                                                        <Link
-                                                                            to="/services/tool-content-ai"
-                                                                            className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${
-                                                                                isActiveRoute('/services/tool-content-ai')
-                                                                                    ? 'text-white bg-black hover:bg-black '
-                                                                                    : 'text-black hover:bg-white '
-                                                                            }`}
-                                                                        >
-                                                                            <Bot className="w-3 h-3 flex-shrink-0" />
-                                                                            <span>Automation content AI</span>
-                                                                        </Link>
                                                                         <Link
                                                                             to="/services/website-landing-page"
                                                                             className={`flex items-center space-x-2 px-3 py-2 rounded-3xl text-[13px] border border-[#111111] transition-all duration-200 ${

@@ -9,6 +9,7 @@ import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const MarketingOutsource = () => {
     const seoData = seoConfigs.services['marketing-outsource'];
@@ -22,7 +23,7 @@ const MarketingOutsource = () => {
                 <WhyChooseUs/>
                 <WebsitePackages/>
                 <CommitmentSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

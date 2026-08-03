@@ -8,6 +8,7 @@ import ProfileSection from "../../components/tick/ProfileSection.jsx";
 import ProcessSection from "../../components/tick/ProcessSection.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const Tick = () => {
     const seoData = seoConfigs.services['tick-xanh-facebook'];
@@ -20,7 +21,7 @@ const Tick = () => {
                 <WebsitePackages/>
                 <ProfileSection/>
                 <ProcessSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

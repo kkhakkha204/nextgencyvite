@@ -1,13 +1,17 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/services/tool-content-ai", "destination": "/ai", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/about", "destination": "/about/index.html" },
     { "source": "/news", "destination": "/news/index.html" },
     { "source": "/contact", "destination": "/contact/index.html" },
     { "source": "/chinh-sach-bao-mat", "destination": "/chinh-sach-bao-mat/index.html" },
+    { "source": "/dat-lich", "destination": "/dat-lich/index.html" },
     { "source": "/services/website-landing-page", "destination": "/services/website-landing-page/index.html" },
     { "source": "/services/ai-data", "destination": "/services/ai-data/index.html" },
-    { "source": "/services/tool-content-ai", "destination": "/services/tool-content-ai/index.html" },
+    { "source": "/ai", "destination": "/ai/index.html" },
     { "source": "/services/google-ads", "destination": "/services/google-ads/index.html" },
     { "source": "/services/facebook-ads", "destination": "/services/facebook-ads/index.html" },
     { "source": "/services/tiktok-ads", "destination": "/services/tiktok-ads/index.html" },

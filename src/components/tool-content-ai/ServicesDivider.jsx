@@ -53,12 +53,6 @@ const ServicesDivider = () => {
         <section className="relative bg-black pt-[90px] pb-[60px] lg:pt-[100px] lg:pb-[90px] z-10">
             <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-4 lg:mb-16">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2">
-                        <span className=" text-[#c08dfe] rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
-                            Automation-content-ai
-                        </span>
-                    </div>
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white uppercase leading-[1.45] mb-1 pb-6">
                         Bạn có đang gặp những vấn đề này?
                     </h2>

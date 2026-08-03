@@ -79,6 +79,14 @@ export const seoConfigs = {
         priority: 0.3,
         changefreq: 'yearly'
     },
+    datLich: {
+        path: '/dat-lich',
+        title: 'Đặt buổi Growth Call 30 phút với Ngô Hồng Sơn | Nextgency',
+        description: 'Đặt buổi tư vấn tăng trưởng 1-1 miễn phí 30 phút: soi kênh đang chạy, chỉ đúng điểm nghẽn và vạch đường ưu tiên. Cọc giữ chỗ hoàn 100% bất kỳ lúc nào.',
+        keywords: 'đặt lịch tư vấn, growth call, tư vấn tăng trưởng, tư vấn marketing 1-1, nextgency',
+        priority: 0.8,
+        changefreq: 'monthly'
+    },
     services: {
         'website-landing-page': {
             path: '/services/website-landing-page',
@@ -97,7 +105,7 @@ export const seoConfigs = {
             changefreq: 'monthly'
         },
         'tool-content-ai': {
-            path: '/services/tool-content-ai',
+            path: '/ai',
             title: 'Tool Content AI - Tự động hóa nội dung SEO | Nextgency',
             description: 'Nền tảng AI phân tích social & sàn TMĐT, lên kế hoạch và viết nội dung chuẩn SEO - AEO - GEO, tự động đi internal link, backlink và xuất bản đa kênh.',
             keywords: 'tool content ai, automation content, viết content ai, seo aeo geo, tự động đi internal link, xuất bản đa kênh',
@@ -205,6 +213,7 @@ export const seoRoutes = [
     seoConfigs.news,
     seoConfigs.contact,
     seoConfigs.privacy,
+    seoConfigs.datLich,
     ...Object.values(seoConfigs.services),
     ...Object.values(seoConfigs.projects)
 ];

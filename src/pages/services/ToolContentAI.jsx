@@ -8,12 +8,15 @@ import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import Hero from "../../components/tool-content-ai/Hero.jsx";
 import PainPointsSection from "../../components/tool-content-ai/PainPointsSection.jsx";
+import HowItWorks from "../../components/tool-content-ai/HowItWorks.jsx";
+import FinalCtaSection from "../../components/tool-content-ai/FinalCtaSection.jsx";
 import OffersSection from "../../components/tool-content-ai/OffersSection.jsx";
 import ForWhom from "../../components/tool-content-ai/ForWhom.jsx";
 import BenefitSection from "../../components/tool-content-ai/BenefitSection.jsx";
 import DevelopmentPartners from "../../components/tool-content-ai/DevelopmentPartners.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const ToolContentAI = () => {
     const seoData = seoConfigs.services['tool-content-ai'];
@@ -24,12 +27,13 @@ const ToolContentAI = () => {
                 <Hero/>
                 <ServicesDivider/>
                 <PainPointsSection/>
+                <HowItWorks/>
                 <ForWhom/>
                 <BenefitSection/>
                 <WebsitePackages/>
                 <DevelopmentPartners/>
                 <ProfileSection/>
-                <ConsultationSection/>
+                <FinalCtaSection/>
                 <ServicesSection/>
             </div>
         </>

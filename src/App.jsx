@@ -1,6 +1,6 @@
 ﻿// App.jsx - Updated with conditional Header/Footer
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from "./components/Footer.jsx";
@@ -28,6 +28,11 @@ import ProjectDetail from "./pages/projects/ProjectDetail.jsx";
 import NewsDetailPage from "./pages/news/NewsDetailPage.jsx";
 import MiniAppBeautyVerse from "./pages/projects/MiniAppBeautyVerse.jsx";
 import RouteSEO from "./components/SEO/RouteSEO.jsx";
+import DatLich from "./pages/DatLich.jsx";
+import NotFound from "./pages/NotFound.jsx";
+
+// Landing page tự mang header/footer riêng - ẩn header/footer chung của site.
+const STANDALONE_PATHS = ['/tiktok-verification/', '/dat-lich'];
 
 // Router Content Component
 const RouterContent = () => {
@@ -40,29 +45,32 @@ const RouterContent = () => {
     // Initialize SEO hooks
     useSEO();
 
-    // Kiá»ƒm tra xem cÃ³ pháº£i trang TiktokVerification khÃ´ng
-    const isVerificationPage = location.pathname === '/tiktok-verification/';
+    // Trang standalone (TiktokVerification, landing đặt lịch) tự lo header/footer
+    const isStandalonePage = STANDALONE_PATHS.includes(location.pathname);
 
     return (
         <div className="App min-h-screen flex flex-col">
             {/* Meta mặc định theo pathname - trang nào tự gắn SEOManager sẽ ghi đè */}
             <RouteSEO />
 
-            {/* Chá»‰ hiá»ƒn thá»‹ Header náº¿u khÃ´ng pháº£i trang verification */}
-            {!isVerificationPage && <Header />}
+            {/* Chá»‰ hiá»ƒn thá»‹ Header náº¿u khÃ´ng pháº£i trang standalone */}
+            {!isStandalonePage && <Header />}
 
-            <main className={!isVerificationPage ? "page-content flex-1 pt-[70px] lg:pt-[85px]" : "flex-1"}>
+            <main className={!isStandalonePage ? "page-content flex-1 pt-[70px] lg:pt-[85px]" : "flex-1"}>
                 <Routes>
                     {/* Trang chá»§ */}
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/news" element={<NewsListPage />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/dat-lich" element={<DatLich />} />
 
                     {/* CÃ¡c trang dá»‹ch vá»¥ */}
                     <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
                     <Route path="/services/ai-data" element={<AiData />} />
-                    <Route path="/services/tool-content-ai" element={<ToolContentAI />} />
+                    <Route path="/ai" element={<ToolContentAI />} />
+                    {/* URL cũ của trang Tool Content AI - giữ lại để không gãy link đã chia sẻ */}
+                    <Route path="/services/tool-content-ai" element={<Navigate to="/ai" replace />} />
                     <Route path="/services/google-ads" element={<GoogleAds />} />
                     <Route path="/services/facebook-ads" element={<FacebookAds />} />
                     <Route path="/services/tiktok-ads" element={<TiktokAds />} />
@@ -81,11 +89,14 @@ const RouterContent = () => {
                     <Route path="/projects/:slug" element={<ProjectDetail />} />
                     {/*trang chi tiáº¿t vá» tin tá»©c cÃ´ng nghá»‡*/}
                     <Route path="/news/:slug" element={<NewsDetailPage />} />
+
+                    {/* Route không khớp -> trang 404 */}
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
 
-            {/* Chá»‰ hiá»ƒn thá»‹ Footer náº¿u khÃ´ng pháº£i trang verification */}
-            {!isVerificationPage && <Footer />}
+            {/* Chá»‰ hiá»ƒn thá»‹ Footer náº¿u khÃ´ng pháº£i trang standalone */}
+            {!isStandalonePage && <Footer />}
 
             {/* Page Transition */}
             <PageTransition

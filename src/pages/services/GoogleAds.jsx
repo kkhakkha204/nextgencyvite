@@ -13,6 +13,7 @@ import ConsultationSection from "../../components/ConsultationSection.jsx";
 import GoogleAdsProcess from "../../components/googleads/GoogleAdsProcess.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const GoogleAds = () => {
     const seoData = seoConfigs.services['google-ads'];
@@ -30,7 +31,7 @@ const GoogleAds = () => {
                 <GoogleAdsProcess/>
                 <ClientsPartnersSection/>
                 <CommitmentSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

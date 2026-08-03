@@ -12,6 +12,7 @@ import OffersSection from "../../components/facebookads/OffersSection.jsx";
 import GoogleAdsProcess from "../../components/facebookads/GoogleAdsProcess.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const FacebookAds = () => {
     const seoData = seoConfigs.services['facebook-ads'];
@@ -28,7 +29,7 @@ const FacebookAds = () => {
                 <GoogleAdsProcess/>
                 <ClientsPartnersSection/>
                 <CommitmentSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

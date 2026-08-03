@@ -15,6 +15,7 @@ import ServicesSection from "../../components/ServicesSection.jsx";
 import GoogleAdsProcess from "../../components/websitelanding/GoogleAdsProcess.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const WebsiteLandingPage = () => {
     const seoData = seoConfigs.services['website-landing-page'];
@@ -35,7 +36,7 @@ const WebsiteLandingPage = () => {
                 <ClientsPartnersSection/>
                 <PortfolioShowcase/>
                 <CommitmentSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

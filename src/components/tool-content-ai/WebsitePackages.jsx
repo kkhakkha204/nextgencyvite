@@ -1,5 +1,5 @@
 import React from 'react';
-import {Check, Star} from 'lucide-react';
+import {ArrowUpRight, Check, Star} from 'lucide-react';
 
 const WebsitePackages = () => {
     const enterpriseFeatures = [
@@ -42,15 +42,9 @@ const WebsitePackages = () => {
         }
     ];
 
-    const scrollToContact = (e) => {
+    const OpenNewSite = (e) => {
         e.preventDefault();
-        const contactSection = document.getElementById('lilcontact');
-        if (contactSection) {
-            contactSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        window.open('https://app.nextgency.vn/', '_blank');
     };
 
     return (
@@ -75,12 +69,9 @@ const WebsitePackages = () => {
                             <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-[#c08dfe]/35 to-transparent rounded-full blur-xl"></div>
                             <div>
                                 <div className="mb-6 pb-2 border-b border-black">
-                                    <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
+                                    <h3 className="text-[20px] lg:text-[24px] font-bold text-black">
                                         Enterprise
                                     </h3>
-                                    <span className="text-[20px] lg:text-[24px] font-bold text-black">
-                                        Không giới hạn
-                                    </span>
                                 </div>
 
                                 <div className="space-y-4 mb-8">
@@ -100,10 +91,18 @@ const WebsitePackages = () => {
                             {/* CTA Button */}
                             <div className="flex items-center justify-center pt-2">
                                 <button
-                                    onClick={scrollToContact}
-                                    className="relative flex items-center space-x-3 px-6 xl:px-16 py-3 xl:py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-
-                                    <span>Nhận tư vấn</span>
+                                    onClick={OpenNewSite}
+                                    className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
+                                    style={{
+                                        backgroundSize: '200% 200%'
+                                    }}
+                                >
+                                    <span className="">
+                                        Đăng ký dùng thử
+                                    </span>
+                                    <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
+                                        <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
+                                    </div>
                                 </button>
                             </div>
                         </div>

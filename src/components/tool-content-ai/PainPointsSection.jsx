@@ -33,15 +33,9 @@ const PainPointSection = () => {
         }
     ];
 
-    const scrollToContact = (e) => {
+    const OpenNewSite = (e) => {
         e.preventDefault();
-        const contactSection = document.getElementById('lilcontact');
-        if (contactSection) {
-            contactSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        window.open('https://app.nextgency.vn/', '_blank');
     };
 
     return (
@@ -49,12 +43,6 @@ const PainPointSection = () => {
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2">
-                        <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
-                            Automation-content-ai
-                        </span>
-                    </div>
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
                         Tất cả những gì bạn cần, trong một nền tảng
                     </h2>
@@ -126,14 +114,14 @@ const PainPointSection = () => {
                     {/* CTA Button */}
                     <div className="flex items-center justify-center space-x-4">
                         <button
-                            onClick={scrollToContact}
+                            onClick={OpenNewSite}
                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                             style={{
                                 backgroundSize: '200% 200%'
                             }}
                         >
                             <span className="">
-                                Tư vấn ngay
+                                Đăng ký dùng thử 
                             </span>
                             <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                 <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>

@@ -12,6 +12,7 @@ import TikTokAdsSection from "../../components/tiktokads/TikTokAdsSection.jsx";
 import OffersSection from "../../components/tiktokads/OffersSection.jsx";
 import SEOManager from "../../components/SEO/SEOManager.jsx";
 import { seoConfigs } from "../seo-configs.js";
+import BookingCtaSection from "../../components/BookingCtaSection.jsx";
 
 const TiktokAds = () => {
     const seoData = seoConfigs.services['tiktok-ads'];
@@ -28,7 +29,7 @@ const TiktokAds = () => {
                 <OffersSection/>
                 <ClientsPartnersSection/>
                 <CommitmentSection/>
-                <ConsultationSection/>
+                <BookingCtaSection/>
                 <ServicesSection/>
             </div>
         </>

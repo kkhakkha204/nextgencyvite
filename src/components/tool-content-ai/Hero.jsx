@@ -373,9 +373,26 @@ const FRAMES = [AnalyticsFrame, PlanFrame, ScoreFrame, LinkFrame, PublishFrame].
 const HeroAutomationPreview = () => {
     const [activeStep, setActiveStep] = useState(0);
     const [progress, setProgress] = useState(0);
-    const [paused, setPaused] = useState(false);
+    const [hovered, setHovered] = useState(false);
+    const [inView, setInView] = useState(true);
     const [runId, setRunId] = useState(0);
     const elapsedRef = useRef(0);
+    const rootRef = useRef(null);
+
+    /* Cuộn qua khỏi hero -> ngưng hẳn timer và mọi animation CSS để không tốn CPU */
+    useEffect(() => {
+        const node = rootRef.current;
+        if (!node || typeof IntersectionObserver === 'undefined') return undefined;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setInView(entry.isIntersecting),
+            {rootMargin: '150px 0px', threshold: 0}
+        );
+        observer.observe(node);
+        return () => observer.disconnect();
+    }, []);
+
+    const paused = hovered || !inView;
 
     const goToStep = useCallback((index) => {
         elapsedRef.current = 0;
@@ -405,7 +422,7 @@ const HeroAutomationPreview = () => {
     const ActiveFrame = FRAMES[activeStep];
 
     return (
-        <div className="relative mx-auto w-full max-w-[620px] lg:max-w-none">
+        <div ref={rootRef} className={`relative mx-auto w-full max-w-[620px] lg:max-w-none${inView ? '' : ' hero-offscreen'}`}>
             <style>{`
                 @keyframes heroFrameIn {
                     from { opacity: 0; transform: translateY(12px) scale(.98); }
@@ -462,6 +479,9 @@ const HeroAutomationPreview = () => {
                 .hero-live-dot { animation: heroLiveDot 2s ease-out infinite; }
                 .hero-spin { animation: heroSpin .6s cubic-bezier(.4,0,.2,1); }
 
+                /* Khuất khỏi màn hình: đóng băng mọi animation (kể cả loại chạy vô hạn) */
+                .hero-offscreen, .hero-offscreen * { animation-play-state: paused; }
+
                 @media (prefers-reduced-motion: reduce) {
                     .hero-frame, .hero-pop, .hero-pop-center, .hero-fade, .hero-bar, .hero-ring, .hero-draw, .hero-flow,
                     .hero-type, .hero-caret, .hero-shine, .hero-hub, .hero-orbit, .hero-live-dot, .hero-spin {
@@ -485,8 +505,8 @@ const HeroAutomationPreview = () => {
 
             <div
                 className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#06060f] p-2 shadow-[0_30px_80px_-30px_rgba(85,52,187,.7)]"
-                onMouseEnter={() => setPaused(true)}
-                onMouseLeave={() => setPaused(false)}
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
             >
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(192,141,254,.05)_1px,transparent_1px),linear-gradient(90deg,rgba(192,141,254,.05)_1px,transparent_1px)] bg-[size:26px_26px] opacity-40" />
 
@@ -592,15 +612,9 @@ const Hero = () => {
             });
         }
     };
-    const scrollToContact2 = (e) => {
+    const OpenNewSite = (e) => {
         e.preventDefault();
-        const contactSection = document.getElementById('lilcontact');
-        if (contactSection) {
-            contactSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+        window.open('https://app.nextgency.vn/', '_blank');
     };
     return (
         <section className="bg-white py-[60px] lg:py-[90px] relative">
@@ -623,12 +637,12 @@ const Hero = () => {
 
                         {/* Title Section */}
                         <div className="">
-                            <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-[1.4] tracking-tight">
-                                TỐI ƯU CONTENT
+                            <h1 className="text-[32px] md:text-[40px] lg:text-[50px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-[1.2] tracking-tight">
+                                Một nền tảng AI: phân tích, lên kế hoạch và viết nội dung được
                             </h1>
                             <div className="flex items-center gap-4">
                                 <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-[1.4] tracking-tight">
-                                    AI ĐA CHIỀU
+                                    AI trích dẫn
                                 </h1>
                                 {/* SVG Circles */}
                                 <div className="flex-shrink-0">
@@ -682,9 +696,6 @@ const Hero = () => {
 
                         {/* Description */}
                         <div className="space-y-4">
-                            <p className="text-[18px] lg:text-[20px] text-black text-justify max-w-xl">
-                                Một nền tảng AI: phân tích, lên kế hoạch và viết nội dung được <strong>AI trích dẫn.</strong>
-                            </p>
 
                             {/* Bullet Points */}
                             <div className="space-y-4">
@@ -695,16 +706,16 @@ const Hero = () => {
                         </div>
 
                         {/* CTA Button */}
-                        <div className="flex items-start items-center gap-2 sm:gap-4 mt-4">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 mt-4">
                             <button
-                                onClick={scrollToContact2}
+                                onClick={OpenNewSite}
                                 className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 group animate-gradient-shift"
                                 style={{
                                     backgroundSize: '200% 200%'
                                 }}
                             >
                                 <span className="">
-                                    Tư vấn ngay
+                                    Đăng ký dùng thử
                                 </span>
                                 <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                     <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>

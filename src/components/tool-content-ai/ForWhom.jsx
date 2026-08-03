@@ -38,13 +38,6 @@ const ForWhom = () => {
             <div className="relative z-10 md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
-                    {/* Badge */}
-                    <div className="inline-flex items-center justify-center mb-2">
-                        <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
-                            Automation-content-ai
-                        </span>
-                    </div>
-
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
                         Công cụ này dành cho ai?
