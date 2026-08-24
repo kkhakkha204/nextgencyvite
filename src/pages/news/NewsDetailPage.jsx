@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useI18n } from '../../i18n';
 import { Link, useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import {
@@ -149,7 +150,9 @@ const shuffleWithSeed = (items, seed = 1) => {
     return list;
 };
 
-const NewsCard = ({ item }) => (
+const NewsCard = ({ item }) => {
+    const { t } = useI18n();
+    return (
     <Link to={`/news/${item.slug}-${item.id}`} state={{ news: item }} className="block">
         <article className="overflow-hidden rounded-2xl border border-slate-600/40 bg-gradient-to-br from-slate-900/95 via-slate-900/70 to-slate-800/80 shadow-2xl shadow-black/25 transition-all duration-500 hover:-translate-y-1 hover:border-indigo-400/60 hover:shadow-2xl">
             <div className="relative aspect-[16/9] overflow-hidden">
@@ -160,7 +163,7 @@ const NewsCard = ({ item }) => (
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
                 <div className="absolute left-2 top-2 flex flex-wrap gap-1">
-                    {(item.categories ?? ["Tin tức"]).map((category) => (
+                    {(item.categories ?? [t('news.detail.breadcrumb')]).map((category) => (
                         <span
                             key={`${item.id}-${category}`}
                             className={`rounded-full px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] ${categoryClass(category)}`}
@@ -181,15 +184,17 @@ const NewsCard = ({ item }) => (
                 </h3>
                 <p className="mt-2 line-clamp-2 text-sm text-slate-300">{item.description}</p>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-indigo-300">
-                    <span className="animate-pulse">Xem thêm</span>
+                    <span className="animate-pulse">{t('news.detail.loadMore')}</span>
                     <span className="text-indigo-300">→</span>
                 </div>
             </div>
         </article>
     </Link>
-);
+    );
+};
 
 const NavigationCard = ({ direction, item }) => {
+    const { t } = useI18n();
     const isPrevious = direction === "previous";
     const Icon = isPrevious ? ArrowLeft : ArrowRight;
 
@@ -197,9 +202,9 @@ const NavigationCard = ({ direction, item }) => {
         return (
             <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-5 opacity-60">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                    {isPrevious ? "Bài trước" : "Bài sau"}
+                    {isPrevious ? t('news.detail.previous') : t('news.detail.next')}
                 </p>
-                <p className="mt-3 text-sm text-slate-500">Không có bài viết phù hợp.</p>
+                <p className="mt-3 text-sm text-slate-500">{t('news.detail.empty')}</p>
             </div>
         );
     }
@@ -212,7 +217,7 @@ const NavigationCard = ({ direction, item }) => {
         >
             <div className="flex items-center justify-between gap-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                    {isPrevious ? "Bài trước" : "Bài sau"}
+                    {isPrevious ? t('news.detail.previous') : t('news.detail.next')}
                 </p>
                 <Icon className="h-4 w-4 text-indigo-500 transition-transform duration-300 group-hover:translate-x-0.5" />
             </div>
@@ -225,6 +230,7 @@ const NavigationCard = ({ direction, item }) => {
 };
 
 const NewsDetailPage = () => {
+    const { t } = useI18n();
     const { slug } = useParams();
     const [activeHeadingId, setActiveHeadingId] = useState("");
     const [copied, setCopied] = useState(false);
@@ -330,7 +336,7 @@ const NewsDetailPage = () => {
             await navigator.clipboard.writeText(url);
             setCopied(true);
         } catch {
-            window.prompt("Sao chép liên kết bài viết:", url);
+            window.prompt(t('news.detail.copyLinkLabel'), url);
         }
     };
 
@@ -466,17 +472,17 @@ const NewsDetailPage = () => {
             <div className="min-h-[calc(100vh-220px)] bg-gradient-to-b from-slate-50 via-white to-indigo-50 py-16 text-slate-900">
                 <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
                     <div className="rounded-[2rem] border border-slate-200 bg-white p-8 text-center shadow-[0_20px_70px_rgba(15,23,42,0.08)]">
-                        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-500">Tin tức</p>
-                        <h1 className="mt-4 text-3xl font-bold text-slate-950">Không tìm thấy bài viết</h1>
+                        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-indigo-500">{t('news.detail.breadcrumb')}</p>
+                        <h1 className="mt-4 text-3xl font-bold text-slate-950">{t('news.detail.notFoundTitle')}</h1>
                         <p className="mt-3 text-slate-600">
-                            Bài viết bạn đang tìm có thể đã bị thay đổi hoặc không còn tồn tại.
+                            {t('news.detail.notFoundDescription')}
                         </p>
                         <Link
                             to="/news"
                             className="mt-6 inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-indigo-600"
                         >
                             <ArrowLeft className="h-4 w-4" />
-                            Quay lại trang tin tức
+                            {t('news.detail.backToNews')}
                         </Link>
                     </div>
                 </div>
@@ -503,11 +509,11 @@ const NewsDetailPage = () => {
             <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
                 <nav className="mb-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
                     <Link to="/" className="transition hover:text-indigo-600">
-                        Trang chủ
+                        {t('news.detail.home')}
                     </Link>
                     <span>/</span>
                     <Link to="/news" className="transition hover:text-indigo-600">
-                        Tin tức
+                        {t('news.detail.breadcrumb')}
                     </Link>
                     <span>/</span>
                     <span className="line-clamp-1 text-slate-700">{news.title}</span>
@@ -522,7 +528,7 @@ const NewsDetailPage = () => {
 
                             <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-500">
                                 <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-2 font-semibold text-indigo-600">
-                                    {news.categories?.[0] ?? "Tin tức"}
+                                    {news.categories?.[0] ?? t('news.detail.breadcrumb')}
                                 </span>
                                 <span className="hidden h-1 w-1 rounded-full bg-slate-300 sm:inline-block" />
                                 <span className="inline-flex items-center gap-2">
@@ -568,9 +574,9 @@ const NewsDetailPage = () => {
                             <div className="mt-12 rounded-[1.5rem] border border-slate-200 bg-slate-50/90 p-5">
                                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                                     <div>
-                                        <p className="text-sm font-semibold text-slate-900">Chia sẻ bài viết</p>
+                                        <p className="text-sm font-semibold text-slate-900">{t('news.detail.shareTitle')}</p>
                                         <p className="mt-1 text-sm text-slate-500">
-                                            Gửi nhanh cho đồng đội hoặc lưu lại liên kết để đọc sau.
+                                            {t('news.detail.shareDescription')}
                                         </p>
                                     </div>
 
@@ -581,7 +587,7 @@ const NewsDetailPage = () => {
                                             className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-600"
                                         >
                                             <Share2 className="h-4 w-4" />
-                                            Chia sẻ
+                                            {t('news.detail.share')}
                                         </button>
                                         <button
                                             type="button"
@@ -589,7 +595,7 @@ const NewsDetailPage = () => {
                                             className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-indigo-300 hover:text-indigo-600"
                                         >
                                             <Copy className="h-4 w-4" />
-                                            {copied ? "Đã sao chép" : "Sao chép link"}
+                                            {copied ? t('news.detail.copied') : t('news.detail.copyLink')}
                                         </button>
                                     </div>
                                 </div>
@@ -604,7 +610,7 @@ const NewsDetailPage = () => {
 
                     <aside className="h-fit xl:sticky xl:top-24 xl:self-start">
                         <div className="rounded-[16px] border border-slate-200 bg-white/95 p-6 shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
-                            <h2 className="text-2xl font-bold text-slate-950">Mục lục</h2>
+                            <h2 className="text-2xl font-bold text-slate-950">{t('news.detail.toc')}</h2>
                             <div className="mt-4 h-px bg-slate-200" />
 
                             {toc.length > 0 ? (
@@ -627,7 +633,7 @@ const NewsDetailPage = () => {
                                 </div>
                             ) : (
                                 <p className="mt-4 text-sm leading-7 text-slate-500">
-                                    Bài viết này chưa có tiêu đề phân cấp để tạo mục lục.
+                                    {t('news.detail.tocEmpty')}
                                 </p>
                             )}
                         </div>
@@ -638,13 +644,13 @@ const NewsDetailPage = () => {
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                         <div>
                             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-indigo-500">
-                                Liên quan
+                                {t('news.detail.related')}
                             </p>
                             <h2 className="mt-2 text-2xl font-bold text-slate-950 md:text-3xl">
-                                Bài viết liên quan
+                                {t('news.detail.relatedTitle')}
                             </h2>
                             <p className="mt-2 max-w-2xl text-sm text-slate-500 md:text-base">
-                                Ba bài viết được chọn ngẫu nhiên để bạn tiếp tục đọc theo cùng mạch nội dung.
+                                {t('news.detail.relatedDescription')}
                             </p>
                         </div>
 
@@ -652,7 +658,7 @@ const NewsDetailPage = () => {
                             to="/news"
                             className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition hover:text-indigo-500"
                         >
-                            Xem toàn bộ
+                            {t('news.detail.viewAll')}
                             <ArrowRight className="h-4 w-4" />
                         </Link>
                     </div>

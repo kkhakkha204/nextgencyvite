@@ -1,44 +1,14 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import { AlertTriangle } from 'lucide-react';
 
 const CommitmentSection = () => {
-    const commitments = [
-        {
-            id: 1,
-            title: "Thiết kế tùy biến theo yêu cầu",
-            description: "Cam kết hiệu quả theo KPI đầu ra"
-        },
-        {
-            id: 2,
-            title: "Tối ưu tốc độ tải < 2 giây",
-            description: "Khách hàng được đồng hành cùng đội ngũ chuyên sâu gồm Planner – Ads – Content – Designer – Automation như một phòng Marketing nội bộ thực thụ"
-        },
-        {
-            id: 3,
-            title: "Hỗ trợ kỹ thuật chuyên nghiệp",
-            description: "Cam kết phân tích kỹ doanh nghiệp để xây dựng chiến lược truyền thông, nội dung và quảng cáo phù hợp đặc thù từng ngành hàng"
-        },
-        {
-            id: 4,
-            title: "Bàn giao đầy đủ quyền sở hữu",
-            description: "Cam kết tối ưu ngân sách và minh bạch chi phí"
-        },
-        {
-            id: 5,
-            title: "Bảo mật thông tin tuyệt đối",
-            description: "Cam kết dịch vụ được module hóa, giúp khách hàng dễ dàng tăng/giảm hạng mục triển khai hoặc nâng cấp gói dịch vụ theo từng giai đoạn phát triển"
-        },
-        {
-            id: 6,
-            title: "Xử lý khiếu nại chuyên nghiệp",
-            description: "Trong mọi tình huống khiếu nại, Nextgency cam kết:",
-            subCommitments: [
-                "Phản hồi trong vòng 24h làm việc",
-                "Có biên bản làm việc rõ ràng về trách nhiệm, giải pháp và phương án xử lý triệt để",
-                "Bồi thường bằng dịch vụ bổ sung hoặc hoàn tiền hợp lý nếu lỗi thuộc về đội ngũ vận hành"
-            ]
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Nội dung lấy từ từ điển; id dùng để chọn kiểu hiển thị cho mục cuối
+    const commitments = tm('shared.commitment.items').map((item, index) => ({
+        ...item,
+        id: index + 1
+    }));
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
@@ -52,7 +22,7 @@ const CommitmentSection = () => {
                         </span>
                     </div>
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                        Cam kết của chúng tôi
+                        {t('shared.commitment.title')}
                     </h2>
                 </div>
                 {/* Commitments List */}

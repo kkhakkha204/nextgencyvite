@@ -1,37 +1,15 @@
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const PainPointsSection = () => {
+    const { t, tm } = useI18n();
 
-    const painPoints = [
-        {
-            title: "Tài khoản ads bị hạn chế",
-            description: "Tài khoản quảng cáo liên tục bị hạn chế, khiến chiến dịch đứt gãy và không thể scale.",
-            impact: "Chiến dịch đứt gãy",
-            isDark: false,
-            rotation: "lg:-rotate-1"
-        },
-        {
-            title: "Tích hợp hệ thống kém",
-            description: "Không thể tích hợp hệ thống quảng cáo với chatbot, website hay CRM để khai thác dữ liệu hiệu quả.",
-            impact: "Ads bị đốt cháy",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Thiếu hệ thống tracking",
-            description: "Chi tiền đều đặn nhưng không biết đơn hàng đến từ đâu – thiếu tracking và báo cáo rõ ràng",
-            impact: "Không đo lường ROI",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Phễu bán hàng thiếu bài bản",
-            description: "Khó khăn trong việc xây dựng phễu TOFU – MOFU – BOFU bài bản để tạo chuyển đổi bền vững",
-            impact: "Conversion thấp",
-            isDark: true,
-            rotation: "lg:-rotate-1"
-        }
-    ];
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const painPoints = tm('servicePages.facebookAds.painPoints.items').map((point, index) => ({
+        ...point,
+        isDark: index === 3,
+        rotation: ['lg:-rotate-1', 'lg:rotate-1', 'lg:rotate-1', 'lg:-rotate-1'][index]
+    }));
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">
@@ -48,7 +26,7 @@ const PainPointsSection = () => {
 
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                        Nỗi đau của doanh nghiệp
+                        {t('servicePages.facebookAds.painPoints.title')}
                     </h2>
 
                 </div>

@@ -1,42 +1,22 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 const BenefitSection = () => {
-    const offers = [
-        {
-            id: 1,
-            title: "Thay vì vài giờ cho một bài chuẩn SEO chỉ cần",
-            discount: "VÀI PHÚT",
-            description: "",
-            align: "left",
-            gradient: "from-[#D4CEF5] to-[#C5BCF1]",
-            compactHighlight: true
-        },
-        {
-            id: 2,
-            title: "SEO + AEO + GEO\ntrong một lần viết",
-            discount: "3",
-            discountLabel: "trong",
-            discountSuffix: "1",
-            align: "left",
-            gradient: "from-[#C5BCF1] to-[#C5BCF1]"
-        },
-        {
-            id: 3,
-            title: "Bản địa hóa\ncho từng thị trường với",
-            discount: "10",
-            description: "NGÔN NGỮ",
-            align: "left",
-            gradient: "from-[#C5BCF1] to-[#C5BCF1]"
-        },
-        {
-            id: 4,
-            title: "Đăng thẳng\nlên nhiều CMS",
-            discount: "ĐA KÊNH",
-            isRadial: true,
-            isWhiteText: true,
-            compactHighlight: true
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const offers = tm('servicePages.toolContentAi.benefits.items').map((item, index) => ({
+        id: index + 1,
+        title: item.title,
+        discount: item.highlight,
+        description: item.description,
+        discountLabel: index === 1 ? t('servicePages.toolContentAi.benefits.inLabel') : undefined,
+        discountSuffix: index === 1 ? '1' : undefined,
+        align: index === 3 ? undefined : 'left',
+        gradient: index === 0 ? 'from-[#D4CEF5] to-[#C5BCF1]' : 'from-[#C5BCF1] to-[#C5BCF1]',
+        isRadial: index === 3,
+        isWhiteText: index === 3,
+        compactHighlight: index === 0 || index === 3
+    }));
 
     return (
         <section className="bg-black py-[60px] lg:py-[90px]">
@@ -44,10 +24,10 @@ const BenefitSection = () => {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-6 sm:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white leading-[1.35] uppercase text-center sm:text-left">
-                        Tiết kiệm <br />thời gian và chi phí
+                        {t('servicePages.toolContentAi.benefits.titleLine1')} <br />{t('servicePages.toolContentAi.benefits.titleLine2')}
                     </h2>
                     <p className="text-white/80 text-[15px] lg:text-[18px] leading-relaxed text-center sm:text-right max-w-lg">
-                        Làm việc của cả một quy trình chỉ trong vài phút.
+                        {t('servicePages.toolContentAi.benefits.subtitle')}
                     </p>
                 </div>
 

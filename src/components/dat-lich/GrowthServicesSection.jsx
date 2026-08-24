@@ -1,7 +1,8 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Bot, Gem, Megaphone, MonitorSmartphone, Target} from 'lucide-react';
 import SectionHeading from './SectionHeading.jsx';
-import {GROWTH_SERVICES} from './bookingData.js';
+import {buildGrowthServices} from './bookingData.js';
 
 const ICONS = {
     'target': Target,
@@ -11,20 +12,22 @@ const ICONS = {
     'megaphone': Megaphone
 };
 
-const GrowthServicesSection = () => (
+const GrowthServicesSection = () => {
+    const { t, tm } = useI18n();
+    const GROWTH_SERVICES = buildGrowthServices(tm);
+
+    return (
     <section className="border-t border-[#eef2f8] bg-white px-5 py-16 sm:px-8 lg:px-14 lg:py-[110px]">
         <div className="mx-auto max-w-[1180px]">
             <SectionHeading
-                eyebrow="Phần 02 · Tin vui"
-                title="Tăng trưởng là bài toán có lời giải — bằng những con số đo được"
+                eyebrow={t('booking.growth.badge')}
+                title={t('booking.growth.title')}
                 className="max-w-[820px]"
             />
 
             <p className="mt-5 max-w-[820px] text-[15px] leading-[1.75] text-[#3a4256] lg:text-[16.5px]">
-                Tăng trưởng không phải phép màu chỉ vài người có duyên mới làm được. Nó là một bài toán kỹ thuật — có
-                đầu vào, có đầu ra, đo được từng bước. Nguyên tắc của Nextgency: chỉ giữ lại những kênh{' '}
-                <strong className="font-semibold text-[#0b0e18]">chứng minh được ra tiền bằng số</strong>, và cắt thẳng
-                tay phần còn lại. Đây là bộ vũ khí Sơn sẽ soi cùng anh/chị, xem cái nào hợp với bài toán của mình:
+                {t('booking.growth.descriptionPrefix')}
+                <strong className="font-semibold text-[#0b0e18]">{t('booking.growth.highlight')}</strong>{t('booking.growth.description')}
             </p>
 
             <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -53,6 +56,7 @@ const GrowthServicesSection = () => (
             </div>
         </div>
     </section>
-);
+    );
+};
 
 export default GrowthServicesSection;

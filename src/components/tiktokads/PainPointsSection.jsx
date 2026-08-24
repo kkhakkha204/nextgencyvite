@@ -1,36 +1,14 @@
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const PainPointsSection = () => {
-    const painPoints = [
-        {
-            title: "Video content kém chất lượng",
-            description: "Không theo kịp trend TikTok, đội in-house thiếu kinh nghiệm làm video hấp dẫn.",
-            impact: "Ads burn tiền vô ích",
-            isDark: false,
-            rotation: "lg:-rotate-1"
-        },
-        {
-            title: "Content không chuyển đổi",
-            description: "Đã đầu tư vào quảng cáo nhưng nội dung không đủ chạm – view có, tương tác có nhưng không chuyển đổi.",
-            impact: "ROI thấp, lãng phí budget",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Mất khách đã quan tâm",
-            description: "Thiếu hệ thống retargeting khách đã xem, đã tương tác – bỏ lỡ hàng ngàn cơ hội mua lại.",
-            impact: "Bỏ lỡ cơ hội bán hàng",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "TikTok Pixel chưa chuẩn",
-            description: "Không cài được TikTok Pixel chuẩn – không tối ưu hóa được tệp người dùng tiềm năng.",
-            impact: "Targeting không chính xác",
-            isDark: true,
-            rotation: "lg:-rotate-1"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const painPoints = tm('servicePages.tiktokAds.painPoints.items').map((point, index) => ({
+        ...point,
+        isDark: index === 3,
+        rotation: ['lg:-rotate-1', 'lg:rotate-1', 'lg:rotate-1', 'lg:-rotate-1'][index]
+    }));
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">
@@ -47,7 +25,7 @@ const PainPointsSection = () => {
 
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                        Nỗi đau của doanh nghiệp
+                        {t('servicePages.tiktokAds.painPoints.title')}
                     </h2>
 
                 </div>

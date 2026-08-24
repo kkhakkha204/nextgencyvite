@@ -1,33 +1,16 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 const ServicesDivider = () => {
-    // Service data
-    const services = [
-        {
-            id: 1,
-            title: "UI/UX Design",
-            description: "Xây dựng tệp dataset chất lượng cho quảng cáo Facebook",
-            ellipseRotation: "rotate-3",
-            hoverRotation: "group-hover:rotate-6",
-            badgeRotation: "group-hover:rotate-12"
-        },
-        {
-            id: 2,
-            title: "Integration",
-            description: "Tạo đối tượng lookalike & remarketing từ dữ liệu CRM, đơn hàng, hành vi người dùng.",
-            ellipseRotation: "-rotate-2",
-            hoverRotation: "group-hover:-rotate-4",
-            badgeRotation: "group-hover:-rotate-12"
-        },
-        {
-            id: 3,
-            title: "Hosting & Maintenance",
-            description: "Kết nối dữ liệu từ form, website, Zalo, chatbot… đẩy ngược về Facebook CAPI.",
-            ellipseRotation: "rotate-1",
-            hoverRotation: "group-hover:rotate-3",
-            badgeRotation: "group-hover:rotate-6"
-        }
-    ];
+    const { tm } = useI18n();
+    // Bố cục giữ trong code, phần chữ lấy từ từ điển
+    const services = tm('servicePages.facebookCrm.divider').map((description, index) => ({
+        id: index + 1,
+        description,
+        ellipseRotation: ['rotate-3', '-rotate-2', 'rotate-1'][index],
+        hoverRotation: ['group-hover:rotate-6', 'group-hover:-rotate-4', 'group-hover:rotate-3'][index],
+        badgeRotation: ['group-hover:rotate-12', 'group-hover:-rotate-12', 'group-hover:rotate-6'][index]
+    }));
 
     // CheckMark SVG Icon Component
     const CheckMarkIcon = ({ className }) => (

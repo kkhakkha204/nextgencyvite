@@ -1,4 +1,5 @@
 import React, {useMemo} from 'react';
+import { useI18n } from '../../i18n';
 import {ChevronLeft, ChevronRight} from 'lucide-react';
 
 const DOW_LABELS = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'];
@@ -40,6 +41,7 @@ const buildWeek = (weekOffset) => {
 };
 
 const WeekCalendar = ({weekOffset, onPrevWeek, onNextWeek, selectedKey, onSelectDate}) => {
+    const { t } = useI18n();
     const {days, weekLabel} = useMemo(() => buildWeek(weekOffset), [weekOffset]);
     const canGoBack = weekOffset > 0;
 
@@ -50,7 +52,7 @@ const WeekCalendar = ({weekOffset, onPrevWeek, onNextWeek, selectedKey, onSelect
                     type="button"
                     onClick={onPrevWeek}
                     disabled={!canGoBack}
-                    aria-label="Tuần trước"
+                    aria-label={t('booking.panel.prevWeek')}
                     className={`flex h-[30px] w-[30px] items-center justify-center rounded-[9px] border border-[#dde4ef] bg-[#f9fafd] transition-colors duration-200 ${
                         canGoBack ? 'cursor-pointer text-[#3a4256] hover:bg-[#eef2f8]' : 'cursor-default text-[#c3ccdb]'
                     }`}
@@ -63,7 +65,7 @@ const WeekCalendar = ({weekOffset, onPrevWeek, onNextWeek, selectedKey, onSelect
                 <button
                     type="button"
                     onClick={onNextWeek}
-                    aria-label="Tuần sau"
+                    aria-label={t('booking.panel.nextWeek')}
                     className="flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-[9px] border border-[#dde4ef] bg-[#f9fafd] text-[#3a4256] transition-colors duration-200 hover:bg-[#eef2f8]"
                 >
                     <ChevronRight className="h-4 w-4" />

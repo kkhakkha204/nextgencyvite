@@ -1,22 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useI18n } from '../../i18n';
 import { ArrowUpRight, CheckCircle2, CircleDot, X } from 'lucide-react';
 
-const oldFlow = [
-    { text: 'Truy cập app theo hướng dẫn tại cổng', muted: false },
-    { text: 'Check-in', muted: false },
-    { text: 'Mở app', muted: true },
-    { text: 'Tương tác với thương hiệu', muted: true },
-    { text: 'Giữ kết nối sau sự kiện', muted: true },
-];
+// Chữ lấy từ từ điển; 2 bước đầu hiển thị đậm, các bước sau làm mờ
+const buildOldFlow = (tm) =>
+    tm('beautyverse.problem.oldSteps').map((text, index) => ({text, muted: index > 1}));
 
-const newFlow = [
-    'Check-in QR chỉ là điểm khởi đầu',
-    'Gamification tạo nhiệm vụ theo 3 giai đoạn',
-    'BPoint — tích điểm, đổi voucher từ 100+ thương hiệu',
-    'Bình chọn thương hiệu · bản đồ · lịch trình real-time',
-];
+const buildNewFlow = (tm) => tm('beautyverse.problem.newSteps');
 
 const ProblemSection = () => {
+    const { t, tm } = useI18n();
+    const oldFlow = buildOldFlow(tm);
+    const newFlow = buildNewFlow(tm);
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -53,18 +48,18 @@ const ProblemSection = () => {
 
             <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
                 <div className={`max-w-[980px] transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                    <p className="text-[13px] font-black uppercase tracking-[0.36em] text-[#214eab]">Bài toán</p>
+                    <p className="text-[13px] font-black uppercase tracking-[0.36em] text-[#214eab]">{t('beautyverse.problem.badge')}</p>
                     <h2 className="mt-5 font-archivo text-[30px] font-black leading-[0.98] tracking-normal text-[#05050b] sm:text-[42px] lg:text-[50px]">
-                        Không phải xây một app —
+                        {t('beautyverse.problem.titleLine1')}
                         <span className="block">
-                            mà giải bài toán{' '}
+                            {t('beautyverse.problem.titleMiddle')}
                             <span className="bg-[linear-gradient(90deg,#24388e_0%,#6d65ff_44%,#a571ff_70%,#9ed6ff_100%)] bg-clip-text text-transparent">
-                                giữ chân người dùng.
+                                {t('beautyverse.problem.titleLine2')}
                             </span>
                         </span>
                     </h2>
                     <p className="mt-7 mb-4 max-w-[760px] text-base font-medium leading-8 text-[#17213f]/82 sm:text-lg">
-                        Ban tổ chức từng hợp tác với một đơn vị công nghệ khác để phát triển mini app. Sản phẩm được xây từ góc nhìn kỹ thuật thuần túy, không đúng hành vi thực tế của tệp khách tham dự — và thất bại theo đúng một kịch bản quen thuộc:
+                        {t('beautyverse.problem.description')}
                     </p>
                     <button
                         type="button"
@@ -72,7 +67,7 @@ const ProblemSection = () => {
                         className="group relative inline-flex w-fit items-center gap-4 overflow-hidden rounded-full bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] py-1.5 pl-6 pr-1.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(160,112,255,0.32)] sm:text-[15px]"
                         style={{ backgroundSize: '200% 200%', animation: 'final-cta-gradient 3s ease-in-out infinite' }}
                     >
-                        <span className="relative z-10">Triển khai mini app của bạn</span>
+                        <span className="relative z-10">{t('beautyverse.cta')}</span>
                         <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
                             <ArrowUpRight className="h-5 w-5 transition duration-300 group-hover:rotate-12 group-hover:scale-110" strokeWidth={2.3} />
                         </span>
@@ -91,10 +86,10 @@ const ProblemSection = () => {
                             <X className="h-4 w-4" />
                         </div>
                         <p className="text-[11px] font-black uppercase tracking-[0.28em] text-[#8a94ad]">
-                            Mini app cũ · góc nhìn kỹ thuật
+                            {t('beautyverse.problem.oldTitle')}
                         </p>
                         <h3 className="mt-4 font-archivo text-[28px] font-black leading-tight tracking-normal text-[#05050b]">
-                            Mở app một lần, rồi thôi.
+                            {t('beautyverse.problem.oldHeadline')}
                         </h3>
 
                         <ul className="mt-8 space-y-5">
@@ -110,7 +105,7 @@ const ProblemSection = () => {
 
                         <div className="mt-9 h-px bg-[#dfe4f1]" />
                         <p className="mt-5 text-sm font-medium leading-7 text-[#17213f]/78">
-                            App trở thành một bước thủ tục — không tạo ra giá trị cho khách tham dự lẫn Ban tổ chức.
+                            {t('beautyverse.problem.oldNote')}
                         </p>
                     </article>
 
@@ -123,10 +118,10 @@ const ProblemSection = () => {
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_92%,rgba(255,255,255,0.28),transparent_34%)]" />
                         <div className="relative">
                             <p className="text-[11px] font-black uppercase tracking-[0.28em] text-[#c5f5ff]">
-                                BEAUTYVERSE · góc nhìn hành vi người dùng
+                                {t('beautyverse.problem.newTitle')}
                             </p>
                             <h3 className="mt-4 max-w-[560px] font-archivo text-[28px] font-black leading-tight tracking-normal">
-                               Lý do quay lại — trước, trong và sau sự kiện.
+                               {t('beautyverse.problem.newHeadline')}
                             </h3>
 
                             <ul className="mt-8 space-y-5">
@@ -140,7 +135,7 @@ const ProblemSection = () => {
 
                             <div className="mt-9 h-px bg-white/24" />
                             <p className="mt-5 text-sm font-semibold leading-7 text-white/78">
-                                Mỗi tính năng là một lý do để mở lại app — retention trở thành thiết kế, không phải hy vọng.
+                                {t('beautyverse.problem.newNote')}
                             </p>
                         </div>
                     </article>
@@ -153,12 +148,12 @@ const ProblemSection = () => {
                     style={{ transitionDelay: '380ms' }}
                 >
                     <div className="font-archivo text-[34px] font-black leading-none tracking-normal text-[#101645]">
-                        2 năm  <span className="bg-[linear-gradient(90deg,#263f96,#a571ff)] bg-clip-text text-transparent">dữ liệu</span>
+                        {t('beautyverse.problem.dataYears')}  <span className="bg-[linear-gradient(90deg,#263f96,#a571ff)] bg-clip-text text-transparent">{t('beautyverse.problem.dataLabel')}</span>
                     </div>
                     <p className="flex gap-3 text-base font-medium leading-8 text-[#17213f]/82">
                         <CheckCircle2 className="mt-1.5 h-5 w-5 flex-none text-[#5e5cf0]" />
                         <span>
-                            Hiểu biết tệp khách tích lũy từ quảng cáo đến check-in qua 2 kỳ sự kiện cho phép Nextgency thiết kế đúng hành vi thực tế của khách tham dự — thay vì đoán.
+                            {t('beautyverse.problem.dataDescription')}
                         </span>
                     </p>
                 </div>

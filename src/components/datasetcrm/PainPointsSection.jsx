@@ -1,36 +1,14 @@
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const PainPointsSection = () => {
-    const painPoints = [
-        {
-            title: "Lãng phí dữ liệu khách hàng",
-            description: "Đã có hàng trăm đơn hàng, hàng ngàn lượt inbox – nhưng không biết cách tận dụng lại dữ liệu đó.",
-            impact: "Tiền ads bị đốt cháy",
-            isDark: false,
-            rotation: "lg:-rotate-1"
-        },
-        {
-            title: "Targeting quảng cáo không chính xác",
-            description: "Chạy quảng cáo Facebook chỉ target theo sở thích, độ tuổi – không đủ gần gũi để tạo chuyển đổi thật sự.",
-            impact: "Tỷ lệ chuyển đổi thấp",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Không có dữ liệu lookalike",
-            description: "Không xây được tệp lookalike đúng chuẩn – dẫn đến lãng phí ngân sách quảng cáo vào những người không quan tâm.",
-            impact: "Ads tiếp cận sai đối tượng",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Dữ liệu không đồng bộ",
-            description: "Dữ liệu form, web, chatbot… không được đồng bộ về CRM hoặc Facebook CAPI – bị đứt mạch remarketing.",
-            impact: "Mất cơ hội remarketing",
-            isDark: true,
-            rotation: "lg:-rotate-1"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const painPoints = tm('servicePages.facebookCrm.painPoints.items').map((point, index) => ({
+        ...point,
+        isDark: index === 3,
+        rotation: ['lg:-rotate-1', 'lg:rotate-1', 'lg:rotate-1', 'lg:-rotate-1'][index]
+    }));
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">
@@ -47,7 +25,7 @@ const PainPointsSection = () => {
 
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                        Nỗi đau của doanh nghiệp
+                        {t('servicePages.facebookCrm.painPoints.title')}
                     </h2>
 
                 </div>

@@ -1,47 +1,12 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Check, Star, Crown} from 'lucide-react';
 
 const WebsitePackages = () => {
-    const basicFeatures = [
-        "Giao diện web cơ bản, dựng trong 2–3 ngày",
-        "Miễn phí tên miền .com",
-        "Tặng Hosting SSD",
-        "Thiết kế chuẩn SEO, tối ưu tốc độ tải trang",
-        "Responsive – tương thích mọi thiết bị",
-        "Tích hợp live chat, Messenger, Zalo",
-        "Cài sẵn plugin cơ bản và SSL",
-        "Hỗ trợ xử lý sự cố (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)",
-        "Tư vấn quảng cáo đa nền tảng (Meta, Google, TikTok)"
-    ];
-
-    const standardFeatures = [
-        "Thiết kế giao diện trung bình hoặc theo yêu cầu",
-        "Tặng tên miền .com hoặc .net",
-        "Hosting SSD lưu trữ tốc độ cao",
-        "Dựng website trong 3–7 ngày",
-        "Thiết kế chuẩn SEO, UX/UI, tối ưu tốc độ tải trang",
-        "Tương thích mọi thiết bị",
-        "Tặng 5–10 bài viết nội dung cơ bản (chuẩn SEO)",
-        "Tích hợp live chat, Messenger, Zalo",
-        "Tư vấn chiến dịch quảng cáo Meta, Google, TikTok",
-        "Tặng plugin, chứng chỉ SSL",
-        "Hỗ trợ kỹ thuật (có thu phí 1 số hạng mục nếu phát sinh ngoài hợp đồng)"
-    ];
-
-    const advancedFeatures = [
-        "Thiết kế giao diện website cao cấp",
-        "Tặng tên miền .com, .net",
-        "Hosting SSD lưu trữ tốc độ cao",
-        "Dựng website 7–10 ngày",
-        "Tặng 20 bài viết chuẩn SEO",
-        "Cấu hình đầy đủ: tracking đa kênh, chuyển đổi động, đồng bộ danh mục sản phẩm",
-        "Tối ưu tốc độ – chuẩn mobile",
-        "Tư vấn và đồng hành chạy Ads đa nền tảng",
-        "Cấp tài khoản TikTok Ads miễn phí",
-        "Miễn phí thông báo website với Bộ Công Thương",
-        "Tặng full plugin, chứng chỉ SSL",
-        "Hỗ trợ kỹ thuật miễn phí trọn gói"
-    ];
+    const { t, tm } = useI18n();
+    const basicFeatures = tm('servicePages.websiteLanding.packages.basic.features');
+    const standardFeatures = tm('servicePages.websiteLanding.packages.standard.features');
+    const advancedFeatures = tm('servicePages.websiteLanding.packages.advanced.features');
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -60,10 +25,10 @@ const WebsitePackages = () => {
                 {/* Header */}
                 <div className="text-center  mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                        Các gói xây dựng website
+                        {t('servicePages.websiteLanding.packages.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        3 gói chính: Cơ bản, Tiêu chuẩn & Nâng cao
+                        {t('servicePages.websiteLanding.packages.subtitle')}
                     </p>
                 </div>
 
@@ -77,7 +42,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói website cơ bản
+                                    {t('servicePages.websiteLanding.packages.basic.title')}
                                 </h3>
                             </div>
 
@@ -100,7 +65,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -113,14 +78,14 @@ const WebsitePackages = () => {
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <div className="bg-gradient-to-r from-[#1a4498] to-black text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
-                                <span>Phổ Biến</span>
+                                <span>{t('shared.packages.popular')}</span>
                             </div>
                         </div>
 
                         <div>
                             <div className="mb-4 pb-2 border-b border-[#1a4498]">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói website tiêu chuẩn
+                                    {t('servicePages.websiteLanding.packages.standard.title')}
                                 </h3>
                             </div>
 
@@ -143,7 +108,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-gradient-to-r from-[#1a4498] to-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#0b2f8a]/40 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -161,7 +126,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Gói website nâng cao
+                                    {t('servicePages.websiteLanding.packages.advanced.title')}
                                 </h3>
                             </div>
 
@@ -184,7 +149,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-white text-[15px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>

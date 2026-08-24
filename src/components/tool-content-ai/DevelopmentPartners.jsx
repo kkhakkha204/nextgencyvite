@@ -1,22 +1,24 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 /* Hai đơn vị cùng phát triển Tool Content AI */
 const DEVELOPERS = [
     {
         name: 'Nextgency',
-        role: 'Chiến lược & sản phẩm',
+        roleKey: 'strategy',
         logo: '/assets/images/header/navbarlogoblack.png',
         logoClass: 'max-h-10 lg:max-h-12 max-w-[80%]'
     },
     {
         name: 'Noti.vn',
-        role: 'Nền tảng & công nghệ',
+        roleKey: 'platform',
         logo: '/assets/images/partner/noti.webp',
         logoClass: 'max-h-14 lg:max-h-16 max-w-[60%]'
     }
 ];
 
 const DevelopmentPartners = () => {
+    const { t } = useI18n();
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,12 +26,12 @@ const DevelopmentPartners = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                            Đồng hành<br/>Phát triển
+                            {t('servicePages.toolContentAi.partners.titleLine1')}<br/>{t('servicePages.toolContentAi.partners.titleLine2')}
                         </h2>
                     </div>
                     <div className="lg:w-1/2 text-center lg:text-right">
                         <p className="text-[15px] lg:text-[18px] text-black">
-                            Hai đội ngũ cùng nghiên cứu và xây dựng nền tảng Automation Tool Content AI
+                            {t('servicePages.toolContentAi.partners.subtitle')}
                         </p>
                     </div>
                 </div>
@@ -52,7 +54,7 @@ const DevelopmentPartners = () => {
                                 className={`relative object-contain transition-opacity duration-300 group-hover:opacity-80 ${developer.logoClass}`}
                             />
                             <div className="relative text-center">
-                                <p className="text-[12px] lg:text-[13px] text-gray-600">{developer.role}</p>
+                                <p className="text-[12px] lg:text-[13px] text-gray-600">{t(`servicePages.toolContentAi.partners.roles.${developer.roleKey}`)}</p>
                             </div>
                         </div>
                     ))}
@@ -75,13 +77,10 @@ const DevelopmentPartners = () => {
 
                         <div className="relative pl-3 lg:pl-4">
                             <p className="text-[14px] lg:text-[15px] text-gray-300 leading-relaxed mb-2">
-                                Automation Tool Content AI là sản phẩm được <strong className="font-bold text-[#d9c2ff]">Noti.vn</strong> và <strong className="font-bold text-[#d9c2ff]">Nextgency</strong> cùng
-                                nghiên cứu và phát triển – kết hợp năng lực tư vấn chuyển đổi số, dữ liệu marketing với kinh nghiệm
-                                vận hành nền tảng công nghệ quy mô lớn.
+                                {t('servicePages.toolContentAi.partners.descriptionPrefix')}<strong className="font-bold text-[#d9c2ff]">Noti.vn</strong>{t('servicePages.toolContentAi.partners.and')}<strong className="font-bold text-[#d9c2ff]">Nextgency</strong>{t('servicePages.toolContentAi.partners.descriptionSuffix')}
                             </p>
                             <p className="text-[14px] lg:text-[15px] text-gray-300 leading-relaxed">
-                                Hai đội ngũ cùng chịu trách nhiệm từ kiến trúc hệ thống, mô hình AI cho tới trải nghiệm người dùng,
-                                đảm bảo sản phẩm được cập nhật liên tục theo thay đổi của công cụ tìm kiếm và các nền tảng AI.
+                                {t('servicePages.toolContentAi.partners.paragraph2')}
                             </p>
                         </div>
                     </div>

@@ -1,36 +1,12 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
-    const basicFeatures = [
-        "Tư vấn định hướng chiến lược thương hiệu ban đầu",
-        "Thiết lập & chăm sóc Fanpage + Zalo OA",
-        "12 bài viết/tháng (gồm nội dung + thiết kế ảnh)",
-        "1 landing page cơ bản hoặc tối ưu website hiện có",
-        "Setup & theo dõi quảng cáo Facebook Ads ngân sách nhỏ",
-        "Báo cáo kết quả theo từng giai đoạn & đề xuất các phương án tiếp theo "
-    ];
-
-    const standardFeatures = [
-        "Tư vấn mô hình truyền thông & phễu marketing phù hợp",
-        "Quản lý Fanpage, Website, Zalo OA, TikTok",
-        "20–25 nội dung/tháng (bài viết + thiết kế + clip ngắn)",
-        "Thiết kế & triển khai 1–2 landing page phục vụ chuyển đổi",
-        "Triển khai quảng cáo Facebook + Google (hoặc TikTok)",
-        "Cài đặt tracking & đo lường (Pixel, GA4, GTM)",
-        "Báo cáo kết quả theo từng giai đoạn & đề xuất các phương án tiếp theo"
-    ];
-
-    const advancedFeatures = [
-        "Tư vấn chiến lược truyền thông toàn diện theo mục tiêu kinh doanh",
-        "Xây dựng bộ nhận diện thương hiệu đa kênh",
-        "Quản trị toàn bộ hệ sinh thái: Fanpage, Website, TikTok, Zalo, YouTube",
-        "30+ nội dung/tháng: bài viết, ảnh, video, clip ngắn chuyên sâu",
-        "Thiết lập và tối ưu hệ thống automation + CRM (nếu có)",
-        "Triển khai chiến dịch Ads đa nền tảng: Facebook – Google – TikTok – Zalo",
-        "Báo cáo theo tuần, đánh giá hiệu quả từng kênh, đề xuất mở rộng chiến dịch",
-        "Đội ngũ cố vấn đồng hành riêng, họp 1–1 cùng ban lãnh đạo"
-    ];
+    const { t, tm } = useI18n();
+    const basicFeatures = tm('servicePages.marketingOutsource.packages.basic.features');
+    const standardFeatures = tm('servicePages.marketingOutsource.packages.standard.features');
+    const advancedFeatures = tm('servicePages.marketingOutsource.packages.advanced.features');
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -49,10 +25,10 @@ const WebsitePackages = () => {
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                        Các gói dịch vụ
+                        {t('servicePages.aiData.packages.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        3 gói chính: Cơ bản, Tiêu chuẩn & Nâng cao
+                        {t('servicePages.aiData.packages.subtitle')}
                     </p>
                 </div>
 
@@ -66,7 +42,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói dịch vụ cơ bản
+                                    {t('servicePages.marketingOutsource.packages.basic.title')}
                                 </h3>
                             </div>
 
@@ -89,7 +65,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -102,14 +78,14 @@ const WebsitePackages = () => {
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <div className="bg-gradient-to-r from-[#1a4498] to-black text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
-                                <span>Phổ Biến</span>
+                                <span>{t('shared.packages.popular')}</span>
                             </div>
                         </div>
 
                         <div>
                             <div className="mb-4 pb-2 border-b border-[#1a4498]">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói dịch vụ Tiêu Chuẩn
+                                    {t('servicePages.marketingOutsource.packages.standard.title')}
                                 </h3>
                             </div>
 
@@ -132,7 +108,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-gradient-to-r from-[#1a4498] to-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#0b2f8a]/40 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -150,14 +126,14 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Gói dịch vụ Nâng Cao
+                                    {t('servicePages.marketingOutsource.packages.advanced.title')}
                                 </h3>
                             </div>
 
                             {/* Subtitle */}
                             <div className="mb-6">
                                 <p className="text-white text-[14px] lg:text-[16px] font-medium text-justify">
-                                    Bao gồm tất cả trong gói cơ bản và tiêu chuẩn, cộng thêm:
+                                    {t('servicePages.facebookCrm.packages.includesBoth')}
                                 </p>
                             </div>
 
@@ -180,7 +156,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-white text-[15px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>

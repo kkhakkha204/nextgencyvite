@@ -1,63 +1,16 @@
 import { Dot, ChevronDown, Target } from 'lucide-react';
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const GoogleAdsProcess = () => {
-    const processSteps = [
-        {
-            id: 1,
-            title: "Tiếp nhận & Tư vấn mục tiêu",
-            steps: [
-                "Thu thập thông tin ngành hàng, sản phẩm, đối tượng",
-                "Xác định ngân sách và KPI kỳ vọng"
-            ],
-            hasImage: true
-        },
-        {
-            id: 2,
-            title: "Phân tích & Đề xuất chiến lược",
-            steps: [
-                "Nghiên cứu thị trường và đối thủ",
-                "Đề xuất loại hình Google Ads phù hợp",
-                "Xây dựng phễu từ Search - Display - Remarketing"
-            ]
-        },
-        {
-            id: 3,
-            title: "Thiết lập hệ thống quảng cáo",
-            steps: [
-                "Tạo/cấu trúc lại tài khoản Google Ads",
-                "Cài đặt chuyển đổi, GA4, GTM",
-                "Chuẩn bị nội dung, banner, landing page"
-            ]
-        },
-        {
-            id: 4,
-            title: "Triển khai & Theo dõi chiến dịch",
-            steps: [
-                "Khởi chạy chiến dịch theo giai đoạn",
-                "Theo dõi chỉ số(CPC, CTR, Conversion...)",
-                "Tối ưu ngân sách và tệp quảng cáo"
-            ]
-        },
-        {
-            id: 5,
-            title: "Báo cáo & Tối ưu hiệu suất",
-            steps: [
-                "Báo cáo tuần/tháng minh bạch",
-                "Đánh giá hiệu quả theo KPI",
-                "Điều chỉnh theo hành vi người dùng"
-            ]
-        },
-        {
-            id: 6,
-            title: "Đánh giá và gia hạn hợp tác",
-            steps: [
-                "Họp tổng kết hiệu quả",
-                "Đề xuất nâng cấp hoặc mở rộng ngân sách",
-                "Ký lại hợp đồng nếu tiếp tục triển khai"
-            ]
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Ảnh minh hoạ gắn ở bước 1; phần chữ lấy từ từ điển
+    const processSteps = tm('servicePages.googleAds.process.steps').map((step, index) => ({
+        id: index + 1,
+        title: step.title,
+        steps: step.items,
+        hasImage: index === 0
+    }));
 
     const Card = ({ step }) => {
         const maxSteps = 3;
@@ -143,12 +96,12 @@ const GoogleAdsProcess = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                            Quy trình triển khai<br/>Google ads
+                            {t('servicePages.googleAds.process.title')}<br/>Google ads
                         </h2>
                     </div>
                     <div className="lg:w-1/2 text-center lg:text-right max-w-md">
                         <p className="text-[15px] lg:text-[18px] text-black">
-                            6 bước chuyên nghiệp để tối ưu hiệu quả quảng cáo và đạt được mục tiêu kinh doanh
+                            {t('servicePages.googleAds.process.subtitle')}
                         </p>
                     </div>
                 </div>

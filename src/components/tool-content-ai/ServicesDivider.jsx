@@ -1,33 +1,17 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 const ServicesDivider = () => {
-    // Service data
-    const services = [
-        {
-            id: 1,
-            title: "Viết chuẩn SEO quá tốn thời gian",
-            description: "Nghiên cứu từ khóa, dựng dàn ý, tối ưu tiêu đề, meta, heading, chèn liên kết... mỗi bài ngốn hàng giờ đồng hồ.",
-            ellipseRotation: "rotate-3",
-            hoverRotation: "group-hover:rotate-6",
-            badgeRotation: "group-hover:rotate-12"
-        },
-        {
-            id: 2,
-            title: "Bài không được AI trích dẫn",
-            description: "ChatGPT, Perplexity, Google AI Overviews đang thay đổi cách tìm kiếm - nội dung không tối ưu GEO sẽ bị bỏ lại phía sau.",
-            ellipseRotation: "-rotate-2",
-            hoverRotation: "group-hover:-rotate-4",
-            badgeRotation: "group-hover:-rotate-12"
-        },
-        {
-            id: 3,
-            title: "Quản lý đa kênh, đa ngôn ngữ rối",
-            description: "Đăng thủ công lên nhiều CMS, dịch từng bài, theo dõi hiệu quả... quá nhiều việc lặp đi lặp lại.",
-            ellipseRotation: "rotate-1",
-            hoverRotation: "group-hover:rotate-3",
-            badgeRotation: "group-hover:rotate-6"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Bố cục giữ trong code, phần chữ lấy từ từ điển
+    const services = tm('servicePages.toolContentAi.problems.items').map((item, index) => ({
+        id: index + 1,
+        title: item.title,
+        description: item.description,
+        ellipseRotation: ['rotate-3', '-rotate-2', 'rotate-1'][index],
+        hoverRotation: ['group-hover:rotate-6', 'group-hover:-rotate-4', 'group-hover:rotate-3'][index],
+        badgeRotation: ['group-hover:rotate-12', 'group-hover:-rotate-12', 'group-hover:rotate-6'][index]
+    }));
 
     // CheckMark SVG Icon Component
     const CheckMarkIcon = ({ className }) => (
@@ -54,7 +38,7 @@ const ServicesDivider = () => {
             <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-4 lg:mb-16">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white uppercase leading-[1.45] mb-1 pb-6">
-                        Bạn có đang gặp những vấn đề này?
+                        {t('servicePages.toolContentAi.problems.title')}
                     </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">

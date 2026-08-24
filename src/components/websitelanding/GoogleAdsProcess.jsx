@@ -1,46 +1,16 @@
 
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const GoogleAdsProcess = () => {
-    const processSteps = [
-        {
-            id: 1,
-            title: "Gặp gỡ và trao đổi",
-            steps: [
-                "Trao đổi trực tiếp hoặc online",
-                "Thảo luận, phân tích bài toán",
-                "Chốt tài liệu yêu cầu/ tính năng"
-            ],
-
-        },
-        {
-            id: 2,
-            title: "Thiết kế demo",
-            steps: [
-                "Thiết kế demo giao diện",
-                "Khách hàng xem demo và feedback"
-            ],
-            hasImage: true
-        },
-        {
-            id: 3,
-            title: "Hoàn thiện và kiểm thử",
-            steps: [
-                "Tùy chỉnh hoàn thiện theo feedback",
-                "Kiểm thử và hoàn tất"
-            ],
-            hasImage: true
-        },
-        {
-            id: 4,
-            title: "Bàn giao và thanh toán",
-            steps: [
-                "Bàn giao dự án cho khách hàng",
-                "Khách hàng nghiệm thu và thanh toán",
-                "Nextgency hỗ trợ bảo hành 24/7"
-            ]
-        },
-    ];
+    const { t, tm } = useI18n();
+    // Ảnh minh hoạ gắn ở bước 1; phần chữ lấy từ từ điển
+    const processSteps = tm('servicePages.websiteLanding.process.steps').map((step, index) => ({
+        id: index + 1,
+        title: step.title,
+        steps: step.items,
+        hasImage: index === 0
+    }));
 
     const Card = ({ step }) => {
         const maxSteps = 3;
@@ -126,12 +96,12 @@ const GoogleAdsProcess = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] text-black mb-1 uppercase">
-                            Quy trình triển khai<br/>Website/ Landing page
+                            {t('servicePages.websiteLanding.process.title')}<br/>Website/ Landing page
                         </h2>
                     </div>
                     <div className="lg:w-1/2 text-center lg:text-right max-w-md">
                         <p className="text-[15px] lg:text-[18px] text-black">
-                            6 bước chuyên nghiệp để tối ưu hiệu quả quảng cáo và đạt được mục tiêu kinh doanh
+                            {t('servicePages.websiteLanding.process.subtitle')}
                         </p>
                     </div>
                 </div>

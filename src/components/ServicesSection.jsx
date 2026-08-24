@@ -1,56 +1,21 @@
 
 
 import React from 'react';
+import { useI18n } from '../i18n';
 
 const ServicesSection = () => {
-    // Dữ liệu mẫu cho các dự án
+    const { t } = useI18n();
+    // Ảnh giữ nguyên trong code, tên dự án lấy từ từ điển
     const projects = [
-        
-        {
-            id: 1,
-            image: "/assets/images/projects/Web_Ecomerce.webp",
-            title: "Wesite E-commerce"
-        },
-        {
-            id: 2,
-            image: "/assets/images/projects/Web_elearning.webp",
-            title: "Website E-learning"
-        },
-        {
-            id: 3,
-            image: "/assets/images/projects/webgioithieu.webp",
-            title: "Wesite giới thiệu doanh nghiệp"
-        },
-        {
-            id: 4,
-            image: "/assets/images/projects/websukien.webp",
-            title: "Wesite sự kiện"
-        },
-        {
-            id: 5,
-            image: "/assets/images/projects/payment_checkin.webp",
-            title: "Hệ thống Thanh toán & Check-in Sự kiện"
-        },
-        {
-            id: 6,
-            image: "/assets/images/projects/CRM_dashboard.webp",
-            title: "CRM Dashboard"
-        },
-        {
-            id: 7,
-            image: "/assets/images/projects/thiepmoi.webp",
-            title: "Web tạo thiệp mời"
-        },
-        {
-            id: 8,
-            image: "/assets/images/projects/bonhandienthuonghieu.webp",
-            title: "Thiết kế bộ nhận diện thương hiệu"
-        },
-        {
-            id: 9,
-            image: "/assets/images/projects/dataset.webp",
-            title: "Dataset Ads Funnel"
-        }
+        { id: 1, image: "/assets/images/projects/Web_Ecomerce.webp", title: t('projectSlider.ecommerce') },
+        { id: 2, image: "/assets/images/projects/Web_elearning.webp", title: t('projectSlider.elearning') },
+        { id: 3, image: "/assets/images/projects/webgioithieu.webp", title: t('projectSlider.corporate') },
+        { id: 4, image: "/assets/images/projects/websukien.webp", title: t('projectSlider.event') },
+        { id: 5, image: "/assets/images/projects/payment_checkin.webp", title: t('projectSlider.payment') },
+        { id: 6, image: "/assets/images/projects/CRM_dashboard.webp", title: t('projectSlider.crm') },
+        { id: 7, image: "/assets/images/projects/thiepmoi.webp", title: t('projectSlider.invitation') },
+        { id: 8, image: "/assets/images/projects/bonhandienthuonghieu.webp", title: t('projectSlider.branding') },
+        { id: 9, image: "/assets/images/projects/dataset.webp", title: t('projectSlider.dataset') }
     ];
 
     // Nhân đôi array để tạo hiệu ứng infinite

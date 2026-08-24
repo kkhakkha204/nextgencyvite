@@ -1,29 +1,17 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 const ServicesDivider = () => {
+    const { tm } = useI18n();
     // Dữ liệu mẫu cho các services
-    const services = [
-        {
-            id: 1,
-            title: "Cho thuê tài khoản quảng cáo",
-            image: "/assets/images/facebookads/service1.webp",
-        },
-        {
-            id: 2,
-            title: "Xây dựng chiến dịch chuyển đổi, remarketing và thu phễu đa tầng (TOFU – MOFU – BOFU)",
-            image: "/assets/images/facebookads/service2.webp"
-        },
-        {
-            id: 3,
-            title: "Tối ưu theo sự kiện CAPI (Facebook Conversion API)",
-            image: "/assets/images/facebookads/service3.webp"
-        },
-        {
-            id: 4,
-            title: "Tracking chuẩn từ phễu đầu đến đơn hàng, hỗ trợ tích hợp với website và chatbot",
-            image: "/assets/images/facebookads/service4.webp"
-        }
-    ];
+    // Bố cục giữ trong code, phần chữ lấy từ từ điển
+    const services = tm('servicePages.facebookAds.divider').map((description, index) => ({
+        id: index + 1,
+        description,
+        ellipseRotation: ['rotate-3', '-rotate-2', 'rotate-1', 'rotate-2'][index],
+        hoverRotation: ['group-hover:rotate-6', 'group-hover:-rotate-4', 'group-hover:rotate-3', 'group-hover:rotate-4'][index],
+        badgeRotation: ['group-hover:rotate-12', 'group-hover:-rotate-12', 'group-hover:rotate-6', 'group-hover:rotate-12'][index]
+    }));
 
     return (
         <section className="bg-black py-[60px] md:py-[90px]">

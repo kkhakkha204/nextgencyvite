@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, Target } from 'lucide-react';
-import { CONSULTATION_SERVICES } from '../data/consultationServices';
+import { CONSULTATION_SERVICE_OPTIONS } from '../data/consultationServices';
+import { useI18n } from '../i18n';
 import { submitConsultation } from '../utils/submitConsultation';
 
 export default function ConsultationSection() {
+    const { t } = useI18n();
     const [formData, setFormData] = useState({
         customer_name: '',
         phone: '',
@@ -64,11 +66,10 @@ export default function ConsultationSection() {
                 {/* Header */}
                 <div className="text-left mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-white mb-1">
-                        Nhận tư vấn
+                        {t('consultation.title')}
                     </h2>
                     <p className="text-[15px] sm:text-[18px] text-white">
-                        Nextgency chân thành cảm ơn bạn đã dành thời gian điền bảng khảo sát này. Đội ngũ của chúng tôi sẽ xem xét kỹ thông tin và liên hệ trong vòng 24h làm việc để tư vấn giải pháp phù hợp nhất.
-                    </p>
+                        {t('consultation.description')}</p>
                 </div>
 
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
@@ -83,8 +84,8 @@ export default function ConsultationSection() {
                                         : 'bg-red-500/20 border border-red-500/30 text-red-200'
                                 }`}>
                                     {submitStatus === 'success'
-                                        ? '✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong vòng 24h.'
-                                        : '❌ Có lỗi xảy ra, vui lòng thử lại sau.'
+                                        ? `✅ ${t('form.success')}`
+                                        : `❌ ${t('form.error')}`
                                     }
                                 </div>
                             )}
@@ -93,7 +94,7 @@ export default function ConsultationSection() {
                                 {/* Tên khách hàng */}
                                 <div className="space-y-2">
                                     <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                        Tên khách hàng *
+                                        {t('form.name')}
                                     </label>
                                     <input
                                         type="text"
@@ -101,7 +102,7 @@ export default function ConsultationSection() {
                                         value={formData.customer_name}
                                         onChange={handleInputChange}
                                         className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                        placeholder="Nhập tên của bạn"
+                                        placeholder={t('form.namePlaceholder')}
                                         required
                                     />
                                 </div>
@@ -111,7 +112,7 @@ export default function ConsultationSection() {
                                     {/* Số điện thoại */}
                                     <div className="space-y-2">
                                         <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                            Số điện thoại *
+                                            {t('form.phone')}
                                         </label>
                                         <input
                                             type="tel"
@@ -119,7 +120,7 @@ export default function ConsultationSection() {
                                             value={formData.phone}
                                             onChange={handleInputChange}
                                             className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                            placeholder="Nhập số điện thoại"
+                                            placeholder={t('form.phonePlaceholder')}
                                             required
                                         />
                                     </div>
@@ -127,7 +128,7 @@ export default function ConsultationSection() {
                                     {/* Gmail */}
                                     <div className="space-y-2">
                                         <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                            Email *
+                                            {t('form.email')}
                                         </label>
                                         <input
                                             type="email"
@@ -135,7 +136,7 @@ export default function ConsultationSection() {
                                             value={formData.email}
                                             onChange={handleInputChange}
                                             className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                            placeholder="example@gmail.com"
+                                            placeholder={t('form.emailPlaceholder')}
                                             required
                                         />
                                     </div>
@@ -146,7 +147,7 @@ export default function ConsultationSection() {
                                     {/* Lĩnh vực kinh doanh */}
                                     <div className="space-y-2">
                                         <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                            Lĩnh vực kinh doanh *
+                                            {t('form.businessField')}
                                         </label>
                                         <input
                                             type="text"
@@ -154,7 +155,7 @@ export default function ConsultationSection() {
                                             value={formData.business_field}
                                             onChange={handleInputChange}
                                             className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                            placeholder="Ví dụ: Thương mại điện tử, F&B..."
+                                            placeholder={t('form.businessFieldPlaceholder')}
                                             required
                                         />
                                     </div>
@@ -162,7 +163,7 @@ export default function ConsultationSection() {
                                     {/* Tên thương hiệu */}
                                     <div className="space-y-2">
                                         <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                            Tên thương hiệu
+                                            {t('form.brand')}
                                         </label>
                                         <input
                                             type="text"
@@ -170,7 +171,7 @@ export default function ConsultationSection() {
                                             value={formData.brand_name}
                                             onChange={handleInputChange}
                                             className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg"
-                                            placeholder="Nhập tên thương hiệu (nếu có)"
+                                            placeholder={t('form.brandPlaceholder')}
                                         />
                                     </div>
                                 </div>
@@ -178,7 +179,7 @@ export default function ConsultationSection() {
                                 {/* Dịch vụ cần tư vấn */}
                                 <div className="space-y-2">
                                     <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                        Dịch vụ cần tư vấn *
+                                        {t('form.service')}
                                     </label>
                                     <select
                                         name="service"
@@ -187,9 +188,9 @@ export default function ConsultationSection() {
                                         className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg cursor-pointer"
                                         required
                                     >
-                                        <option value="" disabled>Chọn dịch vụ bạn quan tâm</option>
-                                        {CONSULTATION_SERVICES.map((service) => (
-                                            <option key={service} value={service}>{service}</option>
+                                        <option value="" disabled>{t('form.servicePlaceholder')}</option>
+                                        {CONSULTATION_SERVICE_OPTIONS.map((option) => (
+                                            <option key={option.value} value={option.value}>{t(option.i18nKey)}</option>
                                         ))}
                                     </select>
                                 </div>
@@ -197,7 +198,7 @@ export default function ConsultationSection() {
                                 {/* Yêu cầu tư vấn */}
                                 <div className="space-y-2">
                                     <label className="block text-white text-[13px] lg:text-[15px] font-medium">
-                                        Yêu cầu tư vấn *
+                                        {t('form.request')}
                                     </label>
                                     <textarea
                                         rows="5"
@@ -205,7 +206,7 @@ export default function ConsultationSection() {
                                         value={formData.consultation_request}
                                         onChange={handleInputChange}
                                         className="w-full px-4 py-2.5 bg-white/95 border-2 border-white/20 rounded-lg text-black text-[13px] lg:text-[15px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg resize-none"
-                                        placeholder="Mô tả chi tiết yêu cầu tư vấn của bạn..."
+                                        placeholder={t('form.requestPlaceholder')}
                                         required
                                     />
                                 </div>
@@ -221,10 +222,10 @@ export default function ConsultationSection() {
                                             {isSubmitting ? (
                                                 <>
                                                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                                    <span>Đang gửi...</span>
+                                                    <span>{t('form.submitting')}</span>
                                                 </>
                                             ) : (
-                                                <span>Gửi thông tin</span>
+                                                <span>{t('form.submit')}</span>
                                             )}
                                         </span>
                                     </button>
@@ -239,22 +240,22 @@ export default function ConsultationSection() {
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Hotline</h3>
+                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">{t('common.hotline')}</h3>
                                         <p className="text-white text-[13px] lg:text-[15px]">033 208 3366</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Email</h3>
+                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">{t('common.email')}</h3>
                                         <p className="text-white text-[13px] lg:text-[15px]">contact@nextgency.vn</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center space-x-3 bg-white/10 p-4 rounded-lg shadow-lg backdrop-blur-3xl">
                                     <div>
-                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Address</h3>
-                                        <p className="text-white text-[13px] lg:text-[15px]">2/11 Vương Thừa Vũ, Thanh Xuân, Hà Nội</p>
+                                        <h3 className="text-[10px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">{t('common.address')}</h3>
+                                        <p className="text-white text-[13px] lg:text-[15px]">{t('common.addressValue')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -263,7 +264,7 @@ export default function ConsultationSection() {
                             <div className="absolute -top-4 -right-0 bg-[#c59efe] rounded-lg px-4 py-2">
                                 <div className="text-center">
                                     <div className="text-2xl font-bold text-white">500+</div>
-                                    <div className="text-xs text-white">Khách hàng</div>
+                                    <div className="text-xs text-white">{t('common.customers')}</div>
                                 </div>
                             </div>
                         </div>

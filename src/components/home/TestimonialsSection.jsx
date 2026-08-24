@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {ChevronLeft, ChevronRight, Star, Quote, ArrowUpRight} from 'lucide-react';
-import {Link} from "react-router-dom";
+import { useI18n } from "../../i18n";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const TestimonialsSection = () => {
+    const { t, tm } = useI18n();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
     const [touchStart, setTouchStart] = useState(0);
@@ -25,44 +26,16 @@ const TestimonialsSection = () => {
     const cardsRef = useRef([]);
 
     // Sample testimonials data
+    // Tên người và công ty là danh từ riêng nên giữ nguyên; chỉ lời nhận xét được dịch.
+    const quotes = tm('home.testimonials.items');
     const testimonials = [
-            {
-                id: 1,
-                content: "Nextgency đã mang đến cho chúng tôi một giải pháp tuyệt vời. Đội ngũ chuyên nghiệp, sáng tạo và luôn hỗ trợ nhiệt tình.",
-                author: "Võ Anh Dũng",
-                company: "EAC Group"
-            },
-            {
-                id: 2,
-                content: "Nextgency đã mang đến cho chúng tôi những giải pháp công nghệ mới mẻ, hiệu quả và phù hợp với nhu cầu phát triển.",
-                author: "Sumi Han",
-                company: "Beauty Summit"
-            },
-            {
-                id: 3,
-                content: "Nextgency đã giúp chúng tôi tối ưu hoạt động kinh doanh bằng sự chuyên nghiệp, tận tâm và tư duy sáng tạo.",
-                author: "Nguyễn Trung Kiên",
-                company: "Tuki Group"
-            },
-            {
-                id: 4,
-                content: "Nextgency luôn mang đến những ý tưởng sáng tạo, thực tế và hiệu quả cho các dự án truyền thông của chúng tôi.",
-                author: "Trần Viết Tín",
-                company: "Topmus Entertainment"
-            },
-            {
-                id: 5,
-                content: "Nextgency thấu hiểu nhu cầu thương hiệu và mang đến cho chúng tôi những giải pháp phù hợp, chỉn chu và hiệu quả.",
-                author: "Thủy Kat",
-                company: "Kat Skin"
-            },
-            {
-                id: 6,
-                content: "Nextgency đã đồng hành cùng chúng tôi bằng sự chuyên nghiệp, sáng tạo và tinh thần hỗ trợ rất tận tâm.",
-                author: "Hoàng Hà",
-                company: "Mewart"
-            }
-    ];
+        {id: 1, author: "Võ Anh Dũng", company: "EAC Group"},
+        {id: 2, author: "Sumi Han", company: "Beauty Summit"},
+        {id: 3, author: "Nguyễn Trung Kiên", company: "Tuki Group"},
+        {id: 4, author: "Trần Viết Tín", company: "Topmus Entertainment"},
+        {id: 5, author: "Thủy Kat", company: "Kat Skin"},
+        {id: 6, author: "Hoàng Hà", company: "Mewart"}
+    ].map((item, index) => ({...item, content: quotes[index] || ''}));
 
     const itemsPerSlide = window.innerWidth < 768 ? 1 : 2;
     const totalSlides = Math.ceil(testimonials.length / itemsPerSlide);
@@ -205,7 +178,7 @@ const TestimonialsSection = () => {
                         </span>
                     </div>
                     <h2 ref={titleRef} className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                        đối tác nói gì về chúng tôi
+                        {t('home.testimonials.title')}
                     </h2>
                 </div>
 
@@ -215,8 +188,7 @@ const TestimonialsSection = () => {
                     <div ref={leftColumnRef} className="lg:col-span-1 flex flex-col justify-between">
                         <div className="mb-6 lg:mb-0 p-4">
                             <p className="text-[15px] lg:text-[18px] text-white text-justify">
-                                Chúng tôi tự hào về những phản hồi tích cực từ khách hàng,
-                                là động lực để Nextgency không ngừng phát triển.
+                                {t('home.testimonials.description')}
                             </p>
                         </div>
                     </div>

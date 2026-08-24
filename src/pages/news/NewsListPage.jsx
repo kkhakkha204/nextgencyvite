@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useI18n } from '../../i18n';
 import { Link } from 'react-router-dom';
 import { mockNews } from '../../data/newsData';
 import ConsultationSection from "../../components/ConsultationSection.jsx";
@@ -91,6 +92,7 @@ const CustomDropdown = ({ label, value, options, onChange }) => {
 };
 
 const NewsListPage = () => {
+    const { t } = useI18n();
     const [categoryFilter, setCategoryFilter] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
     const [visible, setVisible] = useState(new Set());
@@ -111,12 +113,12 @@ const NewsListPage = () => {
     );
     const categoryOptions = useMemo(() => {
         return [
-            { value: 'all', label: 'Tất cả danh mục' },
+            { value: 'all', label: t('news.list.allCategories') },
             ...categories
                 .filter((category) => category !== 'all')
                 .map((category) => ({ value: category, label: category })),
         ];
-    }, [categories]);
+    }, [t, categories]);
 
     const filteredNews = useMemo(() => {
         const term = searchTerm.trim().toLowerCase();
@@ -206,32 +208,32 @@ const NewsListPage = () => {
             <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 pb-8">
                 <section className="mb-10 rounded-3xl border border-indigo-100 bg-white/90 px-6 py-8 shadow-xl shadow-indigo-100/60 backdrop-blur-md">
                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-indigo-500">Nexntgency news</p>
-                    <h1 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl lg:text-5xl">Tin tức & Kiến thức</h1>
+                    <h1 className="mt-3 text-3xl font-bold text-slate-950 md:text-4xl lg:text-5xl">{t('news.list.title')}</h1>
                     <p className="mt-2 max-w-2xl text-slate-600">
-                        Tổng hợp bài viết về công nghệ, AI, marketing và thiết kế web, được sắp xếp gọn gàng để dễ tìm và dễ đọc.
+                        {t('news.list.subtitle')}
                     </p>
                 </section>
 
                 <section className="mb-10 grid gap-4 lg:grid-cols-[2fr_1fr_1fr]">
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-slate-700">Tìm kiếm</label>
+                        <label className="text-sm text-slate-700">{t('news.list.searchLabel')}</label>
                         <input
                             value={searchTerm}
                             onChange={(event) => setSearchTerm(event.target.value)}
-                            placeholder="Tiêu đề, mô tả, tag..."
+                            placeholder={t('news.list.searchPlaceholder')}
                             className="w-full rounded-2xl border border-slate-200 bg-white/85 px-4 py-3 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/20"
                         />
                     </div>
 
                     <CustomDropdown
-                        label="Danh mục"
+                        label={t('news.list.categoryLabel')}
                         value={categoryFilter}
                         options={categoryOptions}
                         onChange={setCategoryFilter}
                     />
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-slate-700">Kết quả</label>
+                        <label className="text-sm text-slate-700">{t('news.list.results')}</label>
                         <div className="flex min-h-[50px] items-center justify-between rounded-full border border-slate-200 bg-white/85 px-4 py-3 text-sm text-slate-800 shadow-sm">
                             <span className="truncate">{filteredNews.length} bài viết</span>
                             {hasActiveFilters ? (
@@ -240,10 +242,10 @@ const NewsListPage = () => {
                                     onClick={clearFilters}
                                     className="ml-3 text-xs font-semibold text-indigo-600 transition hover:text-indigo-500"
                                 >
-                                    Xóa lọc
+                                    {t('news.list.clearFilters')}
                                 </button>
                             ) : (
-                                <span className="ml-3 text-xs text-slate-400">Sẵn sàng</span>
+                                <span className="ml-3 text-xs text-slate-400">{t('news.list.ready')}</span>
                             )}
                         </div>
                     </div>
@@ -302,7 +304,7 @@ const NewsListPage = () => {
                                             </h3>
                                             <p className="mt-2 line-clamp-2 text-sm text-slate-600">{newsItem.description}</p>
                                             <div className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-indigo-600">
-                                                <span className="animate-pulse">Xem thêm</span>
+                                                <span className="animate-pulse">{t('news.list.loadMore')}</span>
                                                 <span className="text-indigo-500">→</span>
                                             </div>
                                         </div>

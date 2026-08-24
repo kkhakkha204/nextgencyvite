@@ -1,8 +1,10 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Link} from "react-router-dom";
 import {ArrowUpRight} from "lucide-react";
 
 const Hero = () => {
+    const { t } = useI18n();
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -21,10 +23,10 @@ const Hero = () => {
                 {/* Header Content */}
                 <div className="text-center mb-4 lg:mb-8">
                     <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c59efe] uppercase bg-clip-text text-transparent leading-none tracking-tight mb-1">
-                        Dịch vụ google ads
+                        {t('servicePages.googleAds.hero.title')}
                     </h1>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
-                        Nextgency triển khai Google Ads với đa dạng chiến dịch để đưa doanh nghiệp lên top 1 trong tâm trí người dùng khi nhắc tới lĩnh vực của bạn.
+                        {t('servicePages.googleAds.hero.description')}
                     </p>
                 </div>
 
@@ -93,7 +95,7 @@ const Hero = () => {
 
                 <div className="text-center mt-8">
                     <p className="text-black mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
-                        Liên hệ ngay để nhận tư vấn và báo giá.
+                        {t('shared.cta.contactForQuote')}
                     </p>
                     {/* CTA Button */}
                     <div className="flex items-center justify-center space-x-4">
@@ -103,7 +105,7 @@ const Hero = () => {
 
                         >
         <span className="">
-            Tư vấn ngay
+            {t('shared.cta.consultNow')}
         </span>
                             <div
                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

@@ -1,4 +1,4 @@
-﻿// App.jsx - Updated with conditional Header/Footer
+// App.jsx - routing đa ngôn ngữ + Header/Footer có điều kiện
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -30,13 +30,16 @@ import MiniAppBeautyVerse from "./pages/projects/MiniAppBeautyVerse.jsx";
 import RouteSEO from "./components/SEO/RouteSEO.jsx";
 import DatLich from "./pages/DatLich.jsx";
 import NotFound from "./pages/NotFound.jsx";
+import { LanguageProvider, getLocalePrefix, stripLocaleFromPath, useI18n } from './i18n';
 
 // Landing page tự mang header/footer riêng - ẩn header/footer chung của site.
+// So khớp với đường dẫn ĐÃ bỏ prefix ngôn ngữ, nên /en/dat-lich cũng được tính là standalone.
 const STANDALONE_PATHS = ['/tiktok-verification/', '/dat-lich'];
 
 // Router Content Component
 const RouterContent = () => {
     const location = useLocation();
+    const { locale, localePath } = useI18n();
     const {
         isTransitioning,
         handleTransitionComplete
@@ -45,57 +48,62 @@ const RouterContent = () => {
     // Initialize SEO hooks
     useSEO();
 
+    // Mọi route được khai báo một lần rồi tự gắn prefix của ngôn ngữ đang xem:
+    // '/about' -> '/about' | '/en/about' | '/cn/about'
+    const prefix = getLocalePrefix(locale);
+    const routePath = (path) => (path === '/' ? prefix || '/' : `${prefix}${path}`);
+
     // Trang standalone (TiktokVerification, landing đặt lịch) tự lo header/footer
-    const isStandalonePage = STANDALONE_PATHS.includes(location.pathname);
+    const isStandalonePage = STANDALONE_PATHS.includes(stripLocaleFromPath(location.pathname));
 
     return (
         <div className="App min-h-screen flex flex-col">
             {/* Meta mặc định theo pathname - trang nào tự gắn SEOManager sẽ ghi đè */}
             <RouteSEO />
 
-            {/* Chá»‰ hiá»ƒn thá»‹ Header náº¿u khÃ´ng pháº£i trang standalone */}
+            {/* Chỉ hiển thị Header nếu không phải trang standalone */}
             {!isStandalonePage && <Header />}
 
             <main className={!isStandalonePage ? "page-content flex-1 pt-[70px] lg:pt-[85px]" : "flex-1"}>
                 <Routes>
-                    {/* Trang chá»§ */}
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/news" element={<NewsListPage />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/dat-lich" element={<DatLich />} />
+                    {/* Trang chủ */}
+                    <Route path={routePath('/')} element={<Home />} />
+                    <Route path={routePath('/about')} element={<About />} />
+                    <Route path={routePath('/news')} element={<NewsListPage />} />
+                    <Route path={routePath('/contact')} element={<Contact />} />
+                    <Route path={routePath('/dat-lich')} element={<DatLich />} />
 
-                    {/* CÃ¡c trang dá»‹ch vá»¥ */}
-                    <Route path="/services/website-landing-page" element={<WebsiteLandingPage />} />
-                    <Route path="/services/ai-data" element={<AiData />} />
-                    <Route path="/ai" element={<ToolContentAI />} />
+                    {/* Các trang dịch vụ */}
+                    <Route path={routePath('/services/website-landing-page')} element={<WebsiteLandingPage />} />
+                    <Route path={routePath('/services/ai-data')} element={<AiData />} />
+                    <Route path={routePath('/ai')} element={<ToolContentAI />} />
                     {/* URL cũ của trang Tool Content AI - giữ lại để không gãy link đã chia sẻ */}
-                    <Route path="/services/tool-content-ai" element={<Navigate to="/ai" replace />} />
-                    <Route path="/services/google-ads" element={<GoogleAds />} />
-                    <Route path="/services/facebook-ads" element={<FacebookAds />} />
-                    <Route path="/services/tiktok-ads" element={<TiktokAds />} />
-                    <Route path="/services/facebook-crm" element={<FacebookCrm />} />
-                    <Route path="/services/marketing-outsource" element={<MarketingOutsource />} />
-                    <Route path="/services/tick-xanh-facebook" element={<Tick />} />
-                    <Route path="/chinh-sach-bao-mat" element={<PrivacyPolicyPage />} />
-                    <Route path="/tiktok-verification/" element={<TiktokVerification />} />
+                    <Route path={routePath('/services/tool-content-ai')} element={<Navigate to={localePath('/ai')} replace />} />
+                    <Route path={routePath('/services/google-ads')} element={<GoogleAds />} />
+                    <Route path={routePath('/services/facebook-ads')} element={<FacebookAds />} />
+                    <Route path={routePath('/services/tiktok-ads')} element={<TiktokAds />} />
+                    <Route path={routePath('/services/facebook-crm')} element={<FacebookCrm />} />
+                    <Route path={routePath('/services/marketing-outsource')} element={<MarketingOutsource />} />
+                    <Route path={routePath('/services/tick-xanh-facebook')} element={<Tick />} />
+                    <Route path={routePath('/chinh-sach-bao-mat')} element={<PrivacyPolicyPage />} />
+                    <Route path={routePath('/tiktok-verification/')} element={<TiktokVerification />} />
 
-                    {/* CÃ¡c trang dá»± Ã¡n */}
-                    <Route path="/projects/all" element={<Projects />} />
-                    <Route path="/projects/portfolio" element={<Portfolio />} />
-                    <Route path="/projects/workflow" element={<WorkflowAutomation />} />
-                    <Route path="/miniapp" element={<MiniAppBeautyVerse />} />
-                    <Route path="/projects/miniapp-beautysummit-2026" element={<MiniAppBeautyVerse />} />
-                    <Route path="/projects/:slug" element={<ProjectDetail />} />
-                    {/*trang chi tiáº¿t vá» tin tá»©c cÃ´ng nghá»‡*/}
-                    <Route path="/news/:slug" element={<NewsDetailPage />} />
+                    {/* Các trang dự án */}
+                    <Route path={routePath('/projects/all')} element={<Projects />} />
+                    <Route path={routePath('/projects/portfolio')} element={<Portfolio />} />
+                    <Route path={routePath('/projects/workflow')} element={<WorkflowAutomation />} />
+                    <Route path={routePath('/miniapp')} element={<MiniAppBeautyVerse />} />
+                    <Route path={routePath('/projects/miniapp-beautysummit-2026')} element={<MiniAppBeautyVerse />} />
+                    <Route path={routePath('/projects/:slug')} element={<ProjectDetail />} />
+                    {/* Trang chi tiết tin tức công nghệ */}
+                    <Route path={routePath('/news/:slug')} element={<NewsDetailPage />} />
 
                     {/* Route không khớp -> trang 404 */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
 
-            {/* Chá»‰ hiá»ƒn thá»‹ Footer náº¿u khÃ´ng pháº£i trang standalone */}
+            {/* Chỉ hiển thị Footer nếu không phải trang standalone */}
             {!isStandalonePage && <Footer />}
 
             {/* Page Transition */}
@@ -111,7 +119,10 @@ const RouterContent = () => {
 function App() {
     return (
         <Router>
-            <RouterContent />
+            {/* Ngôn ngữ đọc từ URL nên phải nằm trong Router và bọc toàn bộ cây component */}
+            <LanguageProvider>
+                <RouterContent />
+            </LanguageProvider>
         </Router>
     );
 }

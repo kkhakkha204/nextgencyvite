@@ -1,8 +1,10 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {CheckCircle2, Shield, TrendingUp, ArrowRight, Sparkles, Verified, ArrowUpRight} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const HeroSection = () => {
+    const { t } = useI18n();
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -24,7 +26,7 @@ const HeroSection = () => {
                         {/* Title Section */}
                         <div className="space-y-2">
                             <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-none tracking-tight">
-                               DỊCH VỤ TICK XANH
+                               {t('servicePages.tickXanh.hero.title')}
                             </h1>
                             <div className="flex items-center gap-4">
                                 <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-none tracking-tight">
@@ -83,12 +85,12 @@ const HeroSection = () => {
                         {/* Description */}
                         <div className="space-y-2">
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Tick xanh Facebook là chứng nhận chính chủ giúp cá nhân và doanh nghiệp <strong>khẳng định uy tín</strong>, tăng niềm tin và <strong>bảo vệ thương hiệu</strong> của mình trên nền tảng.
+                                {t('servicePages.tickXanh.hero.descriptionPart1')}<strong>{t('servicePages.tickXanh.hero.highlight1')}</strong>{t('servicePages.tickXanh.hero.descriptionPart2')}<strong>{t('servicePages.tickXanh.hero.highlight2')}</strong>{t('servicePages.tickXanh.hero.descriptionPart3')}
                             </p>
 
 
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Nextgency cung cấp dịch vụ đăng ký tích xanh Facebook trọn gói từ A–Z, giúp khách hàng rút ngắn thời gian xét duyệt, chuẩn hóa hồ sơ và tăng tỷ lệ được phê duyệt thực tế.
+                                {t('servicePages.tickXanh.hero.description2')}
                             </p>
                         </div>
 
@@ -100,7 +102,7 @@ const HeroSection = () => {
 
                             >
         <span className="">
-            Tư vấn ngay
+            {t('shared.cta.consultNow')}
         </span>
                                 <div
                                     className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
@@ -135,7 +137,7 @@ const HeroSection = () => {
                                                     Nextgency
                                                     <CheckCircle2 className="w-5 h-5 text-black" />
                                                 </h3>
-                                                <p className="text-sm text-blue-600 font-medium mt-1">Đã xác thực</p>
+                                                <p className="text-sm text-blue-600 font-medium mt-1">{t('servicePages.tickXanh.hero.badges.verified')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -144,14 +146,14 @@ const HeroSection = () => {
                                     <div className="grid grid-cols-2 gap-3 mt-6">
                                         <div className="bg-white rounded-lg p-3 flex items-center gap-3">
                                             <div>
-                                                <div className="text-[14px] lg:text-[16px] font-semibold text-gray-900">An toàn</div>
-                                                <div className="text-[12px] lg:text-[15px] text-gray-600">Bảo mật tuyệt đối</div>
+                                                <div className="text-[14px] lg:text-[16px] font-semibold text-gray-900">{t('servicePages.tickXanh.hero.badges.safe')}</div>
+                                                <div className="text-[12px] lg:text-[15px] text-gray-600">{t('servicePages.tickXanh.hero.badges.security')}</div>
                                             </div>
                                         </div>
                                         <div className="bg-white rounded-lg p-3 flex items-center gap-3">
                                             <div>
-                                                <div className="text-[14px] lg:text-[16px] font-semibold text-gray-900">Hiệu quả</div>
-                                                <div className="text-[12px] lg:text-[15px] text-gray-600">Tăng tương tác</div>
+                                                <div className="text-[14px] lg:text-[16px] font-semibold text-gray-900">{t('servicePages.tickXanh.hero.badges.effective')}</div>
+                                                <div className="text-[12px] lg:text-[15px] text-gray-600">{t('servicePages.tickXanh.hero.badges.engagement')}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +163,7 @@ const HeroSection = () => {
                                 <div className="absolute -top-4 -left-0 bg-white rounded-xl shadow-lg p-3">
                                     <div className="flex items-center gap-2">
                                         <CheckCircle2 className="w-5 h-5 text-black" />
-                                        <span className="text-sm font-medium">Phê duyệt nhanh</span>
+                                        <span className="text-sm font-medium">{t('servicePages.tickXanh.hero.badges.fastApproval')}</span>
                                     </div>
                                 </div>
 

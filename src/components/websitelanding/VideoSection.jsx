@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useI18n } from '../../i18n';
 import {Play, ArrowRight, ArrowUpRight} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const VideoSection = () => {
+    const { t } = useI18n();
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
@@ -133,18 +135,18 @@ const VideoSection = () => {
                             <div className="space-y-6">
                                 {/* Title */}
                                 <h3 className="text-[24px] lg:text-[40px] font-archivo font-semibold text-black leading-tight">
-                                    Khám phá quy trình
+                                    {t('servicePages.websiteLanding.video.badge')}
                                 </h3>
 
                                 {/* Short Description */}
                                 <p className="text-gray-600 text-[14px] lg:text-[16px] leading-relaxed">
-                                    Từ ý tưởng đến sản phẩm hoàn thiện
+                                    {t('servicePages.websiteLanding.video.title')}
                                 </p>
 
                                 {/* Content Text */}
                                 <div className="space-y-4">
                                     <p className="text-gray-800 text-[14px] lg:text-[16px] leading-relaxed">
-                                        Xem cách đội ngũ Nextgency biến những ý tưởng thành những website xuất sắc. Từ nghiên cứu, thiết kế cho đến triển khai - mỗi bước đều được thực hiện với sự tỉ mỉ và chuyên nghiệp.
+                                        {t('servicePages.websiteLanding.video.description')}
                                     </p>
                                 </div>
 
@@ -156,7 +158,7 @@ const VideoSection = () => {
 
                                     >
         <span className="">
-            Hợp tác ngay
+            {t('shared.cta.partnerNow')}
         </span>
                                         <div
                                             className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

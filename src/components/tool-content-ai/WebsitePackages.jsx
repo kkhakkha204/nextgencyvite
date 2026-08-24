@@ -1,46 +1,19 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {ArrowUpRight, Check, Star} from 'lucide-react';
 
 const WebsitePackages = () => {
-    const enterpriseFeatures = [
-        "∞ bài AI/tháng",
-        "∞ báo cáo Social/tháng (chỉ Facebook)",
-        "∞ nhân viên",
-        "∞ biz",
-        "Duyệt bài",
-        "Giọng thương hiệu",
-        "API/Webhook",
-        "Kiểm chứng dữ kiện",
-        "Nhân hóa văn phong",
-        "White-label + báo cáo khách"
-    ];
-
-    const pricingPlans = [
-        {
-            duration: "Gói 3 tháng",
-            price: "9.000.000đ",
-            perMonth: "3tr/tháng",
-            note: "Giá chuẩn, không giảm",
-            badge: null,
-            featured: false
-        },
-        {
-            duration: "Gói 6 tháng",
-            price: "14.900.000đ",
-            perMonth: "~2.48tr/tháng",
-            note: "Tiết kiệm ~17%",
-            badge: "Gói chủ lực",
-            featured: true
-        },
-        {
-            duration: "Gói 12 tháng",
-            price: "23.900.000đ",
-            perMonth: "~1.99tr/tháng",
-            note: "Tiết kiệm ~34%",
-            badge: null,
-            featured: false
-        }
-    ];
+    const { t, tm } = useI18n();
+    const enterpriseFeatures = tm('servicePages.toolContentAi.packages.features');
+    // Giá là con số nên giữ trong code; phần chữ lấy từ từ điển
+    const pricingPlans = tm('servicePages.toolContentAi.packages.plans').map((plan, index) => ({
+        duration: plan.duration,
+        price: plan.price,
+        perMonth: plan.perMonth,
+        note: plan.note,
+        badge: plan.badge || null,
+        featured: index === 1
+    }));
 
     const OpenNewSite = (e) => {
         e.preventDefault();
@@ -53,10 +26,10 @@ const WebsitePackages = () => {
                 {/* Header */}
                 <div className="text-center lg:text-center mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                        Các gói dịch vụ
+                        {t('servicePages.toolContentAi.packages.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        Gói Enterprise - Không giới hạn, chọn chu kỳ phù hợp với bạn
+                        {t('servicePages.toolContentAi.packages.subtitle')}
                     </p>
                 </div>
 
@@ -98,7 +71,7 @@ const WebsitePackages = () => {
                                     }}
                                 >
                                     <span className="">
-                                        Đăng ký dùng thử
+                                        {t('servicePages.toolContentAi.packages.cta')}
                                     </span>
                                     <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                         <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>

@@ -1,5 +1,6 @@
 ﻿import React, { useEffect, useMemo, useState } from 'react';
 import { ArrowRight, ArrowUpRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { useI18n } from '../../i18n';
 
 const sliderImages = [
     '/assets/images/projects/home.webp',
@@ -11,12 +12,17 @@ const sliderImages = [
 
 const featureTags = ['Check-in QR', 'Gamification', 'BPoint', 'Brand Voting', 'Notify ZNS Zalo'];
 
-const stats = [
-    { value: 7000, label: 'Khách check-in trong 2 ngày · kỷ lục chuỗi sự kiện' },
-    { value: 3500, prefix: '~', label: 'Người dùng trải nghiệm mini app BEAUTYVERSE' },
-    { value: 100, suffix: '+', label: 'Thương hiệu tham gia · đổi voucher qua BPoint' },
-    { value: 500, prefix: '+', suffix: '%', label: 'Lượt quan tâm zalo OA từ lúc triển khai' },
-];
+// Con số giữ trong code, phần chữ lấy từ từ điển
+const buildStats = (tm) =>
+    tm('beautyverse.hero.stats').map((label, index) => ({
+        ...[
+            {value: 7000},
+            {value: 3500, prefix: '~'},
+            {value: 100, suffix: '+'},
+            {value: 500, prefix: '+', suffix: '%'}
+        ][index],
+        label
+    }));
 
 const milestones = [
     { year: '2024', value: '4.000' },
@@ -153,6 +159,8 @@ const CountUpStat = ({ stat, index }) => {
     );
 };
 const BeautyVerseHero = () => {
+    const { t, tm } = useI18n();
+    const stats = buildStats(tm);
     const splitTitle = useMemo(() => ['BEAUTY', 'VERSE'], []);
 
     return (
@@ -175,12 +183,11 @@ const BeautyVerseHero = () => {
                     </h1>
 
                     <p className="mt-8 max-w-[640px] text-[22px] font-medium leading-[1.18] text-white/92 sm:text-[28px]">
-                        Toàn bộ trải nghiệm số của sự kiện — trong một mini app.
+                        {t('beautyverse.hero.title')}
                     </p>
                     <p className="mt-5 max-w-[620px] text-sm font-semibold leading-8 text-[#c7d7ff]/82 sm:text-base">
-                        19–20/06/2026 tại Trung tâm Triển lãm VEC, Hà Nội — kỳ sự kiện quy mô lớn nhất từ trước đến nay
-                         với hơn 100 thương hiệu. Sau 2 năm chứng minh bằng kết quả, Nextgency trở thành
-                         <span className="text-white">Tech Partner chính thức</span>, thiết kế và vận hành toàn bộ hành trình số của khách tham dự.
+                        {t('beautyverse.hero.descriptionPrefix')}
+                         <span className="text-white">{t('beautyverse.hero.techPartner')}</span>{t('beautyverse.hero.descriptionSuffix')}
                     </p>
 
                     <div className="mt-9 flex flex-wrap gap-3">
@@ -203,12 +210,12 @@ const BeautyVerseHero = () => {
                             href="#scope"
                             className="group inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-4 text-sm font-black uppercase tracking-[0.16em] text-[#111225] transition hover:bg-[#b7f06b]"
                         >
-                            Xem phạm vi
+                            {t('beautyverse.hero.viewScope')}
                             <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                         </a>
                         <div className="flex items-center gap-2 text-sm font-semibold text-white/75">
                             <CheckCircle2 className="h-5 w-5 text-[#b7f06b]" />
-                            <span>Vận hành trên nền tảng đã chạy 2 năm</span>
+                            <span>{t('beautyverse.hero.platformNote')}</span>
                         </div>
                     </div>
 
@@ -218,7 +225,7 @@ const BeautyVerseHero = () => {
                         className="group relative inline-flex w-fit items-center gap-4 overflow-hidden rounded-full bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] py-1.5 pl-6 pr-1.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(160,112,255,0.32)] sm:text-[15px]"
                         style={{ backgroundSize: '200% 200%', animation: 'final-cta-gradient 3s ease-in-out infinite' }}
                     >
-                        <span className="relative z-10">Triển khai mini app của bạn</span>
+                        <span className="relative z-10">{t('beautyverse.cta')}</span>
                         <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
                             <ArrowUpRight className="h-5 w-5 transition duration-300 group-hover:rotate-12 group-hover:scale-110" strokeWidth={2.3} />
                         </span>

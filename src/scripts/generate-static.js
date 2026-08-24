@@ -2,11 +2,17 @@
 //
 // Chạy sau `vite build`. Ba việc:
 //   1. Sinh sitemap.xml + robots.txt
-//   2. Prerender thẻ <head> SEO vào một file HTML tĩnh cho từng route
+//   2. Prerender thẻ <head> SEO vào một file HTML tĩnh cho từng route × từng ngôn ngữ
 //   3. Ghi kết quả vào cả public/ (cho dev) lẫn dist/ (cho bản deploy)
 //
 // Bước 2 là bắt buộc: crawler của Facebook, Zalo, LinkedIn, X không chạy JavaScript,
 // nên thẻ og:image do React gắn lúc runtime sẽ không bao giờ tới được chúng.
+//
+// ĐA NGÔN NGỮ: mỗi route được prerender 3 lần (/ , /en , /cn).
+//   - Ngôn ngữ đã có bản dịch  -> index, có mặt trong sitemap, có thẻ hreflang.
+//   - Ngôn ngữ chưa dịch       -> noindex, KHÔNG vào sitemap, KHÔNG có hreflang.
+// Nhờ vậy Google không index nội dung tiếng Việt dưới địa chỉ /en hay /cn; dịch xong
+// chỉ cần thêm khối `translations` trong seo-configs.js là trang tự được mở index.
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,10 +20,14 @@ import {fileURLToPath} from 'node:url';
 import {
     DEFAULT_OG_IMAGE,
     SITE,
+    getLocalizedSeoRoutes,
+    getSeoAlternates,
     resolveOgImage,
     seoRoutes,
     toAbsoluteUrl
 } from '../pages/seo-configs.js';
+import {LOCALES, getLocaleConfig} from '../i18n/config.js';
+import {translate} from '../i18n/translate.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.join(__dirname, '..', '..');
@@ -34,23 +44,35 @@ const escapeHtml = (value) =>
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;');
 
+// Mọi cặp (route × ngôn ngữ). Chỉ những cặp đã dịch mới được index / lên sitemap.
+const localizedRoutes = getLocalizedSeoRoutes();
+const indexableRoutes = localizedRoutes.filter((route) => route.hasTranslation);
+
 /* ------------------------------------------------------------------ sitemap */
 
 const generateSitemap = () => {
     const lastmod = new Date().toISOString().split('T')[0];
-    const urls = seoRoutes
-        .map(
-            (route) => `  <url>
-    <loc>${toAbsoluteUrl(route.path)}</loc>
+
+    const urls = indexableRoutes
+        .map((route) => {
+            const alternates = getSeoAlternates(route)
+                .map(
+                    (alternate) =>
+                        `\n    <xhtml:link rel="alternate" hreflang="${alternate.hreflang}" href="${alternate.href}" />`
+                )
+                .join('');
+
+            return `  <url>
+    <loc>${toAbsoluteUrl(route.path)}</loc>${alternates}
     <lastmod>${lastmod}</lastmod>
     <changefreq>${route.changefreq || 'monthly'}</changefreq>
     <priority>${(route.priority ?? 0.5).toFixed(1)}</priority>
-  </url>`
-        )
+  </url>`;
+        })
         .join('\n');
 
     return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls}
 </urlset>
 `;
@@ -68,6 +90,9 @@ Sitemap: ${SITE.baseUrl}/sitemap.xml
 /* ---------------------------------------------------------------- head tags */
 
 const buildSchemas = (route) => {
+    const locale = route.locale;
+    const localeConfig = getLocaleConfig(locale);
+
     const organization = {
         '@context': 'https://schema.org',
         '@type': 'Organization',
@@ -84,16 +109,16 @@ const buildSchemas = (route) => {
         }
     };
 
-    if (route.path === '/') {
+    if (route.basePath === '/') {
         return [
             organization,
             {
                 '@context': 'https://schema.org',
                 '@type': 'WebSite',
                 '@id': `${SITE.baseUrl}/#website`,
-                url: SITE.baseUrl,
+                url: toAbsoluteUrl(route.path),
                 name: SITE.siteName,
-                inLanguage: SITE.lang,
+                inLanguage: localeConfig.htmlLang,
                 publisher: {'@id': `${SITE.baseUrl}/#organization`}
             }
         ];
@@ -103,12 +128,17 @@ const buildSchemas = (route) => {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-            {'@type': 'ListItem', position: 1, name: 'Trang chủ', item: SITE.baseUrl},
+            {
+                '@type': 'ListItem',
+                position: 1,
+                name: translate(locale, 'common.home'),
+                item: toAbsoluteUrl(getLocaleConfig(locale).prefix || '/')
+            },
             {'@type': 'ListItem', position: 2, name: route.title, item: toAbsoluteUrl(route.path)}
         ]
     };
 
-    if (route.path.startsWith('/services/')) {
+    if (route.basePath.startsWith('/services/')) {
         return [
             breadcrumb,
             {
@@ -128,6 +158,7 @@ const buildSchemas = (route) => {
 };
 
 const buildHead = (route) => {
+    const localeConfig = getLocaleConfig(route.locale);
     const image = resolveOgImage(route.image);
     const canonical = toAbsoluteUrl(route.path);
     const type = route.type || 'website';
@@ -137,23 +168,42 @@ const buildHead = (route) => {
         `<meta name="description" content="${escapeHtml(route.description)}" />`,
         `<meta name="keywords" content="${escapeHtml(route.keywords || '')}" />`,
         `<meta name="author" content="${escapeHtml(SITE.name)}" />`,
-        '<meta name="robots" content="index, follow, max-image-preview:large" />',
+        // Trang chưa dịch sang ngôn ngữ này thì chặn index để tránh nội dung trùng lặp
+        route.hasTranslation
+            ? '<meta name="robots" content="index, follow, max-image-preview:large" />'
+            : '<meta name="robots" content="noindex, follow" />',
         `<meta name="theme-color" content="${SITE.themeColor}" />`,
-        '<meta name="language" content="Vietnamese" />',
+        `<meta name="language" content="${localeConfig.metaLanguage}" />`,
         '<meta name="geo.region" content="VN" />',
         '<meta name="geo.placename" content="Ho Chi Minh City" />',
-        `<link rel="canonical" href="${canonical}" />`,
+        `<link rel="canonical" href="${canonical}" />`
+    ];
 
+    // hreflang - chỉ trỏ tới những ngôn ngữ đã thực sự có bản dịch
+    getSeoAlternates(route).forEach((alternate) => {
+        tags.push(
+            `<link rel="alternate" hreflang="${alternate.hreflang}" href="${alternate.href}" />`
+        );
+    });
+
+    tags.push(
         `<meta property="og:type" content="${type}" />`,
         `<meta property="og:title" content="${escapeHtml(route.title)}" />`,
         `<meta property="og:description" content="${escapeHtml(route.description)}" />`,
         `<meta property="og:url" content="${canonical}" />`,
         `<meta property="og:site_name" content="${escapeHtml(SITE.siteName)}" />`,
-        `<meta property="og:locale" content="${SITE.locale}" />`,
+        `<meta property="og:locale" content="${localeConfig.ogLocale}" />`
+    );
+
+    LOCALES.filter((item) => item.code !== route.locale).forEach((item) => {
+        tags.push(`<meta property="og:locale:alternate" content="${item.ogLocale}" />`);
+    });
+
+    tags.push(
         `<meta property="og:image" content="${image.url}" />`,
         `<meta property="og:image:secure_url" content="${image.url}" />`,
         `<meta property="og:image:alt" content="${escapeHtml(image.alt)}" />`
-    ];
+    );
 
     if (image.type) tags.push(`<meta property="og:image:type" content="${image.type}" />`);
     if (image.width) tags.push(`<meta property="og:image:width" content="${image.width}" />`);
@@ -200,8 +250,14 @@ const prerender = () => {
     const after = template.slice(endIndex);
 
     let count = 0;
-    seoRoutes.forEach((route) => {
-        const html = `${before}\n${buildHead(route)}\n${after}`;
+    localizedRoutes.forEach((route) => {
+        const localeConfig = getLocaleConfig(route.locale);
+        // <html lang> trong bản tĩnh phải khớp ngôn ngữ, không chờ React gắn lại
+        const html = `${before}\n${buildHead(route)}\n${after}`.replace(
+            /<html lang="[^"]*"/,
+            `<html lang="${localeConfig.htmlLang}"`
+        );
+
         const outputPath =
             route.path === '/'
                 ? path.join(distDir, 'index.html')
@@ -225,7 +281,7 @@ const checkVercelRewrites = () => {
 
     const rewrites = JSON.parse(fs.readFileSync(vercelConfigPath, 'utf8')).rewrites || [];
     const declared = new Set(rewrites.map((rule) => rule.source));
-    const missing = seoRoutes
+    const missing = localizedRoutes
         .map((route) => route.path)
         .filter((routePath) => routePath !== '/' && !declared.has(routePath));
 
@@ -252,5 +308,10 @@ const robots = generateRobots();
 const prerendered = prerender();
 checkVercelRewrites();
 
-console.log(`✅ sitemap.xml + robots.txt (${seoRoutes.length} route)`);
+const localeSummary = LOCALES.map((locale) => {
+    const done = indexableRoutes.filter((route) => route.locale === locale.code).length;
+    return `${locale.code}: ${done}/${seoRoutes.length}`;
+}).join(', ');
+
+console.log(`✅ sitemap.xml + robots.txt (${indexableRoutes.length} URL đã dịch - ${localeSummary})`);
 if (prerendered) console.log(`✅ Prerender thẻ SEO cho ${prerendered} trang trong dist/`);

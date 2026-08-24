@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import {ArrowRight, ArrowUpRight, Sparkles, Zap} from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import {Link} from "react-router-dom";
+import {Link, useI18n} from "../../i18n";
 
 // Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
+    const { t } = useI18n();
     const sectionRef = useRef(null);
     const bgLogoRef = useRef(null);
     const titleRef = useRef(null);
@@ -139,12 +140,11 @@ const HeroSection = () => {
                             <div className="space-y-10">
                                 <div className="inline-flex items-center justify-center">
                         <span className=" text-[#c08dfe] rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
-                            Digital Solutions Agency
+                            {t('home.hero.badge')}
                         </span>
                                 </div>
                                 <p className="text-black text-[15px] lg:text-[18px] max-w-sm text-justify">
-                                    Nextgency là đối tác công nghệ hàng đầu, chuyên cung cấp giải pháp số hóa toàn diện.
-                                    Chúng tôi biến ý tưởng thành hiện thực với công nghệ tiên tiến nhất.
+                                    {t('home.hero.description')}
                                 </p>
                                 <div className="">
                                     {/* Column A - CTAs */}
@@ -155,7 +155,7 @@ const HeroSection = () => {
 
                                         >
         <span className="">
-            Xem dự án
+            {t('home.hero.cta')}
         </span>
                                             <div
                                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

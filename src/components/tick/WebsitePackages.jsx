@@ -1,28 +1,12 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
-    const basicFeatures = [
-        "Được đổi tên 1 lần",
-        "KH lựa trong list page có sẵn của Agency"
-    ];
-
-    const standardFeatures = [
-        "Tự vấn các vấn đề liên quan đến việc lên tích xanh TikTok.",
-        "Tư vấn các nội dung cần chú ý, các rủi ro có thể gặp phải trong quá trình Build tích xanh Fanpage.",
-        "Kiểm tra kênh: tương tác, follow, view...",
-        "Check các đầu báo lớn (các đầu có tick xanh Fanpagge) đã đi trong vòng 01 năm qua của Brand.",
-        "Kiểm tra chính sách và điều kiện cần thiết để tăng kihả năng lên tick xanh.",
-        "Gửi hồ sơ xét duyệt lên tick.",
-        "Tiến hành submit tick xanh Fanpage.",
-        "Feedback kết quả kiểm duyệt lên tick."
-    ];
-
-    const advancedFeatures = [
-        "Thời gian hoàn thành: 3 ngày",
-        "Tài khoản tích mới sẽ được làm theo thông tin của FB hiện tại hoặc thông tin khách muốn (bao đổi tên)",
-        "Có phí duy trì gia hạn theo tháng: 20$ = 500.000 đ"
-    ];
+    const { t, tm } = useI18n();
+    const basicFeatures = tm('servicePages.tickXanh.packages.basic.features');
+    const standardFeatures = tm('servicePages.tickXanh.packages.standard.features');
+    const advancedFeatures = tm('servicePages.tickXanh.packages.advanced.features');
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -41,10 +25,10 @@ const WebsitePackages = () => {
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                        Các gói dịch vụ
+                        {t('shared.packages.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        Quản trị tài khoản/ Trọn gói vận hành/ Thuê tài khoản
+                        {t('servicePages.tickXanh.packages.subtitle')}
                     </p>
                 </div>
 
@@ -58,13 +42,13 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Mua tích xanh Fanpage Facebook
+                                    {t('servicePages.tickXanh.packages.basic.title')}
                                 </h3>
                             </div>
                             {/* Subtitle */}
                             <div className="mb-6">
                                 <p className="text-black text-[14px] lg:text-[16px] font-medium text-justify">
-                                    GIÁ TÙY THỜI ĐIỂM
+                                    {t('servicePages.tickXanh.packages.basic.price')}
                                 </p>
                             </div>
                             <div className="space-y-4 mb-8">
@@ -86,7 +70,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -104,13 +88,13 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Submit tích xanh Fanpage Facebook
+                                    {t('servicePages.tickXanh.packages.standard.title')}
                                 </h3>
                             </div>
                             {/* Subtitle */}
                             <div className="mb-6">
                                 <p className="text-white text-[14px] lg:text-[16px] font-medium text-justify">
-                                    85 TRIỆU VNĐ/GÓI
+                                    {t('servicePages.tickXanh.packages.standard.price')}
                                 </p>
                             </div>
                             <div className="space-y-4 mb-8">
@@ -132,7 +116,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-white text-[15px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -144,13 +128,13 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Mua tích xanh FB Profile cá nhân
+                                    {t('servicePages.tickXanh.packages.advanced.title')}
                                 </h3>
                             </div>
                             {/* Subtitle */}
                             <div className="mb-6">
                                 <p className="text-black text-[14px] lg:text-[16px] font-medium text-justify">
-                                    5 TRIỆU VNĐ/GÓI
+                                    {t('servicePages.tickXanh.packages.advanced.price')}
                                 </p>
                             </div>
                             <div className="space-y-4 mb-8">
@@ -172,7 +156,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>

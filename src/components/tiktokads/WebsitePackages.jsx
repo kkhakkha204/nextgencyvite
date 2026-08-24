@@ -1,40 +1,12 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
-    const basicFeatures = [
-        "Phân tích sản phẩm, ngành hàng và mục tiêu kinh doanh",
-        "Lựa chọn định dạng TikTok Ads phù hợp (Traffic, Lead Form, Conversion)",
-        "Thiết lập tài khoản & tracking",
-        "Lên cấu trúc chiến dịch theo mô hình phễu",
-        "Cài đặt nhóm quảng cáo, đối tượng, ngân sách, lịch trình",
-        "Lựa chọn content có sẵn hoặc đề xuất nội dung mới",
-        "Theo dõi chỉ số & tối ưu hiệu suất",
-        "Báo cáo và đề xuất phương án cải tiến chiến dịch"
-    ];
-
-    const standardFeatures = [
-        "Rà soát ngành hàng, danh mục sản phẩm nổi bật",
-        "Xác định thời gian vàng và hành vi mua hàng của khách trên TikTok",
-        "Kết nối TikTok Shop với hệ thống quảng cáo",
-        "Gắn liên kết sản phẩm trong video/ads",
-        "Lên chiến dịch Add to Cart / Product View / Shop Follow",
-        "Tối ưu hóa tuyến nội dung kênh",
-        "Theo dõi chỉ số & tối ưu hiệu suất",
-        "Báo cáo và đề xuất phương án cải tiến chiến dịch"
-    ];
-
-    const advancedFeatures = [
-        "Đăng ký chiến dịch quảng cáo dạng Live với TikTok",
-        "Đảm bảo duyệt nội dung, tránh vi phạm chính sách",
-        "Tư vấn kịch bản livestream thu hút (minigame, giới thiệu sản phẩm, feedback...)",
-        "Tối ưu không gian, lời thoại, call-to-action",
-        "Thiết lập quảng cáo dẫn về livestream theo thời gian thực",
-        "Target tệp khách theo độ tuổi, hành vi, ngành hàng",
-        "Cập nhật real-time số lượt xem, thời gian xem trung bình",
-        "Điều chỉnh nhóm quảng cáo hoặc content giữa phiên (nếu cần)",
-        "Tổng kết hiệu quả sau phiên livestream"
-    ];
+    const { t, tm } = useI18n();
+    const basicFeatures = tm('servicePages.tiktokAds.packages.basic.features');
+    const standardFeatures = tm('servicePages.tiktokAds.packages.standard.features');
+    const advancedFeatures = tm('servicePages.tiktokAds.packages.advanced.features');
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -53,10 +25,10 @@ const WebsitePackages = () => {
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                        Các gói dịch vụ
+                        {t('shared.packages.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        Chạy ads chuyển đổi Website và Landing page/ Chạy ads Tiktok Shop/ Chạy ads Livestream Tiktok
+                        {t('servicePages.tiktokAds.packages.subtitle')}
                     </p>
                 </div>
 
@@ -70,7 +42,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói quảng cáo chuyển đổi Website/ Landing page
+                                    {t('servicePages.tiktokAds.packages.basic.title')}
                                 </h3>
                             </div>
 
@@ -93,7 +65,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -106,14 +78,14 @@ const WebsitePackages = () => {
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <div className="bg-gradient-to-r from-[#1a4498] to-black text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
-                                <span>Phổ Biến</span>
+                                <span>{t('shared.packages.popular')}</span>
                             </div>
                         </div>
 
                         <div>
                             <div className="mb-4 pb-2 border-b border-[#1a4498]">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói quảng cáo Tiktok (Chuyển đổi video)
+                                    {t('servicePages.tiktokAds.packages.standard.title')}
                                 </h3>
                             </div>
 
@@ -136,7 +108,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-gradient-to-r from-[#1a4498] to-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-[#0b2f8a]/40 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -154,7 +126,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Gói quảng cáo Livestream Tiktok
+                                    {t('servicePages.tiktokAds.packages.advanced.title')}
                                 </h3>
                             </div>
 
@@ -177,7 +149,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-white text-[15px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>

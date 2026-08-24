@@ -1,4 +1,5 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {buildBankRows, buildQrUrl} from './bookingData.js';
 
 /**
@@ -6,8 +7,9 @@ import {buildBankRows, buildQrUrl} from './bookingData.js';
  * variant "light" dùng trong panel đặt lịch, "dark" dùng trên nền navy ở CTA cuối.
  */
 const DepositTransfer = ({phone = '', variant = 'light', qrSize = 'w-[132px] h-[132px]'}) => {
+    const { t } = useI18n();
     const isDark = variant === 'dark';
-    const rows = buildBankRows(phone);
+    const rows = buildBankRows(t, phone);
 
     return (
         <div className="flex items-start gap-4 sm:gap-[18px]">
@@ -18,7 +20,7 @@ const DepositTransfer = ({phone = '', variant = 'light', qrSize = 'w-[132px] h-[
             >
                 <img
                     src={buildQrUrl(phone)}
-                    alt="QR chuyển khoản cọc giữ chỗ"
+                    alt={t('booking.bank.qrAlt')}
                     loading="lazy"
                     className="h-full w-full object-contain"
                 />

@@ -1,18 +1,22 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import SectionHeading from './SectionHeading.jsx';
-import {CALL_AGENDA} from './bookingData.js';
+import {buildCallAgenda} from './bookingData.js';
 
-const CallAgendaSection = () => (
+const CallAgendaSection = () => {
+    const { t, tm } = useI18n();
+    const CALL_AGENDA = buildCallAgenda(tm);
+
+    return (
     <section className="bg-[#f6f8fc] px-5 py-16 sm:px-8 lg:px-14 lg:py-[110px]">
         <div className="mx-auto max-w-[900px]">
             <SectionHeading
-                eyebrow="Phần 03 · 30 phút làm được gì"
-                title="Một buổi 30 phút đủ để đổi hướng cả năm tới"
+                eyebrow={t('booking.callAgenda.badge')}
+                title={t('booking.callAgenda.title')}
             />
 
             <p className="mt-6 text-[15px] leading-[1.75] text-[#3a4256] lg:text-[16.5px]">
-                30 phút không dài, nên buổi Growth Call này không lan man. Sơn không kể lý thuyết tăng trưởng — mà soi
-                thẳng vào bài toán của riêng anh/chị và làm đúng ba việc:
+                {t('booking.callAgenda.description')}
             </p>
 
             <div className="mt-7 flex flex-col">
@@ -32,13 +36,12 @@ const CallAgendaSection = () => (
             </div>
 
             <p className="border-t border-[#e2e8f1] pt-6 text-[15px] leading-[1.75] text-[#3a4256] lg:text-[16.5px]">
-                Anh/chị rời cuộc gọi với một thứ rõ ràng trong đầu: mình đang nghẽn ở đâu, và bước kế tiếp là gì. Dù sau
-                đó có làm cùng Nextgency hay không, cái nhìn đó là của anh/chị giữ. Đó là lý do Sơn dám để khoản cọc{' '}
-                <strong className="font-semibold text-[#0b0e18]">hoàn lại bất kỳ lúc nào</strong> — nếu 30 phút không cho
-                anh/chị được điều đó, anh/chị không nợ Nextgency một đồng nào.
+                {t('booking.callAgenda.closing')}
+                <strong className="font-semibold text-[#0b0e18]">{t('booking.callAgenda.refundHighlight')}</strong>{t('booking.callAgenda.refundSuffix')}
             </p>
         </div>
     </section>
-);
+    );
+};
 
 export default CallAgendaSection;

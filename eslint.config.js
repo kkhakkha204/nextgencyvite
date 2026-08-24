@@ -26,4 +26,12 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
     },
   },
+  {
+    // Script chạy bằng Node lúc build (prerender SEO, kiểm tra bản dịch),
+    // không chạy trong trình duyệt nên cần globals của Node.
+    files: ['src/scripts/**/*.js'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ])

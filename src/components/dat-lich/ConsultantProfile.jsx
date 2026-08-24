@@ -1,13 +1,16 @@
 import React, {useState} from 'react';
-import {BOOKING_STEPS, CONSULTANT, DEPOSIT_FULL, DEPOSIT_SHORT, HOTLINE} from './bookingData.js';
+import { useI18n } from '../../i18n';
+import {buildBookingSteps, CONSULTANT, DEPOSIT_FULL, DEPOSIT_SHORT, HOTLINE} from './bookingData.js';
 
 const ConsultantProfile = () => {
+    const { t, tm } = useI18n();
+    const BOOKING_STEPS = buildBookingSteps(t, tm);
     const [avatarFailed, setAvatarFailed] = useState(false);
 
     return (
         <div>
             <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#9ee6f5]">
-                Hồ sơ buổi tư vấn
+                {t('booking.profile.badge')}
             </div>
 
             <div className="mt-6 flex items-center gap-5">
@@ -35,11 +38,11 @@ const ConsultantProfile = () => {
                 </div>
             </div>
 
-            <p className="mt-6 max-w-[520px] text-[15.5px] leading-[1.7] text-white/[.78]">{CONSULTANT.bio}</p>
+            <p className="mt-6 max-w-[520px] text-[15.5px] leading-[1.7] text-white/[.78]">{t('booking.consultant.bio')}</p>
 
             <div className="mt-6 max-w-[520px] border-l-2 border-[#41c8e6] py-1 pl-5">
                 <p className="font-archivo text-[16px] font-medium leading-[1.5] text-white lg:text-[19px]">
-                    {CONSULTANT.quote}
+                    {t('booking.consultant.quote')}
                 </p>
                 <div className="mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/50">
                     — {CONSULTANT.name}, {CONSULTANT.role}
@@ -48,13 +51,12 @@ const ConsultantProfile = () => {
 
             <div className="mt-8 max-w-[560px] rounded-[20px] border border-white/[.12] bg-white/[.05] px-6 py-6">
                 <div className="text-[11.5px] font-semibold uppercase tracking-[0.16em] text-[#9ee6f5]">
-                    Miễn phí · Cọc {DEPOSIT_SHORT} hoàn bất kỳ lúc nào
+                    {t('booking.profile.badge2', {depositShort: DEPOSIT_SHORT})}
                 </div>
                 <p className="mt-3 text-[14.5px] leading-[1.7] text-white/[.78]">
-                    Buổi Growth Call <strong className="font-semibold text-white">không tính phí tư vấn</strong>.{' '}
-                    {DEPOSIT_FULL} chỉ là cọc giữ chỗ — hoàn đủ 100%{' '}
-                    <strong className="font-semibold text-white">bất kỳ lúc nào</strong>: trước buổi gọi, giữa buổi gọi,
-                    hay kể cả sau khi gọi xong mà anh/chị thấy chưa xứng đáng. Ký hợp đồng thì trừ thẳng vào hợp đồng.
+                    {t('booking.profile.callLabel')} <strong className="font-semibold text-white">{t('booking.profile.noFee')}</strong>.{' '}
+                    {t('booking.profile.depositPrefix', {deposit: DEPOSIT_FULL})}
+                    <strong className="font-semibold text-white">{t('booking.profile.anyTime')}</strong>{t('booking.profile.refundSuffix')}
                 </p>
             </div>
 

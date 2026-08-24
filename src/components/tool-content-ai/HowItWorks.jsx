@@ -1,29 +1,15 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import { Link2, Search, FileText, Send } from 'lucide-react';
 
 const HowItWorks = () => {
-    const steps = [
-        {
-            icon: Link2,
-            title: "Kết nối",
-            description: "Nhập khóa API AI và kết nối website (WordPress, Wix, Shopify...)."
-        },
-        {
-            icon: Search,
-            title: "Nghiên cứu & lập kế hoạch",
-            description: "Tìm từ khóa và dựng kế hoạch nội dung theo cụm chủ đề."
-        },
-        {
-            icon: FileText,
-            title: "Viết & tối ưu",
-            description: "Để AI viết bản nháp, chấm điểm SEO/AEO/GEO rồi làm theo gợi ý để nâng điểm."
-        },
-        {
-            icon: Send,
-            title: "Đăng & đo lường",
-            description: "Xuất bản đa kênh và theo dõi token, chi phí cùng lượt AI trích dẫn."
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Icon giữ trong code, phần chữ lấy từ từ điển
+    const steps = tm('servicePages.toolContentAi.howItWorks.steps').map((step, index) => ({
+        icon: [Link2, Search, FileText, Send][index],
+        title: step.title,
+        description: step.description
+    }));
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">
@@ -31,10 +17,10 @@ const HowItWorks = () => {
                 {/* Header */}
                 <div className="text-center mb-8 lg:mb-12">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                        Cách hoạt động
+                        {t('servicePages.toolContentAi.howItWorks.title')}
                     </h2>
                     <p className="text-black text-[15px] lg:text-[18px]">
-                        Bốn bước từ lúc kết nối đến khi bài viết lên sóng và có số liệu.
+                        {t('servicePages.toolContentAi.howItWorks.subtitle')}
                     </p>
                 </div>
 

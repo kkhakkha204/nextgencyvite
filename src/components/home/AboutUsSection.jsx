@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import {  ArrowUpRight } from 'lucide-react';
-import { Link } from "react-router-dom";
+import { Link, useI18n } from "../../i18n";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutUsSection = () => {
+    const { t } = useI18n();
     const sectionRef = useRef(null);
     const labelRef = useRef(null);
     const titleRef = useRef(null);
@@ -98,21 +99,21 @@ const AboutUsSection = () => {
                     <div className="space-y-4">
                         <div ref={labelRef} className="inline-flex items-center justify-center">
                             <span className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
-                                About Nexgency
+                                {t('home.about.badge')}
                             </span>
                         </div>
 
                         {/* Tiêu đề */}
                         <h2 ref={titleRef} className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                            Tiên Phong
+                            {t('home.about.titleLine1')}
                             <span className="block font-archivo text-transparent bg-clip-text bg-gradient-to-r from-black to-[#c08dfe] lg:-mt-3">
-                                Chuyển Đổi Số
+                                {t('home.about.titleLine2')}
                             </span>
                         </h2>
 
                         {/* Mô tả */}
                         <p ref={descriptionRef} className="text-[15px] lg:text-[18px] text-black">
-                            Nextgency là đối tác chiến lược của bạn trong kỷ nguyên số. Chúng tôi cung cấp giải pháp chuyển đổi số, giúp doanh nghiệp bạn tăng tốc phát triển.
+                            {t('home.about.description')}
                         </p>
                         <div ref={buttonsRef} className="lg:pt-4">
                             {/* CTA Button */}
@@ -122,7 +123,7 @@ const AboutUsSection = () => {
                                     className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-black text-[15px] sm:text-[16px] text-white rounded-full hover:scale-105 group"
                                 >
                             <span className="">
-                                Xem thêm
+                                {t('home.about.cta')}
                             </span>
                                     <div className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                         <ArrowUpRight

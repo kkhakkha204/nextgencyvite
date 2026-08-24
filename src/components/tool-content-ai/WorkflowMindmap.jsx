@@ -1,4 +1,5 @@
     import React from 'react';
+    import { useI18n } from '../../i18n';
     import {
         ChevronDown,
         Dot,
@@ -10,6 +11,7 @@
     } from 'lucide-react';
 
     const WorkflowSection = () => {
+        const { t } = useI18n();
         return (
             <section className="pt-[60px] lg:pt-[90px] bg-white">
                 <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +23,7 @@
                         </span>
                         </div>
                         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                            Quy trình làm việc
+                            {t('servicePages.aiData.workflow.title')}
                         </h2>
                     </div>
 
@@ -36,10 +38,10 @@
                                     <div className="flex items-start">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-black">
-                                                Gửi yêu cầu & tư vấn sơ bộ
+                                                {t('servicePages.aiData.workflow.steps[0].title')}
                                             </h3>
                                             <p className="text-gray-700 text-[12px] lg:text-[13px]">
-                                                Tiếp nhận nhu cầu - tư vấn giải pháp
+                                                {t('servicePages.aiData.workflow.steps[0].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -56,10 +58,10 @@
                                     <div className="flex items-start ">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-black">
-                                                Khách hàng mô tả bài toán
+                                                {t('servicePages.aiData.workflow.steps[1].title')}
                                             </h3>
                                             <p className="text-gray-700 text-[12px] lg:text-[13px]">
-                                                Thảo luận vấn đề cần giải quyết
+                                                {t('servicePages.aiData.workflow.steps[1].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -76,10 +78,10 @@
                                     <div className="flex items-start ">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-black">
-                                                Phân tích mục tiêu, kênh vận hành
+                                                {t('servicePages.aiData.workflow.steps[2].title')}
                                             </h3>
                                             <p className="text-gray-700 text-[12px] lg:text-[13px]">
-                                                Xác định mục tiêu và kênh triển khai
+                                                {t('servicePages.aiData.workflow.steps[2].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -117,10 +119,10 @@
                                     <div className="flex items-start">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-white">
-                                                Cấp độ 1: tự động hóa thao tác lặp lại
+                                                {t('servicePages.aiData.workflow.steps[3].title')}
                                             </h3>
                                             <p className="text-gray-300 text-[12px] lg:text-[13px]">
-                                                Giải phóng nhân lực khỏi các công việc thủ công
+                                                {t('servicePages.aiData.workflow.steps[3].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -137,10 +139,10 @@
                                     <div className="flex items-start">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-white">
-                                                Cấp độ 2: kết nối đa nền tảng (FB, Zalo, CRM...)
+                                                {t('servicePages.aiData.workflow.steps[4].title')}
                                             </h3>
                                             <p className="text-gray-300 text-[12px] lg:text-[13px]">
-                                                Tích hợp liền mạch giữa các hệ thống
+                                                {t('servicePages.aiData.workflow.steps[4].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -157,10 +159,10 @@
                                     <div className="flex items-start ">
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-white">
-                                                Cấp độ 3: AI tư vấn & phân tích dữ liệu
+                                                {t('servicePages.aiData.workflow.steps[5].title')}
                                             </h3>
                                             <p className="text-gray-300 text-[12px] lg:text-[13px]">
-                                                Ứng dụng trí tuệ nhân tạo để tối ưu quy trình
+                                                {t('servicePages.aiData.workflow.steps[5].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -180,7 +182,7 @@
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-black">
-                                                Ký hợp đồng, thống nhất thời gian
+                                                {t('servicePages.aiData.workflow.steps[6].title')}
                                             </h3>
                                         </div>
                                     </div>
@@ -204,10 +206,10 @@
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-black">
-                                                Thiết lập hệ thống
+                                                {t('servicePages.aiData.workflow.steps[6].description')}
                                             </h3>
                                             <p className="text-gray-700 text-[12px] lg:text-[13px]">
-                                                Triển khai giải pháp theo yêu cầu đã thống nhất
+                                                {t('servicePages.aiData.workflow.setupDescription')}
                                             </p>
                                         </div>
                                     </div>
@@ -227,10 +229,10 @@
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-black">
-                                                Chạy thử & tinh chỉnh
+                                                {t('servicePages.aiData.workflow.steps[7].title')}
                                             </h3>
                                             <p className="text-gray-700 text-[12px] lg:text-[13px]">
-                                                Kiểm tra và tối ưu hóa hiệu suất hệ thống
+                                                {t('servicePages.aiData.workflow.steps[7].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -250,10 +252,10 @@
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium text-black">
-                                                Bàn giao & đào tạo
+                                                {t('servicePages.aiData.workflow.steps[8].title')}
                                             </h3>
                                             <p className="text-gray-700 text-[12px] lg:text-[13px]">
-                                                Hướng dẫn sử dụng và chuyển giao công nghệ
+                                                {t('servicePages.aiData.workflow.steps[8].description')}
                                             </p>
                                         </div>
                                     </div>
@@ -273,10 +275,10 @@
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="text-[13px] lg:text-[15px] font-medium  text-white">
-                                                Bảo trì & tối ưu
+                                                {t('servicePages.aiData.workflow.steps[9].title')}
                                             </h3>
                                             <p className="text-gray-300 text-[12px] lg:text-[13px]">
-                                                Hỗ trợ liên tục và cập nhật tính năng mới
+                                                {t('servicePages.aiData.workflow.steps[9].description')}
                                             </p>
                                         </div>
                                     </div>

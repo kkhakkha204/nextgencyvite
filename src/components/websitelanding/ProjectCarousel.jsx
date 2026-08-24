@@ -1,9 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
+import { useI18n } from '../../i18n';
 import {ChevronLeft, ChevronRight, ArrowRight, ArrowUpRight} from 'lucide-react';
-import {Link} from "react-router-dom";
-import { getProjectCategories, projectsData } from '../../data/projectsData';
+import { Link } from "../../i18n";
+import { getProjectCategories } from '../../data/projectsData';
+import { useProjects } from '../../hooks/useProjects';
 
 const ProjectCarousel = () => {
+    const { t } = useI18n();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const carouselRef = useRef(null);
@@ -15,7 +18,8 @@ const ProjectCarousel = () => {
         'from-[#C8A4FE]/20 to-[#A4FCFF]/20'
     ];
 
-    const portfolioItems = projectsData
+    const localizedProjects = useProjects();
+    const portfolioItems = localizedProjects
         .filter((project) => getProjectCategories(project).includes('Website & Landing Page'))
         .map((project, index) => ({
             id: project.id,
@@ -155,9 +159,7 @@ const ProjectCarousel = () => {
                     <div className="w-full lg:w-1/5 flex flex-col space-y-6">
                         <div className="space-y-4 py-4">
                             <p className="text-[#1c1c1c] text-[14px] lg:text-[18px] leading-relaxed text-justify">
-                                <strong>Website & Landing Page</strong> không chỉ là nơi khách hàng "ghé chơi", mà là
-                                đích đến giúp họ ở lại – chuyển đổi – và quay lại. Nextgency thiết kế nền tảng số hiện
-                                đại với giải pháp trọn gói.
+                                <strong>{t('servicePages.websiteLanding.carousel.brand')}</strong>{t('servicePages.websiteLanding.carousel.description')}
                             </p>
 
                             {/* CTA Button */}
@@ -168,7 +170,7 @@ const ProjectCarousel = () => {
 
                                 >
         <span className="">
-            Hợp tác ngay
+            {t('shared.cta.partnerNow')}
         </span>
                                     <div
                                         className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
@@ -209,7 +211,7 @@ const ProjectCarousel = () => {
                                             <Link
                                                 to={`/projects/${item.id}`}
                                                 className="group block"
-                                                aria-label={`Xem chi tiết ${item.alt || 'dự án'}`}
+                                                aria-label={t('servicePages.websiteLanding.carousel.viewDetail', {name: item.alt || t('servicePages.websiteLanding.carousel.projectFallback')})}
                                             >
                                                 <div
                                                     className="relative aspect-[4/3] bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useI18n } from '../../i18n';
 import { ChevronDown } from 'lucide-react';
 
 const ProfileSection = () => {
+    const { t, tm } = useI18n();
     const [expandedSections, setExpandedSections] = useState({ 0: true });
 
     const toggleSection = (index) => {
@@ -11,68 +13,7 @@ const ProfileSection = () => {
         }));
     };
 
-    const requirements = [
-        {
-            title: "Thông tin tài khoản chính chủ",
-            items: [
-                "Tên thật / tên thương hiệu (phải trùng khớp với giấy tờ xác thực)",
-                "Ảnh đại diện và ảnh bìa rõ ràng, chuyên nghiệp",
-                "Mô tả tài khoản: lĩnh vực hoạt động, vị trí công việc (nếu cá nhân)",
-                "Website chính thức (nếu có)"
-            ]
-        },
-        {
-            title: "Giấy tờ xác minh danh tính / pháp lý",
-            subtitle: "Với cá nhân:",
-            items: [
-                "CCCD/Hộ chiếu (bản scan rõ ràng 2 mặt)",
-                "Giấy phép hành nghề (nếu có)"
-            ],
-            subtitle2: "Với tổ chức/doanh nghiệp:",
-            items2: [
-                "Giấy đăng ký kinh doanh",
-                "Biên lai thanh toán thuế (nếu cần)",
-                "Công văn xác nhận đại diện pháp lý"
-            ]
-        },
-        {
-            title: "Tối thiểu 3–5 bài báo chính thống",
-            items: [
-                "Bài viết từ các đầu báo điện tử uy tín",
-                "Bài viết phải có nội dung đề cập trực tiếp đến cá nhân/doanh nghiệp xin tích xanh"
-            ]
-        },
-        {
-            title: "Link mạng xã hội liên quan",
-            items: [
-                "Fanpage chính thức (đã xác minh)",
-                "Kênh TikTok nếu có",
-                "LinkedIn, Instagram,… (tăng uy tín và tính nhất quán)"
-            ]
-        },
-        {
-            title: "Bằng chứng hoạt động & độ ảnh hưởng",
-            items: [
-                "Số lượng người theo dõi (tối thiểu 20k followers trên Facebook)",
-                "Thống kê tương tác 30 ngày gần nhất (reach, comment, share…)",
-                "Kết quả truyền thông, chiến dịch đã triển khai"
-            ]
-        },
-        {
-            title: "Hồ sơ nội dung chất lượng",
-            items: [
-                "Bài viết định kỳ (thường xuyên cập nhật)",
-                "Nội dung không vi phạm tiêu chuẩn cộng đồng",
-                "Lịch sử tài khoản không có cảnh báo/vi phạm"
-            ]
-        },
-        {
-            title: "Lý do xin tick xanh",
-            items: [
-                "Nêu rõ trong biểu mẫu gửi Facebook"
-            ]
-        }
-    ];
+    const requirements = tm('servicePages.tickXanh.profile.requirements');
 
     return (
         <section className="w-full bg-white py-[60px] lg:py-[90px]">
@@ -80,10 +21,10 @@ const ProfileSection = () => {
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] mb-1 uppercase">
-                        Hồ sơ lên tick xanh Facebook
+                        {t('servicePages.tickXanh.profile.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
-                        Danh sách đầy đủ các yêu cầu và tài liệu cần thiết để xác minh tài khoản Facebook
+                        {t('servicePages.tickXanh.profile.subtitle')}
                     </p>
                 </div>
 

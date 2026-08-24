@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useI18n } from '../../i18n';
 import { ChevronDown } from 'lucide-react';
 
 const ProfileSection = () => {
+    const { t, tm } = useI18n();
     const [expandedSections, setExpandedSections] = useState({ 0: true });
 
     const toggleSection = (index) => {
@@ -11,58 +13,7 @@ const ProfileSection = () => {
         }));
     };
 
-    const requirements = [
-        {
-            title: "SEO, AEO và GEO khác nhau thế nào?",
-            desc: "SEO tối ưu để xếp hạng trên Google. AEO tối ưu để được chọn làm câu trả lời trực tiếp (featured snippet, People Also Ask). GEO tối ưu để các engine AI như ChatGPT, Perplexity và Google AI Overviews trích dẫn nội dung của bạn.",
-            items: [
-                "Tên thật / tên thương hiệu (phải trùng khớp với giấy tờ xác thực)",
-                "Ảnh đại diện và ảnh bìa rõ ràng, chuyên nghiệp",
-                "Mô tả tài khoản: lĩnh vực hoạt động, vị trí công việc (nếu cá nhân)",
-                "Website chính thức (nếu có)"
-            ]
-        },
-        {
-            title: "Tôi có cần biết kỹ thuật không?",
-            desc: "Không. Bạn chỉ cần nhập chủ đề; nền tảng lo phần nghiên cứu, viết, tối ưu và chấm điểm. Có hướng dẫn chi tiết và tutorial cho người mới.",
-            items: [
-                "CCCD/Hộ chiếu (bản scan rõ ràng 2 mặt)",
-                "Giấy phép hành nghề (nếu có)"
-            ],
-            subtitle2: "Với tổ chức/doanh nghiệp:",
-            items2: [
-                "Giấy đăng ký kinh doanh",
-                "Biên lai thanh toán thuế (nếu cần)",
-                "Công văn xác nhận đại diện pháp lý"
-            ]
-        },
-        {
-            title: "Đăng bài lên được những đâu?",
-            desc: "WordPress, Wix, Shopify, Haravan, Sapo và Google Sheet. Sửa bài cũ rồi đăng lại sẽ cập nhật đúng bài, không tạo bản trùng.",
-            items: [
-                "Bài viết từ các đầu báo điện tử uy tín",
-                "Bài viết phải có nội dung đề cập trực tiếp đến cá nhân/doanh nghiệp xin tích xanh"
-            ]
-        },
-        {
-            title: "Có hỗ trợ nhiều ngôn ngữ không?",
-            desc: "Có. Giao diện và nội dung hỗ trợ 10 ngôn ngữ, kèm khả năng bản địa hóa bài viết theo từ khóa của từng thị trường.",
-            items: [
-                "Fanpage chính thức (đã xác minh)",
-                "Kênh TikTok nếu có",
-                "LinkedIn, Instagram,… (tăng uy tín và tính nhất quán)"
-            ]
-        },
-        {
-            title: "Tôi bắt đầu như thế nào?",
-            desc: "Đăng nhập, nhập khóa API AI, kết nối website và viết bài đầu tiên - chỉ vài bước là xong.",
-            items: [
-                "Số lượng người theo dõi (tối thiểu 20k followers trên Facebook)",
-                "Thống kê tương tác 30 ngày gần nhất (reach, comment, share…)",
-                "Kết quả truyền thông, chiến dịch đã triển khai"
-            ]
-        }
-    ];
+    const requirements = tm('servicePages.toolContentAi.faq.items');
 
     return (
         <section className="w-full bg-white py-[60px] lg:py-[90px]">
@@ -70,10 +21,10 @@ const ProfileSection = () => {
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] mb-1 uppercase">
-                        Câu hỏi thường gặp
+                        {t('servicePages.toolContentAi.faq.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
-                        Giải đáp các thắc mắc về Automation Tool Content AI
+                        {t('servicePages.toolContentAi.faq.subtitle')}
                     </p>
                 </div>
 

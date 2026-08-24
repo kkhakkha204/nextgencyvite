@@ -1,36 +1,14 @@
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const PainPointsSection = () => {
-    const painPoints = [
-        {
-            title: "Landing page không tối ưu",
-            description: "Quảng cáo hiện top nhưng vẫn không ra đơn vì landing page không được tối ưu cho chuyển đổi.",
-            impact: "Tiền ads bị đốt cháy vô ích",
-            isDark: false,
-            rotation: "lg:-rotate-1"
-        },
-        {
-            title: "Không biết từ khóa hiệu quả",
-            description: "Mỗi ngày tiêu tiền trên Google nhưng không biết từ khóa nào thực sự hiệu quả.",
-            impact: "Ngân sách marketing lãng phí",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Thiếu hệ thống tracking",
-            description: "Không có hệ thống tracking hành vi rõ ràng – không đo được hiệu suất theo từng chiến dịch.",
-            impact: "Không tối ưu marketing",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Quảng cáo không thu hút",
-            description: "Mẫu quảng cáo nhàm chán, không thu hút – tệp khách tiềm năng bị đối thủ cướp mất.",
-            impact: "Mất khách hàng",
-            isDark: true,
-            rotation: "lg:-rotate-1"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const painPoints = tm('servicePages.googleAds.painPoints.items').map((point, index) => ({
+        ...point,
+        isDark: index === 3,
+        rotation: ['lg:-rotate-1', 'lg:rotate-1', 'lg:rotate-1', 'lg:-rotate-1'][index]
+    }));
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">
@@ -47,7 +25,7 @@ const PainPointsSection = () => {
 
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                        Nỗi đau của doanh nghiệp
+                        {t('servicePages.googleAds.painPoints.title')}
                     </h2>
 
                 </div>

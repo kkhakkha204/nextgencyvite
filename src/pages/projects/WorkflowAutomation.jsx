@@ -1,133 +1,126 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
+import { useI18n } from '../../i18n';
 import { Search } from 'lucide-react';
 
 // Dữ liệu template cố định
 const templatesData = [
     {
         id: 1,
-        title: 'Tạo nội dung AI với ChatGPT',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'AI',
+        categoryKey: 'ai',
         nodes: ['ChatGPT', 'Google Sheets', 'Slack']
     },
     {
         id: 2,
-        title: 'Tự động chấm điểm lead',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Bán hàng',
+        categoryKey: 'sales',
         nodes: ['HubSpot', 'Airtable', 'Email']
     },
     {
         id: 3,
-        title: 'Hệ thống cảnh báo server',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'IT Ops',
+        categoryKey: 'itOps',
         nodes: ['Webhook', 'Slack', 'PagerDuty']
     },
     {
         id: 4,
-        title: 'Lên lịch đăng social media',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Marketing',
+        categoryKey: 'marketing',
         nodes: ['Twitter', 'Facebook', 'LinkedIn', 'Buffer']
     },
     {
         id: 5,
-        title: 'Tự động xử lý hóa đơn',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Tài liệu',
+        categoryKey: 'docs',
         nodes: ['Gmail', 'Google Drive', 'QuickBooks']
     },
     {
         id: 6,
-        title: 'Phân phối ticket hỗ trợ',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Hỗ trợ',
+        categoryKey: 'support',
         nodes: ['Zendesk', 'Slack', 'Jira']
     },
     {
         id: 7,
-        title: 'Tạo ảnh AI tự động',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'AI',
+        categoryKey: 'ai',
         nodes: ['DALL-E', 'Midjourney', 'S3', 'Discord']
     },
     {
         id: 8,
-        title: 'Đồng bộ dữ liệu CRM',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Bán hàng',
+        categoryKey: 'sales',
         nodes: ['Salesforce', 'HubSpot', 'MySQL']
     },
     {
         id: 9,
-        title: 'Sao lưu database định kỳ',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'IT Ops',
+        categoryKey: 'itOps',
         nodes: ['PostgreSQL', 'AWS S3', 'Email']
     },
     {
         id: 10,
-        title: 'Phân tích email campaign',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Marketing',
+        categoryKey: 'marketing',
         nodes: ['Mailchimp', 'Google Analytics', 'Sheets']
     },
     {
         id: 11,
-        title: 'Tạo báo cáo PDF tự động',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Tài liệu',
+        categoryKey: 'docs',
         nodes: ['Google Docs', 'PDF', 'Email', 'Drive']
     },
     {
         id: 12,
-        title: 'Công cụ kiểm tra dữ liệu',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Khác',
+        categoryKey: 'other',
         nodes: ['HTTP Request', 'Function', 'IF']
     },
     {
         id: 13,
-        title: 'Xử lý chatbot AI',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Hỗ trợ',
+        categoryKey: 'support',
         nodes: ['ChatGPT', 'Webhook', 'Database']
     },
     {
         id: 14,
-        title: 'Phân tích cảm xúc khách hàng',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'AI',
+        categoryKey: 'ai',
         nodes: ['OpenAI', 'Twitter API', 'MongoDB']
     },
     {
         id: 15,
-        title: 'Báo cáo sales pipeline',
         thumbnail: 'https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/Home_ITO_Ps_5a5aac3fda.webp',
-        category: 'Bán hàng',
+        categoryKey: 'sales',
         nodes: ['Pipedrive', 'Slack', 'Google Sheets']
     }
 ];
 
-const categories = ['Tất Cả', 'AI', 'Bán Hàng', 'IT Ops', 'Marketing', 'Tài Liệu', 'Khác', 'Hỗ Trợ'];
+const CATEGORY_KEYS = ['all', 'ai', 'sales', 'itOps', 'marketing', 'docs', 'other', 'support'];
 
 export default function N8nTemplates() {
+    const { t, tm } = useI18n();
+    // Tiêu đề template lấy theo thứ tự trong từ điển, id bắt đầu từ 1
+    const templateTitles = tm('projects.workflow.templates');
+    const templateTitle = useCallback(
+        (template) => templateTitles[template.id - 1] || '',
+        [templateTitles]
+    );
     const [searchQuery, setSearchQuery] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState('Tất Cả');
+    const [selectedCategory, setSelectedCategory] = useState('all');
 
     // Lọc templates dựa trên tìm kiếm và category
     const filteredTemplates = useMemo(() => {
         return templatesData.filter(template => {
             const matchesSearch = searchQuery === '' ||
-                template.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                templateTitle(template).toLowerCase().includes(searchQuery.toLowerCase()) ||
                 template.nodes.some(node => node.toLowerCase().includes(searchQuery.toLowerCase()));
 
-            const matchesCategory = selectedCategory === 'Tất Cả' || template.category === selectedCategory;
+            const matchesCategory = selectedCategory === 'all' || template.categoryKey === selectedCategory;
 
             return matchesSearch && matchesCategory;
         });
-    }, [searchQuery, selectedCategory]);
+    }, [searchQuery, selectedCategory, templateTitle]);
 
     return (
         <div className="min-h-screen bg-white">
@@ -139,7 +132,7 @@ export default function N8nTemplates() {
                         n8n Templates
                     </h1>
                     <p className="text-lg text-gray-400 font-light mb-6 md:mb-16 text-center">
-                        Bộ sưu tập workflow tự động hóa
+                        {t('projects.workflow.title')}
                     </p>
 
                     {/* Search Bar */}
@@ -148,7 +141,7 @@ export default function N8nTemplates() {
                             <Search className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                             <input
                                 type="text"
-                                placeholder="Tìm kiếm theo tên hoặc node..."
+                                placeholder={t('projects.workflow.searchPlaceholder')}
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 className="w-full pl-14 pr-5 py-4 bg-white border-2 border-gray-300 rounded-md focus:outline-none focus:border-[#c08dfe] transition-colors text-black placeholder-gray-500"
@@ -187,7 +180,7 @@ export default function N8nTemplates() {
                                     <div className="relative h-48 overflow-hidden bg-gray-50 ">
                                         <img
                                             src={template.thumbnail}
-                                            alt={template.title}
+                                            alt={templateTitle(template)}
                                             className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500"
                                         />
                                         <div className="absolute top-4 right-4">
@@ -202,13 +195,13 @@ export default function N8nTemplates() {
                                         {/* Category Badge */}
                                         <div className="mb-3">
                                             <span className="inline-block px-3 py-1 text-xs font-light text-[#c08dfe] border border-[#c08dfe] rounded-full">
-                                                {template.category}
+                                                {t(`projects.workflow.categories.${template.categoryKey}`)}
                                             </span>
                                         </div>
 
                                         {/* Title */}
                                         <h3 className="text-lg font-light text-black mb-4 line-clamp-2 group-hover:text-[#2B144D] transition-colors">
-                                            {template.title}
+                                            {templateTitle(template)}
                                         </h3>
 
                                         {/* Nodes */}
@@ -241,7 +234,7 @@ export default function N8nTemplates() {
                 {/* Category Filter */}
                 <div className="mb-12">
                     <div className="flex flex-wrap gap-3 justify-center">
-                        {categories.map((category) => (
+                        {CATEGORY_KEYS.map((category) => (
                             <button
                                 key={category}
                                 onClick={() => setSelectedCategory(category)}
@@ -253,7 +246,7 @@ export default function N8nTemplates() {
                                 }
                                 `}
                             >
-                                {category}
+                                {t(`projects.workflow.categories.${category}`)}
                             </button>
                         ))}
                     </div>
@@ -270,7 +263,7 @@ export default function N8nTemplates() {
                                 <div className="relative h-56 overflow-hidden bg-gray-50">
                                     <img
                                         src={template.thumbnail}
-                                        alt={template.title}
+                                        alt={templateTitle(template)}
                                         className="w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-500"
                                     />
                                 </div>
@@ -280,13 +273,13 @@ export default function N8nTemplates() {
                                     {/* Category Badge */}
                                     <div className="mb-4">
                                         <span className="inline-block px-3 py-1 text-xs font-light text-[#c08dfe] border border-[#c08dfe] rounded-full">
-                                            {template.category}
+                                            {t(`projects.workflow.categories.${template.categoryKey}`)}
                                         </span>
                                     </div>
 
                                     {/* Title */}
                                     <h3 className="text-xl font-light text-black mb-5 line-clamp-2 group-hover:text-[#2B144D] transition-colors">
-                                        {template.title}
+                                        {templateTitle(template)}
                                     </h3>
 
                                     {/* Nodes */}
@@ -313,8 +306,8 @@ export default function N8nTemplates() {
                 ) : (
                     <div className="text-center py-24">
                         <Search className="w-12 h-12 text-gray-300 mx-auto mb-6" />
-                        <h3 className="text-2xl font-light text-black mb-2">Không tìm thấy template</h3>
-                        <p className="text-gray-500 font-light">Thử điều chỉnh từ khóa hoặc bộ lọc</p>
+                        <h3 className="text-2xl font-light text-black mb-2">{t('projects.workflow.emptyTitle')}</h3>
+                        <p className="text-gray-500 font-light">{t('projects.workflow.emptyDescription')}</p>
                     </div>
                 )}
             </div>

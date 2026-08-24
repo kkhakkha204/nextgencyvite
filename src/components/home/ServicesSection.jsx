@@ -7,7 +7,7 @@ import {
     Bot,
     Target, Music, Users, BarChart3, CheckCircle
 } from 'lucide-react';
-import { Link } from "react-router-dom";
+import { Link, useI18n } from "../../i18n";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -15,6 +15,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const ServicesSection = () => {
+    const { t } = useI18n();
     const [activeTab, setActiveTab] = useState(0);
 
     // Refs cho animation
@@ -26,144 +27,121 @@ const ServicesSection = () => {
     const contentRef = useRef(null);
     const imageRef = useRef(null);
 
+    // Phần cấu trúc (icon, ảnh, công nghệ, link) nằm ở đây; toàn bộ chữ hiển thị
+    // lấy từ từ điển theo `key` nên tự đổi theo ngôn ngữ đang xem.
     const services = [
         {
             id: 0,
-            name: 'Automation - Ai - Data',
+            key: 'aiData',
             icon: <Bot className="w-4 h-4" />,
-            title: 'Automation - AI - Data',
-            description: 'Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở Automation và AI. Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình.',
             image: '/assets/images/services/automation.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'AI Automation' },
                 { icon: <Code className="w-4 h-4" />, name: 'n8n' },
                 { icon: <Code className="w-4 h-4" />, name: 'CRM Integration' },
-                { icon: <Code className="w-4 h-4" />, name: 'Dashboard' }
+                { icon: <Code className="w-4 h-4" />, name: 'Dashboard' },
             ],
-            completedDate: '14 - 30 ngày',
-            note: 'Tối ưu quy trình vận hành, tự động hóa tác vụ và khai thác dữ liệu hiệu quả',
-            link:'/services/ai-data'
+            link: '/services/ai-data'
         },
         {
             id: 1,
-            name: 'Google Ads',
+            key: 'googleAds',
             icon: <Target className="w-4 h-4" />,
-            title: 'Google Ads',
-            description: 'Nextgency triển khai Google Ads với đa dạng chiến dịch để đưa doanh nghiệp lên top 1 trong tâm trí người dùng khi nhắc tới lĩnh vực của bạn.',
             image: '/assets/images/services/gg-ads.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'Search Ads' },
                 { icon: <Code className="w-4 h-4" />, name: 'Display Ads' },
                 { icon: <Code className="w-4 h-4" />, name: 'Performance Max' },
-                { icon: <Code className="w-4 h-4" />, name: 'Conversion Tracking' }
+                { icon: <Code className="w-4 h-4" />, name: 'Conversion Tracking' },
             ],
-            completedDate: '3 - 7 ngày',
-            note: 'Thiết lập chiến dịch, đo lường chuyển đổi và tối ưu ngân sách quảng cáo',
-            link:'/services/google-ads'
+            link: '/services/google-ads'
         },
         {
             id: 2,
-            name: 'Facebook Ads',
+            key: 'facebookAds',
             icon: <Smartphone className="w-4 h-4" />,
-            title: 'Facebook Ads',
-            description: 'Dịch vụ Facebook Ads từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất Facebook đầy cơ hội.',
             image: '/assets/images/services/fb-ads.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'Meta Ads' },
                 { icon: <Code className="w-4 h-4" />, name: 'Pixel Tracking' },
                 { icon: <Code className="w-4 h-4" />, name: 'Custom Audience' },
-                { icon: <Code className="w-4 h-4" />, name: 'Retargeting' }
+                { icon: <Code className="w-4 h-4" />, name: 'Retargeting' },
             ],
-            completedDate: '3 - 7 ngày',
-            note: 'Xây dựng tệp khách hàng, triển khai quảng cáo và tối ưu hiệu quả chuyển đổi',
-            link:'/services/facebook-ads'
+            link: '/services/facebook-ads'
         },
         {
             id: 3,
-            name: 'Website & Landing Page',
+            key: 'websiteLanding',
             icon: <Globe className="w-4 h-4" />,
-            title: 'Website & Landing Page',
-            description: 'Website & Landing Page không chỉ là nơi khách hàng "ghé chơi", mà là đích đến giúp họ ở lại – chuyển đổi – và quay lại. Nextgency thiết kế nền tảng số hiện đại với giải pháp trọn gói.',
             image: '/assets/images/services/web-ladi.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'React' },
                 { icon: <Code className="w-4 h-4" />, name: 'Next.js' },
                 { icon: <Code className="w-4 h-4" />, name: 'Wordpress' },
-                { icon: <Code className="w-4 h-4" />, name: 'SEO Onpage' }
+                { icon: <Code className="w-4 h-4" />, name: 'SEO Onpage' },
             ],
-            completedDate: '7 - 21 ngày',
-            note: 'Thiết kế giao diện hiện đại, tối ưu tốc độ tải trang và tăng tỷ lệ chuyển đổi',
-            link:'/services/website-landing-page'
+            link: '/services/website-landing-page'
         },
         {
             id: 4,
-            name: 'TikTok Ads',
+            key: 'tiktokAds',
             icon: <Music className="w-4 h-4" />,
-            title: 'TikTok Ads',
-            description: 'Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên nền tảng Tiktok để mang về doanh thu và độ nhận diện phủ khắp.',
             image: '/assets/images/services/tiktok-ads.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'TikTok Ads' },
                 { icon: <Code className="w-4 h-4" />, name: 'TikTok Pixel' },
                 { icon: <Code className="w-4 h-4" />, name: 'Spark Ads' },
-                { icon: <Code className="w-4 h-4" />, name: 'Creative Testing' }
+                { icon: <Code className="w-4 h-4" />, name: 'Creative Testing' },
             ],
-            completedDate: '3 - 7 ngày',
-            note: 'Triển khai quảng cáo TikTok, kiểm thử nội dung và tối ưu chi phí chuyển đổi',
-            link:'/services/tiktok-ads'
+            link: '/services/tiktok-ads'
         },
         {
             id: 5,
-            name: 'Facebook Dataset & CRM',
+            key: 'facebookCrm',
             icon: <Users className="w-4 h-4" />,
-            title: 'Facebook Dataset & CRM',
-            description: 'Trong thời đại dữ liệu là "mỏ kim cương", Nextgency giúp doanh nghiệp biến từng hành vi, từng tương tác thành đòn bẩy quảng cáo hiệu quả qua dịch vụ Facebook Dataset & CRM.',
             image: '/assets/images/services/dataset.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'Meta Dataset' },
                 { icon: <Code className="w-4 h-4" />, name: 'CRM Sync' },
                 { icon: <Code className="w-4 h-4" />, name: 'Lead Tracking' },
-                { icon: <Code className="w-4 h-4" />, name: 'CAPI' }
+                { icon: <Code className="w-4 h-4" />, name: 'CAPI' },
             ],
-            completedDate: '7 - 14 ngày',
-            note: 'Kết nối dữ liệu khách hàng, đồng bộ CRM và tối ưu khả năng đo lường quảng cáo',
-            link:'/services/facebook-crm'
+            link: '/services/facebook-crm'
         },
         {
             id: 6,
-            name: 'Thuê Phòng Marketing',
-            icon: <BarChart3 className="w-4 h-4"/>,
-            title: 'Phòng Marketing Thuê Ngoài',
-            description: 'Đem chất xám từ đội ngũ của chúng tôi để rót vào những dự án đầy tiềm năng của các doanh nghiệp chính là phương châm cống hiến của Nextgency khi cung cấp dịch vụ Phòng Marketing thuê ngoài.',
+            key: 'marketingOutsource',
+            icon: <BarChart3 className="w-4 h-4" />,
             image: '/assets/images/services/mkt.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'Marketing Plan' },
                 { icon: <Code className="w-4 h-4" />, name: 'Content Strategy' },
                 { icon: <Code className="w-4 h-4" />, name: 'Media Planning' },
-                { icon: <Code className="w-4 h-4" />, name: 'Performance Report' }
+                { icon: <Code className="w-4 h-4" />, name: 'Performance Report' },
             ],
-            completedDate: 'Theo tháng',
-            note: 'Đồng hành như một đội ngũ marketing nội bộ, từ chiến lược đến triển khai thực tế',
-            link:'/services/marketing-outsource'
+            link: '/services/marketing-outsource'
         },
         {
             id: 7,
-            name: 'Tick Xanh Facebook',
+            key: 'tickXanh',
             icon: <CheckCircle className="w-4 h-4" />,
-            title: 'Tick Xanh Facebook',
-            description: 'Nextgency cung cấp dịch vụ đăng ký tích xanh Facebook trọn gói từ A–Z, giúp khách hàng rút ngắn thời gian xét duyệt, chuẩn hóa hồ sơ và tăng tỷ lệ được phê duyệt thực tế.',
             image: '/assets/images/services/tich-xanh.webp',
             technologies: [
                 { icon: <Code className="w-4 h-4" />, name: 'Profile Audit' },
                 { icon: <Code className="w-4 h-4" />, name: 'Media Profile' },
                 { icon: <Code className="w-4 h-4" />, name: 'Document Review' },
-                { icon: <Code className="w-4 h-4" />, name: 'Meta Verification' }
+                { icon: <Code className="w-4 h-4" />, name: 'Meta Verification' },
             ],
-            completedDate: '7 - 30 ngày',
-            note: 'Tư vấn hồ sơ, chuẩn hóa thông tin và hỗ trợ quy trình xác minh Facebook',
-            link:'/services/tick-xanh-facebook'
+            link: '/services/tick-xanh-facebook'
         }
-    ];
+    ].map((service) => ({
+        ...service,
+        name: t(`home.services.items.${service.key}.name`),
+        title: t(`home.services.items.${service.key}.title`),
+        description: t(`home.services.items.${service.key}.description`),
+        completedDate: t(`home.services.items.${service.key}.duration`),
+        note: t(`home.services.items.${service.key}.note`)
+    }));
 
     // Animation khi mount component
     useEffect(() => {
@@ -330,7 +308,7 @@ const ServicesSection = () => {
                         </span>
                     </div>
                     <h2 ref={titleRef} className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold text-white mb-1 uppercase">
-                        Dịch vụ từ Nextgency
+                        {t('home.services.title')}
                     </h2>
                 </div>
 
@@ -378,7 +356,7 @@ const ServicesSection = () => {
                                             {/* Column 1: Description & Image */}
                                             <div className="space-y-12 p-4">
                                                 <div className="animate-content">
-                                                    <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Mô tả</h4>
+                                                    <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">{t('home.services.descriptionLabel')}</h4>
                                                     <p className="text-white text-[14px] sm:text-[16px] text-justify">
                                                         {service.description}
                                                     </p>
@@ -399,7 +377,7 @@ const ServicesSection = () => {
                                                 <div className="space-y-12 p-4">
                                                     {/* Technologies */}
                                                     <div className="animate-content">
-                                                        <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Công nghệ sử dụng</h4>
+                                                        <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">{t('home.services.technologiesLabel')}</h4>
                                                         <div className="flex flex-wrap gap-3">
                                                             {service.technologies.map((tech, idx) => (
                                                                 <div
@@ -415,7 +393,7 @@ const ServicesSection = () => {
 
                                                     {/* Completed Date */}
                                                     <div className="animate-content">
-                                                        <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Ngày hoàn thành</h4>
+                                                        <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">{t('home.services.durationLabel')}</h4>
                                                         <p className="text-[14px] lg:text-[16px] text-white inline-block">
                                                             {service.completedDate}
                                                         </p>
@@ -423,7 +401,7 @@ const ServicesSection = () => {
 
                                                     {/* Note */}
                                                     <div className="animate-content">
-                                                        <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">Lưu ý</h4>
+                                                        <h4 className="text-[11px] sm:text-[13px] font-medium text-[#c08dfe] mb-4 uppercase tracking-widest">{t('home.services.noteLabel')}</h4>
                                                         <p className="text-[14px] lg:text-[16px] text-white">
                                                             {service.note}
                                                         </p>
@@ -438,7 +416,7 @@ const ServicesSection = () => {
                                                             className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] text-[15px] sm:text-[16px] text-white rounded-full transition-all duration-300 hover:scale-105 group animate-gradient-shift"
                                                         >
                                                             <span className="">
-                                                                Xem thêm
+                                                                {t('home.services.cta')}
                                                             </span>
                                                             <div className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                                                 <ArrowUpRight

@@ -1,8 +1,10 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {ArrowRight, ArrowUpRight, Play} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const Hero = () => {
+    const { t, tm } = useI18n();
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -44,29 +46,18 @@ const Hero = () => {
                                 {/* Description */}
                                 <div className="space-y-4">
                                     <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                        Virus tuy nhỏ nhưng một khi đã lây lan thì sẽ tạo nên hiệu ứng khổng lồ, cũng như cách quảng cáo của anh chị viral trên <strong>nền tảng Tiktok</strong> để mang về doanh thu và độ nhận diện phủ khắp. Giải pháp từ dịch vụ Tiktok Ads của Nextgency:
-                                    </p>
+                                        {t('servicePages.tiktokAds.hero.descriptionPrefix')}<strong>{t('servicePages.tiktokAds.hero.brand')}</strong>{t('servicePages.tiktokAds.hero.descriptionSuffix')}</p>
 
                                     {/* Bullet Points */}
                                     <div className="space-y-4">
-                                        <div className="flex items-start space-x-2">
-                                            <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                            <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                                Tối ưu quảng cáo viral ngắn hạn cho ngành hàng tiêu dùng, thời trang, làm đẹp.
-                                            </p>
-                                        </div>
-                                        <div className="flex items-start space-x-2">
-                                            <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                            <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                                Thiết kế nội dung video + tracking pixel chuẩn TikTok.
-                                            </p>
-                                        </div>
-                                        <div className="flex items-start space-x-2">
-                                            <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                            <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                                Retargeting khách đã xem video, đã tương tác.
-                                            </p>
-                                        </div>
+                                        {tm('servicePages.tiktokAds.hero.bullets').map((bullet, index) => (
+                                            <div key={index} className="flex items-start space-x-2">
+                                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                                <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                                    {bullet}
+                                                </p>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +70,7 @@ const Hero = () => {
 
                                 >
         <span className="">
-            Hợp tác ngay
+            {t('shared.cta.partnerNow')}
         </span>
                                     <div
                                         className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

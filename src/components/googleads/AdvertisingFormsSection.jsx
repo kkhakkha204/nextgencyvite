@@ -1,73 +1,18 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Link} from "react-router-dom";
 import {ArrowUpRight} from "lucide-react";
 
 const AdvertisingFormsSection = () => {
-    const advertisingForms = [
-        {
-            id: 1,
-            title: "Quảng cáo tìm kiếm",
-            description: "(Google Search)",
-            image: "/assets/images/googleads/ggsearch.webp",
-            bgColor: "bg-[#c08dfe]"
-        },
-        {
-            id: 2,
-            title: "Quảng cáo hiển thị",
-            description: "(Google Display)",
-            image: "/assets/images/googleads/ggdisplay.webp",
-            bgColor: "bg-black"
-        },
-        {
-            id: 3,
-            title: "Quảng cáo video",
-            description: "(YouTube Ads)",
-            image: "/assets/images/googleads/ggvideo.webp",
-            bgColor: "bg-[#c08dfe]"
-        },
-        {
-            id: 4,
-            title: "Quảng cáo Performance Max",
-            description: "(Google Max)",
-            image: "/assets/images/googleads/ggmax.webp",
-            bgColor: "bg-black"
-        },
-        {
-            id: 5,
-            title: "Quảng cáo địa phương",
-            description: "(Google Local)",
-            image: "/assets/images/googleads/gglocal.webp",
-            bgColor: "bg-[#c08dfe]"
-        },
-        {
-            id: 6,
-            title: "Quảng cáo Shopping",
-            description: "(Google Shopping)",
-            image: "/assets/images/googleads/ggshopping.webp",
-            bgColor: "bg-black"
-        },
-        {
-            id: 7,
-            title: "Quảng cáo Discovery",
-            description: "(Google Discovery)",
-            image: "/assets/images/googleads/ggdiscovery.webp",
-            bgColor: "bg-[#c08dfe]"
-        },
-        {
-            id: 8,
-            title: "Quảng cáo Smart",
-            description: "(Google Smart)",
-            image: "/assets/images/googleads/ggsmart.webp",
-            bgColor: "bg-black"
-        },
-        {
-            id: 9,
-            title: "Quảng cáo App",
-            description: "(Google App)",
-            image: "/assets/images/googleads/ggapp.webp",
-            bgColor: "bg-[#c08dfe]"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Ảnh và màu nền giữ trong code, tên hình thức lấy từ từ điển
+    const advertisingForms = tm('servicePages.googleAds.adFormats.items').map((title, index) => ({
+        id: index + 1,
+        title,
+        description: ['(Google Search)', '(Google Display)', '(YouTube Ads)', '(Google Max)', '(Google Local)', '(Google Shopping)', '(Google Discovery)', '(Google Smart)', '(Google App)'][index],
+        image: ['ggsearch', 'ggdisplay', 'ggvideo', 'ggmax', 'gglocal', 'ggshopping', 'ggdiscovery', 'ggsmart', 'ggapp'].map((name) => `/assets/images/googleads/${name}.webp`)[index],
+        bgColor: index % 2 === 0 ? 'bg-[#c08dfe]' : 'bg-black'
+    }));
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -86,10 +31,10 @@ const AdvertisingFormsSection = () => {
                 {/* Section Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                        9 Hình thức quảng cáo
+                        {t('servicePages.googleAds.adFormats.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
-                        Mỗi gói sẽ được triển khai 9 hình thức quảng cáo của Google theo yêu cầu từ doanh nghiệp
+                        {t('servicePages.googleAds.adFormats.subtitle')}
                     </p>
                 </div>
 
@@ -136,7 +81,7 @@ const AdvertisingFormsSection = () => {
                 </div>
                 <div className="text-center mt-8">
                     <p className="text-black mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
-                        Liên hệ ngay để nhận tư vấn và báo giá.
+                        {t('shared.cta.contactForQuote')}
                     </p>
                     {/* CTA Button */}
                     <div className="flex items-center justify-center space-x-4">
@@ -146,7 +91,7 @@ const AdvertisingFormsSection = () => {
 
                         >
         <span className="">
-            Tư vấn ngay
+            {t('shared.cta.consultNow')}
         </span>
                             <div
                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

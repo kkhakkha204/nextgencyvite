@@ -1,15 +1,9 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
+import { useI18n } from '../../i18n';
 import {Link} from "react-router-dom";
 import {ArrowUpRight, Check, Copy, Link2, RotateCcw, Send, Sparkles, TrendingUp} from "lucide-react";
 
 /* Bảng màu preview - bám tông tím/xanh của trang (#c08dfe · #8866ee · #5534bb · #1a4498) */
-const STEPS = [
-    { title: 'Phân tích', desc: 'AI mổ xẻ social & shop sàn TMĐT' },
-    { title: 'Lên kế hoạch', desc: 'Cụm từ khóa thành kế hoạch nội dung' },
-    { title: 'Viết & tối ưu', desc: 'AI viết, chấm điểm SEO - AEO - GEO' },
-    { title: 'Đi link', desc: 'Nối bài liên quan: internal + backlink' },
-    { title: 'Đăng & báo cáo', desc: 'Xuất bản đa kênh, tạo link chia sẻ' }
-];
 
 const CHANNELS = [
     { name: 'TikTok', value: '21.7k', width: '92%', color: '#c08dfe' },
@@ -24,11 +18,12 @@ const SCORES = [
     { label: 'GEO', value: 96, color: '#4f7fe0' }
 ];
 
-const LINK_NODES = [
-    { label: 'Bài chi tiết', x: 16, y: 18, color: '#c08dfe' },
-    { label: 'So sánh', x: 84, y: 22, color: '#a07af6' },
-    { label: 'Case study', x: 18, y: 82, color: '#7a6bf0' },
-    { label: 'FAQ', x: 82, y: 79, color: '#4f7fe0' }
+// Toạ độ giữ trong code, nhãn lấy từ từ điển
+const LINK_NODE_POSITIONS = [
+    {x: 16, y: 18, color: '#c08dfe'},
+    {x: 84, y: 22, color: '#a07af6'},
+    {x: 18, y: 82, color: '#7a6bf0'},
+    {x: 82, y: 79, color: '#4f7fe0'}
 ];
 
 const PUBLISH_TARGETS = [
@@ -124,9 +119,9 @@ const AnalyticsFrame = () => (
 );
 
 /* 2 · Từ khóa → kế hoạch nội dung */
-const PlanFrame = () => (
+const PlanFrame = ({t}) => (
     <div className="hero-frame flex h-full flex-col">
-        <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500 mb-3">Cụm từ khóa</p>
+        <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500 mb-3">{t('servicePages.toolContentAi.hero.preview.keywords')}</p>
         <div className="flex flex-wrap gap-2 mb-4">
             {['seo cho ai', 'geo optimization', 'ai overviews', 'answer engine'].map((keyword, index) => (
                 <span
@@ -140,11 +135,11 @@ const PlanFrame = () => (
         </div>
         <div className="mb-4 flex items-center gap-2">
             <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#c08dfe]/45 to-transparent" />
-            <span className="text-[10px] font-bold uppercase tracking-[.14em] text-[#c9b0ff]">AI gom cụm</span>
+            <span className="text-[10px] font-bold uppercase tracking-[.14em] text-[#c9b0ff]">{t('servicePages.toolContentAi.hero.preview.aiCluster')}</span>
             <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#c08dfe]/45 to-transparent" />
         </div>
         <div className="flex-1 space-y-2.5">
-            {['Trụ: SEO vs AEO vs GEO', 'Cách được ChatGPT trích dẫn', 'Checklist tối ưu GEO 2026'].map((topic, index) => (
+            {t('servicePages.toolContentAi.hero.preview.topics').map((topic, index) => (
                 <div
                     key={topic}
                     className="hero-pop flex items-center gap-3 rounded-lg border border-white/10 bg-white/[.05] px-3 py-2.5"
@@ -161,12 +156,12 @@ const PlanFrame = () => (
 );
 
 /* 3 · Viết & chấm điểm */
-const ScoreFrame = () => (
+const ScoreFrame = ({t}) => (
     <div className="hero-frame flex h-full flex-col">
         <div className="mb-3 flex items-center gap-2">
-            <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500">Bản nháp AI</p>
+            <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500">{t('servicePages.toolContentAi.hero.preview.draft')}</p>
             <span className="hero-pop ml-auto inline-flex items-center gap-1 rounded-full border border-[#c08dfe]/25 bg-[#c08dfe]/12 px-2.5 py-1 text-[10px] font-bold text-[#d9c2ff]" style={{'--delay': '.75s'}}>
-                <Sparkles className="h-3 w-3" />Viết xong
+                <Sparkles className="h-3 w-3" />{t('servicePages.toolContentAi.hero.preview.written')}
             </span>
         </div>
 
@@ -214,7 +209,7 @@ const ScoreFrame = () => (
         </div>
 
         <div className="mt-3 flex flex-wrap gap-1.5">
-            {['Schema FAQ', 'Trích dẫn nguồn', 'Entity rõ ràng'].map((tag, index) => (
+            {t('servicePages.toolContentAi.hero.preview.tags').map((tag, index) => (
                 <span
                     key={tag}
                     className="hero-pop inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[.04] px-2.5 py-1 text-[10px] font-bold text-gray-300"
@@ -228,18 +223,18 @@ const ScoreFrame = () => (
 );
 
 /* 4 · Liên kết nội bộ & backlink */
-const LinkFrame = () => (
+const LinkFrame = ({t, linkNodes}) => (
     <div className="hero-frame flex h-full flex-col">
         <div className="mb-2 flex items-center gap-2">
-            <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500">Mạng lưới liên kết</p>
+            <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500">{t('servicePages.toolContentAi.hero.preview.linkNetwork')}</p>
             <span className="hero-pop ml-auto inline-flex items-center gap-1 rounded-full border border-[#c08dfe]/25 bg-[#c08dfe]/12 px-2.5 py-1 text-[10px] font-bold text-[#d9c2ff]" style={{'--delay': '.9s'}}>
-                <Link2 className="h-3 w-3" />Tự động
+                <Link2 className="h-3 w-3" />{t('servicePages.toolContentAi.hero.preview.auto')}
             </span>
         </div>
 
         <div className="relative flex-1">
             <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" fill="none">
-                {LINK_NODES.map((node, index) => (
+                {linkNodes.map((node, index) => (
                     <g key={node.label}>
                         <path
                             className="hero-draw"
@@ -279,11 +274,11 @@ const LinkFrame = () => (
             {/* Nút trung tâm */}
             <div className="hero-hub absolute left-1/2 top-1/2 flex h-[68px] w-[68px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border-2 border-[#c08dfe] bg-gradient-to-br from-[#8866ee] to-[#5534bb] text-white">
                 <Sparkles className="h-3.5 w-3.5" />
-                <span className="mt-0.5 text-[9px] font-black uppercase tracking-wide">Bài trụ</span>
+                <span className="mt-0.5 text-[9px] font-black uppercase tracking-wide">{t('servicePages.toolContentAi.hero.preview.pillar')}</span>
             </div>
 
             {/* Bài vệ tinh */}
-            {LINK_NODES.map((node, index) => (
+            {linkNodes.map((node, index) => (
                 <span
                     key={node.label}
                     className="hero-pop-center absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap rounded-full border bg-[#100f27] px-2.5 py-1.5 text-[10px] font-bold text-white shadow-[0_6px_18px_-6px_rgba(0,0,0,.9)]"
@@ -314,12 +309,12 @@ const LinkFrame = () => (
 );
 
 /* 5 · Xuất bản & báo cáo */
-const PublishFrame = () => (
+const PublishFrame = ({t}) => (
     <div className="hero-frame flex h-full flex-col">
         <div className="mb-3 flex items-center gap-2">
-            <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500">Xuất bản đa kênh</p>
+            <p className="text-[10px] font-archivo font-bold uppercase tracking-[.14em] text-gray-500">{t('servicePages.toolContentAi.hero.preview.publish')}</p>
             <span className="hero-pop ml-auto inline-flex items-center gap-1 rounded-full border border-[#c08dfe]/25 bg-[#c08dfe]/12 px-2.5 py-1 text-[10px] font-bold text-[#d9c2ff]" style={{'--delay': '.8s'}}>
-                <Send className="h-3 w-3" />3/3 kênh
+                <Send className="h-3 w-3" />{t('servicePages.toolContentAi.hero.preview.channels')}
             </span>
         </div>
 
@@ -353,14 +348,14 @@ const PublishFrame = () => (
                         className="hero-pop inline-flex shrink-0 items-center gap-1 rounded-full border border-[#c08dfe]/30 bg-[#c08dfe]/14 px-2 py-1 text-[10px] font-bold text-[#e2d3ff]"
                         style={{'--delay': `${0.6 + index * 0.12}s`}}
                     >
-                        <Check className="h-2.5 w-2.5" />Đã đăng
+                        <Check className="h-2.5 w-2.5" />{t('servicePages.toolContentAi.hero.preview.posted')}
                     </span>
                 </div>
             ))}
         </div>
 
         <div className="hero-pop mt-2 flex items-center gap-3 rounded-xl border border-white/10 bg-white/[.05] p-3" style={{'--delay': '.9s'}}>
-            <span className="text-[11px] font-bold text-gray-500">Link chia sẻ</span>
+            <span className="text-[11px] font-bold text-gray-500">{t('servicePages.toolContentAi.hero.preview.shareLink')}</span>
             <span className="truncate text-[11px] font-bold text-[#d9c2ff]">/share/r/8f2c...</span>
             <Copy className="ml-auto h-4 w-4 shrink-0 text-gray-500" />
         </div>
@@ -371,6 +366,12 @@ const PublishFrame = () => (
 const FRAMES = [AnalyticsFrame, PlanFrame, ScoreFrame, LinkFrame, PublishFrame].map((Frame) => React.memo(Frame));
 
 const HeroAutomationPreview = () => {
+    const { t, tm } = useI18n();
+    const steps = tm('servicePages.toolContentAi.hero.steps');
+    const linkNodes = LINK_NODE_POSITIONS.map((position, index) => ({
+        ...position,
+        label: tm('servicePages.toolContentAi.hero.preview.linkNodes')[index]
+    }));
     const [activeStep, setActiveStep] = useState(0);
     const [progress, setProgress] = useState(0);
     const [hovered, setHovered] = useState(false);
@@ -411,13 +412,13 @@ const HeroAutomationPreview = () => {
                 elapsedRef.current = 0;
                 setProgress(0);
                 setRunId((id) => id + 1);
-                setActiveStep((step) => (step + 1) % STEPS.length);
+                setActiveStep((step) => (step + 1) % steps.length);
             } else {
                 setProgress(elapsedRef.current / STEP_DURATION);
             }
         }, TICK);
         return () => clearInterval(timer);
-    }, [paused, activeStep, runId]);
+    }, [paused, activeStep, runId, steps.length]);
 
     const ActiveFrame = FRAMES[activeStep];
 
@@ -516,10 +517,10 @@ const HeroAutomationPreview = () => {
                         <div className="flex min-w-0 items-center gap-2.5">
                             <span className={`h-2 w-2 shrink-0 rounded-full ${paused ? 'bg-[#4f7fe0]' : 'hero-live-dot bg-[#c08dfe]'}`} />
                             <span className="text-[10px] sm:text-[11px] font-archivo font-bold uppercase tracking-[.14em] text-[#c9b0ff]">
-                                {paused ? 'Tạm dừng' : 'Đang chạy'}
+                                {paused ? t('servicePages.toolContentAi.hero.preview.paused') : t('servicePages.toolContentAi.hero.preview.running')}
                             </span>
                             <span className="hidden h-3 w-px bg-white/15 sm:block" />
-                            <span className="truncate text-[12px] sm:text-[13px] font-semibold text-white">{STEPS[activeStep].title}</span>
+                            <span className="truncate text-[12px] sm:text-[13px] font-semibold text-white">{steps[activeStep]?.title}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <span className="hidden items-center gap-1.5 rounded-full border border-[#c08dfe]/30 bg-[#c08dfe]/10 px-2.5 py-1 text-[10px] font-bold text-[#d9c2ff] sm:inline-flex">
@@ -528,8 +529,8 @@ const HeroAutomationPreview = () => {
                             <button
                                 type="button"
                                 onClick={restart}
-                                aria-label="Chạy lại từ bước đầu"
-                                title="Chạy lại"
+                                aria-label={t('servicePages.toolContentAi.hero.preview.restartAria')}
+                                title={t('servicePages.toolContentAi.hero.preview.restartTitle')}
                                 className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition-colors duration-200 hover:border-[#c08dfe]/50 hover:bg-[#c08dfe]/15 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c08dfe]/70"
                             >
                                 <RotateCcw key={runId} className="hero-spin h-3.5 w-3.5" />
@@ -540,7 +541,7 @@ const HeroAutomationPreview = () => {
                     <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-[.92fr_1.08fr]">
                         {/* Cột trái: bấm để xem từng bước */}
                         <div className="space-y-1.5">
-                            {STEPS.map((step, index) => {
+                            {steps.map((step, index) => {
                                 const isActive = index === activeStep;
                                 const isDone = index < activeStep;
                                 return (
@@ -591,7 +592,7 @@ const HeroAutomationPreview = () => {
                         {/* Cột phải: màn hình thao tác */}
                         <div className="relative min-h-[318px] overflow-hidden rounded-2xl border border-white/10 bg-[#080a18]/95">
                             <div key={`${activeStep}-${runId}`} className="absolute inset-0 p-4">
-                                <ActiveFrame />
+                                <ActiveFrame t={t} linkNodes={linkNodes} />
                             </div>
                         </div>
                     </div>
@@ -602,6 +603,7 @@ const HeroAutomationPreview = () => {
 };
 
 const Hero = () => {
+    const { t } = useI18n();
     const scrollToContact = (e) => {
         e.preventDefault();
         const contactSection = document.getElementById('features');
@@ -630,7 +632,7 @@ const Hero = () => {
                                     <span className="relative inline-flex h-2 w-2 rounded-full bg-[#c08dfe]" />
                                 </span>
                                 <span className="text-[12px] lg:text-[13px] font-archivo font-bold text-white whitespace-nowrap">
-                                    Nền tảng nội dung AI · SEO · AEO · GEO
+                                    {t('servicePages.toolContentAi.hero.badge')}
                                 </span>
                             </span>
                         </div>
@@ -638,11 +640,11 @@ const Hero = () => {
                         {/* Title Section */}
                         <div className="">
                             <h1 className="text-[32px] md:text-[40px] lg:text-[50px] font-archivo font-bold bg-black  bg-clip-text text-transparent leading-[1.2] tracking-tight">
-                                Một nền tảng AI: phân tích, lên kế hoạch và viết nội dung được
+                                {t('servicePages.toolContentAi.hero.titleLine1')}
                             </h1>
                             <div className="flex items-center gap-4">
                                 <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold bg-gradient-to-r from-black to-[#c08dfe] bg-clip-text text-transparent leading-[1.4] tracking-tight">
-                                    AI trích dẫn
+                                    {t('servicePages.toolContentAi.hero.titleLine2')}
                                 </h1>
                                 {/* SVG Circles */}
                                 <div className="flex-shrink-0">
@@ -700,7 +702,7 @@ const Hero = () => {
                             {/* Bullet Points */}
                             <div className="space-y-4">
                                 <p className="text-[14px] lg:text-[16px] text-gray-700">
-                                    Báo cáo Social & sàn TMĐT, phân tích kịch bản video, viết bài tối ưu cho AI trích dẫn, tự động đi internal link và backlink — tất cả trong một chỗ.
+                                    {t('servicePages.toolContentAi.hero.description')}
                                 </p>
                             </div>
                         </div>
@@ -715,7 +717,7 @@ const Hero = () => {
                                 }}
                             >
                                 <span className="">
-                                    Đăng ký dùng thử
+                                    {t('servicePages.toolContentAi.hero.ctaTrial')}
                                 </span>
                                 <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                     <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>
@@ -727,7 +729,7 @@ const Hero = () => {
 
                             >
                                 <span className="">
-                                    Xem tính năng
+                                    {t('servicePages.toolContentAi.hero.ctaFeatures')}
                                 </span>
                                 <div
                                     className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
@@ -740,7 +742,7 @@ const Hero = () => {
                         </div>
                         <div className="space-y-4">
                             <p className="text-[14px] lg:text-[16px] text-gray-700">
-                                Dùng khóa API AI của chính bạn - chủ động chi phí, không phụ thuộc.
+                                {t('servicePages.toolContentAi.hero.note')}
                             </p>
                         </div>
                     </div>

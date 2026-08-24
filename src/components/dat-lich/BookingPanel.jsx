@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useI18n } from '../../i18n';
 import {useSearchParams} from 'react-router-dom';
 import {ArrowLeft, Check, TriangleAlert} from 'lucide-react';
 import WeekCalendar from './WeekCalendar.jsx';
@@ -21,6 +22,7 @@ const inputClass =
     'w-full rounded-[10px] border bg-[#f9fafd] px-3.5 py-3 text-[14px] text-[#0b0e18] outline-none transition-all duration-200 placeholder:text-[#9aa5b8] focus:border-[#2e7bdf] focus:ring-[3px] focus:ring-[#2e7bdf]/20';
 
 const BookingPanel = () => {
+    const { t } = useI18n();
     const [searchParams] = useSearchParams();
     const ctx = searchParams.get('ctx') || '';
     const contextService = resolveContextService(ctx);
@@ -61,7 +63,7 @@ const BookingPanel = () => {
             const response = await submitGrowthCall({form, dateLabel: selectedLabel, slot, ctx});
             setSendFailed(!response.ok);
         } catch (error) {
-            console.error('Không gửi được thông tin đặt lịch:', error);
+            console.error(t('booking.panel.errorPrefix'), error);
             setSendFailed(true);
         } finally {
             setIsSubmitting(false);
@@ -71,8 +73,8 @@ const BookingPanel = () => {
     };
 
     const errorMessage = !selectedKey || !slot
-        ? 'Anh/chị chọn ngày và khung giờ trước nhé.'
-        : 'Anh/chị để lại số điện thoại để Sơn gọi xác nhận nhé.';
+        ? t('booking.panel.errorSlot')
+        : t('booking.panel.errorPhone');
 
     const pickedLabel = `${selectedLabel}${slot ? ` · ${slot}` : ''}`;
 
@@ -81,20 +83,20 @@ const BookingPanel = () => {
             {view === 'form' ? (
                 <div>
                     <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7a8499]">
-                        Phiên 1-1 · 30 phút
+                        {t('booking.panel.session')}
                     </div>
                     <h2 className="mt-2.5 font-archivo text-[22px] font-extrabold leading-[1.25] tracking-[-0.015em] text-[#0b0e18]">
-                        Đặt buổi Growth Call với {CONSULTANT.name}
+                        {t('booking.panel.heading', {name: CONSULTANT.name})}
                     </h2>
 
                     {ctx && (
                         <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#e1f1fc] px-3.5 py-1.5 text-[12px] font-semibold text-[#2563c7]">
                             <span className="h-1.5 w-1.5 rounded-full bg-current" />
-                            Dịch vụ quan tâm: {contextService}
+                            {t('booking.panel.interestedService', {service: contextService})}
                         </div>
                     )}
 
-                    <StepLabel index={1}>Chọn ngày anh/chị rảnh</StepLabel>
+                    <StepLabel index={1}>{t('booking.panel.pickDate')}</StepLabel>
                     <WeekCalendar
                         weekOffset={weekOffset}
                         onPrevWeek={() => setWeekOffset((offset) => Math.max(0, offset - 1))}
@@ -103,23 +105,23 @@ const BookingPanel = () => {
                         onSelectDate={handleSelectDate}
                     />
 
-                    <StepLabel index={2}>Chọn khung giờ 30 phút</StepLabel>
+                    <StepLabel index={2}>{t('booking.panel.pickSlot')}</StepLabel>
                     <TimeSlotPicker hasDate={!!selectedKey} selectedSlot={slot} onSelectSlot={setSlot} />
 
-                    <StepLabel index={3}>Thông tin để Sơn gọi đúng người</StepLabel>
+                    <StepLabel index={3}>{t('booking.panel.contactTitle')}</StepLabel>
                     <div className="mt-3.5 flex flex-col gap-2.5">
                         <input
                             type="text"
                             value={form.name}
                             onChange={updateField('name')}
-                            placeholder="Họ tên"
+                            placeholder={t('booking.panel.name')}
                             className={`${inputClass} border-[#dde4ef]`}
                         />
                         <input
                             type="tel"
                             value={form.phone}
                             onChange={updateField('phone')}
-                            placeholder="Số điện thoại *"
+                            placeholder={t('booking.panel.phone')}
                             className={`${inputClass} ${
                                 showError && !form.phone.trim() ? 'border-[#d64545]' : 'border-[#dde4ef]'
                             }`}
@@ -128,13 +130,13 @@ const BookingPanel = () => {
                             type="text"
                             value={form.web}
                             onChange={updateField('web')}
-                            placeholder="Website (nếu có)"
+                            placeholder={t('booking.panel.website')}
                             className={`${inputClass} border-[#dde4ef]`}
                         />
                         <textarea
                             value={form.note}
                             onChange={updateField('note')}
-                            placeholder="Anh/chị đang muốn đẩy tăng trưởng ở đâu?"
+                            placeholder={t('booking.panel.goal')}
                             rows={3}
                             className={`${inputClass} resize-y border-[#dde4ef]`}
                         />
@@ -151,43 +153,40 @@ const BookingPanel = () => {
                         {isSubmitting ? (
                             <>
                                 <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
-                                Đang gửi thông tin...
+                                {t('booking.panel.submitting')}
                             </>
                         ) : (
-                            `Giữ chỗ buổi Growth Call — cọc ${DEPOSIT_FULL}`
+                            t('booking.panel.submitLabel', {deposit: DEPOSIT_FULL})
                         )}
                     </button>
                     <p className="mt-3 text-center text-[12.5px] text-[#7a8499]">
-                        Hoàn 100% bất kỳ lúc nào, không cần lý do — kể cả trong cuộc gọi.
+                        {t('booking.panel.refundNote')}
                     </p>
                 </div>
             ) : (
                 <div>
                     <div className="inline-flex items-center gap-2 rounded-full bg-[#e7f5ec] px-3.5 py-[7px] text-[12px] font-semibold text-[#2f7d4f]">
                         <Check className="h-3.5 w-3.5" />
-                        Đã ghi nhận khung giờ: {pickedLabel}
+                        {t('booking.panel.slotRecorded', {slot: pickedLabel})}
                     </div>
 
                     {sendFailed && (
                         <div className="mt-3 flex items-start gap-2.5 rounded-xl border border-[#f0d9a8] bg-[#fdf6e6] px-4 py-3 text-[13px] leading-[1.6] text-[#8a6a1e]">
                             <TriangleAlert className="mt-0.5 h-4 w-4 flex-none" />
                             <span>
-                                Hệ thống chưa gửi được thông tin của anh/chị. Khung giờ vẫn giữ nguyên — anh/chị cứ chuyển
-                                cọc theo nội dung bên dưới, hoặc gọi thẳng{' '}
+                                {t('booking.panel.sendFailedPrefix')}
                                 <a href={`tel:${HOTLINE.tel}`} className="font-bold text-[#8a6a1e] underline">
                                     {HOTLINE.display}
                                 </a>{' '}
-                                để Sơn xác nhận ngay.
+                                {t('booking.panel.sendFailedSuffix')}
                             </span>
                         </div>
                     )}
                     <h2 className="mt-4 font-archivo text-[22px] font-extrabold leading-[1.25] tracking-[-0.015em] text-[#0b0e18]">
-                        Buổi Growth Call 30 phút
+                        {t('booking.panel.callTitle')}
                     </h2>
                     <p className="mt-3 text-[14px] leading-[1.65] text-[#515d75]">
-                        Còn một bước để <strong className="font-bold text-[#0b0e18]">khoá đúng khung giờ này</strong>: cọc
-                        giữ chỗ {DEPOSIT_FULL}. Chuyển đúng nội dung bên dưới — hệ thống báo thẳng Sơn, và Sơn sẽ gọi xác
-                        nhận lịch trong hôm nay.
+                        {t('booking.panel.oneStepPrefix')} <strong className="font-bold text-[#0b0e18]">{t('booking.panel.oneStepHighlight')}</strong>{t('booking.panel.depositInstruction', {deposit: DEPOSIT_FULL})}
                     </p>
 
                     <div className="mt-5">
@@ -195,9 +194,7 @@ const BookingPanel = () => {
                     </div>
 
                     <p className="mt-[18px] rounded-xl bg-[#f2f6fd] px-4 py-3.5 text-[13px] leading-[1.65] text-[#515d75]">
-                        <strong className="font-bold text-[#0b0e18]">Hoàn bất kỳ lúc nào, không cần lý do.</strong> Trước
-                        buổi gọi, giữa buổi gọi, hay kể cả sau khi gọi xong mà anh/chị thấy chưa xứng đáng — nhắn một câu,
-                        Nextgency hoàn đủ {DEPOSIT_FULL}. Ký hợp đồng thì khoản này trừ thẳng vào hợp đồng.
+                        <strong className="font-bold text-[#0b0e18]">{t('booking.panel.refundShort')}</strong>{t('booking.panel.refundDetail', {deposit: DEPOSIT_FULL})}
                     </p>
 
                     <button
@@ -209,7 +206,7 @@ const BookingPanel = () => {
                         className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#2563c7] transition-colors duration-200 hover:text-[#1b4f9c]"
                     >
                         <ArrowLeft className="h-[15px] w-[15px] " />
-                        Quay lại đặt lịch
+                        {t('booking.panel.back')}
                     </button>
                 </div>
             )}
@@ -219,7 +216,7 @@ const BookingPanel = () => {
                     href={`tel:${HOTLINE.tel}`}
                     className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#7a8499] no-underline hover:no-underline"
                 >
-                    Hoặc gọi thẳng <span className="text-[#2563c7]">{HOTLINE.display}</span>
+                    {t('booking.panel.orCall')} <span className="text-[#2563c7]">{HOTLINE.display}</span>
                 </a>
             </div>
         </div>

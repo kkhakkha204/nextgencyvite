@@ -1,46 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useI18n } from '../../i18n';
 import { Bell, Database, Globe2, Megaphone, QrCode, Trophy } from 'lucide-react';
 
-const platformItems = [
-    {
-        kicker: 'Từ 2024',
-        title: 'Quảng cáo hai luồng B2B / B2C',
-        text: 'Bán gian hàng cho thương hiệu và bán vé cho khách tham dự — hai chiến dịch độc lập.',
-        icon: Megaphone,
-    },
-    {
-        kicker: 'Từ 2024',
-        title: 'Luồng vé — check-in tự động toàn trình',
-        text: 'Đăng ký → thanh toán → vé điện tử → check-in QR, không khâu thủ công..',
-        icon: QrCode,
-    },
-    {
-        kicker: 'Từ 2024',
-        title: 'Notify đa kênh',
-        text: 'Zalo ZNS, Email, Messenger — tự động phân loại theo trạng thái khách hàng.',
-        icon: Bell,
-    },
-    {
-        kicker: 'Từ 2024',
-        title: 'Dataset khách hàng',
-        text: 'Cấu trúc lại sau mỗi đợt chạy — Custom & Lookalike Audience, tối ưu chi phí chuyển đổi.',
-        icon: Database,
-    },
-    {
-        kicker: 'Từ 2025',
-        title: 'Website beautysummit.vn',
-        text: 'Thông tin sự kiện, danh sách thương hiệu, luồng đăng ký mua vé.',
-        icon: Globe2,
-    },
-    {
-        kicker: 'Từ 2025',
-        title: 'Hệ thống Beauty Award',
-        text: 'Bình chọn tự động từ đề cử đến kết quả — tiền thân của Brand Voting trong app.',
-        icon: Trophy,
-    },
+// Icon giữ trong code; chữ lấy từ từ điển
+const buildPlatformItems = (t, tm) => [
+    ...tm('beautyverse.platform.items2024').map((item, index) => ({
+        kicker: t('beautyverse.platform.since2024'),
+        title: item.title,
+        text: item.description,
+        icon: [Megaphone, QrCode, Bell, Database][index]
+    })),
+    ...tm('beautyverse.platform.items2025').map((item, index) => ({
+        kicker: t('beautyverse.platform.since2025'),
+        title: item.title,
+        text: item.description,
+        icon: [Globe2, Trophy][index]
+    }))
 ];
 
 const PlatformSection = () => {
+    const { t, tm } = useI18n();
+    const platformItems = buildPlatformItems(t, tm);
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -79,14 +59,14 @@ const PlatformSection = () => {
             <div className="relative mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
                 <div className={`max-w-[860px] transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <p className="text-[13px] font-black uppercase tracking-[0.36em] text-[#214eab]">
-                        Nền tảng phía sau
+                        {t('beautyverse.platform.badge')}
                     </p>
                     <h2 className="mt-5 font-archivo text-[30px] font-black leading-[0.98] tracking-normal text-[#05050b] sm:text-[46px] lg:text-[54px]">
-                        Mini app đứng trên hạ tầng
-                        <span className="block">đã chạy ổn định 2 năm</span>
+                        {t('beautyverse.platform.titleLine1')}
+                        <span className="block">{t('beautyverse.platform.titleLine2')}</span>
                     </h2>
                     <p className="mt-7 max-w-[760px] text-base font-medium leading-8 text-[#17213f]/82 sm:text-lg">
-                        BEAUTYVERSE không vận hành một mình — toàn bộ hạng mục 2024–2025 được duy trì song song trong kỳ 2026:
+                        {t('beautyverse.platform.description')}
                     </p>
                 </div>
 

@@ -1,6 +1,13 @@
 // src/components/SEO/SEOManager.jsx
 import {useEffect} from 'react';
-import {resolveOgImage, SITE, toAbsoluteUrl} from '../../pages/seo-configs.js';
+import {
+    getSeoAlternates,
+    resolveOgImage,
+    resolveSeoForLocale,
+    SITE,
+    toAbsoluteUrl
+} from '../../pages/seo-configs.js';
+import {LOCALES, localizePath, useI18n} from '../../i18n';
 
 /**
  * Cập nhật thẻ meta khi điều hướng trong SPA.
@@ -8,6 +15,9 @@ import {resolveOgImage, SITE, toAbsoluteUrl} from '../../pages/seo-configs.js';
  * LƯU Ý: crawler của Facebook / Zalo / LinkedIn / X KHÔNG chạy JavaScript, nên các thẻ
  * do component này tạo ra chỉ phục vụ trình duyệt và Googlebot. Thumbnail khi chia sẻ
  * link lấy từ HTML tĩnh đã được prerender bởi src/scripts/generate-static.js.
+ *
+ * Component tự biết ngôn ngữ đang xem, nên trang chỉ cần truyền cấu hình gốc
+ * (`seo={seoConfigs.home}`) là title/description/canonical/hreflang tự khớp /en, /cn.
  */
 const SEOManager = ({
                         // Truyền nguyên object cấu hình từ seo-configs.js
@@ -23,30 +33,43 @@ const SEOManager = ({
                         url,
                         type = 'website',
                         twitterCard = 'summary_large_image',
-                        locale = SITE.locale,
+                        locale,
                         canonicalUrl,
                         noindex = false,
                         structuredData,
                         additionalMetaTags = []
                     }) => {
-    const finalTitle = title || seo?.title || SITE.siteName;
-    const finalDescription = description || seo?.description || '';
-    const finalKeywords = keywords || seo?.keywords || '';
-    const finalType = type || seo?.type || 'website';
-    const finalUrl = toAbsoluteUrl(url || ogUrl || seo?.path || '/');
+    const {locale: activeLocale, localeConfig} = useI18n();
+
+    // Cấu hình gốc + bản dịch của ngôn ngữ đang xem
+    const localizedSeo = resolveSeoForLocale(seo, activeLocale);
+
+    const finalTitle = title || localizedSeo?.title || SITE.siteName;
+    const finalDescription = description || localizedSeo?.description || '';
+    const finalKeywords = keywords || localizedSeo?.keywords || '';
+    const finalType = type || localizedSeo?.type || 'website';
+    // localizePath tự bỏ prefix cũ rồi gắn lại, nên truyền '/en/x' hay '/x' đều ra đúng URL
+    const finalUrl = toAbsoluteUrl(
+        url || (ogUrl ? localizePath(ogUrl, activeLocale) : localizedSeo?.path) || localizePath('/', activeLocale)
+    );
     const finalCanonicalUrl = canonicalUrl ? toAbsoluteUrl(canonicalUrl) : finalUrl;
+    const finalOgLocale = locale || localeConfig.ogLocale;
+    // Trang chưa dịch sang ngôn ngữ này thì để noindex, tránh Google index nội dung
+    // tiếng Việt dưới địa chỉ /en hoặc /cn.
+    const finalNoindex = noindex || (localizedSeo ? !localizedSeo.hasTranslation : false);
 
     // Serialize để mảng/object mặc định không làm effect chạy lại mỗi lần render
     const extraTagsKey = JSON.stringify(additionalMetaTags);
     const structuredDataKey = JSON.stringify(structuredData ?? null);
-    const imageKey = JSON.stringify(resolveOgImage(image || seo?.image));
+    const imageKey = JSON.stringify(resolveOgImage(image || localizedSeo?.image));
+    const alternatesKey = JSON.stringify(getSeoAlternates(localizedSeo || seo));
 
     useEffect(() => {
         // Đọc lại từ chuỗi đã serialize để dependency của effect luôn ổn định
         const ogImage = JSON.parse(imageKey);
 
         document.title = finalTitle;
-        document.documentElement.lang = SITE.lang;
+        document.documentElement.lang = localeConfig.htmlLang;
 
         const setMeta = (key, value, content) => {
             if (content === undefined || content === null || content === '') return;
@@ -64,7 +87,7 @@ const SEOManager = ({
         };
 
         const setLink = (rel, href) => {
-            let element = document.head.querySelector(`link[rel="${rel}"]`);
+            let element = document.head.querySelector(`link[rel="${rel}"]:not([hreflang])`);
             if (!element) {
                 element = document.createElement('link');
                 element.setAttribute('rel', rel);
@@ -77,8 +100,8 @@ const SEOManager = ({
         setMeta('name', 'description', finalDescription);
         setMeta('name', 'keywords', finalKeywords);
         setMeta('name', 'author', author);
-        setMeta('name', 'robots', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');
-        setMeta('name', 'language', 'Vietnamese');
+        setMeta('name', 'robots', finalNoindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large');
+        setMeta('name', 'language', localeConfig.metaLanguage);
         setMeta('name', 'geo.region', 'VN');
         setMeta('name', 'geo.placename', 'Ho Chi Minh City');
         setMeta('name', 'theme-color', SITE.themeColor);
@@ -89,7 +112,19 @@ const SEOManager = ({
         setMeta('property', 'og:description', finalDescription);
         setMeta('property', 'og:url', finalUrl);
         setMeta('property', 'og:site_name', SITE.siteName);
-        setMeta('property', 'og:locale', locale);
+        setMeta('property', 'og:locale', finalOgLocale);
+
+        // og:locale:alternate - liệt kê các ngôn ngữ còn lại của site
+        document.head
+            .querySelectorAll('meta[property="og:locale:alternate"]')
+            .forEach((node) => node.remove());
+        LOCALES.filter((item) => item.ogLocale !== finalOgLocale).forEach((item) => {
+            const element = document.createElement('meta');
+            element.setAttribute('property', 'og:locale:alternate');
+            element.setAttribute('content', item.ogLocale);
+            document.head.appendChild(element);
+        });
+
         setMeta('property', 'og:image', ogImage.url);
         setMeta('property', 'og:image:secure_url', ogImage.url);
         setMeta('property', 'og:image:alt', ogImage.alt);
@@ -110,6 +145,18 @@ const SEOManager = ({
         setMeta('name', 'twitter:creator', SITE.twitterHandle);
 
         setLink('canonical', finalCanonicalUrl);
+
+        // --- hreflang: chỉ trỏ tới những ngôn ngữ đã thực sự có bản dịch ---
+        document.head
+            .querySelectorAll('link[rel="alternate"][hreflang]')
+            .forEach((node) => node.remove());
+        JSON.parse(alternatesKey).forEach((alternate) => {
+            const element = document.createElement('link');
+            element.setAttribute('rel', 'alternate');
+            element.setAttribute('hreflang', alternate.hreflang);
+            element.setAttribute('href', alternate.href);
+            document.head.appendChild(element);
+        });
 
         // --- Thẻ meta bổ sung theo trang ---
         JSON.parse(extraTagsKey).forEach((tag) => {
@@ -141,10 +188,12 @@ const SEOManager = ({
         finalUrl,
         finalCanonicalUrl,
         imageKey,
+        alternatesKey,
         author,
-        locale,
+        finalOgLocale,
+        localeConfig,
         twitterCard,
-        noindex,
+        finalNoindex,
         extraTagsKey,
         structuredDataKey
     ]);

@@ -1,37 +1,14 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {ArrowUpRight, ChevronRight} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const PainPointSection = () => {
-    const painPoints = [
-        {
-            title: "Báo cáo Social đa nền tảng",
-            description: "Quét Facebook, TikTok, YouTube, Instagram — AI mổ xẻ nội dung, tương tác và chiến lược đối thủ.",
-        },
-        {
-            title: "Viết bài chuẩn SEO · GEO",
-            description: "Nội dung tối ưu để Google xếp hạng và được AI trích dẫn: ChatGPT, Gemini, AI Overviews.",
-        },
-        {
-            title: "Tự động internal link & backlink",
-            description: "AI tìm bài liên quan và đi link nội bộ lẫn chéo site — chỉ nối nội dung thật sự liên quan.",
-        }
-    ];
-
-    const solutions = [
-        {
-            title: "Phân tích shop sàn TMĐT",
-            description: "Báo cáo Shopee, TikTok Shop, Lazada: sản phẩm, đánh giá, giá và cơ hội thị trường.",
-        },
-        {
-            title: "Phân tích kịch bản video",
-            description: "Dán link TikTok/YouTube/Facebook — AI bóc tách hook, công thức, timeline theo giây và lý do viral.",
-        },
-        {
-            title: "Phân tích, lên kế hoạch, viết",
-            description: "Từ nghiên cứu từ khóa đến kế hoạch nội dung và bài hoàn chỉnh — tất cả bằng AI, trong một luồng.",
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Sáu năng lực chia làm hai cột; nội dung lấy từ từ điển
+    const features = tm('servicePages.toolContentAi.features.items');
+    const painPoints = features.slice(0, 3);
+    const solutions = features.slice(3);
 
     const OpenNewSite = (e) => {
         e.preventDefault();
@@ -44,10 +21,10 @@ const PainPointSection = () => {
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                        Tất cả những gì bạn cần, trong một nền tảng
+                        {t('servicePages.toolContentAi.features.title')}
                     </h2>
                     <p className="text-black mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
-                        Sáu năng lực cốt lõi giúp bạn thắng cả trên Google lẫn trong câu trả lời của AI.
+                        {t('servicePages.toolContentAi.features.subtitle')}
                     </p>
                 </div>
 
@@ -109,7 +86,7 @@ const PainPointSection = () => {
                 {/* CTA */}
                 <div className="text-center mt-8">
                     <p className="text-black mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
-                        Đăng ký trải nghiệm ngay
+                        {t('servicePages.toolContentAi.features.ctaFooter')}
                     </p>
                     {/* CTA Button */}
                     <div className="flex items-center justify-center space-x-4">
@@ -121,7 +98,7 @@ const PainPointSection = () => {
                             }}
                         >
                             <span className="">
-                                Đăng ký dùng thử 
+                                {t('servicePages.toolContentAi.features.cta')} 
                             </span>
                             <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                 <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.5}/>

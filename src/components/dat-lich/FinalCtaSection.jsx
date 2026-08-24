@@ -1,9 +1,11 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {ArrowUp} from 'lucide-react';
 import DepositTransfer from './DepositTransfer.jsx';
 import {CONSULTANT, DEPOSIT_FULL, HOTLINE} from './bookingData.js';
 
 const FinalCtaSection = () => {
+    const { t } = useI18n();
     const scrollToBooking = (event) => {
         event.preventDefault();
         document.getElementById('dat-lich')?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -18,15 +20,14 @@ const FinalCtaSection = () => {
                 <div className="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-[1.2fr_minmax(300px,0.9fr)] lg:gap-14">
                     <div>
                         <div className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#9ee6f5]">
-                            Bước đầu tiên
+                            {t('booking.finalCta.firstStep')}
                         </div>
                         <h2 className="mt-3.5 font-archivo text-[26px] font-bold leading-[1.08] tracking-[-0.025em] text-white md:text-[34px] lg:text-[42px]">
-                            Đặt buổi Growth Call 30 phút với {CONSULTANT.name}
+                            {t('booking.finalCta.heading', {name: CONSULTANT.name})}
                         </h2>
                         <p className="mt-4.5 text-[14.5px] leading-[1.7] text-white/[.82] lg:text-[16.5px]">
-                            Mọi thứ ở trên chỉ thành giá trị khi được áp vào đúng bài toán của chính anh/chị. Nhớ:{' '}
-                            <strong className="font-semibold text-white">{DEPOSIT_FULL} là cọc, không phải phí</strong> —
-                            hoàn đủ 100% bất kỳ lúc nào, kể cả đang trong cuộc gọi.
+                            {t('booking.finalCta.notePrefix')}
+                            <strong className="font-semibold text-white">{t('booking.finalCta.depositNotFee', {deposit: DEPOSIT_FULL})}</strong>{t('booking.finalCta.refundSuffix')}
                         </p>
                         <div className="mt-7 flex flex-wrap items-center gap-3.5">
                             <a
@@ -34,28 +35,27 @@ const FinalCtaSection = () => {
                                 onClick={scrollToBooking}
                                 className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-[15px] font-semibold text-[#0b0e18] no-underline transition-all duration-200 hover:brightness-95 hover:no-underline"
                             >
-                                Chọn khung giờ đặt lịch
+                                {t('booking.finalCta.pickSlot')}
                                 <ArrowUp className="h-4 w-4" />
                             </a>
                             <a
                                 href={`tel:${HOTLINE.tel}`}
                                 className="text-[13px] font-semibold uppercase tracking-[0.08em] text-white/85 no-underline hover:text-white hover:no-underline"
                             >
-                                Hoặc gọi thẳng {HOTLINE.display}
+                                {t('booking.finalCta.orCall')}{HOTLINE.display}
                             </a>
                         </div>
                     </div>
 
                     <div className="rounded-[20px] border border-white/[.18] bg-white/[.08] p-6 backdrop-blur-md">
                         <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#9ee6f5]">
-                            Cọc giữ chỗ ngay — Sơn gọi trong hôm nay
+                            {t('booking.finalCta.depositNow')}
                         </div>
                         <div className="mt-4">
                             <DepositTransfer variant="dark" qrSize="w-[110px] h-[110px]" />
                         </div>
                         <p className="mt-3.5 text-[12px] leading-[1.6] text-white/70">
-                            Hoàn 100% bất kỳ lúc nào, không cần lý do — kể cả trong cuộc gọi. Khoản cọc trừ thẳng vào giá
-                            trị hợp đồng khi ký.
+                            {t('booking.finalCta.refundNote')}
                         </p>
                     </div>
                 </div>

@@ -1,10 +1,14 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { getProjectCategories, projectsData } from '../../data/projectsData';
+import { Link } from '../../i18n';
+import { getProjectCategories } from '../../data/projectsData';
+import { useProjects } from '../../hooks/useProjects';
 
 const PortfolioShowcase = () => {
-    const projects = projectsData
+    const { t } = useI18n();
+    const localizedProjects = useProjects();
+    const projects = localizedProjects
         .filter((project) => getProjectCategories(project).includes('Website & Landing Page'))
         .slice(0, 9)
         .map((project) => ({
@@ -75,7 +79,7 @@ const PortfolioShowcase = () => {
                         </span>
                     </div>
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black mb-1 uppercase leading-[1.45]">
-                        Dự án của Nextgency
+                        {t('servicePages.websiteLanding.portfolio.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-3xl mx-auto">
                         Showcasing our finest work across various industries and technologies

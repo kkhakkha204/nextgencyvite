@@ -1,28 +1,31 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
+import { useI18n } from '../../i18n';
 import { Link, useParams } from 'react-router-dom';
-import { getProjectById, getProjectCategories } from '../../data/projectsData';
+import { getProjectCategories } from '../../data/projectsData';
+import { useProject } from '../../hooks/useProjects';
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import HomeClientsPartnersSection from "../../components/home/HomeClientsPartnersSection.jsx";
 
 const ProjectDetail = () => {
+    const { t } = useI18n();
     const { slug } = useParams();
-    const project = useMemo(() => getProjectById(slug), [slug]);
+    const project = useProject(slug);
     const [activeSlide, setActiveSlide] = useState(0);
 
     if (!project) {
         return (
             <section className="bg-black text-white">
                 <div className="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-semibold">Không tìm thấy dự án</h1>
+                    <h1 className="text-3xl font-semibold">{t('projects.detail.notFoundTitle')}</h1>
                     <p className="mt-4 text-white/70">
-                        Dự án bạn tìm không tồn tại hoặc đã được cập nhật.
+                        {t('projects.detail.notFoundDescription')}
                     </p>
                     <Link
                         to="/projects/all"
                         className="mt-8 inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm text-white transition hover:border-purple-400"
                     >
-                        Quay lại danh sách dự án
+                        {t('projects.detail.backToList')}
                     </Link>
                 </div>
             </section>
@@ -48,7 +51,7 @@ const ProjectDetail = () => {
                         to="/projects/all"
                         className="text-sm text-white/60 transition hover:text-purple-300"
                     >
-                        ← Quay lại Projects
+                        {t('projects.detail.backShort')}
                     </Link>
                     <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">{project.name}</h1>
                 </div>
@@ -67,7 +70,7 @@ const ProjectDetail = () => {
                                         onClick={handlePrev}
                                         className="rounded-full border border-white/20 bg-black/60 px-4 py-2 text-xs text-white"
                                     >
-                                        Trước
+                                        {t('projects.detail.previous')}
                                     </button>
                                     <button
                                         onClick={handleNext}
@@ -119,25 +122,25 @@ const ProjectDetail = () => {
 
                     <aside className="min-w-0 flex flex-col gap-6">
                         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                            <div className="text-sm text-white/60">Ngày thực hiện</div>
+                            <div className="text-sm text-white/60">{t('projects.detail.date')}</div>
                             <div className="mt-1 text-lg font-semibold text-white">{project.date}</div>
-                            <div className="mt-4 text-sm text-white/60">Danh mục</div>
+                            <div className="mt-4 text-sm text-white/60">{t('projects.detail.category')}</div>
                             <div className="mt-1 text-base font-semibold text-white">
                                 {(() => {
                                     const projectCategories = getProjectCategories(project);
                                     return projectCategories.length > 0
                                         ? projectCategories.join(', ')
-                                        : 'Khác';
+                                        : t('projects.detail.other');
                                 })()}
                             </div>
-                            <div className="mt-4 text-sm text-white/60">Đối tác / Thương hiệu</div>
+                            <div className="mt-4 text-sm text-white/60">{t('projects.detail.partner')}</div>
                             <div className="mt-1 text-base font-semibold text-white">
                                 {project.partner}
                             </div>
                         </div>
 
                         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                            <div className="text-sm text-white/60">Công nghệ sử dụng</div>
+                            <div className="text-sm text-white/60">{t('projects.detail.technologies')}</div>
                             <div className="mt-3 flex flex-wrap gap-2">
                                 {project.technologies.map((tech) => (
                                     <span
@@ -151,7 +154,7 @@ const ProjectDetail = () => {
                         </div>
 
                         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-                            <div className="text-sm text-white/60">Kết quả & số liệu</div>
+                            <div className="text-sm text-white/60">{t('projects.detail.results')}</div>
                             <div className="mt-4 grid gap-4">
                                 {project.metrics.map((metric) => (
                                     <div key={metric.label} className="flex items-center justify-between">
@@ -171,7 +174,7 @@ const ProjectDetail = () => {
                                 rel="noreferrer"
                                 className="inline-flex items-center justify-center rounded-full bg-purple-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-purple-600"
                             >
-                                {project.cta.label || 'Trải nghiệm'}
+                                {project.cta.label || t('projects.detail.experience')}
                             </a>
                         )}
                     </aside>
@@ -179,7 +182,7 @@ const ProjectDetail = () => {
 
                 {project.videoUrl && (
                     <div className="mt-12">
-                        <h2 className="text-xl font-semibold">Video giới thiệu</h2>
+                        <h2 className="text-xl font-semibold">{t('projects.detail.video')}</h2>
                         <div className="mt-4 overflow-hidden rounded-3xl border border-white/10">
                             <iframe
                                 title={`video-${project.id}`}

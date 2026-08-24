@@ -1,6 +1,8 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 const ClientsPartnersSection = () => {
+    const { t } = useI18n();
     return (
         <section className="bg-white pt-[60px] lg:pt-[90px]">
             <div className="md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,12 +10,12 @@ const ClientsPartnersSection = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                            Khách hàng &<br/>Đối tác chiến lược
+                            {t('shared.clients.titleLine1')}<br/>{t('shared.clients.titleLine2')}
                         </h2>
                     </div>
                     <div className="lg:w-1/2 text-center lg:text-right">
                         <p className="text-[15px] lg:text-[18px] text-black">
-                            Những người bạn đồng hành cùng Nextgency trên hành trình kiến tạo chuyển đổi số bền vững
+                            {t('shared.clients.subtitle')}
                         </p>
                     </div>
                 </div>
@@ -184,10 +186,10 @@ const ClientsPartnersSection = () => {
                                   rounded-xl p-3 transition-all duration-500 ease-in-out cursor-pointer">
                         <div className="">
                             <p className="text-[14px] lg:text-[15px] text-white leading-relaxed mb-2">
-                                Trong suốt hành trình phát triển, Nextgency tự hào được đồng hành cùng hơn 100+ doanh nghiệp và tổ chức trong nhiều lĩnh vực khác nhau: từ làm đẹp, giáo dục, y tế, công nghệ đến dịch vụ công và sản xuất.
+                                {t('shared.clients.paragraph1')}
                             </p>
                             <p className="text-[14px] lg:text-[15px] text-white leading-relaxed">
-                                Chúng tôi không chỉ triển khai các dự án công nghệ, mà còn đóng vai trò là đối tác tư vấn chiến lược – cùng khách hàng phân tích dữ liệu, thiết kế giải pháp và tối ưu hiệu quả kinh doanh theo từng giai đoạn.
+                                {t('shared.clients.paragraph2')}
                             </p>
                         </div>
                     </div>
@@ -202,7 +204,7 @@ const ClientsPartnersSection = () => {
                         <div className="text-center">
                             <div className="text-[40px] font-black">100+</div>
                             <div className="text-[14px] lg:text-[15px]">
-                                Đối tác chiến lược
+                                {t('shared.clients.titleLine2')}
                             </div>
                         </div>
                     </div>

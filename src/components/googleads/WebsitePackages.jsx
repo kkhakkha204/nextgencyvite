@@ -1,36 +1,12 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Check, Star, Crown, ArrowRight} from 'lucide-react';
 
 const WebsitePackages = () => {
-    const basicFeatures = [
-        "Setup tài khoản chuẩn theo cấu trúc Google đề xuất",
-        "Cài đặt và theo dõi chuyển đổi",
-        "Cài đặt và theo dõi các chỉ số đã cam kết (CPC, CTR, Conversion...)",
-        "Đề xuất phương án tối ưu định kỳ (theo tuần hoặc theo tháng)",
-        "Hệ thống báo cáo hiệu suất theo chu kỳ",
-        "Nextgency hỗ trợ review tài khoản định kỳ",
-        "Được hỗ trợ tư vấn riêng nếu cần mở rộng thêm chiến dịch"
-    ];
-
-    const standardFeatures = [
-        "Setup tài khoản chuẩn từ đầu hoặc cải tiến tài khoản cũ",
-        "Cài đặt và theo dõi chuyển đổi (Google Ads Conversion, GA4, GTM…)",
-        "Theo dõi và tối ưu các chỉ số đã cam kết (Click, CPC, ROAS, v.v.)",
-        "Đề xuất và triển khai chiến dịch phù hợp từng ngành nghề",
-        "Báo cáo định kỳ (tuần/tháng), giải trình hiệu quả, khuyến nghị mở rộng",
-        "Hệ thống báo cáo tự động hóa qua Data Studio hoặc Google Sheet",
-        "Hỗ trợ xây dựng landing page, nội dung, tư vấn funnel chuyển đổi",
-        "Được support riêng từ Google thông qua hệ thống của Nextgency"
-    ];
-
-    const advancedFeatures = [
-        "Cung cấp tài khoản Google Ads Invoice",
-        "Nextgency tạo tài khoản và gửi lại cho khách hàng sử dụng",
-        "Hướng dẫn kết nối tài sản, phân quyền tài khoản",
-        "Được hỗ trợ riêng từ Google thông qua hệ thống Nextgency",
-        "Theo dõi thanh toán, hỗ trợ bảo vệ tài khoản, xử lý sự cố",
-        "Hỗ trợ kết nối với MCC hoặc các nền tảng kỹ thuật liên quan",
-    ];
+    const { t, tm } = useI18n();
+    const basicFeatures = tm('servicePages.googleAds.packages.basic.features');
+    const standardFeatures = tm('servicePages.googleAds.packages.standard.features');
+    const advancedFeatures = tm('servicePages.googleAds.packages.advanced.features');
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -49,10 +25,10 @@ const WebsitePackages = () => {
                 {/* Header */}
                 <div className="text-center lg:text-left mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                        Các gói dịch vụ
+                        {t('shared.packages.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black">
-                        Quản trị tài khoản/ Trọn gói vận hành/ Thuê tài khoản
+                        {t('servicePages.googleAds.packages.subtitle')}
                     </p>
                 </div>
 
@@ -66,7 +42,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Quản trị tài khoản
+                                    {t('servicePages.googleAds.packages.basic.title')}
                                 </h3>
                             </div>
 
@@ -89,7 +65,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -107,7 +83,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-4 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    Trọn gói vận hành
+                                    {t('servicePages.googleAds.packages.standard.title')}
                                 </h3>
                             </div>
 
@@ -130,7 +106,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-white text-[15px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>
@@ -142,7 +118,7 @@ const WebsitePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Thuê tài khoản
+                                    {t('servicePages.googleAds.packages.advanced.title')}
                                 </h3>
                             </div>
 
@@ -165,7 +141,7 @@ const WebsitePackages = () => {
                             <button
                                 onClick={scrollToContact}
                                 className="relative flex items-center space-x-3 px-16 py-4 bg-black text-[15px] text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-gray-300 hover:scale-105 group">
-                                <span>Nhận tư vấn</span>
+                                <span>{t('shared.cta.getConsultation')}</span>
                             </button>
                         </div>
                     </div>

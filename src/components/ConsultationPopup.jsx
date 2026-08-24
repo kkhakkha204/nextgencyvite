@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { X, Star, CheckCircle, Target } from 'lucide-react';
-import { CONSULTATION_SERVICES } from '../data/consultationServices';
+import { CONSULTATION_SERVICE_OPTIONS } from '../data/consultationServices';
+import { useI18n } from '../i18n';
 import { submitConsultation } from '../utils/submitConsultation';
 
 export const ConsultationPopup = ({ isOpen, onClose }) => {
+    const { t } = useI18n();
     const [formData, setFormData] = useState({
         customer_name: '',
         phone: '',
@@ -138,10 +140,10 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                         <div className="flex items-center justify-between p-6 border-b border-white/10">
                             <div className="mt-7 lg:mt-8">
                                 <h2 className="text-[20px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-white mb-1">
-                                    Nhận tư vấn miễn phí
+                                    {t('popup.title')}
                                 </h2>
                                 <p className="text-gray-300 text-[13px] lg:text-[15px]">
-                                    Chuyên gia sẽ liên hệ trong vòng 24h
+                                    {t('popup.subtitle')}
                                 </p>
                             </div>
                             <button
@@ -159,29 +161,29 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                 <div className="hidden lg:block space-y-4">
                                     <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm">
                                         <div>
-                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Hotline</h3>
+                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">{t('common.hotline')}</h3>
                                             <p className="text-white text-[11px] lg:text-[13px]">033 208 3366</p>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm">
                                         <div>
-                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Email</h3>
+                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">{t('common.email')}</h3>
                                             <p className="text-white text-[11px] lg:text-[13px]">contact@nextgency.vn</p>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center space-x-3 bg-white/10 p-2 rounded-xl backdrop-blur-sm">
                                         <div>
-                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">Address</h3>
-                                            <p className="text-white text-[11px] lg:text-[13px]">2/11 Vương Thừa Vũ, Thanh Xuân, Hà Nội</p>
+                                            <h3 className="text-[11px] sm:text-[12px] font-archivo font-medium text-[#c08dfe] mb-1 uppercase tracking-widest">{t('common.address')}</h3>
+                                            <p className="text-white text-[11px] lg:text-[13px]">{t('common.addressValue')}</p>
                                         </div>
                                     </div>
 
                                     {/* Stats */}
                                     <div className="bg-[#c59efe] rounded-xl p-4 text-center">
                                         <div className="text-3xl font-bold text-white">500+</div>
-                                        <div className="text-sm text-white">Khách hàng tin tương</div>
+                                        <div className="text-sm text-white">{t('common.trustedCustomers')}</div>
                                     </div>
                                 </div>
 
@@ -196,8 +198,8 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                     : 'bg-red-500/20 border border-red-500/30 text-red-200'
                                             }`}>
                                                 {submitStatus === 'success'
-                                                    ? '✅ Cảm ơn bạn! Chúng tôi sẽ liên hệ trong vòng 24h.'
-                                                    : '❌ Có lỗi xảy ra, vui lòng thử lại sau.'
+                                                    ? `✅ ${t('form.success')}`
+                                                    : `❌ ${t('form.error')}`
                                                 }
                                             </div>
                                         )}
@@ -206,7 +208,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                             {/* Tên khách hàng */}
                                             <div className="space-y-1">
                                                 <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
-                                                    Tên khách hàng *
+                                                    {t('form.name')}
                                                 </label>
                                                 <input
                                                     type="text"
@@ -214,7 +216,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                     value={formData.customer_name}
                                                     onChange={handleInputChange}
                                                     className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg focus:outline-none"
-                                                    placeholder="Nhập tên của bạn"
+                                                    placeholder={t('form.namePlaceholder')}
                                                     required
                                                 />
                                             </div>
@@ -223,7 +225,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div className="space-y-1">
                                                     <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
-                                                        Số điện thoại *
+                                                        {t('form.phone')}
                                                     </label>
                                                     <input
                                                         type="tel"
@@ -231,14 +233,14 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                         value={formData.phone}
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg focus:outline-none"
-                                                        placeholder="Nhập số điện thoại"
+                                                        placeholder={t('form.phonePlaceholder')}
                                                         required
                                                     />
                                                 </div>
 
                                                 <div className="space-y-1">
                                                     <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
-                                                        Email *
+                                                        {t('form.email')}
                                                     </label>
                                                     <input
                                                         type="email"
@@ -246,7 +248,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                         value={formData.email}
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg focus:outline-none"
-                                                        placeholder="example@gmail.com"
+                                                        placeholder={t('form.emailPlaceholder')}
                                                         required
                                                     />
                                                 </div>
@@ -256,7 +258,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                             <div className="grid md:grid-cols-2 gap-4">
                                                 <div className="space-y-1">
                                                     <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
-                                                        Lĩnh vực kinh doanh *
+                                                        {t('form.businessField')}
                                                     </label>
                                                     <input
                                                         type="text"
@@ -264,14 +266,14 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                         value={formData.business_field}
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg focus:outline-none"
-                                                        placeholder="Ví dụ: Thương mại điện tử, F&B..."
+                                                        placeholder={t('form.businessFieldPlaceholder')}
                                                         required
                                                     />
                                                 </div>
 
                                                 <div className="space-y-1">
                                                     <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
-                                                        Tên thương hiệu
+                                                        {t('form.brand')}
                                                     </label>
                                                     <input
                                                         type="text"
@@ -279,7 +281,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                         value={formData.brand_name}
                                                         onChange={handleInputChange}
                                                         className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg focus:outline-none"
-                                                        placeholder="Nhập tên thương hiệu (nếu có)"
+                                                        placeholder={t('form.brandPlaceholder')}
                                                     />
                                                 </div>
                                             </div>
@@ -287,7 +289,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                             {/* Dịch vụ cần tư vấn */}
                                             <div className="space-y-1">
                                                 <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
-                                                    Dịch vụ cần tư vấn *
+                                                    {t('form.service')}
                                                 </label>
                                                 <select
                                                     name="service"
@@ -296,9 +298,9 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                     className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg focus:outline-none cursor-pointer"
                                                     required
                                                 >
-                                                    <option value="" disabled>Chọn dịch vụ bạn quan tâm</option>
-                                                    {CONSULTATION_SERVICES.map((service) => (
-                                                        <option key={service} value={service}>{service}</option>
+                                                    <option value="" disabled>{t('form.servicePlaceholder')}</option>
+                                                    {CONSULTATION_SERVICE_OPTIONS.map((option) => (
+                                                        <option key={option.value} value={option.value}>{t(option.i18nKey)}</option>
                                                     ))}
                                                 </select>
                                             </div>
@@ -306,7 +308,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                             {/* Yêu cầu tư vấn */}
                                             <div className="space-y-1">
                                                 <label className="block text-white text-[11px] lg:text-[13px] font-archivo font-medium uppercase tracking-widest">
-                                                    Yêu cầu tư vấn *
+                                                    {t('form.request')}
                                                 </label>
                                                 <textarea
                                                     rows="4"
@@ -314,7 +316,7 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                     value={formData.consultation_request}
                                                     onChange={handleInputChange}
                                                     className="w-full px-3 py-2 bg-white/95 border border-white/20 rounded-lg text-black text-[12px] lg:text-[14px] placeholder-gray-400 transition-all duration-300 focus:border-[#1a4498] focus:bg-white focus:shadow-lg resize-none focus:outline-none"
-                                                    placeholder="Mô tả chi tiết yêu cầu tư vấn của bạn..."
+                                                    placeholder={t('form.requestPlaceholder')}
                                                     required
                                                 />
                                             </div>
@@ -331,10 +333,10 @@ export const ConsultationPopup = ({ isOpen, onClose }) => {
                                                         {isSubmitting ? (
                                                             <>
                                                                 <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                                                                <span>Đang gửi...</span>
+                                                                <span>{t('form.submitting')}</span>
                                                             </>
                                                         ) : (
-                                                            <span>Gửi thông tin ngay</span>
+                                                            <span>{t('form.submitNow')}</span>
                                                         )}
                                                     </span>
                                                 </button>

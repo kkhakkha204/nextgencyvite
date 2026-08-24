@@ -1,36 +1,14 @@
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const PainPointsSection = () => {
-    const painPoints = [
-        {
-            title: "Tải chậm, trải nghiệm tệ",
-            description: "Website nhìn đẹp mắt, nhưng load chậm – không tối ưu trải nghiệm người dùng (UX/UI).",
-            impact: "Khách hàng rời đi sau 3 giây",
-            isDark: false,
-            rotation: "lg:-rotate-1"
-        },
-        {
-            title: "Không responsive mobile",
-            description: "Giao diện không tối ưu trên mobile – trong khi 80% khách hàng đang lướt bằng điện thoại.",
-            impact: "Mất 80% khách hàng tiềm năng",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Không theo dõi được dữ liệu",
-            description: "Không tích hợp chatbot, pixel hay công cụ đo lường – không biết khách từ đâu đến, ở lại bao lâu, có mua hay không.",
-            impact: "Không tối ưu được marketing",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "CTA không rõ ràng",
-            description: "Landing page không rõ ràng Call To Action – khách hàng truy cập, lướt web qua lại sau đó… rời đi luôn.",
-            impact: "Tỷ lệ chuyển đổi thấp",
-            isDark: true,
-            rotation: "lg:-rotate-1"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const painPoints = tm('servicePages.websiteLanding.painPoints.items').map((point, index) => ({
+        ...point,
+        isDark: index === 3,
+        rotation: ['lg:-rotate-1', 'lg:rotate-1', 'lg:rotate-1', 'lg:-rotate-1'][index]
+    }));
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px]">
@@ -47,7 +25,7 @@ const PainPointsSection = () => {
 
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                        Nỗi đau của doanh nghiệp
+                        {t('servicePages.websiteLanding.painPoints.title')}
                     </h2>
 
                 </div>

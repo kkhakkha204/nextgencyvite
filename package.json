@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build && node src/scripts/generate-static.js",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check-i18n": "node src/scripts/check-translations.js"
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",

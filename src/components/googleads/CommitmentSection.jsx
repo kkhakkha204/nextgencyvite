@@ -1,44 +1,14 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import { AlertTriangle } from 'lucide-react';
 
 const CommitmentSection = () => {
-    const commitments = [
-        {
-            id: 1,
-            title: "Thiết kế tùy biến theo yêu cầu",
-            description: "Cam kết tài khoản quảng cáo được thiết lập chuẩn cấu trúc Google"
-        },
-        {
-            id: 2,
-            title: "Tối ưu tốc độ tải < 2 giây",
-            description: "Cam kết tối ưu ngân sách liên tục dựa trên dữ liệu thực tế và hành vi truy cập"
-        },
-        {
-            id: 3,
-            title: "Hỗ trợ kỹ thuật chuyên nghiệp",
-            description: "Khách hàng được toàn quyền truy cập tài khoản quảng cáo và hệ thống báo cáo."
-        },
-        {
-            id: 4,
-            title: "Bàn giao đầy đủ quyền sở hữu",
-            description: "Cam kết không phát sinh chi phí ngoài hợp đồng trừ khi có sự đồng ý bằng văn bản của khách hàng."
-        },
-        {
-            id: 5,
-            title: "Bảo mật thông tin tuyệt đối",
-            description: "Mọi thông tin về tài khoản, dữ liệu chiến dịch và khách hàng được bảo mật tuyệt đối."
-        },
-        {
-            id: 6,
-            title: "Xử lý khiếu nại chuyên nghiệp",
-            description: "Trong mọi tình huống khiếu nại, Nextgency cam kết:",
-            subCommitments: [
-                "Phản hồi trong vòng 24h làm việc",
-                "Có biên bản làm việc rõ ràng về trách nhiệm, giải pháp và phương án xử lý triệt để",
-                "Bồi thường bằng dịch vụ bổ sung hoặc hoàn tiền hợp lý nếu lỗi thuộc về đội ngũ vận hành"
-            ]
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Nội dung lấy từ từ điển; id dùng để chọn kiểu hiển thị cho mục cuối
+    const commitments = tm('shared.commitment.items').map((item, index) => ({
+        ...item,
+        id: index + 1
+    }));
 
     return (
         <section className="bg-white py-[60px] lg:py-[90px]">
@@ -52,7 +22,7 @@ const CommitmentSection = () => {
                         </span>
                     </div>
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                        Cam kết của chúng tôi
+                        {t('shared.commitment.title')}
                     </h2>
                 </div>
                 {/* Commitments List */}

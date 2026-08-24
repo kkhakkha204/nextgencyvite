@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { useI18n } from "../../i18n";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const MyStorySection = () => {
+    const { t } = useI18n();
     const sectionRef = useRef(null);
     const imageColumnRef = useRef(null);
     useRef(null);
@@ -119,16 +120,16 @@ const MyStorySection = () => {
                         {/* Badge */}
                         <div ref={badgeRef} className="inline-flex items-center justify-center">
                         <span className=" text-white rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
-                            About Nextgency
+                            {t('about.story.badge')}
                         </span>
                         </div>
 
                         {/* Title */}
                         <div className="space-y-4">
                             <h2 ref={titleRef} className="text-[26px] md:text-[32px] lg:text-[60px] font-archivo font-bold leading-tight uppercase">
-                                Câu chuyện
+                                {t('about.story.titleLine1')}
                                 <span className="font-archivo block text-white uppercase">
-                  Của chúng tôi
+                  {t('about.story.titleLine2')}
                 </span>
                             </h2>
                         </div>
@@ -137,19 +138,18 @@ const MyStorySection = () => {
                         <div className="space-y-4">
                             {/* Subtitle */}
                             <p ref={subtitleRef} className="text-[15px] md:text-[18px] text-[#c08dfe]">
-                                Công nghệ – Bước ngoặt cho sự bứt phá
+                                {t('about.story.subtitle')}
                             </p>
                             <div ref={el => descriptionRefs.current[0] = el} className="flex gap-4">
                                 <div className="w-2 h-2 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                 <p className="text-white text-[14px] md:text-[16px] max-w-lg">
-                                    Nextgency được thành lập vào năm 2025, sau khi founder chính đã có hơn 5 năm kinh nghiệm kinh doanh trong lĩnh vực thương mại điện tử. Trong hành trình đó, founder nhận ra: công nghệ chính là chìa khóa thay đổi toàn bộ mô hình kinh doanh – từ quản lý vận hành, marketing cho đến tối ưu lợi nhuận.
+                                    {t('about.story.paragraph1')}
                                 </p>
                             </div>
                             <div ref={el => descriptionRefs.current[1] = el} className="flex gap-4">
                                 <div className="w-2 h-2 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
                                 <p className="text-white text-[14px] md:text-[16px] max-w-lg">
-                                    Nhờ ứng dụng công nghệ đúng cách, doanh nghiệp của founder đã bứt phá mạnh mẽ, vượt qua giới hạn cũ và mở ra con đường tăng trưởng mới. Thành công ấy trở thành minh chứng sống động rằng công nghệ không chỉ hỗ trợ, mà còn tái định hình tương lai doanh nghiệp.
-                                    Từ nền tảng thực tiễn này, đội ngũ core team đã cùng nhau thành lập Nextgency, với sứ mệnh đồng hành và mang giải pháp công nghệ đã được kiểm chứng đến nhiều doanh nghiệp khác, giúp họ không chỉ giải quyết vấn đề hiện tại mà còn kiến tạo lợi thế cạnh tranh dài hạn.
+                                    {t('about.story.paragraph2')}
                                 </p>
                             </div>
                         </div>

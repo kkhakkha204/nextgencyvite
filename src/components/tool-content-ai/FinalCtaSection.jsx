@@ -1,7 +1,9 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import { ArrowUpRight } from 'lucide-react';
 
 const FinalCtaSection = () => {
+    const { t } = useI18n();
     const OpenNewSite = (e) => {
         e.preventDefault();
         window.open('https://app.nextgency.vn/login', '_blank');
@@ -23,12 +25,11 @@ const FinalCtaSection = () => {
 
             <div className="relative z-10 md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white uppercase leading-[1.45] mb-2">
-                    Sẵn sàng để nội dung của bạn <br className="hidden md:block" />
-                    được tìm thấy và được trích dẫn?
+                    {t('servicePages.toolContentAi.finalCta.titleLine1')} <br className="hidden md:block" />{t('servicePages.toolContentAi.finalCta.titleLine2')}
                 </h2>
 
                 <p className="text-white/80 text-[15px] lg:text-[18px] mb-6">
-                    Đăng nhập và tạo bài chuẩn SEO, AEO, GEO đầu tiên ngay hôm nay.
+                    {t('servicePages.toolContentAi.finalCta.description')}
                 </p>
 
                 {/* CTA Button */}
@@ -37,7 +38,7 @@ const FinalCtaSection = () => {
                         onClick={OpenNewSite}
                         className="group relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-white text-[16px] text-black rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105"
                     >
-                        <span>Đăng ký để bắt đầu</span>
+                        <span>{t('servicePages.toolContentAi.finalCta.cta')}</span>
                         <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                             <ArrowUpRight
                                 className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"

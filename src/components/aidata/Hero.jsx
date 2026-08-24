@@ -1,8 +1,10 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Link} from "react-router-dom";
 import {ArrowUpRight} from "lucide-react";
 
 const Hero = () => {
+    const { t, tm } = useI18n();
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -82,30 +84,20 @@ const Hero = () => {
                         {/* Description */}
                         <div className="space-y-4">
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Muốn nhân bản năng suất, giảm thủ công, tăng trải nghiệm? Câu trả lời nằm ở <strong>Automation và AI.</strong> Nextgency giúp doanh nghiệp chuyển mình thông minh hóa quy trình bằng các giải pháp:
+                                {t('servicePages.aiData.hero.descriptionPrefix')}<strong>{t('servicePages.aiData.hero.brand')}</strong>{t('servicePages.aiData.hero.descriptionSuffix')}
                             </p>
 
-                            {/* Bullet Points */}
-                            <div className="space-y-4">
-                                <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Tự động hoá quy trình nội bộ & marketing bằng n8n.
-                                    </p>
-                                </div>
-                                <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Xây dựng AI Agent: Chatbot thông minh, tư vấn DISC, tạo nội dung.
-                                    </p>
-                                </div>
-                                <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Kết nối các nền tảng: Facebook, Zalo, Website, Email, CRM.
-                                    </p>
-                                </div>
-                            </div>
+                                    {/* Bullet Points */}
+                                    <div className="space-y-4">
+                                        {tm('servicePages.aiData.hero.bullets').map((bullet, index) => (
+                                            <div key={index} className="flex items-start space-x-2">
+                                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                                <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                                    {bullet}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
                         </div>
 
                         {/* CTA Button */}
@@ -116,7 +108,7 @@ const Hero = () => {
 
                             >
         <span className="">
-            Tư vấn ngay
+            {t('shared.cta.consultNow')}
         </span>
                                 <div
                                     className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

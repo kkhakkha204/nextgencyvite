@@ -1,34 +1,12 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Check, Star, ArrowRight, ArrowUpRight} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const LandingPagePackages = () => {
-    const basicFeatures = [
-        "Thiết kế tùy biến theo yêu cầu",
-        "Bàn giao đầy đủ source code",
-        "Thời gian hoàn thành: 3–7 ngày làm việc",
-        "Chỉnh sửa tối đa 3 lần",
-        "Giao diện tương thích với các thiết bị: điện thoại, máy tính bảng, máy tính để bàn",
-        "Tối ưu tốc độ tải trang từ 1 đến 2 giây",
-        "Tối ưu điểm Google PageSpeed",
-        "Hỗ trợ tài liệu sử dụng, tích hợp Livechat, Hotline, Facebook, Zalo",
-        "Không bao gồm phần mềm chỉnh sửa thiết kế",
-        "Nền tảng thiết kế: Ladipage"
-    ];
-
-    const advancedFeatures = [
-        "Thiết kế tùy biến theo yêu cầu, đảm bảo nhận diện thương hiệu",
-        "Bàn giao đầy đủ source code",
-        "Thời gian hoàn thành: 3–5 ngày làm việc",
-        "Chỉnh sửa tối đa 5 lần",
-        "Giao diện tương thích với mọi thiết bị: điện thoại, máy tính bảng, máy tính để bàn",
-        "Tối ưu tốc độ truy cập từ 1 đến 2 giây",
-        "Tối ưu điểm Google Speed",
-        "Tặng kèm 1GB lưu trữ (hosting), không giới hạn băng thông và số lượng truy cập",
-        "Chủ động sao lưu tài nguyên",
-        "Nền tảng thiết kế: Ladipage hoặc WordPress",
-        "Tích hợp hơn 100 ứng dụng và công cụ: Countdown, Notify, Gallery, Gmail, Google Sheet, Facebook Pixel, Google Analytics, Google Ads,..."
-    ];
+    const { t, tm } = useI18n();
+    const basicFeatures = tm('servicePages.websiteLanding.landingPackages.basic.features');
+    const advancedFeatures = tm('servicePages.websiteLanding.landingPackages.advanced.features');
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -47,11 +25,10 @@ const LandingPagePackages = () => {
                 {/* Header */}
                 <div className="text-center mb-4 lg:mb-8">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black leading-[1.45] uppercase mb-1">
-                        Gói xây dựng Landing Page
+                        {t('servicePages.websiteLanding.landingPackages.title')}
                     </h2>
                     <p className="text-[15px] lg:text-[18px] text-black max-w-xl mx-auto">
-                        Chọn gói dịch vụ phù hợp để tạo ra landing page chuyên nghiệp,
-                        tối ưu hóa chuyển đổi và phù hợp với mọi thiết bị
+                        {t('servicePages.websiteLanding.landingPackages.subtitle')}
                     </p>
                 </div>
 
@@ -63,7 +40,7 @@ const LandingPagePackages = () => {
                         <div>
                             <div className="mb-6 pb-2 border-b border-black">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-black">
-                                    Gói Landing Page Cơ Bản
+                                    {t('servicePages.websiteLanding.landingPackages.basic.title')}
                                 </h3>
                             </div>
 
@@ -89,7 +66,7 @@ const LandingPagePackages = () => {
 
                             >
         <span className="">
-            Nhận tư vấn
+            {t('shared.cta.getConsultation')}
         </span>
 
                             </button>
@@ -103,14 +80,14 @@ const LandingPagePackages = () => {
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <div className="bg-gradient-to-r from-[#c08dfe] via-black to-[#c08dfe] text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
                                 <Star className="w-4 h-4 fill-current" />
-                                <span>Phổ Biến</span>
+                                <span>{t('shared.packages.popular')}</span>
                             </div>
                         </div>
 
                         <div>
                             <div className="mb-6 pb-2 border-b border-white">
                                 <h3 className="text-[16px] lg:text-[20px] font-medium text-white">
-                                    <span className="">Gói Landing Page Nâng Cao</span>
+                                    <span className="">{t('servicePages.websiteLanding.landingPackages.advanced.title')}</span>
                                 </h3>
                             </div>
 
@@ -136,7 +113,7 @@ const LandingPagePackages = () => {
 
                             >
         <span className="">
-            Nhận tư vấn
+            {t('shared.cta.getConsultation')}
         </span>
 
                             </button>

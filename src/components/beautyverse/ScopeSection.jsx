@@ -1,53 +1,18 @@
 ﻿import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Bell, Gift, QrCode, Sparkles, Vote } from 'lucide-react';
+import { useI18n } from '../../i18n';
 
-const modules = [
-    {
-        icon: QrCode,
-        number: '01',
-        title: 'Check-in QR tích hợp',
-        text: 'Kết nối trực tiếp với hệ thống mua vé → check-in đã vận hành ổn định qua 2 kỳ sự kiện. Khách quét mã ngay trong mini app — không cần in vé, không có khâu xử lý thủ công, thông suốt cho 7.000 lượt khách trong 2 ngày.',
-        tags: ['Vé điện tử', 'Quét QR tại cổng', 'Đồng bộ hệ thống 2024–2025'],
-        image: '/assets/images/projects/qr-checkin.webp',
-        caption: 'Screenshot - Man hinh check-in QR',
-    },
-    {
-        icon: Sparkles,
-        number: '02',
-        title: 'Gamification 3 giai đoạn',
-        text: 'Hành trình nhiệm vụ trước – trong – sau sự kiện, thiết kế từ dữ liệu hành vi thật của tệp khách. Mỗi giai đoạn có lý do mở app riêng — giải đúng điểm chết của mini app cũ: người dùng check-in xong rồi không quay lại.',
-        tags: ['Trước · Trong · Sau', 'Nhiệm vụ & phần thưởng', 'Thiết kế cho retention'],
-        image: '/assets/images/projects/nhiemvu.webp',
-        caption: 'Screenshot - Nhiem vu gamification',
-    },
-    {
-        icon: Gift,
-        number: '03',
-        title: 'Hệ thống tích điểm BPoint',
-        text: 'Đơn vị tiền tệ của BEAUTYVERSE. Khách tích điểm qua nhiệm vụ và hoạt động tại sự kiện, đổi voucher từ hơn 100 thương hiệu tham gia — thương hiệu có lượt tương tác tại gian hàng, khách có quyền lợi thật, app có lý do được mở lại.',
-        tags: ['Tích điểm qua hoạt động', 'Đổi voucher 100+ thương hiệu', 'Win-win-win'],
-        image: '/assets/images/projects/diem.webp',
-        caption: 'Screenshot - Vi BPoint va doi voucher',
-    },
-    {
-        icon: Vote,
-        number: '04',
-        title: 'Brand Voting 4 hạng mục',
-        text: 'Nâng cấp từ hệ thống Beauty Award 2025, đưa trực tiếp vào mini app — tăng trải nghiệm voting dành cho các nhãn hàng tham dự sự kiện Beauty Summit.',
-        tags: ['4 hạng mục giải thưởng', 'Kế thừa Beauty Award 2025', 'Tổng hợp tự động'],
-        image: '/assets/images/projects/vote.webp',
-        caption: 'Screenshot - Brand Voting 4 hang muc',
-    },
-    {
-        icon: Bell,
-        number: '05',
-        title: 'Notify ZNS Zalo',
-        text: 'Thông báo tự động qua Zalo ZNS — tăng tỉ lệ thanh toán và nhắc lịch tự động cho khách tham dự trong suốt hành trình sự kiện.',
-        tags: ['Nhắc thanh toán tự động', 'Nhắc lịch sự kiện', 'Zalo ZNS'],
-        image: '/assets/images/projects/zbs.webp',
-        caption: 'Screenshot - Thong bao Zalo ZNS',
-    },
-];
+// Icon, ảnh và số thứ tự giữ trong code; chữ lấy từ từ điển
+const buildModules = (tm) =>
+    tm('beautyverse.scope.items').map((item, index) => ({
+        icon: [QrCode, Sparkles, Gift, Vote, Bell][index],
+        number: String(index + 1).padStart(2, "0"),
+        title: item.title,
+        text: item.description,
+        tags: item.tags,
+        image: ['/assets/images/projects/qr-checkin.webp', '/assets/images/projects/nhiemvu.webp', '/assets/images/projects/diem.webp', '/assets/images/projects/vote.webp', '/assets/images/projects/zbs.webp'][index],
+        caption: ['Screenshot - Man hinh check-in QR', 'Screenshot - Nhiem vu gamification', 'Screenshot - Vi BPoint va doi voucher', 'Screenshot - Brand Voting 4 hang muc', 'Screenshot - Thong bao Zalo ZNS'][index]
+    }));
 
 const PhonePreview = ({ image, caption, reverse, index }) => (
     <div
@@ -110,6 +75,8 @@ const ScopeRow = ({ module, index, isVisible }) => {
 };
 
 const ScopeSection = () => {
+    const { t, tm } = useI18n();
+    const modules = buildModules(tm);
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -149,11 +116,11 @@ const ScopeSection = () => {
             <div className="relative mx-auto max-w-[1280px] py-14 sm:py-2 px-4 sm:px-6 lg:px-8">
                 <div className={`transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <p className="text-[13px] font-black uppercase tracking-[0.36em] text-[#214eab]">
-                        Phạm vi triển khai
+                        {t('beautyverse.scope.badge')}
                     </p>
                     <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between">
                         <h2 className="mt-5 max-w-[880px] font-archivo text-[38px] font-black leading-[0.98] tracking-normal text-[#05050b] sm:text-[56px] lg:text-[68px]">
-                            Năm mảnh ghép của BEAUTYVERSE
+                            {t('beautyverse.scope.title')}
                         </h2>
                     </div>
                 </div>
@@ -170,7 +137,7 @@ const ScopeSection = () => {
                     className="group relative inline-flex w-fit items-center gap-4 overflow-hidden rounded-full bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] py-1.5 pl-6 pr-1.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(160,112,255,0.32)] sm:text-[15px]"
                     style={{ backgroundSize: '200% 200%', animation: 'final-cta-gradient 3s ease-in-out infinite' }}
                 >
-                    <span className="relative z-10">Triển khai mini app của bạn</span>
+                    <span className="relative z-10">{t('beautyverse.cta')}</span>
                     <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
                         <ArrowUpRight className="h-5 w-5 transition duration-300 group-hover:rotate-12 group-hover:scale-110" strokeWidth={2.3} />
                     </span>

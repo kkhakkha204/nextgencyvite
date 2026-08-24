@@ -1,7 +1,9 @@
 ﻿import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { useI18n } from '../../i18n';
 
 const FinalCtaSection = () => {
+    const { t } = useI18n();
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -47,16 +49,16 @@ const FinalCtaSection = () => {
                     >
                         <div className="inline-flex items-center gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.32em] text-[#8ed2ff]">
                             <Sparkles className="h-4 w-4" />
-                            <span>Điểm chứng minh năng lực</span>
+                            <span>{t('beautyverse.finalCta.badge')}</span>
                         </div>
 
                         <h2 className="mt-6 font-archivo text-[20px] font-black leading-[1.12] tracking-normal text-white sm:text-[24px] lg:text-[32px]">
-                            Một khách hàng, ba năm liên tục - phạm vi và quy mô vận hành tăng qua từng năm.
+                            {t('beautyverse.finalCta.description')}
                             <span className="bg-[linear-gradient(90deg,#9bd8ff_0%,#a88cff_58%,#b079ff_100%)] bg-clip-text text-transparent">
                                 {' '}
-                                BEAUTYVERSE là kết quả của 2 năm dữ liệu + hiểu đúng hành vi người dùng,
+                                {t('beautyverse.finalCta.summaryHighlight')}
                             </span>{' '}
-                            không phải một sản phẩm công nghệ xây từ góc nhìn kỹ thuật thuần túy.
+                            {t('beautyverse.finalCta.summarySuffix')}
                         </h2>
 
                         <div
@@ -70,7 +72,7 @@ const FinalCtaSection = () => {
                                 className="group relative inline-flex w-fit items-center gap-4 overflow-hidden rounded-full bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] py-1.5 pl-6 pr-1.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(160,112,255,0.32)] sm:text-[15px]"
                                 style={{ backgroundSize: '200% 200%', animation: 'final-cta-gradient 3s ease-in-out infinite' }}
                             >
-                                <span className="relative z-10">Triển khai mini app của bạn</span>
+                                <span className="relative z-10">{t('beautyverse.cta')}</span>
                                 <span className="relative z-10 flex h-11 w-11 items-center justify-center rounded-full bg-black shadow-[0_8px_20px_rgba(0,0,0,0.35)]">
                                     <ArrowUpRight className="h-5 w-5 transition duration-300 group-hover:rotate-12 group-hover:scale-110" strokeWidth={2.3} />
                                 </span>
@@ -78,7 +80,7 @@ const FinalCtaSection = () => {
                             </button>
 
                             <p className="max-w-[460px] text-sm font-medium leading-7 text-white/58">
-                                Nextgency thiết kế, tích hợp và vận hành mini app theo đúng hành vi khách tham dự sự kiện.
+                                {t('beautyverse.finalCta.note')}
                             </p>
                         </div>
                     </div>

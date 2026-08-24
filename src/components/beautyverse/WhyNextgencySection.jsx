@@ -1,45 +1,21 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useI18n } from '../../i18n';
 import { CheckCircle2, Sparkles, Trophy } from 'lucide-react';
 
-const timeline = [
-    {
-        year: '2024',
-        eyebrow: 'Đơn vị quảng cáo + automation',
-        result: '4.000',
-        resultLabel: 'Khách check-in',
-        items: [
-            'Quảng cáo Facebook hai luồng B2B / B2C độc lập',
-            'Luồng mua vé → check-in QR tự động toàn trình',
-            'Thông báo đa kênh Zalo ZNS / Email / Messenger',
-            'Dataset khách hàng — Custom & Lookalike Audience',
-        ],
-    },
-    {
-        year: '2025',
-        eyebrow: 'Đơn vị vận hành đa hệ thống',
-        result: '5.000',
-        resultLabel: 'Khách check-in - +25%',
-        items: [
-            'Toàn bộ hạng mục 2024, tại thị trường miền Nam mới',
-            'Website sự kiện chính thức beautysummit.vn',
-            'Hệ thống bình chọn Beauty Award tự động — 1.000 lượt vote',
-        ],
-    },
-    {
-        year: '2026',
-        eyebrow: 'Tech Partner chính thức',
-        result: '7.000',
-        resultLabel: 'Khách check-in - kỷ lục',
-        items: [
-            'Toàn bộ nền tảng 2024–2025',
-            'Zalo Mini App BEAUTYVERSE — toàn bộ trải nghiệm số của sự kiện',
-            'Check-in QR · Gamification · BPoint · Brand Voting · Notify ZNS',
-        ],
-        featured: true,
-    },
-];
+// Năm và con số giữ trong code; chữ lấy từ từ điển
+const buildTimeline = (tm) =>
+    tm('beautyverse.why.years').map((year, index) => ({
+        year: ['2024', '2025', '2026'][index],
+        eyebrow: year.role,
+        result: ['4.000', '5.000', '7.000'][index],
+        resultLabel: year.metric,
+        items: year.items,
+        featured: index === 2
+    }));
 
 const WhyNextgencySection = () => {
+    const { t, tm } = useI18n();
+    const timeline = buildTimeline(tm);
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -78,19 +54,19 @@ const WhyNextgencySection = () => {
             <div className="relative mx-auto max-w-[1280px] py-12 sm:py-2 px-4 sm:px-6 lg:px-8">
                 <div className={`max-w-[980px] transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <p className="text-[13px] font-black uppercase tracking-[0.36em] text-[#214eab]">
-                        Vì sao là Nextgency?
+                        {t('beautyverse.why.badge')}
                     </p>
                     <h2 className="mt-5 font-archivo text-[30px] font-black leading-[0.98] tracking-normal text-[#05050b] sm:text-[36px] lg:text-[42px]">
-                        Tech Partner không phải danh xưng -
+                        {t('beautyverse.why.titleLine1')}
                         <span className="block">
-                            là vai trò được nâng cấp sau{' '}
+                            {t('beautyverse.why.titleMiddle')}
                             <span className="bg-[linear-gradient(90deg,#263f96_0%,#6d65ff_45%,#aa73ff_70%,#9ed6ff_100%)] bg-clip-text text-transparent">
-                                2 năm kết quả.
+                                {t('beautyverse.why.titleLine2')}
                             </span>
                         </span>
                     </h2>
                     <p className="mt-7 max-w-[760px] text-base font-medium leading-8 text-[#17213f]/82 sm:text-lg">
-                        Ba năm liên tục cùng một khách hàng, phạm vi công việc mở rộng qua từng năm dựa trên kết quả triển khai thực tế — nền tảng dữ liệu và hiểu biết tệp khách tích lũy từ 2024 chính là lợi thế khi bước vào bài toán 2026.
+                        {t('beautyverse.why.description')}
                     </p>
                 </div>
 

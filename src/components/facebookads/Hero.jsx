@@ -1,8 +1,10 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {Link} from "react-router-dom";
 import {ArrowUpRight} from "lucide-react";
 
 const Hero = () => {
+    const { t, tm } = useI18n();
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -25,7 +27,7 @@ const Hero = () => {
                         <div className="space-y-2">
                             <div className="flex items-center gap-4">
                             <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold text-black leading-none tracking-tight">
-                                DỊCH VỤ
+                                {t('servicePages.facebookAds.hero.titleLine1')}
                             </h1>
                             {/* SVG Circles */}
                             <div className="flex-shrink-0">
@@ -85,35 +87,19 @@ const Hero = () => {
                         {/* Description */}
                         <div className="space-y-4">
                             <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                                Dịch vụ <strong>Facebook Ads</strong> từ Nextgency chính là cánh tay phải đắc lực giúp doanh nghiệp "khai thác mỏ vàng" từ vùng đất tiềm ẩn đầy cơ hội trên nền tảng lâu đời này bằng giải pháp:
+                                {t('servicePages.facebookAds.hero.descriptionPrefix')}<strong>{t('servicePages.facebookAds.hero.brand')}</strong>{t('servicePages.facebookAds.hero.descriptionSuffix')}
                             </p>
 
                             {/* Bullet Points */}
                             <div className="space-y-4">
-                                <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Cho thuê tài khoản quảng cáo.
-                                    </p>
-                                </div>
-                                <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Xây dựng chiến dịch chuyển đổi, remarketing và thu phễu đa tầng (TOFU – MOFU – BOFU).
-                                    </p>
-                                </div>
-                                <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Tối ưu theo sự kiện CAPI (Facebook Conversion API).
-                                    </p>
-                                </div>
-                                <div className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                    <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                        Tracking chuẩn từ phễu đầu đến đơn hàng, hỗ trợ tích hợp với website và chatbot.
-                                    </p>
-                                </div>
+                                {tm('servicePages.facebookAds.hero.bullets').map((bullet, index) => (
+                                    <div key={index} className="flex items-start space-x-2">
+                                        <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                        <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                            {bullet}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
@@ -125,7 +111,7 @@ const Hero = () => {
 
                             >
         <span className="">
-            Nhận tư vấn
+            {t('shared.cta.getConsultation')}
         </span>
                                 <div
                                     className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

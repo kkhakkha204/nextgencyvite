@@ -1,39 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useI18n } from '../../i18n';
 
-const phases = [
-    {
-        number: '01',
-        title: 'Trước sự kiện',
-        subtitle: 'Kích hoạt & làm quen',
-        items: [
-            'Nhận vé điện tử và hướng dẫn check-in ngay trong app',
-            'Nhiệm vụ gamification mở sớm — bắt đầu tích BPoint trước ngày diễn ra',
-            'Khám phá danh sách 100+ thương hiệu và lịch trình sự kiện',
-        ],
-    },
-    {
-        number: '02',
-        title: 'Trong sự kiện',
-        subtitle: '2 ngày tại venue',
-        items: [
-            'Check-in QR tại cổng — kết nối hệ thống đã vận hành ổn định 2 năm',
-            'Tích BPoint qua hoạt động tại gian hàng, đổi voucher thương hiệu',
-            'Bình chọn Brand Voting 4 hạng mục · điều hướng bằng bản đồ tương tác & lịch trình real-time',
-        ],
-    },
-    {
-        number: '03',
-        title: 'Sau sự kiện',
-        subtitle: 'Giữ kết nối',
-        items: [
-            'Sử dụng voucher đã đổi — lý do quay lại app sau khi rời venue',
-            'Theo dõi kết quả Brand Voting các hạng mục',
-            'Dữ liệu hành vi bổ sung vào dataset cho kỳ sự kiện kế tiếp',
-        ],
-    },
-];
+// Số thứ tự giữ trong code; chữ lấy từ từ điển
+const buildPhases = (tm) =>
+    tm('beautyverse.journey.phases').map((phase, index) => ({
+        number: String(index + 1).padStart(2, "0"),
+        title: phase.label,
+        subtitle: phase.title,
+        items: phase.items
+    }));
 
 const ExperienceJourneySection = () => {
+    const { t, tm } = useI18n();
+    const phases = buildPhases(tm);
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -71,13 +50,13 @@ const ExperienceJourneySection = () => {
             <div className="relative mx-auto max-w-[1280px] py-12 sm:py-2 px-4 sm:px-6 lg:px-8">
                 <div className={`max-w-[820px] transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                     <p className="text-[13px] font-black uppercase tracking-[0.36em] text-[#214eab]">
-                        Thiết kế trải nghiệm
+                        {t('beautyverse.journey.badge')}
                     </p>
                     <h2 className="mt-5 font-archivo text-[30px] font-black leading-[0.98] tracking-normal text-[#05050b] sm:text-[42px] lg:text-[50px]">
-                        Một hành trình — ba giai đoạn
+                        {t('beautyverse.journey.title')}
                     </h2>
                     <p className="mt-7 max-w-[720px] text-base font-medium leading-8 text-[#17213f]/82 sm:text-lg">
-                        Gamification được thiết kế bám theo vòng đời của sự kiện, để mỗi giai đoạn đều có lý do mở app riêng.
+                        {t('beautyverse.journey.description')}
                     </p>
                 </div>
 

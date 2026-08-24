@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {ArrowRight, ArrowUpRight} from 'lucide-react';
-import {Link} from "react-router-dom";
+import { useI18n } from "../../i18n";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutHeroSection = () => {
+    const { t } = useI18n();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isMobile, setIsMobile] = useState(false);
     const containerRef = useRef(null);
@@ -125,27 +126,29 @@ const AboutHeroSection = () => {
         };
     }, [isMobile]);
 
+    // Tiêu đề thẻ (Innovation/Strategy/Partnership) là tên khái niệm nên giữ nguyên;
+    // phần phụ đề và mô tả lấy từ từ điển.
     const cards = [
         {
             title: "Innovation",
-            subtitle: "Nhiệt tình",
-            description: "Pioneering solutions that transform businesses",
+            subtitle: t('about.hero.cards.innovation.subtitle'),
+            description: t('about.hero.cards.innovation.description'),
             style: "bg-black text-white",
             position: "right-0 top-0",
             mobilePosition: "top-0 right-32"
         },
         {
             title: "Strategy",
-            subtitle: "Trẻ Trung",
-            description: "Data-driven approaches for measurable outcomes",
+            subtitle: t('about.hero.cards.strategy.subtitle'),
+            description: t('about.hero.cards.strategy.description'),
             style: "bg-white text-black border border-black/20",
             position: "left-10 top-20",
             mobilePosition: "top-20 left-32"
         },
         {
             title: "Partnership",
-            subtitle: "Kinh nghiệm",
-            description: "Building lasting relationships through trust",
+            subtitle: t('about.hero.cards.partnership.subtitle'),
+            description: t('about.hero.cards.partnership.description'),
             style: "bg-gradient-to-b from-black via-black to-[#c08dfe] text-white border-t-2 border-white",
             position: "right-10 bottom-0",
             mobilePosition: "top-[168px] right-24"
@@ -172,18 +175,18 @@ const AboutHeroSection = () => {
                     <div className="space-y-6">
                         <div className="space-y-2">
                             <span ref={badgeRef} className=" text-black rounded-full text-[11px] lg:text-[13px] font-medium font-archivo tracking-[0.4rem] uppercase">
-                            About Nexgency
+                            {t('about.hero.badge')}
                         </span>
                             <h1 ref={titleRef} className="text-[38px] md:text-[32px] lg:text-[64px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                                Đối tác
+                                {t('about.hero.titleLine1')}
                                 <span className="font-archivo block text-black ">
-                                    chuyển đổi số đa năng
+                                    {t('about.hero.titleLine2')}
                                 </span>
                             </h1>
                         </div>
 
                         <p ref={descriptionRef} className="text-[15px] lg:text-[18px] text-black">
-                            Nextgency là đối tác chiến lược của bạn trong kỷ nguyên số. Chúng tôi cung cấp giải pháp chuyển đổi số, giúp doanh nghiệp bạn tăng tốc phát triển.
+                            {t('about.hero.description')}
                         </p>
 
                         <div ref={buttonsRef} className=" mt-2">
@@ -195,7 +198,7 @@ const AboutHeroSection = () => {
 
                                 >
                                     <span className="">
-                                        Tư vấn ngay
+                                        {t('about.hero.cta')}
                                     </span>
                                     <div
                                         className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

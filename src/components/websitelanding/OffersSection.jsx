@@ -1,38 +1,21 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 const OffersSection = () => {
-    const offers = [
-        {
-            id: 1,
-            title: "COMBO\nLANDINGPAGE &\n WEBSITE",
-            discount: "15%",
-            discountLabel: "Giảm",
-            description: "tổng chi phí",
-            align: "left",
-            gradient: "from-[#D4CEF5] to-[#C5BCF1]"
-        },
-        {
-            id: 2,
-            title: "COMBO\nWEBSITE &\nDỊCH VỤ ADS",
-            discount: "10%",
-            discountLabel: "Giảm",
-            description: "Chi phí Ads trong tháng đầu tiên",
-            align: "left",
-            gradient: "from-[#C5BCF1] to-[#C5BCF1]"
-        },
-        {
-            id: 3,
-            title: "COMBO\nLANDINGPAGE & \nWEBSITE & ADS",
-            discount: "3",
-            discountLabel: "trong",
-            discountSuffix: "1",
-            description: "Tặng thêm 1 tháng kĩ thuật miễn phí",
-            align: "center",
-            gradient: "from-orange-600 to-red-600",
-            isRadial: true,
-            isWhiteText: true
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Con số và kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const offers = tm('servicePages.websiteLanding.offers.items').map((offer, index) => ({
+        id: index + 1,
+        title: offer.title,
+        description: offer.description,
+        discount: ['15%', '10%', '3'][index],
+        discountLabel: index === 2 ? t('servicePages.websiteLanding.offers.inLabel') : t('servicePages.websiteLanding.offers.discountLabel'),
+        discountSuffix: index === 2 ? '1' : undefined,
+        align: index === 2 ? 'center' : 'left',
+        gradient: ['from-[#D4CEF5] to-[#C5BCF1]', 'from-[#C5BCF1] to-[#C5BCF1]', 'from-orange-600 to-red-600'][index],
+        isRadial: index === 2,
+        isWhiteText: index === 2
+    }));
 
     return (
         <section className="bg-black py-[60px] lg:py-[90px]">
@@ -40,10 +23,10 @@ const OffersSection = () => {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:justify-between items-center mb-4 sm:mb-8 ">
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-white leading-[1.45] uppercase">
-                        Chương trình ưu đãi<br/>khi đăng ký COMBO
+                        {t('servicePages.websiteLanding.offers.titleLine1')}<br/>{t('servicePages.websiteLanding.offers.titleLine2')}
                     </h2>
                     <p className="text-white text-[15px] lg:text-[18px] text-center sm:text-right">
-                        Ưu đãi dành cho mọi đối tượng<br/>khách hàng
+                        {t('servicePages.websiteLanding.offers.subtitleLine1')}<br/>{t('servicePages.websiteLanding.offers.subtitleLine2')}
                     </p>
                 </div>
 

@@ -1,40 +1,35 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useI18n } from '../../i18n';
 import { Award, Sparkles, TrendingUp, Users } from 'lucide-react';
 
-const resultStats = [
-    {
-        value: 7000,
-        display: '7.000',
-        label: 'Khách check-in trong 2 ngày',
-        note: '+75% so với năm đầu hợp tác',
-        featured: true,
-    },
-    {
-        value: 3500,
-        prefix: '~',
-        display: '~3.500',
-        label: 'Người dùng trải nghiệm mini app trong thời gian sự kiện',
-    },
-    {
-        value: 100,
-        suffix: '+',
-        display: '100+',
-        label: 'Thương hiệu tham gia — quy mô lớn nhất từ trước đến nay',
-    },
-];
+// Con số giữ trong code; chữ lấy từ từ điển (metrics[0..2] là nhãn, [1] là ghi chú)
+const buildResultStats = (tm) => {
+    const labels = tm('beautyverse.result.metrics');
+    return [
+        {value: 7000, display: "7.000", label: labels[0], note: labels[1], featured: true},
+        {value: 3500, prefix: "~", display: "~3.500", label: labels[2]},
+        {value: 100, suffix: "+", display: "100+", label: labels[3]}
+    ];
+};
 
-const evidenceImages = [
-    { src: '/assets/images/projects/miniapp_1.webp', label: 'Beauty Summit Mini App BEAUTYVERSE' },
-    { src: '/assets/images/projects/miniapp_2.webp', label: 'Thiệp mời cá nhân hóa trên miniapp' },
-    { src: '/assets/images/projects/miniapp_3.webp', label: 'Check-in ra vào sự kiện' },
-    { src: '/assets/images/projects/miniapp_4.webp', label: 'Brand Voting trong mini app' },
-];
+const buildEvidenceImages = (tm) => {
+    const labels = tm('beautyverse.result.metrics');
+    return [
+        {src: '/assets/images/projects/miniapp_1.webp', label: 'Beauty Summit Mini App BEAUTYVERSE'},
+        {src: '/assets/images/projects/miniapp_2.webp', label: labels[4]},
+        {src: '/assets/images/projects/miniapp_3.webp', label: labels[5]},
+        {src: '/assets/images/projects/miniapp_4.webp', label: 'Brand Voting trong mini app'}
+    ];
+};
 
-const highlights = [
-    { icon: Users, text: 'Vận hành lượng khách lớn trong 2 ngày sự kiện' },
-    { icon: TrendingUp, text: 'Tăng trưởng 500% người theo dõi so với năm đầu hợp tác' },
-    { icon: Award, text: '100+ thương hiệu tham gia, đổi voucher qua BPoint' },
-];
+const buildHighlights = (tm) => {
+    const labels = tm('beautyverse.result.metrics');
+    return [
+        {icon: Users, text: labels[6]},
+        {icon: TrendingUp, text: labels[7]},
+        {icon: Award, text: labels[8]}
+    ];
+};
 
 const formatValue = (value) => new Intl.NumberFormat('vi-VN').format(value);
 
@@ -109,6 +104,10 @@ const CountNumber = ({ stat, active, className = '' }) => {
 };
 
 const ResultSection = () => {
+    const { t, tm } = useI18n();
+    const resultStats = buildResultStats(tm);
+    const evidenceImages = buildEvidenceImages(tm);
+    const highlights = buildHighlights(tm);
     const [sectionRef, isVisible] = useInView();
 
     return (
@@ -129,10 +128,10 @@ const ResultSection = () => {
                 >
                     <div className="inline-flex items-center gap-3 text-[12px] font-black uppercase tracking-[0.32em] text-[#8ed2ff]">
                         <Sparkles className="h-4 w-4" />
-                        <span>Kết quả · 19–20/06/2026</span>
+                        <span>{t('beautyverse.result.badge')}</span>
                     </div>
                     <h2 className="mt-2 font-archivo text-[30px] font-black leading-tight tracking-normal sm:text-[40px] lg:text-[48px]">
-                        Kỷ lục của chuỗi sự kiện
+                        {t('beautyverse.result.title')}
                     </h2>
                 </div>
 
@@ -203,7 +202,7 @@ const ResultSection = () => {
                     }`}
                 >
                     <p className="text-base font-bold leading-8 text-white/86 w-[100%] sm:w-[60%]">
-                        Kỳ sự kiện lớn nhất trong lịch sử Beauty Summit Vietnam — vận hành thông suốt trên toàn bộ hệ thống do Nextgency phát triển: từ quảng cáo, luồng vé, đến trải nghiệm số trong app.
+                        {t('beautyverse.result.description')}
                     </p>
                     <div className="grid gap-3">
                         {highlights.map((item) => {

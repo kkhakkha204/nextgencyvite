@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import {
     Menu,
     X,
@@ -18,8 +18,11 @@ import {
     FileText
 } from 'lucide-react';
 import {ConsultationPopup} from "./ConsultationPopup.jsx";
+import LanguageSwitcher from "./LanguageSwitcher.jsx";
+import { Link, stripLocaleFromPath, useI18n } from "../i18n";
 
 const Header = () => {
+    const { t } = useI18n();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false);
     const [isProjectDropdownOpen, setIsProjectDropdownOpen] = useState(false);
@@ -66,38 +69,45 @@ const Header = () => {
         };
     }, [isMenuOpen]);
 
+    // `key` là định danh bất biến để so sánh trong JSX; `name` chỉ để hiển thị nên đổi
+    // theo ngôn ngữ. Trước đây JSX so khớp bằng chính chuỗi tiếng Việt - dịch xong sẽ hỏng.
     const navigationItems = [
-        { name: 'Giới thiệu', path: '/about' },
+        { key: 'about', name: t('nav.about'), path: '/about' },
         {
-            name: 'Dịch vụ',
+            key: 'services',
+            name: t('nav.services'),
             path: '/services',
             dropdown: [
-                { name: 'Automation - AI - Data', path: '/services/ai-data', icon: Bot },
-                { name: 'Google Ads', path: '/services/google-ads', icon: Target },
-                { name: 'Facebook Ads', path: '/services/facebook-ads', icon: Smartphone },
-                { name: 'Website & Landing Page', path: '/services/website-landing-page', icon: Globe },
-                { name: 'TikTok Ads', path: '/services/tiktok-ads', icon: Music },
-                { name: 'Facebook Dataset & CRM', path: '/services/facebook-crm', icon: Users },
-                { name: 'Thuê Phòng Marketing', path: '/services/marketing-outsource', icon: BarChart3 },
-                { name: 'Tick Xanh Facebook', path: '/services/tick-xanh-facebook', icon: CheckCircle },
+                { name: t('nav.servicesMenu.aiData'), path: '/services/ai-data', icon: Bot },
+                { name: t('nav.servicesMenu.googleAds'), path: '/services/google-ads', icon: Target },
+                { name: t('nav.servicesMenu.facebookAds'), path: '/services/facebook-ads', icon: Smartphone },
+                { name: t('nav.servicesMenu.websiteLanding'), path: '/services/website-landing-page', icon: Globe },
+                { name: t('nav.servicesMenu.tiktokAds'), path: '/services/tiktok-ads', icon: Music },
+                { name: t('nav.servicesMenu.facebookCrm'), path: '/services/facebook-crm', icon: Users },
+                { name: t('nav.servicesMenu.marketingOutsource'), path: '/services/marketing-outsource', icon: BarChart3 },
+                { name: t('nav.servicesMenu.tickXanh'), path: '/services/tick-xanh-facebook', icon: CheckCircle },
             ]
         },
-        { name: 'AI', path: '/ai' },
+        { key: 'ai', name: t('nav.ai'), path: '/ai' },
         {
-            name: 'Dự án',
+            key: 'projects',
+            name: t('nav.projects'),
             path: '/projects',
             dropdown: [
-                { name: 'Các dự án', path: '/projects/all', icon: FolderOpen },
-                { name: 'Hồ sơ năng lực', path: '/projects/portfolio', icon: FileText },
-                { name: 'Automation Workflow', path: '/projects/workflow', icon: FileText },
+                { name: t('nav.projectsMenu.all'), path: '/projects/all', icon: FolderOpen },
+                { name: t('nav.projectsMenu.portfolio'), path: '/projects/portfolio', icon: FileText },
+                { name: t('nav.projectsMenu.workflowLong'), path: '/projects/workflow', icon: FileText },
             ]
         },
-        { name: 'Tin tức', path: '/news' },
+        { key: 'news', name: t('nav.news'), path: '/news' },
     ];
 
+    // So khớp trên đường dẫn đã bỏ prefix ngôn ngữ để /en/about vẫn sáng mục "Giới thiệu"
+    const currentPath = stripLocaleFromPath(location.pathname);
+
     const isActiveRoute = (path) => {
-        if (path === '/') return location.pathname === '/';
-        return location.pathname.startsWith(path);
+        if (path === '/') return currentPath === '/';
+        return currentPath.startsWith(path);
     };
 
     const toggleMobileMenu = () => {
@@ -154,7 +164,7 @@ const Header = () => {
                         <nav className="hidden xl:flex items-center space-x-1 rounded-full">
                             <div className=" rounded-full p-1  flex items-center space-x-2">
                                 {navigationItems.map((item) => (
-                                    <div key={item.name} className="relative group">
+                                    <div key={item.key} className="relative group">
                                         {item.dropdown ? (
                                             <div className="relative">
                                                 <button
@@ -169,10 +179,10 @@ const Header = () => {
                                                 </button>
                                                 {/* Dropdown Menu */}
                                                 <div className={`absolute top-full left-0 mt-2 bg-white rounded-3xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 ${
-                                                    item.name === 'Dịch vụ' ? 'w-[480px]' : 'w-[280px]'
+                                                    item.key === 'services' ? 'w-[480px]' : 'w-[280px]'
                                                 }`}>
                                                     <div className="p-2.5 space-y-2">
-                                                        {item.name === 'Dịch vụ' ? (
+                                                        {item.key === 'services' ? (
                                                             <>
                                                                 {/* Services dropdown layout */}
                                                                 <div className="grid grid-cols-2 gap-2">
@@ -183,7 +193,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <Bot className="w-3.5 h-3.5" />
-                                                                        <span>Automation - Data - Ai</span>
+                                                                        <span>{t('nav.servicesMenu.aiData')}</span>
                                                                     </Link>
                                                                     <Link
                                                                         to="/services/google-ads"
@@ -192,7 +202,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <Target className="w-3.5 h-3.5" />
-                                                                        <span>Google Ads</span>
+                                                                        <span>{t('nav.servicesMenu.googleAds')}</span>
                                                                     </Link>
                                                                 </div>
 
@@ -204,7 +214,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <Smartphone className="w-3.5 h-3.5" />
-                                                                        <span>Facebook Ads</span>
+                                                                        <span>{t('nav.servicesMenu.facebookAds')}</span>
                                                                     </Link>
                                                                     <Link
                                                                         to="/services/tiktok-ads"
@@ -213,7 +223,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <Music className="w-3.5 h-3.5" />
-                                                                        <span>TikTok Ads</span>
+                                                                        <span>{t('nav.servicesMenu.tiktokAds')}</span>
                                                                     </Link>
                                                                 </div>
 
@@ -225,7 +235,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <Users className="w-3.5 h-3.5" />
-                                                                        <span>Facebook Dataset & CRM</span>
+                                                                        <span>{t('nav.servicesMenu.facebookCrm')}</span>
                                                                     </Link>
                                                                     <Link
                                                                         to="/services/tick-xanh-facebook"
@@ -234,7 +244,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <CheckCircle className="w-3.5 h-3.5" />
-                                                                        <span>Tick Xanh Facebook</span>
+                                                                        <span>{t('nav.servicesMenu.tickXanh')}</span>
                                                                     </Link>
                                                                 </div>
 
@@ -245,7 +255,7 @@ const Header = () => {
                                                                         }`}
                                                                     >
                                                                         <Globe className="w-3.5 h-3.5" />
-                                                                        <span>Website & Landing Page</span>
+                                                                        <span>{t('nav.servicesMenu.websiteLanding')}</span>
                                                                     </Link>
 
                                                                 <Link
@@ -255,7 +265,7 @@ const Header = () => {
                                                                     }`}
                                                                 >
                                                                     <BarChart3 className="w-3.5 h-3.5" />
-                                                                    <span>Thuê Phòng Marketing</span>
+                                                                    <span>{t('nav.servicesMenu.marketingOutsource')}</span>
                                                                 </Link>
                                                             </>
                                                         ) : (
@@ -268,7 +278,7 @@ const Header = () => {
                                                                     }`}
                                                                 >
                                                                     <FolderOpen className="w-3.5 h-3.5" />
-                                                                    <span>Các dự án</span>
+                                                                    <span>{t('nav.projectsMenu.all')}</span>
                                                                 </Link>
                                                                 <Link
                                                                     to="/projects/portfolio"
@@ -277,7 +287,7 @@ const Header = () => {
                                                                     }`}
                                                                 >
                                                                     <FileText className="w-3.5 h-3.5" />
-                                                                    <span>Hồ sơ năng lực</span>
+                                                                    <span>{t('nav.projectsMenu.portfolio')}</span>
                                                                 </Link>
                                                                 <Link
                                                                     to="/projects/workflow"
@@ -286,7 +296,7 @@ const Header = () => {
                                                                     }`}
                                                                 >
                                                                     <FileText className="w-3.5 h-3.5" />
-                                                                    <span>Automation workflow</span>
+                                                                    <span>{t('nav.projectsMenu.workflow')}</span>
                                                                 </Link>
                                                             </>
                                                         )}
@@ -312,12 +322,13 @@ const Header = () => {
 
                         {/* Desktop CTA Button */}
                         <div className="hidden xl:flex items-center space-x-4">
+                            <LanguageSwitcher />
                             <button
                                 onClick={() => setIsPopupOpen(true)}
                                 className="relative flex items-center space-x-3 pl-6 pr-1.5 py-1.5 bg-gradient-to-r from-[#2B144D] via-[#c08dfe] to-[#2B144D] text-[16px] text-white rounded-full font-medium transition-all duration-300 hover:scale-105 group animate-gradient-shift"
                                 style={{ backgroundSize: '200% 200%' }}
                             >
-                                <span>Hợp tác ngay</span>
+                                <span>{t('nav.cta')}</span>
                                 <div className="w-[2.5rem] h-[2.5rem] bg-black rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">
                                     <ArrowUpRight className="w-5 h-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105" strokeWidth={2.3}/>
                                 </div>
@@ -375,7 +386,7 @@ const Header = () => {
                             <nav className="space-y-10">
                                 {navigationItems.map((item, index) => (
                                     <div
-                                        key={item.name}
+                                        key={item.key}
                                         className="animate-fade-in-up"
                                         style={{
                                             animationDelay: `${150 + index * 100}ms`,
@@ -385,7 +396,7 @@ const Header = () => {
                                         {item.dropdown ? (
                                             <div className="space-y-0">
                                                 <button
-                                                    onClick={item.name === 'Dịch vụ' ? toggleServiceDropdown : toggleProjectDropdown}
+                                                    onClick={item.key === 'services' ? toggleServiceDropdown : toggleProjectDropdown}
                                                     className={`w-full flex items-center justify-between px-2 border-l-2 border-black text-left text-[14px] font-medium transition-all duration-300 ${
                                                         isActiveRoute(item.path)
                                                             ? ' '
@@ -394,19 +405,19 @@ const Header = () => {
                                                 >
                                                     <span>{item.name}</span>
                                                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ease-out ${
-                                                        (item.name === 'Dịch vụ' ? isServiceDropdownOpen : isProjectDropdownOpen) ? 'rotate-180' : ''
+                                                        (item.key === 'services' ? isServiceDropdownOpen : isProjectDropdownOpen) ? 'rotate-180' : ''
                                                     }`} />
                                                 </button>
 
                                                 {/* Mobile Dropdown with smooth animation */}
                                                 <div className={`transition-all duration-[1200ms] ease-out ${
-                                                    (item.name === 'Dịch vụ' ? isServiceDropdownOpen : isProjectDropdownOpen)
+                                                    (item.key === 'services' ? isServiceDropdownOpen : isProjectDropdownOpen)
                                                         ? 'max-h-[500px] opacity-100 mt-4 transform translate-y-0'
                                                         : 'max-h-0 opacity-0 mt-0 transform -translate-y-2'
                                                 } overflow-hidden`}>
                                                     <div className="pt-6 px-2 rounded-3xl ">
                                                         <div className="space-y-2">
-                                                            {item.name === 'Dịch vụ' ? (
+                                                            {item.key === 'services' ? (
                                                                 <>
                                                                     {/* Services mobile dropdown */}
                                                                     <div className="grid grid-cols-2 gap-2">
@@ -419,7 +430,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <Bot className="w-3 h-3 flex-shrink-0" />
-                                                                            <span className="truncate">Automation - Ai</span>
+                                                                            <span className="truncate">{t('nav.servicesMenu.aiDataShort')}</span>
                                                                         </Link>
                                                                         <Link
                                                                             to="/services/google-ads"
@@ -430,7 +441,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <Target className="w-3 h-3 flex-shrink-0" />
-                                                                            <span className="truncate">Google Ads</span>
+                                                                            <span className="truncate">{t('nav.servicesMenu.googleAds')}</span>
                                                                         </Link>
                                                                     </div>
 
@@ -444,7 +455,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <Smartphone className="w-3 h-3 flex-shrink-0" />
-                                                                            <span className="truncate">Facebook Ads</span>
+                                                                            <span className="truncate">{t('nav.servicesMenu.facebookAds')}</span>
                                                                         </Link>
                                                                         <Link
                                                                             to="/services/tiktok-ads"
@@ -455,7 +466,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <Music className="w-3 h-3 flex-shrink-0" />
-                                                                            <span className="truncate">TikTok Ads</span>
+                                                                            <span className="truncate">{t('nav.servicesMenu.tiktokAds')}</span>
                                                                         </Link>
                                                                     </div>
 
@@ -469,7 +480,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <Users className="w-3 h-3 flex-shrink-0" />
-                                                                            <span>Facebook CRM</span>
+                                                                            <span>{t('nav.servicesMenu.facebookCrmShort')}</span>
                                                                         </Link>
                                                                         <Link
                                                                             to="/services/tick-xanh-facebook"
@@ -480,7 +491,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <CheckCircle className="w-3 h-3 flex-shrink-0" />
-                                                                            <span className="truncate">Tick xanh FB</span>
+                                                                            <span className="truncate">{t('nav.servicesMenu.tickXanhShort')}</span>
                                                                         </Link>
                                                                     </div>
 
@@ -494,7 +505,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <Globe className="w-3 h-3 flex-shrink-0" />
-                                                                            <span>Website & Landing Page</span>
+                                                                            <span>{t('nav.servicesMenu.websiteLanding')}</span>
                                                                         </Link>
                                                                         <Link
                                                                             to="/services/marketing-outsource"
@@ -505,7 +516,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <BarChart3 className="w-3 h-3 flex-shrink-0" />
-                                                                            <span>Thuê phòng Marketing</span>
+                                                                            <span>{t('nav.servicesMenu.marketingOutsourceShort')}</span>
                                                                         </Link>
                                                                     </div>
                                                                 </>
@@ -522,7 +533,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <FolderOpen className="w-3 h-3 flex-shrink-0" />
-                                                                            <span>Các dự án</span>
+                                                                            <span>{t('nav.projectsMenu.all')}</span>
                                                                         </Link>
                                                                         <Link
                                                                             to="/projects/portfolio"
@@ -533,7 +544,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <FileText className="w-3 h-3 flex-shrink-0" />
-                                                                            <span>Hồ sơ năng lực</span>
+                                                                            <span>{t('nav.projectsMenu.portfolio')}</span>
                                                                         </Link>
                                                                         <Link
                                                                             to="/projects/workflow"
@@ -544,7 +555,7 @@ const Header = () => {
                                                                             }`}
                                                                         >
                                                                             <FileText className="w-3 h-3 flex-shrink-0" />
-                                                                            <span>Automation workflow</span>
+                                                                            <span>{t('nav.projectsMenu.workflow')}</span>
                                                                         </Link>
                                                                     </div>
                                                                 </>
@@ -569,6 +580,17 @@ const Header = () => {
                                 ))}
                             </nav>
 
+                            {/* Chọn ngôn ngữ - bản mobile */}
+                            <div className="mt-10 animate-fade-in-up" style={{
+                                animationDelay: `${150 + navigationItems.length * 100}ms`,
+                                animationFillMode: 'both'
+                            }}>
+                                <p className="mb-2 px-2 text-[11px] font-medium uppercase tracking-widest text-gray-500">
+                                    {t('language.label')}
+                                </p>
+                                <LanguageSwitcher variant="mobile" />
+                            </div>
+
                             {/* Mobile CTA Button */}
                             <div className="relative flex items-center justify-center mt-8 mb-6 animate-fade-in-up" style={{
                                 animationDelay: `${150 + navigationItems.length * 100 + 100}ms`,
@@ -581,7 +603,7 @@ const Header = () => {
                                         backgroundSize: '200% 100%'
                                     }}
                                 >
-                                    <span className="relative z-10">Hợp tác ngay</span>
+                                    <span className="relative z-10">{t('nav.cta')}</span>
                                     <div className="w-9 h-9 bg-black rounded-full flex items-center justify-center neu-shadow-xs relative z-10">
                                         <ArrowUpRight className="w-5 h-5 text-white transition-transform duration-300 hover:rotate-45" strokeWidth={2.3}/>
                                     </div>

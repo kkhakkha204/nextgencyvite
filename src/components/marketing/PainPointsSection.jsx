@@ -1,36 +1,14 @@
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const PainPointsSection = () => {
-    const painPoints = [
-        {
-            title: "Thiếu đội marketing nội bộ",
-            description: "Không đủ ngân sách để tuyển full bộ phận marketing nội bộ.",
-            impact: "Tiền ads bị đốt cháy vô ích",
-            isDark: false,
-            rotation: "lg:-rotate-1"
-        },
-        {
-            title: "Thiếu sự liên kết chiến dịch",
-            description: "Thuê rời rạc nhiều bên (ads – content – thiết kế – automation) khiến chiến dịch thiếu liên kết và hiệu quả.",
-            impact: "Ngân sách marketing lãng phí",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Không có KPI & đo lường rõ ràng",
-            description: "Không được cam kết kết quả, không có KPI cụ thể để đo lường.",
-            impact: "Không tối ưu marketing",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Thiếu người đồng hành thực sự",
-            description: "Thiếu người “đồng hành thật sự” – chỉ làm theo brief, không hiểu mô hình kinh doanh của doanh nghiệp.",
-            impact: "Mất khách hàng",
-            isDark: true,
-            rotation: "lg:-rotate-1"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const painPoints = tm('servicePages.marketingOutsource.painPoints.items').map((point, index) => ({
+        ...point,
+        isDark: index === 3,
+        rotation: ['lg:-rotate-1', 'lg:rotate-1', 'lg:rotate-1', 'lg:-rotate-1'][index]
+    }));
 
 
     return (
@@ -48,7 +26,7 @@ const PainPointsSection = () => {
 
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                        Nỗi đau của doanh nghiệp
+                        {t('servicePages.marketingOutsource.painPoints.title')}
                     </h2>
 
                 </div>

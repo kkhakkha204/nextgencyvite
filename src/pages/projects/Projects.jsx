@@ -1,11 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useI18n } from '../../i18n';
 import { Link } from 'react-router-dom';
-import { getProjectCategories, getProjectFilters, projectsData } from '../../data/projectsData';
+import { getProjectCategories, getProjectFilters } from '../../data/projectsData';
+import { useProjects } from '../../hooks/useProjects';
 import ConsultationSection from "../../components/ConsultationSection.jsx";
 import ServicesSection from "../../components/ServicesSection.jsx";
 import HomeClientsPartnersSection from "../../components/home/HomeClientsPartnersSection.jsx";
 
 const CustomDropdown = ({ label, value, options, onChange }) => {
+    const { t } = useI18n();
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
     const activeOption = options.find((option) => option.value === value) || options[0];
@@ -80,7 +83,7 @@ const CustomDropdown = ({ label, value, options, onChange }) => {
                             >
                                 <span>{option.label}</span>
                                 {option.value === value && (
-                                    <span className="text-xs text-purple-300">Đang chọn</span>
+                                    <span className="text-xs text-purple-300">{t('projects.list.selecting')}</span>
                                 )}
                             </button>
                         ))}
@@ -92,7 +95,9 @@ const CustomDropdown = ({ label, value, options, onChange }) => {
 };
 
 const Projects = () => {
+    const { t } = useI18n();
     const { categories, technologies } = getProjectFilters();
+    const localizedProjects = useProjects();
     const [search, setSearch] = useState('');
     const [category, setCategory] = useState('all');
     const [technology, setTechnology] = useState('all');
@@ -149,20 +154,20 @@ const Projects = () => {
 
     const categoryOptions = useMemo(() => {
         return [
-            { value: 'all', label: 'Tất cả danh mục' },
+            { value: 'all', label: t('projects.list.allCategories') },
             ...categories.map((item) => ({ value: item, label: item }))
         ];
-    }, [categories]);
+    }, [t, categories]);
 
     const technologyOptions = useMemo(() => {
         return [
-            { value: 'all', label: 'Tất cả công nghệ' },
+            { value: 'all', label: t('projects.list.allTechnologies') },
             ...technologies.map((item) => ({ value: item, label: item }))
         ];
-    }, [technologies]);
+    }, [t, technologies]);
 
     const filteredProjects = useMemo(() => {
-        return projectsData
+        return localizedProjects
             .filter((project) => {
             const matchesSearch =
                 project.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -178,44 +183,44 @@ const Projects = () => {
             return matchesSearch && matchesCategory && matchesTechnology;
         })
             .sort((a, b) => getProjectDateValue(b.date) - getProjectDateValue(a.date));
-    }, [search, category, technology]);
+    }, [localizedProjects, search, category, technology]);
 
     const categoryStats = useMemo(() => {
         return categories.map((item) => ({
             name: item,
-            count: projectsData.filter((project) =>
+            count: localizedProjects.filter((project) =>
                 getProjectCategories(project).includes(item)
             ).length
         }));
-    }, [categories]);
+    }, [localizedProjects, categories]);
 
     return (
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white">
             <div className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 lg:px-8">
                 <div className="mb-10 rounded-3xl border border-white/10 bg-white/5 px-6 py-8 backdrop-blur-md shadow-2xl shadow-black/40">
                     <p className="text-xs uppercase tracking-[0.35em] text-indigo-300 font-semibold">projects</p>
-                    <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold text-white">DỰ ÁN TIÊU BIỂU</h1>
-                    <p className="mt-2 max-w-2xl text-slate-300">Tổng hợp các dự án đã triển khai, với kết quả thực tế và quy trình chuyên nghiệp.</p>
+                    <h1 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-bold text-white">{t('projects.list.title')}</h1>
+                    <p className="mt-2 max-w-2xl text-slate-300">{t('projects.list.subtitle')}</p>
                 </div>
 
                 <div className="mb-10 grid gap-4 lg:grid-cols-[2fr_1fr_1fr]">
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm text-indigo-200">Tìm kiếm</label>
+                        <label className="text-sm text-indigo-200">{t('projects.list.searchLabel')}</label>
                         <input
                             value={search}
                             onChange={(event) => setSearch(event.target.value)}
-                            placeholder="Tên dự án, thương hiệu, mô tả..."
+                            placeholder={t('projects.list.searchPlaceholder')}
                             className="w-full rounded-2xl border border-indigo-300/30 bg-slate-900 px-4 py-3 text-sm text-white outline-none transition focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/30"
                         />
                     </div>
                     <CustomDropdown
-                        label="Danh mục"
+                        label={t('projects.list.categoryLabel')}
                         value={category}
                         options={categoryOptions}
                         onChange={setCategory}
                     />
                     <CustomDropdown
-                        label="Công nghệ"
+                        label={t('projects.list.technologyLabel')}
                         value={technology}
                         options={technologyOptions}
                         onChange={setTechnology}
@@ -225,7 +230,7 @@ const Projects = () => {
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                     {filteredProjects.map((project, index) => {
                         const projectCategories = getProjectCategories(project);
-                        const primaryCategory = projectCategories[0] || 'Khác';
+                        const primaryCategory = projectCategories[0] || t('projects.list.other');
                         const remainingCategoryCount = Math.max(projectCategories.length - 1, 0);
                         const categoryLabel = remainingCategoryCount > 0
                             ? `${primaryCategory} +${remainingCategoryCount}`
@@ -259,7 +264,7 @@ const Projects = () => {
                                     <p className="mt-2 text-sm text-white/70">{project.summary}</p>
                                 </div>
                                 <div className="text-xs text-white/60">
-                                    <span className="font-medium text-white/80">Đối tác:</span>{' '}
+                                    <span className="font-medium text-white/80">{t('projects.list.partner')}</span>{' '}
                                     {project.partner}
                                 </div>
                                 <div className="mt-auto flex flex-wrap gap-2">
@@ -285,7 +290,7 @@ const Projects = () => {
 
                 {filteredProjects.length === 0 && (
                     <div className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-8 text-center text-sm text-white/70">
-                        Không tìm thấy dự án phù hợp. Hãy thử thay đổi bộ lọc hoặc từ khóa.
+                        {t('projects.list.empty')}
                     </div>
                 )}
             </div>

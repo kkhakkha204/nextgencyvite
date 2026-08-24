@@ -1,45 +1,17 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {ArrowUpRight, ChevronRight} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const PainPointSection = () => {
-    const painPoints = [
-        {
-            title: "Quy trình thủ công tốn thời gian",
-            description: "Sale vẫn đang nhập tay từng đơn, chốt inbox từng khách, gửi tay từng email – mất 80% thời gian cho việc lặp lại.",
-        },
-        {
-            title: "Thiếu cá nhân hóa",
-            description: "Marketing không thể cá nhân hóa theo hành vi từng khách – nội dung gửi ra bị \"lạnh\", không hiệu quả.",
-        },
-        {
-            title: "Dữ liệu rời rạc",
-            description: "Thiếu hệ thống liên kết giữa các nền tảng (Zalo, Facebook, Website, CRM) – dữ liệu rời rạc, không thể khai thác.",
-        },
-        {
-            title: "Thiếu tự động hóa",
-            description: "Không có công cụ để trả lời tự động, tư vấn cá nhân hóa, hoặc gợi ý sản phẩm thông minh.",
-        }
-    ];
-
-    const solutions = [
-        {
-            title: "Tự động hóa quy trình",
-            description: "Biến quy trình thủ công thành tự động – giải phóng 80% thời gian cho đội Sale.",
-        },
-        {
-            title: "Cá nhân hóa thông minh",
-            description: "Cá nhân hoá nội dung theo hành vi từng khách hàng – tăng mạnh tỷ lệ chuyển đổi.",
-        },
-        {
-            title: "Kết nối đa nền tảng",
-            description: "Kết nối đa nền tảng: Zalo – Facebook – Website – CRM vào 1 hệ thống duy nhất.",
-        },
-        {
-            title: "AI tư vấn thông minh",
-            description: "Kích hoạt AI trả lời thông minh – chatbot tư vấn sản phẩm tự động.",
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Icon/kiểu hiển thị giữ nguyên trong JSX; phần chữ lấy từ từ điển
+    const items = tm('servicePages.aiData.painPoints.items');
+    const painPoints = items.map((item) => ({title: item.title, description: item.description}));
+    const solutions = items.map((item) => ({
+        title: item.solutionTitle,
+        description: item.solutionDescription
+    }));
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -64,7 +36,7 @@ const PainPointSection = () => {
                         </span>
                     </div>
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold text-black uppercase leading-[1.45] mb-1">
-                        Nỗi đau & giải pháp cho doanh nghiệp
+                        {t('servicePages.aiData.painPoints.title')}
                     </h2>
                 </div>
 
@@ -126,7 +98,7 @@ const PainPointSection = () => {
                 {/* CTA */}
                 <div className="text-center mt-8">
                     <p className="text-black mb-4 text-[15px] lg:text-[18px] transition-colors duration-300">
-                        Liên hệ ngay để nhận tư vấn và báo giá.
+                        {t('shared.cta.contactForQuote')}
                     </p>
                     {/* CTA Button */}
                     <div className="flex items-center justify-center space-x-4">
@@ -136,7 +108,7 @@ const PainPointSection = () => {
 
                         >
         <span className="">
-            Tư vấn ngay
+            {t('shared.cta.consultNow')}
         </span>
                             <div
                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

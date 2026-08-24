@@ -1,36 +1,14 @@
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const ForWhom = () => {
-    const painPoints = [
-        {
-            title: "Chủ shop & doanh nghiệp",
-            description: "Tự chủ nội dung website, kéo khách từ tìm kiếm mà không cần đội SEO riêng.",
-            impact: "Tối ưu chi phí",
-            isDark: false,
-            rotation: "lg:-rotate-1"
-        },
-        {
-            title: "Agency & freelancer SEO",
-            description: "Tăng sản lượng bài chất lượng cho nhiều khách hàng, nhiều ngôn ngữ, trong thời gian ngắn.",
-            impact: "Scale-up dễ dàng",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Đội marketing in-house",
-            description: "Chuẩn hóa quy trình viết - tối ưu - duyệt - đăng và cộng tác nhiều người trên cùng nền tảng.",
-            impact: "Quản lý tập trung",
-            isDark: false,
-            rotation: "lg:rotate-1"
-        },
-        {
-            title: "Người sáng tạo nội dung",
-            description: "Biến ý tưởng thành bài chuẩn SEO/GEO thật nhanh, tập trung vào chất lượng thay vì thao tác thủ công.",
-            impact: "Khơi nguồn sáng tạo",
-            isDark: true,
-            rotation: "lg:-rotate-1"
-        }
-    ];
+    const { t, tm } = useI18n();
+    // Kiểu hiển thị giữ trong code, phần chữ lấy từ từ điển
+    const painPoints = tm('servicePages.toolContentAi.forWhom.items').map((point, index) => ({
+        ...point,
+        isDark: index === 3,
+        rotation: ['lg:-rotate-1', 'lg:rotate-1', 'lg:rotate-1', 'lg:-rotate-1'][index]
+    }));
 
     return (
         <section className="relative bg-white pt-[60px] lg:pt-[90px] pb-20">
@@ -40,7 +18,7 @@ const ForWhom = () => {
                 <div className="text-center mb-4 lg:mb-8">
                     {/* Title */}
                     <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                        Công cụ này dành cho ai?
+                        {t('servicePages.toolContentAi.forWhom.title')}
                     </h2>
 
                 </div>

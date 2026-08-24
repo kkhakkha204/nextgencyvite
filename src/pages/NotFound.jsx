@@ -1,44 +1,27 @@
 import React from 'react';
-import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
+import {Link, useI18n} from '../i18n';
 import {ArrowLeft, ArrowUpRight, Bot, CalendarClock, FolderOpen, Building2, Newspaper} from 'lucide-react';
 import SEOManager from '../components/SEO/SEOManager.jsx';
 
+// Đường dẫn và icon cố định; chữ hiển thị lấy từ từ điển theo khoá "key".
 const QUICK_LINKS = [
-    {
-        to: '/about',
-        icon: Building2,
-        title: 'Giới thiệu',
-        desc: 'Giới thiệu tổng quan về Nextgency'
-    },
-    {
-        to: '/ai',
-        icon: Bot,
-        title: 'Automation Content AI',
-        desc: 'Viết nội dung chuẩn SEO · AEO · GEO bằng AI.'
-    },
-    {
-        to: '/projects/all',
-        icon: FolderOpen,
-        title: 'Dự án đã triển khai',
-        desc: 'Xem Nextgency đã làm gì cho khách hàng.'
-    },
-    {
-        to: '/news',
-        icon: Newspaper,
-        title: 'Tin tức & kiến thức',
-        desc: 'Góc nhìn thực chiến về marketing và AI.'
-    }
+    {to: '/about', icon: Building2, key: 'about'},
+    {to: '/ai', icon: Bot, key: 'ai'},
+    {to: '/projects/all', icon: FolderOpen, key: 'projects'},
+    {to: '/news', icon: Newspaper, key: 'news'}
 ];
 
 const NotFound = () => {
     const {pathname} = useLocation();
+    const {t} = useI18n();
     const navigate = useNavigate();
 
     return (
         <>
             <SEOManager
-                title="Không tìm thấy trang | Nextgency"
-                description="Đường dẫn bạn truy cập không tồn tại hoặc đã được chuyển sang địa chỉ khác."
+                title={t('notFound.seoTitle')}
+                description={t('notFound.seoDescription')}
                 ogUrl={pathname}
                 noindex
             />
@@ -75,12 +58,11 @@ const NotFound = () => {
                         </div>
 
                         <h1 className="mt-4 font-archivo text-[24px] font-bold uppercase leading-[1.45] text-black md:text-[32px] lg:text-[40px]">
-                            Trang này không tồn tại
+                            {t('notFound.title')}
                         </h1>
 
                         <p className="mx-auto mt-2 max-w-[560px] text-[15px] text-gray-700 lg:text-[18px]">
-                            Đường dẫn có thể đã đổi địa chỉ, bị gõ sai hoặc không còn được dùng nữa. Bạn thử quay lại
-                            hoặc đi tới một trong những trang bên dưới nhé.
+                            {t('notFound.description')}
                         </p>
 
                         {/* Đường dẫn khách vừa truy cập */}
@@ -96,7 +78,7 @@ const NotFound = () => {
                                 className="group relative flex animate-gradient-shift items-center space-x-3 rounded-full bg-gradient-to-r from-[#1a4498] via-[#c08dfe] to-[#1a4498] py-1.5 pl-6 pr-1.5 text-[16px] font-medium text-white no-underline transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20 hover:no-underline"
                                 style={{backgroundSize: '200% 200%'}}
                             >
-                                <span>Về trang chủ</span>
+                                <span>{t('notFound.homeCta')}</span>
                                 <span className="neu-shadow-xs flex h-[2.5rem] w-[2.5rem] items-center justify-center rounded-full bg-black transition-all duration-300">
                                     <ArrowUpRight
                                         className="h-5 w-5 text-white transition-all duration-300 group-hover:rotate-12 group-hover:scale-105"
@@ -116,7 +98,7 @@ const NotFound = () => {
                                         strokeWidth={2.5}
                                     />
                                 </span>
-                                <span>Quay lại trang trước</span>
+                                <span>{t('notFound.backCta')}</span>
                             </button>
                         </div>
                     </div>
@@ -127,7 +109,7 @@ const NotFound = () => {
                             const Icon = link.icon;
                             return (
                                 <Link
-                                    key={link.to}
+                                    key={link.key}
                                     to={link.to}
                                     className="group flex transform-gpu flex-col rounded-xl border-2 border-black bg-white p-4 no-underline shadow-md transition-all duration-300 ease-out hover:no-underline lg:p-6 lg:hover:-translate-y-1 lg:hover:shadow-lg"
                                 >
@@ -137,8 +119,8 @@ const NotFound = () => {
                                         </span>
                                         <ArrowUpRight className="h-4 w-4 text-gray-400 transition-all duration-300 group-hover:rotate-12 group-hover:text-black" />
                                     </div>
-                                    <h2 className="mt-4 text-[14px] font-medium text-black lg:text-[16px]">{link.title}</h2>
-                                    <p className="mt-0.5 text-[13px] text-gray-700 lg:text-[15px]">{link.desc}</p>
+                                    <h2 className="mt-4 text-[14px] font-medium text-black lg:text-[16px]">{t(`notFound.links.${link.key}.title`)}</h2>
+                                    <p className="mt-0.5 text-[13px] text-gray-700 lg:text-[15px]">{t(`notFound.links.${link.key}.description`)}</p>
                                 </Link>
                             );
                         })}

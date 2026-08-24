@@ -1,47 +1,16 @@
 
 import React from "react";
+import { useI18n } from '../../i18n';
 
 const GoogleAdsProcess = () => {
-    const processSteps = [
-        {
-            id: 1,
-            title: "Tiếp nhận & Phần tích",
-            steps: [
-                "Tiếp nhận yêu cầu từ khách hàng",
-                "Phân tích ngành hàng & mục tiêu",
-                "Đề xuất chiến lược phễu TOFU - MOFU - BOFU"
-            ],
-            hasImage: true
-        },
-        {
-            id: 2,
-            title: "Thiết lập & Chuẩn bị",
-            steps: [
-                "Thiết lập tài khoản quảng cáo",
-                "Cài đặt Pixel & CAPI",
-                "Chuẩn bị nội dung & hình ảnh",
-                "Cấu trúc chiến dịch và nhóm quảng cáo"
-            ]
-        },
-        {
-            id: 3,
-            title: "Vận hành và tối ưu",
-            steps: [
-                "Chạy quảng cáo & theo dõi",
-                "Tối ưu ngân sách và tệp đối tượng",
-                "Báo cáo định kỳ & cảnh báo"
-            ]
-        },
-        {
-            id: 4,
-            title: "Triển khai & Theo dõi chiến dịch",
-            steps: [
-                "Họp đánh giá hiệu suất",
-                "Điều chỉnh chiến lược",
-                "Gia hạn hợp đồng hoặc mở rộng ngân sách"
-            ]
-        },
-    ];
+    const { t, tm } = useI18n();
+    // Ảnh minh hoạ gắn ở bước 1; phần chữ lấy từ từ điển
+    const processSteps = tm('servicePages.facebookAds.process.steps').map((step, index) => ({
+        id: index + 1,
+        title: step.title,
+        steps: step.items,
+        hasImage: index === 0
+    }));
 
     const Card = ({ step }) => {
         const maxSteps = 4;
@@ -127,12 +96,12 @@ const GoogleAdsProcess = () => {
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4 sm:mb-8">
                     <div className="lg:w-1/2 text-center lg:text-left">
                         <h2 className="text-[24px] md:text-[32px] lg:text-[40px] font-archivo font-bold leading-[1.45] uppercase text-black mb-1">
-                            Quy trình triển khai<br/>Facebook ads
+                            {t('servicePages.facebookAds.process.title')}<br/>Facebook ads
                         </h2>
                     </div>
                     <div className="lg:w-1/2 text-center lg:text-right max-w-md">
                         <p className="text-[15px] lg:text-[18px] text-black">
-                            6 bước chuyên nghiệp để tối ưu hiệu quả quảng cáo và đạt được mục tiêu kinh doanh
+                            {t('servicePages.facebookAds.process.subtitle')}
                         </p>
                     </div>
                 </div>

@@ -1,8 +1,10 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {ArrowRight, ArrowUpRight} from 'lucide-react';
 import {Link} from "react-router-dom";
 
 const Hero = () => {
+    const { t, tm } = useI18n();
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -49,30 +51,20 @@ const Hero = () => {
                     {/* Description */}
                     <div className="space-y-4">
                         <p className="text-[15px] lg:text-[18px] text-black text-justify max-w-xl">
-                            Trong thời đại dữ liệu là "mỏ kim cương", Nextgency giúp doanh nghiệp biến từng hành vi, từng tương tác thành đòn bẩy quảng cáo hiệu quả qua dịch vụ Facebook Dataset & CRM:
+                            {t('servicePages.facebookCrm.hero.descriptionPrefix')}{t('servicePages.facebookCrm.hero.brand')}{t('servicePages.facebookCrm.hero.descriptionSuffix')}
                         </p>
 
-                        {/* Bullet Points */}
-                        <div className="space-y-4">
-                            <div className="flex items-start space-x-2">
-                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                    Xây dựng tệp dataset chất lượng cho quảng cáo Facebook.
-                                </p>
-                            </div>
-                            <div className="flex items-start space-x-2">
-                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                    Tạo đối tượng lookalike & remarketing từ dữ liệu CRM, đơn hàng, hành vi người dùng.
-                                </p>
-                            </div>
-                            <div className="flex items-start space-x-2">
-                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
-                                <p className="text-[13px] lg:text-[16px] text-gray-700">
-                                    Kết nối dữ liệu từ form, website, Zalo, chatbot… đẩy ngược về Facebook CAPI.
-                                </p>
-                            </div>
-                        </div>
+                                    {/* Bullet Points */}
+                                    <div className="space-y-4">
+                                        {tm('servicePages.facebookCrm.hero.bullets').map((bullet, index) => (
+                                            <div key={index} className="flex items-start space-x-2">
+                                                <div className="w-1.5 h-1.5 bg-[#c08dfe] rounded-full mt-2 flex-shrink-0"></div>
+                                                <p className="text-[13px] lg:text-[16px] text-gray-700">
+                                                    {bullet}
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
                     </div>
 
                     {/* CTA Button */}
@@ -83,7 +75,7 @@ const Hero = () => {
 
                         >
         <span className="">
-            Hợp tác ngay
+            {t('shared.cta.partnerNow')}
         </span>
                             <div
                                 className="w-9 h-9 sm:w-[2.5rem] sm:h-[2.5rem] bg-white rounded-full flex items-center justify-center neu-shadow-xs transition-all duration-300">

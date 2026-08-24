@@ -1,9 +1,11 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 import {SLOT_TIMES} from './bookingData.js';
 
 const TimeSlotPicker = ({hasDate, selectedSlot, onSelectSlot}) => {
+    const { t } = useI18n();
     if (!hasDate) {
-        return <p className="mt-3 text-[13.5px] text-[#7a8499]">Chọn ngày trước để hiện khung giờ.</p>;
+        return <p className="mt-3 text-[13.5px] text-[#7a8499]">{t('booking.panel.pickDateFirst')}</p>;
     }
 
     return (

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useI18n } from '../../i18n';
 
 const Hero = () => {
+    const { t } = useI18n();
     return (
         <section className="bg-white flex items-center pt-[60px] sm:pt-[90px]">
             <div className="w-full md:max-w-[700px] lg:max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +50,7 @@ const Hero = () => {
                             {/* Dòng chữ "Xây dựng" với SVG */}
                             <div className="flex flex-row items-center md:items-end gap-4 lg:gap-6">
                                 <h1 className="text-[32px] md:text-[40px] lg:text-[60px] font-archivo font-bold leading-none uppercase text-black">
-                                    Xây dựng
+                                    {t('servicePages.websiteLanding.hero.title')}
                                 </h1>
                                 {/* SVG Circles */}
                                 <div className="flex-shrink-0">

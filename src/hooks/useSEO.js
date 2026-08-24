@@ -7,10 +7,8 @@ export const useSEO = () => {
 
     useEffect(() => {
         // Scroll to top on route change
+        // (thuộc tính <html lang> do LanguageProvider / SEOManager đặt theo ngôn ngữ đang xem)
         window.scrollTo(0, 0);
-
-        // Update HTML lang attribute
-        document.documentElement.lang = 'vi';
     }, [location]);
 
     // Performance monitoring
