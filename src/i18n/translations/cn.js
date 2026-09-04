@@ -331,6 +331,26 @@ export default {
                 }
             }
         },
+        projectsShowcase: {
+            badge: 'Projects',
+            title: 'Nextgency 精选项目',
+            description: '探索我们与客户共同打造的网站、平台与数字化解决方案。',
+            viewAll: '查看全部项目',
+            hint: '移动鼠标探索 · 点击项目即可预览',
+            wallLabel: 'Nextgency 动态项目画廊',
+            preview: '项目预览',
+            close: '关闭项目预览',
+            noImage: '暂无项目图片',
+            previousImage: '上一张图片',
+            nextImage: '下一张图片',
+            image: '图片',
+            date: '时间',
+            partner: '合作伙伴',
+            category: '项目类别',
+            technologies: '技术与解决方案',
+            viewDetail: '查看详情',
+            viewProject: '访问项目'
+        },
         testimonials: {
             badge: 'Testimonials',
             title: '合作伙伴的评价',
@@ -2049,6 +2069,28 @@ export default {
                     '累积的积分可兑换实物礼品或升级 VIP 票档。借助 Zalo 生态，该方案不仅带动了现场氛围，也让主办方自动沉淀了大量优质用户数据，可在活动结束后继续通过 Zalo OA 做再营销。'
                 ],
                 metrics: ['活动互动量', 'Zalo OA 关注数', '二维码签到次数']
+            },
+            'hoang-minh-logistic': {
+                name: 'Hoang Minh Logistics 企业网站',
+                summary: '为中越正规跨境物流体系打造的专业企业网站。',
+                description: '项目为 Hoang Minh Logistics 打造了一套完整的企业网站，清晰展示中越正规运输能力、合作伙伴网络、服务体系与合作流程。界面统一采用品牌的海军蓝与红色视觉识别，传递可靠、专业的企业形象，同时方便潜在客户提交咨询需求。',
+                details: [
+                    '内容结构按照客户了解服务的路径组织，从企业概况、运输、仓储与海关服务，到需求接收、报价、签约和交付流程。咨询行动按钮布局清晰，缩短了从产生需求到联系企业的路径。',
+                    '网站通过地图、核心数字与易于浏览的内容区块，将合作伙伴网络和运营规模可视化，帮助访客快速了解连接线路、货物处理能力以及 Hoang Minh Logistics 的服务覆盖范围。',
+                    '网站针对桌面、平板和手机进行响应式优化，并设置新闻栏目供企业主动更新行业资讯。界面强调加载性能、可读性和 SEO 友好结构，为长期自然搜索曝光提供支持。'
+                ],
+                metrics: ['供应合作伙伴', '商品种类', '重点行业']
+            },
+            'ladipage-topmus': {
+                name: 'Topmus 招聘落地页',
+                summary: '醒目且响应式的 NPC Live Creator 招聘落地页，优化完整应聘路径。',
+                description: '项目为 Topmus Entertainment 设计招聘落地页，以符合品牌识别的现代霓虹视觉风格吸引 NPC Live Creator 应聘者。内容形成清晰的说服路径，从介绍机会、福利与收入潜力，自然引导至直接应聘的行动号召。',
+                details: [
+                    '首屏采用富有能量感的主视觉，突出招聘信息和核心行动按钮。各内容区块层级明确，让应聘者能够快速掌握福利、成长路径以及 Topmus 的工作环境。',
+                    '项目优先优化移动端体验，采用响应式界面、醒目的行动按钮与精简表单。关键操作被进一步简化，让年轻用户可以在手机上快速阅读信息并完成报名。',
+                    '落地页针对应聘转化与广告投放兼容性进行优化。色彩、动效与行动文案保持统一，在延续品牌氛围的同时兼顾速度与易用性。'
+                ],
+                metrics: ['合作创作者', '月收入稳定比例', '覆盖市场']
             }
         }
     },
@@ -2111,7 +2153,7 @@ export default {
             services: 'Nextgency 服务',
             clients: '客户与合作伙伴',
             featured: '代表项目',
-            serviceTable: '2025–2026 服务一览',
+            nghe: '项目：Nghe Content',
             beautySummit: '项目：Beauty Summit',
             tukiGroup: '项目：TUKI Group',
             otherProjects: '其他代表项目',

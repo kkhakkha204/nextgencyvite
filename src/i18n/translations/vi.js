@@ -339,6 +339,26 @@ export default {
                 }
             }
         },
+        projectsShowcase: {
+            badge: 'Projects',
+            title: 'Dự án nổi bật của Nextgency',
+            description: 'Khám phá những website, nền tảng và giải pháp số chúng tôi đã cùng khách hàng kiến tạo.',
+            viewAll: 'Xem tất cả dự án',
+            hint: 'Di chuột để khám phá · Nhấn vào dự án để xem trước',
+            wallLabel: 'Thư viện dự án chuyển động của Nextgency',
+            preview: 'Xem trước dự án',
+            close: 'Đóng cửa sổ xem trước',
+            noImage: 'Chưa có hình ảnh dự án',
+            previousImage: 'Ảnh trước',
+            nextImage: 'Ảnh tiếp theo',
+            image: 'Ảnh',
+            date: 'Thời gian',
+            partner: 'Đối tác',
+            category: 'Hạng mục',
+            technologies: 'Công nghệ & giải pháp',
+            viewDetail: 'Xem chi tiết',
+            viewProject: 'Xem dự án'
+        },
         testimonials: {
             badge: 'Testimonials',
             title: 'đối tác nói gì về chúng tôi',
@@ -2315,6 +2335,28 @@ export default {
                     'Lượt Follow Zalo OA',
                     'Lượt quét QR Check-in'
                 ]
+            },
+            'hoang-minh-logistic': {
+                name: 'Web Hoàng Minh Logistic',
+                summary: 'Thiết kế website doanh nghiệp chuyên nghiệp cho hệ thống logistics chính ngạch Trung Quốc - Việt Nam.',
+                description: 'Dự án xây dựng website doanh nghiệp toàn diện cho Hoàng Minh Logistics, giới thiệu rõ năng lực vận chuyển chính ngạch Trung Quốc - Việt Nam, mạng lưới đối tác, hệ thống dịch vụ và quy trình hợp tác. Giao diện sử dụng nhất quán nhận diện xanh navy - đỏ của thương hiệu, giúp doanh nghiệp truyền tải hình ảnh uy tín, chuyên nghiệp và tạo thuận lợi cho khách hàng gửi yêu cầu tư vấn.',
+                details: [
+                    'Cấu trúc nội dung được tổ chức theo hành trình tìm hiểu của khách hàng, từ tổng quan doanh nghiệp, nhóm dịch vụ vận chuyển - kho bãi - hải quan đến quy trình tiếp nhận, báo giá, ký kết và giao hàng. Các nút tư vấn được bố trí rõ ràng để rút ngắn đường dẫn từ nhu cầu đến liên hệ.',
+                    'Mạng lưới đối tác và quy mô vận hành được trực quan hóa bằng bản đồ, số liệu nổi bật và các khu vực nội dung dễ quét. Cách trình bày này giúp khách hàng nhanh chóng nắm được tuyến kết nối, năng lực xử lý hàng hóa và mức độ phủ dịch vụ của Hoàng Minh Logistics.',
+                    'Website được tối ưu responsive trên desktop, tablet và mobile, đồng thời xây dựng khu vực tin tức để doanh nghiệp chủ động cập nhật thông tin ngành. Giao diện ưu tiên tốc độ, khả năng đọc và cấu trúc thân thiện với SEO nhằm hỗ trợ phát triển kênh tìm kiếm dài hạn.'
+                ],
+                metrics: ['Đối tác cung cấp', 'Mặt hàng', 'Ngành hàng nổi bật']
+            },
+            'ladipage-topmus': {
+                name: 'Ladipage Topmus',
+                summary: 'Landing page tuyển dụng NPC Live Creator nổi bật, responsive và tối ưu hành trình ứng tuyển.',
+                description: 'Dự án thiết kế landing page tuyển dụng cho Topmus Entertainment, tập trung thu hút ứng viên NPC Live Creator bằng phong cách visual neon hiện đại và bám sát nhận diện thương hiệu. Nội dung được xây dựng theo một hành trình thuyết phục rõ ràng, từ giới thiệu cơ hội, quyền lợi và thu nhập đến lời kêu gọi ứng tuyển trực tiếp.',
+                details: [
+                    'Phần hero sử dụng hình ảnh chủ đạo giàu năng lượng, làm nổi bật thông điệp tuyển dụng và CTA ngay trong màn hình đầu tiên. Bố cục từng section được phân cấp rõ ràng để ứng viên dễ dàng nắm bắt quyền lợi, lộ trình phát triển và môi trường làm việc tại Topmus.',
+                    'Trải nghiệm mobile được ưu tiên với giao diện responsive, CTA dễ nhìn và biểu mẫu gọn gàng. Các thao tác quan trọng được tinh giản để người dùng trẻ có thể đọc thông tin và hoàn tất đăng ký nhanh trên điện thoại.',
+                    'Landing page được tối ưu cho mục tiêu chuyển đổi ứng tuyển và khả năng kết hợp với các chiến dịch quảng cáo. Màu sắc, hiệu ứng và nội dung hành động được đồng bộ để duy trì cảm xúc thương hiệu xuyên suốt nhưng vẫn đảm bảo tốc độ và tính dễ sử dụng.'
+                ],
+                metrics: ['Nhà sáng tạo đồng hành', 'Thu nhập ổn định mỗi tháng', 'Thị trường triển khai']
             }
         }
     },
@@ -2382,7 +2424,7 @@ export default {
             services: 'Dịch vụ Nextgency',
             clients: 'Khách hàng & Đối tác',
             featured: 'Dự án tiêu biểu',
-            serviceTable: 'Bảng dịch vụ 2025–2026',
+            nghe: 'Dự án: Nghề Content',
             beautySummit: 'Dự án: Beauty Summit',
             tukiGroup: 'Dự án: TUKI Group',
             otherProjects: 'Dự án tiêu biểu khác',

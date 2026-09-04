@@ -11,6 +11,7 @@ import {seoConfigs} from "./seo-configs.js";
 import SEOManager from "../components/SEO/SEOManager.jsx";
 import {generateBreadcrumbSchema, organizationSchema, websiteSchema} from "../components/SEO/schemas.js";
 import HomeClientsPartnersSection from "../components/home/HomeClientsPartnersSection.jsx";
+import HomeProjectsSection from "../components/home/HomeProjectsSection.jsx";
 
 const Home = () => {
     const breadcrumbs = [
@@ -27,6 +28,7 @@ const Home = () => {
                 <InfiniteLogoSlider/>
                 <AboutUsSection/>
                 <ServicesSection/>
+                <HomeProjectsSection/>
                 <TestimonialsSection/>
                 <HomeClientsPartnersSection/>
             </div>

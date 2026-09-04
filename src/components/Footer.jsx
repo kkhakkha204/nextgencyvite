@@ -59,7 +59,7 @@ const Footer = () => {
                                     className="w-8 h-8 object-contain"
                                 />
                             </a>
-                            <a href="#" target='_blank' className="hover:opacity-80 transition-opacity">
+                            <a href="https://www.facebook.com/messages/t/433874169812586" target='_blank' className="hover:opacity-80 transition-opacity">
                                 <img
                                     src="/assets/images/footer/mess.png"
                                     alt="LinkedIn"

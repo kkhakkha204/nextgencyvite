@@ -38,11 +38,6 @@ const PORTFOLIO_SECTIONS = [
         images: ['6.webp']
     },
     {
-        id: 'ly-do-chon-nextgency',
-        titleKey: 'portfolio.sections.why',
-        images: ['7.webp, 8.webp']
-    },
-    {
         id: 'khach-hang-doi-tac',
         titleKey: 'portfolio.sections.clients',
         images: ['9.webp']
@@ -52,24 +47,25 @@ const PORTFOLIO_SECTIONS = [
         titleKey: 'portfolio.sections.featured',
         images: [
             '10.webp', '11.webp', '12.webp', '13.webp', '14.webp',
-            '15.webp', '16.webp', '17.webp', '18.webp', '19.webp'
-        ]
-    },
-    {
-        id: 'bang-dich-vu',
-        titleKey: 'portfolio.sections.serviceTable',
-        images: [
+            '15.webp', '16.webp', '17.webp', '18.webp', '19.webp',
             'a (1).webp', 'a (2).webp', 'a (3).webp', 'a (4).webp', 'a (5).webp',
-            'a (6).webp', 'a (7).webp', 'a (8).webp', 'a (9).webp', 'a (10).webp',
-            'a (11).webp', 'a (12).webp', 'a (13).webp', 'a (14).webp', 'a (15).webp',
-            'a (16).webp', 'a (17).webp', 'a (18).webp', 'a (19).webp', 'a (20).webp'
+            'a (6).webp',
         ]
     },
     {
         id: 'du-an-beauty-summit',
         titleKey: 'portfolio.sections.beautySummit',
         images: [
-            '21.webp', '22.webp', '23.webp', '24.webp', '25.webp',
+            'a (7).webp', 'a (8).webp', 'a (9).webp', 'a (10).webp',
+            'a (11).webp', 'a (12).webp', 'a (13).webp', 'a (14).webp', 'a (15).webp',
+            'a (16).webp', 'a (17).webp', 'a (18).webp'
+        ]
+    },
+    {
+        id: 'du-an-nghe',
+        titleKey: 'portfolio.sections.nghe',
+        images: [
+            'a (19).webp', 'a (20).webp', '21.webp', '22.webp', '23.webp', '24.webp', '25.webp',
             '26.webp', '27.webp', '28.webp', '29.webp', '30.webp'
         ]
     },

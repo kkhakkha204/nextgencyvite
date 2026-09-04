@@ -185,15 +185,6 @@ const Projects = () => {
             .sort((a, b) => getProjectDateValue(b.date) - getProjectDateValue(a.date));
     }, [localizedProjects, search, category, technology]);
 
-    const categoryStats = useMemo(() => {
-        return categories.map((item) => ({
-            name: item,
-            count: localizedProjects.filter((project) =>
-                getProjectCategories(project).includes(item)
-            ).length
-        }));
-    }, [localizedProjects, categories]);
-
     return (
         <section className="bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white">
             <div className="mx-auto max-w-[1440px] px-4 py-16 sm:px-6 lg:px-8">

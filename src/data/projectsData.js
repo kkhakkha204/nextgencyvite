@@ -122,7 +122,8 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/projects/bn1.webp',
+            '/assets/images/projects/bn2.webp',
         ]
     },
     {
@@ -238,7 +239,10 @@ export const projectsData = [
         cta: 'https://www.talentmate.vn/',
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/projects/tlm1.webp',
+            '/assets/images/projects/tlm2.webp',
+            '/assets/images/projects/tlm3.webp',
+            '/assets/images/projects/tlm4.webp',
         ]
     },
     {
@@ -345,7 +349,9 @@ export const projectsData = [
         cta: null,
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/projects/jimto1.webp',
+            '/assets/images/projects/jimto2.webp',
+            '/assets/images/projects/jim3.webp',
         ]
     },
     {
@@ -402,7 +408,9 @@ export const projectsData = [
         },
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/projects/hom1.webp',
+            '/assets/images/projects/hom2.webp',
+            '/assets/images/projects/hom3.webp',
         ]
     },
     {
@@ -541,7 +549,8 @@ export const projectsData = [
         cta: null,
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/projects/s1.webp',
+            '/assets/images/projects/s2.webp',
         ]
     },
     {   
@@ -620,7 +629,9 @@ export const projectsData = [
         cta: 'https://nocti.vn/',
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/projects/noc1.webp',
+            '/assets/images/projects/noc2.webp',
+            '/assets/images/projects/noc3.webp',
         ]
     },
     {   
@@ -646,7 +657,8 @@ export const projectsData = [
         cta: null,
         videoUrl: '/assets/images/website&landingpage/video.mp4',
         slides: [
-            '/assets/images/test.webp',
+            '/assets/images/projects/em1.webp',
+            '/assets/images/projects/em2.webp',
         ]
     },
      {   
@@ -892,6 +904,68 @@ export const projectsData = [
             '/assets/images/projects/miniapp_2.webp',
             '/assets/images/projects/miniapp_3.webp',
             '/assets/images/projects/miniapp_4.webp',
+        ]
+    },
+    {
+        id: 'hoang-minh-logistic',
+        name: 'Web Hoàng Minh Logistic',
+        summary: 'Thiết kế website doanh nghiệp chuyên nghiệp cho hệ thống logistics chính ngạch Trung Quốc - Việt Nam.',
+        description:
+            'Dự án xây dựng website doanh nghiệp toàn diện cho Hoàng Minh Logistics, giới thiệu rõ năng lực vận chuyển chính ngạch Trung Quốc - Việt Nam, mạng lưới đối tác, hệ thống dịch vụ và quy trình hợp tác. Giao diện sử dụng nhất quán nhận diện xanh navy - đỏ của thương hiệu, giúp doanh nghiệp truyền tải hình ảnh uy tín, chuyên nghiệp và tạo thuận lợi cho khách hàng gửi yêu cầu tư vấn.',
+        details: [
+            'Cấu trúc nội dung được tổ chức theo hành trình tìm hiểu của khách hàng, từ tổng quan doanh nghiệp, nhóm dịch vụ vận chuyển - kho bãi - hải quan đến quy trình tiếp nhận, báo giá, ký kết và giao hàng. Các nút tư vấn được bố trí rõ ràng để rút ngắn đường dẫn từ nhu cầu đến liên hệ.',
+            'Mạng lưới đối tác và quy mô vận hành được trực quan hóa bằng bản đồ, số liệu nổi bật và các khu vực nội dung dễ quét. Cách trình bày này giúp khách hàng nhanh chóng nắm được tuyến kết nối, năng lực xử lý hàng hóa và mức độ phủ dịch vụ của Hoàng Minh Logistics.',
+            'Website được tối ưu responsive trên desktop, tablet và mobile, đồng thời xây dựng khu vực tin tức để doanh nghiệp chủ động cập nhật thông tin ngành. Giao diện ưu tiên tốc độ, khả năng đọc và cấu trúc thân thiện với SEO nhằm hỗ trợ phát triển kênh tìm kiếm dài hạn.'
+        ],
+        date: '07/2026',
+        category: 'Website & Landing Page',
+        partner: 'Hoàng Minh Logistics',
+        technologies: ['Website', 'Responsive Design', 'UI/UX', 'SEO'],
+        metrics: [
+            { label: 'Tốc độ tải trang (LCP)', value: '< 2 giây' },
+            { label: 'Thời gian trên trang', value: '> 3 phút' },
+            { label: 'Lượt yêu cầu tư vấn', value: '+35%' }
+        ],
+        cta: {
+            label: 'Xem chi tiết',
+            url: 'https://hoangminhlogistics.com/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/projects/hm1.webp',
+            '/assets/images/projects/hm2.webp',
+            '/assets/images/projects/hm3.webp',
+            '/assets/images/projects/hm4.webp',
+        ]
+    },
+    {
+        id: 'ladipage-topmus',
+        name: 'Ladipage Topmus',
+        summary: 'Landing page tuyển dụng NPC Live Creator nổi bật, responsive và tối ưu hành trình ứng tuyển.',
+        description:
+            'Dự án thiết kế landing page tuyển dụng cho Topmus Entertainment, tập trung thu hút ứng viên NPC Live Creator bằng phong cách visual neon hiện đại và bám sát nhận diện thương hiệu. Nội dung được xây dựng theo một hành trình thuyết phục rõ ràng, từ giới thiệu cơ hội, quyền lợi và thu nhập đến lời kêu gọi ứng tuyển trực tiếp.',
+        details: [
+            'Phần hero sử dụng hình ảnh chủ đạo giàu năng lượng, làm nổi bật thông điệp tuyển dụng và CTA ngay trong màn hình đầu tiên. Bố cục từng section được phân cấp rõ ràng để ứng viên dễ dàng nắm bắt quyền lợi, lộ trình phát triển và môi trường làm việc tại Topmus.',
+            'Trải nghiệm mobile được ưu tiên với giao diện responsive, CTA dễ nhìn và biểu mẫu gọn gàng. Các thao tác quan trọng được tinh giản để người dùng trẻ có thể đọc thông tin và hoàn tất đăng ký nhanh trên điện thoại.',
+            'Landing page được tối ưu cho mục tiêu chuyển đổi ứng tuyển và khả năng kết hợp với các chiến dịch quảng cáo. Màu sắc, hiệu ứng và nội dung hành động được đồng bộ để duy trì cảm xúc thương hiệu xuyên suốt nhưng vẫn đảm bảo tốc độ và tính dễ sử dụng.'
+        ],
+        date: '08/2026',
+        category: 'Website & Landing Page',
+        partner: 'Topmus Entertainment',
+        technologies: ['Ladipage', 'Responsive Design', 'UI/UX', 'Conversion Optimization'],
+        metrics: [
+            { label: 'Tốc độ tải trang (LCP)', value: '< 2 giây' },
+            { label: 'Lượt tiếp cận', value: '> +500%' },
+            { label: 'Lượt đăng ký mới', value: '+300%' }
+        ],
+       cta: {
+            label: 'Xem chi tiết',
+            url: 'https://dangkynpc.topmus.vn/'
+        },
+        videoUrl: '/assets/images/website&landingpage/video.mp4',
+        slides: [
+            '/assets/images/projects/ladi-topmus1.webp',
+            '/assets/images/projects/ladi-topmus2.webp',
         ]
     },
 ];

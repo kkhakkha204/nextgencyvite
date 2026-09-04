@@ -338,6 +338,26 @@ export default {
                 }
             }
         },
+        projectsShowcase: {
+            badge: 'Projects',
+            title: 'Selected work by Nextgency',
+            description: 'Explore the websites, platforms and digital solutions we have created with our clients.',
+            viewAll: 'View all projects',
+            hint: 'Move to explore · Select a project for a preview',
+            wallLabel: 'Nextgency animated project gallery',
+            preview: 'Project preview',
+            close: 'Close project preview',
+            noImage: 'No project image available',
+            previousImage: 'Previous image',
+            nextImage: 'Next image',
+            image: 'Image',
+            date: 'Date',
+            partner: 'Partner',
+            category: 'Category',
+            technologies: 'Technology & solutions',
+            viewDetail: 'View details',
+            viewProject: 'View live project'
+        },
         testimonials: {
             badge: 'Testimonials',
             title: 'what our partners say',
@@ -2189,6 +2209,28 @@ export default {
                     'Accumulated points can be redeemed for physical rewards or VIP ticket upgrades. By leaning on the Zalo ecosystem, the solution not only lifted the energy on the floor but also let the organisers automatically collect a large volume of quality user data for continued remarketing through Zalo OA after the event.'
                 ],
                 metrics: ['Event engagement', 'Zalo OA follows', 'QR check-in scans']
+            },
+            'hoang-minh-logistic': {
+                name: 'Hoang Minh Logistics Website',
+                summary: 'A professional corporate website for an official China–Vietnam logistics network.',
+                description: 'The project delivered a complete corporate website for Hoang Minh Logistics, clearly presenting its official China–Vietnam freight capabilities, partner network, service portfolio and working process. A consistent navy-and-red visual system reinforces the brand’s reliable, professional image while making it easy for prospective customers to request advice.',
+                details: [
+                    'Content follows the customer’s research journey, from the company overview and freight, warehousing and customs services through to enquiry, quotation, contracting and delivery. Consultation calls to action are placed clearly to shorten the path from need to contact.',
+                    'The partner network and operational scale are visualised through maps, key figures and scannable content areas. This presentation helps visitors quickly understand available routes, cargo-handling capacity and the breadth of Hoang Minh Logistics’ services.',
+                    'The website is responsive across desktop, tablet and mobile and includes a news area for industry updates. The interface prioritises performance, readability and an SEO-friendly structure to support long-term organic visibility.'
+                ],
+                metrics: ['Suppliers', 'Product types', 'Key industries']
+            },
+            'ladipage-topmus': {
+                name: 'Topmus Landing Page',
+                summary: 'A striking, responsive NPC Live Creator recruitment landing page with an optimised application journey.',
+                description: 'The recruitment landing page for Topmus Entertainment was designed to attract NPC Live Creator applicants through a modern neon visual style aligned with the brand. Its content creates a clear persuasive journey, moving from the opportunity, benefits and income potential to a direct application call to action.',
+                details: [
+                    'The hero uses energetic key visuals to bring the recruitment message and primary call to action into the first screen. Each section has a clear information hierarchy so applicants can quickly understand the benefits, development path and working environment at Topmus.',
+                    'The mobile experience is prioritised with a responsive interface, prominent calls to action and a concise form. Important actions are streamlined so younger users can review the information and complete an application quickly on their phones.',
+                    'The landing page is optimised for application conversion and paid campaign compatibility. Colour, effects and action-led copy are coordinated to maintain the brand mood throughout without compromising speed or ease of use.'
+                ],
+                metrics: ['Creators in the network', 'Stable monthly income', 'Markets served']
             }
         }
     },
@@ -2252,7 +2294,7 @@ export default {
             services: 'Nextgency services',
             clients: 'Clients & Partners',
             featured: 'Selected projects',
-            serviceTable: 'Service matrix 2025–2026',
+            nghe: 'Project: Nghe Content',
             beautySummit: 'Project: Beauty Summit',
             tukiGroup: 'Project: TUKI Group',
             otherProjects: 'Other selected projects',
